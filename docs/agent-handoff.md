@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 25 September 2026 after [WF-011](briefs/WF-011-release-candidate-source-preflight.md); [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
+Updated 26 September 2026 after [067](briefs/067-cloudflare-r2-provider-bucket.md); [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
 This is the current entry point; dated acceptance remains in individual briefs.
 
 ## Read and verify
@@ -33,6 +33,9 @@ This is the current entry point; dated acceptance remains in individual briefs.
   and Vercel Ready production remain `a13f696`; the 177-commit/546-file gap and DB → Edge →
   web/mobile order are recorded. Candidate CI run `36144388175` and matching Preview are green;
   provider, hosted work and production promotion remain gated.
+- [067](briefs/067-cloudflare-r2-provider-bucket.md) verifies Cloudflare account
+  `b642dee69121237ba20cc1a1bb50f1c5`, active R2 and empty private EU Standard bucket
+  `genova-private`; public access is disabled. Token, object and hosted actions remain NOT RUN.
 
 ## Delivery decisions
 
@@ -67,8 +70,8 @@ This is the current entry point; dated acceptance remains in individual briefs.
   submission replacement before history capture; include these in the remaining write/cutover batch.
   Existing Storage migration runs toward Drive, not away. 063 makes the authorized snapshot
   deterministic, 064 removes hand-edited metadata/manifest preparation and 065 adds atomic
-  activation/refusal; running the chain against Google/R2 remains real-data work. R2 availability asked;
-  no credentials requested, activation/region/live access unapproved. Does not block local work.
+  activation/refusal; running the chain against Google/R2 remains real-data work. 067 fixes the
+  empty private EU bucket; the bucket-scoped token and every object/hosted action remain unapproved.
 - One active result/one heavy process; >=10 GiB free; reassess after two failed approaches.
   Focused repair and code review precede final heavy gates. Android is the default runtime;
   iOS runs at integration/candidate gates or earlier when a platform-sensitive change requires it.

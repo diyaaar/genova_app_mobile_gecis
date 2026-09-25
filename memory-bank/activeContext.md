@@ -1,6 +1,6 @@
 # Active context
 
-Updated 25 September 2026. [WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md)
+Updated 26 September 2026. [WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md)
 reconciles the execution queue after [WF-008's](../docs/briefs/WF-008-android-first-delivery-reset.md)
 owner-approved reset; the [delivery plan](../docs/mobil-teslim-plani.md)
 owns priorities, the objective and resource/test controls. [Handoff](../docs/agent-handoff.md)
@@ -14,8 +14,9 @@ roadmap and both-store readiness/release. The beta is neither a disposable demo 
 bounded copy executor and atomic activation/refusal transaction are ready locally.
 [WF-011](../docs/briefs/WF-011-release-candidate-source-preflight.md) and
 [066](../docs/briefs/066-node22-private-r2-cli-warning.md) fix candidate `e459bdd`; exact remote CI
-and Vercel Preview pass. Owner-authorized R2 choice/activation separately unlocks hosted backup,
-migration/functions, real inventory/copy and cutover.
+and Vercel Preview pass. [067](../docs/briefs/067-cloudflare-r2-provider-bucket.md) activates R2
+and fixes the empty private EU Standard bucket; token, hosted backup, migration/functions, real
+inventory/copy and cutover remain separate gates.
 
 ## Latest owner choices
 
@@ -52,10 +53,10 @@ migration/functions, real inventory/copy and cutover.
 - [052](../docs/briefs/052-drive-exit-inventory.md) source inventory accepted; no files migrated.
   It maps uploads/reads/history/private audio/chat avatars/caches and three critical traps:
   Drive-folder catalogue filter, public-link creation, destructive replacement before history.
-- Candidate branch/CI/Preview is complete. Ask the owner for EU jurisdiction (recommended) or
-  Automatic and R2 activation/bucket/token authority before external provider setup.
-  Hosted/data steps remain separate approvals. Resolve `chori` versus signed-in `choir` Gmail spelling
-  before any account/email action.
+- Candidate branch/CI/Preview and R2 subscription/bucket provisioning are complete. Provider account
+  `b642dee69121237ba20cc1a1bb50f1c5` has empty private `eu`/Standard bucket `genova-private` with
+  public access disabled and observed R2 usage $0.00/0 B/0 operations. Ask immediately before
+  creating the bucket-scoped Object Read & Write token. Hosted/data steps remain separate approvals.
 - User-owned `supabase/.temp/cli-latest` stays unstaged.
 - 064's build/coverage/temp output is removed; no VM/simulator/device/media output remains. About
   40.7 million KiB (~38.9 GiB) remains free. Cloudflare credentials must never enter chat or Git.

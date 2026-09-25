@@ -1,6 +1,6 @@
 # Private R2 release runbook
 
-Status: **PREPARED LOCALLY — NOT AUTHORIZED OR EXECUTED** on 23 September 2026.
+Status: **PROVIDER BUCKET READY — TOKEN/HOSTED EXECUTION NOT RUN** on 26 September 2026.
 Owner: release operator designated by the product owner. This is the single 053–065 release index;
 individual briefs remain the acceptance authority for each local implementation.
 
@@ -34,7 +34,7 @@ The [current execution queue](mobil-teslim-plani.md#controlled-execution-queue--
 records [065](briefs/065-private-r2-activation-reconciliation.md) as locally accepted. Do not attempt
 stage 5 until the exact candidate is fixed and a real copy journal passes the same contract.
 
-## Provider choice that still needs the owner
+## Provider choice and provisioned bucket — 26 September 2026
 
 Recommended initial choice: Cloudflare R2 **Standard** with the **EU jurisdiction**. The current
 official pricing page lists 10 GB-month, one million Class A and ten million Class B operations in
@@ -43,9 +43,15 @@ been read, so neither a zero bill nor the owner's <=$5 total-infrastructure targ
 recommended because it guarantees storage and processing inside the EU; Automatic/location hints
 do not provide that guarantee. Jurisdiction cannot be changed after bucket creation.
 
-Before provisioning, record exactly one owner answer: `EU jurisdiction` or `Automatic`. Do not
-create a bucket merely to test the choice. Account login, R2 activation, bucket creation and a
-bucket-scoped Object Read & Write token are external actions and need explicit approval.
+The owner selected `EU jurisdiction` and approved the R2 usage subscription plus bucket creation.
+[067](briefs/067-cloudflare-r2-provider-bucket.md) records the signed-in provider evidence:
+Cloudflare account `b642dee69121237ba20cc1a1bb50f1c5`, empty private bucket
+`genova-private`, jurisdiction `eu`, default class `Standard`, public access disabled, no custom
+domain and no public development URL. At verification, billable R2 usage was `$0.00`, storage was
+`0 B` and Class A/B operations were `0`; this does not prove the owner's total <=$5/month target.
+
+The bucket-scoped Object Read & Write token is **NOT RUN**. Creating that persistent credential
+needs a fresh action-time confirmation. No token value may enter Git, chat or this runbook.
 
 ## Function gateway manifest
 
@@ -124,10 +130,10 @@ Edge secret update does not update already-built client code.
 
 Each numbered stage needs the authority named in its heading and stops on any failed required row.
 
-1. **Provider authority:** verify Cloudflare account and owner choice; create one private Standard
-   bucket; create the least-privilege bucket token. Record account/bucket/jurisdiction and the
-   provider's current billing state, never secret values. Measure actual usage before claiming
-   the owner's total monthly infrastructure target is met.
+1. **Provider authority:** account, EU choice, R2 subscription and private Standard bucket are
+   accepted in 067. Next create one least-privilege bucket token only after action-time confirmation.
+   Record token identity, never secret values. Measure actual usage before claiming the owner's total
+   monthly infrastructure target is met.
 2. **Hosted read authority:** resolve Supabase project; take a current backup; restore it to an
    isolated target, rehearse 053–063 plus dormant 065 there and run all existing schema acceptance. Query the 063
    inventory from that snapshot, then run 064's metadata-only preparation without a bulk mirror.

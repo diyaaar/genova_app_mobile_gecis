@@ -1,13 +1,15 @@
 # İlerleme indeksi
 
-23 September current direction: [WF-008](../docs/briefs/WF-008-android-first-delivery-reset.md)
+26 September current direction: [WF-008](../docs/briefs/WF-008-android-first-delivery-reset.md)
 records Android-first beta -> full product/two-store delivery, retained Supabase/private R2 target,
 $5/month preference and five free choir seats. 065 is accepted locally at `53c258f`: 063's
 six-family inventory, 064 report and 062 verified copy journal now bind to an atomic activation/
 reconciliation transaction. WF-011/066 fix repaired candidate `e459bdd`, prove production baseline
 `a13f696`, pass candidate CI/Preview and record the release dependency order; provider/hosted work
-remain gated. R2 jurisdiction and activation authority unlock hosted inventory/copy/cutover stages.
-No hosted provider/DB change, real file migration or deployment occurred. Follow the current priority; older checkpoints below
+remain gated. [067](../docs/briefs/067-cloudflare-r2-provider-bucket.md) verifies the Cloudflare
+account, activates R2 and creates the empty private EU Standard `genova-private` bucket with public
+access disabled; the bucket token and every hosted/data step remain NOT RUN. No hosted DB change,
+real file migration or deployment occurred. Follow the current priority; older checkpoints below
 are historical and do not override current source or brief evidence.
 
 19 September 2026: `851e9cd` aligns three direct/four required transitive Expo patches: mobile
@@ -41,6 +43,7 @@ buraya taşımak testin veya canlı ortam kontrolünün yeniden yapıldığı an
 | 065 atomic private R2 activation | Local activation/reconciliation accepted | [065](../docs/briefs/065-private-r2-activation-reconciliation.md), product/schema/test `53c258f`; exact current snapshot/report/latest verified journal activates all six families atomically, with replay and stale/orphan/partial/target/role refusal plus exact down/reapply. Hosted schema/data, real R2/Google copy/cutover and device remain NOT RUN. |
 | WF-011 release candidate/source preflight | Candidate preflight accepted | [WF-011](../docs/briefs/WF-011-release-candidate-source-preflight.md): repaired source `e459bdd`, GitHub/Vercel production base `a13f696`, 177 commits/546 files and staged DB → Edge → web/mobile order. Candidate CI/Preview pass; production and hosted layers remain NOT RUN. |
 | 066 Node 22 private R2 CLI warning isolation | Candidate CI repair accepted | [066](../docs/briefs/066-node22-private-r2-cli-warning.md), product/test `e459bdd`; local 62 focused plus root 90/797/build pass, Actions `36144388175` all three jobs pass, matching Vercel Preview Ready. No production/provider/data/device change. |
+| 067 Cloudflare R2 provider bucket | Provider bucket accepted; credential/hosted work open | [067](../docs/briefs/067-cloudflare-r2-provider-bucket.md); verified account `b642dee69121237ba20cc1a1bb50f1c5`, active R2, empty private EU Standard bucket `genova-private`, public access disabled and observed R2 usage $0.00/0 B/0 operations. Bucket-scoped token, objects, hosted DB/functions, copy/cutover and device remain NOT RUN. |
 | AI çalışma düzeni | Yerel kurulum/doğrulama tamamlandı | [WF-001](../docs/briefs/WF-001-ai-calisma-duzeni.md); 114 test geçti, ürün değişikliği yok |
 | Geçiş ajanı yönlendirmesi | Yerel belge/doğrulama tamamlandı, ürün başlangıcında kullanıldı | [WF-002](../docs/briefs/WF-002-gecis-rehberi.md); 44 yerel bağlantı ve `pnpm check` geçti |
 | Çok korolu ürün / RN ürün / mağazalar | 008 ve 012 tamamlandı; 010 6/7 açık, 004 25/27 ve iki cihaz ölçütü ertelendi. Yerel repertuvar/PDF paketleri 8 Eylül'de başlatıldı | [MIGRATION](../MIGRATION.md), [mobil teslim planı](../docs/mobil-teslim-plani.md), [handoff](../docs/agent-handoff.md) |
