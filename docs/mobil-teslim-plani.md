@@ -28,15 +28,15 @@ do not manufacture a date or add unrelated features while awaiting a critical de
 
 [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) reconciles this queue with the
 current checkout. On 25 September [WF-011](briefs/WF-011-release-candidate-source-preflight.md)
-fixed local candidate `12a236f` (product payload `53c258f`). Direct GitHub and signed-in Vercel
-inspection put both `origin/main` and current Ready production at `a13f696`: 174 linear commits
-and 544 changed files behind the candidate. Exact-candidate remote CI remains NOT RUN. Push may
-deploy; use the recorded candidate-branch → DB/Edge → exact `main`/Vercel order rather than a
-direct bulk push.
+and [066](briefs/066-node22-private-r2-cli-warning.md) fixed repaired candidate `e459bdd`. Direct
+GitHub and signed-in Vercel inspection put both `origin/main` and current Ready production at
+`a13f696`: 177 linear commits and 546 changed files behind the candidate. Candidate-branch CI's
+three jobs and matching Vercel Preview are green. Production remains unchanged; use the recorded
+DB/Edge → exact `main`/Vercel order rather than a direct bulk push.
 
 | Gate | Required result and evidence | Current action / authority |
 |---|---|---|
-| 1. Release source | **LOCAL PREFLIGHT COMPLETE:** [WF-011](briefs/WF-011-release-candidate-source-preflight.md) fixes `12a236f`, proves GitHub/Vercel base `a13f696`, classifies the 544-file gap and records candidate-branch CI → DB → dormant Edge → web/main → copy/activation → mobile order. | Exact-candidate remote CI, candidate-branch push/preview and every hosted/deploy step remain NOT RUN and separately authorized. Recheck remote/live before acting. |
+| 1. Release source | **CANDIDATE PREFLIGHT COMPLETE:** [WF-011](briefs/WF-011-release-candidate-source-preflight.md) and [066](briefs/066-node22-private-r2-cli-warning.md) fix `e459bdd`, prove GitHub/Vercel production base `a13f696`, classify the 546-file gap and pass candidate CI plus Preview while preserving DB → dormant Edge → web/main → copy/activation → mobile order. | `main`/production, hosted DB/Edge/provider and every subsequent release step remain NOT RUN and separately authorized. Recheck remote/live before acting. |
 | 2. Finish local Drive-exit mechanics | **COMPLETE locally at `53c258f`:** [065](briefs/065-private-r2-activation-reconciliation.md) binds the current 063 snapshot, 064 report and latest verified 062 journal; stale, conflicting, orphaned, partial and changed-replay requests refuse atomically. | Disposable PG17 acceptance only. No Cloudflare, hosted row, real object or cutover evidence. |
 | 3. Provision private storage | Verify the owner's Cloudflare account, choose EU jurisdiction or Automatic, inspect actual R2/billing state, then provision one private Standard bucket and a bucket-scoped Object Read & Write token. Measure existing bytes/operations and total hosting cost against the <=$5/month preference. | Region/activation/spending and credentials need the owner's explicit authority; no assumption that a free allowance equals a $0 or <=$5 total bill. [Runbook](private-r2-release-runbook.md). |
 | 4. Rehearse and deploy backend | Fresh hosted backup plus demonstrated isolated restore; apply 053–063 and dormant 065 in the verified order; export and reconcile real 063 inventory; set secrets with legacy/disabled flags; deploy exact Edge functions and prove disabled/legacy/denied paths. | Hosted reads, writes, secrets and deployment are distinct approved stages. Both web and mobile compatibility remain required. |

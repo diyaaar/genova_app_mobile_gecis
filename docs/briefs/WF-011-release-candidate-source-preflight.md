@@ -46,19 +46,19 @@ credential, message or file was changed.
 
 | Item | Exact value | Meaning |
 |---|---|---|
-| Candidate source | `12a236f87306a9cf96d3231ede315b2893c22ca3` | Immutable HEAD for any candidate branch; its deployable product/schema/test payload is `53c258f`. |
-| Candidate product payload | `53c258f29143693400307c6c6d4291d971edca7d` | Locally accepted 065 product/schema/test revision. `12a236f` only adds its acceptance records. |
-| GitHub `main` | `a13f696da8c731e9af2a2bce473d4f4ae4a81587` | Direct read-only remote result on 25 September. It is the merge base and 174 commits behind the candidate. |
+| Candidate source | `e459bddb16b09020573dccf67ce28946f241caf2` | Current remote candidate branch after [066](066-node22-private-r2-cli-warning.md); exact CI and Vercel preview pass. |
+| Candidate product payload | `e459bddb16b09020573dccf67ce28946f241caf2` | Locally accepted 065 payload plus the narrow Node 22 operator-CLI compatibility repair. |
+| GitHub `main` | `a13f696da8c731e9af2a2bce473d4f4ae4a81587` | Direct read-only remote result on 25 September. It is the merge base and 177 commits behind the repaired candidate. |
 | Vercel production | `a13f696da8c731e9af2a2bce473d4f4ae4a81587`, Ready | Read in the signed-in Vercel project `genesi-nova-choirs-projects/genova-app`; production created 8 September 2026. |
 | Working tree | only `supabase/.temp/cli-latest` modified | User-owned marker; excluded from this task and any future candidate staging. |
 
 The prior infrastructure note's `5e7416a` value is historical and must not be reused as current.
-Vercel and GitHub now agree on `a13f696` as the deployed/source baseline. The candidate is not on a
-remote, so exact-candidate GitHub CI is **NOT RUN** and cannot be claimed from local tests.
+Vercel and GitHub agree on `a13f696` as the deployed/source baseline. Initial candidate `12a236f`
+exposed the Node 22-only CLI warning failure recorded in 066 and is superseded by `e459bdd`.
 
 ## Full gap and dependency classification
 
-The candidate gap is linear and contains **544 changed files, 63,525 additions and 10,829
+The repaired candidate gap is linear and contains **546 changed files, 63,742 additions and 10,829
 deletions**. This is not a safe unreviewed bulk push. Its release-relevant surfaces are:
 
 | Layer | Candidate delta | Dependency / release consequence |
@@ -72,10 +72,9 @@ deletions**. This is not a safe unreviewed bulk push. Its release-relevant surfa
 
 ## Promotion order and stop gates
 
-1. **Freeze and verify source:** use `12a236f` exactly. Push it first only to an explicitly approved
-   candidate branch, not directly to `main`; this is expected to start GitHub CI and may create a
-   Vercel preview. Stop unless all three CI jobs pass for that SHA. Any new product commit creates a
-   new candidate and invalidates this identity.
+1. **Freeze and verify source:** use `e459bdd` exactly. Its approved candidate branch, all three CI
+   jobs and Vercel preview are green. Do not move `main` yet. Any new product commit creates a new
+   candidate and invalidates this identity.
 2. **Prove the hosted base:** verify Supabase project `hievmwwctjjlhmssoxsu`, take a fresh backup and
    demonstrate an isolated restore. Read the hosted migration ledger and schema hashes; do not infer
    them from Git or local acceptance.
@@ -99,10 +98,10 @@ deletions**. This is not a safe unreviewed bulk push. Its release-relevant surfa
 7. **Build/install beta later:** produce the signed Android candidate from the same Git SHA only
    after hosted compatibility passes. Device, distribution and both-store evidence remain distinct.
 
-This ordering deliberately avoids a direct 174-commit `main` push: Vercel production follows
-`main`, while CI also starts on push. A candidate branch supplies remote CI evidence before the
-production fast-forward, but creating that branch/preview remains an explicitly approved external
-release action.
+This ordering deliberately avoids a direct 177-commit `main` push: Vercel production follows
+`main`. The workflow's branch push filter covers `main`, so candidate CI was dispatched explicitly
+against the approved branch before any production fast-forward. Creating that branch/preview and
+dispatching CI were explicitly approved external release actions.
 
 ## Test lineage and remaining evidence
 
@@ -120,22 +119,23 @@ release action.
 
 | Criterion / expected behavior | Required? | Status | Evidence and limit |
 |---|---|---|---|
-| Exact candidate, remote base, ancestry and dirty ownership are fixed | yes | **PASS** | 2026-09-25 local Git + direct `ls-remote`; SHA values above; 174 linear commits; CLI marker excluded. |
+| Exact candidate, remote base, ancestry and dirty ownership are fixed | yes | **PASS** | 2026-09-25 local Git + direct `ls-remote`; SHA values above; 177 linear commits; CLI marker excluded. |
 | Current live production revision is proved independently | yes | **PASS** | 2026-09-25 signed-in Chrome, Vercel deployment list: production Ready at full SHA `a13f696`. Read-only inspection. |
-| Full gap is classified across CI/dependency, DB, Edge, web/shared and mobile | yes | **PASS** | `git diff`/`dirstat`/path and config inspection; 544 files, 16 migrations, 13 Edge functions and the changed client surfaces recorded. Self-review only. |
+| Full gap is classified across CI/dependency, DB, Edge, web/shared and mobile | yes | **PASS** | `git diff`/`dirstat`/path and config inspection; 546 files, 16 migrations, 13 Edge functions and the changed client surfaces recorded. Self-review only. |
 | Promotion order prevents client-before-backend and unreviewed main push | yes | **PASS** | Candidate branch CI → hosted base/DB → dormant Edge → web/main → copy/activation → beta; every external step retains its gate. |
 | R2 defaults and client flags fail closed | yes | **PASS** | Source inspection: server modes default `legacy`; server/client writes require exact enabled flags; runbook still forbids test endpoints hosted. Real hosted probe remains separate. |
 | Documentation links, consistency, scope and diff are clean | yes | **PASS** | Final local link scan and `git diff --check`; only owned documentation will be committed. |
-| Candidate remote CI and external release/runtime evidence | no — subsequent gated action | **NOT RUN** | Candidate is not remote. No push/CI dispatch, DB/provider/deploy, real data, device or store action occurred. |
+| Candidate branch, remote CI and preview | yes | **PASS** | `codex/release-2026-09-25` at `e459bdd`; Actions `36144388175` three jobs PASS; matching Vercel Preview Ready. |
+| Production and external runtime evidence | no — subsequent gated action | **NOT RUN** | No `main` push/production deploy, DB/provider, real data, device or store action occurred. |
 
 Required FAIL or NOT RUN would keep this local preflight open. Self-review is not independent review.
 
 ## Result and next authority boundary
 
-Queue item 1's local source/dependency uncertainty is closed at the immutable candidate above;
-remote CI and production promotion remain open release evidence. The next healthy path is the
-approved candidate-branch CI/preview plus provider/hosted preparation, not additional local feature
-work and not a direct push to `main`. Before provider setup, the owner must select `EU jurisdiction`
+Queue item 1's source/dependency/remote-CI/preview uncertainty is closed at the immutable candidate
+above; production promotion remains open release evidence. The next healthy path is provider/hosted
+preparation, not additional local feature work and not a direct push to `main`. Before provider
+setup, the owner must select `EU jurisdiction`
 (recommended in the runbook) or `Automatic` and explicitly authorize Cloudflare R2 activation,
 private bucket creation and least-privilege token creation. The Gmail spelling supplied in the
 latest request (`genesinova.chori@gmail.com`) differs from the signed-in/profile and repository

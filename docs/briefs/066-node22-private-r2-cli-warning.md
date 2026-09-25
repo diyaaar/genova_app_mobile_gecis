@@ -1,6 +1,6 @@
 # 066 — Node 22 private R2 CLI warning isolation
 
-**Status/date/writer:** PLANNED / 2026-09-25 / primary agent.
+**Status/date/writer:** ACCEPTED / 2026-09-25 / primary agent. Product/test commit `e459bdd`.
 
 **Observable result:** The two private R2 operator entrypoint tests retain machine-readable JSON
 stderr on the repository CI's Node 22.13.1 without suppressing application failures or changing
@@ -52,10 +52,23 @@ script validation errors must remain the sole JSON stderr value and are still as
 
 | Criterion / expected behavior | Required? | Status | Evidence and limit |
 |---|---|---|---|
-| Both real CLI entrypoints preserve exact JSON refusal output under the supported invocation | yes | NOT RUN | Focused tests after implementation. |
-| Existing copy/manifest behavior and root gate remain compatible | yes | NOT RUN | Focused suites and `pnpm check`. |
-| Exact candidate CI quality, browser and native jobs pass | yes | NOT RUN | Fast-forward candidate branch and new GitHub run. |
-| Vercel preview reaches Ready for the repaired candidate | yes | NOT RUN | Signed-in read-only Vercel inspection. |
+| Both real CLI entrypoints preserve exact JSON refusal output under the supported invocation | yes | **PASS** | 2026-09-25 local Node 24.13.1, focused 2 files / 62 tests. The direct entrypoint refusals still parse to the exact expected JSON; no validation or approval assertion changed. |
+| Existing copy/manifest behavior and root gate remain compatible | yes | **PASS** | 2026-09-25 `pnpm check`: lint, typecheck, 90 files / 797 tests, service-worker syntax and Next production build passed. |
+| Exact candidate CI quality, browser and native jobs pass | yes | **PASS** | GitHub Actions run `36144388175`, exact SHA `e459bdd`: Quality and security passed `pnpm check`, production audit and artifact upload; Browser regression passed 30/30; Native product checks passed typecheck, tests and bundle. |
+| Vercel preview reaches Ready for the repaired candidate | yes | **PASS** | Signed-in Vercel inspection: `genova-b8ltr4l2o-genesi-nova-choirs-projects.vercel.app`, Preview, Ready, source `e459bdd`. Production remains `a13f696`. |
 | Hosted/provider/data/device/store behavior | no — outside repair | NOT RUN | No such action or inference. |
 
 Required FAIL or NOT RUN keeps 066 open. Self-review is not independent review.
+
+## Result and boundary
+
+The first exact-candidate run `36143657251` is retained as FAIL evidence: Node 22 prepended its
+experimental type-stripping warning and caused only the two strict JSON protocol tests to fail
+(795/797 passed); native and 30/30 browser jobs passed. Commit `e459bdd` suppresses only that named
+runtime warning in the two operator entrypoints/direct invocations. The replacement run
+`36144388175` and matching Vercel preview are fully green. Branch
+`codex/release-2026-09-25` now points to `e459bdd`; GitHub `main` and Vercel production remain
+unchanged at `a13f696`. No pull request, production deployment, provider, DB, credential, real
+object, device or store action occurred.
+Local `.next` (465 MiB) and coverage output were removed after verification; about 38 GiB remained
+free. The unrelated `supabase/.temp/cli-latest` marker stayed unstaged.

@@ -15,7 +15,8 @@ This is the current entry point; dated acceptance remains in individual briefs.
 
 ## Current checkout and ownership
 
-- Last accepted product/schema/test: `53c258f` (065); verify current HEAD. No unfinished product changes.
+- Last accepted candidate product/test: `e459bdd` (066); underlying 065 schema/test is `53c258f`.
+  Verify current HEAD. No unfinished product changes.
 - Unrelated `supabase/.temp/cli-latest` remains unstaged. Stage only owned task paths.
 - Final 051: mobile typecheck/49 suites/287 tests, root 65/602/build and sequential Android/iOS
   exports PASS. Star snapshot/toggle/panel, refusal and lifecycle accepted locally only.
@@ -27,10 +28,11 @@ This is the current entry point; dated acceptance remains in individual briefs.
   manifest/report publication and all failure/path/cap gates; no real inventory or provider ran.
 - 065 locally binds the exact current snapshot/report/latest verified journal, atomically activates
   all six families and refuses stale/orphan/partial/conflicting requests; no hosted row changed.
-- [WF-011](briefs/WF-011-release-candidate-source-preflight.md) fixes candidate `12a236f`
-  (product/schema/test `53c258f`). GitHub `main` and Vercel Ready production were both confirmed at
-  `a13f696`; the 174-commit/544-file gap and DB → Edge → web/mobile order are recorded. Candidate
-  remote CI, push/preview, provider and hosted work remain gated.
+- [WF-011](briefs/WF-011-release-candidate-source-preflight.md) and
+  [066](briefs/066-node22-private-r2-cli-warning.md) fix repaired candidate `e459bdd`. GitHub `main`
+  and Vercel Ready production remain `a13f696`; the 177-commit/546-file gap and DB → Edge →
+  web/mobile order are recorded. Candidate CI run `36144388175` and matching Preview are green;
+  provider, hosted work and production promotion remain gated.
 
 ## Delivery decisions
 

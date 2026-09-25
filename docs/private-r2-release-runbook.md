@@ -21,13 +21,13 @@ individual briefs remain the acceptance authority for each local implementation.
 
 ## Source-control and deployment preflight — 25 September 2026
 
-[WF-011](briefs/WF-011-release-candidate-source-preflight.md) fixes the local candidate at
-`12a236f` (product/schema/test payload `53c258f`). Direct GitHub and signed-in Vercel inspection
-both put remote `main` and current Ready production at `a13f696`; the candidate is 174 linear
-commits ahead across 544 changed files. The full DB → Edge → web/mobile order, fail-closed flags
-and candidate-branch-before-`main` requirement are recorded there. Exact-candidate remote CI is
-still NOT RUN because the candidate has not been pushed. A repository push, preview/production
-deployment, hosted migration, function deployment, client flag and installed mobile build remain
+[WF-011](briefs/WF-011-release-candidate-source-preflight.md) fixes the repaired candidate at
+`e459bdd`; [066](briefs/066-node22-private-r2-cli-warning.md) records the only candidate-CI repair.
+Direct GitHub and signed-in Vercel inspection put remote `main` and current Ready production at
+`a13f696`; the candidate is 177 linear commits ahead across 546 changed files. Candidate branch
+`codex/release-2026-09-25`, GitHub Actions run `36144388175` and matching Vercel Preview are green.
+The full DB → Edge → web/mobile order and fail-closed flags are recorded in WF-011. Production
+promotion, hosted migration, function deployment, client flag and installed mobile build remain
 separately authorized and evidenced actions.
 
 The [current execution queue](mobil-teslim-plani.md#controlled-execution-queue--24-september-2026)
