@@ -50,8 +50,12 @@ Cloudflare account `b642dee69121237ba20cc1a1bb50f1c5`, empty private bucket
 domain and no public development URL. At verification, billable R2 usage was `$0.00`, storage was
 `0 B` and Class A/B operations were `0`; this does not prove the owner's total <=$5/month target.
 
-The bucket-scoped Object Read & Write token is **NOT RUN**. Creating that persistent credential
-needs a fresh action-time confirmation. No token value may enter Git, chat or this runbook.
+The owner then confirmed persistent credential creation at action time. Account token
+`genova-private-runtime` exists with Object Read & Write only for `genova-private (EU)`, no
+bucket-admin/all-bucket scope, `Forever` TTL and no IP filter. Its one-time values remain only on the
+open provider result screen: they have not been copied, stored, transmitted or tested. Secure
+placement remains a hosted-write gate after backup/restore. No token value may enter Git, chat or
+this runbook.
 
 ## Function gateway manifest
 
@@ -130,10 +134,10 @@ Edge secret update does not update already-built client code.
 
 Each numbered stage needs the authority named in its heading and stops on any failed required row.
 
-1. **Provider authority:** account, EU choice, R2 subscription and private Standard bucket are
-   accepted in 067. Next create one least-privilege bucket token only after action-time confirmation.
-   Record token identity, never secret values. Measure actual usage before claiming the owner's total
-   monthly infrastructure target is met.
+1. **Provider authority:** account, EU choice, R2 subscription, private Standard bucket and the
+   least-privilege token identity are accepted in 067. Preserve the open one-time credential page
+   until separately authorized secure placement; never record secret values. Measure actual usage
+   before claiming the owner's total monthly infrastructure target is met.
 2. **Hosted read authority:** resolve Supabase project; take a current backup; restore it to an
    isolated target, rehearse 053–063 plus dormant 065 there and run all existing schema acceptance. Query the 063
    inventory from that snapshot, then run 064's metadata-only preparation without a bulk mirror.

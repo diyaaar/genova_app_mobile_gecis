@@ -55,8 +55,10 @@ inventory/copy and cutover remain separate gates.
   Drive-folder catalogue filter, public-link creation, destructive replacement before history.
 - Candidate branch/CI/Preview and R2 subscription/bucket provisioning are complete. Provider account
   `b642dee69121237ba20cc1a1bb50f1c5` has empty private `eu`/Standard bucket `genova-private` with
-  public access disabled and observed R2 usage $0.00/0 B/0 operations. Ask immediately before
-  creating the bucket-scoped Object Read & Write token. Hosted/data steps remain separate approvals.
+  public access disabled and observed R2 usage $0.00/0 B/0 operations. Bucket-only Object Read &
+  Write account token `genova-private-runtime` exists; one-time values remain solely on the open
+  provider result page and were not copied/stored/transmitted. Secure secret placement and all
+  hosted/data steps remain separate approvals.
 - User-owned `supabase/.temp/cli-latest` stays unstaged.
 - 064's build/coverage/temp output is removed; no VM/simulator/device/media output remains. About
   40.7 million KiB (~38.9 GiB) remains free. Cloudflare credentials must never enter chat or Git.

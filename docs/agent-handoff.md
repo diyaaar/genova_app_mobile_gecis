@@ -35,7 +35,9 @@ This is the current entry point; dated acceptance remains in individual briefs.
   provider, hosted work and production promotion remain gated.
 - [067](briefs/067-cloudflare-r2-provider-bucket.md) verifies Cloudflare account
   `b642dee69121237ba20cc1a1bb50f1c5`, active R2 and empty private EU Standard bucket
-  `genova-private`; public access is disabled. Token, object and hosted actions remain NOT RUN.
+  `genova-private`; public access is disabled. Bucket-only Object Read & Write account token
+  `genova-private-runtime` exists, but one-time values remain only on the open provider result page
+  and have not been copied/stored/transmitted. Object and hosted actions remain NOT RUN.
 
 ## Delivery decisions
 
@@ -71,7 +73,8 @@ This is the current entry point; dated acceptance remains in individual briefs.
   Existing Storage migration runs toward Drive, not away. 063 makes the authorized snapshot
   deterministic, 064 removes hand-edited metadata/manifest preparation and 065 adds atomic
   activation/refusal; running the chain against Google/R2 remains real-data work. 067 fixes the
-  empty private EU bucket; the bucket-scoped token and every object/hosted action remain unapproved.
+  empty private EU bucket and bucket-only token identity; secure secret placement and every
+  object/hosted action remain unapproved.
 - One active result/one heavy process; >=10 GiB free; reassess after two failed approaches.
   Focused repair and code review precede final heavy gates. Android is the default runtime;
   iOS runs at integration/candidate gates or earlier when a platform-sensitive change requires it.
