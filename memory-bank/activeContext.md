@@ -39,6 +39,12 @@ from Drive, copied to their deterministic private EU R2 keys and independently f
 journal rows are `verified` / `copied`, with zero remaining. The 24-hour bucket-only user credential
 was cleared from the process and clipboard. Together 071+072 verify all ten assignment-submission
 objects / 12,847,921 bytes without mapping, activation, flags or source mutation.
+[073](../docs/briefs/073-chat-message-image-r2-batch.md) now completes the eligible chat-image
+slice: the exact two JPEG objects / 798,038 bytes were downloaded read-only through the correct
+Genesi Nova Chrome profile, copied to their deterministic private EU R2 keys and independently
+full-read. Both journal rows are `verified` / `copied`, with zero remaining. The 24-hour
+bucket-only user credential was cleared from the process and clipboard. Together 071–073 verify
+twelve objects / 13,645,959 bytes without mapping, activation, flags or source mutation.
 
 ## Latest owner choices
 
@@ -78,11 +84,12 @@ objects / 12,847,921 bytes without mapping, activation, flags or source mutation
 - Candidate branch/CI/Preview and R2 subscription/bucket provisioning are complete. Provider account
   `b642dee69121237ba20cc1a1bb50f1c5` has private `eu`/Standard bucket `genova-private` with public
   access disabled. 071 added one verified 32,484-byte canary and 072 added the remaining nine
-  assignment objects; ten assignment objects / 12,847,921 bytes now have verified private copies.
-  immediate overview aggregates remained stale and are not billing evidence. The original one-time
+  assignment objects; 073 added both eligible chat images. Twelve objects / 13,645,959 bytes now
+  have verified private copies. Immediate overview aggregates remained stale and are not billing
+  evidence. The original one-time
   bucket-only token values were lost; 069 rolled the token and placed current values only in the
-  encrypted Supabase secret store. Browser memory was cleared afterward. The two chat images and
-  79 repertoire objects, plus every activation/cutover step, remain separate approvals.
+  encrypted Supabase secret store. Browser memory was cleared afterward. The 79 repertoire objects,
+  plus every activation/cutover step, remain separate approvals.
 - 068 retained a mode-0600 1,317,637-byte logical dump and local `genova_068_test_restore`; hosted
   counts stayed stable and 7 schemas/74 base tables match. Runners 061/063/065 pass on disposable
   clones with the source unchanged. The owner-approved DB-password reset is stored only as the
@@ -107,9 +114,15 @@ objects / 12,847,921 bytes without mapping, activation, flags or source mutation
   `1bf0a0b3a02456fdb3797e24c530b8ef56d141d01744df2ce57ca487ca6eb995`; journal SHA-256
   `1dd893896b44d8e74fb8318a6fa9fe1f45ddcf19991fae87ec019b1182110262`. Private paths retain
   `0700`/`0600`; process variables and clipboard are clear; no credential is retained locally.
+- 073 evidence: runner `24ca373`; manifest SHA-256
+  `e6c377a06773fd2f660f5ddc01e88acc51cb347468aa4a67207dba20884427e6`; 2 copied/verified,
+  798,038 bytes, zero remaining; local/destination aggregate SHA-256
+  `fcaf9400ee030dcdc9b695f7fd55ee0d9eb0630b43793834f1d8cd9fdacb3825`; journal SHA-256
+  `c91edb899b088564e4e2b368916fcdb3b467dc64d27c0456ce9551d993a5e3fe`. Private paths retain
+  `0700`/`0600`; process variables and clipboard are clear; no credential is retained locally.
 - User-owned `supabase/.temp/cli-latest` stays unstaged.
 - Generated build/coverage output is removed; no VM/simulator/device output remains. About
-  34.7 million KiB (~33.1 GiB) remains free after retaining 068 and 072 evidence. Cloudflare credentials
+  34.2 million KiB (~32.6 GiB) remains free after retaining 068, 072 and 073 evidence. Cloudflare credentials
   must never enter chat or Git.
 
 ## Remaining requirements and authority

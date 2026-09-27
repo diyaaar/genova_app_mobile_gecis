@@ -1,6 +1,6 @@
 # 073 — Chat-message image private R2 batch
 
-**Status/date/writer:** IN PROGRESS / OWNER APPROVED / 2026-09-27 / primary agent.
+**Status/date/writer:** COMPLETE / OWNER ACCEPTED / 2026-09-27 / primary agent.
 
 **Observable result and user need:** Copy the two retained-snapshot `chat-message-image` objects
 to their deterministic private `genova-private` EU R2 keys, independently re-read both
@@ -16,11 +16,11 @@ repertoire copy, cutover and beta acceptance remain later gates.
 `e6c377a06773fd2f660f5ddc01e88acc51cb347468aa4a67207dba20884427e6`. Only the unrelated
 `supabase/.temp/cli-latest` is dirty.
 
-**Current work card:** (1) accept the exact two-row manifest and fail-closed batch runner; (2) fetch
-exactly those two Drive bodies through the signed-in Genesi Nova Chrome profile and verify local
-MIME/size/private modes; (3) create one 24-hour user token limited to Object Read & Write on
-`genova-private`, run per-entry HEAD → conditional PUT → full GET and accept only two verified
-journal results. Exit with zero remaining; stop at the first mismatch or scope failure.
+**Accepted result:** Runner commit `24ca373` binds the exact two-row manifest and refuses without
+dual exact-target approval. The signed-in Genesi Nova Chrome profile downloaded exactly the two
+approved Drive bodies. A 24-hour user token limited to Object Read & Write on `genova-private`
+then completed two HEAD → conditional PUT → full GET cycles: 2 copied, 2 independently verified,
+798,038 bytes and zero remaining. No activation or source/backend mutation followed.
 
 **Resources:** Available space is 34,727,120 KiB. Expected retained source growth is 798,038 bytes
 plus a small manifest/journal, leaving far more than the 10 GiB floor. Owned private path is
@@ -80,26 +80,35 @@ the later activation/reconciliation decision; no VM, simulator, database clone o
 
 ## Definition of done
 
-- [ ] Exact two-row/798,038-byte/2-JPEG manifest and sources pass private-path checks.
-- [ ] Runner refuses before network without dual exact-target approval and passes `pnpm check`.
-- [ ] Two entries are independently full-read and SHA-256 verified in R2; journal has zero
+- [x] Exact two-row/798,038-byte/2-JPEG manifest and sources pass private-path checks.
+- [x] Runner refuses before network without dual exact-target approval and passes `pnpm check`.
+- [x] Two entries are independently full-read and SHA-256 verified in R2; journal has zero
   unverified/failed entries and the runner reports zero remaining.
-- [ ] Credential, clipboard, private modes, secret scan and retained-artifact checks pass.
-- [ ] Source, DB/Edge/backend mode/flags/mappings and all out-of-scope families remain unchanged.
-- [ ] Diff review, local links/status checks and separate code/document commits pass.
+- [x] Credential, clipboard, private modes, secret scan and retained-artifact checks pass.
+- [x] Source, DB/Edge/backend mode/flags/mappings and all out-of-scope families remain unchanged.
+- [x] Diff review, local links/status checks and separate code/document commits pass.
 
 ## Mandatory acceptance evidence
 
 | Criterion / expected behavior | Required? / N/A reason | Status | Date/environment/scenario | Evidence and limits |
 |---|---|---|---|---|
-| Exact derived batch manifest | yes | NOT RUN | 2026-09-27, private local artifact | Must bind two chat images, exact hash/count/bytes and 2 JPEG. |
-| Fail-closed runner and required local gate | yes | NOT RUN | Local repository | Exact path/target/caps/source files; no approval or wrong input refuses before network; `pnpm check`. |
-| Exact Drive metadata/body reads | yes | NOT RUN | Genesi Nova Chrome / Genesinova Drive | Two IDs only; no source mutation or leaked download URL. |
-| R2 HEAD/conditional PUT/full GET and journal | yes | NOT RUN | Real Cloudflare EU R2 | Every item must be verified; first failure stops; no overwrite. |
-| Credential and private-artifact hygiene | yes | NOT RUN | Chrome/process/private directory | 24-hour bucket-only token, process-only; clipboard/variables cleared; modes and scans pass. |
-| Source/backend/mapping/flag stability | yes | NOT RUN | Drive + bounded runner boundary | No ACL/body mutation, DB/Edge/mode/flag/mapping change. |
+| Exact derived batch manifest | yes | PASS | 2026-09-27, private local artifact | 2 rows / 798,038 bytes / 2 JPEG; manifest SHA-256 `e6c377a06773fd2f660f5ddc01e88acc51cb347468aa4a67207dba20884427e6`. Both numbered sources match manifest order, JPEG signatures and sizes. |
+| Fail-closed runner and required local gate | yes | PASS | Local repository, `24ca373` | Synthetic exact-size inputs refused with `target-confirmation-required` before network. Targeted lint/typecheck and root `pnpm check` pass: 90 files / 797 tests plus production build. Generated `.next`/coverage outputs were removed from the repository. |
+| Exact Drive metadata/body reads | yes | PASS | Genesi Nova Chrome / Genesinova Drive | Correct `genesinova.choir@gmail.com` profile opened only the two manifest URLs and downloaded both stored JPEG bodies. Local bytes/signatures match the manifest; no source ACL/name/location/body mutation. |
+| R2 HEAD/conditional PUT/full GET and journal | yes | PASS | Real Cloudflare EU R2 | Runner reports `processed=2`, `bytes=798038`, `remaining=0`, `verified=2`, `copied=2`. Full local/destination aggregate SHA-256 is `fcaf9400ee030dcdc9b695f7fd55ee0d9eb0630b43793834f1d8cd9fdacb3825`; journal SHA-256 is `c91edb899b088564e4e2b368916fcdb3b467dc64d27c0456ce9551d993a5e3fe`. |
+| Credential and private-artifact hygiene | yes | PASS | Genesi Nova Chrome/process/private directory | `genova-073-chat-images` is user-owned, Object Read & Write, `genova-private` EU only and active for 24 hours. Values existed only in one process, then variables and clipboard were cleared. Directory/source directory are `0700`; manifest/journal/sources are `0600`; tracked/private `cfut_` scans return zero. |
+| Source/backend/mapping/flag stability | yes | PASS | Drive + bounded runner boundary | Drive actions were read/download only. The 073 runner has no Supabase/Edge/DB path and performed only the two named R2 writes/readbacks; therefore no mapping, mode or flag mutation path was exercised. Hosted values were not freshly reread and are not claimed as new live evidence. |
 | Activation, repertoire/avatar, device/release | N/A — later authority | N/A | Not authorized in 073 | Remain required for the wider goal. |
 
 Required FAIL or NOT RUN keeps 073 open. Two copied objects do not authorize mapping activation,
 repertoire copy, avatar handling, source removal, client flags, beta distribution or completion of
 the wider goal.
+
+## Acceptance and next boundary
+
+073 closes the complete eligible chat-message-image copy slice. Together with 071–072, twelve of
+the 91 eligible objects / 13,645,959 bytes now have verified private R2 copies. The retained 070
+manifest still has 79 uncopied eligible repertoire objects / 239,684,531 bytes: ten PDFs /
+2,289,699 bytes and 69 MP3 files / 237,394,832 bytes, plus the separately excluded unsupported room
+avatar. The next safest checkpoint is the exact ten-object repertoire-PDF slice; it remains
+unapproved and must not include audio, activation, deletion, avatar handling or client flags.

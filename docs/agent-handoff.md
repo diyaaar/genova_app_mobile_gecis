@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 27 September 2026 after [072](briefs/072-assignment-submission-r2-batch.md);
+Updated 27 September 2026 after [073](briefs/073-chat-message-image-r2-batch.md);
 [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
 This is the current entry point; dated acceptance remains in individual briefs.
 
@@ -69,6 +69,12 @@ This is the current entry point; dated acceptance remains in individual briefs.
   nine `verified` / `copied` rows and zero remaining. Its separate 24-hour bucket-only user token was
   process-only and cleared. Together 071+072 verify all ten assignment objects / 12,847,921 bytes;
   no mapping, activation, source mutation, flag or other-family copy occurred.
+- [073](briefs/073-chat-message-image-r2-batch.md) completes the eligible chat-message-image copy
+  slice. Runner `24ca373` accepted exactly two JPEG objects / 798,038 bytes and both private EU R2
+  destinations passed full GET/SHA-256 verification. The private journal has two `verified` /
+  `copied` rows and zero remaining. Its separate 24-hour bucket-only user token was process-only and
+  cleared. Together 071–073 verify twelve objects / 13,645,959 bytes; no mapping, activation,
+  source mutation, flag, repertoire or avatar copy occurred.
 
 ## Delivery decisions
 
@@ -96,8 +102,8 @@ This is the current entry point; dated acceptance remains in individual briefs.
   push transport in 036, retention, plan pricing/counting and release accounts remain open.
 - Native chat still lacks accepted social/media/administration and some status/presence flows;
   C4/C5, native writing/sync/offline, release/lifecycle/security and stores remain outstanding.
-- About 33.1 GiB is free after retaining 068 and 072 evidence. The single retained backup,
-  `genova_068_test_restore` and 072's exact private sources/journal are
+- About 32.6 GiB is free after retaining 068, 072 and 073 evidence. The single retained backup,
+  `genova_068_test_restore` and exact private copy sources/journals are
   deliberate inputs to the next checkpoint; disposable test clones were removed. No VM, simulator
   or mobile build remains.
   Dark-theme room-info contrast is a recorded beta UI follow-up, not a storage failure.
@@ -106,9 +112,9 @@ This is the current entry point; dated acceptance remains in individual briefs.
   Existing Storage migration runs toward Drive, not away. 063 makes the authorized snapshot
   deterministic, 064 removes hand-edited metadata/manifest preparation and 065 adds atomic
   activation/refusal; 070 has now run inventory/metadata/manifest against the real snapshot and
-  Google metadata, 071 proves one exact real R2 canary and 072 completes the remaining nine-object
-  assignment copy with full-byte readback. The two chat images and 79 repertoire objects remain;
-  cutover remains real-data work. 067 fixes the
+  Google metadata, 071 proves one exact real R2 canary, 072 completes the remaining nine-object
+  assignment copy and 073 completes the two eligible chat images with full-byte readback. The 79
+  repertoire objects remain; cutover remains real-data work. 067 fixes the
   empty private EU bucket and bucket-only token identity. 068 proves backup/restore and local schema
   rehearsal; 069 now accepts dormant secrets/schema/functions and authenticated legacy read. Real
   inventory is accepted; remaining objects and every mapping/cutover action remain separately gated.

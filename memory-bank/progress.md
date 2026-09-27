@@ -20,8 +20,10 @@ smallest one-object canary: one 32,484-byte Drive PDF was copied to private EU R
 with equal SHA-256; the private journal is `verified` / `copied`. Its 24-hour bucket-only user
 credential was cleared. [072](../docs/briefs/072-assignment-submission-r2-batch.md) then copied and
 full-read the remaining nine assignment objects / 12,815,437 bytes. Together all ten assignment
-objects / 12,847,921 bytes are verified without activation; two chat images and 79 repertoire
-objects, mappings, flags, source mutation and cutover remain separately gated. Follow the current priority;
+objects / 12,847,921 bytes are verified without activation. [073](../docs/briefs/073-chat-message-image-r2-batch.md)
+then copied/full-read both eligible chat images / 798,038 bytes. Twelve objects / 13,645,959 bytes
+are now verified; 79 repertoire objects, mappings, flags, source mutation and cutover remain
+separately gated. Follow the current priority;
 older checkpoints below are
 historical and do not override current source or brief evidence.
 
@@ -62,6 +64,7 @@ buraya taşımak testin veya canlı ortam kontrolünün yeniden yapıldığı an
 | 070 real inventory and metadata manifest | Complete: real read-only inventory/Google metadata/064 manifest gate passes | [070](../docs/briefs/070-real-inventory-metadata-preparation.md), runner `0340908`; 92 inventory rows yield 91 exact eligible objects / 253,330,490 bytes plus one explicit unsupported avatar. Private manifest SHA-256 `6fa331e06a091ecfa6e69a7c4f84771b656c197e1276390151d21cbb3b15e292`; Google access was online metadata-only with no refresh token. No media body, R2 request/object, copy/activation/client flag/device occurred. |
 | 071 single-object private R2 canary | Complete: first real object copied and full-byte readback verified | [071](../docs/briefs/071-single-object-r2-canary.md), guard `bb56cb5`; exact 32,484-byte assignment PDF copied to deterministic private EU R2 key, source/destination SHA-256 `456be30791910b5cdc080ed82737ed8ef361660931774d03518368f4ee372b21`, one `verified` / `copied` private journal row. A 24-hour `genova-private`-only user credential was process-only and cleared. No mapping/activation/flag/source mutation/remaining copy/device occurred. |
 | 072 assignment-submission R2 batch | Complete: remaining assignment family copied and full-byte readback verified | [072](../docs/briefs/072-assignment-submission-r2-batch.md), runner `a3bcfde`; exact 9 objects / 12,815,437 bytes (6 PDF, 3 MP4) copied to deterministic private EU R2 keys, all 9 journal rows `verified` / `copied`, zero remaining and aggregate SHA-256 `1bf0a0b3a02456fdb3797e24c530b8ef56d141d01744df2ce57ca487ca6eb995`. A 24-hour bucket-only user credential was process-only and cleared. No mapping/activation/flag/source mutation/other-family copy/device occurred. |
+| 073 chat-message-image R2 batch | Complete: eligible chat-image slice copied and full-byte readback verified | [073](../docs/briefs/073-chat-message-image-r2-batch.md), runner `24ca373`; exact 2 JPEG objects / 798,038 bytes copied to deterministic private EU R2 keys, both journal rows `verified` / `copied`, zero remaining and aggregate SHA-256 `fcaf9400ee030dcdc9b695f7fd55ee0d9eb0630b43793834f1d8cd9fdacb3825`. A 24-hour bucket-only user credential was process-only and cleared. No mapping/activation/flag/source mutation/repertoire/avatar copy/device occurred. |
 | AI çalışma düzeni | Yerel kurulum/doğrulama tamamlandı | [WF-001](../docs/briefs/WF-001-ai-calisma-duzeni.md); 114 test geçti, ürün değişikliği yok |
 | Geçiş ajanı yönlendirmesi | Yerel belge/doğrulama tamamlandı, ürün başlangıcında kullanıldı | [WF-002](../docs/briefs/WF-002-gecis-rehberi.md); 44 yerel bağlantı ve `pnpm check` geçti |
 | Çok korolu ürün / RN ürün / mağazalar | 008 ve 012 tamamlandı; 010 6/7 açık, 004 25/27 ve iki cihaz ölçütü ertelendi. Yerel repertuvar/PDF paketleri 8 Eylül'de başlatıldı | [MIGRATION](../MIGRATION.md), [mobil teslim planı](../docs/mobil-teslim-plani.md), [handoff](../docs/agent-handoff.md) |
