@@ -1,9 +1,13 @@
-import{createClient}from'npm:@supabase/supabase-js@2.112.4';
-import{AwsClient}from'npm:aws4fetch@1.0.20';
-import{resolveSupabasePublicKey}from'../create-choir/create-choir-core.ts';
-import{createRepertoireFileHandler}from'../repertoire-file/handler.ts';
-import{fetchR2Object,parseR2Jurisdiction}from'../repertoire-file/r2.ts';
-import{createChatMediaTicket,verifyChatMediaTicket,type ChatMediaTicketPayload}from'./ticket.ts';
+import { createClient } from 'npm:@supabase/supabase-js@2.112.4';
+import { AwsClient } from 'npm:aws4fetch@1.0.20';
+import { resolveSupabasePublicKey } from '../create-choir/create-choir-core.ts';
+import { createRepertoireFileHandler } from '../repertoire-file/handler.ts';
+import { fetchR2Object, parseR2Jurisdiction } from '../repertoire-file/r2.ts';
+import {
+  createChatMediaTicket,
+  verifyChatMediaTicket,
+  type ChatMediaTicketPayload,
+} from './ticket.ts';
 const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i,FIELDS='id,choir_id,room_id,kind,batch_id,position,message_id,provider,bucket,object_key,content_length,mime_type,sha256_hex,file_name,state,created_at';
 function env(name:string){const value=Deno.env.get(name);if(!value)throw new Error(`Missing ${name}`);return value;}
 function userClient(authorization:string){const key=resolveSupabasePublicKey(Deno.env.get('SUPABASE_PUBLISHABLE_KEYS'),Deno.env.get('SUPABASE_ANON_KEY'));if(!key)throw new Error('Missing public key');return createClient(env('SUPABASE_URL'),key,{auth:{persistSession:false,autoRefreshToken:false},global:{headers:{Authorization:authorization}}});}

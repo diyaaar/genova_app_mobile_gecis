@@ -1,10 +1,10 @@
-import{createClient}from'npm:@supabase/supabase-js@2.112.4';
-import{AwsClient}from'npm:aws4fetch@1.0.20';
-import{makeR2ObjectUrl,parseR2Jurisdiction}from'../repertoire-file/r2.ts';
-import{authorizeAssignmentActor,requiredEnv}from'../assignment-upload/auth.ts';
-import{UploadError}from'../repertoire-upload/stream.ts';
-import{sendSignedUpload}from'../repertoire-upload/transport.ts';
-import{createCommentUploadHandler}from'./handler.ts';
+import { createClient } from 'npm:@supabase/supabase-js@2.112.4';
+import { AwsClient } from 'npm:aws4fetch@1.0.20';
+import { makeR2ObjectUrl, parseR2Jurisdiction } from '../repertoire-file/r2.ts';
+import { authorizeAssignmentActor, requiredEnv } from '../assignment-upload/auth.ts';
+import { UploadError } from '../repertoire-upload/stream.ts';
+import { sendSignedUpload } from '../repertoire-upload/transport.ts';
+import { createCommentUploadHandler } from './handler.ts';
 const mode=Deno.env.get('REPERTOIRE_STORAGE_MODE')??'legacy',bucket=Deno.env.get('R2_BUCKET')??'';
 Deno.serve(createCommentUploadHandler({
   enabled:Deno.env.get('REPERTOIRE_COMMENT_R2_ENABLED')==='true'&&(mode==='mixed'||mode==='r2-required'),bucket,

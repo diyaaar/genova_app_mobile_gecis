@@ -1,9 +1,13 @@
-import{createClient}from'npm:@supabase/supabase-js@2.112.4';
-import{AwsClient}from'npm:aws4fetch@1.0.20';
-import{resolveSupabasePublicKey}from'../create-choir/create-choir-core.ts';
-import{createRepertoireFileHandler}from'../repertoire-file/handler.ts';
-import{fetchR2Object,parseR2Jurisdiction}from'../repertoire-file/r2.ts';
-import{createCommentFileTicket,verifyCommentFileTicket,type CommentFileTicketPayload}from'./ticket.ts';
+import { createClient } from 'npm:@supabase/supabase-js@2.112.4';
+import { AwsClient } from 'npm:aws4fetch@1.0.20';
+import { resolveSupabasePublicKey } from '../create-choir/create-choir-core.ts';
+import { createRepertoireFileHandler } from '../repertoire-file/handler.ts';
+import { fetchR2Object, parseR2Jurisdiction } from '../repertoire-file/r2.ts';
+import {
+  createCommentFileTicket,
+  verifyCommentFileTicket,
+  type CommentFileTicketPayload,
+} from './ticket.ts';
 const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i,FIELDS='id,choir_id,comment_id,song_id,provider,bucket,object_key,content_length,mime_type,sha256_hex,file_name,created_at';
 function env(name:string){const value=Deno.env.get(name);if(!value)throw new Error(`Missing ${name}`);return value;}function userClient(authorization:string){const key=resolveSupabasePublicKey(Deno.env.get('SUPABASE_PUBLISHABLE_KEYS'),Deno.env.get('SUPABASE_ANON_KEY'));if(!key)throw new Error('Missing public key');return createClient(env('SUPABASE_URL'),key,{auth:{persistSession:false,autoRefreshToken:false},global:{headers:{Authorization:authorization}}});}function admin(){return createClient(env('SUPABASE_URL'),env('SUPABASE_SERVICE_ROLE_KEY'),{auth:{persistSession:false,autoRefreshToken:false}});}
 type Version={id:string;choir_id:string;comment_id:string;song_id:string;provider:string;bucket:string;object_key:string;content_length:number;mime_type:string;sha256_hex:string;file_name:string;created_at:string};

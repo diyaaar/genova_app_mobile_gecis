@@ -1,9 +1,9 @@
-import{createClient}from'npm:@supabase/supabase-js@2.112.4';
-import{AwsClient}from'npm:aws4fetch@1.0.20';
-import{makeR2ObjectUrl,parseR2Jurisdiction}from'../repertoire-file/r2.ts';
-import{authorizeAssignmentActor,requiredEnv}from'../assignment-upload/auth.ts';
-import{UploadError}from'../repertoire-upload/stream.ts';
-import{createCommentLifecycleHandler}from'./handler.ts';
+import { createClient } from 'npm:@supabase/supabase-js@2.112.4';
+import { AwsClient } from 'npm:aws4fetch@1.0.20';
+import { makeR2ObjectUrl, parseR2Jurisdiction } from '../repertoire-file/r2.ts';
+import { authorizeAssignmentActor, requiredEnv } from '../assignment-upload/auth.ts';
+import { UploadError } from '../repertoire-upload/stream.ts';
+import { createCommentLifecycleHandler } from './handler.ts';
 const mode=Deno.env.get('REPERTOIRE_STORAGE_MODE')??'legacy',bucket=Deno.env.get('R2_BUCKET')??'';
 function admin(){return createClient(requiredEnv('SUPABASE_URL'),requiredEnv('SUPABASE_SERVICE_ROLE_KEY'),{auth:{persistSession:false,autoRefreshToken:false},global:{fetch:(input,init)=>fetch(input,{...init,signal:AbortSignal.timeout(15_000)})}});}
 Deno.serve(createCommentLifecycleHandler({

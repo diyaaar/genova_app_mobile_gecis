@@ -1,9 +1,13 @@
-import{createClient}from'npm:@supabase/supabase-js@2.112.4';
-import{AwsClient}from'npm:aws4fetch@1.0.20';
-import{resolveSupabasePublicKey}from'../create-choir/create-choir-core.ts';
-import{createRepertoireFileHandler}from'../repertoire-file/handler.ts';
-import{fetchR2Object,parseR2Jurisdiction}from'../repertoire-file/r2.ts';
-import{createAssignmentReviewFileTicket,verifyAssignmentReviewFileTicket,type AssignmentReviewFileTicketPayload}from'./ticket.ts';
+import { createClient } from 'npm:@supabase/supabase-js@2.112.4';
+import { AwsClient } from 'npm:aws4fetch@1.0.20';
+import { resolveSupabasePublicKey } from '../create-choir/create-choir-core.ts';
+import { createRepertoireFileHandler } from '../repertoire-file/handler.ts';
+import { fetchR2Object, parseR2Jurisdiction } from '../repertoire-file/r2.ts';
+import {
+  createAssignmentReviewFileTicket,
+  verifyAssignmentReviewFileTicket,
+  type AssignmentReviewFileTicketPayload,
+} from './ticket.ts';
 const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const FIELDS='id,choir_id,submission_id,assignment_id,member_id,provider,bucket,object_key,content_length,mime_type,sha256_hex,file_name,created_at';
 function env(name:string){const value=Deno.env.get(name);if(!value)throw new Error(`Missing ${name}`);return value;}

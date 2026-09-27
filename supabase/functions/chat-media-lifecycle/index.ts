@@ -1,4 +1,9 @@
-import{createClient}from'npm:@supabase/supabase-js@2.112.4';import{AwsClient}from'npm:aws4fetch@1.0.20';import{authorizeAssignmentActor,requiredEnv}from'../assignment-upload/auth.ts';import{makeR2ObjectUrl,parseR2Jurisdiction}from'../repertoire-file/r2.ts';import{UploadError}from'../repertoire-upload/stream.ts';import{createChatMediaLifecycleHandler}from'./handler.ts';
+import { createClient } from 'npm:@supabase/supabase-js@2.112.4';
+import { AwsClient } from 'npm:aws4fetch@1.0.20';
+import { authorizeAssignmentActor, requiredEnv } from '../assignment-upload/auth.ts';
+import { makeR2ObjectUrl, parseR2Jurisdiction } from '../repertoire-file/r2.ts';
+import { UploadError } from '../repertoire-upload/stream.ts';
+import { createChatMediaLifecycleHandler } from './handler.ts';
 const mode=Deno.env.get('CHAT_STORAGE_MODE')??'legacy',bucket=Deno.env.get('R2_BUCKET')??'';const admin=()=>createClient(requiredEnv('SUPABASE_URL'),requiredEnv('SUPABASE_SERVICE_ROLE_KEY'),{auth:{persistSession:false,autoRefreshToken:false}});
 function map(error:{code?:string}){return new UploadError(error.code==='42501'?'forbidden':error.code==='P0002'?'not-private-media':error.code==='23505'?'lifecycle-conflict':'lifecycle-transaction-failed',error.code==='42501'?403:error.code==='P0002'?409:error.code==='23505'?409:502);}
 Deno.serve(createChatMediaLifecycleHandler({enabled:Deno.env.get('CHAT_R2_MEDIA_ENABLED')==='true'&&(mode==='mixed'||mode==='r2-required'),authorize:authorizeAssignmentActor,
