@@ -1,6 +1,6 @@
 # 069 — Dormant hosted private-R2 backend
 
-**Status/date/writer:** BLOCKED AT PREFLIGHT / 2026-09-27 / primary agent.
+**Status/date/writer:** IN PROGRESS — AUTHENTICATED LEGACY READ PENDING / 2026-09-27 / primary agent.
 
 **Observable result:** The exact Genesinova Supabase project receives the least-privilege private-R2
 server secrets, required additive authority/schema chain and only the thirteen private-file Edge
@@ -13,15 +13,16 @@ PostgreSQL 17 restore. Exact hosted target is `hievmwwctjjlhmssoxsu`. Supabase C
 the live migration ledger through `20260907210932` and only eight existing, unrelated Edge
 Functions; none of the thirteen private-R2 slugs is deployed.
 
-**Preflight stop:** The one-time Cloudflare token-result tab is no longer open and reloading its
+**Resolved preflight stop:** The one-time Cloudflare token-result tab was no longer open and reloading its
 success URL exposes no values, so the existing `genova-private-runtime` secret cannot be recovered.
 Replacement requires revoking that token and creating a new bucket-only Object Read & Write token.
 The live DB also lacks required additive migrations `20260516_assignment_review_audio.sql` and
 `041–045`; restored-schema inspection confirms their review-audio columns and chat authority
 objects are absent. Migration 060 explicitly refuses without 044/045 and the accepted local runners
 apply all six prerequisites before 053–065. Neither token replacement nor these six extra hosted
-migrations was named in the owner's just-approved 053–065 checkpoint, so no external write has
-started pending expanded approval.
+migrations was named in the owner's first 053–065 checkpoint. The owner explicitly approved both
+expansions before execution. Cloudflare token roll, hosted secrets/schema and function deploy are
+now complete; the remaining acceptance item is an authenticated hosted legacy-file read.
 
 **Execution controls:** Never use `supabase db push --linked`: the local directory contains many
 historical migrations absent from the hosted ledger and that command would exceed this brief.
@@ -45,6 +46,29 @@ their version/name in `supabase_migrations.schema_migrations`. Keep `R2_TEST_END
 5. Verify secret names, schema/ledger, function versions and disabled/legacy/denied probes. Retain
    exact rollback order and stop on the first failed required check.
 
+## Execution evidence — 27 September 2026
+
+- Cloudflare rolled `genova-private-runtime`; the old unrecoverable values are invalid. The active
+  account token remains Object Read & Write only for `genova-private (EU)`. New values moved only
+  through browser memory into the exact Supabase secret form and were then cleared.
+- Thirteen Supabase secret names exist. Non-secret digests prove account/bucket/`eu`, all three
+  storage modes `legacy` and all five R2 enable flags `false`; Access Key and Secret values were
+  never printed or stored locally.
+- Runner `25abd4c` passed twice on a disposable clone of `genova_068_test_restore`; the second run
+  verified each migration and ledger insert share one transaction, all 16 ledger rows exist, the
+  source hash is unchanged and the clone is removed. Hosted execution applied exactly the same 16
+  entries through dormant 065 and re-verification passes.
+- Root gate passes after the only deploy repair: lint, typecheck, 90 files/797 tests, service-worker
+  syntax and Next production build. The first server-side bundle attempt stopped after five
+  functions because minified import syntax omitted a transitive file from `assignment-review-file`.
+  Import-only repair `d64f092` passed 8 focused files/21 tests and the full gate; guarded resume
+  `359a383` then deployed the remaining eight.
+- All thirteen exact Edge Functions are `ACTIVE`, version 1 and `verify_jwt=false`. Eight upload/
+  lifecycle POST probes return exact dormant 503 errors. Five file endpoints reject missing tickets
+  with 401. A valid synthetic ticket could not be produced because local `.env.local` contains a
+  stale service-role key; no current user session exists at `app.genesinovachoir.com` in Chrome.
+  Therefore authenticated hosted legacy content read remains NOT RUN, without reading real data.
+
 ## Out of scope
 
 - Real 063 inventory export, Google metadata/content, R2 objects, 062 copy, 064 preparation, 065
@@ -57,10 +81,10 @@ their version/name in `supabase_migrations.schema_migrations`. Keep `R2_TEST_END
 | Criterion / expected behavior | Required? | Status | Evidence / boundary |
 |---|---|---|---|
 | Exact target, backup and hosted preflight | yes | **PASS** | 2026-09-27 exact project/ledger/function inventory; 068 backup/restore retained. |
-| Replacement least-privilege R2 credential | yes | BLOCKED | Needs explicit approval because the unrecoverable credential must be revoked and recreated. |
-| Exact prerequisite + 053–065 hosted schema/ledger | yes | BLOCKED | Needs explicit approval for the six prerequisite migrations; no bulk push. |
-| Dormant secrets and thirteen exact Edge Functions | yes | NOT RUN | `legacy` and all enables `false`; no client flag. |
-| Disabled/legacy/denied hosted probes | yes | NOT RUN | No real data copy or activation. |
+| Replacement least-privilege R2 credential | yes | **PASS** | Owner-approved token roll; active row remains `genova-private (EU)` / Object Read & Write. Old values invalid; new values exist only in Supabase encrypted secrets. |
+| Exact prerequisite + 053–065 hosted schema/ledger | yes | **PASS** | Guarded runner `25abd4c`; exact 16 transactions and `codex-069-dormant-backend` ledger entries pass hosted verification. No bulk push. |
+| Dormant secrets and thirteen exact Edge Functions | yes | **PASS** | Secret digests prove `legacy`/`false`; all thirteen functions are `ACTIVE`, version 1, `verify_jwt=false`. Deploy repair `d64f092`; resume runner `359a383`. |
+| Disabled/legacy/denied hosted probes | yes | NOT RUN | Dormant 503 and invalid-ticket 401 matrices PASS. Authenticated legacy content read needs a current product-user session; no real object was read. |
 | Real object copy/cutover/client deployment | N/A | N/A | Forbidden in 069. |
 
 Required FAIL, BLOCKED or NOT RUN prevents closure. Self-review is not independent review.

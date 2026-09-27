@@ -17,8 +17,11 @@ bounded copy executor and atomic activation/refusal transaction are ready locall
 and Vercel Preview pass. [067](../docs/briefs/067-cloudflare-r2-provider-bucket.md) activates R2
 and fixes the empty private EU Standard bucket. [068](../docs/briefs/068-hosted-backup-isolated-r2-rehearsal.md)
 now proves a fresh exact-project logical backup, isolated restore equality and the 061/063/065
-schema rehearsal; R2 credential placement, hosted migration/functions, real inventory/copy and
-cutover remain separate gates.
+schema rehearsal. 069 has since rolled and placed the bucket-only credential, applied the exact prerequisite plus
+053–065 live chain and deployed all thirteen dormant functions with storage modes `legacy` and all
+writes disabled. Dormant 503 and invalid-ticket 401 probes pass; authenticated legacy content read
+is the remaining 069 criterion because no current product-user browser session exists. Real
+inventory, object copy and cutover remain separate gates.
 
 ## Latest owner choices
 
@@ -57,14 +60,17 @@ cutover remain separate gates.
   Drive-folder catalogue filter, public-link creation, destructive replacement before history.
 - Candidate branch/CI/Preview and R2 subscription/bucket provisioning are complete. Provider account
   `b642dee69121237ba20cc1a1bb50f1c5` has empty private `eu`/Standard bucket `genova-private` with
-  public access disabled and observed R2 usage $0.00/0 B/0 operations. Bucket-only Object Read &
-  Write account token `genova-private-runtime` exists; one-time values remain solely on the open
-  provider result page and were not copied/stored/transmitted. Secure secret placement and all
-  hosted/data steps remain separate approvals.
+  public access disabled and observed R2 usage $0.00/0 B/0 operations. The original one-time
+  bucket-only token values were lost; 069 rolled the token and placed current values only in the
+  encrypted Supabase secret store. Browser memory was cleared afterward. Real inventory/object/
+  copy/cutover steps remain separate approvals.
 - 068 retained a mode-0600 1,317,637-byte logical dump and local `genova_068_test_restore`; hosted
   counts stayed stable and 7 schemas/74 base tables match. Runners 061/063/065 pass on disposable
   clones with the source unchanged. The owner-approved DB-password reset is stored only as the
   ignored mode-0600 `SUPABASE_DB_PASSWORD` entry in local `.env.local`; never reproduce its value.
+- 069 live state: exact 16 migration ledger rows, thirteen `ACTIVE` version-1 functions and thirteen
+  R2/mode secret names. Import-only bundling repair is `d64f092`; runner/resume are `25abd4c` and
+  `359a383`. The local service-role key is stale; do not use it as hosted authentication evidence.
 - User-owned `supabase/.temp/cli-latest` stays unstaged.
 - 064's build/coverage/temp output is removed; no VM/simulator/device/media output remains. About
   36.4 million KiB (~34.7 GiB) remains free after retaining 068 evidence. Cloudflare credentials

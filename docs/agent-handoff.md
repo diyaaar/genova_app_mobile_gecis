@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 27 September 2026 after [068](briefs/068-hosted-backup-isolated-r2-rehearsal.md);
+Updated 27 September 2026 during [069](briefs/069-dormant-hosted-r2-backend.md);
 [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
 This is the current entry point; dated acceptance remains in individual briefs.
 
@@ -37,14 +37,19 @@ This is the current entry point; dated acceptance remains in individual briefs.
   provider, hosted work and production promotion remain gated.
 - [067](briefs/067-cloudflare-r2-provider-bucket.md) verifies Cloudflare account
   `b642dee69121237ba20cc1a1bb50f1c5`, active R2 and empty private EU Standard bucket
-  `genova-private`; public access is disabled. Bucket-only Object Read & Write account token
-  `genova-private-runtime` exists, but one-time values remain only on the open provider result page
-  and have not been copied/stored/transmitted. Object and hosted actions remain NOT RUN.
+  `genova-private`; public access is disabled. The original one-time bucket-only token values were
+  later lost and the token was rolled in 069; current values exist only in encrypted Supabase
+  secrets. No object or client flag changed.
 - [068](briefs/068-hosted-backup-isolated-r2-rehearsal.md) completes the exact-project hosted read,
   private logical backup, isolated PostgreSQL 17 restore and 061/063/065 rehearsal. The retained
   dump is 1,317,637 bytes with recorded SHA-256; 7 schemas/74 table counts match and disposable
-  clones leave the restore unchanged. Hosted schema/functions/secrets, real inventory/copy and
-  cutover remain NOT RUN.
+  clones leave the restore unchanged. At that checkpoint hosted schema/functions/secrets, real
+  inventory/copy and cutover were NOT RUN; 069 subsequently advanced only the dormant backend.
+- [069](briefs/069-dormant-hosted-r2-backend.md) has deployed the owner-approved dormant backend:
+  rolled bucket-only token, 13 encrypted secrets with `legacy`/all writes `false`, exact 16-entry
+  prerequisite plus 053–065 live ledger and 13 `ACTIVE` version-1 functions. Dormant 503 and
+  missing-ticket 401 matrices pass. Authenticated legacy content read remains NOT RUN because no
+  product session is present; no real object/inventory/copy/activation/client flag changed.
 
 ## Delivery decisions
 
@@ -81,9 +86,9 @@ This is the current entry point; dated acceptance remains in individual briefs.
   Existing Storage migration runs toward Drive, not away. 063 makes the authorized snapshot
   deterministic, 064 removes hand-edited metadata/manifest preparation and 065 adds atomic
   activation/refusal; running the chain against Google/R2 remains real-data work. 067 fixes the
-  empty private EU bucket and bucket-only token identity. 068 now proves backup/restore and local
-  schema rehearsal; secure R2 secret placement, real inventory and every hosted write/object action
-  remain separately gated.
+  empty private EU bucket and bucket-only token identity. 068 proves backup/restore and local schema
+  rehearsal; 069 now supplies dormant secrets/schema/functions. Authenticated legacy read, real
+  inventory and every object/copy/cutover action remain separately gated.
 - One active result/one heavy process; >=10 GiB free; reassess after two failed approaches.
   Focused repair and code review precede final heavy gates. Android is the default runtime;
   iOS runs at integration/candidate gates or earlier when a platform-sensitive change requires it.

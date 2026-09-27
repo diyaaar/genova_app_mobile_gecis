@@ -1,7 +1,6 @@
 # Private R2 release runbook
 
-Status: **PROVIDER BUCKET READY — HOSTED READ/ISOLATED RESTORE PASS; HOSTED WRITE NOT RUN** on
-27 September 2026.
+Status: **DORMANT HOSTED BACKEND DEPLOYED — AUTHENTICATED LEGACY READ PENDING** on 27 September 2026.
 Owner: release operator designated by the product owner. This is the single 053–065 release index;
 individual briefs remain the acceptance authority for each local implementation.
 
@@ -53,10 +52,10 @@ domain and no public development URL. At verification, billable R2 usage was `$0
 
 The owner then confirmed persistent credential creation at action time. Account token
 `genova-private-runtime` exists with Object Read & Write only for `genova-private (EU)`, no
-bucket-admin/all-bucket scope, `Forever` TTL and no IP filter. Its one-time values remain only on the
-open provider result screen: they have not been copied, stored, transmitted or tested. Secure
-placement remains a hosted-write gate after backup/restore. No token value may enter Git, chat or
-this runbook.
+bucket-admin/all-bucket scope, `Forever` TTL and no IP filter. When its original one-time page was
+lost, the owner approved a token roll. Old values are invalid; new values moved only through browser
+memory into the exact Supabase encrypted secret store and were cleared. No token value entered Git,
+chat, terminal output or this runbook.
 
 ## Hosted read and isolated restore — 27 September 2026
 
@@ -67,10 +66,24 @@ source and retained local PostgreSQL 17 restore. Existing 061, 063 and 065 forwa
 reapply runners pass against disposable clones of that restore, leaving the source unchanged.
 
 This completes only the backup/restore and local schema-rehearsal portion of stage 2. Exporting the
-real 063 inventory, 064 metadata reconciliation and cost measurement are still NOT RUN. No hosted
-schema/data/function/Edge secret, Google object, R2 object, client flag or deployment changed. The
+real 063 inventory, 064 metadata reconciliation and cost measurement are still NOT RUN. Within 068,
+no hosted schema/data/function/Edge secret, Google object, R2 object, client flag or deployment changed. The
 owner-approved Supabase database-password reset restored operator access; its replacement exists
 only in ignored mode-0600 local `.env.local` and is not reproduced here.
+
+## Dormant hosted backend — 27 September 2026
+
+[069](briefs/069-dormant-hosted-r2-backend.md) records the owner-approved hosted write. Thirteen
+secret names are present; non-secret digests prove `legacy` storage modes and all R2 write enables
+`false`. The exact prerequisite plus 053–065 package is applied as 16 individually transactional
+migrations with matching ledger rows. All thirteen manifest functions are `ACTIVE`, version 1 and
+`verify_jwt=false`; eight upload/lifecycle probes return exact dormant 503 results and five file
+functions deny missing tickets with 401.
+
+The authenticated hosted legacy-content read remains NOT RUN because Chrome has no current product
+session and the ignored local service-role key is stale. Do not treat the deployed functions as a
+cutover or real-object acceptance. No real 063 inventory, Google/R2 object, activation or client flag
+changed.
 
 ## Function gateway manifest
 
@@ -157,9 +170,10 @@ Each numbered stage needs the authority named in its heading and stops on any fa
    dormant 065 rehearsal are complete in 068. Next, query the 063 inventory from the approved
    restored snapshot, then run 064's metadata-only preparation without a bulk mirror. Produce a
    measured cost estimate before any hosted schema write.
-3. **Hosted write authority:** set server secrets with modes `legacy` and enables `false`; apply the
-   ordered additive migrations through 065; deploy only the thirteen manifest functions. Probe disabled writes,
-   user/ticket refusals and current legacy reads. A failed function blocks every client flag.
+3. **Hosted write authority:** secrets, exact additive migrations through 065, thirteen manifest
+   functions, disabled-write probes and missing-ticket refusals are complete in 069. The
+   authenticated hosted legacy-content read is still required. Every client flag remains blocked
+   until it passes.
 4. **Copy authority:** run a separately reviewed bounded copy executor. For every source slot record
    `choir_id`, family, source table/row/slot/version, legacy ID or recognized URL, destination bucket
    and object key, bytes, MIME, SHA-256, attempt/status and verification timestamp. Stream one file;
