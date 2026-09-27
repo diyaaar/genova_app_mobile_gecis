@@ -88,7 +88,7 @@ live_q() {
 
 identity="$(live_q "select current_database() || '|' || current_setting('server_version_num') || '|' || current_user || '|' || pg_is_in_recovery()")"
 case "$identity" in
-  postgres\|17*\|postgres."$EXPECTED_REF"\|f) ;;
+  postgres\|17*\|postgres\|false) ;;
   *) refuse "unexpected live database identity" ;;
 esac
 
