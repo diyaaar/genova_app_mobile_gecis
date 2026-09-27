@@ -57,6 +57,11 @@ This is the current entry point; dated acceptance remains in individual briefs.
   253,330,490 bytes with recorded hashes and caps. Google access was metadata-only/online with no
   refresh token; no media body, R2 request/object, hosted write, flag or cutover occurred. Next is a
   separately approved bounded canary copy, not activation.
+- [071](briefs/071-single-object-r2-canary.md) is prepared and waits for exact owner approval. The
+  private canary manifest is the smallest accepted object: one 32,484-byte assignment PDF. Guard
+  `bb56cb5` fixes the exact project/account/EU bucket/manifest/byte target and refuses before any
+  network without dual approval. The checkpoint would create a narrow R2 credential, read that one
+  Drive body and perform one verified R2 HEAD/conditional PUT/GET; none has run yet.
 
 ## Delivery decisions
 

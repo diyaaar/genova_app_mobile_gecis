@@ -16,6 +16,9 @@ copy/cutover occurred. [070](../docs/briefs/070-real-inventory-metadata-preparat
 reconciled all 91 eligible Google metadata rows from the retained snapshot and produced the exact
 private 253,330,490-byte 064 manifest; one unsupported avatar remains explicit. No media body or R2
 request occurred. Follow the current priority;
+[071](../docs/briefs/071-single-object-r2-canary.md) now prepares the smallest one-object canary and
+exact-target runner at `bb56cb5`; real credential creation, Drive body read and R2 HEAD/PUT/GET are
+still NOT RUN pending owner approval.
 older checkpoints below are
 historical and do not override current source or brief evidence.
 

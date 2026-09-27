@@ -27,6 +27,10 @@ Google objects, preserves one unsupported room avatar and produces a capped 91-r
 253,330,490-byte private 064 manifest/report. Google access was metadata-only/online and returned no
 refresh token. No media body, R2 request/object, hosted write or cutover occurred; the next external
 gate is a separately approved bounded canary copy.
+[071](../docs/briefs/071-single-object-r2-canary.md) has prepared that checkpoint without external
+effects: one private 32,484-byte assignment-PDF manifest and exact-target runner `bb56cb5` pass the
+local refusal plus full root gate. Creating a bucket-scoped credential, reading the real body and
+writing/verifying the first R2 object remain NOT RUN pending explicit owner approval.
 
 ## Latest owner choices
 
