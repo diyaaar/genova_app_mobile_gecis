@@ -1,6 +1,6 @@
 # Active context
 
-Updated 27 September 2026. [WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md)
+Updated 28 September 2026. [WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md)
 reconciles the execution queue after [WF-008's](../docs/briefs/WF-008-android-first-delivery-reset.md)
 owner-approved reset; the [delivery plan](../docs/mobil-teslim-plani.md)
 owns priorities, the objective and resource/test controls. [Handoff](../docs/agent-handoff.md)
@@ -51,6 +51,15 @@ copied to deterministic private EU R2 keys and independently full-read. All ten 
 attempt-one `verified` / `copied`, with zero remaining. The 24-hour bucket-only user credential was
 process-only and cleared. Together 071–074 verify 22 objects / 15,935,658 bytes. The remaining
 eligible copy set is 69 repertoire MP3 objects / 237,394,832 bytes; activation is still separate.
+[075](../docs/briefs/075-repertoire-mp3-r2-batch-1.md) now completes the first bounded audio slice:
+the deterministic ten smallest MP3 objects / 20,496,706 bytes were downloaded read-only through
+the correct Genesi Nova profile, copied to deterministic private EU R2 keys and independently
+full-read. All ten journal rows are attempt-one `verified` / `copied`, with zero remaining and
+aggregate SHA-256 `e7d9dc60dad01f0629c3cdf53919b7df06f3fcd8071a5ab3a2048fa02ad18068`.
+The 24-hour bucket-only user credential was process-only and cleared. Together 071–075 verify
+32 objects / 36,432,364 bytes. The remaining eligible copy set is 59 repertoire MP3 objects /
+216,898,126 bytes; activation is still separate. The next bounded proposal is the next ten smallest
+remaining MP3s / 24,536,698 bytes, subject to separate owner approval.
 
 ## Latest owner choices
 
@@ -90,12 +99,12 @@ eligible copy set is 69 repertoire MP3 objects / 237,394,832 bytes; activation i
 - Candidate branch/CI/Preview and R2 subscription/bucket provisioning are complete. Provider account
   `b642dee69121237ba20cc1a1bb50f1c5` has private `eu`/Standard bucket `genova-private` with public
   access disabled. 071 added one verified 32,484-byte canary and 072 added the remaining nine
-  assignment objects; 073 added both eligible chat images and 074 added all ten repertoire PDFs.
-  Twenty-two objects / 15,935,658 bytes now
+  assignment objects; 073 added both eligible chat images, 074 added all ten repertoire PDFs and
+  075 added the first ten repertoire MP3s. Thirty-two objects / 36,432,364 bytes now
   have verified private copies. Immediate overview aggregates remained stale and are not billing
   evidence. The original one-time
   bucket-only token values were lost; 069 rolled the token and placed current values only in the
-  encrypted Supabase secret store. Browser memory was cleared afterward. The 69 repertoire MP3 objects,
+  encrypted Supabase secret store. Browser memory was cleared afterward. The remaining 59 repertoire MP3 objects,
   plus every activation/cutover step, remain separate approvals.
 - 068 retained a mode-0600 1,317,637-byte logical dump and local `genova_068_test_restore`; hosted
   counts stayed stable and 7 schemas/74 base tables match. Runners 061/063/065 pass on disposable
@@ -133,9 +142,15 @@ eligible copy set is 69 repertoire MP3 objects / 237,394,832 bytes; activation i
   `273612c8376ea0210e341dc99e7b9d1af20a4680c901aa8a6e24c142bb87deaa`; journal SHA-256
   `e413cfd3b2d2e53d6b6168566a54bccfae14828091823ae60562ca78bc43f7c6`. Private paths retain
   `0700`/`0600`; process variables and clipboard are clear; no credential is retained locally.
+- 075 evidence: runner `bc5711a`; manifest SHA-256
+  `ea5f9af4de34b2b157ff3580f0b36854286175e5212bb169273c8c03463aa643`; 10 copied/verified,
+  20,496,706 bytes, zero remaining; local/destination aggregate SHA-256
+  `e7d9dc60dad01f0629c3cdf53919b7df06f3fcd8071a5ab3a2048fa02ad18068`; journal SHA-256
+  `2808a52e1bdc3e2e2ff4a917ad14b19f63e25dafcaae4bd6d75564ba649cf4c3`. Private paths retain
+  `0700`/`0600`; process variables and clipboard are clear; no credential is retained locally.
 - User-owned `supabase/.temp/cli-latest` stays unstaged.
 - Generated build/coverage output is removed; no VM/simulator/device output remains. About
-  33.7 million KiB (~32.2 GiB) remains free after retaining 068 and 071–074 evidence. Cloudflare credentials
+  33.2 million KiB (~31.7 GiB) remains free after retaining 068 and 071–075 evidence. Cloudflare credentials
   must never enter chat or Git.
 
 ## Remaining requirements and authority

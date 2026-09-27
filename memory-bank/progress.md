@@ -1,6 +1,6 @@
 # İlerleme indeksi
 
-27 September current direction: [WF-008](../docs/briefs/WF-008-android-first-delivery-reset.md)
+28 September current direction: [WF-008](../docs/briefs/WF-008-android-first-delivery-reset.md)
 records Android-first beta -> full product/two-store delivery, retained Supabase/private R2 target,
 $5/month preference and five free choir seats. 065 is accepted locally at `53c258f`: 063's
 six-family inventory, 064 report and 062 verified copy journal now bind to an atomic activation/
@@ -24,7 +24,10 @@ objects / 12,847,921 bytes are verified without activation. [073](../docs/briefs
 then copied/full-read both eligible chat images / 798,038 bytes. Twelve objects / 13,645,959 bytes
 were verified at that checkpoint. [074](../docs/briefs/074-repertoire-pdf-r2-batch.md) then
 copied/full-read all ten repertoire PDFs / 2,289,699 bytes. Twenty-two objects / 15,935,658 bytes
-are now verified; 69 repertoire MP3 objects, mappings, flags, source mutation and cutover remain
+were verified at that checkpoint. [075](../docs/briefs/075-repertoire-mp3-r2-batch-1.md) then
+copied/full-read the deterministic first ten repertoire MP3s / 20,496,706 bytes. Thirty-two
+objects / 36,432,364 bytes are now verified; 59 repertoire MP3 objects, mappings, flags, source
+mutation and cutover remain
 separately gated. Follow the current priority;
 older checkpoints below are
 historical and do not override current source or brief evidence.
@@ -68,6 +71,7 @@ buraya taşımak testin veya canlı ortam kontrolünün yeniden yapıldığı an
 | 072 assignment-submission R2 batch | Complete: remaining assignment family copied and full-byte readback verified | [072](../docs/briefs/072-assignment-submission-r2-batch.md), runner `a3bcfde`; exact 9 objects / 12,815,437 bytes (6 PDF, 3 MP4) copied to deterministic private EU R2 keys, all 9 journal rows `verified` / `copied`, zero remaining and aggregate SHA-256 `1bf0a0b3a02456fdb3797e24c530b8ef56d141d01744df2ce57ca487ca6eb995`. A 24-hour bucket-only user credential was process-only and cleared. No mapping/activation/flag/source mutation/other-family copy/device occurred. |
 | 073 chat-message-image R2 batch | Complete: eligible chat-image slice copied and full-byte readback verified | [073](../docs/briefs/073-chat-message-image-r2-batch.md), runner `24ca373`; exact 2 JPEG objects / 798,038 bytes copied to deterministic private EU R2 keys, both journal rows `verified` / `copied`, zero remaining and aggregate SHA-256 `fcaf9400ee030dcdc9b695f7fd55ee0d9eb0630b43793834f1d8cd9fdacb3825`. A 24-hour bucket-only user credential was process-only and cleared. No mapping/activation/flag/source mutation/repertoire/avatar copy/device occurred. |
 | 074 repertoire-PDF R2 batch | Complete: all repertoire PDFs copied and full-byte readback verified | [074](../docs/briefs/074-repertoire-pdf-r2-batch.md), runner `b776a13`; exact 10 PDF objects / 2,289,699 bytes copied to deterministic private EU R2 keys, all journal rows attempt-one `verified` / `copied`, zero remaining and aggregate SHA-256 `273612c8376ea0210e341dc99e7b9d1af20a4680c901aa8a6e24c142bb87deaa`. A 24-hour bucket-only user credential was process-only and cleared. No mapping/activation/flag/source mutation/audio/avatar/client/device action occurred. |
+| 075 repertoire-MP3 R2 batch 1 | Complete: first bounded repertoire-audio slice copied and full-byte readback verified | [075](../docs/briefs/075-repertoire-mp3-r2-batch-1.md), runner `bc5711a`; deterministic 10 MP3 objects / 20,496,706 bytes copied to private EU R2 keys, all journal rows attempt-one `verified` / `copied`, zero remaining and aggregate SHA-256 `e7d9dc60dad01f0629c3cdf53919b7df06f3fcd8071a5ab3a2048fa02ad18068`. A 24-hour bucket-only user credential was process-only and cleared. No mapping/activation/flag/source mutation/avatar/client/device action occurred. |
 | AI çalışma düzeni | Yerel kurulum/doğrulama tamamlandı | [WF-001](../docs/briefs/WF-001-ai-calisma-duzeni.md); 114 test geçti, ürün değişikliği yok |
 | Geçiş ajanı yönlendirmesi | Yerel belge/doğrulama tamamlandı, ürün başlangıcında kullanıldı | [WF-002](../docs/briefs/WF-002-gecis-rehberi.md); 44 yerel bağlantı ve `pnpm check` geçti |
 | Çok korolu ürün / RN ürün / mağazalar | 008 ve 012 tamamlandı; 010 6/7 açık, 004 25/27 ve iki cihaz ölçütü ertelendi. Yerel repertuvar/PDF paketleri 8 Eylül'de başlatıldı | [MIGRATION](../MIGRATION.md), [mobil teslim planı](../docs/mobil-teslim-plani.md), [handoff](../docs/agent-handoff.md) |
