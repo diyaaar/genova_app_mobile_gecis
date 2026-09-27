@@ -13,6 +13,10 @@ EXPECTED_OUTPUT_DIR="/Users/alidiyarduran/Documents/Codex/2026-09-27/genova-r2-c
 OUTPUT_DIR="${GENOVA_070_OUTPUT_DIR:-$EXPECTED_OUTPUT_DIR}"
 INVENTORY="$OUTPUT_DIR/inventory.jsonl"
 AUDIT="$OUTPUT_DIR/inventory-audit.json"
+METADATA="$OUTPUT_DIR/drive-metadata.json"
+MANIFEST="$OUTPUT_DIR/copy-manifest.jsonl"
+REPORT="$OUTPUT_DIR/manifest-report.json"
+MODE="${1:-inventory}"
 PSQL="/opt/homebrew/opt/postgresql@17/bin/psql"
 PG_DUMP="/opt/homebrew/opt/postgresql@17/bin/pg_dump"
 CREATEDB="/opt/homebrew/opt/postgresql@17/bin/createdb"
@@ -20,10 +24,112 @@ DROPDB="/opt/homebrew/opt/postgresql@17/bin/dropdb"
 NODE="$(command -v node || true)"
 
 refuse() { echo "REFUSED: $*" >&2; exit 2; }
+[ "$MODE" = inventory ] || [ "$MODE" = prepare ] || refuse "usage: $0 [inventory|prepare]"
+[ "$OUTPUT_DIR" = "$EXPECTED_OUTPUT_DIR" ] || refuse "unexpected output directory"
+
+assert_private_file() {
+  [ -f "$1" ] && [ ! -L "$1" ] || refuse "missing private file: $1"
+  [ "$(stat -f '%Lp' "$1")" = 600 ] || refuse "private file must be mode 0600: $1"
+}
+
+if [ "$MODE" = prepare ]; then
+  [ -x "$NODE" ] || refuse "missing executable: node"
+  [ -d "$OUTPUT_DIR" ] && [ ! -L "$OUTPUT_DIR" ] || refuse "invalid output directory"
+  [ "$(stat -f '%Lp' "$OUTPUT_DIR")" = 700 ] || refuse "output directory must be mode 0700"
+  assert_private_file "$INVENTORY"
+  assert_private_file "$AUDIT"
+  assert_private_file "$METADATA"
+  [ ! -e "$MANIFEST" ] && [ ! -e "$REPORT" ] || refuse "manifest outputs already exist"
+
+  GENOVA_070_INVENTORY="$INVENTORY" GENOVA_070_METADATA="$METADATA" \
+    GENOVA_070_MANIFEST="$MANIFEST" GENOVA_070_REPORT="$REPORT" \
+    "$NODE" --experimental-strip-types --disable-warning=ExperimentalWarning \
+    --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --input-type=module <<'NODE'
+import { createHash } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
+import { runManifestCli } from './scripts/private-r2-manifest.ts';
+import { validateInventory } from './scripts/private-r2-manifest-core.ts';
+
+const inventoryPath = process.env.GENOVA_070_INVENTORY;
+const metadataPath = process.env.GENOVA_070_METADATA;
+const manifestPath = process.env.GENOVA_070_MANIFEST;
+const reportPath = process.env.GENOVA_070_REPORT;
+if (!inventoryPath || !metadataPath || !manifestPath || !reportPath) throw new Error('missing-path');
+
+const inventoryText = await readFile(inventoryPath, 'utf8');
+const values = inventoryText.split(/\r?\n/u).filter((line) => line.trim()).map((line) => JSON.parse(line));
+const inventory = validateInventory(values);
+const metadataText = await readFile(metadataPath, 'utf8');
+const payload = JSON.parse(metadataText);
+if (payload.schemaVersion !== 1
+  || payload.scope !== 'https://www.googleapis.com/auth/drive.metadata.readonly'
+  || !Array.isArray(payload.files) || payload.files.length !== 91) {
+  throw new Error('invalid-metadata-envelope');
+}
+
+const byId = new Map();
+for (const file of payload.files) {
+  if (!file || typeof file !== 'object' || typeof file.id !== 'string' || !file.id
+    || typeof file.name !== 'string' || !file.name || typeof file.mimeType !== 'string'
+    || !file.mimeType || !/^\d+$/u.test(String(file.size)) || file.trashed !== false
+    || byId.has(file.id)) throw new Error('invalid-metadata-row');
+  byId.set(file.id, file);
+}
+const expectedIds = new Set(inventory.candidates.map((row) => row.legacy_file_id));
+if (expectedIds.size !== 91 || expectedIds.size !== byId.size
+  || [...expectedIds].some((id) => !id || !byId.has(id))
+  || [...byId.keys()].some((id) => !expectedIds.has(id))) {
+  throw new Error('metadata-candidate-set-mismatch');
+}
+const totalBytes = [...byId.values()].reduce((sum, file) => sum + Number(file.size), 0);
+if (!Number.isSafeInteger(totalBytes) || totalBytes !== 253330490) {
+  throw new Error('unexpected-metadata-total');
+}
+
+const exactApproval = `hievmwwctjjlhmssoxsu/${inventory.choirId}/${inventory.bucket}/${inventory.inventoryFingerprint}`;
+const printed = [];
+await runManifestCli([
+  'prepare', '--inventory', inventoryPath, '--project-ref', 'hievmwwctjjlhmssoxsu',
+  '--choir', inventory.choirId, '--bucket', inventory.bucket,
+  '--manifest', manifestPath, '--report', reportPath,
+  '--max-items', '91', '--max-total-bytes', '253330490',
+  '--confirm-inventory', exactApproval,
+], {
+  env: { GENOVA_PRIVATE_R2_MANIFEST_APPROVED: exactApproval },
+  metadata: {
+    async getSourceMetadata(fileId) {
+      const file = byId.get(fileId);
+      if (!file) throw new Error('missing-provider-metadata');
+      return {
+        fileId,
+        name: file.name,
+        mimeType: file.mimeType,
+        contentLength: Number(file.size),
+        trashed: file.trashed,
+        googleNative: file.mimeType.startsWith('application/vnd.google-apps.'),
+      };
+    },
+  },
+  now: () => new Date(payload.fetchedAt),
+  print: (value) => printed.push(value),
+});
+const result = printed.at(-1);
+if (!result || result.status !== 'manifest-prepared') throw new Error('manifest-not-prepared');
+process.stdout.write(`${JSON.stringify({
+  ...result,
+  metadataSha256Hex: createHash('sha256').update(metadataText).digest('hex'),
+  metadataItemCount: byId.size,
+  providerReadMode: 'metadata-only',
+})}\n`);
+NODE
+  assert_private_file "$MANIFEST"
+  assert_private_file "$REPORT"
+  exit 0
+fi
+
 for executable in "$PSQL" "$PG_DUMP" "$CREATEDB" "$DROPDB" "$NODE"; do
   [ -x "$executable" ] || refuse "missing executable: $executable"
 done
-[ "$OUTPUT_DIR" = "$EXPECTED_OUTPUT_DIR" ] || refuse "unexpected output directory"
 
 migrations=(
   supabase/migrations/20260516_assignment_review_audio.sql
