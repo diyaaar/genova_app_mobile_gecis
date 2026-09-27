@@ -244,7 +244,12 @@ case "$MODE" in
     verify_secrets
     hosted_setup
     verify_database hosted "$LIVE_URL"
+    deploy_from="${GENOVA_069_DEPLOY_FROM:-${functions[0]}}"
+    [[ " ${functions[*]} " = *" $deploy_from "* ]] || refuse "invalid deploy resume function: $deploy_from"
+    deploying=false
     for function_name in "${functions[@]}"; do
+      [ "$function_name" = "$deploy_from" ] && deploying=true
+      [ "$deploying" = true ] || continue
       "$SUPABASE" functions deploy "$function_name" --project-ref "$EXPECTED_REF" \
         --use-api --no-verify-jwt
     done
