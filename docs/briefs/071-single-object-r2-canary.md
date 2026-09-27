@@ -1,6 +1,6 @@
 # 071 — Single-object private R2 canary
 
-**Status/date/writer:** READY FOR OWNER APPROVAL / 2026-09-27 / primary agent.
+**Status/date/writer:** COMPLETE / 2026-09-27 / primary agent.
 
 **Observable result and user need:** Copy exactly one 32,484-byte assignment-submission PDF from
 its current private Google Drive object to its deterministic private `genova-private` EU R2 key,
@@ -17,11 +17,12 @@ one `assignment-submission` PDF / 32,484 bytes and passes the accepted 062 valid
 `6ebc14f727cf05c10344900422901a92927ca4c6d22c3d729536ea79f4e183d5`. Only the unrelated
 `supabase/.temp/cli-latest` remains dirty.
 
-**Current work card:** The local guard is complete at `bb56cb5`. Next, after explicit approval:
-(1) create the narrowest available user-owned R2 S3 credential with Object Read & Write only for
-`genova-private`, (2) fetch the exact canary Drive file into the private 071 directory, (3) run one
-HEAD → conditional PUT → GET verification and persist one private journal. Stop on any mismatch,
-redirect, unexpected existing object, credential scope issue or unavailable short expiry.
+**Current work card:** Complete. After explicit owner approval, the exact Drive PDF was fetched and
+a 24-hour user-owned R2 credential limited to Object Read & Write on `genova-private` was used for
+one HEAD → conditional PUT → full GET verification. The source and destination are both 32,484
+bytes with SHA-256 `456be30791910b5cdc080ed82737ed8ef361660931774d03518368f4ee372b21`.
+The one-row private journal records `verified` / `copied`. No mapping, activation, flag or second
+object was attempted.
 
 **Resources:** One 32,484-byte local source plus sub-64-KiB manifest/journal under
 `/Users/alidiyarduran/Documents/Codex/2026-09-27/genova-r2-checkpoint-071` (`0700`, files `0600`).
@@ -93,14 +94,38 @@ the copy evidence and later activation decision are accepted; deletion requires 
   typecheck, 90 files / 797 tests, service-worker syntax and production build. Generated `.next`
   and coverage outputs were moved to Trash; 35,582,872 KiB remained free.
 
+## Live canary evidence — 27 September 2026
+
+- The signed-in `Genesi Nova` Chrome profile and Cloudflare account identity were rechecked before
+  creation. The dashboard success page confirmed `genova-071-canary`: user-owned, Object Read &
+  Write, only `genova-private` / EU, active 27–28 September 2026. A broader Wrangler OAuth consent
+  was cancelled rather than granting its 28 general permissions.
+- Connected Genesinova Drive metadata matched the manifest's exact stored PDF and 32,484-byte size.
+  The body was downloaded once to `canary-source.pdf`; mode is `0600` and SHA-256 is
+  `456be30791910b5cdc080ed82737ed8ef361660931774d03518368f4ee372b21`.
+- The guarded runner reported `canary-verified`, `processed: 1`, `bytes: 32484`, `remaining: 0`,
+  `action: copied`. Its independent full destination GET produced the same SHA-256. The bucket UI
+  subsequently exposed the deterministic `choirs/` prefix; the overview aggregate remained stale
+  at zero during the immediate readback and is not used as copy evidence.
+- `canary-journal.jsonl` is one 1,000-byte `0600` row with status `verified`, action `copied`,
+  content length 32,484 and attempt 1. Its SHA-256 is
+  `06ee363f39959498ba8dfe57060cc5ba2896302819858cd1c23b07b4ac1341cc`.
+- The private directory remains `0700`; manifest/source/journal are all `0600`. The token existed
+  only in one interactive process environment, credential lengths were checked without values,
+  the variables were unset, the process exited, the clipboard was cleared and the one-time secret
+  page was closed. A provider-token prefix scan of retained 071 artifacts passed. Automatic
+  24-hour expiry removes the previously conditional manual-revocation decision from this checkpoint.
+- Source ACL/content, Supabase DB/Edge secrets, all `legacy` modes, all write flags, web/mobile,
+  remaining 90 objects and activation state were unchanged by 071.
+
 ## Definition of done
 
 - [x] Exact smallest canary and immutable private manifest are selected and locally validated.
 - [x] Fail-closed single-object runner and pre-approval refusal are accepted locally.
-- [ ] Owner approves the exact credential + real body read + one-object R2 write checkpoint.
-- [ ] Source and destination full bytes/hash match and one private verified journal record exists.
-- [ ] Credential handling, secret scan, provider/source stability and cleanup pass.
-- [ ] Owner decides the later credential-revocation checkpoint if automatic expiry was unavailable.
+- [x] Owner approves the exact credential + real body read + one-object R2 write checkpoint.
+- [x] Source and destination full bytes/hash match and one private verified journal record exists.
+- [x] Credential handling, secret scan, provider/source stability and cleanup pass.
+- [x] Automatic 24-hour expiry was available; no separate manual-revocation decision is required.
 
 ## Mandatory acceptance evidence
 
@@ -109,9 +134,10 @@ the copy evidence and later activation decision are accepted; deletion requires 
 | Exact one-object canary selection and private inputs | yes | **PASS** | 2026-09-27, local private artifacts | One 32,484-byte assignment PDF; exact 070-derived manifest hash and 062 validation. No body read. |
 | Exact-target guarded runner | yes | **PASS** | 2026-09-27, `bb56cb5`, local | Fixed account/EU/bucket/hash/family/MIME/bytes; no approval or credentials refuses before journal/network. |
 | Local required gates and cleanup | yes | **PASS** | 2026-09-27, local | `pnpm check`: 90/797/build PASS; generated outputs trashed; unrelated marker unstaged. |
-| Scoped provider credential and source body read | yes | NOT RUN | Owner action-time approval required | One exact Google PDF and bucket-only R2 credential; no persistent local storage. |
-| R2 HEAD/PUT/GET, full-byte hash and private journal | yes | NOT RUN | Real EU R2 data plane | First real object; no DB mapping or product flag. |
+| Scoped provider credential and source body read | yes | **PASS** | 2026-09-27, Genesinova Drive + Cloudflare EU | Exact 32,484-byte PDF; 24-hour user token, Object Read & Write, `genova-private` only; no persistent credential storage. |
+| R2 HEAD/PUT/GET, full-byte hash and private journal | yes | **PASS** | 2026-09-27, real EU R2 data plane | `copied`, full GET hash equals source; one mode-0600 verified journal row. No DB mapping or product flag. |
+| Final records, local links and secret/diff checks | yes | **PASS** | 2026-09-27, five owned Markdown files | 222 local links, zero missing; stale-status and provider-token-prefix scans plus `git diff --check` pass. Unrelated CLI marker remains unstaged. |
 | Activation, remaining copy, source ACL/delete, device/release | N/A — later authority | N/A | Not authorized in 071 | Still required before operational beta/full goal. |
 
-Required FAIL or NOT RUN keeps 071 open. One verified canary does not authorize the remaining
+Required criteria pass and 071 is complete. One verified canary does not authorize the remaining
 manifest, mapping activation, client flags, source removal or beta distribution.

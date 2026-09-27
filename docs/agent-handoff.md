@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 27 September 2026 after [070](briefs/070-real-inventory-metadata-preparation.md);
+Updated 27 September 2026 after [071](briefs/071-single-object-r2-canary.md);
 [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
 This is the current entry point; dated acceptance remains in individual briefs.
 
@@ -55,13 +55,14 @@ This is the current entry point; dated acceptance remains in individual briefs.
   gate. A private 92-row retained-snapshot inventory reconciles all 91 eligible Google objects and
   preserves one unsupported room avatar explicitly. The exact private 064 manifest is 91 rows /
   253,330,490 bytes with recorded hashes and caps. Google access was metadata-only/online with no
-  refresh token; no media body, R2 request/object, hosted write, flag or cutover occurred. Next is a
-  separately approved bounded canary copy, not activation.
-- [071](briefs/071-single-object-r2-canary.md) is prepared and waits for exact owner approval. The
-  private canary manifest is the smallest accepted object: one 32,484-byte assignment PDF. Guard
-  `bb56cb5` fixes the exact project/account/EU bucket/manifest/byte target and refuses before any
-  network without dual approval. The checkpoint would create a narrow R2 credential, read that one
-  Drive body and perform one verified R2 HEAD/conditional PUT/GET; none has run yet.
+  refresh token; no media body, R2 request/object, hosted write, flag or cutover occurred at 070.
+  Its separately approved bounded canary is now completed by 071 below.
+- [071](briefs/071-single-object-r2-canary.md) completes the first real data-plane proof. After exact
+  owner approval, the smallest 32,484-byte assignment PDF was fetched once, copied to its
+  deterministic private EU R2 key and independently re-read with matching SHA-256. A 24-hour
+  user-owned Object Read & Write credential was limited to `genova-private`, held only in one
+  process and cleared. The private one-row journal records `verified` / `copied`. No mapping,
+  activation, flag, source mutation or remaining-object copy occurred.
 
 ## Delivery decisions
 
@@ -98,10 +99,11 @@ This is the current entry point; dated acceptance remains in individual briefs.
   Existing Storage migration runs toward Drive, not away. 063 makes the authorized snapshot
   deterministic, 064 removes hand-edited metadata/manifest preparation and 065 adds atomic
   activation/refusal; 070 has now run inventory/metadata/manifest against the real snapshot and
-  Google metadata. The first R2 canary, remaining copy and cutover remain real-data work. 067 fixes the
+  Google metadata, and 071 proves one exact real R2 copy plus full-byte readback. Remaining copy and
+  cutover remain real-data work. 067 fixes the
   empty private EU bucket and bucket-only token identity. 068 proves backup/restore and local schema
   rehearsal; 069 now accepts dormant secrets/schema/functions and authenticated legacy read. Real
-  inventory and every object/copy/cutover action remain separately gated.
+  inventory is accepted; remaining objects and every mapping/cutover action remain separately gated.
 - One active result/one heavy process; >=10 GiB free; reassess after two failed approaches.
   Focused repair and code review precede final heavy gates. Android is the default runtime;
   iOS runs at integration/candidate gates or earlier when a platform-sensitive change requires it.

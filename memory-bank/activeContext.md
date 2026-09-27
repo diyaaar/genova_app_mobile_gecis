@@ -25,12 +25,14 @@ writes disabled. Dormant 503, invalid-ticket 401 and one authenticated legacy ra
 control-plane gate: the private, audited 92-row retained-snapshot inventory reconciles 91 eligible
 Google objects, preserves one unsupported room avatar and produces a capped 91-row /
 253,330,490-byte private 064 manifest/report. Google access was metadata-only/online and returned no
-refresh token. No media body, R2 request/object, hosted write or cutover occurred; the next external
-gate is a separately approved bounded canary copy.
-[071](../docs/briefs/071-single-object-r2-canary.md) has prepared that checkpoint without external
-effects: one private 32,484-byte assignment-PDF manifest and exact-target runner `bb56cb5` pass the
-local refusal plus full root gate. Creating a bucket-scoped credential, reading the real body and
-writing/verifying the first R2 object remain NOT RUN pending explicit owner approval.
+refresh token. No media body, R2 request/object, hosted write or cutover occurred at 070; its
+separately approved bounded canary is now completed by 071 below.
+[071](../docs/briefs/071-single-object-r2-canary.md) now completes that first data-plane checkpoint:
+after exact owner approval, one private 32,484-byte assignment PDF was fetched and copied to its
+deterministic `genova-private` EU key; full destination GET matched SHA-256
+`456be30791910b5cdc080ed82737ed8ef361660931774d03518368f4ee372b21`. The private one-row journal
+is `verified` / `copied`. A bucket-only user credential had a 24-hour TTL and was cleared from the
+single process and clipboard. No mapping, activation, flag, source mutation or second object ran.
 
 ## Latest owner choices
 
@@ -68,11 +70,12 @@ writing/verifying the first R2 object remain NOT RUN pending explicit owner appr
   It maps uploads/reads/history/private audio/chat avatars/caches and three critical traps:
   Drive-folder catalogue filter, public-link creation, destructive replacement before history.
 - Candidate branch/CI/Preview and R2 subscription/bucket provisioning are complete. Provider account
-  `b642dee69121237ba20cc1a1bb50f1c5` has empty private `eu`/Standard bucket `genova-private` with
-  public access disabled and observed R2 usage $0.00/0 B/0 operations. The original one-time
+  `b642dee69121237ba20cc1a1bb50f1c5` has private `eu`/Standard bucket `genova-private` with public
+  access disabled. 071 added exactly one verified 32,484-byte canary under its deterministic key;
+  immediate overview aggregates remained stale and are not billing evidence. The original one-time
   bucket-only token values were lost; 069 rolled the token and placed current values only in the
   encrypted Supabase secret store. Browser memory was cleared afterward. Real inventory/object/
-  copy/cutover steps remain separate approvals.
+  remaining-copy/cutover steps remain separate approvals.
 - 068 retained a mode-0600 1,317,637-byte logical dump and local `genova_068_test_restore`; hosted
   counts stayed stable and 7 schemas/74 base tables match. Runners 061/063/065 pass on disposable
   clones with the source unchanged. The owner-approved DB-password reset is stored only as the
@@ -85,7 +88,12 @@ writing/verifying the first R2 object remain NOT RUN pending explicit owner appr
   `6fa331e06a091ecfa6e69a7c4f84771b656c197e1276390151d21cbb3b15e292`; runner `0340908`;
   metadata/manifest/report stay private outside Git. Exact R2 storage is 0.25333049 decimal GB;
   published free allowances make the incremental estimate `$0` only if other usage has not consumed
-  them. No real R2 operation has yet tested that assumption.
+  them. 071 performed one small real-object PUT/GET but does not establish monthly total cost.
+- 071 evidence: manifest SHA-256
+  `6ebc14f727cf05c10344900422901a92927ca4c6d22c3d729536ea79f4e183d5`; source/destination SHA-256
+  `456be30791910b5cdc080ed82737ed8ef361660931774d03518368f4ee372b21`; journal SHA-256
+  `06ee363f39959498ba8dfe57060cc5ba2896302819858cd1c23b07b4ac1341cc`. Private directory/files
+  remain `0700`/`0600`; no credential is retained locally.
 - User-owned `supabase/.temp/cli-latest` stays unstaged.
 - 064's build/coverage/temp output is removed; no VM/simulator/device/media output remains. About
   36.4 million KiB (~34.7 GiB) remains free after retaining 068 evidence. Cloudflare credentials
