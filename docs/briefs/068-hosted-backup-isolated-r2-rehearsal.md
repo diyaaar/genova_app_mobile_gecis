@@ -1,6 +1,6 @@
 # 068 — Fresh hosted backup and isolated R2 schema rehearsal
 
-**Status/date/writer:** IN PROGRESS / 2026-09-26 / primary agent.
+**Status/date/writer:** COMPLETE / 2026-09-27 / primary agent.
 
 **Observable result:** A fresh read-only logical backup of the exact Genesinova Supabase project is
 restored into a dedicated local PostgreSQL 17 database with matching schema/table counts, then the
@@ -16,13 +16,16 @@ verified dormant backend package ready for a separately approved hosted-write ch
 `urpuzollmvvdkayavnhd`, `ACTIVE_HEALTHY`, PostgreSQL `17.6.1.063`. The linked session-pooler URL
 uses the same project. Local PostgreSQL 17.11 is running on `127.0.0.1:5432`; the matching 17.11
 client tools exist. About 38,237,128 KiB is free. A read-only connection reached the exact pooler
-but correctly stopped because no database password is stored. R2 bucket/token identity is accepted
-in 067; one-time token values remain only on the open Cloudflare result page.
+but correctly stopped because no database password was stored. The owner later approved a database
+password reset after the remembered value failed authentication. The replacement is present only as
+`SUPABASE_DB_PASSWORD` in ignored local `.env.local`, which is mode 0600; the value is absent from
+Git, logs and this record. R2 bucket/token identity is accepted in 067; one-time token values remain
+only on the open Cloudflare result page.
 
-**Current work card:** (1) create and validate one guarded interactive backup/restore runner;
-(2) the owner enters the database password directly into the visible terminal, never chat/log/Git;
-(3) verify restore equality and run the 061/063/065 local rehearsal runners. Exit only when every
-required row below passes and sensitive artifacts remain outside the repository with mode 0600.
+**Completed work card:** (1) guarded runner `dcbbbcb` plus the observed pooler-identity-format repair
+`c550d81`; (2) exact hosted read, logical dump and isolated restore; (3) source/restore equality and
+061/063/065 rehearsal against the retained restore. Every required row below passes and sensitive
+artifacts remain outside the repository with restricted permissions.
 
 **Resources:** One plain logical dump and one retained local PostgreSQL 17 restore, expected below
 50 MiB and below 500 MiB peak. Private artifacts live under
@@ -52,7 +55,9 @@ hosted-write checkpoint; remove only with explicit cleanup authority.
   every included `auth`/`public`/`genova_*`/`supabase_migrations` schema and the existing R2
   migration/refusal order. Existing web/mobile clients are not deployed or pointed at the restore.
 - Single writer. User explicitly approved the hosted read, backup, isolated restore and local
-  rehearsal. The user enters the DB password directly into a hidden terminal prompt.
+  rehearsal, then separately approved the necessary database-password reset and ignored local-env
+  storage. The value was generated locally, entered through the provider UI by the owner and never
+  printed.
 - Required checks: shell syntax; wrong-target/no-password/existing-target refusal; exact project/
   Postgres check; nonempty 0600 dump + SHA-256; clean PostgreSQL 17 restore; included schema and
   table-count equality; 061/063/065 runners; source unchanged; external-artifact permissions,
@@ -66,17 +71,18 @@ hosted-write checkpoint; remove only with explicit cleanup authority.
 - Live migration/SQL, Supabase secrets, Edge deploy, R2 credential transfer, real inventory,
   Google metadata/content, R2 objects, activation/cutover, web/main promotion, device or store.
 - Storage/Drive object backup. The logical dump is DB/Auth recovery evidence only.
-- Resetting the Supabase database password or creating another credential.
+- Any further Supabase password or credential change. The post-start password reset needed to
+  recover the approved read path is recorded above; it grants no authority for another rotation.
 
 ## Mandatory acceptance evidence
 
 | Criterion / expected behavior | Required? / N/A reason | Status | Date/environment/evidence | Limit |
 |---|---|---|---|---|
-| Exact hosted project and read-only connection preflight | yes | **PASS** | 2026-09-26 CLI/account metadata and session pooler resolve `hievmwwctjjlhmssoxsu`, `ACTIVE_HEALTHY`, PostgreSQL 17.6; no-password probe reached the pooler and stopped before query execution. | No live SQL result yet. |
-| Guarded operator runner and refusal checks | yes | NOT RUN | Shell syntax plus no-password/wrong target/existing target tests required. | No secret may enter logs. |
-| Fresh nonempty private dump and hash | yes | NOT RUN | Exact schema set, byte/line count, SHA-256, 0600 mode required. | DB/Auth only; no object bytes. |
-| Clean local PostgreSQL 17 restore and exact source/restore equality | yes | NOT RUN | Included schemas and every base-table count must match. | Local isolated target only. |
-| 053–065 rehearsal and refusal/down/reapply evidence | yes | NOT RUN | Existing 061, 063 and 065 runners against the fresh restore. | Synthetic runner fixtures may be added only to disposable clones. |
-| Live DB/schema/function/secret/object/deployment change | N/A — forbidden | N/A | No such action permitted. | Any need for a live write stops this checkpoint. |
+| Exact hosted project and read-only connection preflight | yes | **PASS** | 2026-09-27 exact pooler query returned database `postgres`, user `postgres`, PostgreSQL `17.6`, non-recovery; target remained `hievmwwctjjlhmssoxsu`. | Authentication was the only live credential action; queries/dump were read-only. |
+| Guarded operator runner and refusal checks | yes | **PASS** | 2026-09-27 `bash -n`, no-TTY, wrong-target and existing-target guards; live run accepted only the observed PostgreSQL 17 pooler identity. Script commits `dcbbbcb`, `c550d81`. | No secret entered output or Git. |
+| Fresh nonempty private dump and hash | yes | **PASS** | 2026-09-27 `genova_full_20260927T102619Z.sql`: 1,317,637 bytes, 13,154 lines, SHA-256 `9bb2291b307b617df1a98f745bb6d115a10af1d80b8978d93c36054d78897601`; directory 0700, dump/summary 0600. | DB/Auth logical scope only; no Storage/Drive/R2 object bytes. |
+| Clean local PostgreSQL 17 restore and exact source/restore equality | yes | **PASS** | 2026-09-27 retained `genova_068_test_restore` on local PostgreSQL 17.11; 7 included schemas and 74 base-table counts match the stable post-dump hosted counts. | Local isolated target only. |
+| 053–065 rehearsal and refusal/down/reapply evidence | yes | **PASS** | 2026-09-27 runners 061, 063 and 065 pass forward/refusal/down/reapply on disposable clones; each reports source unchanged and target removed. | Synthetic fixtures existed only in disposable clones. |
+| Live DB/schema/function/secret/object/deployment change | N/A — forbidden | N/A | No live schema/data/function/secret/R2 object/deployment action occurred. The separately approved database-password reset changed authentication only. | Hosted-write stage remains separately gated. |
 
 Required FAIL or NOT RUN keeps 068 open. Self-review is not independent review.

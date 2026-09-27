@@ -1,6 +1,6 @@
 # Active context
 
-Updated 26 September 2026. [WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md)
+Updated 27 September 2026. [WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md)
 reconciles the execution queue after [WF-008's](../docs/briefs/WF-008-android-first-delivery-reset.md)
 owner-approved reset; the [delivery plan](../docs/mobil-teslim-plani.md)
 owns priorities, the objective and resource/test controls. [Handoff](../docs/agent-handoff.md)
@@ -15,8 +15,10 @@ bounded copy executor and atomic activation/refusal transaction are ready locall
 [WF-011](../docs/briefs/WF-011-release-candidate-source-preflight.md) and
 [066](../docs/briefs/066-node22-private-r2-cli-warning.md) fix candidate `e459bdd`; exact remote CI
 and Vercel Preview pass. [067](../docs/briefs/067-cloudflare-r2-provider-bucket.md) activates R2
-and fixes the empty private EU Standard bucket; token, hosted backup, migration/functions, real
-inventory/copy and cutover remain separate gates.
+and fixes the empty private EU Standard bucket. [068](../docs/briefs/068-hosted-backup-isolated-r2-rehearsal.md)
+now proves a fresh exact-project logical backup, isolated restore equality and the 061/063/065
+schema rehearsal; R2 credential placement, hosted migration/functions, real inventory/copy and
+cutover remain separate gates.
 
 ## Latest owner choices
 
@@ -59,9 +61,14 @@ inventory/copy and cutover remain separate gates.
   Write account token `genova-private-runtime` exists; one-time values remain solely on the open
   provider result page and were not copied/stored/transmitted. Secure secret placement and all
   hosted/data steps remain separate approvals.
+- 068 retained a mode-0600 1,317,637-byte logical dump and local `genova_068_test_restore`; hosted
+  counts stayed stable and 7 schemas/74 base tables match. Runners 061/063/065 pass on disposable
+  clones with the source unchanged. The owner-approved DB-password reset is stored only as the
+  ignored mode-0600 `SUPABASE_DB_PASSWORD` entry in local `.env.local`; never reproduce its value.
 - User-owned `supabase/.temp/cli-latest` stays unstaged.
 - 064's build/coverage/temp output is removed; no VM/simulator/device/media output remains. About
-  40.7 million KiB (~38.9 GiB) remains free. Cloudflare credentials must never enter chat or Git.
+  36.4 million KiB (~34.7 GiB) remains free after retaining 068 evidence. Cloudflare credentials
+  must never enter chat or Git.
 
 ## Remaining requirements and authority
 

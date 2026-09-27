@@ -1,6 +1,7 @@
 # Genova — agent handoff
 
-Updated 26 September 2026 after [067](briefs/067-cloudflare-r2-provider-bucket.md); [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
+Updated 27 September 2026 after [068](briefs/068-hosted-backup-isolated-r2-rehearsal.md);
+[WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
 This is the current entry point; dated acceptance remains in individual briefs.
 
 ## Read and verify
@@ -16,7 +17,8 @@ This is the current entry point; dated acceptance remains in individual briefs.
 ## Current checkout and ownership
 
 - Last accepted candidate product/test: `e459bdd` (066); underlying 065 schema/test is `53c258f`.
-  Verify current HEAD. No unfinished product changes.
+  068's guarded backup runner is accepted through `c550d81`. Verify current HEAD. No unfinished
+  product changes.
 - Unrelated `supabase/.temp/cli-latest` remains unstaged. Stage only owned task paths.
 - Final 051: mobile typecheck/49 suites/287 tests, root 65/602/build and sequential Android/iOS
   exports PASS. Star snapshot/toggle/panel, refusal and lifecycle accepted locally only.
@@ -38,6 +40,11 @@ This is the current entry point; dated acceptance remains in individual briefs.
   `genova-private`; public access is disabled. Bucket-only Object Read & Write account token
   `genova-private-runtime` exists, but one-time values remain only on the open provider result page
   and have not been copied/stored/transmitted. Object and hosted actions remain NOT RUN.
+- [068](briefs/068-hosted-backup-isolated-r2-rehearsal.md) completes the exact-project hosted read,
+  private logical backup, isolated PostgreSQL 17 restore and 061/063/065 rehearsal. The retained
+  dump is 1,317,637 bytes with recorded SHA-256; 7 schemas/74 table counts match and disposable
+  clones leave the restore unchanged. Hosted schema/functions/secrets, real inventory/copy and
+  cutover remain NOT RUN.
 
 ## Delivery decisions
 
@@ -65,16 +72,18 @@ This is the current entry point; dated acceptance remains in individual briefs.
   push transport in 036, retention, plan pricing/counting and release accounts remain open.
 - Native chat still lacks accepted social/media/administration and some status/presence flows;
   C4/C5, native writing/sync/offline, release/lifecycle/security and stores remain outstanding.
-- About 39 GiB was free at the 24 Sep planning preflight. Test clones/processes,
-  root build and coverage outputs were removed; no database, VM, simulator or mobile build remains.
+- About 34.7 GiB is free after 068. Its single retained backup and `genova_068_test_restore` are
+  deliberate inputs to the next checkpoint; disposable test clones were removed. No VM, simulator
+  or mobile build remains.
   Dark-theme room-info contrast is a recorded beta UI follow-up, not a storage failure.
 - 052 found Drive-folder filters in both catalogues, public Drive ACL writes and destructive
   submission replacement before history capture; include these in the remaining write/cutover batch.
   Existing Storage migration runs toward Drive, not away. 063 makes the authorized snapshot
   deterministic, 064 removes hand-edited metadata/manifest preparation and 065 adds atomic
   activation/refusal; running the chain against Google/R2 remains real-data work. 067 fixes the
-  empty private EU bucket and bucket-only token identity; secure secret placement and every
-  object/hosted action remain unapproved.
+  empty private EU bucket and bucket-only token identity. 068 now proves backup/restore and local
+  schema rehearsal; secure R2 secret placement, real inventory and every hosted write/object action
+  remain separately gated.
 - One active result/one heavy process; >=10 GiB free; reassess after two failed approaches.
   Focused repair and code review precede final heavy gates. Android is the default runtime;
   iOS runs at integration/candidate gates or earlier when a platform-sensitive change requires it.

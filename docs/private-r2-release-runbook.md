@@ -1,6 +1,7 @@
 # Private R2 release runbook
 
-Status: **PROVIDER BUCKET READY — TOKEN/HOSTED EXECUTION NOT RUN** on 26 September 2026.
+Status: **PROVIDER BUCKET READY — HOSTED READ/ISOLATED RESTORE PASS; HOSTED WRITE NOT RUN** on
+27 September 2026.
 Owner: release operator designated by the product owner. This is the single 053–065 release index;
 individual briefs remain the acceptance authority for each local implementation.
 
@@ -56,6 +57,20 @@ bucket-admin/all-bucket scope, `Forever` TTL and no IP filter. Its one-time valu
 open provider result screen: they have not been copied, stored, transmitted or tested. Secure
 placement remains a hosted-write gate after backup/restore. No token value may enter Git, chat or
 this runbook.
+
+## Hosted read and isolated restore — 27 September 2026
+
+[068](briefs/068-hosted-backup-isolated-r2-rehearsal.md) completes the recovery prerequisite on the
+exact project. A fresh 1,317,637-byte logical dump is retained outside the repository with mode
+0600 and recorded SHA-256; its 7 included schemas and 74 base-table counts match the stable hosted
+source and retained local PostgreSQL 17 restore. Existing 061, 063 and 065 forward/refusal/down/
+reapply runners pass against disposable clones of that restore, leaving the source unchanged.
+
+This completes only the backup/restore and local schema-rehearsal portion of stage 2. Exporting the
+real 063 inventory, 064 metadata reconciliation and cost measurement are still NOT RUN. No hosted
+schema/data/function/Edge secret, Google object, R2 object, client flag or deployment changed. The
+owner-approved Supabase database-password reset restored operator access; its replacement exists
+only in ignored mode-0600 local `.env.local` and is not reproduced here.
 
 ## Function gateway manifest
 
@@ -138,10 +153,10 @@ Each numbered stage needs the authority named in its heading and stops on any fa
    least-privilege token identity are accepted in 067. Preserve the open one-time credential page
    until separately authorized secure placement; never record secret values. Measure actual usage
    before claiming the owner's total monthly infrastructure target is met.
-2. **Hosted read authority:** resolve Supabase project; take a current backup; restore it to an
-   isolated target, rehearse 053–063 plus dormant 065 there and run all existing schema acceptance. Query the 063
-   inventory from that snapshot, then run 064's metadata-only preparation without a bulk mirror.
-   Produce a measured cost estimate before any hosted schema write.
+2. **Hosted read authority:** project resolution, current backup, isolated restore and 053–063 plus
+   dormant 065 rehearsal are complete in 068. Next, query the 063 inventory from the approved
+   restored snapshot, then run 064's metadata-only preparation without a bulk mirror. Produce a
+   measured cost estimate before any hosted schema write.
 3. **Hosted write authority:** set server secrets with modes `legacy` and enables `false`; apply the
    ordered additive migrations through 065; deploy only the thirteen manifest functions. Probe disabled writes,
    user/ticket refusals and current legacy reads. A failed function blocks every client flag.
