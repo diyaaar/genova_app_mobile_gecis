@@ -1,6 +1,6 @@
 # 076 — Repertoire MP3 private R2 batch 2
 
-**Status/date/writer:** IN PROGRESS / OWNER APPROVED / 2026-09-28 / primary agent.
+**Status/date/writer:** COMPLETE / ACCEPTED / 2026-09-28 / primary agent.
 
 **Observable result and user need:** Copy the next deterministic ten smallest remaining
 retained-snapshot repertoire MP3 objects to their private `genova-private` EU R2 keys,
@@ -25,8 +25,9 @@ signature/size/private modes; (3) create one 24-hour user token limited to Objec
 `genova-private`, run per-entry HEAD → conditional PUT → full GET and accept only ten verified
 journal results. Exit with zero remaining; stop at the first mismatch or scope failure.
 
-**Resources:** Available space is 33,284,372 KiB. Expected retained source growth is 24,536,698
-bytes plus a small manifest/journal, leaving far more than the 10 GiB floor. Owned private path is
+**Resources:** Available space was 33,284,372 KiB before execution and is 32,757,188 KiB after
+retaining the 24,536,698-byte source batch plus its small manifest/journal and completing the local
+gate; both readings remain above the 10 GiB floor. Owned private path is
 `/Users/alidiyarduran/Documents/Codex/2026-09-28/genova-r2-checkpoint-076` (`0700`) with
 `sources/` and generated private files at `0600`. Retain manifest, exact sources and journal until
 the later activation/reconciliation decision; no VM, simulator, database clone or mobile build.
@@ -86,26 +87,27 @@ the later activation/reconciliation decision; no VM, simulator, database clone o
 
 ## Definition of done
 
-- [ ] Exact ten-row/24,536,698-byte/10-MP3 manifest and sources pass private-path checks.
-- [ ] Runner refuses before network without dual exact-target approval and passes `pnpm check`.
-- [ ] Ten entries are independently full-read and SHA-256 verified in R2; journal has zero
+- [x] Exact ten-row/24,536,698-byte/10-MP3 manifest and sources pass private-path checks.
+- [x] Runner refuses before network without dual exact-target approval and passes `pnpm check`.
+- [x] Ten entries are independently full-read and SHA-256 verified in R2; journal has zero
   unverified/failed entries and the runner reports zero remaining.
-- [ ] Credential, clipboard, private modes, secret scan and retained-artifact checks pass.
-- [ ] Source, DB/Edge/backend mode/flags/mappings and all out-of-scope items remain unchanged.
-- [ ] Diff review, local links/status checks and separate code/document commits pass.
+- [x] Credential, clipboard, private modes, secret scan and retained-artifact checks pass.
+- [x] Source, DB/Edge/backend mode/flags/mappings and all out-of-scope items remain unchanged.
+- [x] Diff review, local links/status checks and separate code/document commits pass.
 
 ## Mandatory acceptance evidence
 
 | Criterion / expected behavior | Required? / N/A reason | Status | Date/environment/scenario | Evidence and limits |
 |---|---|---|---|---|
-| Exact derived batch manifest | yes | NOT RUN | 2026-09-28, private local artifact | Must bind the deterministic next ten smallest remaining repertoire MP3s, exact hash/count/bytes and MIME. |
-| Fail-closed runner and required local gate | yes | NOT RUN | Local repository | Exact path/target/caps/source files; no approval or wrong input refuses before network; `pnpm check`. |
-| Exact Drive metadata/body reads | yes | NOT RUN | Genesi Nova Chrome / Genesinova Drive | Ten IDs only; no source mutation, playback or leaked download URL. |
-| R2 HEAD/conditional PUT/full GET and journal | yes | NOT RUN | Real Cloudflare EU R2 | Every item must be verified; first failure stops; no overwrite. |
-| Credential and private-artifact hygiene | yes | NOT RUN | Chrome/process/private directory | 24-hour bucket-only token, process-only; clipboard/variables cleared; modes and scans pass. |
-| Source/backend/mapping/flag stability | yes | NOT RUN | Drive + bounded runner boundary | No ACL/body mutation, DB/Edge/mode/flag/mapping change. |
+| Exact derived batch manifest | yes | PASS | 2026-09-28, private local artifact | Deterministic next-ten selection after excluding 075 is exactly ten `audio/mpeg` rows / 24,536,698 bytes. Manifest SHA-256 is `f4d88049770af51b3cb941f512c53ae68d4ae0fb80cd0fb891627aaad2b74ad7`; all ten numbered sources match manifest sizes, MP3 signatures and `0600` modes. |
+| Fail-closed runner and required local gate | yes | PASS | Local repository at `ee94973` | Synthetic exact-size placeholders refused with `target-confirmation-required` before network or journal creation. Focused ESLint/typecheck pass; fresh `pnpm check` passes lint, typecheck, 90 files / 797 tests, coverage, service-worker syntax and the Next production build. Generated `.next` and `coverage` were removed. |
+| Exact Drive metadata/body reads | yes | PASS | Genesi Nova Chrome / Genesinova Drive | The correct `genesinova.choir@gmail.com` profile was visibly verified for every preview. Exactly the ten manifest bodies were downloaded read-only; playback, rename, move, ACL/share change and source deletion did not occur. Download cleanup was hash-gated and retained only the numbered manifest sources. |
+| R2 HEAD/conditional PUT/full GET and journal | yes | PASS | Real Cloudflare EU R2 | Runner reports `processed:10`, `bytes:24536698`, `remaining:0`, `verified:10`, `actions:{copied:10}`. All ten attempt-one journal rows are `verified` / `copied` after independent full GET. Aggregate SHA-256 is `fea2949255615390d570da5c9cf8d05c8303ad1d5c2c9fce54a752b060523d0b`; journal SHA-256 is `a3012da12f7c9d8ea5b453ca811bfce96a0065e08a49627e72ff464c6b948976`. |
+| Credential and private-artifact hygiene | yes | PASS | Chrome/process/private directory | User token `genova-076-repertoire-mp3-2` is restricted to Object Read & Write on `genova-private | EU`, active Sep 28–29 only. Values lived in one shell process, were unset before exit and were not written to disk; clipboard is empty. Directory/files retain `0700`/`0600`; token-value scan is zero. |
+| Source/backend/mapping/flag stability | yes | PASS | Drive + bounded runner boundary | The bounded runner has no DB/Edge/activation path. No source mutation, mapping, backend-mode/client-flag change, deployment, audio playback, avatar action or device/release action ran. Existing 32 verified objects were not selected or overwritten. Hosted modes/flags were not freshly queried, so this is an execution-boundary claim rather than a new hosted-state acceptance. |
 | Later MP3s, activation, avatar, device/release | N/A — later authority | N/A | Not authorized in 076 | Remain required for the wider goal. |
 
-Required FAIL or NOT RUN keeps 076 open. Ten copied MP3s do not authorize later audio batches,
-mapping activation, avatar handling, source removal, client flags, beta distribution or completion
-of the wider goal.
+076 closes only this ten-object copy checkpoint. Together 071–076, 42 objects / 60,969,062 bytes
+now have verified private copies. The remaining eligible copy set is 49 repertoire MP3 objects /
+192,361,428 bytes. Ten copied MP3s do not authorize later audio batches, mapping activation,
+avatar handling, source removal, client flags, beta distribution or completion of the wider goal.

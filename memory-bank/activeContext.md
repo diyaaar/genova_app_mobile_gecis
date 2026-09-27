@@ -60,6 +60,16 @@ The 24-hour bucket-only user credential was process-only and cleared. Together 0
 32 objects / 36,432,364 bytes. The remaining eligible copy set is 59 repertoire MP3 objects /
 216,898,126 bytes; activation is still separate. The next bounded proposal is the next ten smallest
 remaining MP3s / 24,536,698 bytes, subject to separate owner approval.
+[076](../docs/briefs/076-repertoire-mp3-r2-batch-2.md) now completes the second bounded audio slice:
+the next deterministic ten smallest remaining MP3 objects / 24,536,698 bytes were downloaded
+read-only through the correct Genesi Nova profile, copied to deterministic private EU R2 keys and
+independently full-read. All ten journal rows are attempt-one `verified` / `copied`, with zero
+remaining and aggregate SHA-256
+`fea2949255615390d570da5c9cf8d05c8303ad1d5c2c9fce54a752b060523d0b`. The 24-hour bucket-only
+user credential was process-only and cleared. Together 071–076 verify 42 objects / 60,969,062
+bytes. The remaining eligible copy set is 49 repertoire MP3 objects / 192,361,428 bytes;
+activation is still separate. The next bounded proposal is the next ten smallest remaining MP3s /
+27,472,242 bytes, subject to separate owner approval.
 
 ## Latest owner choices
 
@@ -100,11 +110,12 @@ remaining MP3s / 24,536,698 bytes, subject to separate owner approval.
   `b642dee69121237ba20cc1a1bb50f1c5` has private `eu`/Standard bucket `genova-private` with public
   access disabled. 071 added one verified 32,484-byte canary and 072 added the remaining nine
   assignment objects; 073 added both eligible chat images, 074 added all ten repertoire PDFs and
-  075 added the first ten repertoire MP3s. Thirty-two objects / 36,432,364 bytes now
+  075 added the first ten repertoire MP3s and 076 added the next ten. Forty-two objects /
+  60,969,062 bytes now
   have verified private copies. Immediate overview aggregates remained stale and are not billing
   evidence. The original one-time
   bucket-only token values were lost; 069 rolled the token and placed current values only in the
-  encrypted Supabase secret store. Browser memory was cleared afterward. The remaining 59 repertoire MP3 objects,
+  encrypted Supabase secret store. Browser memory was cleared afterward. The remaining 49 repertoire MP3 objects,
   plus every activation/cutover step, remain separate approvals.
 - 068 retained a mode-0600 1,317,637-byte logical dump and local `genova_068_test_restore`; hosted
   counts stayed stable and 7 schemas/74 base tables match. Runners 061/063/065 pass on disposable
@@ -148,9 +159,15 @@ remaining MP3s / 24,536,698 bytes, subject to separate owner approval.
   `e7d9dc60dad01f0629c3cdf53919b7df06f3fcd8071a5ab3a2048fa02ad18068`; journal SHA-256
   `2808a52e1bdc3e2e2ff4a917ad14b19f63e25dafcaae4bd6d75564ba649cf4c3`. Private paths retain
   `0700`/`0600`; process variables and clipboard are clear; no credential is retained locally.
+- 076 evidence: runner `ee94973`; manifest SHA-256
+  `f4d88049770af51b3cb941f512c53ae68d4ae0fb80cd0fb891627aaad2b74ad7`; 10 copied/verified,
+  24,536,698 bytes, zero remaining; local/destination aggregate SHA-256
+  `fea2949255615390d570da5c9cf8d05c8303ad1d5c2c9fce54a752b060523d0b`; journal SHA-256
+  `a3012da12f7c9d8ea5b453ca811bfce96a0065e08a49627e72ff464c6b948976`. Private paths retain
+  `0700`/`0600`; process variables and clipboard are clear; no credential is retained locally.
 - User-owned `supabase/.temp/cli-latest` stays unstaged.
 - Generated build/coverage output is removed; no VM/simulator/device output remains. About
-  33.2 million KiB (~31.7 GiB) remains free after retaining 068 and 071–075 evidence. Cloudflare credentials
+  32.8 million KiB (~31.2 GiB) remains free after retaining 068 and 071–076 evidence. Cloudflare credentials
   must never enter chat or Git.
 
 ## Remaining requirements and authority
