@@ -1,6 +1,6 @@
 # 072 — Assignment-submission private R2 batch
 
-**Status/date/writer:** IN PROGRESS / OWNER APPROVED / 2026-09-27 / primary agent.
+**Status/date/writer:** COMPLETE / OWNER ACCEPTED / 2026-09-27 / primary agent.
 
 **Observable result and user need:** Copy the nine remaining retained-snapshot
 `assignment-submission` objects to their deterministic private `genova-private` EU R2 keys,
@@ -18,11 +18,11 @@ private manifest SHA-256 is
 `0dd86de0c04acc0b81ced950f3283fd568c01bf1bf6f0820c0ff3c2ee5bf74c9`. Only the unrelated
 `supabase/.temp/cli-latest` is dirty.
 
-**Current work card:** (1) accept the exact nine-row manifest and fail-closed batch runner;
-(2) fetch exactly those nine Drive bodies and verify local MIME/size/private modes; (3) create one
-24-hour user token limited to Object Read & Write on `genova-private`, run per-entry HEAD →
-conditional PUT → full GET and accept only nine verified journal results. Exit with zero remaining;
-stop at the first mismatch or scope failure.
+**Accepted result:** Runner commit `a3bcfde` binds the exact nine-row manifest and refuses without
+dual exact-target approval. The connected Genesinova Drive returned exactly the nine approved raw
+bodies. A 24-hour user token limited to Object Read & Write on `genova-private` then completed nine
+HEAD → conditional PUT → full GET cycles: 9 copied, 9 independently verified, 12,815,437 bytes and
+zero remaining. No activation or source/backend mutation followed.
 
 **Resources:** Existing free space is about 35.2 million KiB. Expected retained source growth is
 12,815,437 bytes plus a small manifest/journal; peak remains far above the 10 GiB floor. Owned
@@ -104,25 +104,34 @@ later activation/reconciliation decision; no VM, simulator, database clone or mo
 
 ## Definition of done
 
-- [ ] Exact nine-row/12,815,437-byte/6-PDF+3-MP4 manifest and sources pass private-path checks.
-- [ ] Runner refuses before network without dual exact-target approval and passes `pnpm check`.
-- [ ] Nine entries are independently full-read and SHA-256 verified in R2; journal has zero
+- [x] Exact nine-row/12,815,437-byte/6-PDF+3-MP4 manifest and sources pass private-path checks.
+- [x] Runner refuses before network without dual exact-target approval and passes `pnpm check`.
+- [x] Nine entries are independently full-read and SHA-256 verified in R2; journal has zero
   unverified/failed entries and the runner reports zero remaining.
-- [ ] Credential, clipboard, private modes, secret scan and retained-artifact checks pass.
-- [ ] Source, DB/Edge/backend mode/flags/mappings and all out-of-scope families remain unchanged.
-- [ ] Diff review, local links/status checks and separate code/document commits pass.
+- [x] Credential, clipboard, private modes, secret scan and retained-artifact checks pass.
+- [x] Source, DB/Edge/backend mode/flags/mappings and all out-of-scope families remain unchanged.
+- [x] Diff review, local links/status checks and separate code/document commits pass.
 
 ## Mandatory acceptance evidence
 
 | Criterion / expected behavior | Required? / N/A reason | Status | Date/environment/scenario | Evidence and limits |
 |---|---|---|---|---|
-| Exact derived batch manifest | yes | NOT RUN | 2026-09-27, private local artifact | Must bind nine remaining assignment objects, exact hash/count/bytes and 6 PDF + 3 MP4. |
-| Fail-closed runner and required local gate | yes | NOT RUN | Local repository | Exact path/target/caps/source files; no approval or wrong input refuses before network; `pnpm check`. |
-| Exact Drive metadata/body reads | yes | NOT RUN | Connected Genesinova Drive | Nine IDs only; no source mutation or leaked bearer URL. |
-| R2 HEAD/conditional PUT/full GET and journal | yes | NOT RUN | Real Cloudflare EU R2 | Every item must be verified; first failure stops; no overwrite. |
-| Credential and private-artifact hygiene | yes | NOT RUN | Chrome/process/private directory | 24-hour bucket-only token, process-only; clipboard/variables cleared; modes and scans pass. |
-| Source/backend/mapping/flag stability | yes | NOT RUN | Drive + hosted boundaries | No ACL/body mutation, DB/Edge/mode/flag/mapping change. |
+| Exact derived batch manifest | yes | PASS | 2026-09-27, private local artifact | 9 rows / 12,815,437 bytes / 6 PDF + 3 MP4; manifest SHA-256 `0dd86de0c04acc0b81ced950f3283fd568c01bf1bf6f0820c0ff3c2ee5bf74c9`. Nine numbered sources match metadata, MIME and size. |
+| Fail-closed runner and required local gate | yes | PASS | Local repository, `a3bcfde` | Synthetic exact-size inputs refused with `target-confirmation-required` before network. Targeted lint/typecheck and root `pnpm check` pass: 90 files / 797 tests plus production build. Generated `.next`/coverage outputs were removed. |
+| Exact Drive metadata/body reads | yes | PASS | Connected Genesinova Drive | Exactly 9 manifest IDs were metadata-checked and fetched as stored non-native files; 6 PDF + 3 MP4 and 12,815,437 local bytes match. Connector actions were reads only; no source ACL/name/location/body mutation. |
+| R2 HEAD/conditional PUT/full GET and journal | yes | PASS | Real Cloudflare EU R2 | Runner reports `processed=9`, `bytes=12815437`, `remaining=0`, `verified=9`, `copied=9`. Full local/destination aggregate SHA-256 is `1bf0a0b3a02456fdb3797e24c530b8ef56d141d01744df2ce57ca487ca6eb995`; journal SHA-256 is `1dd893896b44d8e74fb8318a6fa9fe1f45ddcf19991fae87ec019b1182110262`. |
+| Credential and private-artifact hygiene | yes | PASS | Genesi Nova Chrome/process/private directory | `genova-072-assignment-batch` is user-owned, Object Read & Write, `genova-private` EU only and active for 24 hours. Values existed only in one process, then variables and clipboard were cleared. Directory/source directory are `0700`; manifest/journal/sources are `0600`; tracked/private `cfut_` scans return zero. |
+| Source/backend/mapping/flag stability | yes | PASS | Drive + bounded runner boundary | Drive calls were read-only. The 072 runner has no Supabase/Edge/DB path and performed only the nine named R2 writes/readbacks; therefore no mapping, mode or flag mutation occurred. A fresh optional Supabase SQL reread was permission-denied and is not claimed as live state evidence. |
 | Activation, other families, device/release | N/A — later authority | N/A | Not authorized in 072 | Remain required for the wider goal. |
 
 Required FAIL or NOT RUN keeps 072 open. Nine copied objects do not authorize mapping activation,
 other families, source removal, client flags, beta distribution or completion of the wider goal.
+
+## Acceptance and next boundary
+
+072 closes only the remaining assignment-submission copy slice. Together with 071, all ten
+assignment-submission objects / 12,847,921 bytes now have verified private R2 copies. The retained
+070 manifest still has 81 uncopied eligible objects: two chat-message images / 798,038 bytes and
+79 repertoire files / 239,684,531 bytes, plus the separately excluded unsupported room avatar.
+The next safest checkpoint is the exact two-object chat-message-image batch; it remains unapproved
+and must not include activation, deletion, other families or client flags.

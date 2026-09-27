@@ -15,11 +15,13 @@ authenticated legacy ranged read without a browser body. 069 is complete; no rea
 copy/cutover occurred. [070](../docs/briefs/070-real-inventory-metadata-preparation.md) then
 reconciled all 91 eligible Google metadata rows from the retained snapshot and produced the exact
 private 253,330,490-byte 064 manifest; one unsupported avatar remains explicit. No media body or R2
-request occurred at 070. [071](../docs/briefs/071-single-object-r2-canary.md) now completes the
+request occurred at 070. [071](../docs/briefs/071-single-object-r2-canary.md) completed the
 smallest one-object canary: one 32,484-byte Drive PDF was copied to private EU R2 and fully re-read
 with equal SHA-256; the private journal is `verified` / `copied`. Its 24-hour bucket-only user
-credential was cleared. Remaining 90 objects, mappings, activation, flags, source mutation and
-cutover are still separately gated. Follow the current priority;
+credential was cleared. [072](../docs/briefs/072-assignment-submission-r2-batch.md) then copied and
+full-read the remaining nine assignment objects / 12,815,437 bytes. Together all ten assignment
+objects / 12,847,921 bytes are verified without activation; two chat images and 79 repertoire
+objects, mappings, flags, source mutation and cutover remain separately gated. Follow the current priority;
 older checkpoints below are
 historical and do not override current source or brief evidence.
 
@@ -59,6 +61,7 @@ buraya taşımak testin veya canlı ortam kontrolünün yeniden yapıldığı an
 | 069 dormant hosted private-R2 backend | Complete: secrets/schema/functions and dormant/denied/authenticated legacy probes pass | [069](../docs/briefs/069-dormant-hosted-r2-backend.md), runners `25abd4c`/`359a383`, import repair `d64f092`; token rolled, 13 secret names, exact 16 live ledger rows and 13 ACTIVE version-1 functions. Eight dormant 503, five invalid-ticket 401 and one product-session legacy ranged `HEAD` 206/1-byte probe pass without a browser body. Real inventory/R2 object/copy/activation/client flag/device remain NOT RUN. |
 | 070 real inventory and metadata manifest | Complete: real read-only inventory/Google metadata/064 manifest gate passes | [070](../docs/briefs/070-real-inventory-metadata-preparation.md), runner `0340908`; 92 inventory rows yield 91 exact eligible objects / 253,330,490 bytes plus one explicit unsupported avatar. Private manifest SHA-256 `6fa331e06a091ecfa6e69a7c4f84771b656c197e1276390151d21cbb3b15e292`; Google access was online metadata-only with no refresh token. No media body, R2 request/object, copy/activation/client flag/device occurred. |
 | 071 single-object private R2 canary | Complete: first real object copied and full-byte readback verified | [071](../docs/briefs/071-single-object-r2-canary.md), guard `bb56cb5`; exact 32,484-byte assignment PDF copied to deterministic private EU R2 key, source/destination SHA-256 `456be30791910b5cdc080ed82737ed8ef361660931774d03518368f4ee372b21`, one `verified` / `copied` private journal row. A 24-hour `genova-private`-only user credential was process-only and cleared. No mapping/activation/flag/source mutation/remaining copy/device occurred. |
+| 072 assignment-submission R2 batch | Complete: remaining assignment family copied and full-byte readback verified | [072](../docs/briefs/072-assignment-submission-r2-batch.md), runner `a3bcfde`; exact 9 objects / 12,815,437 bytes (6 PDF, 3 MP4) copied to deterministic private EU R2 keys, all 9 journal rows `verified` / `copied`, zero remaining and aggregate SHA-256 `1bf0a0b3a02456fdb3797e24c530b8ef56d141d01744df2ce57ca487ca6eb995`. A 24-hour bucket-only user credential was process-only and cleared. No mapping/activation/flag/source mutation/other-family copy/device occurred. |
 | AI çalışma düzeni | Yerel kurulum/doğrulama tamamlandı | [WF-001](../docs/briefs/WF-001-ai-calisma-duzeni.md); 114 test geçti, ürün değişikliği yok |
 | Geçiş ajanı yönlendirmesi | Yerel belge/doğrulama tamamlandı, ürün başlangıcında kullanıldı | [WF-002](../docs/briefs/WF-002-gecis-rehberi.md); 44 yerel bağlantı ve `pnpm check` geçti |
 | Çok korolu ürün / RN ürün / mağazalar | 008 ve 012 tamamlandı; 010 6/7 açık, 004 25/27 ve iki cihaz ölçütü ertelendi. Yerel repertuvar/PDF paketleri 8 Eylül'de başlatıldı | [MIGRATION](../MIGRATION.md), [mobil teslim planı](../docs/mobil-teslim-plani.md), [handoff](../docs/agent-handoff.md) |
