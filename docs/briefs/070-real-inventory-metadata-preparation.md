@@ -1,6 +1,6 @@
 # 070 — Real snapshot inventory and metadata-only manifest preparation
 
-**Status/date/writer:** IN PROGRESS — GOOGLE REAUTHENTICATION REQUIRED / 2026-09-27 / primary agent.
+**Status/date/writer:** COMPLETE — REAL METADATA/MANIFEST GATE ACCEPTED / 2026-09-27 / primary agent.
 
 **Observable result and user need:** Produce a complete private 063 inventory from the retained,
 verified production snapshot, reconcile every eligible legacy Drive reference against current
@@ -117,36 +117,55 @@ cleanup.
   and an 11-folder private metadata target list, all `0600`. Targeted scans find no PEM key, JWT,
   OAuth token/client secret, password assignment or raw R2 credential. One generic 64-hex match in
   the audit is the expected non-secret inventory fingerprint.
-- Stored hints cover 89/91 candidates and total 252,532,452 bytes (240.834 MiB); the two missing
-  chat sizes are each bounded by the accepted 12 MiB upload limit. This gives a provisional upper
-  bound of 277,698,276 bytes (264.834 MiB) before current-provider reconciliation.
+- Google OAuth Playground used the signed-in Genesinova account with only
+  `drive.metadata.readonly` and `access_type=online`. Auto-refresh stayed off and the token exchange
+  returned no refresh token. Drive v3 returned only identifier, name, MIME, size, trash state and
+  parent metadata: no `alt=media`, file body, permission or source mutation request occurred.
+- Current metadata found every one of the 91 candidates, with no duplicate, native Google document,
+  trashed row or missing size: 69 MPEG audio, 17 PDF, three MP4 and two JPEG objects. The stored 89
+  name/MIME/size hints match exactly; the two chat images add 798,038 bytes. Exact total is
+  253,330,490 bytes (241.595 MiB, 0.25333049 decimal GB).
+- `0340908` adds a fail-closed `prepare` mode to the existing guarded runner. It requires the exact
+  91-ID candidate set, private inputs, metadata scope and byte total before injecting metadata into
+  the accepted 064 CLI. Atomic outputs contain 91 manifest rows plus one explicit excluded/
+  unresolved `chat-room-avatar` `unsupported-reference`; no candidate was silently omitted.
+- Private metadata is 12,575 bytes with SHA-256
+  `ac036721ea7788e76d18c56679631986630a50e6db0f4521946dc1f29c82a77b`. The 59,274-byte manifest
+  SHA-256 is `6fa331e06a091ecfa6e69a7c4f84771b656c197e1276390151d21cbb3b15e292`; its 1,143-byte report
+  SHA-256 is `6493cc842659daea4a275bf41dcd11b1d75f97b2858c4fb5cd0bff6a37b92778`.
 - Current official [Cloudflare R2 pricing](https://developers.cloudflare.com/r2/pricing/) reports Standard storage at `$0.015/GB-month`, Class A at
   `$4.50/million`, Class B at `$0.36/million`, with monthly Standard free allowances of 10 GB-month,
-  1 million Class A and 10 million Class B operations. The bounded 91-object set is therefore
-  provisionally inside all R2 free allowances; exact calculation remains open until metadata.
-- No local Drive OAuth client/refresh credential exists. The approved Genesinova Chrome profile
-  reaches Google Drive but Google requires account re-verification with the existing passkey or
-  another owner-controlled method. No new OAuth client, key or token was created.
+  1 million Class A and 10 million Class B operations. At current list rates the exact set is about
+  `$0.003800` gross storage/month; 91 single-object writes would be `$0.0004095` gross Class A and
+  91 metadata verification reads `$0.00003276` gross Class B. Each is inside the published free
+  allowances, so the incremental estimate is `$0` only if other account usage has not consumed
+  them. This is an R2 component estimate, not a total infrastructure bill or operation proof.
+- All six private artifacts remain outside Git under the declared `0700` directory with `0600`
+  files. Targeted token/key/password/PEM scans pass. `bash -n`, runner execution, exact inventory →
+  metadata → manifest reconciliation, five changed-document / 221-local-link validation with zero
+  missing targets, `git diff --check` and root Vitest 90 files / 797 tests pass. The retained
+  snapshot is unchanged, no disposable clone remains, 35,542,896 KiB remains free and no R2 request
+  occurred.
 
 ## Definition of done
 
-- [ ] Every exact choir has one valid 063 inventory with stable fingerprint and explicit statuses.
-- [ ] Every eligible Drive reference has current metadata or an explicit unresolved/excluded result;
+- [x] Every exact choir has one valid 063 inventory with stable fingerprint and explicit statuses.
+- [x] Every eligible Drive reference has current metadata or an explicit unresolved/excluded result;
       no media body or R2 request occurred.
-- [ ] 064 manifest/report are private, atomic, capped, hashed and preserve every excluded row.
-- [ ] Current official R2 estimate is recorded with assumptions; it is not presented as a total
+- [x] 064 manifest/report are private, atomic, capped, hashed and preserve every excluded row.
+- [x] Current official R2 estimate is recorded with assumptions; it is not presented as a total
       infrastructure bill.
-- [ ] Transition controls, artifact scan, links, diff and cleanup pass; no unrelated path is staged.
+- [x] Transition controls, artifact scan, links, diff and cleanup pass; no unrelated path is staged.
 
 ## Mandatory acceptance evidence
 
 | Criterion / expected behavior | Required? / N/A reason | Status | Date/environment/scenario | Evidence and limits |
 |---|---|---|---|---|
 | Exact retained-snapshot 063 inventory for every choir | yes | **PASS** | 2026-09-27, `3225427`, local PostgreSQL 17 clone | One choir; 92 rows, stable hash/fingerprint, source unchanged, clone removed. No live DB read/write; raw identifiers stay private. |
-| Metadata-only provider reconciliation | yes | NOT RUN | Existing authorized Google path | `files.get` fields only; no `alt=media` or permissions. |
-| Private atomic 064 manifest/report and caps | yes | NOT RUN | External `0700`/`0600` paths | No R2 object or copy journal. |
-| Current R2 cost estimate | yes | NOT RUN | Official Cloudflare documentation | R2 component only, not total hosting bill. |
-| Source stability, secret scan, cleanup and document gates | yes | NOT RUN | Local | Self-review; no independent reviewer. |
+| Metadata-only provider reconciliation | yes | **PASS** | 2026-09-27, Google Drive v3 through OAuth Playground | Exact 91 candidates; current name/MIME/size/trash fields only. Online access, no refresh token, no media body or source mutation. |
+| Private atomic 064 manifest/report and caps | yes | **PASS** | 2026-09-27, external `0700`/`0600` paths, `0340908` | 91 rows / 253,330,490 bytes; exact cap and ID set, atomic private outputs, one explicit excluded unsupported avatar. No R2 object or journal. |
+| Current R2 cost estimate | yes | **PASS** | 2026-09-27, official Cloudflare documentation | Exact R2-only gross/free-tier estimate; assumes other account usage has not consumed allowances. Not a total hosting bill. |
+| Source stability, secret scan, cleanup and document gates | yes | **PASS** | 2026-09-27, local | Snapshot unchanged, clone absent, six-artifact scan PASS, 90/797 tests PASS; self-review, no independent reviewer. |
 | Copy/activation/client/device/release | N/A — later authority | N/A | Not authorized in 070 | Still required for beta/full goal. |
 
 Required FAIL or NOT RUN keeps 070 open. A valid manifest is not copied content, cutover, Android

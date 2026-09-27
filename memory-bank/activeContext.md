@@ -20,12 +20,13 @@ now proves a fresh exact-project logical backup, isolated restore equality and t
 schema rehearsal. 069 has since rolled and placed the bucket-only credential, applied the exact prerequisite plus
 053–065 live chain and deployed all thirteen dormant functions with storage modes `legacy` and all
 writes disabled. Dormant 503, invalid-ticket 401 and one authenticated legacy ranged `HEAD`
-206/1-byte/application-octet-stream probe pass without a browser body. 069 is complete. Real
-inventory, object copy and cutover remain separate gates.
-[070](../docs/briefs/070-real-inventory-metadata-preparation.md) now has a private, audited 92-row
-retained-snapshot inventory: 91 Google metadata candidates and one explicit unsupported reference.
-The source stayed unchanged and the clone was removed. Google Drive requires owner account
-re-verification before metadata-only 064 preparation; no new credential or provider write exists.
+206/1-byte/application-octet-stream probe pass without a browser body. 069 is complete.
+[070](../docs/briefs/070-real-inventory-metadata-preparation.md) completes the real read-only
+control-plane gate: the private, audited 92-row retained-snapshot inventory reconciles 91 eligible
+Google objects, preserves one unsupported room avatar and produces a capped 91-row /
+253,330,490-byte private 064 manifest/report. Google access was metadata-only/online and returned no
+refresh token. No media body, R2 request/object, hosted write or cutover occurred; the next external
+gate is a separately approved bounded canary copy.
 
 ## Latest owner choices
 
@@ -75,6 +76,12 @@ re-verification before metadata-only 064 preparation; no new credential or provi
 - 069 live state: exact 16 migration ledger rows, thirteen `ACTIVE` version-1 functions and thirteen
   R2/mode secret names. Import-only bundling repair is `d64f092`; runner/resume are `25abd4c` and
   `359a383`. The local service-role key is stale; do not use it as hosted authentication evidence.
+- 070 evidence: inventory fingerprint
+  `8efe253fad57528a9ffc0a479a1cb47f7aeaa0c2e9f7af81c236a6c977c98afc`; manifest SHA-256
+  `6fa331e06a091ecfa6e69a7c4f84771b656c197e1276390151d21cbb3b15e292`; runner `0340908`;
+  metadata/manifest/report stay private outside Git. Exact R2 storage is 0.25333049 decimal GB;
+  published free allowances make the incremental estimate `$0` only if other usage has not consumed
+  them. No real R2 operation has yet tested that assumption.
 - User-owned `supabase/.temp/cli-latest` stays unstaged.
 - 064's build/coverage/temp output is removed; no VM/simulator/device/media output remains. About
   36.4 million KiB (~34.7 GiB) remains free after retaining 068 evidence. Cloudflare credentials

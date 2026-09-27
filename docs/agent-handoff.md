@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 27 September 2026 during [069](briefs/069-dormant-hosted-r2-backend.md);
+Updated 27 September 2026 after [070](briefs/070-real-inventory-metadata-preparation.md);
 [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
 This is the current entry point; dated acceptance remains in individual briefs.
 
@@ -17,8 +17,8 @@ This is the current entry point; dated acceptance remains in individual briefs.
 ## Current checkout and ownership
 
 - Last accepted candidate product/test: `e459bdd` (066); underlying 065 schema/test is `53c258f`.
-  068's guarded backup runner is accepted through `c550d81`. Verify current HEAD. No unfinished
-  product changes.
+  068's guarded backup runner is accepted through `c550d81`; 070's real metadata manifest runner is
+  `0340908`. Verify current HEAD. No unfinished product changes.
 - Unrelated `supabase/.temp/cli-latest` remains unstaged. Stage only owned task paths.
 - Final 051: mobile typecheck/49 suites/287 tests, root 65/602/build and sequential Android/iOS
   exports PASS. Star snapshot/toggle/panel, refusal and lifecycle accepted locally only.
@@ -51,11 +51,12 @@ This is the current entry point; dated acceptance remains in individual briefs.
   missing-ticket 401 matrices pass. An existing product session then issued one ticket and returned
   legacy ranged `HEAD` 206/1 byte/application-octet-stream without a browser body. No real R2
   object/inventory/copy/activation/client flag changed; 069 is complete.
-- [070](briefs/070-real-inventory-metadata-preparation.md) is in progress. A private 92-row retained-
-  snapshot inventory passes with 91 metadata candidates and one explicit unsupported reference;
-  source is unchanged and the disposable clone is removed. Current Google metadata/064 artifacts
-  wait only for owner account re-verification in the existing Genesinova Chrome profile. No media,
-  R2 object, hosted write, flag or cutover occurred.
+- [070](briefs/070-real-inventory-metadata-preparation.md) completes the real read-only control-plane
+  gate. A private 92-row retained-snapshot inventory reconciles all 91 eligible Google objects and
+  preserves one unsupported room avatar explicitly. The exact private 064 manifest is 91 rows /
+  253,330,490 bytes with recorded hashes and caps. Google access was metadata-only/online with no
+  refresh token; no media body, R2 request/object, hosted write, flag or cutover occurred. Next is a
+  separately approved bounded canary copy, not activation.
 
 ## Delivery decisions
 
@@ -91,7 +92,8 @@ This is the current entry point; dated acceptance remains in individual briefs.
   submission replacement before history capture; include these in the remaining write/cutover batch.
   Existing Storage migration runs toward Drive, not away. 063 makes the authorized snapshot
   deterministic, 064 removes hand-edited metadata/manifest preparation and 065 adds atomic
-  activation/refusal; running the chain against Google/R2 remains real-data work. 067 fixes the
+  activation/refusal; 070 has now run inventory/metadata/manifest against the real snapshot and
+  Google metadata. The first R2 canary, remaining copy and cutover remain real-data work. 067 fixes the
   empty private EU bucket and bucket-only token identity. 068 proves backup/restore and local schema
   rehearsal; 069 now accepts dormant secrets/schema/functions and authenticated legacy read. Real
   inventory and every object/copy/cutover action remain separately gated.
@@ -108,5 +110,5 @@ hardware and distribution retain applicable approval boundaries. Prepare concret
 asking for the exact missing choice/authority. Historical account/token risks remain unresolved.
 Do not mark the full goal complete at beta, planning or local-test acceptance.
 The [revised objective](mobil-teslim-plani.md#revised-goal-text) is canonical; WF-008 records its receipt.
-The latest request typed `genesinova.chori@gmail.com`, while the signed-in Gmail/profile and
-repository record show `genesinova.choir@gmail.com`; resolve the identity before account/email work.
+The earlier request typed `genesinova.chori@gmail.com`; 070 verified and used the signed-in profile
+and repository identity `genesinova.choir@gmail.com`. Do not revert to the typo for account work.

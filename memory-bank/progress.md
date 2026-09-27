@@ -12,7 +12,10 @@ access disabled. [068](../docs/briefs/068-hosted-backup-isolated-r2-rehearsal.md
 hosted read-only backup, exact isolated restore and 061/063/065 rehearsal. 069 subsequently rolled
 and placed the bucket-only token, deployed only the dormant schema/functions and passed one
 authenticated legacy ranged read without a browser body. 069 is complete; no real R2 object/file
-copy/cutover occurred. Follow the current priority;
+copy/cutover occurred. [070](../docs/briefs/070-real-inventory-metadata-preparation.md) then
+reconciled all 91 eligible Google metadata rows from the retained snapshot and produced the exact
+private 253,330,490-byte 064 manifest; one unsupported avatar remains explicit. No media body or R2
+request occurred. Follow the current priority;
 older checkpoints below are
 historical and do not override current source or brief evidence.
 
@@ -50,6 +53,7 @@ buraya taşımak testin veya canlı ortam kontrolünün yeniden yapıldığı an
 | 067 Cloudflare R2 provider bucket | Provider bucket and least-privilege token identity accepted; later rolled/placed in 069 | [067](../docs/briefs/067-cloudflare-r2-provider-bucket.md); verified account `b642dee69121237ba20cc1a1bb50f1c5`, active R2, empty private EU Standard bucket `genova-private`, public access disabled and observed R2 usage $0.00/0 B/0 operations. The original one-time values were lost; 069 rolled the same bucket-only Object Read & Write token and placed current values only in encrypted Supabase secrets. Objects, copy/cutover and device remain NOT RUN. |
 | 068 hosted backup and isolated R2 rehearsal | Hosted read/recovery prerequisite accepted; later advanced only by dormant 069 deployment | [068](../docs/briefs/068-hosted-backup-isolated-r2-rehearsal.md), runner `c550d81`; exact project backup is 1,317,637 bytes with recorded SHA-256 and 0600 mode, 7 schemas/74 table counts match retained PostgreSQL 17 restore, and 061/063/065 forward/refusal/down/reapply pass on disposable clones with source unchanged. At 068, hosted schema/functions remained open; 069 subsequently deployed them dormant. Real inventory/copy/cutover and device remain NOT RUN. |
 | 069 dormant hosted private-R2 backend | Complete: secrets/schema/functions and dormant/denied/authenticated legacy probes pass | [069](../docs/briefs/069-dormant-hosted-r2-backend.md), runners `25abd4c`/`359a383`, import repair `d64f092`; token rolled, 13 secret names, exact 16 live ledger rows and 13 ACTIVE version-1 functions. Eight dormant 503, five invalid-ticket 401 and one product-session legacy ranged `HEAD` 206/1-byte probe pass without a browser body. Real inventory/R2 object/copy/activation/client flag/device remain NOT RUN. |
+| 070 real inventory and metadata manifest | Complete: real read-only inventory/Google metadata/064 manifest gate passes | [070](../docs/briefs/070-real-inventory-metadata-preparation.md), runner `0340908`; 92 inventory rows yield 91 exact eligible objects / 253,330,490 bytes plus one explicit unsupported avatar. Private manifest SHA-256 `6fa331e06a091ecfa6e69a7c4f84771b656c197e1276390151d21cbb3b15e292`; Google access was online metadata-only with no refresh token. No media body, R2 request/object, copy/activation/client flag/device occurred. |
 | AI çalışma düzeni | Yerel kurulum/doğrulama tamamlandı | [WF-001](../docs/briefs/WF-001-ai-calisma-duzeni.md); 114 test geçti, ürün değişikliği yok |
 | Geçiş ajanı yönlendirmesi | Yerel belge/doğrulama tamamlandı, ürün başlangıcında kullanıldı | [WF-002](../docs/briefs/WF-002-gecis-rehberi.md); 44 yerel bağlantı ve `pnpm check` geçti |
 | Çok korolu ürün / RN ürün / mağazalar | 008 ve 012 tamamlandı; 010 6/7 açık, 004 25/27 ve iki cihaz ölçütü ertelendi. Yerel repertuvar/PDF paketleri 8 Eylül'de başlatıldı | [MIGRATION](../MIGRATION.md), [mobil teslim planı](../docs/mobil-teslim-plani.md), [handoff](../docs/agent-handoff.md) |
