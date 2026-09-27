@@ -51,6 +51,11 @@ This is the current entry point; dated acceptance remains in individual briefs.
   missing-ticket 401 matrices pass. An existing product session then issued one ticket and returned
   legacy ranged `HEAD` 206/1 byte/application-octet-stream without a browser body. No real R2
   object/inventory/copy/activation/client flag changed; 069 is complete.
+- [070](briefs/070-real-inventory-metadata-preparation.md) is in progress. A private 92-row retained-
+  snapshot inventory passes with 91 metadata candidates and one explicit unsupported reference;
+  source is unchanged and the disposable clone is removed. Current Google metadata/064 artifacts
+  wait only for owner account re-verification in the existing Genesinova Chrome profile. No media,
+  R2 object, hosted write, flag or cutover occurred.
 
 ## Delivery decisions
 

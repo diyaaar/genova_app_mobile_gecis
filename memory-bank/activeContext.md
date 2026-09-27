@@ -22,6 +22,10 @@ schema rehearsal. 069 has since rolled and placed the bucket-only credential, ap
 writes disabled. Dormant 503, invalid-ticket 401 and one authenticated legacy ranged `HEAD`
 206/1-byte/application-octet-stream probe pass without a browser body. 069 is complete. Real
 inventory, object copy and cutover remain separate gates.
+[070](../docs/briefs/070-real-inventory-metadata-preparation.md) now has a private, audited 92-row
+retained-snapshot inventory: 91 Google metadata candidates and one explicit unsupported reference.
+The source stayed unchanged and the clone was removed. Google Drive requires owner account
+re-verification before metadata-only 064 preparation; no new credential or provider write exists.
 
 ## Latest owner choices
 

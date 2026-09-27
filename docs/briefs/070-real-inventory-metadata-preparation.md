@@ -1,6 +1,6 @@
 # 070 — Real snapshot inventory and metadata-only manifest preparation
 
-**Status/date/writer:** IN PROGRESS / 2026-09-27 / primary agent.
+**Status/date/writer:** IN PROGRESS — GOOGLE REAUTHENTICATION REQUIRED / 2026-09-27 / primary agent.
 
 **Observable result and user need:** Produce a complete private 063 inventory from the retained,
 verified production snapshot, reconcile every eligible legacy Drive reference against current
@@ -103,6 +103,31 @@ cleanup.
 3. Verify counts/hashes/permissions/secret absence, calculate current official R2 storage and
    operation estimates, remove disposable resources and update evidence/indexes.
 
+## Execution evidence — 27 September 2026
+
+- Guarded runner `3225427` cloned `genova_068_test_restore`, applied the exact accepted prerequisite
+  through 063 package and invoked the inventory only as `service_role`. The snapshot contains one
+  choir. The export has 92 rows: 79 repertoire files, 10 assignment submissions, two chat images
+  and one room avatar. Statuses are 89 `ready-for-provider-metadata`, two
+  `needs-provider-metadata` and one explicit `unsupported-reference`.
+- Inventory SHA-256 is `c32b4535be498362d1f53aaaa676cb307e9a1d27d4ce7120c64af259cfcc806a`;
+  normalized 063 fingerprint is `8efe253fad57528a9ffc0a479a1cb47f7aeaa0c2e9f7af81c236a6c977c98afc`.
+  Source dump hash stayed unchanged and the disposable database was removed.
+- Private artifacts are under the declared `0700` directory: 80,900-byte inventory, 351-byte audit
+  and an 11-folder private metadata target list, all `0600`. Targeted scans find no PEM key, JWT,
+  OAuth token/client secret, password assignment or raw R2 credential. One generic 64-hex match in
+  the audit is the expected non-secret inventory fingerprint.
+- Stored hints cover 89/91 candidates and total 252,532,452 bytes (240.834 MiB); the two missing
+  chat sizes are each bounded by the accepted 12 MiB upload limit. This gives a provisional upper
+  bound of 277,698,276 bytes (264.834 MiB) before current-provider reconciliation.
+- Current official [Cloudflare R2 pricing](https://developers.cloudflare.com/r2/pricing/) reports Standard storage at `$0.015/GB-month`, Class A at
+  `$4.50/million`, Class B at `$0.36/million`, with monthly Standard free allowances of 10 GB-month,
+  1 million Class A and 10 million Class B operations. The bounded 91-object set is therefore
+  provisionally inside all R2 free allowances; exact calculation remains open until metadata.
+- No local Drive OAuth client/refresh credential exists. The approved Genesinova Chrome profile
+  reaches Google Drive but Google requires account re-verification with the existing passkey or
+  another owner-controlled method. No new OAuth client, key or token was created.
+
 ## Definition of done
 
 - [ ] Every exact choir has one valid 063 inventory with stable fingerprint and explicit statuses.
@@ -117,7 +142,7 @@ cleanup.
 
 | Criterion / expected behavior | Required? / N/A reason | Status | Date/environment/scenario | Evidence and limits |
 |---|---|---|---|---|
-| Exact retained-snapshot 063 inventory for every choir | yes | NOT RUN | 2026-09-27, local PostgreSQL 17 clone | No live DB read/write; raw identifiers stay private. |
+| Exact retained-snapshot 063 inventory for every choir | yes | **PASS** | 2026-09-27, `3225427`, local PostgreSQL 17 clone | One choir; 92 rows, stable hash/fingerprint, source unchanged, clone removed. No live DB read/write; raw identifiers stay private. |
 | Metadata-only provider reconciliation | yes | NOT RUN | Existing authorized Google path | `files.get` fields only; no `alt=media` or permissions. |
 | Private atomic 064 manifest/report and caps | yes | NOT RUN | External `0700`/`0600` paths | No R2 object or copy journal. |
 | Current R2 cost estimate | yes | NOT RUN | Official Cloudflare documentation | R2 component only, not total hosting bill. |
