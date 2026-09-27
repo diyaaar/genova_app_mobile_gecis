@@ -34,7 +34,7 @@ This is the current entry point; dated acceptance remains in individual briefs.
   [066](briefs/066-node22-private-r2-cli-warning.md) fix repaired candidate `e459bdd`. GitHub `main`
   and Vercel Ready production remain `a13f696`; the 177-commit/546-file gap and DB → Edge →
   web/mobile order are recorded. Candidate CI run `36144388175` and matching Preview are green;
-  provider, hosted work and production promotion remain gated.
+  067–069 later accepted provider plus dormant hosted work, while production promotion remains gated.
 - [067](briefs/067-cloudflare-r2-provider-bucket.md) verifies Cloudflare account
   `b642dee69121237ba20cc1a1bb50f1c5`, active R2 and empty private EU Standard bucket
   `genova-private`; public access is disabled. The original one-time bucket-only token values were
@@ -48,8 +48,9 @@ This is the current entry point; dated acceptance remains in individual briefs.
 - [069](briefs/069-dormant-hosted-r2-backend.md) has deployed the owner-approved dormant backend:
   rolled bucket-only token, 13 encrypted secrets with `legacy`/all writes `false`, exact 16-entry
   prerequisite plus 053–065 live ledger and 13 `ACTIVE` version-1 functions. Dormant 503 and
-  missing-ticket 401 matrices pass. Authenticated legacy content read remains NOT RUN because no
-  product session is present; no real object/inventory/copy/activation/client flag changed.
+  missing-ticket 401 matrices pass. An existing product session then issued one ticket and returned
+  legacy ranged `HEAD` 206/1 byte/application-octet-stream without a browser body. No real R2
+  object/inventory/copy/activation/client flag changed; 069 is complete.
 
 ## Delivery decisions
 
@@ -87,7 +88,7 @@ This is the current entry point; dated acceptance remains in individual briefs.
   deterministic, 064 removes hand-edited metadata/manifest preparation and 065 adds atomic
   activation/refusal; running the chain against Google/R2 remains real-data work. 067 fixes the
   empty private EU bucket and bucket-only token identity. 068 proves backup/restore and local schema
-  rehearsal; 069 now supplies dormant secrets/schema/functions. Authenticated legacy read, real
+  rehearsal; 069 now accepts dormant secrets/schema/functions and authenticated legacy read. Real
   inventory and every object/copy/cutover action remain separately gated.
 - One active result/one heavy process; >=10 GiB free; reassess after two failed approaches.
   Focused repair and code review precede final heavy gates. Android is the default runtime;

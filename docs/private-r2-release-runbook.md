@@ -1,6 +1,6 @@
 # Private R2 release runbook
 
-Status: **DORMANT HOSTED BACKEND DEPLOYED — AUTHENTICATED LEGACY READ PENDING** on 27 September 2026.
+Status: **DORMANT HOSTED BACKEND ACCEPTED — REAL INVENTORY/COPY NOT RUN** on 27 September 2026.
 Owner: release operator designated by the product owner. This is the single 053–065 release index;
 individual briefs remain the acceptance authority for each local implementation.
 
@@ -27,8 +27,8 @@ Direct GitHub and signed-in Vercel inspection put remote `main` and current Read
 `a13f696`; the candidate is 177 linear commits ahead across 546 changed files. Candidate branch
 `codex/release-2026-09-25`, GitHub Actions run `36144388175` and matching Vercel Preview are green.
 The full DB → Edge → web/mobile order and fail-closed flags are recorded in WF-011. Production
-promotion, hosted migration, function deployment, client flag and installed mobile build remain
-separately authorized and evidenced actions.
+promotion, client flags and installed mobile build remain separately authorized and evidenced
+actions. The dormant hosted migration/function deployment is accepted in 069.
 
 The [current execution queue](mobil-teslim-plani.md#controlled-execution-queue--24-september-2026)
 records [065](briefs/065-private-r2-activation-reconciliation.md) as locally accepted. Do not attempt
@@ -80,10 +80,10 @@ migrations with matching ledger rows. All thirteen manifest functions are `ACTIV
 `verify_jwt=false`; eight upload/lifecycle probes return exact dormant 503 results and five file
 functions deny missing tickets with 401.
 
-The authenticated hosted legacy-content read remains NOT RUN because Chrome has no current product
-session and the ignored local service-role key is stale. Do not treat the deployed functions as a
-cutover or real-object acceptance. No real 063 inventory, Google/R2 object, activation or client flag
-changed.
+An existing product-user session issued one short-lived repertoire ticket. The legacy path returned
+`206`, one ranged byte and `application/octet-stream` to a `HEAD` request; no browser body was
+downloaded. The ignored local stale service-role key was not used. Do not treat this as a cutover or
+R2-object acceptance. No real 063 inventory, R2 object, activation or client flag changed.
 
 ## Function gateway manifest
 
@@ -171,9 +171,8 @@ Each numbered stage needs the authority named in its heading and stops on any fa
    restored snapshot, then run 064's metadata-only preparation without a bulk mirror. Produce a
    measured cost estimate before any hosted schema write.
 3. **Hosted write authority:** secrets, exact additive migrations through 065, thirteen manifest
-   functions, disabled-write probes and missing-ticket refusals are complete in 069. The
-   authenticated hosted legacy-content read is still required. Every client flag remains blocked
-   until it passes.
+   functions, disabled-write probes, missing-ticket refusals and one authenticated legacy ranged
+   read are complete in 069. Every client flag remains blocked until later family acceptance.
 4. **Copy authority:** run a separately reviewed bounded copy executor. For every source slot record
    `choir_id`, family, source table/row/slot/version, legacy ID or recognized URL, destination bucket
    and object key, bytes, MIME, SHA-256, attempt/status and verification timestamp. Stream one file;

@@ -19,8 +19,8 @@ and fixes the empty private EU Standard bucket. [068](../docs/briefs/068-hosted-
 now proves a fresh exact-project logical backup, isolated restore equality and the 061/063/065
 schema rehearsal. 069 has since rolled and placed the bucket-only credential, applied the exact prerequisite plus
 053–065 live chain and deployed all thirteen dormant functions with storage modes `legacy` and all
-writes disabled. Dormant 503 and invalid-ticket 401 probes pass; authenticated legacy content read
-is the remaining 069 criterion because no current product-user browser session exists. Real
+writes disabled. Dormant 503, invalid-ticket 401 and one authenticated legacy ranged `HEAD`
+206/1-byte/application-octet-stream probe pass without a browser body. 069 is complete. Real
 inventory, object copy and cutover remain separate gates.
 
 ## Latest owner choices
@@ -45,7 +45,7 @@ inventory, object copy and cutover remain separate gates.
 - On 25 Sep GitHub `main` and Vercel Ready production remained `a13f696`, 177 commits / 546 files
   behind the candidate. Actions `36144388175` passed all three jobs and matching Vercel Preview is
   Ready. Follow [WF-011](../docs/briefs/WF-011-release-candidate-source-preflight.md) and the
-  controlled queue before production or hosted work.
+  controlled queue before production; 067–069 later accepted provider/dormant hosted work only.
 - 062 passes 38 focused manifest/stream/resume/refusal/batch cases and root 89 files/773 tests/build.
   Detailed evidence: [062](../docs/briefs/062-bounded-private-r2-copy-executor.md).
 - 063 passes the six-family inventory/status/order/identity/privilege matrix and exact down/reapply

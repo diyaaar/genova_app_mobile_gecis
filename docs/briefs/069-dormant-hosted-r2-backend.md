@@ -1,6 +1,6 @@
 # 069 — Dormant hosted private-R2 backend
 
-**Status/date/writer:** IN PROGRESS — AUTHENTICATED LEGACY READ PENDING / 2026-09-27 / primary agent.
+**Status/date/writer:** COMPLETE / 2026-09-27 / primary agent.
 
 **Observable result:** The exact Genesinova Supabase project receives the least-privilege private-R2
 server secrets, required additive authority/schema chain and only the thirteen private-file Edge
@@ -22,7 +22,8 @@ objects are absent. Migration 060 explicitly refuses without 044/045 and the acc
 apply all six prerequisites before 053–065. Neither token replacement nor these six extra hosted
 migrations was named in the owner's first 053–065 checkpoint. The owner explicitly approved both
 expansions before execution. Cloudflare token roll, hosted secrets/schema and function deploy are
-now complete; the remaining acceptance item is an authenticated hosted legacy-file read.
+now complete. The authenticated hosted legacy-file read also passed after the owner restored a
+product-user session.
 
 **Execution controls:** Never use `supabase db push --linked`: the local directory contains many
 historical migrations absent from the hosted ledger and that command would exceed this brief.
@@ -65,9 +66,11 @@ their version/name in `supabase_migrations.schema_migrations`. Keep `R2_TEST_END
   `359a383` then deployed the remaining eight.
 - All thirteen exact Edge Functions are `ACTIVE`, version 1 and `verify_jwt=false`. Eight upload/
   lifecycle POST probes return exact dormant 503 errors. Five file endpoints reject missing tickets
-  with 401. A valid synthetic ticket could not be produced because local `.env.local` contains a
-  stale service-role key; no current user session exists at `app.genesinovachoir.com` in Chrome.
-  Therefore authenticated hosted legacy content read remains NOT RUN, without reading real data.
+  with 401. After the owner restored an existing product-user session, one authorized repertoire
+  file issued a short-lived ticket and its legacy path returned `206`, `Content-Length: 1` and
+  `application/octet-stream` for `HEAD` with `Range: bytes=0-0`. The browser received no file body.
+  The local stale service-role key was not used and no token, object identifier or content was
+  retained in the repository.
 
 ## Out of scope
 
@@ -84,7 +87,7 @@ their version/name in `supabase_migrations.schema_migrations`. Keep `R2_TEST_END
 | Replacement least-privilege R2 credential | yes | **PASS** | Owner-approved token roll; active row remains `genova-private (EU)` / Object Read & Write. Old values invalid; new values exist only in Supabase encrypted secrets. |
 | Exact prerequisite + 053–065 hosted schema/ledger | yes | **PASS** | Guarded runner `25abd4c`; exact 16 transactions and `codex-069-dormant-backend` ledger entries pass hosted verification. No bulk push. |
 | Dormant secrets and thirteen exact Edge Functions | yes | **PASS** | Secret digests prove `legacy`/`false`; all thirteen functions are `ACTIVE`, version 1, `verify_jwt=false`. Deploy repair `d64f092`; resume runner `359a383`. |
-| Disabled/legacy/denied hosted probes | yes | NOT RUN | Dormant 503 and invalid-ticket 401 matrices PASS. Authenticated legacy content read needs a current product-user session; no real object was read. |
+| Disabled/legacy/denied hosted probes | yes | **PASS** | Eight dormant 503 and five invalid-ticket 401 probes pass. Existing product session issued one ticket; legacy ranged `HEAD` returned 206/1 byte/application-octet-stream without a browser body. |
 | Real object copy/cutover/client deployment | N/A | N/A | Forbidden in 069. |
 
 Required FAIL, BLOCKED or NOT RUN prevents closure. Self-review is not independent review.
