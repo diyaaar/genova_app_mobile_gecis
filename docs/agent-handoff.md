@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 27 September 2026 after [073](briefs/073-chat-message-image-r2-batch.md);
+Updated 27 September 2026 after [074](briefs/074-repertoire-pdf-r2-batch.md);
 [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
 This is the current entry point; dated acceptance remains in individual briefs.
 
@@ -75,6 +75,14 @@ This is the current entry point; dated acceptance remains in individual briefs.
   `copied` rows and zero remaining. Its separate 24-hour bucket-only user token was process-only and
   cleared. Together 071–073 verify twelve objects / 13,645,959 bytes; no mapping, activation,
   source mutation, flag, repertoire or avatar copy occurred.
+- [074](briefs/074-repertoire-pdf-r2-batch.md) completes the repertoire-PDF slice. Runner
+  `b776a13` accepted exactly ten PDFs / 2,289,699 bytes and every deterministic private EU R2
+  destination passed full GET/SHA-256 verification on attempt one. Aggregate SHA-256 is
+  `273612c8376ea0210e341dc99e7b9d1af20a4680c901aa8a6e24c142bb87deaa`; the private journal has
+  ten `verified` / `copied` rows and zero remaining. Its separate 24-hour bucket-only user token was
+  process-only and cleared. Together 071–074 verify 22 objects / 15,935,658 bytes. The remaining
+  eligible copy set is 69 repertoire MP3 objects / 237,394,832 bytes; mapping, activation, source
+  mutation, flags, unsupported avatar handling and client/device work did not run.
 
 ## Delivery decisions
 
@@ -102,7 +110,7 @@ This is the current entry point; dated acceptance remains in individual briefs.
   push transport in 036, retention, plan pricing/counting and release accounts remain open.
 - Native chat still lacks accepted social/media/administration and some status/presence flows;
   C4/C5, native writing/sync/offline, release/lifecycle/security and stores remain outstanding.
-- About 32.6 GiB is free after retaining 068, 072 and 073 evidence. The single retained backup,
+- About 32.2 GiB is free after retaining 068 and 071–074 evidence. The single retained backup,
   `genova_068_test_restore` and exact private copy sources/journals are
   deliberate inputs to the next checkpoint; disposable test clones were removed. No VM, simulator
   or mobile build remains.
@@ -113,8 +121,8 @@ This is the current entry point; dated acceptance remains in individual briefs.
   deterministic, 064 removes hand-edited metadata/manifest preparation and 065 adds atomic
   activation/refusal; 070 has now run inventory/metadata/manifest against the real snapshot and
   Google metadata, 071 proves one exact real R2 canary, 072 completes the remaining nine-object
-  assignment copy and 073 completes the two eligible chat images with full-byte readback. The 79
-  repertoire objects remain; cutover remains real-data work. 067 fixes the
+  assignment copy, 073 completes the two eligible chat images and 074 completes the ten repertoire
+  PDFs with full-byte readback. The 69 repertoire MP3 objects remain; cutover remains real-data work. 067 fixes the
   empty private EU bucket and bucket-only token identity. 068 proves backup/restore and local schema
   rehearsal; 069 now accepts dormant secrets/schema/functions and authenticated legacy read. Real
   inventory is accepted; remaining objects and every mapping/cutover action remain separately gated.

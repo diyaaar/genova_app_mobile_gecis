@@ -45,6 +45,12 @@ Genesi Nova Chrome profile, copied to their deterministic private EU R2 keys and
 full-read. Both journal rows are `verified` / `copied`, with zero remaining. The 24-hour
 bucket-only user credential was cleared from the process and clipboard. Together 071–073 verify
 twelve objects / 13,645,959 bytes without mapping, activation, flags or source mutation.
+[074](../docs/briefs/074-repertoire-pdf-r2-batch.md) now completes the repertoire-PDF slice: the
+exact ten PDFs / 2,289,699 bytes were downloaded read-only through the correct Genesi Nova profile,
+copied to deterministic private EU R2 keys and independently full-read. All ten journal rows are
+attempt-one `verified` / `copied`, with zero remaining. The 24-hour bucket-only user credential was
+process-only and cleared. Together 071–074 verify 22 objects / 15,935,658 bytes. The remaining
+eligible copy set is 69 repertoire MP3 objects / 237,394,832 bytes; activation is still separate.
 
 ## Latest owner choices
 
@@ -84,11 +90,12 @@ twelve objects / 13,645,959 bytes without mapping, activation, flags or source m
 - Candidate branch/CI/Preview and R2 subscription/bucket provisioning are complete. Provider account
   `b642dee69121237ba20cc1a1bb50f1c5` has private `eu`/Standard bucket `genova-private` with public
   access disabled. 071 added one verified 32,484-byte canary and 072 added the remaining nine
-  assignment objects; 073 added both eligible chat images. Twelve objects / 13,645,959 bytes now
+  assignment objects; 073 added both eligible chat images and 074 added all ten repertoire PDFs.
+  Twenty-two objects / 15,935,658 bytes now
   have verified private copies. Immediate overview aggregates remained stale and are not billing
   evidence. The original one-time
   bucket-only token values were lost; 069 rolled the token and placed current values only in the
-  encrypted Supabase secret store. Browser memory was cleared afterward. The 79 repertoire objects,
+  encrypted Supabase secret store. Browser memory was cleared afterward. The 69 repertoire MP3 objects,
   plus every activation/cutover step, remain separate approvals.
 - 068 retained a mode-0600 1,317,637-byte logical dump and local `genova_068_test_restore`; hosted
   counts stayed stable and 7 schemas/74 base tables match. Runners 061/063/065 pass on disposable
@@ -120,9 +127,15 @@ twelve objects / 13,645,959 bytes without mapping, activation, flags or source m
   `fcaf9400ee030dcdc9b695f7fd55ee0d9eb0630b43793834f1d8cd9fdacb3825`; journal SHA-256
   `c91edb899b088564e4e2b368916fcdb3b467dc64d27c0456ce9551d993a5e3fe`. Private paths retain
   `0700`/`0600`; process variables and clipboard are clear; no credential is retained locally.
+- 074 evidence: runner `b776a13`; manifest SHA-256
+  `e84805ed62a4336f11462f766b4213084bb5a9be14fa65fd7a7b09f0097d0850`; 10 copied/verified,
+  2,289,699 bytes, zero remaining; local/destination aggregate SHA-256
+  `273612c8376ea0210e341dc99e7b9d1af20a4680c901aa8a6e24c142bb87deaa`; journal SHA-256
+  `e413cfd3b2d2e53d6b6168566a54bccfae14828091823ae60562ca78bc43f7c6`. Private paths retain
+  `0700`/`0600`; process variables and clipboard are clear; no credential is retained locally.
 - User-owned `supabase/.temp/cli-latest` stays unstaged.
 - Generated build/coverage output is removed; no VM/simulator/device output remains. About
-  34.2 million KiB (~32.6 GiB) remains free after retaining 068, 072 and 073 evidence. Cloudflare credentials
+  33.7 million KiB (~32.2 GiB) remains free after retaining 068 and 071–074 evidence. Cloudflare credentials
   must never enter chat or Git.
 
 ## Remaining requirements and authority

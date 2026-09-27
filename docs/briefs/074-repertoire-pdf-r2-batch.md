@@ -1,6 +1,6 @@
 # 074 — Repertoire PDF private R2 batch
 
-**Status/date/writer:** IN PROGRESS / OWNER APPROVED / 2026-09-27 / primary agent.
+**Status/date/writer:** COMPLETE / ACCEPTED / 2026-09-27 / primary agent.
 
 **Observable result and user need:** Copy the ten retained-snapshot repertoire PDF objects to their
 deterministic private `genova-private` EU R2 keys, independently re-read every destination, prove
@@ -80,26 +80,35 @@ the later activation/reconciliation decision; no VM, simulator, database clone o
 
 ## Definition of done
 
-- [ ] Exact ten-row/2,289,699-byte/10-PDF manifest and sources pass private-path checks.
-- [ ] Runner refuses before network without dual exact-target approval and passes `pnpm check`.
-- [ ] Ten entries are independently full-read and SHA-256 verified in R2; journal has zero
+- [x] Exact ten-row/2,289,699-byte/10-PDF manifest and sources pass private-path checks.
+- [x] Runner refuses before network without dual exact-target approval and passes `pnpm check`.
+- [x] Ten entries are independently full-read and SHA-256 verified in R2; journal has zero
   unverified/failed entries and the runner reports zero remaining.
-- [ ] Credential, clipboard, private modes, secret scan and retained-artifact checks pass.
-- [ ] Source, DB/Edge/backend mode/flags/mappings and all out-of-scope families remain unchanged.
-- [ ] Diff review, local links/status checks and separate code/document commits pass.
+- [x] Credential, clipboard, private modes, secret scan and retained-artifact checks pass.
+- [x] Source, DB/Edge/backend mode/flags/mappings and all out-of-scope families remain unchanged.
+- [x] Diff review, local links/status checks and separate code/document commits pass.
 
 ## Mandatory acceptance evidence
 
 | Criterion / expected behavior | Required? / N/A reason | Status | Date/environment/scenario | Evidence and limits |
 |---|---|---|---|---|
-| Exact derived batch manifest | yes | NOT RUN | 2026-09-27, private local artifact | Must bind ten repertoire PDFs, exact hash/count/bytes and MIME. |
-| Fail-closed runner and required local gate | yes | NOT RUN | Local repository | Exact path/target/caps/source files; no approval or wrong input refuses before network; `pnpm check`. |
-| Exact Drive metadata/body reads | yes | NOT RUN | Genesi Nova Chrome / Genesinova Drive | Ten IDs only; no source mutation or leaked download URL. |
-| R2 HEAD/conditional PUT/full GET and journal | yes | NOT RUN | Real Cloudflare EU R2 | Every item must be verified; first failure stops; no overwrite. |
-| Credential and private-artifact hygiene | yes | NOT RUN | Chrome/process/private directory | 24-hour bucket-only token, process-only; clipboard/variables cleared; modes and scans pass. |
-| Source/backend/mapping/flag stability | yes | NOT RUN | Drive + bounded runner boundary | No ACL/body mutation, DB/Edge/mode/flag/mapping change. |
+| Exact derived batch manifest | yes | PASS | 2026-09-27, private local artifact | Exactly 10 rows / 2,289,699 bytes / 10 `application/pdf`; manifest SHA-256 `e84805ed62a4336f11462f766b4213084bb5a9be14fa65fd7a7b09f0097d0850`. Ten numbered files match manifest sizes, `%PDF-` signatures and mode `0600`. |
+| Fail-closed runner and required local gate | yes | PASS | Local repository at runner `b776a13` | Synthetic exact-size placeholders without dual target approval returned `target-confirmation-required` before network or journal creation. Targeted lint/typecheck and full `pnpm check` pass: 90 files / 797 tests, coverage/service-worker check and Next production build. Generated `.next`/coverage output was removed. |
+| Exact Drive metadata/body reads | yes | PASS | Genesi Nova Chrome / `genesinova.choir@gmail.com` | Only the ten manifest URLs were opened and downloaded. Every body matched its expected length and PDF signature. No Drive share, ACL, rename, move, source write or deletion action ran. One delayed duplicate browser download was hash-equal to the already retained source and moved to Trash; it was not a manifest source or provider object. |
+| R2 HEAD/conditional PUT/full GET and journal | yes | PASS | Real Cloudflare `genova-private` EU | Runner reported `batch-verified`: 10 processed / 2,289,699 bytes / 10 copied / 10 verified / zero remaining. All journal rows are attempt 1, `copied` and `verified`; aggregate source/destination SHA-256 `273612c8376ea0210e341dc99e7b9d1af20a4680c901aa8a6e24c142bb87deaa`; journal SHA-256 `e413cfd3b2d2e53d6b6168566a54bccfae14828091823ae60562ca78bc43f7c6`. |
+| Credential and private-artifact hygiene | yes | PASS | Chrome/process/private directory | User token `genova-074-repertoire-pdfs` is limited to Object Read & Write on `genova-private | EU`, active Sep 27–28 only. Values lived in one shell process, were unset before exit and were not written to disk; clipboard is empty. Private directory/files retain `0700`/`0600`; token-value scans of private and tracked scopes are zero. |
+| Source/backend/mapping/flag stability | yes | PASS | Drive + bounded runner boundary | The runner has no DB/Edge/mapping/flag path and no such call was made. Drive was read-only. Hosted modes/flags were not re-queried, so this is an execution-boundary claim rather than a fresh hosted-state acceptance. No audio/avatar/client/deployment action ran. |
 | MP3, activation, avatar, device/release | N/A — later authority | N/A | Not authorized in 074 | Remain required for the wider goal. |
 
 Required FAIL or NOT RUN keeps 074 open. Ten copied PDFs do not authorize MP3 copy, mapping
 activation, avatar handling, source removal, client flags, beta distribution or completion of the
 wider goal.
+
+## Accepted result and next checkpoint
+
+074 closes the complete repertoire-PDF slice. Together 071–074 now hold 22 verified private R2
+objects / 15,935,658 bytes. The remaining eligible retained-snapshot copy set is 69 repertoire MP3
+objects / 237,394,832 bytes; the unsupported room avatar remains excluded. The next proposed
+checkpoint is the deterministic ten smallest remaining MP3 objects / 20,496,706 bytes under the
+same read-only Drive, bucket-only 24-hour credential, no-overwrite and full-GET/SHA-256 controls.
+It requires separate owner approval and does not include activation, mapping, flags or deletion.
