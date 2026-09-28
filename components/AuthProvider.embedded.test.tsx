@@ -157,6 +157,8 @@ function Probe() {
         {auth.member?.id ?? 'no-member'}:{auth.activeChoir?.choir_id ?? 'no-choir'}
       </p>
       <button onClick={() => void auth.signOut()}>sign-out</button>
+      <button onClick={() => void auth.refreshChoirContext()}>refresh-context</button>
+      {auth.contextError ? <p role="alert">{auth.contextError}</p> : null}
     </>
   );
 }
@@ -211,6 +213,24 @@ describe('AuthProvider embedded split', () => {
     expect(mocks.browserOnAuth).toHaveBeenCalledOnce();
     expect(mocks.setPreferred).toHaveBeenCalledWith(USER_ID, CHOIR_ID);
     expect(mocks.enter).not.toHaveBeenCalled();
+  });
+
+  it('does not install an inactive browser member even when the listing is stale', async () => {
+    mocks.memberActive = false;
+    mount({ href: 'https://app.genesinovachoir.com/profil', isTopFrame: true });
+    expect(await screen.findByRole('alert')).toHaveTextContent('Koro üyeliği artık aktif değil.');
+    expect(await screen.findByText(`browser:true:${USER_ID}:no-member:no-choir`)).toBeInTheDocument();
+  });
+
+  it('clears revoked browser context and private chat state on membership refresh', async () => {
+    mount({ href: 'https://app.genesinovachoir.com/profil', isTopFrame: true });
+    await screen.findByText(`browser:true:${USER_ID}:${MEMBER_ID}:${CHOIR_ID}`);
+    seedStaleChatState();
+    mocks.memberships = mocks.memberships.map((entry) => ({ ...entry, member_is_active: false }));
+    fireEvent.click(screen.getByText('refresh-context'));
+    await screen.findByText(`browser:true:${USER_ID}:no-member:no-choir`);
+    expect(useChatStore.getState().rooms).toEqual([]);
+    expect(mocks.activate).not.toHaveBeenCalled();
   });
 
   it('resets chat memory only after ordinary browser sign-out succeeds', async () => {

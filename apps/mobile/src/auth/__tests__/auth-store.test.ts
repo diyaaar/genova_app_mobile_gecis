@@ -58,6 +58,35 @@ function buildStore(options: {
 }
 
 describe('session lifecycle', () => {
+  it('does not enter ready for an inactive server-current/preferred membership', async () => {
+    const { store, clientDouble } = buildStore({
+      memberships: [membership({ member_is_active: false })], activeChoirId: CHOIR_A,
+      preferences: { [USER_ID]: CHOIR_A },
+    });
+    await store.start();
+    expect(store.getState()).toMatchObject({ phase: 'no-membership', activeChoir: null, choirs: [] });
+    expect(clientDouble.rpc).not.toHaveBeenCalledWith('set_active_choir', expect.anything());
+  });
+
+  it('clears revoked context without silently activating the remaining choir', async () => {
+    let inactive = false;
+    const { store, clearCaches, clientDouble } = buildStore({
+      listResponse: () => ({ data: [
+        membership({ member_is_active: !inactive, is_current: !inactive }),
+        membership({ choir_id: CHOIR_B }),
+      ], error: null }),
+    });
+    await store.start();
+    expect(store.getState().phase).toBe('ready');
+    clearCaches.mockClear();
+    inactive = true;
+    await store.refresh();
+    expect(store.getState()).toMatchObject({ phase: 'selection-required', activeChoir: null });
+    expect(store.getState().choirs.map((entry) => entry.choir_id)).toEqual([CHOIR_B]);
+    expect(clearCaches).toHaveBeenCalledTimes(1);
+    expect(clientDouble.rpc).not.toHaveBeenCalledWith('set_active_choir', expect.anything());
+  });
+
   it('contains a storage rejection, refuses leases and retries the real session gateway', async () => {
     const { store, gateway, clientDouble } = buildStore({ activeChoirId: CHOIR_A });
     const getSession = jest.spyOn(gateway.gateway, 'getSession')

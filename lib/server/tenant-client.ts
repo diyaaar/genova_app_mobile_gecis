@@ -18,11 +18,14 @@ export async function createTenantServiceClient(authUserId: string, accessToken:
 
   const admin = createSupabaseServiceClient();
   const { data: member, error } = await admin.from('choir_members')
-    .select('choir_id')
+    .select('choir_id, is_active')
     .eq('auth_user_id', authUserId)
     .eq('choir_id', activeChoirId)
+    .eq('is_active', true)
     .maybeSingle();
-  if (error || !member?.choir_id) throw new Error('Geçerli koro üyeliği bulunamadı.');
+  if (error || member?.choir_id !== activeChoirId || member.is_active !== true) {
+    throw new Error('Geçerli aktif koro üyeliği bulunamadı.');
+  }
   return createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!, {
     auth: { persistSession: false, autoRefreshToken: false },
     global: { fetch: createTenantFetch(process.env.NEXT_PUBLIC_SUPABASE_URL!, activeChoirId) },

@@ -103,7 +103,7 @@ describe('verified membership bootstrap', () => {
     vi.stubEnv('SUPABASE_SERVICE_ROLE_KEY', 'test-service');
     const transport = vi.fn<typeof fetch>()
       .mockResolvedValueOnce(new Response(JSON.stringify(a), { status: 200 }))
-      .mockResolvedValueOnce(new Response(JSON.stringify({ choir_id: a }), { status: 200 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ choir_id: a, is_active: true }), { status: 200 }))
       .mockResolvedValueOnce(new Response('[]', { status: 200 }));
     vi.stubGlobal('fetch', transport);
     const client = await createTenantServiceClient('verified-user', 'verified-access-token');
@@ -115,6 +115,7 @@ describe('verified membership bootstrap', () => {
     const bootstrapUrl = new URL(capturedRequest(transport, 1).url);
     expect(bootstrapUrl.searchParams.get('auth_user_id')).toBe('eq.verified-user');
     expect(bootstrapUrl.searchParams.get('choir_id')).toBe(`eq.${a}`);
+    expect(bootstrapUrl.searchParams.get('is_active')).toBe('eq.true');
     expect(new URL(capturedRequest(transport, 2).url).searchParams.get('choir_id')).toBe(`eq.${a}`);
   });
 
@@ -124,6 +125,18 @@ describe('verified membership bootstrap', () => {
     vi.stubEnv('SUPABASE_SERVICE_ROLE_KEY', 'test-service');
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('null', { status: 200 })));
     await expect(createTenantServiceClient('verified-user', 'verified-access-token')).rejects.toThrow('aktif koro');
+  });
+
+  it.each([false, null, undefined])('rejects non-active membership %s even if the RPC resolves a choir', async (isActive) => {
+    vi.stubEnv('NEXT_PUBLIC_SUPABASE_URL', url);
+    vi.stubEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY', 'test-anon');
+    vi.stubEnv('SUPABASE_SERVICE_ROLE_KEY', 'test-service');
+    const transport = vi.fn<typeof fetch>()
+      .mockResolvedValueOnce(new Response(JSON.stringify(a), { status: 200 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ choir_id: a, is_active: isActive }), { status: 200 }));
+    vi.stubGlobal('fetch', transport);
+    await expect(createTenantServiceClient('verified-user', 'verified-access-token')).rejects.toThrow('aktif koro üyeliği');
+    expect(transport).toHaveBeenCalledTimes(2);
   });
 
   it('rejects a resolved choir that is not owned by the verified user', async () => {

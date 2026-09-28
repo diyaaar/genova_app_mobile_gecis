@@ -217,12 +217,15 @@ export class AuthStore {
    */
   private async resolveChoirContext(userId: string, options: { usePreference?: boolean } = {}): Promise<void> {
     const version = ++this.requestVersion;
+    const previousChoirId = this.state.activeChoir?.choir_id ?? null;
 
     try {
       let memberships = await loadMyChoirs(this.deps.client);
       let current = findCurrentChoir(memberships);
 
-      if (!current) {
+      const previousChoirRevoked = previousChoirId !== null
+        && !memberships.some((entry) => entry.choir_id === previousChoirId);
+      if (!current && !previousChoirRevoked) {
         const preferred = options.usePreference === false
           ? null
           : findPreferredMembership(memberships, await this.deps.preferences.get(userId));
@@ -239,6 +242,11 @@ export class AuthStore {
       }
 
       if (this.requestVersion !== version || this.currentUserId !== userId) return;
+      if (previousChoirId && previousChoirId !== current?.choir_id) {
+        this.setState({ activeChoir: null });
+        await this.clearCaches();
+        if (this.requestVersion !== version || this.currentUserId !== userId) return;
+      }
 
       if (memberships.length === 0) {
         this.setState({ phase: 'no-membership', choirs: [], activeChoir: null, errorMessage: null });
@@ -254,6 +262,9 @@ export class AuthStore {
       if (this.requestVersion !== version || this.currentUserId !== userId) return;
       this.setState({ phase: 'ready', choirs: memberships, activeChoir: current, errorMessage: null });
     } catch (error) {
+      if (this.requestVersion !== version || this.currentUserId !== userId) return;
+      this.setState({ activeChoir: null });
+      await this.clearCaches();
       if (this.requestVersion !== version || this.currentUserId !== userId) return;
       this.setState({
         phase: 'error',

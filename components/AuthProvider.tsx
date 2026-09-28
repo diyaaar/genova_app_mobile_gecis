@@ -90,6 +90,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const failEmbeddedContext = embeddedBridge.failContext;
   const requestVersionRef = useRef(0);
   const activeUserIdRef = useRef<string | null>(null);
+  const resolvedChoirIdRef = useRef<string | null>(null);
   const switchInFlightRef = useRef(false);
   const [session, setSession] = useState<Session | null>(null);
   const [user, setUser] = useState<User | null>(null);
@@ -129,7 +130,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     try {
       let membershipOptions = await loadMyChoirs(supabase);
+      // Defense in depth for older servers/adapters; inactive rows must never become UI authority.
+      membershipOptions = membershipOptions.filter((option) => option.member_is_active);
       let currentChoir = findCurrentChoir(membershipOptions);
+      const priorChoirId = resolvedChoirIdRef.current;
+      const priorChoirRevoked = priorChoirId !== null
+        && !membershipOptions.some((option) => option.choir_id === priorChoirId);
 
       if (options.expectedEmbeddedContext) {
         const expected = options.expectedEmbeddedContext;
@@ -141,7 +147,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }
       }
 
-      if (!currentChoir && !options.expectedEmbeddedContext) {
+      if (!currentChoir && !options.expectedEmbeddedContext && !priorChoirRevoked) {
         const preferredChoir = options.usePreference === false
           ? null
           : findPreferredMembership(membershipOptions, getPreferredChoirId(userId));
@@ -158,6 +164,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
 
       if (requestVersionRef.current !== requestVersion) return;
+      if (priorChoirId && priorChoirId !== currentChoir?.choir_id) {
+        annotationSaveQueue.discardAll();
+        setActiveChoir(null);
+        setMember(null);
+        setRoles([]);
+        await clearTenantData();
+        if (requestVersionRef.current !== requestVersion) return;
+      }
+      resolvedChoirIdRef.current = currentChoir?.choir_id ?? null;
       setChoirs(membershipOptions);
       setActiveChoir(currentChoir);
 
@@ -190,9 +205,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (memberResult.error) throw new Error(memberResult.error.message);
       if (!memberResult.data) throw new Error('Aktif koro üyeliği yüklenemedi.');
-      if (options.expectedEmbeddedContext && !memberResult.data.is_active) {
+      if (!memberResult.data.is_active) {
         embeddedFailureCode = 'choir-context-changed';
-        throw new Error('Gömülü koro üyeliği artık aktif değil.');
+        throw new Error('Koro üyeliği artık aktif değil.');
       }
 
       const memberData = memberResult.data;
@@ -228,6 +243,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setRoles(Array.from(canonicalRoles));
     } catch (error) {
       if (requestVersionRef.current !== requestVersion) return;
+      resolvedChoirIdRef.current = null;
+      annotationSaveQueue.discardAll();
+      setActiveChoir(null);
+      setMember(null);
+      setRoles([]);
+      await clearTenantData();
+      if (requestVersionRef.current !== requestVersion) return;
       if (options.expectedEmbeddedContext) {
         failEmbeddedContext(embeddedFailureCode);
         return;
@@ -242,7 +264,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setIsLoading(false);
       }
     }
-  }, [failEmbeddedContext]);
+  }, [clearTenantData, failEmbeddedContext]);
 
   useEffect(() => {
     let active = true;
@@ -292,6 +314,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (nextUser) {
         if (previousUserId && previousUserId !== nextUser.id) {
+          resolvedChoirIdRef.current = null;
           clearPreferredChoirId(previousUserId);
           annotationSaveQueue.discardAll();
           void clearTenantData();
@@ -303,6 +326,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
 
       requestVersionRef.current += 1;
+      resolvedChoirIdRef.current = null;
       if (previousUserId) clearPreferredChoirId(previousUserId);
       annotationSaveQueue.discardAll();
       void clearTenantData();

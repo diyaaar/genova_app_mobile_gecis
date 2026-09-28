@@ -466,11 +466,14 @@ Deno.serve(async (req) => {
     const bootstrapAdmin = createClient(supabaseUrl, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!);
     const { data: member } = await bootstrapAdmin
       .from('choir_members')
-      .select('id, choir_id, first_name, last_name, voice_group, choir_member_roles(roles(name))')
+      .select('id, choir_id, is_active, first_name, last_name, voice_group, choir_member_roles(roles(name))')
       .eq('auth_user_id', user.id)
       .eq('choir_id', activeChoirId)
+      .eq('is_active', true)
       .maybeSingle();
-    if (!member) return new Response(JSON.stringify({ error: 'Üye kaydı bulunamadı' }), { status: 403, headers: jsonHeaders });
+    if (!member || member.is_active !== true || member.choir_id !== activeChoirId) {
+      return new Response(JSON.stringify({ error: 'Aktif üye kaydı bulunamadı' }), { status: 403, headers: jsonHeaders });
+    }
     const supabaseAdmin = createClient(supabaseUrl, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, {
       auth: { persistSession: false, autoRefreshToken: false },
       global: { fetch: createTenantFetch(supabaseUrl, member.choir_id) },

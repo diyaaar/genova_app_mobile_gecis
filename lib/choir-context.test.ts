@@ -48,6 +48,22 @@ describe('active choir client contract', () => {
     expect(rpc).toHaveBeenCalledWith('set_active_choir', { p_choir_id: choirB });
   });
 
+  it('excludes inactive choices including an old server-current or stored preference', async () => {
+    const inactive = membership({ member_is_active: false, is_current: true });
+    const active = membership({ choir_id: choirB });
+    const rpc = vi.fn().mockResolvedValue({ data: [inactive, active], error: null });
+    await expect(loadMyChoirs({ rpc })).resolves.toEqual([active]);
+    expect(findCurrentChoir([inactive, active])).toBeNull();
+    expect(findPreferredMembership([inactive, active], choirA)).toBeNull();
+    rpc.mockResolvedValue({ data: [inactive], error: null });
+    await expect(loadMyChoirs({ rpc })).resolves.toEqual([]);
+  });
+
+  it('still rejects malformed inactive rows before filtering', async () => {
+    const rpc = vi.fn().mockResolvedValue({ data: [{ member_is_active: false }], error: null });
+    await expect(loadMyChoirs({ rpc })).rejects.toThrow('sözleşmeyle');
+  });
+
   it('rejects a mismatched or invalid selection response', async () => {
     const rpc = vi.fn().mockResolvedValue({ data: choirA, error: null });
     await expect(activateChoir({ rpc } as unknown as SupabaseClient, choirB)).rejects.toThrow('doğrulanamadı');
