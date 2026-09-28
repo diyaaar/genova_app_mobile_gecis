@@ -1,5 +1,16 @@
 # İlerleme indeksi
 
+28 September — [080 bounded public link previews](../docs/briefs/080-safe-link-preview.md),
+`9708ab9`, complete locally. Red baseline accepted localhost/private/metadata literals without
+network probes; green 104 focused cases and actual installed Deno numeric HTTP/TLS/Host/SNI/
+certificate-mismatch/header/body/deadline/parser/socket matrix pass. Auth plus active membership,
+bounded inbound body, pre-auth/outbound admission and redacted errors protect the optional preview.
+Root 92 files/908 tests/build and mobile typecheck/2 focused suites/6 send tests PASS. No client
+source, DB, push, deployment, hosted Auth/DNS, real accounts, provider, UI/device or 077 copy changed.
+Synthetic certificate/key/servers removed; owned build/coverage recoverably in Trash, 33.8 GiB
+measured free. Distributed quotas and hosted Edge compatibility are NOT proven. Next bounded
+proposal in WF-013: F12 local secret-file modes; credential rotation remains separately gated.
+
 28 September — owner approved audit-backed local implementation and confirmed assisted v1
 onboarding. [WF-013 plan](../docs/briefs/WF-013-multi-tenant-remediation-plan.md),
 [078](../docs/briefs/078-active-membership-revocation.md) (`8692304`) and
@@ -9,7 +20,8 @@ pass; root 90/804/build and native 49/290 pass. Original 043 privilege test fail
 postgres/restored defaults and passes afterward under both creators; exact ACL/owner/body/comment
 restoration and grant-option removal pass. Source databases/data unchanged; all clones removed.
 No push/deploy/hosted DB/Edge/provider/browser/device action. Historical WF-012 remains a pre-fix
-snapshot; full SaaS goal and public-file/release risks remain open. Next local checkpoint F06.
+snapshot; full SaaS goal and public-file/release risks remain open. The next local checkpoint at
+that revision was F06, now locally accepted in 080 above.
 
 28 September — [WF-012 commercial multi-tenant audit](../docs/briefs/WF-012-commercial-multi-tenant-audit.md)
 completed before further development, with no product fixes or external mutations.

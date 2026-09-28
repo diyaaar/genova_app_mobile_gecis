@@ -1,6 +1,7 @@
 # Genova — agent handoff
 
-Updated 28 September 2026 after [079](briefs/079-message-status-rpc-privileges.md),
+Updated 28 September 2026 after [080](briefs/080-safe-link-preview.md),
+[079](briefs/079-message-status-rpc-privileges.md),
 [078](briefs/078-active-membership-revocation.md) and [WF-012](briefs/WF-012-commercial-multi-tenant-audit.md)
 and [076](briefs/076-repertoire-mp3-r2-batch-2.md);
 [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
@@ -16,10 +17,17 @@ cache teardown. Actual PG17 A/B/read/write/role/RPC/down/reapply matrices pass; 
 and mobile 49/290 pass. 079 (`462573f`, final `2810a3d`) repairs 043 grants forward-only and passes
 its original full matrix under postgres/restored defaults and the previous local creator, with
 exact ACL/owner/body/comment down/reapply and delegated-grant refusal. No applied migration rewrite.
-Both are local acceptance only: no push/deploy/hosted DB/Edge/provider/device/browser change.
-Clones removed, generated build/coverage moved recoverably to Trash; about 34 GiB measured free.
-Only unrelated CLI marker stays dirty. Next bounded local outcome: URL-preview SSRF/resource
-bounds (F06). Public legacy media (F02) and existing bearer/offline revocation (F07) remain open;
+080 (`9708ab9`) locally secures URL previews: verified active member, public/all-DNS destination
+policy, numeric Host/TLS identity-preserving connections, per-hop validation, bounded headers/bytes/
+deadlines and pre-auth/outbound worker admission. 104 focused cases and actual installed Deno
+loopback HTTP/TLS/parser/cancellation matrix pass; root 92/908/build and mobile typecheck/focused
+2 suites/6 send tests pass. No web/mobile client source changed. Worker guards are not distributed
+quotas; hosted Edge/DNS/Auth/gateway/browser/device compatibility remains unverified.
+All three are local acceptance only: no push/deploy/hosted DB/Edge/provider/device/browser change.
+Clones/fixtures removed, owned build/coverage recoverably in Trash; about 33.8 GiB measured free.
+Only unrelated CLI marker stays dirty. Next bounded local outcome: F12 owned local secret-file
+permissions; provider/account credential rotation needs separate authority. Public legacy media
+(F02) and existing bearer/offline revocation (F07) remain open;
 077 copy and all cutover/release operations remain separately gated.
 
 ## Historical audit baseline

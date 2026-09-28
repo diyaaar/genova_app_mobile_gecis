@@ -16,9 +16,14 @@ pass. [079](../docs/briefs/079-message-status-rpc-privileges.md), final product 
 043 grants forward-only; the original test passes under postgres/restored defaults and the
 previous local creator with exact ACL/owner/body/comment down/reapply. No live remediation,
 push/deploy/provider/browser/device acceptance is claimed. Owner explicitly retains assisted
-choir creation for v1; self-service later. Next local result: URL-preview SSRF/resource bounds;
+choir creation for v1; self-service later. [080](../docs/briefs/080-safe-link-preview.md), `9708ab9`,
+is locally accepted: public/all-DNS policy, numeric Host/TLS transport, bounded bytes/deadlines and
+pre-auth/outbound admission; 104 cases and actual Deno HTTP/TLS/parser/socket matrix pass.
+Root 92/908/build and mobile typecheck/focused 2 suites/6 send tests pass; no client source changed.
+Hosted Edge/DNS/Auth/gateway/device/browser remains NOT RUN; worker limits are not distributed quotas.
+Next local result: F12 owned secret-file permissions, not provider credential rotation;
 public legacy media, file-ticket/offline revocation and all real copy/cutover/release remain open.
-All new DB clones removed; build/coverage recoverably trashed; about 34 GiB free. Unrelated CLI
+All new DB/HTTP/TLS fixtures removed; build/coverage recoverably trashed; about 33.8 GiB free. Unrelated CLI
 marker remains unstaged. 077 did not run. Full product objective and accepted copies are preserved.
 
 Historical audit baseline:

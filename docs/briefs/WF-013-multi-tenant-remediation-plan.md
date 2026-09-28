@@ -11,7 +11,7 @@ The owner now authorizes scoped local implementation/tests/commits; external ope
 |---|---|---|
 | 1 / [078](078-active-membership-revocation.md), F01 | Inactive membership no longer authorizes a tenant | COMPLETE LOCALLY: actual SQL/SDK/component/state-machine matrices, web 804/mobile 290; live NOT RUN |
 | 2 / [079](079-message-status-rpc-privileges.md), F03 | Exact message-status RPC privileges independent of migration creator | COMPLETE LOCALLY: postgres/default ACL and other local creator, original 043 matrix, exact down/reapply; live NOT RUN |
-| 3 | Bound URL-preview destinations and resource use | Private/metadata/redirect refusals, bounded stream/deadline; no internal-network exploitation |
+| 3 / [080](080-safe-link-preview.md), F06 | Bound URL-preview destinations and resource use | COMPLETE LOCALLY: public/all-DNS policy, numeric Host/TLS transport, bounded stream/deadline/admission, 104 cases + actual Deno matrix; root 908/mobile focused 6 pass; hosted NOT RUN |
 | 3a / F12 | Restrict local secret-file access, then separate credential review | Exact owned file modes, redacted secret checks; no automatic provider rotation or shared credential copying |
 | 4 | Assignment replacement is atomic | Failure leaves prior state intact; concurrent/retry matrix; bounded DB transaction, not UI-only repair |
 | 5 / F05, F13 | Two unrelated choirs work without original-choir constants | Dynamic reference data, new-choir fixtures, single/multiple accounts, same-session stale-context mutations, permission changes and cross-tenant refusals |
