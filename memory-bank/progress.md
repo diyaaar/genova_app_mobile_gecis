@@ -1,5 +1,16 @@
 # İlerleme indeksi
 
+28 September — owner approved audit-backed local implementation and confirmed assisted v1
+onboarding. [WF-013 plan](../docs/briefs/WF-013-multi-tenant-remediation-plan.md),
+[078](../docs/briefs/078-active-membership-revocation.md) (`8692304`) and
+[079](../docs/briefs/079-message-status-rpc-privileges.md) (final `2810a3d`) accepted locally.
+Inactive authority fails before 078, then actual A/B/session/RLS/role/read/write/RPC/down/reapply
+pass; root 90/804/build and native 49/290 pass. Original 043 privilege test fails before 079 under
+postgres/restored defaults and passes afterward under both creators; exact ACL/owner/body/comment
+restoration and grant-option removal pass. Source databases/data unchanged; all clones removed.
+No push/deploy/hosted DB/Edge/provider/browser/device action. Historical WF-012 remains a pre-fix
+snapshot; full SaaS goal and public-file/release risks remain open. Next local checkpoint F06.
+
 28 September — [WF-012 commercial multi-tenant audit](../docs/briefs/WF-012-commercial-multi-tenant-audit.md)
 completed before further development, with no product fixes or external mutations.
 [Report](../docs/reports/2026-09-28-commercial-multi-tenant-audit.md): web 90/797 and mobile

@@ -1,11 +1,28 @@
 # Genova — agent handoff
 
-Updated 28 September 2026 after [WF-012](briefs/WF-012-commercial-multi-tenant-audit.md)
+Updated 28 September 2026 after [079](briefs/079-message-status-rpc-privileges.md),
+[078](briefs/078-active-membership-revocation.md) and [WF-012](briefs/WF-012-commercial-multi-tenant-audit.md)
 and [076](briefs/076-repertoire-mp3-r2-batch-2.md);
 [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
 This is the current entry point; dated acceptance remains in individual briefs.
 
-## Latest owner steering: audit before development
+## Latest owner steering: audit-backed implementation
+
+The owner now requested local implementation of the audit plan, and explicitly confirmed
+operator-assisted first-version choir creation; self-service comes later. Follow
+[WF-013](briefs/WF-013-multi-tenant-remediation-plan.md). 078 (`8692304`) locally repairs inactive
+membership authority, shared active choices, privileged Next/Drive bootstrap and observed-context
+cache teardown. Actual PG17 A/B/read/write/role/RPC/down/reapply matrices pass; root 90/804/build
+and mobile 49/290 pass. 079 (`462573f`, final `2810a3d`) repairs 043 grants forward-only and passes
+its original full matrix under postgres/restored defaults and the previous local creator, with
+exact ACL/owner/body/comment down/reapply and delegated-grant refusal. No applied migration rewrite.
+Both are local acceptance only: no push/deploy/hosted DB/Edge/provider/device/browser change.
+Clones removed, generated build/coverage moved recoverably to Trash; about 34 GiB measured free.
+Only unrelated CLI marker stays dirty. Next bounded local outcome: URL-preview SSRF/resource
+bounds (F06). Public legacy media (F02) and existing bearer/offline revocation (F07) remain open;
+077 copy and all cutover/release operations remain separately gated.
+
+## Historical audit baseline
 
 The owner requested a comprehensive commercial multi-tenant audit and no implementation.
 [Turkish report](reports/2026-09-28-commercial-multi-tenant-audit.md) records current source,
@@ -14,8 +31,8 @@ an inactive membership retains reads/writes/roles; migration 043 fails its anony
 assertion when applied as postgres with restored Supabase default ACLs, despite passing under
 the normal runner's other local creator. Hosted grants were not reverified. Browser UI remains
 NOT RUN because Chromium is missing. No product fix, hosted change or 077 copy ran.
-The recommended next implementation checkpoint is active-membership revocation plus exact
-migration privilege acceptance; do not treat this recommendation as implementation authority.
+That recommendation received implementation authority and local acceptance in 078/079 above;
+the dated audit report is preserved as pre-fix evidence, not edited to claim live remediation.
 Preserve 076 copy evidence and the complete delivery objective.
 
 ## Read and verify

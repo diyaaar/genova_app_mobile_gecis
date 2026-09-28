@@ -8,15 +8,28 @@ is the short startup source. Historical acceptance remains in briefs and [progre
 
 ## Current outcome
 
-Latest owner request pauses development/copy execution for a commercial multi-tenant audit.
+Latest owner request resumes scoped local implementation after the commercial multi-tenant audit.
+[WF-013 plan](../docs/briefs/WF-013-multi-tenant-remediation-plan.md) tracks the ordered repairs.
+[078](../docs/briefs/078-active-membership-revocation.md) is locally accepted at `8692304`: actual
+PG17 inactive/session/A/B/RLS/role/RPC/down/reapply matrices, root 90/804/build and mobile 49/290
+pass. [079](../docs/briefs/079-message-status-rpc-privileges.md), final product `2810a3d`, repairs
+043 grants forward-only; the original test passes under postgres/restored defaults and the
+previous local creator with exact ACL/owner/body/comment down/reapply. No live remediation,
+push/deploy/provider/browser/device acceptance is claimed. Owner explicitly retains assisted
+choir creation for v1; self-service later. Next local result: URL-preview SSRF/resource bounds;
+public legacy media, file-ticket/offline revocation and all real copy/cutover/release remain open.
+All new DB clones removed; build/coverage recoverably trashed; about 34 GiB free. Unrelated CLI
+marker remains unstaged. 077 did not run. Full product objective and accepted copies are preserved.
+
+Historical audit baseline:
 [WF-012](../docs/briefs/WF-012-commercial-multi-tenant-audit.md) is audit-complete; its
 [report](../docs/reports/2026-09-28-commercial-multi-tenant-audit.md) finds real tenant foundations
 but commercial readiness blockers. Inactive-membership access/write was reproduced locally;
 043 anonymous execution grants fail under restored Supabase default ACLs/postgres creator.
 Web 797/mobile 288 tests pass; 24 SQL packages pass with their prerequisites, while 043's
 production-like grant assertion remains FAIL. Four API E2E tests pass; 26 browser UI cases
-cannot launch. No product code or external state changed. Proposed next work: revocation and
-exact migration permissions, subject to a new implementation request. 077 did not run.
+cannot launch. No product code or external state changed in that audit. Its proposed security
+checkpoint received local implementation and acceptance in 078/079 above; hosted state is unverified.
 The original full product objective and accepted copy checkpoints below remain preserved.
 
 Deliver the same production product Android-first: usable beta soon, then complete the full

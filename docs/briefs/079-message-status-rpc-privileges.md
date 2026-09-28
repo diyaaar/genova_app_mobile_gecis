@@ -1,6 +1,6 @@
 # 079 — deterministic message-status RPC execution privileges
 
-Status: IN PROGRESS, 28 September 2026. Main agent single writer.
+Status: COMPLETE LOCALLY, 28 September 2026. Main agent single writer.
 One result: only authenticated callers and the function owner may execute the message-status
 RPC, regardless of restored Supabase defaults or migration creator.
 Source: [WF-012 F03](../reports/2026-09-28-commercial-multi-tenant-audit.md),
@@ -39,13 +39,38 @@ Retained 068 backup is a local rehearsal input, not automatic current production
 
 | Criterion | Required? | Status | Evidence / limit |
 |---|---|---|---|
-| Old 043 grant assertion fails with postgres + restored defaults | Yes | NOT RUN | Actual local PostgreSQL |
-| 079 effective privileges: authenticated yes, anon/service_role/PUBLIC no | Yes | NOT RUN | Catalog + real denied execution, original behavioral matrix |
-| Existing 043 read/write/room/tenant/idempotence matrix and 078 revocation regression | Yes | NOT RUN | Actual SQL fixtures rolled back |
-| Forward/down/reapply exact ACL/body/owner/comments and unchanged data/source | Yes | NOT RUN | Both supported creator configurations |
-| Repeat forward, missing prerequisite and unsafe target refusal | Yes | NOT RUN | No global grants/defaults changed |
-| Script syntax, source/diff/self-review, local links, cleanup and separate commits | Yes | NOT RUN | No independent certification claim |
+| Old 043 grant assertion fails with postgres + restored defaults | Yes | PASS | 28 Sep runner: exact `043: RPC privilege boundary is wrong` before 079 |
+| 079 effective privileges: authenticated yes, anon/service_role/PUBLIC no | Yes | PASS | Catalog and actual denied calls; authenticated cannot delegate EXECUTE; original 043 matrix passes |
+| Existing 043 read/write/room/tenant/idempotence matrix and 078 revocation regression | Yes | PASS | Original full 043 and synthetic 078 SQL; fixtures rolled back in both modes |
+| Forward/down/reapply exact ACL/body/owner/comments and unchanged data/source | Yes | PASS | Both postgres and existing desktop creator; injected prior grant option restored exactly by down |
+| Repeat forward, missing prerequisite and unsafe target refusal | Yes | PASS | Runner assertions; unsafe target and non-loopback exit 2 before any connection/allocation |
+| Script syntax, source/diff/self-review, local links, cleanup and separate commits | Yes | PASS | Bash syntax/diff; final source review and exact local links; both clones removed |
 | Full web/mobile gate | No new client code; 078 exact source unchanged | PASS (historical same-day) | 078 804/290 plus build; no fresh rerun claimed |
 | Hosted grants/migration/deploy/real socket/browser/device | No; separate authority | NOT RUN | Local acceptance only |
 
-Results and delivery pending.
+## Results / review / delivery
+
+Product commits `462573f` and final `2810a3d`. Final SQL tests executed against the exact source
+before the latter commit; no subsequent product change. Commands (local PG17.11):
+
+- `bash supabase/test-support/079_message_status_rpc_privileges_runner.sh` — PASS.
+- `GENOVA_079_CREATOR=local bash supabase/test-support/079_message_status_rpc_privileges_runner.sh` — PASS.
+- Same runner with `PGDATABASE=postgres` and separately `PGHOST=example.invalid` — expected REFUSED/exit 2.
+- `bash -n` and `git diff --check` — PASS; no build needed for SQL-only successor to 078.
+
+The normal 043 test remains immutable and passes after 079 in the production-like creator
+configuration where it failed in the audit. No global default privilege, role definition,
+function body, policy or baseline row changes. Unknown ACL grantors/grantees fail preflight
+for review rather than losing unexplained authority silently. Self-review added explicit
+revocation of authenticated grant options, tested exact restoration of a prior grant option,
+and pinned every runner connection to the validated CLI host/port.
+This is self-review, not an independently performed security certification.
+
+Both sequential creator runs remove their one disposable target; no 078/079 database remains.
+Final free space before record-only handoff: 35,986,192 KiB. Source restores, backup and private
+copy evidence remain deliberately unchanged. Only unrelated CLI marker remains dirty.
+No hosted effective-grant read, DB migration, deploy/push, socket/browser/device/provider action.
+Future release needs exact live prerequisites/grants, fresh backup/restore and explicit scope.
+078's component/SDK tests are not actual browser/Edge/device runtime acceptance.
+Next local checkpoint is URL-preview SSRF/resource bounds (F06); F02 public-media cutover/withdrawal
+remains a critical separately authorized external operation, not fixed by these local changes.

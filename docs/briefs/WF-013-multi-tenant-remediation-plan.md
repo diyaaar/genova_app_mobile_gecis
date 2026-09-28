@@ -9,14 +9,16 @@ The owner now authorizes scoped local implementation/tests/commits; external ope
 
 | Order | Observable outcome | Acceptance / authority |
 |---|---|---|
-| 1 / [078](078-active-membership-revocation.md) | Inactive membership no longer authorizes a tenant | Real local SQL read/write/role/RPC refusals; web/native fail-closed selection and cache teardown; no hosted changes |
-| 2 / 079 | Exact message-status RPC privileges independent of migration creator | Forward-only grant repair; postgres and restored Supabase default ACLs; original 043 matrix; exact rollback/reapply; no applied history rewrite |
+| 1 / [078](078-active-membership-revocation.md), F01 | Inactive membership no longer authorizes a tenant | COMPLETE LOCALLY: actual SQL/SDK/component/state-machine matrices, web 804/mobile 290; live NOT RUN |
+| 2 / [079](079-message-status-rpc-privileges.md), F03 | Exact message-status RPC privileges independent of migration creator | COMPLETE LOCALLY: postgres/default ACL and other local creator, original 043 matrix, exact down/reapply; live NOT RUN |
 | 3 | Bound URL-preview destinations and resource use | Private/metadata/redirect refusals, bounded stream/deadline; no internal-network exploitation |
+| 3a / F12 | Restrict local secret-file access, then separate credential review | Exact owned file modes, redacted secret checks; no automatic provider rotation or shared credential copying |
 | 4 | Assignment replacement is atomic | Failure leaves prior state intact; concurrent/retry matrix; bounded DB transaction, not UI-only repair |
-| 5 | Two unrelated choirs work without original-choir constants | Dynamic reference data, new-choir fixtures, single/multiple accounts, permission changes and cross-tenant refusals |
-| 6 | Protected storage cutover and old public-link withdrawal | Preserve accepted 071–076 copies; remaining copy/activation/legacy ACL writes each need exact external scope, backup/recovery and client verification |
-| 7 | Operable commercial lifecycle | Assisted onboarding/member-role administration; manual invoice/seat contract; choir vs account deletion/retention and last-chef rules |
-| 8 | Measured release readiness | DB tests in appropriate CI; 10 then 100 choir load/quota checks; actual browser/device/release layers, no inferred acceptance |
+| 5 / F05, F13 | Two unrelated choirs work without original-choir constants | Dynamic reference data, new-choir fixtures, single/multiple accounts, same-session stale-context mutations, permission changes and cross-tenant refusals |
+| 6 / F02, F07 | Protected storage cutover and old public-link withdrawal | Preserve accepted 071–076 copies; uniform file-ticket revocation contract; copy/activation/legacy ACL writes each need exact external scope, backup/recovery and client verification |
+| 7 / F08, F09 | Operable commercial lifecycle | Assisted onboarding/member-role administration; manual invoice/seat contract; choir vs account deletion/retention and last-chef rules |
+| 8 / F10, F11 | Measured release readiness | Reproducible empty DB baseline and incremental migration tests in appropriate CI; 10 then 100 choir paging/load/quota checks; actual browser/device/release layers |
+| 9 / F14 | Recover from definite draft rejection without trapping the user | Separate definitive failure from uncertain commit; safe reconcile/discard, never silently lose a pending upload |
 
 Order 6 preparation can proceed after tenant authority; actual private-file release remains a
 prerequisite for commercial availability, not an optional late security improvement.
@@ -27,7 +29,8 @@ Do not treat this table as acceptance of future unrun work.
 
 ## Owner decisions, at their dependent checkpoints
 
-- Onboarding: retain decision #18 operator-assisted v1 unless the owner selects self-service.
+- Onboarding: owner explicitly confirmed operator-assisted v1 on 28 September in this turn;
+  self-service is a later phase, consistent with decision #18.
   The current security fix needs neither new registration behavior nor live choir creation.
 - Commercial seats: per-extra-member price, billing period, active/invited/paused seat treatment.
   Five free members and manual invoices remain authoritative; no invented prices.
@@ -43,6 +46,6 @@ Do not treat this table as acceptance of future unrun work.
 |---|---|---|---|
 | Audit findings trace to bounded outcomes | Yes | PASS | F01–F14 mapped above; source report remains detailed authority |
 | Existing product and approval boundaries preserved | Yes | PASS | No push/deploy/hosted writes/provider/user-account action authorized by this plan |
-| Local links and diff consistency | Yes | NOT RUN | Check with implementation handoff |
+| Local links and diff consistency | Yes | PASS | Checked with final 078/079 handoff; no live acceptance implied |
 
 No new environment, dependency installation or delegated writer is introduced by this document.
