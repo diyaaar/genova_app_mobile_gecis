@@ -1,8 +1,22 @@
 # Genova — agent handoff
 
-Updated 28 September 2026 after [076](briefs/076-repertoire-mp3-r2-batch-2.md);
+Updated 28 September 2026 after [WF-012](briefs/WF-012-commercial-multi-tenant-audit.md)
+and [076](briefs/076-repertoire-mp3-r2-batch-2.md);
 [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) owns the queue.
 This is the current entry point; dated acceptance remains in individual briefs.
+
+## Latest owner steering: audit before development
+
+The owner requested a comprehensive commercial multi-tenant audit and no implementation.
+[Turkish report](reports/2026-09-28-commercial-multi-tenant-audit.md) records current source,
+test results and an ordered remediation plan. Web 797/mobile 288 tests pass. Local SQL proves
+an inactive membership retains reads/writes/roles; migration 043 fails its anonymous EXECUTE
+assertion when applied as postgres with restored Supabase default ACLs, despite passing under
+the normal runner's other local creator. Hosted grants were not reverified. Browser UI remains
+NOT RUN because Chromium is missing. No product fix, hosted change or 077 copy ran.
+The recommended next implementation checkpoint is active-membership revocation plus exact
+migration privilege acceptance; do not treat this recommendation as implementation authority.
+Preserve 076 copy evidence and the complete delivery objective.
 
 ## Read and verify
 

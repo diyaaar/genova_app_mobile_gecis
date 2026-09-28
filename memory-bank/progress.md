@@ -1,5 +1,15 @@
 # İlerleme indeksi
 
+28 September — [WF-012 commercial multi-tenant audit](../docs/briefs/WF-012-commercial-multi-tenant-audit.md)
+completed before further development, with no product fixes or external mutations.
+[Report](../docs/reports/2026-09-28-commercial-multi-tenant-audit.md): web 90/797 and mobile
+49/288 gates PASS; baseline tenant SQL six packages PASS, extended local SQL seventeen PASS,
+058 PASS with its setup-only fixture; 043 remains FAIL with postgres/restored default ACL,
+although the normal other-creator runner passes. Inactive-member read/write/role retention
+reproduced; legacy public media, second-choir constants and commercial lifecycle gaps recorded.
+Four API E2E tests pass; 26 browser cases NOT RUN due to missing Chromium. This completes
+the audit deliverable, not SaaS readiness or the full product goal. Pending 077 copy was not run.
+
 28 September current direction: [WF-008](../docs/briefs/WF-008-android-first-delivery-reset.md)
 records Android-first beta -> full product/two-store delivery, retained Supabase/private R2 target,
 $5/month preference and five free choir seats. 065 is accepted locally at `53c258f`: 063's

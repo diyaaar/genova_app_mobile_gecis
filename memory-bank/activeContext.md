@@ -8,6 +8,17 @@ is the short startup source. Historical acceptance remains in briefs and [progre
 
 ## Current outcome
 
+Latest owner request pauses development/copy execution for a commercial multi-tenant audit.
+[WF-012](../docs/briefs/WF-012-commercial-multi-tenant-audit.md) is audit-complete; its
+[report](../docs/reports/2026-09-28-commercial-multi-tenant-audit.md) finds real tenant foundations
+but commercial readiness blockers. Inactive-membership access/write was reproduced locally;
+043 anonymous execution grants fail under restored Supabase default ACLs/postgres creator.
+Web 797/mobile 288 tests pass; 24 SQL packages pass with their prerequisites, while 043's
+production-like grant assertion remains FAIL. Four API E2E tests pass; 26 browser UI cases
+cannot launch. No product code or external state changed. Proposed next work: revocation and
+exact migration permissions, subject to a new implementation request. 077 did not run.
+The original full product objective and accepted copy checkpoints below remain preserved.
+
 Deliver the same production product Android-first: usable beta soon, then complete the full
 roadmap and both-store readiness/release. The beta is neither a disposable demo nor final success.
 065 is now locally accepted; the 053–060 release chain, deterministic inventory, verified manifest,
