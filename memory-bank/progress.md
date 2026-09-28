@@ -1,5 +1,16 @@
 # İlerleme indeksi
 
+28 September — [084 stale-choir create guards](../docs/briefs/084-stale-choir-create-guards.md),
+scope `237bbe1`, code/test `54efa6b`, complete locally for four new-object forms. They retain
+opening choir; three service-backed create routes require/compare it before privileged work;
+legacy/private repertoire uses explicit choir context. Red rehearsal request and actual PG17
+default-choir insert reproduce wrong-B creation. Fixed context/no-role/inactive-target/form
+tests and actual explicit-tenant RLS/revoked-context matrix pass; 6 focused suites/59 tests,
+root 100 suites/971 tests/build pass. Source/baseline unchanged, exact clone dropped, outputs
+recoverably trashed with 33,827,652 KiB free. No schema/native/live/provider/push/deploy changed.
+Full F13 remains open; inventory in 084 names object-anchored and old-client limits. Next
+proposal: integrated two-fresh-choir product flow with delayed saves/permission changes.
+
 28 September — [083 new-choir profile reference isolation](../docs/briefs/083-new-choir-profile-reference-isolation.md),
 scope `4b4f999`, code/test `fdb2dbb`, complete locally for this bounded slice. Profile editor
 now loads active-choir schools/departments/repertoire and fails closed on switch/load error;

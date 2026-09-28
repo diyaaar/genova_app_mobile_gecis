@@ -1,6 +1,7 @@
 # Genova — agent handoff
 
-Updated 28 September 2026 after [083](briefs/083-new-choir-profile-reference-isolation.md),
+Updated 28 September 2026 after [084](briefs/084-stale-choir-create-guards.md),
+[083](briefs/083-new-choir-profile-reference-isolation.md),
 [082](briefs/082-atomic-repertoire-assignments.md),
 [081](briefs/081-local-secret-file-permissions.md),
 [080](briefs/080-safe-link-preview.md),
@@ -50,9 +51,18 @@ Actual disposable PG17 tests created two unrelated choirs through 007, exercised
 own/foreign reference/approval and inactive refusal; source/baseline were unchanged. Root 96
 suites/943 tests and build pass. The new choirs initially have empty reference catalogs; assisted
 catalog provisioning and broader F05/F13 routes remain open. Browser/device/hosted/release NOT RUN.
+084 (`237bbe1` scope, `54efa6b` code/test) locally binds four creation forms to their opening
+choir. Announcement/rehearsal/assignment routes now require expected choir before service work;
+legacy and private repertoire creation verify that origin and use an explicit choir ID. The
+red rehearsal request test and actual PG17 unscoped song insert reproduce wrong-B creation;
+fixed A/B refusal, same-choir controls, role/inactive-target and 8 form tests pass. Root 100
+suites/971 tests/build pass. Clone removed; owned outputs recoverably trashed; 33,827,652 KiB free.
+No schema/native source/live/provider/release changed. Full F13 is not closed; unrefreshed old
+legacy repertoire clients and object-anchored flows remain unaccepted. See 084's inventory.
 Only unrelated CLI marker stays dirty. Next bounded proposal for owner checkpoint approval:
-inventory and guard remaining new-row mutation flows against same-session stale-choir context,
-with a synthetic two-choir request matrix; do not claim full F13 or onboarding completion.
+integrated two-fresh-choir product acceptance across invitation, profile and repertoire/assignment,
+including delayed object-anchored requests and permission changes. Prepare exact synthetic/local
+environment; never use real-account mutations or count isolated mocks as browser/device proof.
 Provider/account rotation needs separate authority. Public legacy media
 (F02) and existing bearer/offline revocation (F07) remain open;
 077 copy and all cutover/release operations remain separately gated.

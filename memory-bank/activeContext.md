@@ -35,11 +35,17 @@ locally: permanent WebView profile options are scoped to the active choir, stale
 submits fail before privileged work, and a local PG17 synthetic A/B/shared-account matrix proves
 own/foreign reference and request boundaries. Root 96 suites/943 tests/build pass. 007 creates
 empty catalogs; operator catalog management, other F05/F13 mutation routes and actual browser/
-device/hosted acceptance remain open. Next bounded proposal requiring checkpoint approval:
-inventory/guard remaining new-row stale-context mutations with a two-choir matrix. Public legacy
-media, file-ticket/offline revocation and real copy/cutover/release remain open.
-All task-owned 083 DB fixtures were removed; build/coverage recoverably trashed; 34,378,488 KiB
-free after 083 (Trash retains disk blocks). Unrelated CLI
+device/hosted acceptance remain open. Owner-approved [084](../docs/briefs/084-stale-choir-create-guards.md)
+is complete locally at `54efa6b`: four new-object forms keep their opening choir, three service
+create routes compare it before privileged work, and legacy/private song creation uses explicit
+choir context. Red old-form/B-session rehearsal and actual unscoped-song baseline reproduced;
+fixed context/role/inactive/form and PG17 RLS matrix pass; root 100 suites/971 tests/build pass.
+Full F13 and older unrefreshed legacy repertoire clients remain open; no schema/native/live action.
+Next proposal requiring checkpoint approval: integrated two-fresh-choir invitation→profile→
+repertoire/assignment acceptance with delayed object requests and permission changes, using an
+exact synthetic local environment. Public media/ticket/offline/cutover/release remain open.
+All task-owned 084 DB fixtures were removed; build/coverage recoverably trashed; 33,827,652 KiB
+free after 084 (Trash retains disk blocks). Unrelated CLI
 marker remains unstaged. 077 did not run. Full product objective and accepted copies are preserved.
 
 Historical audit baseline:
