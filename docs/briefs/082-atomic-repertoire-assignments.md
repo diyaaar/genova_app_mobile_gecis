@@ -1,6 +1,7 @@
 # 082 — atomic, stale-safe repertoire assignment replacement
 
-Status: IN PROGRESS, 28 September 2026. Single writer: main agent.
+Status: COMPLETE LOCALLY, 28 September 2026. Single writer: main agent.
+Code/test commit: `3fc2b23`; scope commit: `e18a885`.
 One result: a chef saving one song/part assignment scope cannot lose its prior set on a failed write,
 and a stale editor cannot silently replace another completed save.
 Source: [WF-012 F04](../reports/2026-09-28-commercial-multi-tenant-audit.md),
@@ -71,14 +72,32 @@ plan and must not restore stale overwritten assignment rows by assumption.
 
 | Criterion | Required? | Status | Evidence / limit |
 |---|---|---|---|
-| Old delete-then-insert and failed-load defect reproduced safely | Yes | NOT RUN | Source/mocked path, not real user data |
-| Exact session/tenant/chef/target/role/part/input/refusal matrix | Yes | NOT RUN | Actual isolated PG17 with authenticated/anon/service roles |
-| Forced failure after delete preserves previous set; empty desired set commits intentionally | Yes | NOT RUN | Actual SQL transaction test, not mock-only |
-| Two concurrent saves and stale/retry semantics | Yes | NOT RUN | Separate local PG sessions / exact resulting rows |
-| Web modal failed-load refusal and API/RPC/push contract | Yes | NOT RUN | Focused web tests; no real provider push |
-| Exact migration grants/prerequisites/down/reapply; source unchanged | Yes | NOT RUN | PG17 clone, no hosted write |
-| Sibling website source impact and DB/client rollout order | Yes | NOT RUN | Tracked source search only; hosted consumers unknown |
-| Root `pnpm check`, relevant client gate, links/diff/cleanup/commits | Yes | NOT RUN | E2E/hosted/device separate |
+| Old delete-then-insert and failed-load defect reproduced safely | Yes | PASS | Old source has separate DELETE/UPSERT; runner reproduces committed delete + failed insert on synthetic fixture; modal mock reports read failure and disables Save |
+| Exact session/tenant/chef/target/role/part/input/refusal matrix | Yes | PASS | PG17 runner and SQL: A/B own/cross song, inactive actor/target, leader, blocked chef/section chef, duplicate/null/stale input, cross-part conflict; anon/service actual EXECUTE denial |
+| Forced failure after delete preserves previous set; empty desired set commits intentionally | Yes | PASS | Trigger injects X8202 after internal DELETE; old row remains; empty set and restoration pass inside rollback-only test transaction |
+| Two concurrent saves and stale/retry semantics | Yes | PASS | Two real PG sessions: first holds song row lock through commit, second waits then fails stale; exact two-row winner set; retry returns zero newly added IDs |
+| Web modal failed-load refusal and API/RPC/push contract | Yes | PASS | 19 focused tests: failed members/assignments reads refuse Save; exact loaded snapshot sent; JWT invoker RPC; error mapping; no push on DB failure/retry; best-effort push failure. Real provider NOT RUN |
+| Exact migration grants/prerequisites/down/reapply; source unchanged | Yes | PASS | `082` local runner: missing 078 and repeat-forward refusal, explicit grants, postgres creator, exact down/reapply, retained source fingerprint unchanged, disposable clone removed |
+| Sibling website source impact and DB/client rollout order | Yes | PASS | Tracked `../genesinovachoir` source has no assignment writer/reader or RPC caller; shared project remains. Hosted/untracked/runtime consumers NOT RUN. Release DB migration first, then web adapter + refreshed modal; stale browser clients lacking expected set fail closed with 400 |
+| Root `pnpm check`, relevant client gate, links/diff/cleanup/commits | Yes | PASS | Root lint/typecheck, 94 suites/927 tests/coverage, service worker check, Next production build; no mobile source changed; local links, `git diff --check`, bash syntax and split commits verified at handoff |
 | Hosted DB/Edge/client/provider/real-account acceptance | No; separate release | NOT RUN | No live remediation claim |
 
-Results pending.
+## Outcome and release boundary
+
+The split service-key route is replaced by one authenticated invoker-rights DB RPC. It locks the
+song, validates active chef/tenant/targets/part conflicts, compares the loaded set and changes
+only that part atomically. An exact retry is a no-op; notification is attempted only for newly
+added targets after commit. The modal refuses incomplete reads and sends its loaded snapshot.
+The new function has authenticated-only EXECUTE; historical direct-table write grants still
+exist, so the lock contract covers this product writer, not arbitrary legacy/direct clients.
+
+No hosted migration or web release was attempted. The old server route cannot call the new RPC;
+the new route requires the RPC and old open browser tabs do not send `expected_member_ids`.
+For release, review fresh exact-project backup/restore and both-project impact; apply DB first,
+deploy web route/modal together, require browser refresh, then test live A/B authorization,
+failures, concurrency and push. Rollback must coordinate app version with the function: the
+provided down removes only the new function and never reconstructs already overwritten rows.
+Browser E2E, hosted DB, real provider, native/device and rollout are NOT RUN.
+The task-owned `.next` and `coverage` outputs were moved to distinct recoverable entries in
+`/Users/alidiyarduran/.Trash`; only the unrelated `supabase/.temp/cli-latest` remains dirty.
+Free space after the move: 34,945,696 KiB (the Trash move does not reclaim disk blocks).

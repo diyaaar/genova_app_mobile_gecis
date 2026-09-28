@@ -1,5 +1,15 @@
 # İlerleme indeksi
 
+28 September — [082 atomic repertoire assignments](../docs/briefs/082-atomic-repertoire-assignments.md),
+code/test `3fc2b23`, complete locally. The old two-request delete/insert loses a synthetic prior row on insert failure;
+the new authenticated invoker RPC preserves it, refuses stale/concurrent saves and cross-tenant,
+inactive or privileged targets, and grants only authenticated EXECUTE. Real PG17 down/reapply and
+two-session winner/stale matrix pass; disposable clone removed, source unchanged. Modal read errors
+disable Save; 19 focused tests and root 94 suites/927 tests/build pass. Sibling site's tracked
+source has no assignment consumer. Hosted DB, browser/provider/device and rollout NOT RUN; shared
+DB release requires fresh backup/restore, both-project review, DB → web order and browser refresh.
+Next proposal: F05/F13 new-choir fixture/configuration, subject to checkpoint approval.
+
 28 September — [081 local secret-file modes](../docs/briefs/081-local-secret-file-permissions.md),
 scope `f34a25e`, complete locally for mode hardening. Ten exact ignored files now 0600 (nine
 narrowed, one preserved); workspace container 0777 -> 0755 closes direct path-replacement access.
@@ -7,7 +17,8 @@ Owner/type/single-link/no-ACL preflight and all private hash/inode/mtime/owner-a
 Five selected secret patterns match zero of 987 tracked files, not history/all-secrets proof.
 No content, source, credential, other folder, provider/DB/Edge, build or deployment changed.
 No generated artifact/copy; 33.8 GiB measured free. Creator/history/CI/rotation policy remains OPEN.
-Next proposal: F04 local transactional song-assignment replacement; checkpoint approval pending.
+Next proposal at that revision was F04 local transactional song-assignment replacement,
+now locally accepted in 082 above.
 
 28 September — [080 bounded public link previews](../docs/briefs/080-safe-link-preview.md),
 `9708ab9`, complete locally. Red baseline accepted localhost/private/metadata literals without

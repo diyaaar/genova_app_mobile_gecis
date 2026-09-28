@@ -25,9 +25,15 @@ Hosted Edge/DNS/Auth/gateway/device/browser remains NOT RUN; worker limits are n
 ten ignored files 0600, workspace 0755; unchanged bytes/owner/mtime, owner access and selected
 987-file token/private-key scan pass. No source/content/credential/provider change or build ran.
 F12 creator/umask, history/CI scanning and rotation governance remain OPEN; modes are local only.
-Next proposal requiring checkpoint approval: F04 transactional song-assignment replacement;
+[082](../docs/briefs/082-atomic-repertoire-assignments.md) is locally accepted: the web
+assignment route now calls one authenticated invoker DB RPC, and the modal refuses failed reads.
+Actual PG17 A/B/role/target/part/forced-failure/stale/concurrent/down-reapply tests pass;
+root 94 suites/927 tests and build pass. No hosted DB, provider, browser/device or release test
+ran; old browser tabs need refresh and legacy direct-table writers bypass the new lock.
+Next proposal requiring checkpoint approval: F05/F13 new-choir fixture and choir configuration;
 public legacy media, file-ticket/offline revocation and all real copy/cutover/release remain open.
-All new DB/HTTP/TLS fixtures removed; build/coverage recoverably trashed; about 33.8 GiB free. Unrelated CLI
+All new DB/HTTP/TLS fixtures removed; build/coverage recoverably trashed; 34,945,696 KiB free after
+082 (Trash retains disk blocks). Unrelated CLI
 marker remains unstaged. 077 did not run. Full product objective and accepted copies are preserved.
 
 Historical audit baseline:
