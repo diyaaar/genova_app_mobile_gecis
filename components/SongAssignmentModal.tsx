@@ -43,7 +43,9 @@ export function SongAssignmentModal({ isOpen, onClose, songId, songTitle, partNa
   const isPlayerActive = useMiniAudioPlayerStore((state) => state.isActive);
   const [members, setMembers] = useState<ChoirMember[]>([]);
   const [assigned, setAssigned] = useState<Set<string>>(new Set());
+  const [loadedAssignmentIds, setLoadedAssignmentIds] = useState<string[] | null>(null);
   const [loading, setLoading] = useState(true);
+  const [loadFailed, setLoadFailed] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -60,8 +62,10 @@ export function SongAssignmentModal({ isOpen, onClose, songId, songTitle, partNa
 
   useEffect(() => {
     if (!isOpen) return;
+    let cancelled = false;
     const load = async () => {
-      setLoading(true); setError(null);
+      setLoading(true); setLoadFailed(false); setLoadedAssignmentIds(null);
+      setMembers([]); setAssigned(new Set()); setError(null);
       try {
         let assignedQuery = supabase.from('song_assignments').select('member_id').eq('song_id', songId);
         if (partName) {
@@ -70,7 +74,7 @@ export function SongAssignmentModal({ isOpen, onClose, songId, songTitle, partNa
           assignedQuery = assignedQuery.is('part_name', null);
         }
 
-        const [{ data: membersData }, { data: assignedData }] = await Promise.all([
+        const [membersResult, assignedResult] = await Promise.all([
           supabase
             .from('choir_members')
             .select('id, choir_id, first_name, last_name, voice_group, sub_voice_group, auth_user_id, email, phone, is_active')
@@ -80,15 +84,24 @@ export function SongAssignmentModal({ isOpen, onClose, songId, songTitle, partNa
           assignedQuery,
         ]);
 
-        setMembers(membersData ?? []);
-        setAssigned(new Set((assignedData ?? []).map((a: { member_id: string }) => a.member_id)));
+        if (membersResult.error || assignedResult.error) {
+          throw new Error('Atamalar yüklenemedi. Yeniden açıp deneyin.');
+        }
+        if (cancelled) return;
+        const loadedIds = (assignedResult.data ?? []).map((a: { member_id: string }) => a.member_id);
+        setMembers(membersResult.data ?? []);
+        setAssigned(new Set(loadedIds));
+        setLoadedAssignmentIds(loadedIds);
       } catch (err) {
+        if (cancelled) return;
+        setLoadFailed(true);
         setError(err instanceof Error ? err.message : 'Veri yüklenemedi');
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     };
     load();
+    return () => { cancelled = true; };
   }, [isOpen, songId, partName]);
 
   const toggle = (memberId: string) => {
@@ -139,12 +152,14 @@ export function SongAssignmentModal({ isOpen, onClose, songId, songTitle, partNa
   };
 
   const handleSave = async () => {
+    if (loading || loadFailed || loadedAssignmentIds === null) return;
     setSaving(true); setError(null);
     try {
       await postJsonWithAuth<UpdateRepertoireAssignmentsResponse>('/api/repertoire/assignments/update', {
         song_id: songId,
         part_name: partName || null,
         member_ids: Array.from(assigned),
+        expected_member_ids: loadedAssignmentIds,
       });
 
       await onSaved?.();
@@ -311,7 +326,7 @@ export function SongAssignmentModal({ isOpen, onClose, songId, songTitle, partNa
                   >
                     İptal
                   </button>
-                  <button onClick={handleSave} disabled={saving || loading}
+                  <button onClick={handleSave} disabled={saving || loading || loadFailed || loadedAssignmentIds === null}
                     className="inline-flex items-center justify-center gap-2 rounded-[4px] border border-[var(--color-border-strong)] bg-[linear-gradient(180deg,rgba(192,178,131,0.25),rgba(192,178,131,0.1))] px-4 py-3 text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[var(--color-accent)] disabled:opacity-40 active:scale-95"
                   >
                     {saving ? <Loader2 size={14} className="animate-spin" /> : <Check size={14} />}

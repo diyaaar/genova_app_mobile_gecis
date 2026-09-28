@@ -1,238 +1,82 @@
 import { NextResponse } from 'next/server';
-import { createTenantServiceClient } from '@/lib/server/tenant-client';
-
 import { sendRepertoireAssignmentPush } from '@/lib/server/push-notifications';
-import { requireAuthenticatedUser } from '@/lib/server/supabase-auth';
+import { createSupabaseUserClient, requireAuthenticatedUser } from '@/lib/server/supabase-auth';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
-interface UpdateRepertoireAssignmentsBody {
-  song_id?: string;
-  part_name?: string | null;
-  member_ids?: string[];
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const MAX_MEMBERS = 500;
+
+interface RequestBody {
+  song_id?: unknown;
+  part_name?: unknown;
+  member_ids?: unknown;
+  expected_member_ids?: unknown;
 }
 
-interface RoleRow {
-  member_id?: string;
-  roles?: { name?: string } | { name?: string }[] | null;
+function readIds(value: unknown): string[] | null {
+  if (!Array.isArray(value) || value.length > MAX_MEMBERS
+    || value.some(id => typeof id !== 'string' || !UUID.test(id))
+    || new Set(value).size !== value.length) return null;
+  return value;
 }
 
-const BLOCKED_REPERTOIRE_ASSIGNMENT_ROLES = new Set(['sef', 'partisyon sefi']);
-
-function normalizeRoleName(value: string) {
-  return value
-    .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/ş/gi, 's')
-    .replace(/ı/gi, 'i')
-    .toLocaleLowerCase('tr-TR')
-    .trim();
-}
-
-function collectRoleNames(roleRows: RoleRow[] | null | undefined) {
-  return new Set(
-    (roleRows ?? [])
-      .flatMap((entry) => {
-        const roleData = entry.roles;
-        if (!roleData) {
-          return [];
-        }
-
-        if (Array.isArray(roleData)) {
-          return roleData
-            .map((role) => role?.name)
-            .filter((name): name is string => Boolean(name))
-            .map((name) => normalizeRoleName(name));
-        }
-
-        return roleData.name ? [normalizeRoleName(roleData.name)] : [];
-      })
-      .filter((roleName): roleName is string => Boolean(roleName)),
-  );
-}
-
-function hasBlockedRepertoireAssignmentRole(row: RoleRow) {
-  const roleNames = collectRoleNames([row]);
-  return Array.from(roleNames).some((roleName) => BLOCKED_REPERTOIRE_ASSIGNMENT_ROLES.has(roleName));
-}
-
-function toUniqueStringArray(value: unknown) {
-  if (!Array.isArray(value)) {
-    return [];
-  }
-
-  return Array.from(
-    new Set(
-      value
-        .map((item) => (typeof item === 'string' ? item.trim() : ''))
-        .filter(Boolean),
-    ),
-  );
-}
-
+/** Web compatibility adapter. Authorization, tenant scope and atomic mutation live in the
+ * authenticated invoker-rights DB RPC; the service key must never perform the replacement.
+ * Push runs only after the RPC commits and is best-effort.
+ */
 export async function POST(request: Request) {
   try {
-    const { user, accessToken } = await requireAuthenticatedUser(request);
-    const body = (await request.json()) as UpdateRepertoireAssignmentsBody;
-
-    const songId = body.song_id?.trim() ?? '';
-    const partName = typeof body.part_name === 'string' && body.part_name.trim() ? body.part_name.trim() : null;
-    const memberIds = toUniqueStringArray(body.member_ids);
-
-    if (!songId) {
-      return new NextResponse('song_id zorunlu.', { status: 400 });
+    const { accessToken } = await requireAuthenticatedUser(request);
+    let body: RequestBody;
+    try { body = await request.json() as RequestBody; }
+    catch { return new NextResponse('Geçersiz istek.', { status: 400 }); }
+    const songId = typeof body?.song_id === 'string' && UUID.test(body.song_id) ? body.song_id : null;
+    const memberIds = readIds(body?.member_ids);
+    const expectedIds = readIds(body?.expected_member_ids);
+    const partName = body?.part_name === null || body?.part_name === undefined ? null
+      : typeof body.part_name === 'string' && body.part_name.trim()
+        && body.part_name.trim().length <= 128 ? body.part_name.trim() : undefined;
+    if (!songId || !memberIds || !expectedIds || partName === undefined) {
+      return new NextResponse('Geçersiz atama isteği.', { status: 400 });
     }
 
-    const serviceClient = await createTenantServiceClient(user.id, accessToken);
-
-    const { data: actorMember, error: actorError } = await serviceClient
-      .from('choir_members')
-      .select('id')
-      .eq('auth_user_id', user.id)
-      .maybeSingle();
-
-    if (actorError) {
-      return new NextResponse(actorError.message, { status: 500 });
+    const client = createSupabaseUserClient(accessToken);
+    const { data, error } = await client.rpc('replace_repertoire_assignments', {
+      p_song_id: songId, p_part_name: partName,
+      p_member_ids: memberIds, p_expected_member_ids: expectedIds,
+    });
+    if (error) {
+      const failures: Record<string, [number, string]> = {
+        '42501': [403, 'Bu işlem için aktif Şef yetkisi gerekli.'],
+        '22023': [400, 'Geçersiz veya pasif korist seçimi.'],
+        'P0002': [404, 'Repertuvar bulunamadı.'],
+        '40001': [409, 'Atamalar başka bir oturumda değişti. Yeniden açıp deneyin.'],
+        '23505': [409, 'Korist bu şarkıda başka bir partisyona atanmış.'],
+      };
+      const [status, message] = failures[error.code] ?? [500, 'Atamalar kaydedilemedi.'];
+      return new NextResponse(message, { status });
     }
-
-    if (!actorMember?.id) {
-      return new NextResponse('Kullanıcı için korist kaydı bulunamadı.', { status: 404 });
+    const result = Array.isArray(data) ? data[0] : null;
+    if (!result || typeof result.song_title !== 'string'
+      || !Array.isArray(result.added_member_ids)
+      || result.added_member_ids.some((id: unknown) => typeof id !== 'string' || !UUID.test(id))) {
+      return new NextResponse('Atama sonucu doğrulanamadı.', { status: 500 });
     }
-
-    const { data: actorRoles, error: actorRolesError } = await serviceClient
-      .from('choir_member_roles')
-      .select('roles(name)')
-      .eq('member_id', actorMember.id);
-
-    if (actorRolesError) {
-      return new NextResponse(actorRolesError.message, { status: 500 });
-    }
-
-    const actorRoleNames = collectRoleNames(actorRoles as RoleRow[]);
-    if (!actorRoleNames.has('sef')) {
-      return new NextResponse('Bu işlem için Şef yetkisi gerekli.', { status: 403 });
-    }
-
-    const { data: song, error: songError } = await serviceClient
-      .from('repertoire')
-      .select('id, title')
-      .eq('id', songId)
-      .maybeSingle();
-
-    if (songError) {
-      return new NextResponse(songError.message, { status: 500 });
-    }
-
-    if (!song?.id) {
-      return new NextResponse('Repertuvar bulunamadı.', { status: 404 });
-    }
-
-    let existingAssignmentsQuery = serviceClient
-      .from('song_assignments')
-      .select('member_id')
-      .eq('song_id', songId);
-
-    existingAssignmentsQuery = partName
-      ? existingAssignmentsQuery.eq('part_name', partName)
-      : existingAssignmentsQuery.is('part_name', null);
-
-    const { data: existingAssignments, error: existingAssignmentsError } = await existingAssignmentsQuery;
-    if (existingAssignmentsError) {
-      return new NextResponse(existingAssignmentsError.message, { status: 500 });
-    }
-
-    const existingMemberIds = new Set((existingAssignments ?? []).map((assignment) => assignment.member_id));
-    const newlyAddedMemberIds = memberIds.filter((memberId) => !existingMemberIds.has(memberId));
-
-    if (memberIds.length > 0) {
-      const { data: targetMembers, error: targetMembersError } = await serviceClient
-        .from('choir_members')
-        .select('id, is_active')
-        .in('id', memberIds);
-
-      if (targetMembersError) {
-        return new NextResponse(targetMembersError.message, { status: 500 });
-      }
-
-      const targetMemberMap = new Map((targetMembers ?? []).map((row) => [row.id, row]));
-      const hasMissingMember = memberIds.some((memberId) => !targetMemberMap.has(memberId));
-      if (hasMissingMember) {
-        return new NextResponse('Geçersiz hedef korist seçimi.', { status: 400 });
-      }
-
-      const hasInactiveMember = memberIds.some((memberId) => targetMemberMap.get(memberId)?.is_active === false);
-      if (hasInactiveMember) {
-        return new NextResponse('Pasif kullanıcılara repertuvar atanamaz.', { status: 400 });
-      }
-
-      const { data: targetRoleRows, error: targetRoleRowsError } = await serviceClient
-        .from('choir_member_roles')
-        .select('member_id, roles(name)')
-        .in('member_id', memberIds);
-
-      if (targetRoleRowsError) {
-        return new NextResponse(targetRoleRowsError.message, { status: 500 });
-      }
-
-      const blockedTargets = ((targetRoleRows ?? []) as RoleRow[]).filter((row) => hasBlockedRepertoireAssignmentRole(row));
-      if (blockedTargets.length > 0) {
-        return new NextResponse('Repertuvar yalnızca koristlere atanabilir. Şef/partisyon şefi hedeflenemez.', { status: 400 });
-      }
-    }
-
-    let deleteAssignmentsQuery = serviceClient
-      .from('song_assignments')
-      .delete()
-      .eq('song_id', songId);
-
-    deleteAssignmentsQuery = partName
-      ? deleteAssignmentsQuery.eq('part_name', partName)
-      : deleteAssignmentsQuery.is('part_name', null);
-
-    const { error: deleteAssignmentsError } = await deleteAssignmentsQuery;
-    if (deleteAssignmentsError) {
-      return new NextResponse(deleteAssignmentsError.message, { status: 500 });
-    }
-
-    if (memberIds.length > 0) {
-      const { error: insertAssignmentsError } = await serviceClient
-        .from('song_assignments')
-        .upsert(
-          memberIds.map((memberId) => ({
-            song_id: songId,
-            member_id: memberId,
-            part_name: partName,
-          })),
-          { onConflict: 'song_id,member_id' },
-        );
-
-      if (insertAssignmentsError) {
-        return new NextResponse(insertAssignmentsError.message, { status: 500 });
-      }
-    }
-
-    if (newlyAddedMemberIds.length > 0) {
+    if (result.added_member_ids.length > 0) {
       try {
         await sendRepertoireAssignmentPush({
-          songId: song.id,
-          songTitle: song.title,
-          partName,
-          targetMemberIds: newlyAddedMemberIds,
+          songId, songTitle: result.song_title, partName,
+          targetMemberIds: result.added_member_ids,
         });
       } catch (pushError) {
         console.error('Repertoire assignment push send failed:', pushError);
       }
     }
-
-    return NextResponse.json({
-      ok: true,
-      song_id: songId,
-      part_name: partName,
-    });
+    return NextResponse.json({ ok: true, song_id: songId, part_name: partName });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Unauthorized';
-    const status = message === 'Unauthorized' ? 401 : 500;
-    return new NextResponse(message, { status });
+    const unauthorized = error instanceof Error && error.message === 'Unauthorized';
+    return new NextResponse(unauthorized ? 'Unauthorized' : 'Atamalar kaydedilemedi.', { status: unauthorized ? 401 : 500 });
   }
 }
