@@ -1,6 +1,6 @@
 # 083 — new-choir profile reference isolation
 
-Status: IN PROGRESS, 28 September 2026. Single writer: main agent.
+Status: COMPLETE LOCALLY, 28 September 2026. Single writer: main agent.
 One observable result: a member of either newly created choir sees only that choir's profile
 reference choices, and a profile request from an outdated tab cannot be written to another choir.
 Source: [WF-012 F05/F13](../reports/2026-09-28-commercial-multi-tenant-audit.md),
@@ -57,12 +57,18 @@ application revision; no DB down applies. Hosted use still needs exact source/re
 
 | Criterion | Required? | Status | Evidence / limit |
 |---|---|---|---|
-| Fixed old-choir choices and stale-context write reproduced safely | Yes | NOT RUN | Source/negative focused test, synthetic only |
-| Two fresh choirs: own reference choices, empty catalog, foreign refusal, shared-account switch | Yes | NOT RUN | Actual isolated PG17/RLS/tenant-link SQL, unchanged source |
-| Profile editor loads only selected choir and handles error/context switch without stale choices | Yes | NOT RUN | Focused UI test, browser E2E separate |
-| Submit endpoint refuses missing/mismatched expected choir before privileged write | Yes | NOT RUN | Focused route and tenant-client tests; same-session delayed request |
-| Own-choir profile request and approval remain possible; other-choir reference rejected | Yes | NOT RUN | Actual SQL plus focused API behavior; no real user rows |
-| Root `pnpm check`, local links/diff, cleanup and split commits | Yes | NOT RUN | No native source changed; browser/device/hosted separate |
+| Fixed old-choir choices and stale-context write reproduced safely | Yes | PASS | Source held four original-school/15 original-department IDs; negative UI test and expected-A/current-B helper test failed before fixes, then passed. Synthetic only. |
+| Two fresh choirs: own reference choices, empty catalog, foreign refusal, shared-account switch | Yes | PASS | `083_new_choir_profile_runner.sh`: local PG17 clone, actual 007 operator creation, 078/082 applied, authenticated A/B/shared-session RLS, own/foreign reference and inactive refusal. 005 regression and source/baseline fingerprints unchanged; disposable clone removed. |
+| Profile editor loads only selected choir and handles error/context switch without stale choices | Yes | PASS | Five focused UI cases: A→B, empty catalog, late A response, failed load, expected B on submit. Explicit choir filters and disabled save. Browser E2E separate. |
+| Submit endpoint refuses missing/mismatched expected choir before privileged write | Yes | PASS | Missing/invalid ID 400, A-tab/B-session mismatch 409 before service client/writes; verified via route and tenant-client tests. Existing deployed old tab must refresh. |
+| Own-choir profile request and approval remain possible; other-choir reference rejected | Yes | PASS | PG17 SQL proves tenant-link own approval and cross-tenant school/department/member refusal; route tests own school accepted and foreign school/department/song rejected before pending insert. No real user rows. |
+| Root `pnpm check`, local links/diff, cleanup and split commits | Yes | PASS | Lint, typecheck, 96 suites/943 tests, service-worker syntax and Next build passed after final test edits. `bash -n`, diff check and local-link check passed. Scope `4b4f999`, code/test `fdb2dbb`, final record commit below. Owned clone removed; `.next`/coverage moved recoverably to Trash; 34,378,488 KiB free. No mobile source changed. |
 | Hosted/browser/provider/real-account acceptance | No; separate release | NOT RUN | Do not claim production readiness |
 
-Self-review is not independent review. Required FAIL/NOT RUN prevents local closure.
+The first SQL fixture attempt exposed inherited operator JWT claims during synthetic setup;
+clearing them before privileged fixture insertion made the exact check pass. A new UI mock
+initially recreated a member object on each render and looped; a stable test fixture fixed it.
+These were local test harness errors, not hosted product observations. Self-review is not
+independent review. F05/F13 are only partially addressed: other mutation routes, invite/file/
+assignment product flows, operator reference-catalog management and full two-choir browser/device
+acceptance remain open. No schema migration, push, deploy, hosted data or provider action ran.

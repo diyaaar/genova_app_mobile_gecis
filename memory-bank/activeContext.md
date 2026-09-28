@@ -30,10 +30,16 @@ assignment route now calls one authenticated invoker DB RPC, and the modal refus
 Actual PG17 A/B/role/target/part/forced-failure/stale/concurrent/down-reapply tests pass;
 root 94 suites/927 tests and build pass. No hosted DB, provider, browser/device or release test
 ran; old browser tabs need refresh and legacy direct-table writers bypass the new lock.
-Next proposal requiring checkpoint approval: F05/F13 new-choir fixture and choir configuration;
-public legacy media, file-ticket/offline revocation and all real copy/cutover/release remain open.
-All new DB/HTTP/TLS fixtures removed; build/coverage recoverably trashed; 34,945,696 KiB free after
-082 (Trash retains disk blocks). Unrelated CLI
+Owner-approved [083](../docs/briefs/083-new-choir-profile-reference-isolation.md) is complete
+locally: permanent WebView profile options are scoped to the active choir, stale-tab profile
+submits fail before privileged work, and a local PG17 synthetic A/B/shared-account matrix proves
+own/foreign reference and request boundaries. Root 96 suites/943 tests/build pass. 007 creates
+empty catalogs; operator catalog management, other F05/F13 mutation routes and actual browser/
+device/hosted acceptance remain open. Next bounded proposal requiring checkpoint approval:
+inventory/guard remaining new-row stale-context mutations with a two-choir matrix. Public legacy
+media, file-ticket/offline revocation and real copy/cutover/release remain open.
+All task-owned 083 DB fixtures were removed; build/coverage recoverably trashed; 34,378,488 KiB
+free after 083 (Trash retains disk blocks). Unrelated CLI
 marker remains unstaged. 077 did not run. Full product objective and accepted copies are preserved.
 
 Historical audit baseline:

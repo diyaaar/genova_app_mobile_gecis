@@ -1,6 +1,7 @@
 # Genova — agent handoff
 
-Updated 28 September 2026 after [082](briefs/082-atomic-repertoire-assignments.md),
+Updated 28 September 2026 after [083](briefs/083-new-choir-profile-reference-isolation.md),
+[082](briefs/082-atomic-repertoire-assignments.md),
 [081](briefs/081-local-secret-file-permissions.md),
 [080](briefs/080-safe-link-preview.md),
 [079](briefs/079-message-status-rpc-privileges.md),
@@ -42,9 +43,17 @@ no mobile source changed. Sibling website tracked source has no assignment consu
 and unknown runtime consumers still require review. Hosted DB, real browser/provider/device,
 push and release NOT RUN. Old browser tabs require refresh after the DB → web rollout;
 all legacy direct-table writers do not participate in the RPC lock. See [082](briefs/082-atomic-repertoire-assignments.md).
-Only unrelated CLI marker stays dirty. Next bounded proposal: F05/F13 new-choir fixture and
-Genova-specific configuration isolation; seek the owner's checkpoint approval. Provider/account rotation
-needs separate authority. Public legacy media
+083 (`4b4f999` scope, `fdb2dbb` code/test) locally removes original-choir school/department
+UUIDs from the permanent WebView profile editor, loads reference choices for its active choir,
+and rejects an old-tab profile request after same-session choir switch before privileged work.
+Actual disposable PG17 tests created two unrelated choirs through 007, exercised a shared account,
+own/foreign reference/approval and inactive refusal; source/baseline were unchanged. Root 96
+suites/943 tests and build pass. The new choirs initially have empty reference catalogs; assisted
+catalog provisioning and broader F05/F13 routes remain open. Browser/device/hosted/release NOT RUN.
+Only unrelated CLI marker stays dirty. Next bounded proposal for owner checkpoint approval:
+inventory and guard remaining new-row mutation flows against same-session stale-choir context,
+with a synthetic two-choir request matrix; do not claim full F13 or onboarding completion.
+Provider/account rotation needs separate authority. Public legacy media
 (F02) and existing bearer/offline revocation (F07) remain open;
 077 copy and all cutover/release operations remain separately gated.
 

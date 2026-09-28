@@ -1,5 +1,17 @@
 # İlerleme indeksi
 
+28 September — [083 new-choir profile reference isolation](../docs/briefs/083-new-choir-profile-reference-isolation.md),
+scope `4b4f999`, code/test `fdb2dbb`, complete locally for this bounded slice. Profile editor
+now loads active-choir schools/departments/repertoire and fails closed on switch/load error;
+submit requires the displayed choir to match the server-resolved session before privileged
+work, and foreign school/department/song IDs cannot enter a pending request. Actual PG17
+007-created A/B choirs, shared account, empty catalog, A/B RLS, own approval, foreign/inactive
+refusal and 005 regression pass; disposable clone removed with source data unchanged. Root
+96 suites/943 tests/build pass; owned build/coverage moved recoverably to Trash. No migration,
+mobile source, push, deploy, hosted account/data, real browser/device or provider test ran.
+F05/F13 remain partial: operator catalog management, other mutation routes and complete
+two-choir product flow need separate checkpoints. Next proposal: stale-context new-row routes.
+
 28 September — [082 atomic repertoire assignments](../docs/briefs/082-atomic-repertoire-assignments.md),
 code/test `3fc2b23`, complete locally. The old two-request delete/insert loses a synthetic prior row on insert failure;
 the new authenticated invoker RPC preserves it, refuses stale/concurrent saves and cross-tenant,
