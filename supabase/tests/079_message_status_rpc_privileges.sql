@@ -7,7 +7,8 @@ begin
     or has_function_privilege('anon','public.mark_chat_message_status(uuid,text)','EXECUTE')
     or has_function_privilege('service_role','public.mark_chat_message_status(uuid,text)','EXECUTE')
     or exists(select 1 from pg_proc p, lateral aclexplode(p.proacl) a
-      where p.oid='public.mark_chat_message_status(uuid,text)'::regprocedure and a.grantee=0) then
+      where p.oid='public.mark_chat_message_status(uuid,text)'::regprocedure
+        and (a.grantee=0 or (a.grantee='authenticated'::regrole::oid and a.is_grantable))) then
     raise exception '079: effective privilege boundary differs';
   end if;
   execute 'set local role anon';

@@ -63,7 +63,6 @@ for prerequisite in \
   supabase/migrations/20260928140000_active_membership_revocation_078.sql; do
   file "$TARGET_DB" "$prerequisite"
 done
-prior_status="$(status_snapshot "$TARGET_DB")"
 echo "079: isolated clone; migration creator=$CREATOR; original defaults unchanged"
 if [ "$CREATOR" = postgres ]; then
   [ "$(q "$TARGET_DB" "select has_function_privilege('anon','public.mark_chat_message_status(uuid,text)','EXECUTE');")" = t ] || refuse 'Supabase default-ACL reproduction missing'
@@ -74,6 +73,9 @@ else
   file "$TARGET_DB" "$OLD_TEST"
   echo 'PASS original local-creator 043 matrix (different default ACLs)'
 fi
+# A prior delegated grant must be removed, and exact down must retain its provenance/option.
+q "$TARGET_DB" 'grant execute on function public.mark_chat_message_status(uuid,text) to authenticated with grant option;' >/dev/null
+prior_status="$(status_snapshot "$TARGET_DB")"
 file "$TARGET_DB" "$MIGRATION"
 for test in "$TEST" "$OLD_TEST" supabase/tests/078_active_membership_revocation.sql; do file "$TARGET_DB" "$test"; done
 fixed_status="$(status_snapshot "$TARGET_DB")"

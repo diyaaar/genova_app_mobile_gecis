@@ -26,6 +26,6 @@ from pg_proc p where p.oid='public.mark_chat_message_status(uuid,text)'::regproc
 revoke all on genova_079.prior_status_acl from public, anon, authenticated, service_role;
 
 -- REVOKE PUBLIC alone does not remove per-role grants from Supabase's creator defaults.
-revoke all on function public.mark_chat_message_status(uuid,text) from public, anon, service_role;
+revoke all on function public.mark_chat_message_status(uuid,text) from public, anon, authenticated, service_role;
 grant execute on function public.mark_chat_message_status(uuid,text) to authenticated;
 commit;
