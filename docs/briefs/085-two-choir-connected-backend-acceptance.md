@@ -1,6 +1,7 @@
 # 085 — connected two-fresh-choir backend acceptance
 
-Status: IN PROGRESS, 28 September 2026. Main agent is the single writer.
+Status: COMPLETE LOCALLY for the bounded backend matrix, 28 September 2026.
+Main agent is the single writer. Scope `a480e5d`; test sources `4d87e90`.
 WF-013 checkpoint 5 remains partial. Owner approved continuing its integrated synthetic
 two-choir acceptance; this brief proves the backend portion, not browser/file/device release.
 
@@ -51,12 +52,47 @@ baseline data. Existing migrations apply only to the disposable clone, not the s
 
 | Criterion | Required? | Status | Evidence / limit |
 |---|---|---|---|
-| Two genuinely fresh 007 choirs and actual 008 invitation acceptance create separate memberships for one account | Yes | NOT RUN | No direct membership fixture for invited account; synthetic verified Auth/session rows only |
-| Connected profile/catalog/repertoire/assignment flow has A/B positive controls and foreign refusals | Yes | NOT RUN | Catalog/profile bootstrap is explicitly privileged fixture setup; not a public product/API flow |
-| Same-session old-object requests, role removal and selected-member revocation leave both choirs' prior state intact | Yes | NOT RUN | Real PG17 constraints/RLS/RPC; web representative routes tested separately |
-| Actual route/tenant client/SDK preserve scoped object IDs, refuse foreign/demoted/inactive requests, own-context succeeds | Yes | NOT RUN | Simulated HTTP responses; no mock of tenant client/SDK, not actual Auth/REST runtime |
-| Source and clone baseline unchanged; exact clone removed; focused/root/diff/link gates and split commits | Yes | NOT RUN | Re-run after final test source edits; self-review is not independent review |
+| Two genuinely fresh 007 choirs and actual 008 invitation acceptance create separate memberships for one account | Yes | PASS | 28 Sep, PG17.11: guarded 085 runner; each founder invites shared account, wrong recipient/reused token refused; two separate Korist memberships, no raw token persisted. Auth users/sessions are synthetic verified fixtures, not real login/mail. |
+| Connected profile/catalog/repertoire/assignment flow has A/B positive controls and foreign refusals | Yes | PASS | 085 SQL: same catalog/song names allowed in distinct choirs, separate request/profile references, own song inserts/atomic assignments/idempotent retry, A/B reads, foreign school/target refusal. Catalog/profile bootstrap remains privileged fixture setup, not public onboarding or actual profile review API acceptance. |
+| Same-session old-object requests, role removal and selected-member revocation leave both choirs' prior state intact | Yes | PASS | 085 SQL: shared chef/current B cannot mutate A song/request or list A invites; before/after fixture digests equal. B demotion cannot inherit A chef role; selected inactive B yields null, no automatic A fallback; explicit active A reselect succeeds. Revocation happens before dispatch, not concurrently in-flight. |
+| Actual route/tenant client/SDK preserve scoped object IDs, refuse foreign/demoted/inactive requests, own-context succeeds | Yes | PASS | 19 new tests: rehearsal delete, assignment delete, profile approval. Actual route/tenant client/SDK with simulated HTTP and verified Auth identity; every service read/write scoped to B, old A ID returns 404 with no write/push, demotion 403, inactive/null bootstrap fails closed (currently 500), own B success and query-failure refusal. Not actual Auth/REST runtime. |
+| Source and clone baseline unchanged; exact clone removed; focused/root/diff/link gates and split commits | Yes | PASS | Final guarded runner passes connected SQL + 008/083/084 regressions and 15-table baseline/source equality; synthetic probe verifies fingerprint sensitivity. Focused 3 suites/62 tests; root lint/typecheck/101 suites/990 tests/service-worker/build PASS. Scoped self-review, bash syntax/local links/diff checks; commits split. Exact clone absent; outputs recoverably trashed; 33,270,848 KiB free. |
 | Browser/Edge/Auth mail/file/device/hosted release and remaining mutation families | No; retained WF-013 step 5/6/8 gates | NOT RUN | Need exact local service runtime/resource preparation and separately authorized release |
 
 Required FAIL/NOT RUN prevents this bounded backend checkpoint closing. Passing it does
 not close F05/F13, certify all APIs or prove a new choir can onboard without operator help.
+
+## Review, corrections and remaining boundaries
+
+Self-review, not independent review. No production source, migration, native code,
+dependency, hosted account/data/provider/push/deploy changed. One test-only verification
+defect was caught in review: `query_to_xml(..., tableforest=true)` produces a row root,
+but the first fingerprint used a table-root XPath. A tiny actual SQL probe proved 0 vs 1
+XPath matches. Changed to tableforest=false, require all 15 hashes, and insert/remove an
+exact synthetic clone-only choir to prove the final fingerprint changes and returns to
+baseline. Re-ran the entire guarded SQL/regression/cleanup matrix successfully. Initial
+fingerprint equality was not retained as final preservation evidence. A vacuous test was
+also removed before the final focused/full gates; no production guard was relaxed.
+
+Generated `.next` 467 MiB and coverage 348 KiB moved recoverably to
+`/Users/alidiyarduran/.Trash/genovakorist-085-next-20260928` and
+`/Users/alidiyarduran/.Trash/genovakorist-085-coverage-20260928`. Trash retains disk blocks.
+No new VM/browser runtime; original PG restore retained. Only unrelated CLI marker stays dirty.
+
+Important unaccepted boundaries, not new verified live failures:
+
+- Privileged routes resolve membership/roles before later service-key writes. This matrix
+  covers changes before dispatch, not changes between check and commit. Atomic permission
+  revocation and partial profile/deletion writes remain open; inspect the actual route timing
+  in `app/api/profile-change-requests/review/route.ts` and `app/api/rehearsals/delete/route.ts`.
+- The three route representatives do not certify announcement/assignment updates, lock,
+  attendance, tags, chat or file/upload compensation. Preserve 084's full inventory.
+- Manual catalog/member-role fixture setup is not an implemented operator administration UI.
+- 082's concurrency/rollback proof is historical; this run does not repeat or extend it.
+- Browser, actual Auth/REST/Edge, email, protected files, device and release remain NOT RUN.
+
+Next bounded owner checkpoint: prepare a measured, minimal disposable local service runtime
+and prove one real browser-to-server flow early, then extend the preserved two-choir matrix.
+Use installed Chrome and existing source/tooling; obtain image/VM peak-size evidence before
+downloads. No real-account fallback, provider writes or blanket release authority. Full
+WF-013 checkpoint 5 stays PARTIAL until its complete product and remaining mutation gates pass.

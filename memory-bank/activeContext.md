@@ -41,9 +41,19 @@ create routes compare it before privileged work, and legacy/private song creatio
 choir context. Red old-form/B-session rehearsal and actual unscoped-song baseline reproduced;
 fixed context/role/inactive/form and PG17 RLS matrix pass; root 100 suites/971 tests/build pass.
 Full F13 and older unrefreshed legacy repertoire clients remain open; no schema/native/live action.
-Next proposal requiring checkpoint approval: integrated two-fresh-choir invitation→profile→
-repertoire/assignment acceptance with delayed object requests and permission changes, using an
-exact synthetic local environment. Public media/ticket/offline/cutover/release remain open.
+Owner-approved [085](../docs/briefs/085-two-choir-connected-backend-acceptance.md) is locally
+accepted at `4d87e90` for a connected PG17 backend matrix: fresh 007 choirs, actual 008 invited
+shared memberships, separate profile/catalog data, repertoire/atomic assignments, old A object
+in B and pre-dispatch role/revocation refusals. Catalog/profile/role setup remains privileged
+fixture work; three real route/tenant-client/SDK representatives use simulated HTTP, not REST/
+Auth runtime. Focused 3/62 and root 101/990/build pass; exact clone removed, baseline/source
+unchanged with sensitivity-tested 15-table fingerprint. Outputs recoverably trashed; 33,270,848
+KiB free. No production source/schema/native/live changed. WF-013 step 5 stays PARTIAL; in-flight
+authority/partial-write races, remaining mutations, catalog administration and browser/files/
+device acceptance remain open. Next owner checkpoint: measured minimal disposable local service
+runtime, prove one real browser/server flow early, then extend the two-choir matrix. Chrome is
+installed but no Colima/local Auth/REST/Edge runtime remains; estimate peak before downloads.
+Public media/ticket/offline/cutover/release remain open.
 All task-owned 084 DB fixtures were removed; build/coverage recoverably trashed; 33,827,652 KiB
 free after 084 (Trash retains disk blocks). Unrelated CLI
 marker remains unstaged. 077 did not run. Full product objective and accepted copies are preserved.

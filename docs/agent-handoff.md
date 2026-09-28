@@ -1,6 +1,7 @@
 # Genova — agent handoff
 
-Updated 28 September 2026 after [084](briefs/084-stale-choir-create-guards.md),
+Updated 28 September 2026 after [085](briefs/085-two-choir-connected-backend-acceptance.md),
+[084](briefs/084-stale-choir-create-guards.md),
 [083](briefs/083-new-choir-profile-reference-isolation.md),
 [082](briefs/082-atomic-repertoire-assignments.md),
 [081](briefs/081-local-secret-file-permissions.md),
@@ -59,10 +60,19 @@ fixed A/B refusal, same-choir controls, role/inactive-target and 8 form tests pa
 suites/971 tests/build pass. Clone removed; owned outputs recoverably trashed; 33,827,652 KiB free.
 No schema/native source/live/provider/release changed. Full F13 is not closed; unrefreshed old
 legacy repertoire clients and object-anchored flows remain unaccepted. See 084's inventory.
-Only unrelated CLI marker stays dirty. Next bounded proposal for owner checkpoint approval:
-integrated two-fresh-choir product acceptance across invitation, profile and repertoire/assignment,
-including delayed object-anchored requests and permission changes. Prepare exact synthetic/local
-environment; never use real-account mutations or count isolated mocks as browser/device proof.
+085 (`a480e5d` scope, `4d87e90` tests) accepts the bounded connected backend matrix:
+actual PG17 007 fresh choirs → 008 invitations/shared Korist memberships → separate profile/
+catalog data → repertoire/atomic assignments; old A object in B, foreign targets, B demotion
+and selected-member revocation refused without changing fixture state. Catalog/profile/role
+setup is explicitly privileged/manual fixture work. Three web route representatives use actual
+tenant client/SDK with simulated HTTP, not a real REST/Auth service. Focused 3/62 and root
+101/990/build pass. Final 15-table fingerprint was sensitivity-tested; source/clone unchanged,
+clone removed, outputs recoverably trashed; 33,270,848 KiB free. No product source/schema/native/
+live/provider change. In-flight authority and partial writes remain open; WF-013 step 5 is PARTIAL.
+Only unrelated CLI marker stays dirty. Next owner checkpoint: measured minimal disposable local
+service runtime and one real browser/server flow early, then the preserved two-choir product
+matrix. Chrome is installed but Colima/local Auth/REST/Edge runtime is absent; obtain peak-size
+evidence before downloads. No real-account fallback or equating mocks with browser/device proof.
 Provider/account rotation needs separate authority. Public legacy media
 (F02) and existing bearer/offline revocation (F07) remain open;
 077 copy and all cutover/release operations remain separately gated.

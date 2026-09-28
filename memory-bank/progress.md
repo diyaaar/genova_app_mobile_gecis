@@ -1,5 +1,18 @@
 # İlerleme indeksi
 
+28 September — [085 connected two-choir backend acceptance](../docs/briefs/085-two-choir-connected-backend-acceptance.md),
+scope `a480e5d`, test sources `4d87e90`, complete locally for the bounded backend matrix.
+Actual PG17 007 fresh choirs → 008 invited shared memberships → separate profile/catalog data
+→ repertoire/atomic assignments, shared-session foreign-object/target and pre-dispatch role/
+revocation refusals pass. Catalog/profile/member-role setup remains privileged fixture work;
+three web routes use actual tenant client/SDK with simulated HTTP. Focused 3 suites/62 tests,
+root 101 suites/990 tests/build and 008/083/084 SQL regressions pass. Self-review corrected a
+fingerprint XPath defect; final 15-table digest sensitivity, baseline/source equality and exact
+clone cleanup pass. Owned outputs recoverably trashed; 33,270,848 KiB free. No production code,
+schema/native/live/provider/release changed. WF-013 step 5 is still PARTIAL: in-flight authority/
+partial writes, remaining mutations, catalog management and full browser/file/device flow open.
+Next owner checkpoint: resource-bounded real local browser/server integration, no real fallback.
+
 28 September — [084 stale-choir create guards](../docs/briefs/084-stale-choir-create-guards.md),
 scope `237bbe1`, code/test `54efa6b`, complete locally for four new-object forms. They retain
 opening choir; three service-backed create routes require/compare it before privileged work;
