@@ -1,6 +1,7 @@
 # Genova — agent handoff
 
-Updated 28 September 2026 after [085](briefs/085-two-choir-connected-backend-acceptance.md),
+Updated 29 September 2026 after [086](briefs/086-two-choir-real-web-acceptance.md),
+[085](briefs/085-two-choir-connected-backend-acceptance.md),
 [084](briefs/084-stale-choir-create-guards.md),
 [083](briefs/083-new-choir-profile-reference-isolation.md),
 [082](briefs/082-atomic-repertoire-assignments.md),
@@ -69,10 +70,18 @@ tenant client/SDK with simulated HTTP, not a real REST/Auth service. Focused 3/6
 101/990/build pass. Final 15-table fingerprint was sensitivity-tested; source/clone unchanged,
 clone removed, outputs recoverably trashed; 33,270,848 KiB free. No product source/schema/native/
 live/provider change. In-flight authority and partial writes remain open; WF-013 step 5 is PARTIAL.
-Only unrelated CLI marker stays dirty. Next owner checkpoint: measured minimal disposable local
-service runtime and one real browser/server flow early, then the preserved two-choir product
-matrix. Chrome is installed but Colima/local Auth/REST/Edge runtime is absent; obtain peak-size
-evidence before downloads. No real-account fallback or equating mocks with browser/device proof.
+086 (`a366c5c` scope, `dbb0afb` test/config sources) now accepts actual local browser/Next/Auth/
+REST/RLS/Edge integration for fresh A/B invitations, shared memberships, own profile catalog/
+pending requests/repertoire/assignment reads and delayed-form/foreign/revoked refusals. No response
+mocks; wrong recipient rejected; actual source digest unchanged. Final root 101/990/build passes.
+Catalog and synthetic non-provider song readiness metadata remain manual fixtures; assignment
+creation is founder RPC, not modal UX; protected files, signup/mail, approval/merge and devices
+remain unaccepted. Revoked profile write fails closed without data change but returns 500;
+explicit authorization error mapping remains debt. In-flight authority/partial-write risk is open.
+Task services/tunnel/VM/data disk/context and ephemeral secrets removed; owned build/coverage in
+Trash; 36,245,476 KiB free. Only unrelated CLI marker dirty. WF-013 step 5 remains PARTIAL.
+Next proposed checkpoint: authority-safe profile write at commit with actual concurrency proof,
+then atomic approval/merge. Create the bounded brief first; no live schema/provider action implied.
 Provider/account rotation needs separate authority. Public legacy media
 (F02) and existing bearer/offline revocation (F07) remain open;
 077 copy and all cutover/release operations remain separately gated.

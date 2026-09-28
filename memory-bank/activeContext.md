@@ -1,6 +1,6 @@
 # Active context
 
-Updated 28 September 2026. [WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md)
+Updated 29 September 2026. [WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md)
 reconciles the execution queue after [WF-008's](../docs/briefs/WF-008-android-first-delivery-reset.md)
 owner-approved reset; the [delivery plan](../docs/mobil-teslim-plani.md)
 owns priorities, the objective and resource/test controls. [Handoff](../docs/agent-handoff.md)
@@ -50,9 +50,18 @@ Auth runtime. Focused 3/62 and root 101/990/build pass; exact clone removed, bas
 unchanged with sensitivity-tested 15-table fingerprint. Outputs recoverably trashed; 33,270,848
 KiB free. No production source/schema/native/live changed. WF-013 step 5 stays PARTIAL; in-flight
 authority/partial-write races, remaining mutations, catalog administration and browser/files/
-device acceptance remain open. Next owner checkpoint: measured minimal disposable local service
-runtime, prove one real browser/server flow early, then extend the two-choir matrix. Chrome is
-installed but no Colima/local Auth/REST/Edge runtime remains; estimate peak before downloads.
+device acceptance remain open. [086](../docs/briefs/086-two-choir-real-web-acceptance.md), sources
+`dbb0afb`, now passes the actual local Chrome/Next/Auth/REST/RLS/Edge two-fresh-choir matrix:
+wrong-recipient refusal, A/B invitations/shared memberships, selected catalogs/pending profiles/
+repertoire/assignment reads, same-session delayed form 409, foreign reference 400 and revoked
+selection null/read empty/write refused without data change. Zero response mocks; final root
+101/990/build passes. Catalog/readiness metadata are manual synthetic fixtures; no provider/file,
+signup/mail, approval/merge, assignment modal or device acceptance. Revoked profile write returns
+500: fail-closed isolation passes, authorization error contract remains debt. In-flight/partial
+writes remain open and WF-013 step 5 stays PARTIAL. Exact services/tunnel/VM/data disk/context/
+ephemeral secrets removed; build/coverage recoverably trashed; 36,245,476 KiB free; source digest
+unchanged. Only unrelated CLI marker dirty. Next proposed checkpoint: authority-safe profile
+request write at commit with real concurrency proof, then atomic approval/merge; brief first.
 Public media/ticket/offline/cutover/release remain open.
 All task-owned 084 DB fixtures were removed; build/coverage recoverably trashed; 33,827,652 KiB
 free after 084 (Trash retains disk blocks). Unrelated CLI

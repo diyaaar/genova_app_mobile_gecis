@@ -1,5 +1,20 @@
 # İlerleme indeksi
 
+29 September — [086 real two-choir web acceptance](../docs/briefs/086-two-choir-real-web-acceptance.md),
+scope `a366c5c`, test/config `dbb0afb`, complete locally for the bounded actual browser matrix.
+Installed Chrome/production Next and real local Auth/REST/RLS/Edge pass wrong-recipient refusal,
+fresh A/B invitations/shared memberships, selected profile choices/pending requests, own songs/
+assignment reads, delayed A form after same-session B switch (409), foreign reference (400) and
+pre-dispatch membership revocation (null context/empty reads/refused write/unchanged profile digest).
+Zero response mocks; final lint/typecheck/101 suites/990 tests/service-worker/build pass. Manual
+catalogs/synthetic readiness metadata, founder assignment RPC and confirmed test Auth identities
+do not accept operator UI, protected files, modal UX, signup/mail, approval or device/release.
+Revoked profile POST returns fail-closed 500; error mapping remains debt. All exact task services,
+tunnel/VM/data disk/context and ephemeral secrets removed; source six-table digest unchanged;
+build/coverage recoverably trashed; 36,245,476 KiB free. No production source/schema/live changed.
+WF-013 step 5 remains PARTIAL; next proposed outcome is authority-safe profile write at commit,
+then atomic approval/merge, not another fixture/framework or repeated unchanged browser run.
+
 28 September — [085 connected two-choir backend acceptance](../docs/briefs/085-two-choir-connected-backend-acceptance.md),
 scope `a480e5d`, test sources `4d87e90`, complete locally for the bounded backend matrix.
 Actual PG17 007 fresh choirs → 008 invited shared memberships → separate profile/catalog data
