@@ -1,5 +1,14 @@
 # İlerleme indeksi
 
+28 September — [081 local secret-file modes](../docs/briefs/081-local-secret-file-permissions.md),
+scope `f34a25e`, complete locally for mode hardening. Ten exact ignored files now 0600 (nine
+narrowed, one preserved); workspace container 0777 -> 0755 closes direct path-replacement access.
+Owner/type/single-link/no-ACL preflight and all private hash/inode/mtime/owner-access checks PASS.
+Five selected secret patterns match zero of 987 tracked files, not history/all-secrets proof.
+No content, source, credential, other folder, provider/DB/Edge, build or deployment changed.
+No generated artifact/copy; 33.8 GiB measured free. Creator/history/CI/rotation policy remains OPEN.
+Next proposal: F04 local transactional song-assignment replacement; checkpoint approval pending.
+
 28 September — [080 bounded public link previews](../docs/briefs/080-safe-link-preview.md),
 `9708ab9`, complete locally. Red baseline accepted localhost/private/metadata literals without
 network probes; green 104 focused cases and actual installed Deno numeric HTTP/TLS/Host/SNI/
@@ -9,7 +18,8 @@ Root 92 files/908 tests/build and mobile typecheck/2 focused suites/6 send tests
 source, DB, push, deployment, hosted Auth/DNS, real accounts, provider, UI/device or 077 copy changed.
 Synthetic certificate/key/servers removed; owned build/coverage recoverably in Trash, 33.8 GiB
 measured free. Distributed quotas and hosted Edge compatibility are NOT proven. Next bounded
-proposal in WF-013: F12 local secret-file modes; credential rotation remains separately gated.
+proposal at that revision was F12 local secret-file modes, now accepted in 081 above;
+credential rotation remains separately gated.
 
 28 September — owner approved audit-backed local implementation and confirmed assisted v1
 onboarding. [WF-013 plan](../docs/briefs/WF-013-multi-tenant-remediation-plan.md),

@@ -21,7 +21,11 @@ is locally accepted: public/all-DNS policy, numeric Host/TLS transport, bounded 
 pre-auth/outbound admission; 104 cases and actual Deno HTTP/TLS/parser/socket matrix pass.
 Root 92/908/build and mobile typecheck/focused 2 suites/6 send tests pass; no client source changed.
 Hosted Edge/DNS/Auth/gateway/device/browser remains NOT RUN; worker limits are not distributed quotas.
-Next local result: F12 owned secret-file permissions, not provider credential rotation;
+[081](../docs/briefs/081-local-secret-file-permissions.md) mode hardening is locally accepted:
+ten ignored files 0600, workspace 0755; unchanged bytes/owner/mtime, owner access and selected
+987-file token/private-key scan pass. No source/content/credential/provider change or build ran.
+F12 creator/umask, history/CI scanning and rotation governance remain OPEN; modes are local only.
+Next proposal requiring checkpoint approval: F04 transactional song-assignment replacement;
 public legacy media, file-ticket/offline revocation and all real copy/cutover/release remain open.
 All new DB/HTTP/TLS fixtures removed; build/coverage recoverably trashed; about 33.8 GiB free. Unrelated CLI
 marker remains unstaged. 077 did not run. Full product objective and accepted copies are preserved.

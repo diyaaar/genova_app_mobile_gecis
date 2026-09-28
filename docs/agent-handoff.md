@@ -1,6 +1,7 @@
 # Genova — agent handoff
 
-Updated 28 September 2026 after [080](briefs/080-safe-link-preview.md),
+Updated 28 September 2026 after [081](briefs/081-local-secret-file-permissions.md),
+[080](briefs/080-safe-link-preview.md),
 [079](briefs/079-message-status-rpc-privileges.md),
 [078](briefs/078-active-membership-revocation.md) and [WF-012](briefs/WF-012-commercial-multi-tenant-audit.md)
 and [076](briefs/076-repertoire-mp3-r2-batch-2.md);
@@ -25,8 +26,14 @@ loopback HTTP/TLS/parser/cancellation matrix pass; root 92/908/build and mobile 
 quotas; hosted Edge/DNS/Auth/gateway/browser/device compatibility remains unverified.
 All three are local acceptance only: no push/deploy/hosted DB/Edge/provider/device/browser change.
 Clones/fixtures removed, owned build/coverage recoverably in Trash; about 33.8 GiB measured free.
-Only unrelated CLI marker stays dirty. Next bounded local outcome: F12 owned local secret-file
-permissions; provider/account credential rotation needs separate authority. Public legacy media
+081 hardens the exact local files: ten ignored configs/backups now 0600 (nine narrowed, one
+preserved), workspace container 0777 -> 0755; private byte/identity/mtime/owner-access comparisons
+pass. Selected token/private-key scan matches zero in 987 tracked files, not a history/all-secrets
+certification. No credential values/content/source changed; future creators/CI/history/rotation
+remain open. Local POSIX modes are not portable Git changes. No new build/runtime ran.
+Only unrelated CLI marker stays dirty. Next bounded local proposal: F04 transactional
+song-assignment replacement; request the owner's checkpoint approval. Provider/account rotation
+needs separate authority. Public legacy media
 (F02) and existing bearer/offline revocation (F07) remain open;
 077 copy and all cutover/release operations remain separately gated.
 
