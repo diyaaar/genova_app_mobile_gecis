@@ -20,6 +20,7 @@ import { supabase, ChoirMember } from '@/lib/supabase';
 import { initAssignmentFolder } from '@/lib/drive';
 import { RichTextEditor } from './RichTextEditor';
 import { authenticatedWebFetch } from '@/lib/web-auth-capability';
+import { useFormOriginChoir } from './useFormOriginChoir';
 
 interface CreateAssignmentModalProps {
   isOpen: boolean;
@@ -80,6 +81,7 @@ export function CreateAssignmentModal({
   creatorVoiceGroup,
   editingAssignmentId = null,
 }: CreateAssignmentModalProps) {
+  const { originChoirId, isOriginCurrent } = useFormOriginChoir(isOpen);
   const [form, setForm] = useState({ title: '', description: '', deadline: '' });
   const [members, setMembers] = useState<MemberWithSelection[]>([]);
   const [memberSearch, setMemberSearch] = useState('');
@@ -260,6 +262,11 @@ export function CreateAssignmentModal({
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
+    if (!isEditMode && (!isOriginCurrent || !originChoirId)) {
+      setError('Koro seçimi değişti. Formu yeniden açıp tekrar deneyin.');
+      return;
+    }
+
     if (!form.title.trim()) {
       setError('Ödev başlığı zorunlu.');
       return;
@@ -303,6 +310,7 @@ export function CreateAssignmentModal({
           description: form.description.trim() || null,
           deadline: form.deadline ? new Date(form.deadline).toISOString() : null,
           target_member_ids: targetMemberIds,
+          expected_choir_id: originChoirId,
         });
 
         createdAssignmentId = assignment.id;

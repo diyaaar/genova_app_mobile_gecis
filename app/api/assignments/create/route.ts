@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { createTenantServiceClient } from '@/lib/server/tenant-client';
+import { createTenantServiceClient, TenantContextMismatchError } from '@/lib/server/tenant-client';
+import { isChoirId } from '@/lib/choir-context-core';
 
 import { sendAssignmentCreatedPush } from '@/lib/server/push-notifications';
 import { requireAuthenticatedUser } from '@/lib/server/supabase-auth';
@@ -12,6 +13,7 @@ interface CreateAssignmentBody {
   description?: string | null;
   deadline?: string | null;
   target_member_ids?: string[];
+  expected_choir_id?: unknown;
 }
 
 interface RoleRow {
@@ -132,8 +134,11 @@ export async function POST(request: Request) {
     if (targetMemberIds.length === 0) {
       return new NextResponse('En az bir hedef korist seçmelisiniz.', { status: 400 });
     }
+    if (!isChoirId(body.expected_choir_id)) {
+      return new NextResponse('Beklenen koro kimliği gerekli.', { status: 400 });
+    }
 
-    const serviceClient = await createTenantServiceClient(user.id, accessToken);
+    const serviceClient = await createTenantServiceClient(user.id, accessToken, body.expected_choir_id);
 
     const { data: creatorMember, error: creatorError } = await serviceClient
       .from('choir_members')
@@ -262,6 +267,9 @@ export async function POST(request: Request) {
       deadline: assignment.deadline,
     });
   } catch (error) {
+    if (error instanceof TenantContextMismatchError) {
+      return new NextResponse(error.message, { status: 409 });
+    }
     const message = error instanceof Error ? error.message : 'Unauthorized';
     const status = message === 'Unauthorized' ? 401 : 500;
     return new NextResponse(message, { status });

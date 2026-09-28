@@ -8,6 +8,7 @@ import { supabase, Rehearsal, ChoirMember } from '@/lib/supabase';
 import { useAuth } from './AuthProvider';
 import { RichTextEditor } from './RichTextEditor';
 import { authenticatedWebFetch } from '@/lib/web-auth-capability';
+import { useFormOriginChoir } from './useFormOriginChoir';
 
 interface Props {
   open: boolean;
@@ -49,6 +50,7 @@ async function postJsonWithAuth<T>(url: string, payload: Record<string, unknown>
 
 export function EventFormModal({ open, onClose, onSaved, rehearsal, defaultDate }: Props) {
   const { member } = useAuth();
+  const { originChoirId, isOriginCurrent } = useFormOriginChoir(open);
 
   const [date, setDate] = useState('');
   const [startTime, setStartTime] = useState('');
@@ -163,6 +165,10 @@ export function EventFormModal({ open, onClose, onSaved, rehearsal, defaultDate 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!member || !date) return;
+    if (!isEdit && (!isOriginCurrent || !originChoirId)) {
+      setFormError('Koro seçimi değişti. Formu yeniden açıp tekrar deneyin.');
+      return;
+    }
     setFormError(null);
     setSubmitting(true);
 
@@ -191,6 +197,7 @@ export function EventFormModal({ open, onClose, onSaved, rehearsal, defaultDate 
         const created = await postJsonWithAuth<CreateRehearsalResponse>('/api/rehearsals/create', {
           ...payload,
           invitee_member_ids: selectedInviteeMemberIds,
+          expected_choir_id: originChoirId,
         });
         rehearsalId = created.id;
       }

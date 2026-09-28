@@ -7,8 +7,9 @@ import { useMiniAudioPlayerStore } from '@/store/useMiniAudioPlayerStore';
 import { supabase } from '@/lib/supabase';
 import { initSongFolder } from '@/lib/drive';
 import { isPrivateRepertoireUploadEnabled } from '@/lib/repertuvar/upload';
-import { createPrivateRepertoireSong, loadPendingRepertoireSong } from '@/lib/repertuvar/create-song';
+import { createLegacyRepertoireSong, createPrivateRepertoireSong, loadPendingRepertoireSong } from '@/lib/repertuvar/create-song';
 import { LottieIcon } from './LottieIcon';
+import { useFormOriginChoir } from './useFormOriginChoir';
 
 interface AddSongModalProps {
   isOpen: boolean;
@@ -17,6 +18,7 @@ interface AddSongModalProps {
 }
 
 export function AddSongModal({ isOpen, onClose, onSuccess }: AddSongModalProps) {
+  const { originChoirId, isOriginCurrent } = useFormOriginChoir(isOpen);
   const isPlayerActive = useMiniAudioPlayerStore((state) => state.isActive);
   const [title, setTitle] = useState('');
   const [composer, setComposer] = useState('');
@@ -64,25 +66,23 @@ export function AddSongModal({ isOpen, onClose, onSuccess }: AddSongModalProps) 
     e.preventDefault();
     if (!title.trim()) { setError('Şarkı adı zorunlu'); return; }
     if (privateUpload && !initialFile) { setError('İlk PDF veya ses dosyasını seçin.'); return; }
+    if (!isOriginCurrent || !originChoirId) {
+      setError('Koro seçimi değişti. Formu yeniden açıp tekrar deneyin.');
+      return;
+    }
     setLoading(true); setError(null);
 
     let createdSongId: string | null = null;
 
     try {
       if (privateUpload) {
-        await createPrivateRepertoireSong(title, composer, initialFile!);
+        await createPrivateRepertoireSong(title, composer, initialFile!, originChoirId);
         setSuccess(true); setPendingFileName(null);
         onSuccess();
         return;
       }
       // 1. DB'ye şarkı ekle
-      const { data: song, error: insertErr } = await supabase
-        .from('repertoire')
-        .insert({ title: title.trim(), composer: composer.trim() || null, is_visible: true })
-        .select('id, title')
-        .single();
-
-      if (insertErr) throw new Error(insertErr.message);
+      const song = await createLegacyRepertoireSong(title, composer, originChoirId);
       createdSongId = song.id;
 
       // 2. Drive'da klasör oluştur

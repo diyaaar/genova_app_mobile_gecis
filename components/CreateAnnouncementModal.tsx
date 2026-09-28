@@ -26,6 +26,7 @@ import { useAuth } from './AuthProvider';
 import { RichTextEditor } from './RichTextEditor';
 import { useToast } from './ToastProvider';
 import { authenticatedWebFetch } from '@/lib/web-auth-capability';
+import { useFormOriginChoir } from './useFormOriginChoir';
 
 const ICONS = [
   { key: 'megaphone', Icon: Megaphone },
@@ -117,6 +118,7 @@ function AnnouncementModalBody({
   onCreated: () => void;
 }) {
   const { member, isAdmin, isSectionLeader } = useAuth();
+  const { originChoirId, isOriginCurrent } = useFormOriginChoir(true);
   const toast = useToast();
   const [icon, setIcon] = useState(initialDraft.icon);
   const [title, setTitle] = useState(initialDraft.title);
@@ -231,6 +233,10 @@ function AnnouncementModalBody({
     if (!member || !canSubmit) {
       return;
     }
+    if (!editAnnouncement && (!isOriginCurrent || !originChoirId)) {
+      setError('Koro seçimi değişti. Formu yeniden açıp tekrar deneyin.');
+      return;
+    }
 
     setSubmitting(true);
     setError(null);
@@ -271,7 +277,9 @@ function AnnouncementModalBody({
       }
     } else {
       try {
-        await postJsonWithAuth<{ id: string }>('/api/announcements/publish', payload);
+        await postJsonWithAuth<{ id: string }>('/api/announcements/publish', {
+          ...payload, expected_choir_id: originChoirId,
+        });
       } catch (requestError) {
         submitErrorMessage = requestError instanceof Error ? requestError.message : 'Duyuru yayınlanamadı.';
       }

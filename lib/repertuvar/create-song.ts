@@ -1,6 +1,7 @@
 import { supabase } from '../supabase';
 import { requireCurrentWebAccess } from '../web-auth-capability';
 import { uploadPrivateRepertoireFile, REPERTOIRE_UPLOAD_MAX_BYTES } from './upload';
+import { isChoirId } from '../choir-context-core';
 
 interface SongDraft {
   songId: string; retryKey: string; title: string; composer: string; fileName: string;
@@ -28,10 +29,31 @@ export async function loadPendingRepertoireSong(): Promise<SongDraft | null> {
   return readDraft((await draftContext()).key);
 }
 
-/** A small tab-scoped draft preserves row/retry identities across a lost response or reload.
- * Never delete a possibly committed upload on error. No file bytes or tokens are stored here.
+function requireFormChoir(expectedChoirId: string, currentChoirId: string) {
+  if (!isChoirId(expectedChoirId) || expectedChoirId !== currentChoirId) {
+    throw new Error('Koro seçimi değişti. Formu yeniden açıp tekrar deneyin.');
+  }
+}
+
+/** The explicit choir_id lets database RLS reject a switch racing with the client check. */
+export async function createLegacyRepertoireSong(title: string, composer: string, expectedChoirId: string) {
+  const context = await draftContext();
+  requireFormChoir(expectedChoirId, context.choirId);
+  const { data, error } = await supabase.from('repertoire').insert({
+    choir_id: expectedChoirId,
+    title: title.trim(), composer: composer.trim() || null, is_visible: true,
+  }).select('id, title').single();
+  if (error) throw new Error(error.message);
+  if (!data?.id) throw new Error('Şarkı oluşturulamadı.');
+  return data;
+}
+
+/** A tab-scoped draft preserves retry identities across response loss; never erase uncertain
+ * uploads on error. The opening choir is a precondition, not authorization; RLS owns access.
  */
-export async function createPrivateRepertoireSong(title: string, composer: string, file: File) {
+export async function createPrivateRepertoireSong(
+  title: string, composer: string, file: File, expectedChoirId: string,
+) {
   if (!title.trim()) throw new Error('Şarkı adı zorunlu.');
   if (!file.size || file.size > REPERTOIRE_UPLOAD_MAX_BYTES) throw new Error('Dosya boyutu 1 bayt ile 100 MB arasında olmalı.');
   const mimeType = file.type || (file.name.toLowerCase().endsWith('.pdf') ? 'application/pdf' : '');
@@ -40,6 +62,7 @@ export async function createPrivateRepertoireSong(title: string, composer: strin
     throw new Error('PDF veya desteklenen bir ses dosyası seçin.');
   }
   const context = await draftContext();
+  requireFormChoir(expectedChoirId, context.choirId);
   let draft = readDraft(context.key);
   if (draft && (draft.title !== title.trim() || draft.composer !== composer.trim() || draft.fileName !== file.name)) {
     throw new Error(`Önce bekleyen “${draft.title}” şarkısını “${draft.fileName}” dosyasıyla tamamlayın.`);
