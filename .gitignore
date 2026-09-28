@@ -29,3 +29,4 @@ spike/*/public/canvaskit.wasm
 /apps/mobile/android/
 /apps/mobile/dist/
 /spike/033-runtime/
+/spike/086-runtime/
