@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createTenantServiceClient } from '@/lib/server/tenant-client';
+import { createTenantServiceClient, TenantContextMismatchError } from '@/lib/server/tenant-client';
 
 import {
   getProfileChangeKeys,
@@ -17,7 +17,10 @@ export const runtime = 'nodejs';
 interface SubmitBody {
   changes?: unknown;
   note?: unknown;
+  expected_choir_id?: unknown;
 }
+
+const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 interface PendingRequestRow {
   id: string;
@@ -39,7 +42,14 @@ function sanitizeNote(raw: unknown) {
 export async function POST(request: Request) {
   try {
     const { user, accessToken } = await requireAuthenticatedUser(request);
-    const body = (await request.json()) as SubmitBody;
+    let body: SubmitBody;
+    try { body = (await request.json()) as SubmitBody; }
+    catch { return new NextResponse('Geçersiz istek gövdesi.', { status: 400 }); }
+    const expectedChoirId = typeof body?.expected_choir_id === 'string'
+      && UUID_PATTERN.test(body.expected_choir_id) ? body.expected_choir_id : null;
+    if (!expectedChoirId) {
+      return new NextResponse('Beklenen koro kimliği gerekli.', { status: 400 });
+    }
     const note = sanitizeNote(body.note);
 
     if (note && note.length > 1200) {
@@ -53,7 +63,7 @@ export async function POST(request: Request) {
       return new NextResponse('Gönderilecek geçerli profil alanı bulunamadı.', { status: 400 });
     }
 
-    const serviceClient = await createTenantServiceClient(user.id, accessToken);
+    const serviceClient = await createTenantServiceClient(user.id, accessToken, expectedChoirId);
     const { data: member, error: memberError } = await serviceClient
       .from('choir_members')
       .select(PROFILE_MEMBER_SELECT)
@@ -74,6 +84,28 @@ export async function POST(request: Request) {
 
     if (changeKeys.length === 0) {
       return NextResponse.json({ mode: 'unchanged' });
+    }
+
+    // The service client is already fixed to the verified active choir. Resolve
+    // reference IDs through that scoped transport before storing an approvable draft.
+    for (const [field, table] of [
+      ['school_id', 'schools'],
+      ['department_id', 'departments'],
+      ['favorite_song_id', 'repertoire'],
+    ] as const) {
+      const targetId = changes[field];
+      if (targetId === undefined || targetId === null) continue;
+      if (!UUID_PATTERN.test(targetId)) {
+        return new NextResponse('Geçersiz profil seçimi.', { status: 400 });
+      }
+      const { data: reference, error: referenceError } = await serviceClient
+        .from(table).select('id').eq('id', targetId).maybeSingle();
+      if (referenceError) {
+        return new NextResponse('Profil seçimi doğrulanamadı.', { status: 500 });
+      }
+      if (!reference) {
+        return new NextResponse('Seçim bu koroya ait değil.', { status: 400 });
+      }
     }
 
     const previousValues = pickProfileChangeValues(member as Record<string, unknown>, changeKeys);
@@ -160,6 +192,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ id: insertedRequest?.id ?? null, mode: 'created' });
   } catch (error) {
+    if (error instanceof TenantContextMismatchError) {
+      return new NextResponse(error.message, { status: 409 });
+    }
     const message = error instanceof Error ? error.message : 'Unauthorized';
     const status = message === 'Unauthorized' ? 401 : 500;
     return new NextResponse(message, { status });

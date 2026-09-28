@@ -14,32 +14,6 @@ import { SwipeBack } from '@/components/SwipeBack';
 import { useEmbeddedWebBridge } from '@/components/EmbeddedWebBridgeProvider';
 import { authenticatedWebFetch } from '@/lib/web-auth-capability';
 
-/* ---------- Statik veriler (idealde DB'den gelir) ---------- */
-const SCHOOLS = [
-  { id: 'ecfbb198-9806-4754-8f21-8b076f44f345', name: 'İstanbul Üniversitesi-Cerrahpaşa' },
-  { id: '4e051892-100b-4689-8bf2-552c8c79185d', name: 'İstanbul Topkapı Üniversitesi' },
-  { id: '82025b8e-45f1-4d2f-9469-5b6e4e254c53', name: 'Marmara Üniversitesi' },
-  { id: '73a04f1c-8d08-49aa-9e3f-aca8d50150f3', name: 'Yıldız Teknik Üniversitesi' },
-];
-
-const DEPTS = [
-  { id: '8381f9d1-59d1-4f6c-bd81-814608fc6d93', name: 'Fen Bilgisi Öğretmenliği' },
-  { id: '2d3a7104-c6cb-4e10-8748-d2aa6796ef19', name: 'Tıp' },
-  { id: '38d2dd30-5963-4419-8634-cb4e9fe0a8b0', name: 'Matematik Mühendisliği' },
-  { id: 'b06e6885-9f86-43ab-ad2a-efa342e13e4c', name: 'Sosyal Bilgiler Öğretmenliği' },
-  { id: 'eded5e14-b2b9-449a-b5a7-895572d3a79d', name: 'Kimya Mühendisliği' },
-  { id: '8e13bf94-76ec-44b4-ae08-873d7ad4625b', name: 'Endüstri Mühendisliği' },
-  { id: '87dcc0ea-c890-4746-aaec-c70c433d1a7e', name: 'Biyomühendislik' },
-  { id: 'fe161a65-b917-4a01-99f3-1104d795043c', name: 'Çevre Mühendisliği' },
-  { id: '4ffe6058-ce7f-4e82-a63d-d2147e03fd8f', name: 'Hukuk' },
-  { id: '56c37fa0-04c2-4b9b-a493-08b5794009fb', name: 'İnşaat Mühendisliği' },
-  { id: '7eda3a36-e3d4-4925-8861-5dc90ff88a17', name: 'İşletme' },
-  { id: 'c5895ea9-f57c-46b8-bb76-d055db05afeb', name: 'Kimya' },
-  { id: '60effde1-6b18-4faf-9696-34c46ca98244', name: 'Biyomedikal Mühendisliği' },
-  { id: 'f4259af9-4181-4e30-ae21-01e057860ea4', name: 'İletişim ve Tasarım' },
-  { id: '8a794ff4-c307-4e93-9652-ec2e36e1d8c3', name: 'Müzik' },
-];
-
 /* ---------- Field config ---------- */
 type FieldKey =
   | 'email'
@@ -61,8 +35,9 @@ interface FieldDef {
   label: string;
   type: 'text' | 'email' | 'tel' | 'date' | 'select' | 'textarea';
   placeholder?: string;
-  options?: { id: string; name: string }[];
 }
+
+type ReferenceOption = { id: string; name: string };
 
 interface SubmitProfileChangeResponse {
   mode?: 'created' | 'updated' | 'unchanged';
@@ -72,8 +47,8 @@ const FIELDS: FieldDef[] = [
   { key: 'email', label: 'E-posta', type: 'email', placeholder: 'E-posta adresiniz' },
   { key: 'phone', label: 'Telefon', type: 'tel', placeholder: '05XX XXX XX XX' },
   { key: 'birth_date', label: 'Doğum Tarihi', type: 'date' },
-  { key: 'school_id', label: 'Okul', type: 'select', options: SCHOOLS },
-  { key: 'department_id', label: 'Bölüm', type: 'select', options: DEPTS },
+  { key: 'school_id', label: 'Okul', type: 'select' },
+  { key: 'department_id', label: 'Bölüm', type: 'select' },
   { key: 'favorite_song_id', label: 'Favori Eser', type: 'select' },
   { key: 'about_text', label: 'Hakkımda', type: 'textarea', placeholder: 'Kendin hakkında kısa bir not...' },
   { key: 'linkedin_url', label: 'LinkedIn', type: 'text', placeholder: 'https://linkedin.com/in/...' },
@@ -85,7 +60,7 @@ const FIELDS: FieldDef[] = [
 ];
 
 export default function ProfilDuzenle() {
-  const { member, user, roles, isLoading } = useAuth();
+  const { member, user, roles, activeChoir, isLoading } = useAuth();
   const router = useRouter();
   const toast = useToast();
   const embeddedBridge = useEmbeddedWebBridge();
@@ -97,7 +72,11 @@ export default function ProfilDuzenle() {
     linkedin_url: '', instagram_url: '', youtube_url: '', spotify_url: '',
     tiktok_url: '', x_url: '',
   });
-  const [repertoireOptions, setRepertoireOptions] = useState<Array<{ id: string; name: string }>>([]);
+  const [schoolOptions, setSchoolOptions] = useState<ReferenceOption[]>([]);
+  const [departmentOptions, setDepartmentOptions] = useState<ReferenceOption[]>([]);
+  const [repertoireOptions, setRepertoireOptions] = useState<ReferenceOption[]>([]);
+  const [referenceStatus, setReferenceStatus] = useState<'loading' | 'ready' | 'error'>('loading');
+  const [loadedReferenceChoirId, setLoadedReferenceChoirId] = useState<string | null>(null);
   const [note, setNote] = useState('');
   const [photoUrl, setPhotoUrl] = useState('');
   const [uploadingPhoto, setUploadingPhoto] = useState(false);
@@ -130,31 +109,52 @@ export default function ProfilDuzenle() {
 
   useEffect(() => {
     let cancelled = false;
+    const choirId = activeChoir?.choir_id;
+    setSchoolOptions([]);
+    setDepartmentOptions([]);
+    setRepertoireOptions([]);
+    setLoadedReferenceChoirId(null);
+    setReferenceStatus(choirId ? 'loading' : 'error');
+    if (!choirId) return () => { cancelled = true; };
+    const resolvedChoirId = choirId;
 
-    async function loadRepertoireOptions() {
-      const { data, error } = await supabase
-        .from('repertoire')
-        .select('id, title, composer')
-        .order('title');
-
-      if (error || cancelled) {
+    async function loadReferenceOptions() {
+      const [schools, departments, repertoire] = await Promise.all([
+        supabase.from('schools').select('id, name').eq('choir_id', resolvedChoirId).order('name'),
+        supabase.from('departments').select('id, name').eq('choir_id', resolvedChoirId).order('name'),
+        supabase.from('repertoire').select('id, title, composer').eq('choir_id', resolvedChoirId).order('title'),
+      ]);
+      if (cancelled) return;
+      if (schools.error || departments.error || repertoire.error) {
+        setReferenceStatus('error');
         return;
       }
-
-      setRepertoireOptions(
-        (data ?? []).map((song) => ({
+      setSchoolOptions((schools.data ?? []).map((row) => ({ id: row.id, name: row.name })));
+      setDepartmentOptions((departments.data ?? []).map((row) => ({ id: row.id, name: row.name })));
+      setRepertoireOptions((repertoire.data ?? []).map((song) => ({
           id: song.id,
           name: `${song.title}${song.composer ? ` - ${song.composer}` : ''}`,
-        })),
-      );
+      })));
+      setLoadedReferenceChoirId(resolvedChoirId);
+      setReferenceStatus('ready');
     }
 
-    void loadRepertoireOptions();
+    void loadReferenceOptions().catch(() => {
+      if (!cancelled) setReferenceStatus('error');
+    });
 
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [activeChoir?.choir_id]);
+
+  const referenceReady = referenceStatus === 'ready'
+    && loadedReferenceChoirId === activeChoir?.choir_id;
+  const optionsFor = (key: FieldKey): ReferenceOption[] => {
+    if (!referenceReady) return [];
+    return key === 'school_id' ? schoolOptions
+      : key === 'department_id' ? departmentOptions : repertoireOptions;
+  };
 
   const handlePickPhoto = () => {
     if (status !== 'idle' || uploadingPhoto) return;
@@ -206,7 +206,11 @@ export default function ProfilDuzenle() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!member) return;
+    if (!member || !activeChoir || member.choir_id !== activeChoir.choir_id
+      || !referenceReady) {
+      toast.error('Koro bilgileri yüklenemedi. Sayfayı yenileyip tekrar deneyin.', 'Değişiklik talebi');
+      return;
+    }
 
     // Yalnızca değişen alanları gönder
     const original: Record<string, string> = {
@@ -240,7 +244,7 @@ export default function ProfilDuzenle() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ changes, note }),
+        body: JSON.stringify({ changes, note, expected_choir_id: activeChoir.choir_id }),
       });
 
       if (!response.ok) {
@@ -388,8 +392,13 @@ export default function ProfilDuzenle() {
           </div>
         </motion.div>
 
-        {/* Form alanları */}
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}
+      {/* Form alanları */}
+      {referenceStatus === 'error' && (
+        <p role="alert" className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+          Koro seçenekleri yüklenemedi. Sayfayı yenileyip tekrar deneyin.
+        </p>
+      )}
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}
           className="glass-panel p-5 flex flex-col gap-4">
           {FIELDS.map(field => (
             <div key={field.key} className="space-y-1.5">
@@ -399,16 +408,26 @@ export default function ProfilDuzenle() {
               {field.type === 'select' ? (
                 <div className="relative">
                   <select
+                    aria-label={field.label}
                     value={form[field.key]}
                     onChange={e => setForm(f => ({ ...f, [field.key]: e.target.value }))}
+                    disabled={!referenceReady || status !== 'idle'}
                     className="editorial-input w-full appearance-none pr-9 cursor-pointer"
                   >
-                    <option value="">-- Seçiniz --</option>
-                    {(field.key === 'favorite_song_id' ? repertoireOptions : field.options)?.map(o => (
+                    <option value="">{!referenceReady && referenceStatus !== 'error' ? '-- Yükleniyor --' : '-- Seçiniz --'}</option>
+                    {form[field.key] && !optionsFor(field.key).some(option => option.id === form[field.key]) && (
+                      <option value={form[field.key]} disabled>Mevcut kayıt bu koroda bulunamadı</option>
+                    )}
+                    {optionsFor(field.key).map(o => (
                       <option key={o.id} value={o.id}>{o.name}</option>
                     ))}
                   </select>
                   <ChevronDown size={14} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[var(--color-text-medium)]" />
+                  {referenceReady && optionsFor(field.key).length === 0 && (
+                    <p className="mt-1 text-xs text-[var(--color-text-medium)]">
+                      Bu koroda henüz {field.key === 'school_id' ? 'okul' : field.key === 'department_id' ? 'bölüm' : 'eser'} tanımlanmadı.
+                    </p>
+                  )}
                 </div>
               ) : field.type === 'textarea' ? (
                 <textarea
@@ -450,7 +469,8 @@ export default function ProfilDuzenle() {
         {/* Submit */}
         <button
           type="submit"
-          disabled={status !== 'idle' || uploadingPhoto || !hasProfileChanges}
+          disabled={status !== 'idle' || uploadingPhoto || !referenceReady
+            || !activeChoir || member?.choir_id !== activeChoir.choir_id || !hasProfileChanges}
           className="mt-1 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-[#b48600] text-black px-6 py-3.5 font-serif font-bold text-[0.95rem] transition-all disabled:opacity-60 hover:shadow-[0_0_20px_rgba(192,178,131,0.35)] active:scale-[0.98]"
         >
           {status === 'sent' ? (

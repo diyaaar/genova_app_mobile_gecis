@@ -127,6 +127,18 @@ describe('verified membership bootstrap', () => {
     await expect(createTenantServiceClient('verified-user', 'verified-access-token')).rejects.toThrow('aktif koro');
   });
 
+  it('rejects an old-tab expected choir before creating any privileged client', async () => {
+    vi.stubEnv('NEXT_PUBLIC_SUPABASE_URL', url);
+    vi.stubEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY', 'test-anon');
+    vi.stubEnv('SUPABASE_SERVICE_ROLE_KEY', 'test-service');
+    const transport = vi.fn<typeof fetch>()
+      .mockResolvedValueOnce(new Response(JSON.stringify(b), { status: 200 }));
+    vi.stubGlobal('fetch', transport);
+    await expect(createTenantServiceClient('verified-user', 'verified-access-token', a))
+      .rejects.toThrow('Koro seçimi değişti');
+    expect(transport).toHaveBeenCalledOnce();
+  });
+
   it.each([false, null, undefined])('rejects non-active membership %s even if the RPC resolves a choir', async (isActive) => {
     vi.stubEnv('NEXT_PUBLIC_SUPABASE_URL', url);
     vi.stubEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY', 'test-anon');

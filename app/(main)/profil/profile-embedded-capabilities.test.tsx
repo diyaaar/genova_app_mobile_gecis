@@ -114,6 +114,11 @@ describe('profile embedded capabilities', () => {
     expect(screen.queryByRole('button', { name: 'Güvenli şifre ekranını aç' })).not.toBeInTheDocument();
   });
 
+  it('does not offer the original choir schools to a profile without an active tenant', () => {
+    render(<ProfileEditPage />);
+    expect(screen.queryByRole('option', { name: 'İstanbul Üniversitesi-Cerrahpaşa' })).not.toBeInTheDocument();
+  });
+
   it('renders no password fields and requests the native secure sheet while embedded', () => {
     mocks.embedded = true;
     render(<ProfileEditPage />);
