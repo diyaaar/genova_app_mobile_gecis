@@ -1,202 +1,53 @@
 import { NextResponse } from 'next/server';
-import { createTenantServiceClient, TenantContextMismatchError } from '@/lib/server/tenant-client';
-
-import {
-  getProfileChangeKeys,
-  haveSameProfileChangeKeys,
-  pickProfileChangeValues,
-  removeUnchangedProfileValues,
-  sanitizeProfileChanges,
-  toProfileChangePayload,
-} from '@/lib/profile-change-requests';
-import { requireAuthenticatedUser } from '@/lib/server/supabase-auth';
+import { getProfileChangeKeys, sanitizeProfileChanges } from '@/lib/profile-change-requests';
+import { createSupabaseUserClient, requireAuthenticatedUser } from '@/lib/server/supabase-auth';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
-
-interface SubmitBody {
-  changes?: unknown;
-  note?: unknown;
-  expected_choir_id?: unknown;
-}
-
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-interface PendingRequestRow {
-  id: string;
-  changes_json: unknown;
-}
-
-const PROFILE_MEMBER_SELECT =
-  'id, email, phone, birth_date, school_id, department_id, favorite_song_id, about_text, linkedin_url, instagram_url, youtube_url, spotify_url, tiktok_url, x_url, photo_url';
-
-function sanitizeNote(raw: unknown) {
-  if (typeof raw !== 'string') {
-    return null;
-  }
-
-  const note = raw.trim();
-  return note.length > 0 ? note : null;
-}
-
+/** Verified caller JWT → one authority-locked DB transaction; never fall back to service writes. */
 export async function POST(request: Request) {
   try {
-    const { user, accessToken } = await requireAuthenticatedUser(request);
-    let body: SubmitBody;
-    try { body = (await request.json()) as SubmitBody; }
+    const { accessToken } = await requireAuthenticatedUser(request);
+    let body: { expected_choir_id?: unknown; changes?: unknown; note?: unknown } | null;
+    try { body = await request.json(); }
     catch { return new NextResponse('Geçersiz istek gövdesi.', { status: 400 }); }
-    const expectedChoirId = typeof body?.expected_choir_id === 'string'
-      && UUID_PATTERN.test(body.expected_choir_id) ? body.expected_choir_id : null;
-    if (!expectedChoirId) {
-      return new NextResponse('Beklenen koro kimliği gerekli.', { status: 400 });
-    }
-    const note = sanitizeNote(body.note);
-
-    if (note && note.length > 1200) {
-      return new NextResponse('Not çok uzun.', { status: 400 });
-    }
-
-    const submittedChanges = sanitizeProfileChanges(body.changes);
-    const submittedKeys = getProfileChangeKeys(submittedChanges);
-
-    if (submittedKeys.length === 0) {
+    const expected = typeof body?.expected_choir_id === 'string' && UUID_PATTERN.test(body.expected_choir_id)
+      ? body.expected_choir_id : null;
+    if (!expected) return new NextResponse('Beklenen koro kimliği gerekli.', { status: 400 });
+    const note = typeof body?.note === 'string' ? body.note.trim() || null : null;
+    if (note && note.length > 1200) return new NextResponse('Not çok uzun.', { status: 400 });
+    const changes = sanitizeProfileChanges(body?.changes);
+    if (!getProfileChangeKeys(changes).length) {
       return new NextResponse('Gönderilecek geçerli profil alanı bulunamadı.', { status: 400 });
     }
-
-    const serviceClient = await createTenantServiceClient(user.id, accessToken, expectedChoirId);
-    const { data: member, error: memberError } = await serviceClient
-      .from('choir_members')
-      .select(PROFILE_MEMBER_SELECT)
-      .eq('auth_user_id', user.id)
-      .maybeSingle();
-
-    if (memberError) {
-      return new NextResponse(memberError.message, { status: 500 });
-    }
-
-    if (!member) {
-      return new NextResponse('Choir member kaydı bulunamadı.', { status: 404 });
-    }
-
-    const currentValues = pickProfileChangeValues(member as Record<string, unknown>, submittedKeys);
-    const changes = removeUnchangedProfileValues(submittedChanges, currentValues);
-    const changeKeys = getProfileChangeKeys(changes);
-
-    if (changeKeys.length === 0) {
-      return NextResponse.json({ mode: 'unchanged' });
-    }
-
-    // The service client is already fixed to the verified active choir. Resolve
-    // reference IDs through that scoped transport before storing an approvable draft.
-    for (const [field, table] of [
-      ['school_id', 'schools'],
-      ['department_id', 'departments'],
-      ['favorite_song_id', 'repertoire'],
-    ] as const) {
-      const targetId = changes[field];
-      if (targetId === undefined || targetId === null) continue;
-      if (!UUID_PATTERN.test(targetId)) {
-        return new NextResponse('Geçersiz profil seçimi.', { status: 400 });
+    const client = createSupabaseUserClient(accessToken);
+    const { data, error } = await client.rpc('submit_profile_change_request', {
+      p_expected_choir_id: expected, p_changes: changes, p_note: note,
+    });
+    if (error) {
+      if (error.code === '28000') return new NextResponse('Geçerli kullanıcı oturumu bulunamadı.', { status: 401 });
+      if (error.code === '42501') return new NextResponse('Aktif koro üyeliği bulunamadı.', { status: 403 });
+      if (['PT409', '40001', '40P01'].includes(error.code)) {
+        return new NextResponse('Koro seçimi veya talep değişti. Sayfayı yenileyip tekrar deneyin.', { status: 409 });
       }
-      const { data: reference, error: referenceError } = await serviceClient
-        .from(table).select('id').eq('id', targetId).maybeSingle();
-      if (referenceError) {
-        return new NextResponse('Profil seçimi doğrulanamadı.', { status: 500 });
+      if (['22023', '22P02'].includes(error.code)) {
+        return new NextResponse('Profil seçimi geçersiz veya bu koroya ait değil.', { status: 400 });
       }
-      if (!reference) {
-        return new NextResponse('Seçim bu koroya ait değil.', { status: 400 });
+      if (['42883', 'PGRST202'].includes(error.code)) {
+        return new NextResponse('Profil kayıt hizmeti henüz hazır değil.', { status: 503 });
       }
+      return new NextResponse('Profil değişikliği kaydedilemedi.', { status: 500 });
     }
-
-    const previousValues = pickProfileChangeValues(member as Record<string, unknown>, changeKeys);
-    const normalizedChanges = toProfileChangePayload(changes);
-    const normalizedPreviousValues = toProfileChangePayload(previousValues);
-
-    const { data: pendingRows, error: pendingError } = await serviceClient
-      .from('profile_change_requests')
-      .select('id, changes_json')
-      .eq('member_id', member.id)
-      .eq('status', 'pending')
-      .order('created_at', { ascending: true });
-
-    if (pendingError) {
-      return new NextResponse(pendingError.message, { status: 500 });
+    if (!data || !['created', 'updated', 'unchanged'].includes(data.mode)
+      || (data.mode !== 'unchanged' && (typeof data.id !== 'string' || !UUID_PATTERN.test(data.id)))) {
+      return new NextResponse('Profil kayıt yanıtı doğrulanamadı.', { status: 502 });
     }
-
-    const pendingRequests = ((pendingRows ?? []) as PendingRequestRow[]).map((row) => ({
-      id: row.id,
-      changes: sanitizeProfileChanges(row.changes_json),
-    }));
-    const matchingRequest = pendingRequests.find((row) => haveSameProfileChangeKeys(row.changes, changes));
-
-    if (matchingRequest) {
-      const { data: updatedRequest, error: updateError } = await serviceClient
-        .from('profile_change_requests')
-        .update({
-          changes_json: normalizedChanges,
-          previous_values_json: normalizedPreviousValues,
-          note,
-          reviewed_by: null,
-          reviewed_at: null,
-          reject_reason: null,
-        })
-        .eq('id', matchingRequest.id)
-        .eq('member_id', member.id)
-        .eq('status', 'pending')
-        .select('id')
-        .maybeSingle();
-
-      if (updateError) {
-        return new NextResponse(updateError.message, { status: 500 });
-      }
-
-      if (!updatedRequest) {
-        return new NextResponse('Bekleyen talep artık güncel değil. Lütfen tekrar deneyin.', { status: 409 });
-      }
-
-      const duplicateIds = pendingRequests
-        .filter((row) => row.id !== matchingRequest.id && haveSameProfileChangeKeys(row.changes, changes))
-        .map((row) => row.id);
-
-      if (duplicateIds.length > 0) {
-        const { error: deleteError } = await serviceClient
-          .from('profile_change_requests')
-          .delete()
-          .eq('member_id', member.id)
-          .eq('status', 'pending')
-          .in('id', duplicateIds);
-
-        if (deleteError) {
-          console.warn('Duplicate profile change requests could not be removed:', deleteError);
-        }
-      }
-
-      return NextResponse.json({ id: updatedRequest.id, mode: 'updated' });
-    }
-
-    const { data: insertedRequest, error: insertError } = await serviceClient
-      .from('profile_change_requests')
-      .insert({
-        member_id: member.id,
-        changes_json: normalizedChanges,
-        previous_values_json: normalizedPreviousValues,
-        note,
-        status: 'pending',
-      })
-      .select('id')
-      .maybeSingle();
-
-    if (insertError) {
-      return new NextResponse(insertError.message, { status: 500 });
-    }
-
-    return NextResponse.json({ id: insertedRequest?.id ?? null, mode: 'created' });
+    return NextResponse.json(data);
   } catch (error) {
-    if (error instanceof TenantContextMismatchError) {
-      return new NextResponse(error.message, { status: 409 });
-    }
-    const message = error instanceof Error ? error.message : 'Unauthorized';
-    const status = message === 'Unauthorized' ? 401 : 500;
-    return new NextResponse(message, { status });
+    const unauthorized = error instanceof Error && error.message === 'Unauthorized';
+    return new NextResponse(unauthorized ? 'Unauthorized' : 'Profil değişikliği kaydedilemedi.',
+      { status: unauthorized ? 401 : 500 });
   }
 }
