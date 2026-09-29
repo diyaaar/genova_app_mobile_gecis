@@ -75,9 +75,14 @@ do not mark the product contract complete, hide the risk or weaken required test
 not independent review. Rollback of preparation is a doc revert; schema/data/provider rollback
 requires separate evidence and authority.
 
-Preparation self-review: old URL persistence is a source-level inference, not a fresh actual
-GET-after-revocation runtime test. After the owner's choice, next required step is a bounded
-implementation amendment and red/green local runtime proof, not hosted activation.
+Preparation self-review at its original checkpoint: old URL persistence was a source-level
+inference. [091](091-connected-private-r2-read.md) subsequently confirmed with actual local
+Auth/RLS/PG17 and signed loopback S3 that a previously issued A URL still returns HEAD 200
+after the same Auth session selects B. That is **switch** evidence, not a membership-removal
+GET/HEAD test, hosted R2 proof, or a new revocation contract. After the owner's choice, next
+required step remains a bounded implementation amendment and red/green local runtime proof,
+not hosted activation. [092](092-stale-private-file-ticket-cache.md) only prevents late web/
+WebView cache publication after tenant clear; it cannot invalidate the old bearer URL.
 
 ## 29 September feasibility checkpoint — read-only, before owner choice
 
