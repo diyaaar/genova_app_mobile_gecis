@@ -1,6 +1,7 @@
 # 087 — authority-safe atomic profile request submission
 
-Status: IN PROGRESS, 29 September 2026. Main agent, single writer.
+Status: COMPLETE LOCALLY for this bounded submission contract, 29 September 2026.
+Main agent, single writer. Scope `ae677c3`; product/test `9581ad7`; final records separately committed.
 Owner's “devam et” continues the proposed 086 follow-up; local code/tests/commits only.
 One outcome: submitting a profile request uses caller JWT authority and one DB transaction,
 so session switches, membership revocation and concurrent same-field submissions cannot leave
@@ -22,7 +23,7 @@ exists; 086 services/VM/build are absent. Historical 086 browser pass is not pos
 3. Actual PG concurrent ordering/rollback/A-B/ACL/down-reapply and SDK/route tests, full gate,
    self-review, cleanup/evidence and split commits. Exit only when mandatory local criteria pass.
 
-Allowed: new `supabase/migrations/*_087.sql`, exact `supabase/rollbacks/*_087.sql`,
+Allowed: new `supabase/migrations/*_087.sql`, exact `supabase/rollback/087_atomic_profile_submit_down.sql`,
 `supabase/tests/087_*`, `supabase/test-support/087_*`, existing submit route/test,
 `lib/server/__tests__/profile-submit-transport.test.ts`, brief/evidence/WF-013/handoff/active/progress.
 No other mutation refactor, review/approval repair, native/UI/credential/provider/live change.
@@ -78,11 +79,43 @@ not documentation alone, determine acceptance.
 
 | Criterion | Required? | Status | Evidence / limits |
 |---|---|---|---|
-| Old service write after revocation reproduced; fresh local backup/restore equality | Yes | NOT RUN | No hosted freshness claim |
-| Own A/B, stale/foreign/inactive/missing-session refusals and normalization/merge/snapshots | Yes | NOT RUN | Actual PG17; direct RPC bypass must also validate |
-| Real competing sessions: revoke/switch before writer, writer before revoke/switch, concurrent merge | Yes | NOT RUN | Observe real waits and exact final rows, not timing alone |
-| Forced failure rolls back update/duplicate deletion; authenticated-only ACL and exact down/reapply | Yes | NOT RUN | Preserve old table authority and source state |
-| Caller-JWT Next/SDK contract, errors, root gate, review/links/secrets/cleanup/split commits | Yes | NOT RUN | Self-review only |
+| Old service write after revocation reproduced; fresh local backup/restore equality | Yes | PASS | Actual old service-role insert; 15-table/function owner/ACL/table policy equality; no hosted freshness claim |
+| Own A/B, stale/foreign/inactive/missing-session refusals and normalization/merge/snapshots | Yes | PASS | Actual PG17 direct RPC matrix and eight SQL/TS parity samples; 14 keys/Unicode trim/null; UTF-16 note limit |
+| Real competing sessions: revoke/switch before writer, writer before revoke/switch, concurrent merge | Yes | PASS | Six actual competing transactions, observed waits and exact final state; SQL JWT claims, not real Auth tokens |
+| Forced failure rolls back update/duplicate deletion; authenticated-only ACL and exact down/reapply | Yes | PASS | Delete failure rolls back prior update; insert failure rolls back context; anon/service/helper/direct-insert refused; original table authority preserved |
+| Caller-JWT Next/SDK contract, errors, root gate, review/links/secrets/cleanup/split commits | Yes | PASS | Focused 3/32; root 101/1004/build, original 005/083 SQL regressions; scoped links/diff/redaction; source/target/scratch cleanup and split revisions; self-review only |
 | Post-change browser/Auth/REST/provider/device/hosted release | No; later integrated release checkpoint | NOT RUN | 086 is historical; no commercial readiness claim |
 
 Progress review after 60 active minutes or two failed approaches to the same criterion.
+
+## Causal execution notes
+
+First actual PG matrix and down/reapply pass; concurrent-test observation initially fails.
+Controlled local probe proves `postgres` sees `<insufficient privilege>`/NULL wait fields for
+OS-admin backend sessions, while the existing local administrator observes actual `PgSleep`.
+Concurrent observer uses that administrator for activity inspection; RPC/write sessions remain explicitly
+authenticated/postgres as before. No production stats grant or broader product permission.
+New bounded concurrent run is justified by this causal evidence, not a blind timing increase.
+
+## Final result / handoff
+
+[Dated evidence](../evidence/087-authority-safe-profile-submit/README.md) owns exact commands,
+matrices and limits. New route no longer creates a service-key tenant client or performs split
+writes. Missing RPC is 503 with no fallback; revoked membership is 403 rather than the historical
+086 submit's 500. Existing other routes still have their own error/race debt. All original table
+authority/functions are retained; new private helper/RPC are forward-only additions.
+Self-review checked row-lock/FK compatibility, per-member serialization, helper/TS parity,
+own references, response validation, denied ACLs, generic errors and DB-before-web dependency.
+The rollback filename was normalized to the repo's existing singular `supabase/rollback/`
+convention, then the complete SQL/concurrent runner passed at its final path.
+
+Task DB and all `087_*` test backends are absent; private sensitive backup/log scratch permanently
+removed. Root build 466 MiB/coverage 348 KiB/check log moved recoverably to Trash; no copied .env
+file existed in build. Final free 34,144,992 KiB (~32.6 GiB). Original restore/configs/dependencies/
+global resources and unrelated CLI marker preserved. No VM/service/provider/live operation.
+
+No post-change browser/Auth/REST or hardware test ran. No rollout is authorized or implied.
+WF-013 step 5 remains PARTIAL: next separate outcome is atomic chef review/approval; remaining
+mutation families/catalog administration/protected files/browser/device/release remain open.
+Existing service/direct writers can bypass this RPC's serialization; delete/cascade lock ordering
+can produce a deadlock victim and retryable 409. No commercial deletion/retention choice is made.

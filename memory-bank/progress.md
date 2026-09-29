@@ -1,5 +1,23 @@
 # İlerleme indeksi
 
+29 September — [087 authority-safe atomic profile submission](../docs/briefs/087-authority-safe-profile-submit.md),
+scope `ae677c3`, product/test `9581ad7`, complete locally for the submission contract.
+Actual old privileged insert after revocation reproduced; new caller-JWT/session/member-locked
+RPC passes PG17 own A/B, stale/foreign/inactive/missing/aliased session refusals, snapshots,
+same-key merge, forced update/delete and insert/context rollback, explicit ACL and down/reapply.
+Six real competing transactions observe lock waits: revoke/switch first refuses later writer;
+writer first blocks revoke/switch until authorized commit; distinct/singleton sessions merge one
+pending request without FK lock-upgrade deadlock. Eight SQL/TS normalization samples pass.
+Fresh LOCAL backup/restore 15-table/function owner/ACL/table-policy equality, source preservation,
+005/083 SQL regressions and exact target/sensitive scratch cleanup pass. Focused 3/32 and root
+101 suites/1004 tests/build pass. Submit is 403 for inactive, 409 for context, 503 for missing RPC;
+no privileged fallback or internal error leakage. Self-review only; no post-change real browser/
+Auth/REST/device/provider/hosted acceptance. Original table authority and permanent WebView/UI
+preserved. Build 466 MiB/coverage/check log recoverably trashed; 34,144,992 KiB free. Current
+handoff/active indexes shortened; historical evidence remains in briefs/progress. Only unrelated
+CLI marker unstaged. WF-013 step 5 remains PARTIAL; next is atomic chef review/approval,
+not live rollout. Other mutation/direct/service writers and full product/file/device scope remain.
+
 29 September — [086 real two-choir web acceptance](../docs/briefs/086-two-choir-real-web-acceptance.md),
 scope `a366c5c`, test/config `dbb0afb`, complete locally for the bounded actual browser matrix.
 Installed Chrome/production Next and real local Auth/REST/RLS/Edge pass wrong-recipient refusal,
