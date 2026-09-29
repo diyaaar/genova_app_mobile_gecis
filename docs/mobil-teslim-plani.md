@@ -34,6 +34,11 @@ Android-first critical path or promotes a local test to beta acceptance.
 [092](briefs/092-stale-private-file-ticket-cache.md) additionally prevents late web/WebView
 responses from restoring old ticket URLs after tenant cache clear; it does not revoke a
 previously issued URL at the service or replace the Android/device gate.
+[093](briefs/093-android-private-r2-read-integration.md) joins the synthetic local service
+to the native Android Release Auth/catalogue/private-cache/PDF renderer and A/B isolation:
+page 1/40, cache clear and new wrong-choir ticket 403 pass. It is emulator/loopback
+evidence, not hosted R2, physical-phone, Drive cutover or beta acceptance. 090's
+already-issued URL contract and 077's real-copy approval remain separate.
 
 ### Controlled execution queue — 24 September 2026
 

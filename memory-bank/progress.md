@@ -1,5 +1,16 @@
 # İlerleme indeksi
 
+29 September — [093 Android connected private-file read](../docs/briefs/093-android-private-r2-read-integration.md),
+source/test `c3e1b28`, is COMPLETE LOCALLY. Actual Android API 36 Release joined synthetic local Auth/PostgREST/RLS/
+PG17, Deno signed loopback S3, Expo private file store and native PDF renderer: exact
+65,905-byte score page 1/40, A→B private-cache clear, B-only catalogue and new A ticket
+403 under B PASS. Reproduced Expo hook-owned released-player crash on first switch, fixed
+and passed final Release. Mobile 50/299, root 103/1049/build PASS. Source six-table counts/
+normalized schema digest unchanged; exact runtime/VM/listeners/emulator/build cleaned, with
+generated outputs recoverably in Trash and 23,133,344 KiB free. [Evidence](../docs/evidence/093-android-private-r2-read/README.md).
+No hosted R2, real file/account, physical phone, old issued-URL revocation, push or beta
+acceptance. 090 and 077 remain separate gates; self-review only.
+
 29 September — [092 stale private-file ticket cache guard](../docs/briefs/092-stale-private-file-ticket-cache.md),
 code/test `b0fe523`, COMPLETE LOCALLY. RED late A repertoire ticket returned after tenant
 cache clear; generation guard now refuses that response and prevents recaching across six

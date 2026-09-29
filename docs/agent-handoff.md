@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 29 September 2026 after [092](briefs/092-stale-private-file-ticket-cache.md).
+Updated 29 September 2026 after [093](briefs/093-android-private-r2-read-integration.md).
 This is a short current-state index. Detailed historical acceptance remains in briefs and
 [progress](../memory-bank/progress.md), not duplicated here. Verify recorded state before reuse.
 
@@ -12,6 +12,17 @@ Use [guide](gecis-rehberi.md), [work cycle](ai-calisma-duzeni.md), relevant
 [decisions](../KARARLAR.md) and [MIGRATION](../MIGRATION.md). Profile remains permanent WebView.
 
 ## Current outcome / next action
+
+[093](briefs/093-android-private-r2-read-integration.md), source/test `c3e1b28`, locally accepts the Android
+Release native private-PDF read through actual disposable Auth/PostgREST/RLS/PG17,
+loopback Deno and signed loopback S3. A 65,905-byte PDF rendered page 1/40; A→B
+cleared the private cache, B-only catalogue appeared and new A ticket under B refused
+403. The run exposed and fixed an Expo hook-owned audio-player teardown crash;
+mobile 50/299, root 103/1049/build and Android Release pass. [Visual and service
+evidence](evidence/093-android-private-r2-read/README.md). Generated runtime/build
+were cleaned; original source counts/schema unchanged. This is synthetic emulator
+evidence, **not** hosted R2, physical-phone, Drive cutover or beta acceptance. Previously
+issued A URL remains usable after switch, so 090 revocation choice stays open.
 
 Owner resumes local implementation of [WF-013](briefs/WF-013-multi-tenant-remediation-plan.md),
 with operator-assisted v1 choir creation confirmed. [WF-012 audit](briefs/WF-012-commercial-multi-tenant-audit.md)
@@ -56,9 +67,11 @@ F12 creator/history/CI/rotation and legacy account risks remain open; file modes
 
 ## Ownership / resources / release authority
 
-Only unrelated `supabase/.temp/cli-latest` remains unstaged; preserve it. Stage owned paths only.
+After 093, only unrelated `supabase/.temp/cli-latest` should remain unstaged; verify before reuse.
+Stage owned paths only.
 089 and 091 services/volumes/tunnels/VMs/profiles/data/contexts and secret-bearing runtimes removed;
-latest 092 build ~466 MiB/coverage recoverably in Trash. Free 30,925,652 KiB after cleanup;
+latest 093 runtime/Android/Next/coverage recoverably in Trash. Free 23,133,344 KiB
+after 093 VM removal;
 no task listeners, default Docker context and six-table source digest preserved. Original
 `genova_068_test_restore`, retained 068 backup,
 required private copy manifests/journals and dependencies are preserved; never purge them as caches.

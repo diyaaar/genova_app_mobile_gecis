@@ -7,6 +7,17 @@ Historical detail is in briefs/[progress](progress.md); these indexes do not upg
 
 ## Current accepted local checkpoint
 
+[093 Android connected private-file read](../docs/briefs/093-android-private-r2-read-integration.md),
+source/test `c3e1b28`,
+accepts a synthetic Android API 36 Release path through real local Auth/PostgREST/RLS/PG17,
+Deno handler and signed loopback S3. The native Expo cache/Skia reader displayed the exact
+65,905-byte score page 1/40. A→B cleared the private cache; B showed only B audio and
+new A-file ticket under B returned 403. A no-source Expo audio-player teardown crash
+found in the first Release was fixed and rerun. Mobile 50/299, root 103/1049/build
+and Android Release PASS. [Evidence](../docs/evidence/093-android-private-r2-read/README.md).
+This does not accept hosted R2, real data, physical phone, old issued-URL revocation or
+beta. 090 and 077 retain their separate owner/external gates.
+
 [092 stale-ticket cache guard](../docs/briefs/092-stale-private-file-ticket-cache.md),
 code/test `b0fe523`, reproduces late A URL publication after tenant clear, then rejects
 pending responses for six web/WebView file families. Focused 16, root 103/1049/build PASS;
@@ -46,9 +57,11 @@ Earlier 078–086 evidence remains authoritative in linked briefs, not erased or
 
 ## Exact ownership / resources
 
-No unfinished product diff; unrelated `supabase/.temp/cli-latest` must stay unstaged.
+After 093 commits, no unfinished product diff is expected; verify. Unrelated
+`supabase/.temp/cli-latest` must stay unstaged.
 089/091 containers/volumes/tunnels/VMs/profiles/data/contexts/secret runtimes removed. Latest
-092 build ~466 MiB/coverage recoverably trashed. Free 30,925,652 KiB after cleanup, above floor;
+093 runtime/Android/Next/coverage recoverably trashed. Free 23,133,344 KiB after
+093 VM removal, above floor;
 Trash retains blocks. No task listeners; default context and six-table source digest preserved.
 Keep original `genova_068_test_restore`,
 retained 068 backup and private copy evidence/dependencies; do not rebuild deleted environments
