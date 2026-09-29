@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 29 September 2026 after [091](briefs/091-connected-private-r2-read.md).
+Updated 29 September 2026 after [092](briefs/092-stale-private-file-ticket-cache.md).
 This is a short current-state index. Detailed historical acceptance remains in briefs and
 [progress](../memory-bank/progress.md), not duplicated here. Verify recorded state before reuse.
 
@@ -33,6 +33,10 @@ membership cannot issue new tickets. Previously issued A URL still works after s
 switch, confirming [090](briefs/090-private-file-ticket-revocation-contract.md) remains open.
 No hosted R2, current provider read, native client or device acceptance. 091 root 103/1042/build
 passes; its VM/runtime/listeners were removed, source six-table digest preserved.
+[092](briefs/092-stale-private-file-ticket-cache.md), code/test `b0fe523`, reproduces then
+prevents a late web/WebView private-file ticket from returning/repopulating cache after tenant
+clear across six URL families. Focused 16 and root 103/1049/build PASS. This is client hygiene,
+not old-URL server revocation or a fresh browser/native/provider test; 090 remains open.
 
 Manual synthetic catalogs/extra role and confirmed users do not accept operator-admin/signup/
 mail UX. Other direct/service writers do not join these RPC locks; push/provider, hosted and
@@ -54,7 +58,7 @@ F12 creator/history/CI/rotation and legacy account risks remain open; file modes
 
 Only unrelated `supabase/.temp/cli-latest` remains unstaged; preserve it. Stage owned paths only.
 089 and 091 services/volumes/tunnels/VMs/profiles/data/contexts and secret-bearing runtimes removed;
-latest 091 build ~466 MiB/coverage recoverably in Trash. Free 31,410,024 KiB after cleanup;
+latest 092 build ~466 MiB/coverage recoverably in Trash. Free 30,925,652 KiB after cleanup;
 no task listeners, default Docker context and six-table source digest preserved. Original
 `genova_068_test_restore`, retained 068 backup,
 required private copy manifests/journals and dependencies are preserved; never purge them as caches.

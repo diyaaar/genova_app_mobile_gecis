@@ -1,5 +1,13 @@
 # İlerleme indeksi
 
+29 September — [092 stale private-file ticket cache guard](../docs/briefs/092-stale-private-file-ticket-cache.md),
+code/test `b0fe523`, COMPLETE LOCALLY. RED late A repertoire ticket returned after tenant
+cache clear; generation guard now refuses that response and prevents recaching across six
+web/WebView URL families. Focused 16 and root 103/1049/build PASS; only two code/test paths
+changed. No actual Auth/Edge/browser/native/provider rerun or old-issued-URL server revocation:
+090 remains OPEN. Generated 092 build/coverage moved recoverably to exact Trash targets;
+free 30,925,652 KiB, only unrelated CLI marker dirty. Self-review only.
+
 29 September — [091 connected private repertoire read](../docs/briefs/091-connected-private-r2-read.md),
 test/config `f1e19f8`, COMPLETE LOCALLY. Actual local Auth/PostgREST/RLS/PG17 + Deno HTTP
 entrypoint joined 053's verified mapping with a signed loopback S3 transport: A 65,905-byte

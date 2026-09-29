@@ -31,6 +31,9 @@ existing URL remains readable after a same-session choir switch; [090](briefs/09
 needs the owner's online revocation choice. [077](briefs/077-repertoire-mp3-r2-batch-3.md)
 remains an exact, unexecuted real-copy approval checkpoint. Neither block changes the
 Android-first critical path or promotes a local test to beta acceptance.
+[092](briefs/092-stale-private-file-ticket-cache.md) additionally prevents late web/WebView
+responses from restoring old ticket URLs after tenant cache clear; it does not revoke a
+previously issued URL at the service or replace the Android/device gate.
 
 ### Controlled execution queue — 24 September 2026
 

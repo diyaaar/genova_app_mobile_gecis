@@ -7,6 +7,13 @@ Historical detail is in briefs/[progress](progress.md); these indexes do not upg
 
 ## Current accepted local checkpoint
 
+[092 stale-ticket cache guard](../docs/briefs/092-stale-private-file-ticket-cache.md),
+code/test `b0fe523`, reproduces late A URL publication after tenant clear, then rejects
+pending responses for six web/WebView file families. Focused 16, root 103/1049/build PASS;
+no new native/browser/service/provider acceptance. It cannot revoke a URL already issued;
+090 remains the owner decision. Generated 092 build/coverage moved recoverably to Trash,
+free 30,925,652 KiB; only unrelated CLI marker dirty.
+
 [091 connected private repertoire read](../docs/briefs/091-connected-private-r2-read.md),
 test/config `f1e19f8`, accepts actual isolated local Auth/PostgREST/RLS/PG17 → Deno file
 entrypoint → signed loopback S3 for A PDF and B WAV full/range/HEAD bytes, with foreign user/
@@ -41,7 +48,7 @@ Earlier 078–086 evidence remains authoritative in linked briefs, not erased or
 
 No unfinished product diff; unrelated `supabase/.temp/cli-latest` must stay unstaged.
 089/091 containers/volumes/tunnels/VMs/profiles/data/contexts/secret runtimes removed. Latest
-091 build ~466 MiB/coverage recoverably trashed. Free 31,410,024 KiB after cleanup, above floor;
+092 build ~466 MiB/coverage recoverably trashed. Free 30,925,652 KiB after cleanup, above floor;
 Trash retains blocks. No task listeners; default context and six-table source digest preserved.
 Keep original `genova_068_test_restore`,
 retained 068 backup and private copy evidence/dependencies; do not rebuild deleted environments
