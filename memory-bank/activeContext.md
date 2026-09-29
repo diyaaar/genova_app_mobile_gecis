@@ -8,28 +8,29 @@ Historical detail is in briefs/[progress](progress.md); these indexes do not upg
 ## Current accepted local checkpoint
 
 Owner's “devam et” continued [WF-013 remediation](../docs/briefs/WF-013-multi-tenant-remediation-plan.md)
-after [086 real web acceptance](../docs/briefs/086-two-choir-real-web-acceptance.md).
-[087](../docs/briefs/087-authority-safe-profile-submit.md), scope `ae677c3`, product/test `9581ad7`,
-now passes authority-safe atomic profile submission: caller-JWT DB RPC locks session choice
-and active member through commit; own references, previous snapshots, same-key merge and
-duplicate cleanup are transactional. No service-key write fallback. Actual old revoked-service
-insert reproduced; actual PG17 refusal/rollback/ACL/down-reapply and six concurrent wait/ordering
-matrices pass. SQL/TS 14-key/Unicode/null parity passes. Fresh LOCAL restore backup/restore and
-original source equality pass. Focused 3/32, root 101/1004/build and original 005/083 SQL pass.
-Revoked submit 403, stale context 409, missing RPC 503. No UI/native or live change.
+after [087 submission](../docs/briefs/087-authority-safe-profile-submit.md).
+[088](../docs/briefs/088-authority-safe-profile-review.md), scope `7983d91`, product/test `c16c783`,
+now passes authority-safe atomic chef review: caller-JWT RPC locks session, active actor,
+own-choir chef role/definition, target and requests. Approved member + decision commit together,
+fresh review snapshot/own references preserved; reject never updates member. Old privileged
+half-decision and role gap reproduced. Actual PG17 A/B/role/type/overlap/refusal/forced and skipped
+update/context rollback/ACL/down-reapply pass; 12 observed concurrent matrices include role/member/
+session changes, double decision and 087 submit/review ordering. Fresh LOCAL backup/restore and
+original source equality pass. Focused 4/78, root 102/1036/build, original 005/083/087 SQL pass.
+One caller-token adapter, generic errors/no fallback, aftercommit best-effort push. No UI/native/live change.
 
-No post-087 browser/Auth/REST/provider/device test ran; 086 browser evidence remains historical.
-Other direct/service writers do not join this serialization contract. Chef review/approval,
-remaining mutation families/catalog administration/private files and complete product/device
-flow remain unaccepted; WF-013 step 5 stays PARTIAL. Next proposed outcome: atomic chef
-review/approval with actor-role/target/request concurrency and forced rollback; new brief first.
+No post-087/088 browser/Auth/REST/provider/device test ran; 086 browser evidence remains historical.
+Other direct/service writers do not join these RPC locks. Remaining mutation families/catalog
+administration/private files and complete product/device flow remain unaccepted; push delivery
+is not outbox/provider acceptance. WF-013 step 5 stays PARTIAL. Next outcome: real local two-choir
+browser/Auth/REST submit → chef approve/reject integration with both RPCs; new brief/preflight first.
 Earlier 078–086 evidence remains authoritative in linked briefs, not erased or reclassified.
 
 ## Exact ownership / resources
 
 No unfinished product diff; unrelated `supabase/.temp/cli-latest` must stay unstaged.
-087 target DB/test backends/private sensitive backup/log scratch removed. Root build 466 MiB,
-coverage/check log recoverably trashed. Free 34,144,992 KiB after cleanup, above floor; Trash
+088 target DB/test backends/private sensitive backup/log scratch removed. Root build ~466 MiB,
+coverage/check log recoverably trashed. Free 33,644,096 KiB after cleanup, above floor; Trash
 retains blocks. No VM or local service runtime created. Keep original `genova_068_test_restore`,
 retained 068 backup and private copy evidence/dependencies; do not rebuild deleted environments
 without measured preflight or purge global caches. Main agent is single writer.
@@ -54,5 +55,5 @@ Public Drive/bearer/offline revocation semantics and unsupported avatar remain o
 Local scoped implementation/tests/commits/owned cleanup remain authorized. Hosted/schema/Edge,
 provider/cutover/credentials/real users/email/spending/CI/push/deploy/hardware/distribution require
 their concrete authority. Shared DB requires current hosted backup/restore, sibling impact and
-DB → web/client order before release; 087 RPC precedes adapter and survives web rollback.
+DB → web/client order before release; 087 helper/RPC → 088 RPC precede adapters and survive web rollback.
 Ask only for genuinely blocking choices after safe preparation. Full goal is not complete.

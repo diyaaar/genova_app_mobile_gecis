@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 29 September 2026 after [087](briefs/087-authority-safe-profile-submit.md).
+Updated 29 September 2026 after [088](briefs/088-authority-safe-profile-review.md).
 This is a short current-state index. Detailed historical acceptance remains in briefs and
 [progress](../memory-bank/progress.md), not duplicated here. Verify recorded state before reuse.
 
@@ -16,18 +16,20 @@ Use [guide](gecis-rehberi.md), [work cycle](ai-calisma-duzeni.md), relevant
 Owner resumes local implementation of [WF-013](briefs/WF-013-multi-tenant-remediation-plan.md),
 with operator-assisted v1 choir creation confirmed. [WF-012 audit](briefs/WF-012-commercial-multi-tenant-audit.md)
 and [report](reports/2026-09-28-commercial-multi-tenant-audit.md) remain the dated pre-fix baseline.
-087 scope `ae677c3`, product/test `9581ad7` is locally accepted: profile submit now uses one
-authenticated-only, JWT/session/member-locked DB RPC instead of split service-key writes.
-Actual PG17 A/B/context/reference/normalization/snapshot/merge/forced rollback/ACL/down-reapply
-and six observed concurrency matrices pass. Fresh LOCAL backup/restore equality and source
-preservation pass. Root 101 suites/1004 tests/build; focused 3/32; original 005/083 SQL pass.
-Revoked submit maps to 403, stale context to 409; missing RPC to 503, with no unsafe fallback.
+088 scope `7983d91`, product/test `c16c783` is locally accepted: chef review now uses one
+authenticated-only JWT/session/member/role-locked DB transaction. Approved profile + decision
+commit together; reject never updates member; own references and review-time snapshot preserved.
+Actual PG17 A/B/role/context/overlap/type/forced and skipped-update rollback/ACL/down-reapply
+and 12 observed concurrency matrices pass, including 087 submit/review ordering. Fresh LOCAL
+backup/restore equality and source preservation pass. Root 102 suites/1036 tests/build; focused
+4/78; original 005/083/087 SQL pass. Caller-token adapter, no service fallback/reset, aftercommit
+best-effort push. [087 submission](briefs/087-authority-safe-profile-submit.md) remains accepted.
 
-Post-087 browser/Auth/REST/provider/device/hosted rollout NOT RUN. [086](briefs/086-two-choir-real-web-acceptance.md)
-real local browser result is historical, not new-route acceptance. Chef approval/merge remains
-split and unsafe under races; other direct/service writers do not share the new RPC lock.
-WF-013 step 5 remains PARTIAL. Next proposed single outcome: authority-safe atomic chef
-review/approval, including role/target/request concurrency and rollback proof; brief first.
+Post-087/088 browser/Auth/REST/provider/device/hosted rollout NOT RUN. [086](briefs/086-two-choir-real-web-acceptance.md)
+real local browser result is historical, not new-route acceptance. Other direct/service writers
+do not share these RPC locks; push delivery is not transactional/outbox or provider acceptance.
+WF-013 step 5 remains PARTIAL. Next single outcome: real local two-choir browser/Auth/REST
+submit → chef approve/reject integration for both updated RPCs; brief/resource preflight first.
 
 Earlier local acceptance is preserved: [078](briefs/078-active-membership-revocation.md) active
 authority, [079](briefs/079-message-status-rpc-privileges.md) creator-independent grants,
@@ -41,16 +43,16 @@ F12 creator/history/CI/rotation and legacy account risks remain open; file modes
 ## Ownership / resources / release authority
 
 Only unrelated `supabase/.temp/cli-latest` remains unstaged; preserve it. Stage owned paths only.
-087 target DB/test backends/private backup scratch removed; build 466 MiB/coverage/check log
-recoverably in Trash. Free 34,144,992 KiB measured after cleanup; Trash retains blocks.
-No VM/service runtime created in 087. Original `genova_068_test_restore`, retained 068 backup,
+088 target DB/test backends/private backup scratch removed; build ~466 MiB/coverage/check log
+recoverably in Trash. Free 33,644,096 KiB measured after cleanup; Trash retains blocks.
+No VM/service runtime created in 088. Original `genova_068_test_restore`, retained 068 backup,
 required private copy manifests/journals and dependencies are preserved; never purge them as caches.
 One result/one heavy process, >=10 GiB floor, two-failure causal reassessment; no blind rebuilds.
 Local scoped code/tests/commits/owned cleanup authorized. Hosted DB/Edge/provider, credentials,
 real accounts/email/data, spending, CI/push/deploy, hardware/distribution stay separately gated.
 Shared DB also serves sibling website; future schema release needs current hosted backup/restore,
 both-project impact and exact DB → web/client order. Git revert is not data recovery.
-087 RPC must precede web rollout and remain available through web rollback.
+087 helper/RPC → 088 RPC must precede web rollout and remain available through web rollback.
 Local service-role configuration was recorded stale in 069; do not use it as live Auth proof.
 For account work verify the actual profile; 070 verified `genesinova.choir@gmail.com`, not `chori`.
 

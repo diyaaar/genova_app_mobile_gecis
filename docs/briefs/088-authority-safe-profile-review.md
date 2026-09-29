@@ -1,6 +1,8 @@
 # 088 — authority-safe atomic profile review
 
-Status: IN PROGRESS, 29 September 2026. Main agent, single writer.
+Status: COMPLETE LOCALLY for this bounded review transaction, 29 September 2026.
+Scope `7983d91`, product/test `c16c783`; final records separately committed.
+Main agent, single writer.
 Owner's continuing implementation request authorizes local code/tests/commits only.
 One outcome: a chef's approve/reject decision and approved member changes commit together,
 with caller session, membership and choir-aware chef authority held through commit.
@@ -47,7 +49,7 @@ Snapshot is review-time member values, not stale submit-time values. Reject neve
 Push uses only committed RPC target identity; its existing UUID-based subscription lookup stays
 unchanged, delivery is best effort, not transactional/outbox or guaranteed retry acceptance.
 
-Private additive definer function, empty search_path, fixed relations/static typed update;
+Narrow additive definer function, empty search_path, fixed relations/static typed update;
 explicitly revoke PUBLIC/anon/service_role execution and grant authenticated only. Preserve table
 RLS/ACLs and existing functions. Generic route errors; missing RPC 503, no privileged fallback.
 No profile browser/Auth/REST/provider/device/hosted acceptance inherited from 086/087.
@@ -69,13 +71,27 @@ is not data recovery, no production down while adapters depend on it.
 
 | Criterion / expected behavior | Required? | Status | Date / environment / scenario | Evidence and limits |
 |---|---|---|---|---|
-| Old half-decision and revoked-role service write reproduced; fresh LOCAL restore equality | Yes | NOT RUN | PG17 synthetic fixtures | Source read-only; no hosted freshness claim |
-| Own A/B approve/reject, foreign/stale/inactive/session/role/overlap/reference/snapshot refusals | Yes | NOT RUN | Actual caller-claims SQL | Auth tokens are not provider-tested |
-| Forced post-member failure rolls back both; ACL/down/reapply preserve old authority | Yes | NOT RUN | PG17 triggers/catalog comparison | No production schema operation |
-| Competing role/member/session, double decision and 087 submit serialize with exact final state | Yes | NOT RUN | Real PG locks/waits | Old writers/cascades outside universal guarantee |
-| Caller-JWT SDK route/errors/no fallback/push semantics; focused/full root gate | Yes | NOT RUN | Next/supabase-js simulated HTTP + pnpm check | Provider and browser are distinct layers |
-| Scope/self-review/links/redaction/cleanup/split code-record commits | Yes | NOT RUN | Local final checks | Self-review is not independent review |
+| Old half-decision and revoked-role service write reproduced; fresh LOCAL restore equality | Yes | PASS | 29 Sep PG17 synthetic fixture; final 088 runner | 15-table/function-owner-ACL/policy equality, source unchanged; no hosted freshness claim |
+| Own A/B approve/reject, foreign/stale/inactive/session/role/overlap/reference/snapshot refusals | Yes | PASS | 29 Sep actual caller-claims SQL matrix | All 14 fields/date/trim/null, review-time snapshot, own references; tokens not provider-tested |
+| Forced post-member failure rolls back both; ACL/down/reapply preserve old authority | Yes | PASS | 29 Sep real triggers/catalog comparison | Failure/skipped member/status updates and first-choice rollback; actual anon/service refused |
+| Competing role/member/session, double decision and 087 submit serialize with exact final state | Yes | PASS | 29 Sep 12 real PG lock/wait matrices | Original 005/083/087 regressions also pass; old writers/cascades outside universal guarantee |
+| Caller-JWT SDK route/errors/no fallback/push semantics; focused/full root gate | Yes | PASS | 29 Sep focused 4/78; pnpm check 102/1036/build | Actual Next/SDK simulated transport, not provider/browser evidence |
+| Scope/self-review/links/redaction/cleanup/split code-record commits | Yes | PASS | 29 Sep local final checks / c16c783 | Scoped sources/records, exact target/scratch removed, build recoverably trashed; self-review only |
 | Updated real browser/Auth/REST/device/provider/hosted release | No; later integrated checkpoint | NOT RUN | Not this narrow local transaction scope | WF-013 step 5 remains PARTIAL |
 
 Exit only when every required criterion passes. Progress review at 60 active minutes or two
 failed approaches to the same criterion; record cause and new bounded action before retry.
+
+## Final result / handoff
+
+[Dated evidence](../evidence/088-authority-safe-profile-review/README.md) owns exact matrices,
+commands and limits. Final PG runner and root gates pass after self-review added skipped-update
+rollback guards, first-choice rollback tests and uppercase request-ID canonicalization. Old
+privileged half-decision is reproduced; new adapter has one caller-token RPC, generic errors and
+no fallback/reset. New function only, no old table grants/policies/functions changed.
+
+Owned DB/backends/sensitive scratch absent; build ~466 MiB/coverage/log recoverably in Trash.
+No copied .env in build; free 33,644,096 KiB (~32.1 GiB). Source/configs/deps and unrelated CLI
+marker preserved. No hosted/provider/Auth runtime/device/browser action performed. WF-013 step 5
+remains PARTIAL. Next outcome is updated real local A/B browser/Auth/REST submission → chef
+decision integration for 087/088, not another unrelated feature or implied production rollout.

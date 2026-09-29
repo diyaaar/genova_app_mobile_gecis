@@ -1,5 +1,21 @@
 # İlerleme indeksi
 
+29 September — [088 authority-safe atomic chef profile review](../docs/briefs/088-authority-safe-profile-review.md),
+scope `7983d91`, product/test `c16c783`, complete locally for the bounded review contract.
+Actual former privileged role gap/half-decision reproduced; new caller-JWT RPC locks session,
+active actor/own chef role definition and target/pending requests. Member approval + decision
+atomic, review-time snapshot and own references preserved; reject never updates member. PG17
+A/B/role/context/type/overlap/forced status and skipped-update/context rollback/ACL/down-reapply
+pass. Twelve real competing transactions observe waits: role/member/session changes before/after
+review, double decision and 087 submit/review ordering. Fresh LOCAL restore equality/source
+preservation, original 005/083/087 SQL pass. Focused 4/78, root 102/1036/build pass. Existing Next
+adapter uses one user-token RPC, generic errors/no fallback/reset, best-effort postcommit push.
+Self-review only; no updated real browser/Auth/REST/provider/device/hosted test. Owned DB/backends/
+sensitive scratch removed; build ~466 MiB/coverage/log recoverably trashed; 33,644,096 KiB free.
+Only unrelated CLI marker unstaged. WF-013 step 5 remains PARTIAL; next coherent checkpoint is
+real local A/B browser/Auth/REST submit → chef approve/reject integration for 087/088, not release.
+Other direct/service writers, provider/outbox and full commercial/file/device scope remain open.
+
 29 September — [087 authority-safe atomic profile submission](../docs/briefs/087-authority-safe-profile-submit.md),
 scope `ae677c3`, product/test `9581ad7`, complete locally for the submission contract.
 Actual old privileged insert after revocation reproduced; new caller-JWT/session/member-locked
