@@ -7,31 +7,31 @@ Historical detail is in briefs/[progress](progress.md); these indexes do not upg
 
 ## Current accepted local checkpoint
 
-Owner's “devam et” continued [WF-013 remediation](../docs/briefs/WF-013-multi-tenant-remediation-plan.md)
-after [087 submission](../docs/briefs/087-authority-safe-profile-submit.md).
-[088](../docs/briefs/088-authority-safe-profile-review.md), scope `7983d91`, product/test `c16c783`,
-now passes authority-safe atomic chef review: caller-JWT RPC locks session, active actor,
-own-choir chef role/definition, target and requests. Approved member + decision commit together,
-fresh review snapshot/own references preserved; reject never updates member. Old privileged
-half-decision and role gap reproduced. Actual PG17 A/B/role/type/overlap/refusal/forced and skipped
-update/context rollback/ACL/down-reapply pass; 12 observed concurrent matrices include role/member/
-session changes, double decision and 087 submit/review ordering. Fresh LOCAL backup/restore and
-original source equality pass. Focused 4/78, root 102/1036/build, original 005/083/087 SQL pass.
-One caller-token adapter, generic errors/no fallback, aftercommit best-effort push. No UI/native/live change.
+Owner's “devam” continued [WF-013 remediation](../docs/briefs/WF-013-multi-tenant-remediation-plan.md)
+with [089](../docs/briefs/089-real-profile-review-web-acceptance.md), scope `6db0144`, product/test
+`a8df751`. Actual Chrome/Next/Auth/REST/RLS/PG17 A/B form submit → chef approve/reject → member/
+history now passes with 087/088, zero response mocks. Real RED exposed original-choir review
+school/department constants and global song map; replaced with referenced caller-RLS page-local
+labels and generation guard. Six component cases, focused 4/72, root 103/1042/build PASS.
+Actual browser foreign/non-chef/stale/finalized/inactive/role refusals preserve DB state;
+permission changes are pre-dispatch, not new in-flight HTTP concurrency proof. Historical
+[087](../docs/briefs/087-authority-safe-profile-submit.md)/[088](../docs/briefs/088-authority-safe-profile-review.md)
+PG lock/rollback/restore acceptance remains linked, not rerun here.
 
-No post-087/088 browser/Auth/REST/provider/device test ran; 086 browser evidence remains historical.
-Other direct/service writers do not join these RPC locks. Remaining mutation families/catalog
-administration/private files and complete product/device flow remain unaccepted; push delivery
-is not outbox/provider acceptance. WF-013 step 5 stays PARTIAL. Next outcome: real local two-choir
-browser/Auth/REST submit → chef approve/reject integration with both RPCs; new brief/preflight first.
+Manual catalog/extra role fixtures and confirmed users do not accept operator-admin/signup/mail
+UX. Direct/service writers, private files, full device/product flow and hosted/provider layers
+remain open; push is not outbox/provider acceptance. WF-013 step 5 stays PARTIAL. Next outcome:
+bounded local private-file read/revocation integration preparation for Android beta; consult
+delivery queue/tenant gaps, then brief/resource preflight before implementation or external work.
 Earlier 078–086 evidence remains authoritative in linked briefs, not erased or reclassified.
 
 ## Exact ownership / resources
 
 No unfinished product diff; unrelated `supabase/.temp/cli-latest` must stay unstaged.
-088 target DB/test backends/private sensitive backup/log scratch removed. Root build ~466 MiB,
-coverage/check log recoverably trashed. Free 33,644,096 KiB after cleanup, above floor; Trash
-retains blocks. No VM or local service runtime created. Keep original `genova_068_test_restore`,
+089 containers/volumes/Next/tunnel/VM/profile/data/context/secret runtime removed. Root build
+~522 MiB/coverage/check log recoverably trashed. Free 33,076,684 KiB after cleanup, above floor;
+Trash retains blocks. No task listeners; default context and six-table source digest preserved.
+Keep original `genova_068_test_restore`,
 retained 068 backup and private copy evidence/dependencies; do not rebuild deleted environments
 without measured preflight or purge global caches. Main agent is single writer.
 

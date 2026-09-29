@@ -1,5 +1,21 @@
 # İlerleme indeksi
 
+29 September — [089 real two-choir profile review web acceptance](../docs/briefs/089-real-profile-review-web-acceptance.md),
+scope `6db0144`, product/test `a8df751`, complete locally. Actual installed Chrome 154/Next/
+Auth/REST/RLS/PG17 form submission → chef approval/rejection → own member/history passes for
+087/088 without response mocks. Real RED exposed hardcoded original-choir school/department
+review names and global song labels; now referenced caller-RLS page-local labels with immediate
+scope clearing/late-read guards. Six component cases include missing/failed/corrupt reference
+handling. Actual browser A/B reads and foreign/non-chef/stale/finalized/role/inactive refusals
+preserve exact member/request data. Permission changes are pre-dispatch, not new HTTP concurrency
+tests; 087/088 real PG evidence stays historical. Focused 4/72, final root 103/1042/build pass.
+Exact task services/volumes/tunnel/Next/VM/data/context/private runtime removed; ~522 MiB build/
+coverage/log recoverably trashed, 33,076,684 KiB free; original six-table digest/restore preserved.
+Only unrelated CLI marker unstaged; self-review only. Manual catalogs/extra role and confirmed
+users are not operator/signup/mail acceptance. Hosted/provider/device/files/full product NOT RUN;
+WF-013 step 5 remains PARTIAL. Next bounded queue action is local private-file read/revocation
+integration preparation for Android beta, not release or another repeated browser framework.
+
 29 September — [088 authority-safe atomic chef profile review](../docs/briefs/088-authority-safe-profile-review.md),
 scope `7983d91`, product/test `c16c783`, complete locally for the bounded review contract.
 Actual former privileged role gap/half-decision reproduced; new caller-JWT RPC locks session,

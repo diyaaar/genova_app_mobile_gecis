@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 29 September 2026 after [088](briefs/088-authority-safe-profile-review.md).
+Updated 29 September 2026 after [089](briefs/089-real-profile-review-web-acceptance.md).
 This is a short current-state index. Detailed historical acceptance remains in briefs and
 [progress](../memory-bank/progress.md), not duplicated here. Verify recorded state before reuse.
 
@@ -16,20 +16,21 @@ Use [guide](gecis-rehberi.md), [work cycle](ai-calisma-duzeni.md), relevant
 Owner resumes local implementation of [WF-013](briefs/WF-013-multi-tenant-remediation-plan.md),
 with operator-assisted v1 choir creation confirmed. [WF-012 audit](briefs/WF-012-commercial-multi-tenant-audit.md)
 and [report](reports/2026-09-28-commercial-multi-tenant-audit.md) remain the dated pre-fix baseline.
-088 scope `7983d91`, product/test `c16c783` is locally accepted: chef review now uses one
-authenticated-only JWT/session/member/role-locked DB transaction. Approved profile + decision
-commit together; reject never updates member; own references and review-time snapshot preserved.
-Actual PG17 A/B/role/context/overlap/type/forced and skipped-update rollback/ACL/down-reapply
-and 12 observed concurrency matrices pass, including 087 submit/review ordering. Fresh LOCAL
-backup/restore equality and source preservation pass. Root 102 suites/1036 tests/build; focused
-4/78; original 005/083/087 SQL pass. Caller-token adapter, no service fallback/reset, aftercommit
-best-effort push. [087 submission](briefs/087-authority-safe-profile-submit.md) remains accepted.
+089 scope `6db0144`, product/test `a8df751` is locally accepted: actual installed Chrome/Next/
+Auth/REST/RLS/PG17 two-choir profile submit → chef approve/reject → member/history passes with
+087/088, zero response mocks. Actual UI names exposed original-choir review constants; removed
+them in favor of referenced caller-RLS page-local labels and late-scope read guards. Six component
+regressions, focused 4/72, full 103 suites/1042 tests/build pass. Real browser wrong-tenant/non-chef/
+stale/finalized/role/inactive refusals preserve data; permission changes are pre-dispatch, not
+new in-flight HTTP concurrency evidence. [Evidence](evidence/089-real-profile-review-web/README.md).
+[087 submit](briefs/087-authority-safe-profile-submit.md)/[088 review](briefs/088-authority-safe-profile-review.md)
+retain historical real PG concurrency/rollback/restore acceptance, not rerun in 089.
 
-Post-087/088 browser/Auth/REST/provider/device/hosted rollout NOT RUN. [086](briefs/086-two-choir-real-web-acceptance.md)
-real local browser result is historical, not new-route acceptance. Other direct/service writers
-do not share these RPC locks; push delivery is not transactional/outbox or provider acceptance.
-WF-013 step 5 remains PARTIAL. Next single outcome: real local two-choir browser/Auth/REST
-submit → chef approve/reject integration for both updated RPCs; brief/resource preflight first.
+Manual synthetic catalogs/extra role and confirmed users do not accept operator-admin/signup/
+mail UX. Other direct/service writers do not join these RPC locks; push/provider, hosted and
+device layers NOT RUN. WF-013 step 5 remains PARTIAL. Next single outcome: bounded local
+private-file read/revocation integration preparation for the Android beta blocker; consult
+delivery queue/remaining tenant gaps, write brief/resource preflight before implementation.
 
 Earlier local acceptance is preserved: [078](briefs/078-active-membership-revocation.md) active
 authority, [079](briefs/079-message-status-rpc-privileges.md) creator-independent grants,
@@ -43,9 +44,10 @@ F12 creator/history/CI/rotation and legacy account risks remain open; file modes
 ## Ownership / resources / release authority
 
 Only unrelated `supabase/.temp/cli-latest` remains unstaged; preserve it. Stage owned paths only.
-088 target DB/test backends/private backup scratch removed; build ~466 MiB/coverage/check log
-recoverably in Trash. Free 33,644,096 KiB measured after cleanup; Trash retains blocks.
-No VM/service runtime created in 088. Original `genova_068_test_restore`, retained 068 backup,
+089 services/volumes/tunnel/Next/VM/profile/data/context and secret-bearing runtime removed;
+build ~522 MiB/coverage/check log recoverably in Trash. Free 33,076,684 KiB after cleanup;
+no task listeners, default Docker context and six-table source digest preserved. Original
+`genova_068_test_restore`, retained 068 backup,
 required private copy manifests/journals and dependencies are preserved; never purge them as caches.
 One result/one heavy process, >=10 GiB floor, two-failure causal reassessment; no blind rebuilds.
 Local scoped code/tests/commits/owned cleanup authorized. Hosted DB/Edge/provider, credentials,

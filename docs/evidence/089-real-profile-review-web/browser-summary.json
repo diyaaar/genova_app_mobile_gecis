@@ -1,0 +1,10 @@
+{
+  "browser": "154.0.8037.58",
+  "runtime": "actual local Chrome/Auth/REST/RLS/Next/PG17",
+  "mocks": 0,
+  "earlyConnectedApproval": "PASS",
+  "ownABApproveRejectProfileHistory": "PASS",
+  "foreignNonChefFinalizedRefusals": "PASS",
+  "sameSessionStaleSubmitReview": "PASS",
+  "roleActorTargetRevocation": "PASS"
+}
