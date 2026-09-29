@@ -166,18 +166,29 @@ describe('AudioPlayerScreen', () => {
     expect(screen.queryByTestId('audio-player-screen')).toBeNull();
   });
 
-  it('stops and invalidates the private source when the shell owner unmounts', async () => {
+  it('invalidates the private source without calling a hook-owned released player on unmount', async () => {
     const source = gateway(async () => ({
       url: 'https://project.invalid/private',
       expiresAt: 9_999_999_999_999,
     }));
     const view = await render(playerElement(source));
     await waitFor(() => expect(source.open).toHaveBeenCalledTimes(1));
+    audioMock.__mockPlayer.pause.mockClear();
 
     await act(async () => { view.unmount(); });
 
     expect(source.clear).toHaveBeenCalledTimes(1);
-    expect(audioMock.__mockPlayer.pause).toHaveBeenCalled();
+    expect(audioMock.__mockPlayer.pause).not.toHaveBeenCalled();
+  });
+
+  it('does not pause a source-less player during tenant clear', async () => {
+    const source = gateway(() => new Promise(() => {}));
+    await render(playerElement(source));
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(1));
+    audioMock.__mockPlayer.pause.mockClear();
+    await act(async () => { await clearTenantCaches(); });
+    expect(source.clear).toHaveBeenCalledTimes(1);
+    expect(audioMock.__mockPlayer.pause).not.toHaveBeenCalled();
   });
 
   it('surfaces native media errors with a bounded retry action', async () => {

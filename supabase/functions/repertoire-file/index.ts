@@ -138,4 +138,6 @@ const handler = createRepertoireFileHandler({
   storageMode: REPERTOIRE_STORAGE_MODE,
 });
 
-Deno.serve(handler);
+// The isolated connected-runtime harness binds only to loopback; hosted Edge keeps its default bind.
+const localBind = Deno.env.get('GENOVA_TEST_LOOPBACK_ONLY') === '1';
+Deno.serve(localBind ? { hostname: '127.0.0.1' } : {}, handler);

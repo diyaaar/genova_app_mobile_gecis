@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const ACCEPTANCE_FLAG = 'GENOVA_021_ANDROID_LOOPBACK';
+const R2_ACCEPTANCE_FLAG = 'GENOVA_093_ANDROID_LOOPBACK';
 const RESOURCE_NAME = 'genova_021_loopback_network_security';
 const RESOURCE_XML = `<?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
@@ -15,6 +16,15 @@ const RESOURCE_XML = `<?xml version="1.0" encoding="utf-8"?>
 `;
 
 function requireGuardedLoopbackEnvironment(environment = process.env) {
+  if (environment[R2_ACCEPTANCE_FLAG] === '1') {
+    const url = new URL(environment.EXPO_PUBLIC_SUPABASE_URL);
+    if (environment[ACCEPTANCE_FLAG] === '1' || url.protocol !== 'http:' ||
+      !['127.0.0.1', 'localhost'].includes(url.hostname) || url.port !== '54491' ||
+      environment.EXPO_PUBLIC_GENOVA_093_ACCEPTANCE !== '1') {
+      throw new Error(`${R2_ACCEPTANCE_FLAG}=1 permits only guarded 093 loopback runtime`);
+    }
+    return true;
+  }
   if (environment[ACCEPTANCE_FLAG] !== '1') {
     return false;
   }

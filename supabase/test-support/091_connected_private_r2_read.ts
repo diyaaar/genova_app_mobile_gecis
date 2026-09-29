@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { spawn, execFileSync } from 'node:child_process';
 import { createHash, randomBytes, randomUUID } from 'node:crypto';
 import { readFileSync } from 'node:fs';
+import { mkdir, unlink, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 import { createServer } from 'node:http';
 import { createClient } from '@supabase/supabase-js';
 
@@ -30,11 +32,17 @@ for (const [key, role] of [[anon, 'anon'], [service, 'service_role']] as const) 
 const admin = createClient(API, service, { auth: { persistSession: false, autoRefreshToken: false } });
 const userClient = () => createClient(API, anon, { auth: { persistSession: false, autoRefreshToken: false } });
 const hash = (bytes: Uint8Array) => createHash('sha256').update(bytes).digest('hex');
+const androidFixturePath = process.env.GENOVA_093_ANDROID_FIXTURE_PATH
+  ? resolve(process.env.GENOVA_093_ANDROID_FIXTURE_PATH) : null;
+if (androidFixturePath) {
+  assert.equal(androidFixturePath, resolve('spike/093-runtime/.093-android-fixture.json'));
+}
 const ids = {
   choirA: randomUUID(), choirB: randomUUID(), songA: randomUUID(), songB: randomUUID(),
   fileA: randomUUID(), fileB: randomUUID(), memberA: randomUUID(), memberB: randomUUID(),
   outsiderB: randomUUID(), roleA: randomUUID(), roleB: randomUUID(), roleChorist: randomUUID(),
 };
+const assignmentA = randomUUID();
 const pdf = new Uint8Array(readFileSync('apps/mobile/src/repertoire/__fixtures__/score_40p.pdf'));
 assert.equal(pdf.byteLength, 65_905);
 const wav = Buffer.concat([
@@ -147,9 +155,11 @@ async function main() {
     insert into public.repertoire(id,choir_id,title,drive_folder_id,is_visible) values
       ('${ids.songA}','${ids.choirA}','091 score','091-synthetic-no-provider',true),
       ('${ids.songB}','${ids.choirB}','091 audio','091-synthetic-no-provider',true);
-    insert into public.repertoire_files(id,choir_id,song_id,file_name,file_type,drive_file_id,mime_type) values
-      ('${ids.fileA}','${ids.choirA}','${ids.songA}','score.pdf','sheet','091-no-drive-a','application/pdf'),
-      ('${ids.fileB}','${ids.choirB}','${ids.songB}','rehearsal.wav','audio','091-no-drive-b','audio/wav');
+    insert into public.repertoire_files(id,choir_id,song_id,file_name,file_type,drive_file_id,mime_type,file_size_bytes) values
+      ('${ids.fileA}','${ids.choirA}','${ids.songA}','score.pdf','sheet','091-no-drive-a','application/pdf',${pdf.length}),
+      ('${ids.fileB}','${ids.choirB}','${ids.songB}','rehearsal.wav','audio','091-no-drive-b','audio/wav',${wav.length});
+    insert into public.song_assignments(id,choir_id,song_id,member_id,assigned_by,part_name) values
+      ('${assignmentA}','${ids.choirA}','${ids.songA}','${ids.memberA}','${ids.memberA}','Alto');
     insert into public.repertoire_file_storage_locations
       (repertoire_file_id,choir_id,provider,bucket,object_key,content_length,mime_type,sha256_hex,verified_at,is_active) values
       ('${ids.fileA}','${ids.choirA}','r2','${BUCKET}','choirs/${ids.choirA}/repertoire/${ids.fileA}/score.pdf',${pdf.length},'application/pdf','${hash(pdf)}',now(),true),
@@ -162,12 +172,13 @@ async function main() {
   const accessB = (await outsider.auth.getSession()).data.session?.access_token;
   assert.ok(accessA); assert.ok(accessB);
   await new Promise<void>((resolve, reject) => provider.listen(18092, '127.0.0.1', () => resolve()).once('error', reject));
-  const edge = spawn('deno', ['run', '--allow-env', '--allow-net=0.0.0.0:8000,127.0.0.1:54491,127.0.0.1:18092',
+  const edge = spawn('deno', ['run', '--allow-env', '--allow-net=127.0.0.1:8000,127.0.0.1:54491,127.0.0.1:18092',
     'supabase/functions/repertoire-file/index.ts'], { env: {
       ...process.env, SUPABASE_URL: API, SUPABASE_ANON_KEY: anon,
       SUPABASE_SERVICE_ROLE_KEY: service, REPERTOIRE_STORAGE_MODE: 'r2-required',
       R2_ACCOUNT_ID: ACCOUNT, R2_BUCKET: BUCKET, R2_ACCESS_KEY_ID: ACCESS,
       R2_SECRET_ACCESS_KEY: SECRET, R2_TEST_ENDPOINT: `${S3}/`, R2_ALLOW_INSECURE_LOOPBACK: 'true',
+      GENOVA_TEST_LOOPBACK_ONLY: '1',
     }, stdio: ['ignore', 'pipe', 'pipe'] });
   let diagnostics = '';
   edge.stdout.on('data', chunk => { diagnostics += String(chunk); });
@@ -180,6 +191,20 @@ async function main() {
     assert.equal((await ticket(ids.fileB, accessA)).result.status, 403);
     assert.equal((await ticket(ids.fileA, accessB)).result.status, 403);
     assert.equal(providerHits, before, 'foreign ticket attempts contacted provider');
+    if (androidFixturePath) {
+      await mkdir(resolve('spike/093-runtime'), { recursive: true, mode: 0o700 });
+      await writeFile(androidFixturePath, JSON.stringify({
+        email: first.data.user.email, password: passwordA, choirA: ids.choirA,
+        choirB: ids.choirB, fileId: ids.fileA, pdfSha256: hash(pdf),
+      }), { mode: 0o600, flag: 'wx' });
+      console.log('READY 093 synthetic Android fixture; send SIGTERM after runtime check');
+      await new Promise<void>((resolve, reject) => {
+        const timeout = setTimeout(() => reject(new Error('093 Android hold timed out')), 30 * 60_000);
+        process.once('SIGTERM', () => { clearTimeout(timeout); resolve(); });
+      });
+      await unlink(androidFixturePath);
+      console.log('PASS 093 Android hold ended; fixture secret removed');
+    }
     ok((await shared.rpc('set_active_choir', { p_choir_id: ids.choirB })).error, 'select B');
     assert.equal((await ticket(ids.fileA, accessA)).result.status, 403);
     await ownRead(ids.fileB, wav, accessA);
@@ -195,6 +220,7 @@ async function main() {
     if (diagnostics) process.stderr.write(diagnostics.replaceAll(service, '[redacted]'));
     throw error;
   } finally {
+    if (androidFixturePath) await unlink(androidFixturePath).catch(() => {});
     edge.kill('SIGTERM');
     await Promise.race([new Promise(resolve => edge.once('exit', resolve)), new Promise(resolve => setTimeout(resolve, 2000))]);
     await new Promise<void>(resolve => provider.close(() => resolve()));

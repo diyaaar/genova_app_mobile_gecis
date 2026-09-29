@@ -83,7 +83,9 @@ export function AudioPlaybackProvider({
   const requestVersion = useRef(0);
   const pendingPlayback = useRef<PendingPlayback | null>(null);
   const playbackLoadTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hasAudioSource = useRef(false);
   playerRef.current = player;
+  hasAudioSource.current = audioSource !== null;
 
   const clearPlaybackLoadTimer = useCallback(() => {
     if (playbackLoadTimer.current) clearTimeout(playbackLoadTimer.current);
@@ -104,10 +106,12 @@ export function AudioPlaybackProvider({
     pendingPlayback.current = null;
     clearPlaybackLoadTimer();
     gatewayRef.current?.clear();
-    playerRef.current.pause();
   }, [clearPlaybackLoadTimer]);
 
   const clearSession = useCallback(() => {
+    // Expo releases the hook-owned player on unmount. Only an active source needs an
+    // explicit pause while this provider is still mounted at a tenant boundary.
+    if (hasAudioSource.current) playerRef.current.pause();
     disposePrivatePlayback();
     setSession(null);
     setSelectedIndex(0);

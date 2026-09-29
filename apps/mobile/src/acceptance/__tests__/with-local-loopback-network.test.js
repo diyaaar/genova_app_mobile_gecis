@@ -24,4 +24,19 @@ describe('021 Android loopback network guard', () => {
       EXPO_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54321',
     })).toBe(true);
   });
+
+  it('allows only the explicit 093 acceptance endpoint', () => {
+    const accepted = {
+      GENOVA_093_ANDROID_LOOPBACK: '1',
+      EXPO_PUBLIC_GENOVA_093_ACCEPTANCE: '1',
+      EXPO_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54491',
+    };
+    expect(requireGuardedLoopbackEnvironment(accepted)).toBe(true);
+    expect(() => requireGuardedLoopbackEnvironment({ ...accepted,
+      EXPO_PUBLIC_SUPABASE_URL: 'https://hievmwwctjjlhmssoxsu.supabase.co',
+    })).toThrow();
+    expect(() => requireGuardedLoopbackEnvironment({ ...accepted,
+      GENOVA_021_ANDROID_LOOPBACK: '1',
+    })).toThrow();
+  });
 });
