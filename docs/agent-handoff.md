@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 29 September 2026 after [089](briefs/089-real-profile-review-web-acceptance.md).
+Updated 29 September 2026 after [091](briefs/091-connected-private-r2-read.md).
 This is a short current-state index. Detailed historical acceptance remains in briefs and
 [progress](../memory-bank/progress.md), not duplicated here. Verify recorded state before reuse.
 
@@ -26,6 +26,14 @@ new in-flight HTTP concurrency evidence. [Evidence](evidence/089-real-profile-re
 [087 submit](briefs/087-authority-safe-profile-submit.md)/[088 review](briefs/088-authority-safe-profile-review.md)
 retain historical real PG concurrency/rollback/restore acceptance, not rerun in 089.
 
+[091](briefs/091-connected-private-r2-read.md), test/config `f1e19f8`, now joins actual local
+Auth/PostgREST/RLS/PG17 and Deno repertoire-file with a signed **loopback S3** server: own
+A PDF (65,905 B) and B WAV (48 B) full/ranged/HEAD bytes pass; wrong user/choir and revoked
+membership cannot issue new tickets. Previously issued A URL still works after same-session B
+switch, confirming [090](briefs/090-private-file-ticket-revocation-contract.md) remains open.
+No hosted R2, current provider read, native client or device acceptance. 091 root 103/1042/build
+passes; its VM/runtime/listeners were removed, source six-table digest preserved.
+
 Manual synthetic catalogs/extra role and confirmed users do not accept operator-admin/signup/
 mail UX. Other direct/service writers do not join these RPC locks; push/provider, hosted and
 device layers NOT RUN. WF-013 step 5 remains PARTIAL. Active
@@ -45,8 +53,8 @@ F12 creator/history/CI/rotation and legacy account risks remain open; file modes
 ## Ownership / resources / release authority
 
 Only unrelated `supabase/.temp/cli-latest` remains unstaged; preserve it. Stage owned paths only.
-089 services/volumes/tunnel/Next/VM/profile/data/context and secret-bearing runtime removed;
-build ~522 MiB/coverage/check log recoverably in Trash. Free 33,076,684 KiB after cleanup;
+089 and 091 services/volumes/tunnels/VMs/profiles/data/contexts and secret-bearing runtimes removed;
+latest 091 build ~466 MiB/coverage recoverably in Trash. Free 31,410,024 KiB after cleanup;
 no task listeners, default Docker context and six-table source digest preserved. Original
 `genova_068_test_restore`, retained 068 backup,
 required private copy manifests/journals and dependencies are preserved; never purge them as caches.

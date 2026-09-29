@@ -1,5 +1,15 @@
 # İlerleme indeksi
 
+29 September — [091 connected private repertoire read](../docs/briefs/091-connected-private-r2-read.md),
+test/config `f1e19f8`, COMPLETE LOCALLY. Actual local Auth/PostgREST/RLS/PG17 + Deno HTTP
+entrypoint joined 053's verified mapping with a signed loopback S3 transport: A 65,905-byte
+PDF and B 48-byte WAV full/range/HEAD bytes and hashes pass, with foreign user/choir and
+inactive-member **new ticket** refusal. Previously issued A bearer URL still returns 200
+after same-session B switch: 090 security contract OPEN, not accepted revocation. Root
+103/1042/build PASS; source six-table digest unchanged, exact VM/data/context/tunnel/runtime
+removed, final free 31,410,024 KiB. S3 is synthetic; hosted R2/native/phone/push/cutover
+NOT RUN. Self-review only. 077 real copy still awaits exact owner approval.
+
 29 September — [077 third bounded repertoire MP3 copy](../docs/briefs/077-repertoire-mp3-r2-batch-3.md)
 is APPROVAL PREPARED, NOT EXECUTED. Read-only private manifest/hash/journal reconciliation
 recomputed 69 audio candidates, exact first 20 prior verified journal rows, and the next ten

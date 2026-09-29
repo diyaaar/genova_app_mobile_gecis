@@ -7,6 +7,15 @@ Historical detail is in briefs/[progress](progress.md); these indexes do not upg
 
 ## Current accepted local checkpoint
 
+[091 connected private repertoire read](../docs/briefs/091-connected-private-r2-read.md),
+test/config `f1e19f8`, accepts actual isolated local Auth/PostgREST/RLS/PG17 → Deno file
+entrypoint → signed loopback S3 for A PDF and B WAV full/range/HEAD bytes, with foreign user/
+choir and revoked-membership **new ticket** refusals. It does not test hosted R2 or native
+device. A pre-switch A bearer URL still returns 200 after selecting B, so 090's owner contract
+and implementation remain open. Root 103 suites/1042 tests/build PASS; exact VM/runtime/
+listeners removed, original six-table digest unchanged. Next independently approved external
+step remains 077 exact copy; no live action inferred from this local check.
+
 Owner's “devam” continued [WF-013 remediation](../docs/briefs/WF-013-multi-tenant-remediation-plan.md)
 with [089](../docs/briefs/089-real-profile-review-web-acceptance.md), scope `6db0144`, product/test
 `a8df751`. Actual Chrome/Next/Auth/REST/RLS/PG17 A/B form submit → chef approve/reject → member/
@@ -31,8 +40,8 @@ Earlier 078–086 evidence remains authoritative in linked briefs, not erased or
 ## Exact ownership / resources
 
 No unfinished product diff; unrelated `supabase/.temp/cli-latest` must stay unstaged.
-089 containers/volumes/Next/tunnel/VM/profile/data/context/secret runtime removed. Root build
-~522 MiB/coverage/check log recoverably trashed. Free 33,076,684 KiB after cleanup, above floor;
+089/091 containers/volumes/tunnels/VMs/profiles/data/contexts/secret runtimes removed. Latest
+091 build ~466 MiB/coverage recoverably trashed. Free 31,410,024 KiB after cleanup, above floor;
 Trash retains blocks. No task listeners; default context and six-table source digest preserved.
 Keep original `genova_068_test_restore`,
 retained 068 backup and private copy evidence/dependencies; do not rebuild deleted environments

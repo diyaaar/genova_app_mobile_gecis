@@ -24,6 +24,14 @@ Core rehearsal editing and other missing features remain outstanding, not silent
 If a release blocker prevents the few-day target, present its concrete cause and next action;
 do not manufacture a date or add unrelated features while awaiting a critical decision.
 
+29 September local integration checkpoint: [091](briefs/091-connected-private-r2-read.md)
+passes actual isolated Auth/RLS → repertoire-file → signed loopback S3 PDF/audio full/ranged/
+HEAD reads. It does not accept hosted R2, client/device output or Drive withdrawal. The
+existing URL remains readable after a same-session choir switch; [090](briefs/090-private-file-ticket-revocation-contract.md)
+needs the owner's online revocation choice. [077](briefs/077-repertoire-mp3-r2-batch-3.md)
+remains an exact, unexecuted real-copy approval checkpoint. Neither block changes the
+Android-first critical path or promotes a local test to beta acceptance.
+
 ### Controlled execution queue — 24 September 2026
 
 [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md) reconciles this queue with the
