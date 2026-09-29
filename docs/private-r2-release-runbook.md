@@ -89,8 +89,12 @@ R2-object acceptance. No real 063 inventory, R2 object, activation or client fla
 
 Every entry below is explicit in `supabase/config.toml` with `verify_jwt = false`. This does not make
 the function public: the handler owns method-specific authentication. Upload/lifecycle POST or
-DELETE requests verify the user bearer and server RPC authority; file POST verifies the bearer,
-while ticket-only GET/HEAD verifies the signed actor-bound ticket and live authorization.
+DELETE requests verify the user bearer and server RPC authority; file POST verifies the bearer.
+Ticket-only GET/HEAD currently differs by family: review/comment/chat tickets bind an actor and
+recheck family-specific access, while repertoire/assignment tickets bind only file, choir and
+expiry. None of the five rechecks the selected Auth session on GET/HEAD. The uniform online
+revocation decision and implementation remain open in [090](briefs/090-private-file-ticket-revocation-contract.md);
+do not describe the existing one-hour bearer URLs as immediately revocable.
 
 | Family | Function slugs |
 |---|---|

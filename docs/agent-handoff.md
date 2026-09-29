@@ -28,9 +28,10 @@ retain historical real PG concurrency/rollback/restore acceptance, not rerun in 
 
 Manual synthetic catalogs/extra role and confirmed users do not accept operator-admin/signup/
 mail UX. Other direct/service writers do not join these RPC locks; push/provider, hosted and
-device layers NOT RUN. WF-013 step 5 remains PARTIAL. Next single outcome: bounded local
-private-file read/revocation integration preparation for the Android beta blocker; consult
-delivery queue/remaining tenant gaps, write brief/resource preflight before implementation.
+device layers NOT RUN. WF-013 step 5 remains PARTIAL. Active
+[090](briefs/090-private-file-ticket-revocation-contract.md) is partial: repertoire/assignment
+one-hour tickets are actorless bearer URLs; three other families recheck actor access but not
+selected session. Owner's next-online-request revocation choice is pending before code.
 
 Earlier local acceptance is preserved: [078](briefs/078-active-membership-revocation.md) active
 authority, [079](briefs/079-message-status-rpc-privileges.md) creator-independent grants,

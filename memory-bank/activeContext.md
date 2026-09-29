@@ -20,9 +20,10 @@ PG lock/rollback/restore acceptance remains linked, not rerun here.
 
 Manual catalog/extra role fixtures and confirmed users do not accept operator-admin/signup/mail
 UX. Direct/service writers, private files, full device/product flow and hosted/provider layers
-remain open; push is not outbox/provider acceptance. WF-013 step 5 stays PARTIAL. Next outcome:
-bounded local private-file read/revocation integration preparation for Android beta; consult
-delivery queue/tenant gaps, then brief/resource preflight before implementation or external work.
+remain open; push is not outbox/provider acceptance. WF-013 step 5 stays PARTIAL. Active
+[090](../docs/briefs/090-private-file-ticket-revocation-contract.md) is partial: repertoire and
+assignment one-hour tickets are actorless bearer URLs; three other families recheck actor but
+not selected session. Owner's online next-request revocation choice is pending before code.
 Earlier 078–086 evidence remains authoritative in linked briefs, not erased or reclassified.
 
 ## Exact ownership / resources

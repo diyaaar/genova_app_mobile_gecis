@@ -1,5 +1,14 @@
 # İlerleme indeksi
 
+29 September — [090 private-file ticket revocation contract](../docs/briefs/090-private-file-ticket-revocation-contract.md)
+is an IN-PROGRESS documentation checkpoint, not product acceptance. Source inventory found
+repertoire/assignment one-hour actorless bearer tickets and three actor-bound families with
+family-access rechecks but no selected-session GET/HEAD recheck. This corrects a blanket runbook
+claim. Owner was asked whether previously issued links must be refused on the next online request
+after switch/revocation; prior 021/053 intentionally permitted the expiry window. Offline bytes
+cannot be remotely erased. No code, migration, runtime, hosted copy/activation or device test
+ran; implementation waits for the contract choice and a bounded amended brief.
+
 29 September — [089 real two-choir profile review web acceptance](../docs/briefs/089-real-profile-review-web-acceptance.md),
 scope `6db0144`, product/test `a8df751`, complete locally. Actual installed Chrome 154/Next/
 Auth/REST/RLS/PG17 form submission → chef approval/rejection → own member/history passes for
