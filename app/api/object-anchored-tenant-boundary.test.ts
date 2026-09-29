@@ -11,7 +11,7 @@ vi.mock('@/lib/server/push-notifications', () => ({ sendProfileDecisionPush: moc
 
 import { POST as deleteRehearsal } from './rehearsals/delete/route';
 import { POST as deleteAssignment } from './assignments/delete/route';
-import { POST as reviewProfile } from './profile-change-requests/review/route';
+// Profile review's preserved criteria moved to its caller-JWT RPC route.test.ts (088).
 
 const base = 'https://fixture-085.invalid';
 const choirB = 'b8500000-0000-4000-8000-000000000001';
@@ -25,8 +25,6 @@ const routes = [
     body: (id: string) => ({ rehearsal_id: id }) },
   { name: 'assignment delete', table: 'assignments', post: deleteAssignment,
     body: (id: string) => ({ assignment_id: id }) },
-  { name: 'profile review', table: 'profile_change_requests', post: reviewProfile,
-    body: (id: string) => ({ requestId: id, action: 'approve' }) },
 ];
 
 type Captured = { request: Request; url: URL; body: Record<string, unknown> | null };
