@@ -72,7 +72,8 @@ CI/Preview/dormant-hosted evidence; no current remote/live revision verified her
 the local divergence merely to obtain release evidence.
 [070](briefs/070-real-inventory-metadata-preparation.md) records private inventory/manifest;
 [071–076 copies](briefs/076-repertoire-mp3-r2-batch-2.md) record 42 verified objects / 60,969,062
-bytes, 49 MP3 / 192,361,428 bytes still pending. 077 not run. Copies are not activation/cutover;
+bytes, 49 MP3 / 192,361,428 bytes still pending. [077](briefs/077-repertoire-mp3-r2-batch-3.md)
+prepares the next ten / 27,472,242-byte approval packet; no copy ran. Copies are not activation/cutover;
 each remaining real-data/provider action needs exact approval. Public Drive links, bearer/offline
 revocation semantics, unsupported avatar and full private-file client integration remain open.
 004 hardware and 010 live refusals, native write/sync/offline/chat/C4/C5, store/privacy/lifecycle

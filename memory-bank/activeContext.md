@@ -24,6 +24,8 @@ remain open; push is not outbox/provider acceptance. WF-013 step 5 stays PARTIAL
 [090](../docs/briefs/090-private-file-ticket-revocation-contract.md) is partial: repertoire and
 assignment one-hour tickets are actorless bearer URLs; three other families recheck actor but
 not selected session. Owner's online next-request revocation choice is pending before code.
+[077](../docs/briefs/077-repertoire-mp3-r2-batch-3.md) has an exact next-ten-MP3 /
+27,472,242-byte read-only approval packet; no current source/provider copy acceptance.
 Earlier 078–086 evidence remains authoritative in linked briefs, not erased or reclassified.
 
 ## Exact ownership / resources
@@ -48,7 +50,7 @@ self-service later. Native write/sync/offline/chat/C4/C5 and store/privacy/lifec
 CI/Preview/dormant-hosted evidence; no current remote/live revision verified here, no bulk push.
 [070](../docs/briefs/070-real-inventory-metadata-preparation.md) owns private metadata/manifest;
 [076](../docs/briefs/076-repertoire-mp3-r2-batch-2.md) preserves 071–076 real copied-byte acceptance:
-42 objects / 60,969,062 bytes verified; 49 MP3 / 192,361,428 bytes pending. 077 not run.
+42 objects / 60,969,062 bytes verified; 49 MP3 / 192,361,428 bytes pending. 077 awaits approval.
 No mappings/activation/client flags/public-link withdrawal implied. Original private credentials
 are not in this index; 069 records stale local service key, so it is not hosted Auth proof.
 Public Drive/bearer/offline revocation semantics and unsupported avatar remain open.

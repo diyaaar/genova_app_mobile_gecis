@@ -1,5 +1,13 @@
 # İlerleme indeksi
 
+29 September — [077 third bounded repertoire MP3 copy](../docs/briefs/077-repertoire-mp3-r2-batch-3.md)
+is APPROVAL PREPARED, NOT EXECUTED. Read-only private manifest/hash/journal reconciliation
+recomputed 69 audio candidates, exact first 20 prior verified journal rows, and the next ten
+non-overlapping rows / 27,472,242 bytes with a 6,468-byte canonical batch SHA-256 recorded in
+077. No Drive body, R2 read/write/token, hosted DB/Edge/flag, device or source ACL action ran.
+The owner must authorize the exact ten-object copy; [090](../docs/briefs/090-private-file-ticket-revocation-contract.md)
+separately awaits the online issued-ticket revocation decision before safe activation.
+
 29 September — [090 private-file ticket revocation contract](../docs/briefs/090-private-file-ticket-revocation-contract.md)
 is an IN-PROGRESS documentation checkpoint, not product acceptance. Source inventory found
 repertoire/assignment one-hour actorless bearer tickets and three actor-bound families with
