@@ -126,6 +126,70 @@ describe('protected Drive URL cache', () => {
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
+  it('rejects an in-flight repertoire ticket that resolves after tenant cache clear', async () => {
+    mocks.getSession.mockResolvedValue(session('user-a', 'token-a'));
+    let releaseFirst!: (response: Response) => void;
+    fetchMock
+      .mockImplementationOnce(() => new Promise<Response>((resolve) => { releaseFirst = resolve; }))
+      .mockImplementation(() => Promise.resolve(Response.json({
+        url: `https://project.supabase.co/functions/v1/repertoire-file?fileId=${file.id}&ticket=fresh`,
+        expiresAt: Date.now() + 60_000,
+      })));
+
+    const pending = getProtectedRepertoireFileUrl(file);
+    await vi.waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1));
+    clearProtectedDriveFileUrlCache();
+    releaseFirst(Response.json({
+      url: `https://project.supabase.co/functions/v1/repertoire-file?fileId=${file.id}&ticket=old-a`,
+      expiresAt: Date.now() + 60_000,
+    }));
+
+    await expect(pending).rejects.toThrow('Koro oturumu değişti');
+    expect(await getProtectedRepertoireFileUrl(file)).toContain('ticket=fresh');
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it.each([
+    ['legacy', () => getProtectedDriveFileUrl(file), '/api/drive-file/drive-file-1?token='],
+    ['assignment', () => getProtectedAssignmentFileUrl(file.id, file),
+      `https://project.supabase.co/functions/v1/assignment-file?fileId=${file.id}&ticket=`],
+    ['assignment review', () => getProtectedAssignmentReviewFileUrl(file.id, file),
+      `https://project.supabase.co/functions/v1/assignment-review-file?fileId=${file.id}&ticket=`],
+    ['repertoire comment', () => getProtectedRepertoireCommentFileUrl(file.id, file),
+      `https://project.supabase.co/functions/v1/repertoire-comment-file?fileId=${file.id}&ticket=`],
+    ['chat media', () => getProtectedChatMediaFileUrl(file.id, file),
+      `https://project.supabase.co/functions/v1/chat-media-file?fileId=${file.id}&ticket=`],
+  ] as const)('rejects a late %s ticket after tenant cache clear', async (_family, load, prefix) => {
+    mocks.getSession.mockResolvedValue(session('user-a', 'token-a'));
+    let releaseFirst!: (response: Response) => void;
+    fetchMock
+      .mockImplementationOnce(() => new Promise<Response>((resolve) => { releaseFirst = resolve; }))
+      .mockImplementation(() => Promise.resolve(Response.json({
+        url: `${prefix}fresh`, expiresAt: Date.now() + 60_000,
+      })));
+
+    const pending = load();
+    await vi.waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1));
+    clearProtectedDriveFileUrlCache();
+    releaseFirst(Response.json({ url: `${prefix}old-a`, expiresAt: Date.now() + 60_000 }));
+
+    await expect(pending).rejects.toThrow('Koro oturumu değişti');
+    expect(await load()).toBe(`${prefix}fresh`);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it('invalidates a ticket request still waiting for the session when the tenant clears', async () => {
+    let releaseSession!: (value: ReturnType<typeof session>) => void;
+    mocks.getSession.mockImplementationOnce(() => new Promise((resolve) => { releaseSession = resolve; }));
+
+    const pending = getProtectedRepertoireFileUrl(file);
+    clearProtectedDriveFileUrlCache();
+    releaseSession(session('user-a', 'token-a'));
+
+    await expect(pending).rejects.toThrow('Koro oturumu değişti');
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
   it('requests an assignment version ticket from the assignment-only Edge boundary', async () => {
     mocks.getSession.mockResolvedValue(session('user-a', 'token-a'));
     const versionId = '22222222-2222-4222-8222-222222222222';
