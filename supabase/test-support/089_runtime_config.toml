@@ -1,0 +1,39 @@
+project_id = "genova-089-runtime"
+[api]
+enabled = true
+port = 54391
+schemas = ["public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+[db]
+port = 54392
+shadow_port = 54390
+major_version = 17
+[db.seed]
+enabled = false
+[realtime]
+enabled = false
+[studio]
+enabled = false
+[inbucket]
+enabled = false
+[storage]
+enabled = false
+[analytics]
+enabled = false
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:31089"
+additional_redirect_urls = ["http://127.0.0.1:31089/invite"]
+enable_signup = false
+[auth.email]
+# Enable email/password login; global auth.enable_signup remains false.
+enable_signup = true
+enable_confirmations = true
+[edge_runtime]
+enabled = true
+policy = "per_worker"
+[functions.create-choir]
+verify_jwt = true
+[functions.choir-invitations]
+verify_jwt = true

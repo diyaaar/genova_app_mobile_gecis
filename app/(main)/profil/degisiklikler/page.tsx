@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle2, XCircle, Clock, ChevronRight, ArrowLeft, X, Maximize2, ImageIcon, LockKeyhole } from 'lucide-react';
 import { useAuth } from '@/components/AuthProvider';
 import { supabase } from '@/lib/supabase';
-import { useEffect, useState, useCallback } from 'react';
+import { createContext, useContext, useEffect, useState, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { useToast } from '@/components/ToastProvider';
 import {
@@ -61,45 +61,17 @@ const FIELD_LABELS: Record<ProfileChangeKey, string> = {
   photo_url: 'Profil Fotoğrafı',
 };
 
-const SCHOOLS: Record<string, string> = {
-  'ecfbb198-9806-4754-8f21-8b076f44f345': 'İstanbul Üniversitesi-Cerrahpaşa',
-  '4e051892-100b-4689-8bf2-552c8c79185d': 'İstanbul Topkapı Üniversitesi',
-  '82025b8e-45f1-4d2f-9469-5b6e4e254c53': 'Marmara Üniversitesi',
-  '73a04f1c-8d08-49aa-9e3f-aca8d50150f3': 'Yıldız Teknik Üniversitesi',
-};
+type ReferenceLabels = Record<'school_id' | 'department_id' | 'favorite_song_id', Record<string, string>>;
+const EMPTY_REFERENCE_LABELS: ReferenceLabels = { school_id: {}, department_id: {}, favorite_song_id: {} };
+const ReferenceLabelsContext = createContext<ReferenceLabels>(EMPTY_REFERENCE_LABELS);
 
-const DEPTS: Record<string, string> = {
-  '8381f9d1-59d1-4f6c-bd81-814608fc6d93': 'Fen Bilgisi Öğretmenliği',
-  '2d3a7104-c6cb-4e10-8748-d2aa6796ef19': 'Tıp',
-  '38d2dd30-5963-4419-8634-cb4e9fe0a8b0': 'Matematik Mühendisliği',
-  'b06e6885-9f86-43ab-ad2a-efa342e13e4c': 'Sosyal Bilgiler Öğretmenliği',
-  'eded5e14-b2b9-449a-b5a7-895572d3a79d': 'Kimya Mühendisliği',
-  '8e13bf94-76ec-44b4-ae08-873d7ad4625b': 'Endüstri Mühendisliği',
-  '87dcc0ea-c890-4746-aaec-c70c433d1a7e': 'Biyomühendislik',
-  'fe161a65-b917-4a01-99f3-1104d795043c': 'Çevre Mühendisliği',
-  '4ffe6058-ce7f-4e82-a63d-d2147e03fd8f': 'Hukuk',
-  '56c37fa0-04c2-4b9b-a493-08b5794009fb': 'İnşaat Mühendisliği',
-  '7eda3a36-e3d4-4925-8861-5dc90ff88a17': 'İşletme',
-  'c5895ea9-f57c-46b8-bb76-d055db05afeb': 'Kimya',
-  '60effde1-6b18-4faf-9696-34c46ca98244': 'Biyomedikal Mühendisliği',
-  'f4259af9-4181-4e30-ae21-01e057860ea4': 'İletişim ve Tasarım',
-  '8a794ff4-c307-4e93-9652-ec2e36e1d8c3': 'Müzik',
-};
-
-let REPERTOIRE_LABELS: Record<string, string> = {};
-
-function displayValue(key: ProfileChangeKey, val: ProfileChangeValue | undefined) {
+function displayValue(key: ProfileChangeKey, val: ProfileChangeValue | undefined, labels: ReferenceLabels) {
   if (val === null || val === undefined || val === '') {
     return '—';
   }
-  if (key === 'school_id') {
-    return SCHOOLS[val] || val;
-  }
-  if (key === 'department_id') {
-    return DEPTS[val] || val;
-  }
-  if (key === 'favorite_song_id') {
-    return REPERTOIRE_LABELS[val] || val;
+  if (key === 'school_id' || key === 'department_id' || key === 'favorite_song_id') {
+    const label = Object.hasOwn(labels[key], val) ? labels[key][val] : undefined;
+    return typeof label === 'string' ? label : val;
   }
   if (key === 'birth_date' && val) {
     return new Date(val).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -209,7 +181,11 @@ async function reviewRequest(params: { requestId: string; action: 'approve' | 'r
 export default function ProfilDegisiklikler() {
   const { member, isAdmin, isLoading } = useAuth();
   const chefView = isAdmin();
+  const contextKey = member?.id ? `${member.id}:${chefView ? 'chef' : 'member'}` : null;
   const toast = useToast();
+  const generation = useRef(0);
+  const [requestOwner, setRequestOwner] = useState<string | null>(null);
+  const [referenceLabels, setReferenceLabels] = useState<ReferenceLabels>(EMPTY_REFERENCE_LABELS);
   const [requests, setRequests] = useState<ChangeRequest[]>([]);
   const [loadingReqs, setLoadingReqs] = useState(true);
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -219,6 +195,9 @@ export default function ProfilDegisiklikler() {
   const [photoCompare, setPhotoCompare] = useState<PhotoCompareState | null>(null);
 
   const fetchRequests = useCallback(async () => {
+    if (!contextKey) return;
+    const currentGeneration = ++generation.current;
+    const isCurrent = () => currentGeneration === generation.current;
     setLoadingReqs(true);
 
     const { data, error } = await supabase
@@ -226,9 +205,13 @@ export default function ProfilDegisiklikler() {
       .select('id, member_id, changes_json, previous_values_json, status, note, reject_reason, reviewed_by, reviewed_at, created_at')
       .order('created_at', { ascending: false });
 
+    if (!isCurrent()) return;
     if (error) {
       console.error('Profil değişiklik talepleri alınamadı:', error);
       toast.error('Profil değişiklik talepleri yüklenemedi.', 'Profil talepleri');
+      setRequests([]);
+      setReferenceLabels(EMPTY_REFERENCE_LABELS);
+      setRequestOwner(contextKey);
       setLoadingReqs(false);
       return;
     }
@@ -254,6 +237,7 @@ export default function ProfilDegisiklikler() {
         .select('id, first_name, last_name, voice_group, email, phone, birth_date, school_id, department_id, favorite_song_id, about_text, linkedin_url, instagram_url, youtube_url, spotify_url, tiktok_url, x_url, photo_url')
         .in('id', personIds);
 
+      if (!isCurrent()) return;
       if (peopleError) {
         console.warn('İlgili kişi bilgileri alınamadı:', peopleError);
       } else {
@@ -284,35 +268,28 @@ export default function ProfilDegisiklikler() {
       }
     }
 
-    const favoriteSongIds = Array.from(
-      new Set(
-        [
-          ...sanitizedRows.flatMap((row) => [
-            row.changes_json.favorite_song_id,
-            row.previous_values_json.favorite_song_id,
-          ]),
-          ...Array.from(peopleMap.values()).map((person) => person.favorite_song_id),
-        ].filter((value): value is string => Boolean(value)),
-      ),
-    );
-
-    if (favoriteSongIds.length > 0) {
-      const { data: songs, error: songsError } = await supabase
-        .from('repertoire')
-        .select('id, title, composer')
-        .in('id', favoriteSongIds);
-
-      if (!songsError) {
-        REPERTOIRE_LABELS = Object.fromEntries(
-          (songs ?? []).map((song) => [
-            song.id,
-            `${song.title}${song.composer ? ` - ${song.composer}` : ''}`,
-          ]),
-        );
-      }
-    } else {
-      REPERTOIRE_LABELS = {};
+    const ids = (key: 'school_id' | 'department_id' | 'favorite_song_id') => Array.from(new Set([
+      ...sanitizedRows.flatMap(row => [row.changes_json[key], row.previous_values_json[key]]),
+      ...Array.from(peopleMap.values()).map(person => person[key]),
+    ].filter((value): value is string => Boolean(value))));
+    const schoolIds = ids('school_id'), departmentIds = ids('department_id'), songIds = ids('favorite_song_id');
+    // Caller RLS, only referenced IDs; never use original-choir or module-global labels.
+    const empty = { data: [], error: null };
+    const [schools, departments, songs] = await Promise.all([
+      schoolIds.length ? supabase.from('schools').select('id,name').in('id', schoolIds) : Promise.resolve(empty),
+      departmentIds.length ? supabase.from('departments').select('id,name').in('id', departmentIds) : Promise.resolve(empty),
+      songIds.length ? supabase.from('repertoire').select('id,title,composer').in('id', songIds) : Promise.resolve(empty),
+    ]);
+    if (!isCurrent()) return;
+    if (schools.error || departments.error || songs.error) {
+      toast.error('Bazı seçimlerin adları yüklenemedi.', 'Profil talepleri');
     }
+    setReferenceLabels({
+      school_id: Object.fromEntries((schools.error ? [] : schools.data ?? []).map(row => [row.id, row.name])),
+      department_id: Object.fromEntries((departments.error ? [] : departments.data ?? []).map(row => [row.id, row.name])),
+      favorite_song_id: Object.fromEntries((songs.error ? [] : songs.data ?? []).map(row => [row.id,
+        `${row.title}${row.composer ? ` - ${row.composer}` : ''}`])),
+    });
 
     setRequests(
       sanitizedRows.map((row) => ({
@@ -322,8 +299,9 @@ export default function ProfilDegisiklikler() {
       })),
     );
 
+    setRequestOwner(contextKey);
     setLoadingReqs(false);
-  }, [toast]);
+  }, [contextKey, toast]);
 
   useEffect(() => {
     if (!member?.id) {
@@ -332,6 +310,7 @@ export default function ProfilDegisiklikler() {
     }
 
     void fetchRequests();
+    return () => { generation.current += 1; };
   }, [fetchRequests, member?.id]);
 
   useEffect(() => {
@@ -390,7 +369,7 @@ export default function ProfilDegisiklikler() {
     }
   };
 
-  if (isLoading || loadingReqs) {
+  if (isLoading || loadingReqs || requestOwner !== contextKey) {
     return (
       <main className="page-shell flex min-h-[50vh] items-center justify-center">
         <motion.div
@@ -407,6 +386,7 @@ export default function ProfilDegisiklikler() {
   const done = requests.filter((request) => request.status !== 'pending').sort(sortByDecisionDesc);
 
   return (
+    <ReferenceLabelsContext.Provider value={referenceLabels}>
     <main className="relative page-shell pb-28 space-y-4 !pt-[calc(1.5rem+env(safe-area-inset-top))]">
       <div className="absolute right-5 top-[max(env(safe-area-inset-top),1.5rem)] z-10">
         <Link href="/profil" className="flex h-8 items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/5 pr-3 pl-2.5 text-[var(--color-text-medium)] backdrop-blur-md transition-all hover:bg-white/10 hover:text-[var(--color-text-high)] active:scale-95">
@@ -496,6 +476,7 @@ export default function ProfilDegisiklikler() {
       )}
       <PhotoCompareOverlay state={photoCompare} onClose={() => setPhotoCompare(null)} />
     </main>
+    </ReferenceLabelsContext.Provider>
   );
 }
 
@@ -753,6 +734,7 @@ function ChangeDetails({
   req: ChangeRequest;
   onOpenPhotoCompare: (state: PhotoCompareState) => void;
 }) {
+  const labels = useContext(ReferenceLabelsContext);
   const entries = getRequestChangeEntries(req);
 
   return (
@@ -782,8 +764,8 @@ function ChangeDetails({
           <ValueChangeRow
             key={key}
             label={FIELD_LABELS[key]}
-            oldValue={displayValue(key, previousValue)}
-            newValue={displayValue(key, value)}
+            oldValue={displayValue(key, previousValue, labels)}
+            newValue={displayValue(key, value, labels)}
           />
         );
       })}
