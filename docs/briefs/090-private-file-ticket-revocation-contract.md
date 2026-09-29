@@ -65,6 +65,7 @@ provider copy, push/deploy and actual Android/iOS device checks remain separatel
 |---|---|---|---|
 | Five-family current ticket/read authority inventory and historical contract reconciled | Yes | PASS | 29 September source inspection above; no network/runtime mutation |
 | Runbook avoids a blanket false actor-bound claim | Yes | PASS | 29 September narrow correction; five family differences and 090 link; link/diff gate below |
+| Read-only policy/client/rollout feasibility without weakening family access | Yes for preparation | PASS | 29 September retained local PG policy query plus SQL 057–060 and actual web/native consumer source; no current hosted/runtime proof |
 | Owner selects online next-request revocation expectation | Yes for product contract | NOT RUN | Asked as an explicit checkpoint; do not infer from “devam” |
 | Product/DB/Edge implementation and real synthetic two-choir acceptance | Yes after contract selection | NOT RUN | Exact amendment, version/release order, local tests required |
 | Hosted cutover/public Drive withdrawal/offline deletion/device/beta | Later separate authority | NOT RUN | This preparation cannot accept these layers |
@@ -77,3 +78,42 @@ requires separate evidence and authority.
 Preparation self-review: old URL persistence is a source-level inference, not a fresh actual
 GET-after-revocation runtime test. After the owner's choice, next required step is a bounded
 implementation amendment and red/green local runtime proof, not hosted activation.
+
+## 29 September feasibility checkpoint — read-only, before owner choice
+
+The retained local `genova_068_test_restore` was queried read-only for `pg_policies`; it is a
+dated **local restore**, not the current hosted schema. Its `repertoire_files` SELECT rules have
+two permissive branches (assigned visible song for chorist; leader sees files) under the
+restrictive `choir_id = current_choir_id()` tenant policy. Thus checking only an active choir
+membership on GET/HEAD would broaden access to a file whose assignment/visibility changed after
+ticket issue. Source SQL 057 separately gives assignment-version reads to its owner, chef or
+eligible part-leader; the retained 068 restore predates that table, so that family is source-only
+evidence here. SQL 058–060 use distinct role/target/comment/room visibility checks. A uniform
+fix must preserve these family-specific grants, not just add one generic session query.
+
+All five clients consume the returned ticket URL without attaching an Auth header to the body
+request: web `lib/drive-file-url.ts` caches by user and file, native PDF downloads the URL, and
+native audio gives it to Expo's media source. Requiring a bearer header on GET/HEAD is therefore
+not a drop-in server fix. A signed ticket can carry a verified actor+Auth session identity while
+keeping the same `?fileId=...&ticket=...` response shape; the server then rechecks one authoritative
+decision before touching Drive/R2. The token contents must come only from a successfully verified
+POST Auth session, never an unverified caller-provided ID. Service-only database reads must bind
+the file, actor, session, selected choir, active membership and exact family visibility in one
+transactional decision. An Edge sequence of separate session/member/file admin queries is not
+accepted as atomic authority. The test must include changed song assignment/visibility as well
+as membership and choir-switch refusal.
+
+If the owner chooses strict next-request refusal, the implementation amendment must also decide
+the old signed-ticket transition. Immediate rejection of v1 avoids a one-hour residual window,
+but a pre-deployment PDF/audio request can receive 401 and needs an evidenced retry path. A
+bounded dual-version grace supports existing in-flight requests, but **cannot** be described as
+immediate revocation until v1 expiry. The URLs themselves need no client format change, but
+web/native refresh, Range/seek and error recovery still require current regression evidence.
+Rollout order is current hosted backup/isolated restore and sibling impact → additive service-only
+DB check → Edge issuers/readers with explicit v1 policy → web/mobile compatibility verification
+→ separately authorized live probe/flags/cutover. A Git revert is not DB/data rollback.
+
+Auth logout is a separate boundary: a selected-choir row and actor ID do not by themselves prove
+that a Supabase Auth session remains active. The requested decision covers membership/role
+revocation and same-session choir switch; do not silently claim universal logout invalidation.
+Already-open streams and previously downloaded offline bytes cannot be retroactively recalled.
