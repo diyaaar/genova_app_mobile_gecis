@@ -1,5 +1,21 @@
 # İlerleme indeksi
 
+30 September follow-up — [090 installed Chrome private-PDF recovery](../docs/briefs/090-private-file-ticket-revocation-contract.md),
+test `10e9b77`, PASS locally with production-built Next, actual local Auth/RLS/
+Deno/signed loopback S3 and two declared browser fault injections. One valid
+legacy v1 URL gets actual HEAD 401 → one v2 replacement; one PDF body 401 gets
+one fresh ticket and rendered Chrome canvas. Same-session B selection shows B
+only, and old A URL HEAD returns 403. A test-only transport relay normalizes
+the direct Deno URL; this is not unmodified Kong or Android WebView evidence.
+An initial fixture teardown exposed missing 078 in the disposable schema:
+inactive-member new POST was 200. After target-only 078 and 024 prerequisite
+additions, a fresh Chrome run, held 091 fixture and 090 SQL matrix exit 0;
+inactive membership rejects new and old tickets. Final `pnpm check` passes
+106/1066/build. Exact VM/volume/runtime/build outputs deleted, original 068
+five-count guard `28/1/29/9/79` unchanged, 24,262,492 KiB free. Android
+WebView, native stale-v1/audio runtime, overlapping HTTP COMMIT and hosted/
+device/release acceptance remain NOT RUN. No push; self-review only.
+
 30 September follow-up — [090 SQL concurrency boundary](../docs/briefs/090-private-file-ticket-revocation-contract.md),
 test-only `70fd23e`, PASS locally on a disposable PG17 clone. The corrected 090
 five-family matrix exits 0 without disabling the 060 private-avatar guard. A

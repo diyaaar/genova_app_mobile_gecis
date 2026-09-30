@@ -1,7 +1,7 @@
 # 090 — private-file ticket revocation contract before Android beta
 
 Status: IN PROGRESS / local v2 implementation and synthetic acceptance PASS on
-30 September 2026; hosted, real web-browser and release gates remain open. Primary agent,
+30 September 2026; hosted, Android WebView/native runtime and release gates remain open. Primary agent,
 single writer. No hosted release authority.
 One result: uniform online next-request access-after-revocation for five private file
 families before `mixed`/`r2-required` cutover. This brief does not authorize live writes.
@@ -107,7 +107,7 @@ provider copy, push/deploy and actual Android/iOS device checks remain separatel
 | Decision #32 and 090 cross-links/consistency | Yes for this record | PASS | 30 September local link scan, `git diff --check` and scoped self-review; no source or runtime gate claimed |
 | Legacy v1 denial and compatibility checkpoint approved | Yes before implementation | PASS locally | Owner approved bounded local work on 30 September; v1 GET/HEAD now returns 401 in local tests. Hosted release was not approved. |
 | Five-family DB/Edge implementation and synthetic two-choir acceptance | Yes after contract selection | PASS locally | Disposable PG17 SQL matrix; service-only RPC; real local Auth/RLS/PostgREST/Edge + signed loopback S3 for repertoire; A/B same and separate sessions. Details below. |
-| Web/native client recovery and required gates | Yes locally | PARTIAL | Web hook/body and native PDF/audio tests, full gates and Android Release old-URL denial PASS; real web-browser, native stale-v1 body retry, all five HTTP family readers and concurrent boundary NOT RUN. |
+| Web/native client recovery and required gates | Yes locally | PARTIAL | Web hook/body and native PDF/audio tests, full gates, Android Release old-URL denial and installed Chrome web PDF recovery PASS locally; native stale-v1/audio runtime, Android WebView and in-flight HTTP boundary NOT RUN. Five HTTP readers have separate connected local PASS. |
 | Hosted cutover/public Drive withdrawal/offline deletion/device/beta | Later separate authority | NOT RUN | This preparation cannot accept these layers |
 
 Required NOT RUN keeps 090 open. This local implementation may be committed as a partial checkpoint;
@@ -309,7 +309,8 @@ disposable. Hosted migration rollback remains a separate release problem.
 | Connected repertoire actual Auth/RLS/HTTP/provider | PASS | Final short runner exit 0: local Auth/PostgREST/RLS/PG17 + Deno + signed loopback S3 exact 65,905-byte PDF/48-byte WAV full/range/HEAD; A→B old A HEAD 403/no provider, separate Auth session retains A, inactive member rejects new and old tickets. S3 is local synthetic, not hosted R2. |
 | Android Release native score and post-switch old URL | PASS | API 36 emulator: synthetic sign-in, A URL HEAD 200, exact 65,905-byte PDF page 1/40, A→B cache clear, B-only catalogue, new A ticket 403 and old A URL HEAD 403 from Android. The APK is a test-only loopback Release, not a store/physical-phone build. |
 | Full source gates | PASS | Root `pnpm check`: lint, TS, 106/1066 Vitest, service-worker syntax, Next production build. Mobile `npx tsc --noEmit && npm test -- --runInBand`: 50/302. Focused tests and `git diff --check` pass. |
-| Real web browser/WebView stale URL and body recovery | NOT RUN | Hook/component tests pass, but no post-change installed Chrome/WebView with actual Auth/Edge. Do not promote build/unit results to browser acceptance. |
+| Installed Chrome web stale URL and body recovery | PASS locally | 30 September follow-up below: production-built Next UI and actual local Auth/RLS/Deno/signed S3, with declared v1/body fault injection and test-only transport relay. This is not an unmodified Kong route. |
+| Android WebView stale URL and body recovery | NOT RUN | Chrome web UI is not an installed Android WebView; no WebView runtime was exercised. |
 | Android stale-v1 body 401 automatic retry and native audio seek/resume runtime | NOT RUN | Jest covers bounded PDF/audio recovery, but Android Release exercised current v2 PDF and post-switch 403 only. |
 | Two-session SQL authorization at switch/role/member commit boundaries | PASS locally | 30 September follow-up: `supabase/tests/090_private_file_ticket_concurrency.sql` on a disposable native PG17 clone. An uncommitted peer change leaves the prior snapshot readable; a new statement after commit refuses it. This is SQL authority evidence, not an overlapping HTTP request or provider test. |
 | All five families' actual HTTP GET/HEAD with provider | PASS locally | Repertoire connected runner above; 30 September follow-up adds all four other actual Edge entrypoints with local Auth/PostgREST/RLS/PG17 and signed loopback S3. Full/range/HEAD bytes, foreign-user POST 403 and same-session A→B old URL GET/HEAD 403/no provider hit passed. This is not hosted R2 or browser/native acceptance. |
@@ -336,7 +337,7 @@ equivalence. Final free space 22,561,256 KiB (>10 GiB floor); unrelated
 `supabase/.temp/cli-latest` remains unstaged.
 
 090 is **not** a release acceptance. Before hosted activation, close the unrun
-browser/WebView, native stale-v1/audio runtime and the in-flight HTTP boundary
+Android WebView, native stale-v1/audio runtime and the in-flight HTTP boundary
 where required; then separately approve and verify current
 hosted backup/isolated restore and sibling-site impact, additive DB migration,
 compatible web/mobile clients, strict v2 Edge rollout, actual hosted refusal/
@@ -399,7 +400,8 @@ were moved to exact recoverable `genova-090-concurrency-20260930-*` Trash target
 Final free space was 21,890,392 KiB, above the 10 GiB floor; the unrelated CLI
 marker remains unstaged. Next ready local evidence is the four non-repertoire
 HTTP-family reads against real local Auth/Edge/PostgREST and signed loopback S3;
-browser/WebView and native stale-v1/audio runtime remain separate NOT RUN gates.
+At that checkpoint, browser/WebView and native stale-v1/audio runtime remained
+separate NOT RUN gates; the later Chrome result below closes only the web-browser layer.
 
 ### 30 September follow-up: four-family connected HTTP, PASS locally
 
@@ -441,3 +443,103 @@ listener. The 276 KiB ignored runtime was moved recoverably to
 `coverage` (352 KiB) were deleted after verification. Final free space was
 24,445,848 KiB. Original 068 restore row-count guard remained
 `28/1/29/9/79`; unrelated `supabase/.temp/cli-latest` remains unstaged.
+
+## 30 September approved Chrome browser checkpoint — work card
+
+Owner approved the next bounded local checkpoint. One observable result: in an
+installed Chrome running the real web repertoire UI, a synthetic A PDF whose
+first ticket response is deliberately replaced with a valid legacy v1 URL must
+receive an actual Edge 401 on HEAD, obtain a new v2 ticket and display the
+authorized PDF; a single injected body failure must recover once without
+showing A content after a same-session A→B selection. These two fault injections
+are test-only and must be separated from unmodified Auth/RLS/Edge/S3 responses.
+Chrome is the web client, **not** proof of Android WebView; the latter remains
+NOT RUN unless its own installed runtime is actually exercised.
+
+Transition check: read `AGENTS.md`, short handoff/active, this brief, plan's
+bounded controls, `docs/gecis-rehberi.md`, work cycle, relevant `MIGRATION.md`,
+decision #32, 089 Chrome runner, 091 connected fixture and current web hook/
+reader source. Verified `main/f885af7`, only unrelated
+`supabase/.temp/cli-latest` dirty. `df -k .` gives 24,404,672 KiB free.
+Installed Chrome and local binaries exist; no active Colima profile or task
+ports. One fresh disposable PG17/Auth/Next/Chrome environment is conservatively
+estimated below 7 GiB additional allocation (previous VM about 4.5 GiB peak,
+Next about 0.5 GiB, browser/dependencies already installed), leaving >17 GiB
+projected, above the 10,485,760 KiB floor. Recheck during runtime/build and
+stop allocation if below floor. No download or hardware is planned.
+
+At most three actions: (1) start one guarded unlinked `spike/090-runtime` local
+stack, source schema-only plus exact 041–045/053/057–060/090 chain, and reuse
+the 091 synthetic A/B PDF fixture/loopback S3; (2) run one narrow Chrome script
+against production Next UI and actual Deno entrypoint, with POST forwarding
+to loopback Deno and only the named legacy/body fault injections; (3) run
+focused/full relevant checks, record exact PASS/FAIL/NOT RUN, clean owned
+VM/containers/ports/build/runtime, commit test and records separately. Allowed
+tracked paths are this brief, `supabase/test-support/090_*` browser fixture,
+and concise handoff/active/progress references. No production web/Edge/schema
+change without an observed RED and explicit scope amendment here. Preserve
+v2 URL shape, one retry ceiling, live tenant decision, exact bytes, no provider
+hit on denial and offline boundary. No hosted, real-account/data, push/deploy,
+device or provider action.
+
+| Required Chrome checkpoint criterion | Status | Evidence / limit |
+|---|---|---|
+| Guarded local Auth/PG17/Next/Chrome/Deno/signed S3 and synthetic A/B fixture; source unchanged | PASS locally | Chrome 154, local PG17/Auth/REST/Next/Deno/signed S3; source five-count guard `28/1/29/9/79`. Browser function requests used a test-only transport relay to the actual Deno handler, not an unmodified Kong function route. |
+| Actual UI v1 HEAD 401 → one bounded v2 refresh → authorized A PDF body | PASS locally | One valid legacy-ticket response injected, actual Deno HEAD 401 observed once; next real v2 ticket authorized. A 65,905-byte fixture PDF reached Chrome and its React-PDF canvas rendered. |
+| Actual UI one body failure → bounded re-ticket/recovery; A→B old URL refusal and no stale A display | PASS locally | Exactly one synthetic body GET 401; exactly three total POSTs (v1, replacement v2, body retry), one successful PDF GET; B catalogue showed B-only and old A URL HEAD returned actual 403. Browser switch is not in-flight HTTP COMMIT proof. |
+| Relevant focused checks, root gate if tracked web/shared code changes, links/diff and cleanup | PASS locally | Final focused ESLint/TS, `pnpm check` 106 files/1066 tests and Next build; diff/link and exact cleanup below. No mobile source changed. |
+| Android WebView and native stale-v1/audio runtime, hosted/physical device and overlapping HTTP COMMIT | NOT RUN | Not inferred from Chrome or local test. |
+
+### Chrome checkpoint result / causal record
+
+New `supabase/test-support/090_chrome_private_file_acceptance.ts` drives the
+installed Chrome against production-built Next and actual local Auth/REST/RLS,
+the 091 synthetic two-choir PDF fixture, the repertoire Deno entrypoint and
+signed loopback S3. External browser destinations are blocked. Because the
+direct local Deno process binds `:8000/` but the web client correctly accepts
+only `:54491/functions/v1/repertoire-file`, the test browser relays function
+requests to Deno and normalizes only the local URL origin/path; it does not
+change signed ticket bytes or authority decisions. A one-time valid v1 response
+and a one-time PDF body 401 are explicitly injected to exercise recovery. This
+is real Chrome/UI/Edge behavior under two declared faults, **not** an
+unmodified Kong-function-route or Android WebView result.
+
+The first Chrome attempt waited for the post-selection switcher while the
+actual two-choir gate was displayed; the test now uses that real gate. The
+next attempt reached the song but no PDF request: the retained 068 schema
+lacked annotation `revision`; applying existing 024 only to the disposable
+target removed the visible error. A subsequent run exposed the direct-Deno
+versus browser endpoint shape mismatch in the test relay; after URL
+normalization, the handler's relative `?fileId=...` response needed a base URL
+to parse. No production code was changed for these harness failures.
+
+After the first Chrome PASS, fixture teardown detected a real 200 on an
+inactive-member **new POST**. Inspection showed the disposable source schema
+had not received the existing 078 active-membership migration. Adding 078 to
+the target and rerunning a fresh synthetic fixture made both Chrome and the
+fixture's inactive-member new/old-ticket checks pass. The earlier failed
+teardown remains recorded, not relabeled as a pass. The complete browser
+prerequisite closure used here is source schema-only plus 024, 041–045, 053,
+057, historical review-audio, 058–060, 078 and 090; 024/078 were added after
+the initial chain in this disposable target. Fresh five-family SQL matrix
+also exited 0 with ROLLBACK after those additions.
+
+Final Chrome run exited 0: `post=3`, injected `v1=1`, body `401=1`, observed
+legacy HEAD `401=1`, PDF body `200=1`, post-switch old HEAD `403=1`; A PDF
+canvas visible and B-only catalogue visible. The held 091 connected fixture
+then exited 0, including inactive membership refusing new and previously
+issued tickets. Fresh root `pnpm check` exited 0 with lint, TypeScript,
+106 files/1066 tests, service-worker syntax and Next production build.
+Self-review only; no independent reviewer or hosted/browser-WebView parity
+claim. Actual WebView, native stale-v1/audio and in-flight HTTP/COMMIT remain
+required NOT RUN gates.
+
+Cleanup: exact `genova-090-runtime` Supabase containers/volume, SSH tunnel and
+`genova090` VM/data were deleted; task ports 54491/54492/8000/18092/31090
+have no listener. The ignored synthetic `spike/090-runtime`, empty
+`spike/093-runtime`, generated `.next` (494 MiB) and `coverage` (352 KiB)
+were deleted after their last checks; these task-generated outputs are not
+recoverable, while source and original restore remain. Final free space was
+24,262,492 KiB, above the 10 GiB floor. The unrelated
+`supabase/.temp/cli-latest` stays unstaged. No push, live DB/Edge/provider,
+real user/data, hardware or deployment action occurred.
