@@ -159,9 +159,12 @@ clients without this recovery may need the user to reopen the file or update the
    and decide authorization **before** contacting Drive/R2. Preserve family-specific
    access, MIME/no-store and 200/206/416 Range/HEAD behavior. DB/Auth outage fails
    closed. Never place a service key in web/mobile or use `user_metadata` as authority.
-3. Make web/WebView and native score/audio consumers renew once on a 401, without
-   bypassing a 403 or tenant clear. Test cached URLs, PDF download, Range/seek, audio
-   resume and an older client. A concurrently started request may finish under the
+3. Make web/WebView and native score/audio consumers renew once on a body 401 where
+   observable. Where status is opaque, one transport-failure reauthorization attempt is
+   acceptable only if abort/content-validation failures do not trigger it. Never bypass
+   a 403 or tenant clear. On confirmed fresh-ticket authorization denial, discard the
+   stale URL and private local copy; never fall back to it. Test cached URLs, PDF download, Range/seek,
+   audio resume and an older client. A concurrently started request may finish under the
    pre-change snapshot; the guarantee applies when its authority check starts after
    the switch/revocation commits, not to recalling an already-open stream.
 
@@ -172,6 +175,9 @@ GET/HEAD/Range; legacy/mixed/R2-required provider modes; no provider hit on deni
 simultaneous request/revocation boundary; web and Android retry/denial. If sign-out
 revocation is claimed, session deletion needs its own test. Reuse 053/057–060/091 and
 mobile acceptance fixtures only after checking coverage; old green is historical.
+Specifically prove that an online cached repertoire/assignment file cannot bypass the
+new authority check and that a fresh-ticket denial does not fall back to its local copy;
+also record the distinct, unavoidable offline-copy boundary.
 Before PG17/Android runtime, amend the brief with exact paths, process/disk estimates,
 rollback and gates: `pnpm check`, mobile TypeScript/tests and real local Auth/RLS/HTTP/
 Android. No heavy test or source change runs in this document-only checkpoint.
@@ -183,6 +189,22 @@ flags/cutover. Rollback must not quietly restore one-hour v1 access; use a fail-
 reader/service mode or an expressly approved temporary availability trade-off. Git
 revert cannot undo DB data. No 077 real copy, hosted schema/Edge, push/deploy, real
 users, hardware or provider action is authorized by the policy answer.
+
+### 30 September client compatibility audit — read-only, no implementation
+
+The web `lib/drive-file-url.ts` cache retains a ticket per user/file until near expiry;
+`hooks/useProtectedDriveFileUrl.ts` has no body-response 401 refresh path and can show a
+cached repertoire/assignment copy even while online. On ticket-loading failure it may
+fall back to that copy. The chat-image URL hook also has no body-response recovery.
+Native `reader-gateway.ts` obtains one ticket then delegates to Expo's
+`File.downloadFileAsync`; the installed Android implementation throws an error string
+for a non-2xx response rather than exposing a typed status. Native audio receives a
+generic player error with a manual retry action, not a guaranteed 401-specific path.
+Therefore changing only the ticket utility or Edge reader will not prove user-visible
+revocation/automatic recovery. The implementation must exercise each consumer in its
+actual runtime, bound retries and cache invalidation, and clearly distinguish offline
+copies that cannot be remotely recalled from copies purged after an observed online
+denial. These are source findings, not passing runtime tests.
 
 Document-only self-review on 30 September: the recorded decision matches the exact
 user answer, remains separate from the proposed v1 policy, and does not reclassify any
