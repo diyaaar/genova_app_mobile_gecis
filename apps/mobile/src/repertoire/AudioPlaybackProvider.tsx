@@ -59,11 +59,16 @@ export interface NativeAudioPlayback {
 }
 
 const AudioPlaybackContext = createContext<NativeAudioPlayback | null>(null);
+const defaultPrivateSourceProbe = (url: string) => fetch(url, { method: 'HEAD', cache: 'no-store' });
 
 export function AudioPlaybackProvider({
   gateway: suppliedGateway,
+  probePrivateSource = defaultPrivateSourceProbe,
   children,
-}: PropsWithChildren<{ gateway?: NativeAudioSourceGateway }>) {
+}: PropsWithChildren<{
+  gateway?: NativeAudioSourceGateway;
+  probePrivateSource?: (url: string) => Promise<Response>;
+}>) {
   const gatewayRef = useRef<NativeAudioSourceGateway | null>(suppliedGateway ?? null);
   const getGateway = useCallback(() => {
     if (!gatewayRef.current) gatewayRef.current = getDefaultAudioSourceGateway();
@@ -84,6 +89,7 @@ export function AudioPlaybackProvider({
   const pendingPlayback = useRef<PendingPlayback | null>(null);
   const playbackLoadTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hasAudioSource = useRef(false);
+  const bodyRecoveryUsed = useRef(false);
   playerRef.current = player;
   hasAudioSource.current = audioSource !== null;
 
@@ -119,6 +125,7 @@ export function AudioPlaybackProvider({
     setTicketExpiresAt(null);
     setLoadingTicket(false);
     setError(null);
+    bodyRecoveryUsed.current = false;
     playbackRateRef.current = 1;
     setPlaybackRate(1);
   }, [disposePrivatePlayback]);
@@ -162,6 +169,7 @@ export function AudioPlaybackProvider({
   }, [getGateway, startPlaybackLoadTimer]);
 
   const openSession = useCallback(async (nextSession: NativeAudioSession) => {
+    bodyRecoveryUsed.current = false;
     setSession(nextSession);
     setSelectedIndex(0);
     playbackRateRef.current = 1;
@@ -171,6 +179,7 @@ export function AudioPlaybackProvider({
 
   const loadTrack = useCallback(async (index: number, options?: LoadOptions) => {
     if (!session) return;
+    bodyRecoveryUsed.current = false;
     await loadTrackForSession(session, index, options);
   }, [loadTrackForSession, session]);
 
@@ -200,8 +209,48 @@ export function AudioPlaybackProvider({
 
   useEffect(() => {
     if (status.isLoaded || status.playing || status.error) clearPlaybackLoadTimer();
-    if (status.error) setError('Ses dosyası oynatılamadı. Yeniden deneyin.');
-  }, [clearPlaybackLoadTimer, status.error, status.isLoaded, status.playing]);
+    if (!status.error || !audioSource || ticketExpiresAt === null || !session) return;
+    if (bodyRecoveryUsed.current) {
+      setError('Ses dosyası oynatılamadı. Yeniden deneyin.');
+      return;
+    }
+    bodyRecoveryUsed.current = true;
+    const version = requestVersion.current;
+    const uri = typeof audioSource === 'object' ? audioSource.uri : null;
+    if (!uri) {
+      setError('Ses dosyası oynatılamadı. Yeniden deneyin.');
+      return;
+    }
+    const recover = async () => {
+      let statusCode: number | null = null;
+      try {
+        statusCode = (await probePrivateSource(uri)).status;
+      } catch (probeError) {
+        if (probeError instanceof Error && probeError.name === 'AbortError') return;
+        // A native transport error can hide HTTP status; allow one fresh Auth decision.
+      }
+      if (requestVersion.current !== version) return;
+      if (statusCode === 403) {
+        getGateway().clear();
+        pendingPlayback.current = null;
+        setAudioSource(null);
+        setTicketExpiresAt(null);
+        setError('Ses dosyasına erişim yetkisi sona erdi.');
+        return;
+      }
+      if (statusCode !== null && statusCode !== 401) {
+        setError('Ses dosyası oynatılamadı. Yeniden deneyin.');
+        return;
+      }
+      await loadTrackForSession(session, selectedIndex, {
+        autoplay: pendingPlayback.current?.autoplay ?? status.playing,
+        resumeAt: status.currentTime,
+      });
+    };
+    void recover().catch(() => setError('Ses dosyası oynatılamadı. Yeniden deneyin.'));
+  }, [audioSource, clearPlaybackLoadTimer, getGateway, loadTrackForSession, probePrivateSource,
+    selectedIndex, session, status.currentTime, status.error, status.isLoaded, status.playing,
+    ticketExpiresAt]);
 
   const selectedTrack = session?.tracks[selectedIndex] ?? null;
   const hasSource = ticketExpiresAt !== null;
@@ -241,6 +290,7 @@ export function AudioPlaybackProvider({
 
   const retry = useCallback(async () => {
     if (!session) return;
+    bodyRecoveryUsed.current = false;
     await loadTrackForSession(session, selectedIndex);
   }, [loadTrackForSession, selectedIndex, session]);
 

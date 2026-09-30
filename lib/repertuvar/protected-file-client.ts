@@ -5,6 +5,13 @@ export interface ProtectedRepertoireFileTicket {
   expiresAt: number;
 }
 
+export class ProtectedFileRequestError extends Error {
+  constructor(message: string, public readonly status: number) {
+    super(message);
+    this.name = 'ProtectedFileRequestError';
+  }
+}
+
 export async function requestProtectedRepertoireFileTicket({
   endpoint,
   accessToken,
@@ -46,7 +53,9 @@ export async function requestProtectedRepertoireFileTicket({
   });
   if (!response.ok) {
     const message = (await response.text()).trim();
-    throw new Error(message || 'Dosya erişim bağlantısı oluşturulamadı.');
+    throw new ProtectedFileRequestError(
+      message || 'Dosya erişim bağlantısı oluşturulamadı.', response.status,
+    );
   }
 
   const payload = await response.json() as Partial<ProtectedRepertoireFileTicket>;

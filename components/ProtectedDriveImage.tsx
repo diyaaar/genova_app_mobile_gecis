@@ -12,11 +12,14 @@ interface ProtectedDriveImageProps extends Omit<ImgHTMLAttributes<HTMLImageEleme
 }
 
 export function ProtectedDriveImage({ file, fallback = null, repertoireFile = false, alt = '', ...props }: ProtectedDriveImageProps) {
-  const { url } = useProtectedDriveFileUrl(file, { repertoireFile });
+  const { url, onBodyError } = useProtectedDriveFileUrl(file, { repertoireFile });
 
   if (!file?.drive_file_id || !url) {
     return <>{fallback}</>;
   }
 
-  return <img {...props} src={url} alt={alt} />;
+  return <img {...props} src={url} alt={alt} onError={(event) => {
+    props.onError?.(event);
+    onBodyError();
+  }} />;
 }

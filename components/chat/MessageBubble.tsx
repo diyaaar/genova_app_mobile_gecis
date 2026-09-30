@@ -7,6 +7,7 @@ import type { ChatMessage, LinkPreviewData } from '@/lib/chat';
 import { ReactionBar } from './ReactionBar';
 import { PollCard } from './PollCard';
 import { LinkPreviewCard } from './LinkPreviewCard';
+import { ProtectedChatMediaImage } from './ProtectedChatMediaImage';
 import { formatWhatsApp } from '@/lib/formatText';
 
 interface MessageBubbleProps {
@@ -356,12 +357,22 @@ export function MessageBubble({
                         className={`relative cursor-pointer overflow-hidden rounded-lg ${aspectClass} ${urls.length === 3 && i === 0 ? 'col-span-3' : ''}`} 
                         onClick={() => handleImageClick(i, url)}
                       >
-                        <img
-                          src={url}
-                          alt="Paylaşılan resim"
-                          className={`h-full w-full object-cover transition-all duration-300 ${!isRevealed ? 'blur-xl scale-110' : ''}`}
-                          loading="lazy"
-                        />
+                        {Array.isArray(meta?.private_media_version_ids) &&
+                          typeof meta.private_media_version_ids[i] === 'string' &&
+                          /^[0-9a-f-]{36}$/i.test(meta.private_media_version_ids[i]) ? (
+                          <ProtectedChatMediaImage
+                            value={`r2_chat_${meta.private_media_version_ids[i]}`}
+                            alt="Paylaşılan resim"
+                            className={`h-full w-full object-cover transition-all duration-300 ${!isRevealed ? 'blur-xl scale-110' : ''}`}
+                          />
+                        ) : (
+                          <img
+                            src={url}
+                            alt="Paylaşılan resim"
+                            className={`h-full w-full object-cover transition-all duration-300 ${!isRevealed ? 'blur-xl scale-110' : ''}`}
+                            loading="lazy"
+                          />
+                        )}
                         {!isRevealed && (urls.length === 1 || i === 0) && (
                           <div className="absolute inset-0 flex items-center justify-center bg-black/20">
                             <span className="bg-black/50 text-white text-[10px] sm:text-xs px-2 py-1 rounded-full font-medium backdrop-blur-md">

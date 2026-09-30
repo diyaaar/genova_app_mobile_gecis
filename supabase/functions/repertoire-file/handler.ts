@@ -1,5 +1,5 @@
 import { isActiveDriveFileContent } from '../../../lib/server/drive-file-content.ts';
-import type { RepertoireFileTicketPayload } from './ticket.ts';
+import type { PrivateFileTicketV2 } from '../_shared/private-file-ticket-v2.ts';
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const DRIVE_FILE_ID_PATTERN = /^[a-zA-Z0-9_-]+$/;
@@ -24,7 +24,8 @@ export interface RepertoireFileRecord {
 export interface RepertoireFileAuthorization {
   choirId: string;
   file: RepertoireFileRecord;
-  ticketSubject?: string;
+  actorId: string;
+  sessionId: string;
 }
 
 export type RepertoireStorageMode = 'legacy' | 'mixed' | 'r2-required';
@@ -51,8 +52,9 @@ export interface RepertoireFileHandlerDependencies {
   loadTicketFile(input: {
     fileId: string;
     choirId: string;
-    ticket: RepertoireFileTicketPayload;
+    ticket: PrivateFileTicketV2;
   }): Promise<RepertoireFileRecord | null>;
+  authorizeTicket(ticket: PrivateFileTicketV2): Promise<boolean>;
   loadR2Location(input: {
     fileId: string;
     choirId: string;
@@ -60,9 +62,10 @@ export interface RepertoireFileHandlerDependencies {
   createTicket(input: {
     fileId: string;
     choirId: string;
-    ticketSubject?: string;
+    actorId: string;
+    sessionId: string;
   }): Promise<{ token: string; expiresAt: number }>;
-  verifyTicket(token: string): Promise<RepertoireFileTicketPayload | null>;
+  verifyTicket(token: string): Promise<PrivateFileTicketV2 | null>;
   fetchDrive(driveFileId: string): Promise<Response>;
   fetchStorage(bucket: string, path: string): Promise<Response>;
   fetchR2(input: {
@@ -298,7 +301,8 @@ async function issueTicket(request: Request, dependencies: RepertoireFileHandler
     const ticket = await dependencies.createTicket({
       fileId,
       choirId: authorized.choirId,
-      ...(authorized.ticketSubject ? { ticketSubject: authorized.ticketSubject } : {}),
+      actorId: authorized.actorId,
+      sessionId: authorized.sessionId,
     });
     const query = new URLSearchParams({ fileId, ticket: ticket.token });
     // The Edge runtime sees an internal worker URL behind the gateway. Return only
@@ -322,7 +326,12 @@ async function serveFile(request: Request, dependencies: RepertoireFileHandlerDe
 
   try {
     const ticket = await dependencies.verifyTicket(token);
-    if (!ticket || ticket.fileId !== fileId) return textResponse('Dosya bağlantısı geçersiz.', 401);
+    if (!ticket || ticket.version !== 2 || ticket.fileId !== fileId) {
+      return textResponse('Dosya bağlantısı geçersiz.', 401);
+    }
+    if (!await dependencies.authorizeTicket(ticket)) {
+      return textResponse('Dosya erişimi sona erdi.', 403);
+    }
     const file = await dependencies.loadTicketFile({
       fileId: ticket.fileId,
       choirId: ticket.choirId,

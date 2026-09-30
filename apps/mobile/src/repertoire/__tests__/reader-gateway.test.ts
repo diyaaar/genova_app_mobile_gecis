@@ -1,5 +1,7 @@
 import type { RepertoireFile } from '@shared/repertuvar/catalog-core';
 import { createNativeScoreReaderGateway } from '../reader-gateway';
+import { PrivateScoreContentError } from '../private-file-store';
+import { ProtectedFileRequestError } from '@shared/repertuvar/protected-file-client';
 
 const CHOIR = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
 const FILE_ID = 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb';
@@ -104,6 +106,32 @@ describe('native score reader gateway', () => {
     const interrupted = build({ downloadError: new Error('network interrupted') });
     await expect(interrupted.gateway.open({ choirId: CHOIR, file: score() })).rejects.toThrow('network interrupted');
     expect(interrupted.pdf.open).not.toHaveBeenCalled();
+  });
+
+  it('renews once after an opaque download failure, then opens only the fresh private file', async () => {
+    const prepared = build();
+    prepared.files.download.mockRejectedValueOnce(new Error('native response has status: 401'));
+    const document = await prepared.gateway.open({ choirId: CHOIR, file: score() });
+    expect(document.uri).toBe('file:///private/score.pdf');
+    expect(prepared.requestTicket).toHaveBeenCalledTimes(2);
+    expect(prepared.files.download).toHaveBeenCalledTimes(2);
+  });
+
+  it('does not retry content validation, abort, or a denied fresh-ticket decision', async () => {
+    const invalid = build();
+    invalid.files.download.mockRejectedValueOnce(new PrivateScoreContentError('Invalid PDF'));
+    await expect(invalid.gateway.open({ choirId: CHOIR, file: score() })).rejects.toThrow('Invalid PDF');
+    expect(invalid.requestTicket).toHaveBeenCalledTimes(1);
+
+    const denied = build();
+    denied.files.download.mockRejectedValueOnce(new Error('opaque transport failure'));
+    denied.requestTicket.mockResolvedValueOnce({
+      url: `https://example.test/functions/v1/repertoire-file?fileId=${FILE_ID}&ticket=old`,
+      expiresAt: Date.now() + 60_000,
+    }).mockRejectedValueOnce(new ProtectedFileRequestError('Forbidden', 403));
+    await expect(denied.gateway.open({ choirId: CHOIR, file: score() })).rejects.toThrow('Forbidden');
+    expect(denied.files.download).toHaveBeenCalledTimes(1);
+    expect(denied.pdf.open).not.toHaveBeenCalled();
   });
 
   it('rejects oversized metadata before requesting a ticket or downloading', async () => {

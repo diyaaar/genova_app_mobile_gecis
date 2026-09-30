@@ -1,5 +1,6 @@
 import type { RepertoireFile } from '@/lib/supabase';
 import { requestProtectedRepertoireFileTicket } from '@/lib/repertuvar/protected-file-client';
+import { ProtectedFileRequestError } from '@/lib/repertuvar/protected-file-client';
 import { authenticatedWebFetch, requireCurrentWebAccess } from '@/lib/web-auth-capability';
 
 interface CachedDriveUrl {
@@ -68,6 +69,42 @@ function getChatMediaEndpoint() {
 export function clearProtectedDriveFileUrlCache() {
   cacheGeneration += 1;
   driveUrlCache.clear();
+}
+
+/** Online readers must not display a cached URL or local copy without a fresh HEAD decision.
+ * One 401/transport retry permits old v1 URLs to acquire v2. A 403 never retries.
+ */
+export async function getOnlineAuthorizedPrivateFileUrl(
+  loadUrl: () => Promise<string | null>,
+  probe: typeof fetch = fetch,
+): Promise<string | null> {
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    const url = await loadUrl();
+    if (!url) return null;
+    try {
+      const response = await probe(url, { method: 'HEAD', cache: 'no-store' });
+      if (response.ok) return url;
+      if (response.status === 403) {
+        clearProtectedDriveFileUrlCache();
+        throw new ProtectedFileRequestError('Dosya erişim yetkisi sona erdi.', 403);
+      }
+      if (response.status === 401 && attempt === 0) {
+        clearProtectedDriveFileUrlCache();
+        continue;
+      }
+      clearProtectedDriveFileUrlCache();
+      throw new ProtectedFileRequestError('Dosya bağlantısı kullanılamıyor.', response.status);
+    } catch (error) {
+      if (error instanceof ProtectedFileRequestError ||
+        (error instanceof Error && error.name === 'AbortError')) throw error;
+      if (attempt === 0) {
+        clearProtectedDriveFileUrlCache();
+        continue;
+      }
+      throw error;
+    }
+  }
+  throw new Error('Dosya bağlantısı yenilenemedi.');
 }
 
 async function requireCurrentSession() {

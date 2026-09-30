@@ -2,7 +2,7 @@ import type { RepertoireFile } from '@shared/repertuvar/catalog-core';
 import { requestProtectedRepertoireFileTicket } from '@shared/repertuvar/protected-file-client';
 import type { NativeAnnotationSource } from './annotation-source';
 import type { NativePdfRenderer } from './pdf-renderer';
-import type { PrivateScoreFileStore } from './private-file-store';
+import { PrivateScoreContentError, type PrivateScoreFileStore } from './private-file-store';
 import {
   getRenderWindowPages,
   assertAllowedScoreFileSize,
@@ -69,18 +69,29 @@ export function createNativeScoreReaderGateway(deps: {
       abortController = controller;
       let uri: string | null = null;
       try {
-        const ticket = await (deps.requestTicket ?? requestProtectedRepertoireFileTicket)({
-          endpoint: deps.endpoint,
-          accessToken,
-          fileId: file.id,
-        });
-        assertCurrentOperation(version);
-        const downloaded = await deps.files.download({
-          url: ticket.url,
-          choirId,
-          fileId: file.id,
-          signal: controller.signal,
-        });
+        const requestTicket = deps.requestTicket ?? requestProtectedRepertoireFileTicket;
+        let downloaded: Awaited<ReturnType<PrivateScoreFileStore['download']>>;
+        for (let attempt = 0; ; attempt += 1) {
+          const ticket = await requestTicket({
+            endpoint: deps.endpoint, accessToken, fileId: file.id, signal: controller.signal,
+          });
+          assertCurrentOperation(version);
+          try {
+            downloaded = await deps.files.download({
+              url: ticket.url, choirId, fileId: file.id, signal: controller.signal,
+            });
+            break;
+          } catch (downloadError) {
+            assertCurrentOperation(version);
+            if (attempt > 0 || controller.signal.aborted ||
+              downloadError instanceof PrivateScoreContentError ||
+              (downloadError instanceof Error && downloadError.name === 'AbortError')) {
+              throw downloadError;
+            }
+            // Expo's Android download error has no typed HTTP status. One fresh Auth
+            // decision is the bounded recovery for an opaque transport failure.
+          }
+        }
         uri = downloaded.uri;
         assertCurrentOperation(version);
         activeUri = uri;

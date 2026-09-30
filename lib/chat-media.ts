@@ -1,5 +1,5 @@
 import { normalizeChatImageForUpload } from './drive';
-import { getProtectedChatMediaFileUrl } from './drive-file-url';
+import { getOnlineAuthorizedPrivateFileUrl, getProtectedChatMediaFileUrl } from './drive-file-url';
 import { authenticatedWebFetch, requireCurrentWebAccess } from './web-auth-capability';
 import type { ChatMessage } from './chat';
 
@@ -22,7 +22,9 @@ export async function hydrateChatMessageMedia(message:ChatMessage):Promise<ChatM
   if(!Array.isArray(ids)||!ids.every(id=>typeof id==='string'))return message;
   const names=Array.isArray(message.metadata_json?.private_media_file_names)?message.metadata_json.private_media_file_names:[];
   try{
-    const urls=await Promise.all(ids.map((id,index)=>getProtectedChatMediaFileUrl(id,{file_name:typeof names[index]==='string'?names[index]:'chat-image',mime_type:'image/jpeg'})));
+    const urls=await Promise.all(ids.map((id,index)=>getOnlineAuthorizedPrivateFileUrl(() =>
+      getProtectedChatMediaFileUrl(id,{file_name:typeof names[index]==='string'?names[index]:'chat-image',mime_type:'image/jpeg'}))));
+    if(urls.some(url=>!url))throw new Error('Private media unavailable');
     return{...message,metadata_json:{...message.metadata_json,urls}};
   }catch{
     // Keep the room readable, but never fall back to a public/provider URL.

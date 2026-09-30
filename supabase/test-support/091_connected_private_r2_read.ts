@@ -7,6 +7,7 @@ import { mkdir, unlink, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { createServer } from 'node:http';
 import { createClient } from '@supabase/supabase-js';
+import { createRepertoireFileTicket } from '../functions/repertoire-file/ticket';
 
 const API = 'http://127.0.0.1:54491';
 const EDGE = 'http://127.0.0.1:8000';
@@ -165,8 +166,9 @@ async function main() {
       ('${ids.fileA}','${ids.choirA}','r2','${BUCKET}','choirs/${ids.choirA}/repertoire/${ids.fileA}/score.pdf',${pdf.length},'application/pdf','${hash(pdf)}',now(),true),
       ('${ids.fileB}','${ids.choirB}','r2','${BUCKET}','choirs/${ids.choirB}/repertoire/${ids.fileB}/rehearsal.wav',${wav.length},'audio/wav','${hash(wav)}',now(),true);
     commit;`);
-  const shared = userClient(), outsider = userClient();
+  const shared = userClient(), sharedSecondSession = userClient(), outsider = userClient();
   ok((await shared.auth.signInWithPassword({ email: first.data.user.email!, password: passwordA })).error, 'shared sign-in');
+  ok((await sharedSecondSession.auth.signInWithPassword({ email: first.data.user.email!, password: passwordA })).error, 'second session sign-in');
   ok((await outsider.auth.signInWithPassword({ email: second.data.user.email!, password: passwordB })).error, 'outsider sign-in');
   const accessA = (await shared.auth.getSession()).data.session?.access_token;
   const accessB = (await outsider.auth.getSession()).data.session?.access_token;
@@ -186,7 +188,11 @@ async function main() {
   try {
     await ready(edge);
     ok((await shared.rpc('set_active_choir', { p_choir_id: ids.choirA })).error, 'select A');
+    ok((await sharedSecondSession.rpc('set_active_choir', { p_choir_id: ids.choirA })).error, 'second session select A');
     const oldA = await ownRead(ids.fileA, pdf, accessA);
+    const legacy = await createRepertoireFileTicket({fileId:ids.fileA,choirId:ids.choirA},service);
+    const legacyUrl = new URL(`?fileId=${ids.fileA}&ticket=${encodeURIComponent(legacy.token)}`,EDGE);
+    assert.equal((await fetch(legacyUrl,{method:'HEAD'})).status,401,'v1 must be refused at read');
     const before = providerHits;
     assert.equal((await ticket(ids.fileB, accessA)).result.status, 403);
     assert.equal((await ticket(ids.fileA, accessB)).result.status, 403);
@@ -209,13 +215,20 @@ async function main() {
     assert.equal((await ticket(ids.fileA, accessA)).result.status, 403);
     await ownRead(ids.fileB, wav, accessA);
     console.log('PASS 091 actual Auth/RLS A/B, foreign user and old-context POST refusals');
-    // Current v1 ticket is bearer-only. This is a recorded 090 OPEN risk, not revocation acceptance.
-    assert.equal((await fetch(oldA, { method: 'HEAD' })).status, 200);
-    console.log('OPEN 090 already-issued A ticket remains usable after same-session switch');
+    const beforeRevokedRead = providerHits;
+    assert.equal((await fetch(oldA, { method: 'HEAD' })).status, 403);
+    assert.equal(providerHits,beforeRevokedRead,'revoked old A URL contacted provider');
+    const secondAccess = (await sharedSecondSession.auth.getSession()).data.session?.access_token;
+    assert.ok(secondAccess);
+    const stillA = await ownRead(ids.fileA,pdf,secondAccess);
+    console.log('PASS 090 same-session switch revokes old URL; separate Auth session stays A');
     ok((await shared.rpc('set_active_choir', { p_choir_id: ids.choirA })).error, 'reselect A');
     sql(`update public.choir_members set is_active=false where id='${ids.memberA}' and choir_id='${ids.choirA}';`);
     assert.equal((await ticket(ids.fileA, accessA)).result.status, 403);
-    console.log('PASS 091 revoked membership refuses new ticket; old-ticket revocation remains 090');
+    const beforeMembershipRead = providerHits;
+    assert.equal((await fetch(stillA,{method:'HEAD'})).status,403);
+    assert.equal(providerHits,beforeMembershipRead,'revoked membership read contacted provider');
+    console.log('PASS 090 inactive membership refuses new and already-issued tickets');
   } catch (error) {
     if (diagnostics) process.stderr.write(diagnostics.replaceAll(service, '[redacted]'));
     throw error;

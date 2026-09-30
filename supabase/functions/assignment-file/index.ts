@@ -3,7 +3,10 @@ import { AwsClient } from 'npm:aws4fetch@1.0.20';
 import { resolveSupabasePublicKey } from '../create-choir/create-choir-core.ts';
 import { createRepertoireFileHandler } from '../repertoire-file/handler.ts';
 import { fetchR2Object, parseR2Jurisdiction } from '../repertoire-file/r2.ts';
-import { createAssignmentFileTicket, verifyAssignmentFileTicket } from './ticket.ts';
+import { authorizePrivateFileTicket } from '../_shared/private-file-authority.ts';
+import {
+  createPrivateFileTicketV2, sessionIdFromVerifiedAccessToken, verifyPrivateFileTicketV2,
+} from '../_shared/private-file-ticket-v2.ts';
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const VERSION_FIELDS = 'id,choir_id,submission_id,assignment_id,member_id,provider,bucket,object_key,content_length,mime_type,sha256_hex,file_name,created_at';
@@ -59,7 +62,13 @@ const handler = createRepertoireFileHandler({
       .select(VERSION_FIELDS).eq('id', fileId).maybeSingle();
     if (error) throw new Error('File authorization lookup failed');
     if (!data || data.choir_id !== choirId) return null;
-    return { choirId, file: asFile(data as Version) };
+    return {
+      choirId, file: asFile(data as Version), actorId: userData.user.id,
+      sessionId: sessionIdFromVerifiedAccessToken(accessToken, userData.user.id),
+    };
+  },
+  authorizeTicket(ticket) {
+    return authorizePrivateFileTicket(adminClient(), ticket);
   },
   async loadTicketFile({ fileId, choirId }) {
     const { data, error } = await adminClient().from('assignment_submission_file_versions')
@@ -74,10 +83,10 @@ const handler = createRepertoireFileHandler({
     return data ? asLocation(data as Version) : null;
   },
   createTicket(input) {
-    return createAssignmentFileTicket(input, requiredEnv('SUPABASE_SERVICE_ROLE_KEY'));
+    return createPrivateFileTicketV2('assignment-file', input, requiredEnv('SUPABASE_SERVICE_ROLE_KEY'));
   },
   verifyTicket(token) {
-    return verifyAssignmentFileTicket(token, requiredEnv('SUPABASE_SERVICE_ROLE_KEY'));
+    return verifyPrivateFileTicketV2('assignment-file', token, requiredEnv('SUPABASE_SERVICE_ROLE_KEY'));
   },
   fetchDrive() { throw new Error('Drive is unavailable for assignment versions'); },
   fetchStorage() { throw new Error('Storage is unavailable for assignment versions'); },

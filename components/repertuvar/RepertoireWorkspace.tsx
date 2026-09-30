@@ -34,7 +34,7 @@ import { AnnotationStage } from '@/components/repertuvar/AnnotationStage';
 import { ChefCommentSection } from '@/components/repertuvar/ChefCommentSection';
 import { useToast } from '@/components/ToastProvider';
 import { useProtectedDriveFileUrl } from '@/hooks/useProtectedDriveFileUrl';
-import { getProtectedRepertoireFileUrl } from '@/lib/drive-file-url';
+import { getOnlineAuthorizedPrivateFileUrl, getProtectedRepertoireFileUrl } from '@/lib/drive-file-url';
 import { loadAnnotationReadResultForFile } from '@/lib/repertuvar/annotations';
 import { annotationSaveQueue } from '@/lib/repertuvar/annotation-save-runtime';
 import {
@@ -465,6 +465,7 @@ interface AudioPanelProps {
   audioFiles: RepertoireFile[];
   selectedAudio: RepertoireFile | null;
   selectedAudioSource: string | null;
+  onSelectedAudioBodyError: () => void;
   allowOfflineFallback: boolean;
   audioRef: { current: HTMLAudioElement | null };
   setSelectedAudioId: (id: string | null) => void;
@@ -504,6 +505,7 @@ function AudioPanel({
   audioFiles,
   selectedAudio,
   selectedAudioSource,
+  onSelectedAudioBodyError,
   allowOfflineFallback,
   audioRef,
   setSelectedAudioId,
@@ -839,6 +841,7 @@ function AudioPanel({
       setIsPlaying(false);
       setAudioState({ isPlaying: false });
       setMiniPlaybackState({ isPlaying: false });
+      onSelectedAudioBodyError();
     };
 
     el.addEventListener('play', handlePlay);
@@ -856,7 +859,7 @@ function AudioPanel({
       el.removeEventListener('ended', handleEnded);
       el.removeEventListener('error', handleError);
     };
-  }, [isDragging, playbackRate, selectedAudioSource, setAudioState, setMiniPlaybackState]);
+  }, [isDragging, playbackRate, selectedAudioSource, setAudioState, setMiniPlaybackState, onSelectedAudioBodyError]);
 
   useEffect(() => {
     const el = audioElementRef.current;
@@ -915,7 +918,7 @@ function AudioPanel({
             }
           }
           try {
-            const protectedUrl = await getProtectedRepertoireFileUrl(file);
+            const protectedUrl = await getOnlineAuthorizedPrivateFileUrl(() => getProtectedRepertoireFileUrl(file));
             const source = protectedUrl;
             if (!source) return null;
             return { id: file.id, label: getAudioDisplayName(file), source };
@@ -1230,7 +1233,6 @@ export function RepertoireWorkspace({
   const [offlineStatus, setOfflineStatus] = useState<string | null>(null);
   const [offlineError, setOfflineError] = useState<string | null>(null);
   const [offlineLastSyncedAt, setOfflineLastSyncedAt] = useState<number | null>(null);
-  const [offlineSyncedVersion, setOfflineSyncedVersion] = useState<string | null>(null);
   const [isOnline, setIsOnline] = useState(true);
   const [recentAnnotationColors, setRecentAnnotationColors] = useState<AnnotationColor[]>([]);
   const [isColorPaletteOpen, setColorPaletteOpen] = useState(false);
@@ -1379,11 +1381,11 @@ export function RepertoireWorkspace({
   const selectedAudio =
     audioFiles.find((file) => file.id === selectedAudioId) ??
     defaultAudioFile;
-  const { url: protectedSelectedPdfSource, isStaleLocal: selectedPdfIsStaleLocal } = useProtectedDriveFileUrl(selectedPdf, { repertoireFile: true });
+  const { url: protectedSelectedPdfSource, isStaleLocal: selectedPdfIsStaleLocal, onBodyError: onSelectedPdfBodyError } = useProtectedDriveFileUrl(selectedPdf, { repertoireFile: true });
   const { url: protectedSelectedCoverSource, isStaleLocal: selectedCoverIsStaleLocal } = useProtectedDriveFileUrl(selectedCover, { repertoireFile: true });
-  const { url: protectedSelectedAudioSource, isStaleLocal: selectedAudioIsStaleLocal } = useProtectedDriveFileUrl(selectedAudio, { repertoireFile: true });
-  const hasFreshOfflineSnapshot = offlineEnabled && offlineSyncedVersion === offlineSongVersion;
-  const allowOfflineFallback = offlineEnabled && (!isOnline || hasFreshOfflineSnapshot);
+  const { url: protectedSelectedAudioSource, isStaleLocal: selectedAudioIsStaleLocal, onBodyError: onSelectedAudioBodyError } = useProtectedDriveFileUrl(selectedAudio, { repertoireFile: true });
+  // A fresh-looking snapshot is not proof of current membership while online.
+  const allowOfflineFallback = offlineEnabled && !isOnline;
   const selectedPdfSource = getInlineFileSource(selectedPdf, protectedSelectedPdfSource, allowOfflineFallback);
   const selectedCoverSource = getInlineFileSource(selectedCover, protectedSelectedCoverSource, allowOfflineFallback);
   const selectedCoverPreviewSource = selectedCoverSource;
@@ -1787,7 +1789,7 @@ export function RepertoireWorkspace({
     try {
       const filesToSync: OfflineSyncFileInput[] = [];
       for (const file of filesWithDriveId) {
-        const protectedUrl = await getProtectedRepertoireFileUrl(file);
+        const protectedUrl = await getOnlineAuthorizedPrivateFileUrl(() => getProtectedRepertoireFileUrl(file));
         const source = protectedUrl;
         if (!source) {
           throw new Error(`${file.file_name} için indirme bağlantısı oluşturulamadı.`);
@@ -1804,7 +1806,6 @@ export function RepertoireWorkspace({
       const result: OfflineSyncResult = await syncSongFilesForOffline(song.id, filesToSync);
       markOfflineSongSynced(song.id, offlineSongVersion, result.syncedAt);
       setOfflineLastSyncedAt(result.syncedAt);
-      setOfflineSyncedVersion(offlineSongVersion);
       setOfflineStatus(`${result.cachedCount} dosya offline kullanıma hazır.`);
       attemptedAutoSyncVersionRef.current = null;
       return result;
@@ -1836,7 +1837,6 @@ export function RepertoireWorkspace({
         const result = await removeOfflineSongFiles(song.id);
         clearOfflineSongSyncState(song.id);
         setOfflineLastSyncedAt(null);
-        setOfflineSyncedVersion(null);
         setOfflineStatus(result.removedCount > 0 ? 'Offline dosyalar kaldırıldı.' : 'Offline kullanım kapatıldı.');
       } catch (error) {
         const message = error instanceof Error ? error.message : 'Offline dosyalar kaldırılamadı.';
@@ -1874,14 +1874,12 @@ export function RepertoireWorkspace({
     if (!supported) {
       setOfflineEnabledState(false);
       setOfflineLastSyncedAt(null);
-      setOfflineSyncedVersion(null);
       return;
     }
 
     const settings = getOfflineSongSettings(song.id);
     setOfflineEnabledState(settings.enabled);
     setOfflineLastSyncedAt(settings.lastSyncedAt);
-    setOfflineSyncedVersion(settings.version);
   }, [song.id]);
 
   useEffect(() => {
@@ -3049,6 +3047,7 @@ export function RepertoireWorkspace({
         audioFiles={audioFiles}
         selectedAudio={selectedAudio ?? null}
         selectedAudioSource={selectedAudioSource}
+        onSelectedAudioBodyError={onSelectedAudioBodyError}
         allowOfflineFallback={allowOfflineFallback}
         audioRef={audioRef}
         setSelectedAudioId={setSelectedAudioId}
@@ -3119,6 +3118,7 @@ export function RepertoireWorkspace({
                   onLoadError={(error) => {
                     setDocumentError(error.message);
                     setTotalPages(0);
+                    onSelectedPdfBodyError();
                   }}
                   onLoadSuccess={({ numPages }) => {
                     setDocumentError(null);

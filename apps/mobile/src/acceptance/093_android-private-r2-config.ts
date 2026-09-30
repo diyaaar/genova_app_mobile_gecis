@@ -11,10 +11,10 @@ export function read093Config(env: Record<string, string | undefined>) {
   const choirA = env.EXPO_PUBLIC_GENOVA_093_CHOIR_A ?? '';
   const choirB = env.EXPO_PUBLIC_GENOVA_093_CHOIR_B ?? '';
   const fileId = env.EXPO_PUBLIC_GENOVA_093_FILE_ID ?? '';
-  if (!email.startsWith('shared-091-') || !email.endsWith('@example.invalid') ||
-      !password || !env.EXPO_PUBLIC_SUPABASE_ANON_KEY ||
-      ![choirA, choirB, fileId].every(value => UUID.test(value)) || choirA === choirB) {
-    throw new Error('093 sentetik fixture kimliği geçersiz.');
+  const validEmail = email.startsWith('shared-091-') && email.endsWith('@example.invalid');
+  const validIds = [choirA, choirB, fileId].every(value => UUID.test(value)) && choirA !== choirB;
+  if (!validEmail || !password || !env.EXPO_PUBLIC_SUPABASE_ANON_KEY || !validIds) {
+    throw new Error(`093 sentetik fixture kimliği geçersiz (email=${validEmail}, password=${Boolean(password)}, key=${Boolean(env.EXPO_PUBLIC_SUPABASE_ANON_KEY)}, ids=${validIds}).`);
   }
   return { email, password, choirA, choirB, fileId, endpoint: 'http://127.0.0.1:8000' };
 }

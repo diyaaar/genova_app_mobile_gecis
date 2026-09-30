@@ -26,6 +26,8 @@ const client = getGenovaClient();
 function Automation({ trace }: { trace: (event: string) => void }) {
   const auth = useAuth();
   const loginStarted = useRef(false);
+  const capturedAUrl = useRef<string | null>(null);
+  const captureStarted = useRef(false);
   const isolationChecked = useRef(false);
   useEffect(() => {
     if (auth.phase !== 'signed-out' || loginStarted.current) return;
@@ -34,6 +36,24 @@ function Automation({ trace }: { trace: (event: string) => void }) {
       trace(error ? 'auth FAIL' : 'auth PASS synthetic');
     });
   }, [auth, trace]);
+  useEffect(() => {
+    if (auth.phase !== 'ready' || auth.activeChoir?.choir_id !== config.choirA || captureStarted.current) return;
+    captureStarted.current = true;
+    void (async () => {
+      const { data } = await client.auth.getSession();
+      try {
+        const ticket = await requestProtectedRepertoireFileTicket({ endpoint: config.endpoint,
+          accessToken: data.session?.access_token ?? '', fileId: config.fileId });
+        const response = await fetch(ticket.url, { method: 'HEAD' });
+        if (response.status !== 200) throw new Error('A URL not readable');
+        // Keep the URL only in memory; never put the signed ticket in traces.
+        capturedAUrl.current = ticket.url;
+        trace('090 A URL captured PASS');
+      } catch {
+        trace('090 A URL capture FAIL');
+      }
+    })();
+  }, [auth.activeChoir?.choir_id, auth.phase, trace]);
   useEffect(() => {
     if (auth.phase !== 'ready' || auth.activeChoir?.choir_id !== config.choirB || isolationChecked.current) return;
     isolationChecked.current = true;
@@ -46,6 +66,16 @@ function Automation({ trace }: { trace: (event: string) => void }) {
       } catch (error) {
         const message = error instanceof Error ? error.message : '';
         trace(message.includes('yetkiniz yok') ? 'choir B isolation PASS 403' : 'choir B isolation FAIL');
+      }
+      if (!capturedAUrl.current) {
+        trace('090 old A URL FAIL missing');
+      } else {
+        try {
+          const response = await fetch(capturedAUrl.current, { method: 'HEAD' });
+          trace(response.status === 403 ? '090 old A URL PASS 403' : '090 old A URL FAIL');
+        } catch {
+          trace('090 old A URL FAIL transport');
+        }
       }
     })();
   }, [auth.activeChoir?.choir_id, auth.phase, trace]);

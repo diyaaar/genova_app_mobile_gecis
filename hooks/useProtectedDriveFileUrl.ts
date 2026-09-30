@@ -1,11 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { getProtectedAssignmentFileUrl, getProtectedAssignmentReviewFileUrl, getProtectedDriveFileUrl, getProtectedRepertoireCommentFileUrl, getProtectedRepertoireFileUrl } from '@/lib/drive-file-url';
+import { clearProtectedDriveFileUrlCache, getOnlineAuthorizedPrivateFileUrl, getProtectedAssignmentFileUrl, getProtectedAssignmentReviewFileUrl, getProtectedDriveFileUrl, getProtectedRepertoireCommentFileUrl, getProtectedRepertoireFileUrl } from '@/lib/drive-file-url';
+import { ProtectedFileRequestError } from '@/lib/repertuvar/protected-file-client';
 import {
   buildRuntimeDriveFileVersion,
   cacheRuntimeDriveFile,
+  clearProtectedDriveFileCaches,
   getOfflineDriveFileUrl,
   getRuntimeDriveFileCacheStatus,
   isRepertoireRuntimeCacheSupported,
@@ -24,12 +26,17 @@ export function useProtectedDriveFileUrl(
   const [error, setError] = useState<string | null>(null);
   const [isLocal, setIsLocal] = useState(false);
   const [isStaleLocal, setIsStaleLocal] = useState(false);
+  const [bodyRetry, setBodyRetry] = useState(0);
+  const bodyRetryRef = useRef<{ key: string; used: boolean }>({ key: '', used: false });
   const driveFileId = file?.drive_file_id;
   const repositoryFileId = file?.id;
   const fileName = file?.file_name;
   const mimeType = file?.mime_type;
   const updatedAt = file?.updated_at;
   const fileSizeBytes = file?.file_size_bytes;
+  const privateFamily = Boolean(options.repertoireFile || options.assignmentFileVersionId ||
+    options.assignmentReviewFileVersionId || options.repertoireCommentFileVersionId);
+  const fileKey = `${repositoryFileId ?? ''}:${driveFileId ?? ''}:${options.assignmentFileVersionId ?? ''}:${options.assignmentReviewFileVersionId ?? ''}:${options.repertoireCommentFileVersionId ?? ''}`;
 
   useEffect(() => {
     let cancelled = false;
@@ -64,7 +71,7 @@ export function useProtectedDriveFileUrl(
         setLoading(true);
         setError(null);
 
-        if (runtimeSupported && localUrl) {
+        if (runtimeSupported && localUrl && (!online || !privateFamily)) {
           try {
             const status = await getRuntimeDriveFileCacheStatus(driveFileId, runtimeVersion);
             if (!cancelled && status.cached) {
@@ -96,7 +103,7 @@ export function useProtectedDriveFileUrl(
         if (options.repertoireFile && !repositoryFileId) {
           throw new Error('Dosya kimliği geçersiz.');
         }
-        const nextUrl = options.repertoireCommentFileVersionId
+        const loadTicketUrl = async () => options.repertoireCommentFileVersionId
           ? await getProtectedRepertoireCommentFileUrl(options.repertoireCommentFileVersionId, {
               file_name: fileName ?? '', mime_type: mimeType ?? null,
             })
@@ -115,11 +122,14 @@ export function useProtectedDriveFileUrl(
               file_name: fileName ?? '',
               mime_type: mimeType ?? null,
             })
-          : await getProtectedDriveFileUrl({
+          : getProtectedDriveFileUrl({
             drive_file_id: driveFileId,
             file_name: fileName ?? '',
             mime_type: mimeType ?? null,
           });
+        const nextUrl = privateFamily
+          ? await getOnlineAuthorizedPrivateFileUrl(loadTicketUrl)
+          : await loadTicketUrl();
 
         if (cancelled) {
           return;
@@ -142,7 +152,15 @@ export function useProtectedDriveFileUrl(
         }
       } catch (loadError) {
         if (!cancelled) {
-          if (localFallbackUrl) {
+          const denied = loadError instanceof ProtectedFileRequestError &&
+            (loadError.status === 401 || loadError.status === 403);
+          if (denied && privateFamily) {
+            clearProtectedDriveFileUrlCache();
+            await clearProtectedDriveFileCaches().catch(() => {
+              // Still fail closed in this view if offline cache cleanup is unavailable.
+            });
+          }
+          if (localFallbackUrl && !privateFamily) {
             setUrl(localFallbackUrl);
             setIsLocal(true);
             setIsStaleLocal(localFallbackStale);
@@ -166,7 +184,18 @@ export function useProtectedDriveFileUrl(
     return () => {
       cancelled = true;
     };
-  }, [driveFileId, fileName, mimeType, options.assignmentFileVersionId, options.assignmentReviewFileVersionId, options.repertoireCommentFileVersionId, options.repertoireFile, repositoryFileId, updatedAt, fileSizeBytes]);
+  }, [driveFileId, fileName, mimeType, options.assignmentFileVersionId, options.assignmentReviewFileVersionId, options.repertoireCommentFileVersionId, options.repertoireFile, repositoryFileId, updatedAt, fileSizeBytes, bodyRetry, privateFamily]);
 
-  return { url, loading, error, isLocal, isStaleLocal };
+  const onBodyError = useCallback(() => {
+    if (!privateFamily || !driveFileId || (typeof navigator !== 'undefined' && !navigator.onLine)) return;
+    if (bodyRetryRef.current.key !== fileKey) bodyRetryRef.current = { key: fileKey, used: false };
+    setUrl(null);
+    if (!bodyRetryRef.current.used) {
+      bodyRetryRef.current.used = true;
+      clearProtectedDriveFileUrlCache();
+      setBodyRetry((value) => value + 1);
+    }
+  }, [driveFileId, fileKey, privateFamily]);
+
+  return { url, loading, error, isLocal, isStaleLocal, onBodyError };
 }

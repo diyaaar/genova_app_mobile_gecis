@@ -5,6 +5,7 @@ import { Loader2, Image as ImageIcon } from 'lucide-react';
 import { fetchRoomMedia } from '@/lib/chat';
 import type { ChatMessage } from '@/lib/chat';
 import { ImageGalleryViewer } from './ImageGalleryViewer';
+import { ProtectedChatMediaImage } from './ProtectedChatMediaImage';
 
 interface MediaGalleryGridProps {
   roomId: string;
@@ -30,7 +31,11 @@ export function MediaGalleryGrid({ roomId, onGoToMessage }: MediaGalleryGridProp
             meta.urls.forEach((url: string, idx: number) => {
               flattened.push({
                 ...msg,
-                metadata_json: { url, originalIndex: idx }
+                metadata_json: {
+                  url, originalIndex: idx,
+                  privateMediaVersionId: Array.isArray(meta.private_media_version_ids)
+                    ? meta.private_media_version_ids[idx] : null,
+                }
               });
             });
           } else if (meta?.url) {
@@ -79,12 +84,20 @@ export function MediaGalleryGrid({ roomId, onGoToMessage }: MediaGalleryGridProp
               onClick={() => setGalleryIndex(index)}
               className="aspect-square cursor-pointer overflow-hidden bg-[var(--color-surface)] relative group"
             >
-              <img
-                src={url}
-                alt="Media"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
+              {typeof (msg.metadata_json as any)?.privateMediaVersionId === 'string' ? (
+                <ProtectedChatMediaImage
+                  value={`r2_chat_${(msg.metadata_json as any).privateMediaVersionId}`}
+                  alt="Medya"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              ) : (
+                <img
+                  src={url}
+                  alt="Medya"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              )}
             </div>
           );
         })}

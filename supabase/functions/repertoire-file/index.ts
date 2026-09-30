@@ -7,7 +7,12 @@ import {
 } from './handler.ts';
 import { fetchR2Object, parseR2Jurisdiction } from './r2.ts';
 import { fetchStorageObject } from './storage.ts';
-import { createRepertoireFileTicket, verifyRepertoireFileTicket } from './ticket.ts';
+import { authorizePrivateFileTicket } from '../_shared/private-file-authority.ts';
+import {
+  createPrivateFileTicketV2,
+  sessionIdFromVerifiedAccessToken,
+  verifyPrivateFileTicketV2,
+} from '../_shared/private-file-ticket-v2.ts';
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const FILE_FIELDS = 'id, choir_id, drive_file_id, drive_download_link, file_name, mime_type';
@@ -64,7 +69,15 @@ const handler = createRepertoireFileHandler({
       .maybeSingle();
     if (fileError) throw new Error('File authorization lookup failed');
     if (!file) return null;
-    return { choirId: activeChoirId, file };
+    return {
+      choirId: activeChoirId,
+      file,
+      actorId: userData.user.id,
+      sessionId: sessionIdFromVerifiedAccessToken(accessToken, userData.user.id),
+    };
+  },
+  authorizeTicket(ticket) {
+    return authorizePrivateFileTicket(makeAdminClient(), ticket);
   },
   async loadTicketFile({ fileId, choirId }) {
     const { data, error } = await makeAdminClient()
@@ -88,10 +101,10 @@ const handler = createRepertoireFileHandler({
     return data;
   },
   createTicket(input) {
-    return createRepertoireFileTicket(input, requiredEnv('SUPABASE_SERVICE_ROLE_KEY'));
+    return createPrivateFileTicketV2('repertoire-file', input, requiredEnv('SUPABASE_SERVICE_ROLE_KEY'));
   },
   verifyTicket(token) {
-    return verifyRepertoireFileTicket(token, requiredEnv('SUPABASE_SERVICE_ROLE_KEY'));
+    return verifyPrivateFileTicketV2('repertoire-file', token, requiredEnv('SUPABASE_SERVICE_ROLE_KEY'));
   },
   fetchDrive(driveFileId) {
     const url = new URL('https://drive.google.com/uc');

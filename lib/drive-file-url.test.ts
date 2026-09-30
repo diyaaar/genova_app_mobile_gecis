@@ -21,6 +21,7 @@ import {
   getProtectedAssignmentReviewFileUrl,
   getProtectedChatMediaFileUrl,
   getProtectedDriveFileUrl,
+  getOnlineAuthorizedPrivateFileUrl,
   getProtectedRepertoireCommentFileUrl,
   getProtectedRepertoireFileUrl,
 } from '@/lib/drive-file-url';
@@ -88,6 +89,36 @@ describe('protected Drive URL cache', () => {
     await getProtectedDriveFileUrl(file);
 
     expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it('checks a cached private URL online and renews exactly once after legacy 401', async () => {
+    const load = vi.fn().mockResolvedValueOnce('https://example.test/old-v1')
+      .mockResolvedValueOnce('https://example.test/new-v2');
+    const probe = vi.fn().mockResolvedValueOnce(new Response(null, { status: 401 }))
+      .mockResolvedValueOnce(new Response(null, { status: 200 }));
+    expect(await getOnlineAuthorizedPrivateFileUrl(load, probe)).toBe('https://example.test/new-v2');
+    expect(load).toHaveBeenCalledTimes(2);
+    expect(probe).toHaveBeenCalledWith('https://example.test/old-v1', { method: 'HEAD', cache: 'no-store' });
+  });
+
+  it('fails closed on 403 and never reuses a denied private URL', async () => {
+    const load = vi.fn().mockResolvedValue('https://example.test/revoked');
+    const probe = vi.fn().mockResolvedValue(new Response(null, { status: 403 }));
+    await expect(getOnlineAuthorizedPrivateFileUrl(load, probe)).rejects.toMatchObject({ status: 403 });
+    expect(load).toHaveBeenCalledTimes(1);
+    expect(probe).toHaveBeenCalledTimes(1);
+  });
+
+  it('retries an opaque transport failure once but does not retry abort', async () => {
+    const load = vi.fn().mockResolvedValue('https://example.test/file');
+    const probe = vi.fn().mockRejectedValueOnce(new TypeError('network'))
+      .mockResolvedValueOnce(new Response(null, { status: 200 }));
+    expect(await getOnlineAuthorizedPrivateFileUrl(load, probe)).toBe('https://example.test/file');
+    expect(load).toHaveBeenCalledTimes(2);
+
+    const aborted = vi.fn().mockRejectedValue(Object.assign(new Error('aborted'), { name: 'AbortError' }));
+    await expect(getOnlineAuthorizedPrivateFileUrl(load, aborted)).rejects.toMatchObject({ name: 'AbortError' });
+    expect(aborted).toHaveBeenCalledTimes(1);
   });
 
   it('refreshes a ticket inside the thirty-second expiry margin', async () => {

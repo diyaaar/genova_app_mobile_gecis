@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, Download, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { ChatMessage } from '@/lib/chat';
 import { ChatOverlayPortal } from './ChatOverlayPortal';
+import { useProtectedChatMediaUrl } from '@/hooks/useProtectedChatMediaUrl';
 
 interface ImageGalleryViewerProps {
   images: ChatMessage[];
@@ -41,6 +42,7 @@ export function ImageGalleryViewer({
         document.body.removeChild(link);
       } else {
         const response = await fetch(url);
+        if (!response.ok) throw new Error('Dosya erişimi reddedildi.');
         const blob = await response.blob();
         const objectUrl = window.URL.createObjectURL(blob);
         const link = document.createElement('a');
@@ -56,9 +58,7 @@ export function ImageGalleryViewer({
     }
   }, []);
 
-  if (!images || images.length === 0) return null;
-
-  const currentMessage = images[currentIndex];
+  const currentMessage = images?.[currentIndex];
   const metadata = currentMessage?.metadata_json as Record<string, unknown> | undefined;
   
   // Extract URLs safely handling both single and multi-photo structures
@@ -70,12 +70,20 @@ export function ImageGalleryViewer({
       imageUrls = [metadata.url];
     }
   }
+  const privateVersionId = typeof metadata?.privateMediaVersionId === 'string' &&
+    /^[0-9a-f-]{36}$/i.test(metadata.privateMediaVersionId)
+    ? metadata.privateMediaVersionId : null;
+  const { url: authorizedPrivateUrl, onBodyError } = useProtectedChatMediaUrl(
+    privateVersionId ? `r2_chat_${privateVersionId}` : null,
+  );
 
   // If there are multiple urls in a single message, we will just show the first one for simplicity in this top-level gallery, 
   // or we could flatten the images list before passing it to this component. 
   // We'll assume the parent component flattens the images so each item in `images` here represents ONE image URL to display.
   // Actually, to make it easier, let's just use the first URL here if it's not flattened.
-  const currentUrl = imageUrls[0] || '';
+  const currentUrl = privateVersionId ? authorizedPrivateUrl ?? '' : imageUrls[0] || '';
+
+  if (!images || images.length === 0) return null;
 
   const senderName = currentMessage?.sender?.first_name 
     || 'Bilinmeyen Kullanıcı';
@@ -128,7 +136,8 @@ export function ImageGalleryViewer({
               </button>
             )}
             <button
-              onClick={() => void handleDownload(currentUrl, `photo-${currentMessage.id}.jpg`)}
+              onClick={() => { if (currentUrl) void handleDownload(currentUrl, `photo-${currentMessage.id}.jpg`); }}
+              disabled={!currentUrl}
               className="rounded-full p-2 text-white/80 hover:bg-white/10"
             >
               <Download size={20} />
@@ -167,6 +176,7 @@ export function ImageGalleryViewer({
               src={currentUrl}
               alt="Gallery"
               className="max-h-full max-w-full object-contain"
+              onError={privateVersionId ? onBodyError : undefined}
             />
           </motion.div>
 

@@ -66,9 +66,13 @@ function PlayerHarness({ onBack }: { onBack: () => void }) {
   return playback.session ? <AudioPlayerScreen onBack={onBack} /> : null;
 }
 
-function playerElement(source: NativeAudioSourceGateway, onBack = jest.fn()) {
+function playerElement(
+  source: NativeAudioSourceGateway,
+  onBack = jest.fn(),
+  probePrivateSource?: (url: string) => Promise<Response>,
+) {
   return (
-    <AudioPlaybackProvider gateway={source}>
+    <AudioPlaybackProvider gateway={source} probePrivateSource={probePrivateSource}>
       <PlayerHarness onBack={onBack} />
     </AudioPlaybackProvider>
   );
@@ -193,12 +197,43 @@ describe('AudioPlayerScreen', () => {
 
   it('surfaces native media errors with a bounded retry action', async () => {
     const source = gateway(async () => ({ url: 'https://project.invalid/corrupt', expiresAt: 9_999_999_999_999 }));
-    const view = await render(playerElement(source));
+    const probe = jest.fn(async () => new Response(null, { status: 200 }));
+    const view = await render(playerElement(source, jest.fn(), probe));
     await waitFor(() => expect(source.open).toHaveBeenCalled());
     Object.assign(audioMock.__mockStatus, { error: 'decoder failed', isLoaded: false });
-    await view.rerender(playerElement(source));
+    await view.rerender(playerElement(source, jest.fn(), probe));
     expect(await screen.findByText('Ses dosyası oynatılamadı. Yeniden deneyin.')).toBeTruthy();
     expect(screen.getByLabelText('Ses dosyasını yeniden yükle')).toBeTruthy();
+    expect(source.open).toHaveBeenCalledTimes(1);
+  });
+
+  it('renews once after an opaque native body 401 and does not bypass 403', async () => {
+    const source = gateway(jest.fn()
+      .mockResolvedValueOnce({ url: 'https://project.invalid/old', expiresAt: 9_999_999_999_999 })
+      .mockResolvedValueOnce({ url: 'https://project.invalid/fresh', expiresAt: 9_999_999_999_999 }));
+    const probe = jest.fn(async () => new Response(null, { status: 401 }));
+    const view = await render(playerElement(source, jest.fn(), probe));
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(1));
+    Object.assign(audioMock.__mockStatus, { error: 'body failed', isLoaded: false });
+    await view.rerender(playerElement(source, jest.fn(), probe));
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(2));
+    expect(probe).toHaveBeenCalledWith('https://project.invalid/old');
+    Object.assign(audioMock.__mockStatus, { error: null, isLoaded: true });
+    await view.rerender(playerElement(source, jest.fn(), probe));
+    expect(audioMock.useAudioPlayer).toHaveBeenLastCalledWith({
+      uri: 'https://project.invalid/fresh', name: 'Soprano',
+    }, { updateInterval: 250 });
+
+    const denied = gateway(async () => ({ url: 'https://project.invalid/denied', expiresAt: 9_999_999_999_999 }));
+    const deniedProbe = jest.fn(async () => new Response(null, { status: 403 }));
+    Object.assign(audioMock.__mockStatus, { error: null, isLoaded: false });
+    const deniedView = await render(playerElement(denied, jest.fn(), deniedProbe));
+    await waitFor(() => expect(denied.open).toHaveBeenCalledTimes(1));
+    Object.assign(audioMock.__mockStatus, { error: 'forbidden' });
+    await deniedView.rerender(playerElement(denied, jest.fn(), deniedProbe));
+    expect(await screen.findByText('Ses dosyasına erişim yetkisi sona erdi.')).toBeTruthy();
+    expect(denied.open).toHaveBeenCalledTimes(1);
+    expect(denied.clear).toHaveBeenCalled();
   });
 
   it('turns a missing native error event into a bounded visible load failure', async () => {

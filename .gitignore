@@ -31,5 +31,6 @@ spike/*/public/canvaskit.wasm
 /spike/033-runtime/
 /spike/086-runtime/
 /spike/089-runtime/
+/spike/090-runtime/
 /spike/091-runtime/
 /spike/093-runtime/

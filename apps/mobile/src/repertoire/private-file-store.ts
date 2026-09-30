@@ -1,3 +1,10 @@
+export class PrivateScoreContentError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'PrivateScoreContentError';
+  }
+}
+
 export interface PrivateScoreFileStore {
   download(input: {
     url: string;

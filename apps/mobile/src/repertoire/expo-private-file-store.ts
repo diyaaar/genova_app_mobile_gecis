@@ -1,5 +1,5 @@
 import { Directory, File, FileMode, Paths } from 'expo-file-system';
-import type { PrivateScoreFileStore } from './private-file-store';
+import { PrivateScoreContentError, type PrivateScoreFileStore } from './private-file-store';
 import { assertAllowedScoreFileSize, hasPdfHeader } from './reader-contract';
 
 const ROOT_NAME = 'genova-protected-repertoire';
@@ -36,7 +36,13 @@ export function createExpoPrivateScoreFileStore(): PrivateScoreFileStore {
       removeIfPresent(finalFile);
       try {
         const downloaded = await File.downloadFileAsync(url, partial, { signal });
-        assertPdf(downloaded);
+        try {
+          assertPdf(downloaded);
+        } catch (error) {
+          throw new PrivateScoreContentError(
+            error instanceof Error ? error.message : 'İndirilen PDF geçersiz.',
+          );
+        }
         await downloaded.move(finalFile);
         return { uri: finalFile.uri, size: finalFile.size };
       } catch (error) {

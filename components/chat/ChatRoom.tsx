@@ -791,7 +791,11 @@ export function ChatRoom({ slug }: ChatRoomProps) {
       const meta = im.metadata_json as any;
       if (meta?.urls && Array.isArray(meta.urls)) {
         meta.urls.forEach((url: string, idx: number) => {
-          flattened.push({ ...im, metadata_json: { url, originalIndex: idx } });
+          flattened.push({ ...im, metadata_json: {
+            url, originalIndex: idx,
+            privateMediaVersionId: Array.isArray(meta.private_media_version_ids)
+              ? meta.private_media_version_ids[idx] : null,
+          } });
         });
       } else if (meta?.url) {
         flattened.push(im);

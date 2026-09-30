@@ -10,6 +10,8 @@ import {
 const fileId = '11111111-1111-4111-8111-111111111111';
 const otherFileId = '33333333-3333-4333-8333-333333333333';
 const choirId = '22222222-2222-4222-8222-222222222222';
+const actorId = '44444444-4444-4444-8444-444444444444';
+const sessionId = '55555555-5555-4555-8555-555555555555';
 const endpoint = 'https://project.supabase.co/functions/v1/repertoire-file';
 
 const file: RepertoireFileRecord = {
@@ -23,11 +25,12 @@ const file: RepertoireFileRecord = {
 
 function makeDependencies(overrides: Partial<RepertoireFileHandlerDependencies> = {}) {
   const dependencies: RepertoireFileHandlerDependencies = {
-    authorize: vi.fn(async () => ({ choirId, file })),
+    authorize: vi.fn(async () => ({ choirId, file, actorId, sessionId })),
+    authorizeTicket: vi.fn(async () => true),
     loadTicketFile: vi.fn(async () => file),
     loadR2Location: vi.fn(async () => null),
     createTicket: vi.fn(async () => ({ token: 'signed-ticket', expiresAt: 10_000 })),
-    verifyTicket: vi.fn(async () => ({ version: 1, fileId, choirId, expiresAt: 10_000 })),
+    verifyTicket: vi.fn(async () => ({ version: 2, family: 'repertoire-file', fileId, choirId, actorId, sessionId, expiresAt: 10_000 })),
     fetchDrive: vi.fn(async () => new Response(Uint8Array.from([0, 1, 2, 3, 4]), {
       status: 200,
       headers: { 'Content-Type': 'application/pdf' },
@@ -87,14 +90,14 @@ describe('repertoire-file handler', () => {
       accessToken: 'session-token',
       fileId,
     });
-    expect(dependencies.createTicket).toHaveBeenCalledWith({ fileId, choirId });
+    expect(dependencies.createTicket).toHaveBeenCalledWith({ fileId, choirId, actorId, sessionId });
   });
 
   it('uses one generic refusal for absent, unauthorized or mismatched authorization rows', async () => {
     for (const authorized of [
       null,
-      { choirId, file: { ...file, id: otherFileId } },
-      { choirId, file: { ...file, choir_id: '44444444-4444-4444-8444-444444444444' } },
+      { choirId, actorId, sessionId, file: { ...file, id: otherFileId } },
+      { choirId, actorId, sessionId, file: { ...file, choir_id: '44444444-4444-4444-8444-444444444444' } },
     ]) {
       const { handler, dependencies } = makeDependencies({ authorize: vi.fn(async () => authorized) });
       const response = await handler(post({ fileId }));
@@ -111,7 +114,7 @@ describe('repertoire-file handler', () => {
     expect((await unauthorized.handler(post({ fileId }))).status).toBe(401);
 
     const active = makeDependencies({
-      authorize: vi.fn(async () => ({ choirId, file: { ...file, file_name: 'payload.svg' } })),
+      authorize: vi.fn(async () => ({ choirId, actorId, sessionId, file: { ...file, file_name: 'payload.svg' } })),
     });
     const response = await active.handler(post({ fileId }));
     expect(response.status).toBe(415);
@@ -128,6 +131,21 @@ describe('repertoire-file handler', () => {
     expect((await mismatch.handler(read('GET', otherFileId))).status).toBe(401);
     expect(mismatch.dependencies.loadTicketFile).not.toHaveBeenCalled();
     expect(mismatch.dependencies.fetchDrive).not.toHaveBeenCalled();
+  });
+
+  it('rejects a legacy v1 ticket and revoked v2 authority before any row/provider read', async () => {
+    const legacy = makeDependencies({
+      verifyTicket: vi.fn(async () => ({ version: 1, fileId, choirId, expiresAt: 10_000 }) as never),
+    });
+    expect((await legacy.handler(read())).status).toBe(401);
+    expect(legacy.dependencies.authorizeTicket).not.toHaveBeenCalled();
+    expect(legacy.dependencies.loadTicketFile).not.toHaveBeenCalled();
+
+    const revoked = makeDependencies({ authorizeTicket: vi.fn(async () => false) });
+    expect((await revoked.handler(read('HEAD'))).status).toBe(403);
+    expect(revoked.dependencies.loadTicketFile).not.toHaveBeenCalled();
+    expect(revoked.dependencies.fetchDrive).not.toHaveBeenCalled();
+    expect(revoked.dependencies.fetchR2).not.toHaveBeenCalled();
   });
 
   it('serves full passive content with private safe headers', async () => {
