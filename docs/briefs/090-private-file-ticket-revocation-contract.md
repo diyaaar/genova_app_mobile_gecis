@@ -306,3 +306,25 @@ compatible web/mobile clients, strict v2 Edge rollout, actual hosted refusal/
 refresh probes and later R2 copy/flag/public Drive withdrawal. Never roll back
 to permissive v1 readers as an unannounced availability fix; Git revert cannot
 undo DB data. Self-review of this implementation is not independent review.
+
+### 30 September follow-up: concurrent boundary preparation, NOT RUN
+
+A read-only inspection confirmed the retained `genova_068_test_restore` has no
+057–060 private-file tables. A disposable 15–16 MB database named
+`genova_090_concurrency_test` was cloned from it without modifying the source.
+An initial abbreviated chain refused at 043 because 041/042 were absent. After
+adding 041/042, 043/053/057 applied, but 058 refused because the older
+`20260516_assignment_review_audio.sql` columns were absent. Adding that source
+migration let 058/059 apply; 060 then refused because it requires 044/045 chat
+authority objects. After these bounded setup failures, no concurrent authority
+probe or additional HTTP-family probe was run; neither gets a PASS. The exact
+disposable clone was dropped, and its absence verified. Original 068 restore
+remained untouched; free space after cleanup was 22,566,876 KiB.
+
+Next bounded action: derive the complete ordered prerequisite closure from each
+migration preflight **before** starting another disposable clone (at minimum
+041–045, historical review-audio, 053/057–060, 090), then run the existing 090
+SQL matrix first and a two-session post-commit versus in-flight authorization
+test. Only after that re-establish Auth/Edge/S3 to exercise the four remaining
+HTTP families. Do not treat a pre-commit snapshot read as a violation of the
+chosen post-commit next-request contract.
