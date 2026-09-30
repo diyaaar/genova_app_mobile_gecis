@@ -267,6 +267,41 @@ ticket, never an abort or invalid PDF. Native audio probes a failed body URL:
 remains a decoder failure. Message images/room avatars/gallery use fresh authority
 checks and bounded body refresh.
 
+### 30 September connected four-family HTTP work card
+
+One outcome: prove that each non-repertoire private-file reader issues a v2 URL
+through real local Auth/PostgREST/RLS, serves exact bytes from signed loopback
+S3, and refuses the already-issued URL on the next GET/HEAD after a committed
+same-session A→B switch without contacting the provider. This closes only the
+four-family connected HTTP evidence gap, not browser/native/hosted acceptance.
+At most three actions: (1) prepare one unlinked disposable local Auth/PG17 stack
+with the preflight-derived 041–045, 053, historical review-audio, 057–060 and
+090 chain; (2) add/run one focused `supabase/test-support/090_*` synthetic
+four-family HTTP fixture, reusing the 091 loopback S3 pattern; (3) run focused
+and root gates, record failures, clean exact owned resources and commit code/
+record separately. Allow only this brief, narrow test support, exact runtime
+ignore/config and concise handoff/progress references. No production reader/
+schema/client edit unless a connected RED proves a scoped defect and this
+card is amended. Preserve POST URL shape, five-family access rules, 200/206/
+HEAD bytes, no provider hit after denial and offline boundary. No real data,
+credentials, hosted Supabase/R2/Drive, push, device or deployment.
+
+Transition check: `AGENTS.md`, handoff, active context, this brief, delivery
+controls, transition guide, work cycle, `MIGRATION.md` native/WebView boundary,
+decision #32, 091 fixture and current 057–060 readers were inspected at
+`main/4fbef53`; only unrelated `supabase/.temp/cli-latest` is dirty.
+Fresh `df -k .` gave 21,906,500 KiB available. No Colima profile, 090 service,
+port listener or generated build is active. Reuse installed binaries/images;
+conservative additional peak is <8 GiB for one VM/data plus <1 GiB for dump,
+logs and test, leaving >12 GiB projected free. Check actual allocation during
+startup and stop at the next safe boundary if below 10 GiB. Owned targets are
+only `spike/090-runtime`, `colima-genova090`, its exact five containers/volume,
+loopback 54491/54492/8000/18092 and any named generated output. Preserve
+the original 068 restore, global caches and private copy evidence. A failed
+local run is NOT RUN/FAIL, not a reason to weaken the test or activate live
+services. Code rollback is a scoped test-code revert; local runtime is
+disposable. Hosted migration rollback remains a separate release problem.
+
 | Required local criterion | 30 September status | Dated evidence / boundary |
 |---|---|---|
 | Migration, RPC privilege and five-family tenant/role/visibility/session tests | PASS | Disposable PG17, `supabase/tests/090_private_file_ticket_authority.sql` transaction/ROLLBACK. `anon`/`authenticated` denied, service role executes. A/B, dual session, hidden song/review/comment, room membership, role removal, inactive member and deleted Auth session checked. Schema-only 068 source plus exact dependent migration chain; not a hosted restore. |
@@ -277,7 +312,8 @@ checks and bounded body refresh.
 | Real web browser/WebView stale URL and body recovery | NOT RUN | Hook/component tests pass, but no post-change installed Chrome/WebView with actual Auth/Edge. Do not promote build/unit results to browser acceptance. |
 | Android stale-v1 body 401 automatic retry and native audio seek/resume runtime | NOT RUN | Jest covers bounded PDF/audio recovery, but Android Release exercised current v2 PDF and post-switch 403 only. |
 | Two-session SQL authorization at switch/role/member commit boundaries | PASS locally | 30 September follow-up: `supabase/tests/090_private_file_ticket_concurrency.sql` on a disposable native PG17 clone. An uncommitted peer change leaves the prior snapshot readable; a new statement after commit refuses it. This is SQL authority evidence, not an overlapping HTTP request or provider test. |
-| All five families' actual HTTP GET/HEAD with provider and in-flight boundary | NOT RUN | Five-family SQL, Edge typecheck and generic handler tests pass; connected HTTP/provider only covers repertoire. Four other connected readers and a provider request overlapping commit remain unrun. |
+| All five families' actual HTTP GET/HEAD with provider | PASS locally | Repertoire connected runner above; 30 September follow-up adds all four other actual Edge entrypoints with local Auth/PostgREST/RLS/PG17 and signed loopback S3. Full/range/HEAD bytes, foreign-user POST 403 and same-session A→B old URL GET/HEAD 403/no provider hit passed. This is not hosted R2 or browser/native acceptance. |
+| Provider request overlapping a membership/role/choir-switch commit | NOT RUN | The existing two-session SQL test proves the next-statement post-COMMIT boundary, and the connected HTTP fixture proves serial post-switch refusal. Neither drives an already-in-flight GET against a concurrent commit. |
 | Hosted DB/Edge, sibling site, real R2/Drive, push/deploy and physical pilot | NOT RUN | Separate current backup/restore, staged release and owner authority required. |
 
 Failed attempts remain failures: first disposable migration chain lacked historical
@@ -300,8 +336,8 @@ equivalence. Final free space 22,561,256 KiB (>10 GiB floor); unrelated
 `supabase/.temp/cli-latest` remains unstaged.
 
 090 is **not** a release acceptance. Before hosted activation, close the unrun
-browser/WebView, native stale-v1/audio runtime, five-family connected HTTP and
-concurrency checks where required; then separately approve and verify current
+browser/WebView, native stale-v1/audio runtime and the in-flight HTTP boundary
+where required; then separately approve and verify current
 hosted backup/isolated restore and sibling-site impact, additive DB migration,
 compatible web/mobile clients, strict v2 Edge rollout, actual hosted refusal/
 refresh probes and later R2 copy/flag/public Drive withdrawal. Never roll back
@@ -364,3 +400,44 @@ Final free space was 21,890,392 KiB, above the 10 GiB floor; the unrelated CLI
 marker remains unstaged. Next ready local evidence is the four non-repertoire
 HTTP-family reads against real local Auth/Edge/PostgREST and signed loopback S3;
 browser/WebView and native stale-v1/audio runtime remain separate NOT RUN gates.
+
+### 30 September follow-up: four-family connected HTTP, PASS locally
+
+Added `supabase/test-support/090_connected_private_file_families.ts` with an exact
+loopback API/PG/S3 guard and only random synthetic Auth users, A/B choirs, members
+and private-file rows. The retained 068 restore supplied **schema only**. Local
+Supabase PG17/Auth/PostgREST/Kong and the actual four Deno Edge entrypoints ran
+against a signed loopback S3 fixture; no hosted provider or real content was
+accessed. The complete 041–045, 053, 057, historical review-audio, 058–060,
+090 migration chain applied, and the five-family SQL matrix exited 0 with
+ROLLBACK on this disposable stack. The source schema dump ended with a denied
+`supabase_admin` default-privilege statement under local `postgres`; all schema
+objects and earlier grants had applied, and the relevant migration/SQL/HTTP
+checks passed. This is a documented local restore difference, not a claim of
+full-fidelity hosted restore.
+
+The first service start failed with no reachable PG port. A first SSH attempt
+accidentally used `ClearAllForwardings=yes` and failed identically; inspection
+showed no listener. Removing that option made both explicit loopback tunnels
+listen, and the next start succeeded. The first fixture run reached Deno but
+its permission list omitted the entrypoints' `0.0.0.0:8000` bind; after that
+test-only correction the runner exited 0. All four families passed exact MIME
+and SHA-256 full GET, exact range bytes, HEAD length/no body, foreign-user
+POST 403, and same-session A→B new POST plus previously issued GET/HEAD 403.
+Denied requests made no provider call. Earlier failures are not counted as
+passes. The repertoire family has its separate connected PASS above; together
+the five families now have local connected GET/HEAD evidence. This is serial
+post-switch behavior, **not** an already-in-flight HTTP request overlapping
+COMMIT. Browser/WebView, Android stale-v1/audio runtime and hosted layers stay
+NOT RUN.
+
+Fresh root `pnpm check` exited 0: lint, TypeScript, 106 files/1066 Vitest
+tests, service-worker syntax and Next production build. No mobile source
+changed, so mobile tests were not rerun. `git diff --check` passed. Cleanup
+removed only the exact disposable `genova-090-runtime` containers/volume and
+`genova090` VM/data; the SSH tunnel stopped, and all four task ports have no
+listener. The 276 KiB ignored runtime was moved recoverably to
+`~/.Trash/genova-090-http-20260930-1748`; generated `.next` (466 MiB) and
+`coverage` (352 KiB) were deleted after verification. Final free space was
+24,445,848 KiB. Original 068 restore row-count guard remained
+`28/1/29/9/79`; unrelated `supabase/.temp/cli-latest` remains unstaged.

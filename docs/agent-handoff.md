@@ -23,12 +23,13 @@ Disposable PG17 five-family SQL matrix, real local Auth/RLS/Edge/signed loopback
 repertoire HTTP and Android API 36 Release A PDF page 1/40 → B cache clear/new and
 old A URL 403 pass. Root 106/1066/build, mobile 50/302, five Deno checks pass.
 090 remains IN PROGRESS: the 30 September two-session SQL commit-boundary test
-`70fd23e` passes on a disposable PG17 clone, but real web browser, native
-stale-v1/audio runtime, other four families' connected HTTP and an in-flight
-HTTP/provider boundary are NOT RUN. `pnpm check` still passes 106/1066/build.
-Next bounded local action is the four remaining connected readers; hosted backup/rollout
-requires a separate checkpoint. The 30-minute fixture hold timed out after Android
-PASS traces; a final short connected runner exited 0. See 090 for exact limits.
+`70fd23e` passes on a disposable PG17 clone. The four other families' connected
+HTTP Auth/Edge/signed-loopback-S3 test `9773958` also passes locally: exact
+full/range/HEAD bytes and old URL GET/HEAD 403 after A→B, with no provider hit.
+The real web browser, native stale-v1/audio runtime and a provider request
+overlapping COMMIT remain NOT RUN. Fresh `pnpm check` passes 106/1066/build.
+Next bounded local action is client runtime or in-flight acceptance; hosted
+backup/rollout requires a separate checkpoint. See 090 for exact limits.
 
 [093](briefs/093-android-private-r2-read-integration.md), source/test `c3e1b28`, locally accepts the Android
 Release native private-PDF read through actual disposable Auth/PostgREST/RLS/PG17,
@@ -86,12 +87,12 @@ F12 creator/history/CI/rotation and legacy account risks remain open; file modes
 
 ## Ownership / resources / release authority
 
-After the 090 SQL-boundary documentation commit, only unrelated `supabase/.temp/cli-latest` should
+After the 090 four-family evidence commit, only unrelated `supabase/.temp/cli-latest` should
 remain unstaged; verify before reuse.
 Stage owned paths only.
-089 and 091 services/volumes/tunnels/VMs/profiles/data/contexts and secret-bearing runtimes removed;
-latest 090 runtime/Android/Next/coverage recoverably in named Trash targets. Free
-21,890,392 KiB after the SQL test clone/build cleanup; no task listeners or adb
+089, 091 and 090 services/volumes/tunnels/VMs/profiles/data/contexts and secret-bearing runtimes removed;
+latest 090 HTTP runtime recoverably in Trash; current `.next`/coverage deleted. Free
+24,445,848 KiB after cleanup; no task listeners or adb
 device, default Docker context and 068 source row-count guard preserved. Original
 `genova_068_test_restore`, retained 068 backup,
 required private copy manifests/journals and dependencies are preserved; never purge them as caches.
