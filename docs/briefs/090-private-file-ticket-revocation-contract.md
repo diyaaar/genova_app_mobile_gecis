@@ -1,7 +1,8 @@
 # 090 — private-file ticket revocation contract before Android beta
 
 Status: IN PROGRESS / local v2 implementation and synthetic acceptance PASS on
-30 September 2026; hosted, Android WebView/native runtime and release gates remain open. Primary agent,
+30 September 2026; Android synthetic audio recovery also PASS on 1 October.
+Hosted, Android WebView/native PDF stale-v1 and release gates remain open. Primary agent,
 single writer. No hosted release authority.
 One result: uniform online next-request access-after-revocation for five private file
 families before `mixed`/`r2-required` cutover. This brief does not authorize live writes.
@@ -543,3 +544,124 @@ recoverable, while source and original restore remain. Final free space was
 24,262,492 KiB, above the 10 GiB floor. The unrelated
 `supabase/.temp/cli-latest` stays unstaged. No push, live DB/Edge/provider,
 real user/data, hardware or deployment action occurred.
+
+## 1 October general check and Android audio recovery — work card
+
+Current request: general project check and continue scoped local implementation. Read
+AGENTS, handoff/active, this brief, guide/work cycle, delivery execution controls,
+MIGRATION, decisions #28–32, WF-013 and actual native audio/config/tests. Verified
+`main/d3ce159`; only unrelated `supabase/.temp/cli-latest` dirty. No delegated writer.
+WF-013 step 6 incorrectly still says the owner contract is missing; decision #32 and
+the implemented 090 evidence supersede that wording. Correct that current pointer,
+without relabeling historical 093 evidence or changing commercial/release decisions.
+
+One continued outcome: actual Android Release / Expo audio must recover once from an
+HTTP body 401, seek and renew an expiring URL while preserving position/play intent,
+then clear the native owner at the tenant boundary. Reuse the existing synthetic
+160,044-byte WAV loopback server; deliberate synthetic tickets are NOT actual Auth,
+SQL, signed S3 or v1/v2 cryptographic evidence. Those layers retain their distinct gates.
+Android native PDF stale-v1 and WebView are not closed by this audio checkpoint.
+
+Allowed paths: `apps/mobile/src/acceptance/090_*`, its focused config tests, the
+existing audio loopback server/network plugin, guarded `apps/mobile/index.ts`
+selection and focused plugin tests; only a
+runtime-reproduced defect permits a narrow `AudioPlaybackProvider.tsx` + regression
+test fix with necessary `apps/mobile/src/test/setup.ts` event-emitter fidelity.
+Records: this brief, `docs/reports/2026-10-01-project-checkup.md`, WF-013,
+short handoff/active/progress. No dependency, schema, web or hosted changes planned.
+Actions: (1) guarded fixture/automated acceptance and focused tests; (2) one Android
+Release with installed SDK/JDK17/API36 AVD, recording actual media HTTP and playback;
+(3) mobile full gates, scoped review, exact cleanup and separate code/docs commits.
+Rollback is reverting owned local code; no external data changes. 090 remains open.
+
+Preflight: free 24,915,836 KiB; existing mobile dependencies 8,673,288 KiB, root
+1,621,064 KiB, Gradle 5,531,480 KiB and AVD 3,387,144 KiB already counted. No
+task VM/process/device exists. Additional peak <=7 GiB (Android source/native build
+<=4 GiB, AVD growth <=1 GiB, Metro/cache/logs <=2 GiB), projected >16 GiB free,
+above 10,485,760 KiB floor. No toolchain download or VM. Measure each phase; stop
+allocation before floor breach. Owned disposable output: generated mobile `android/`,
+`.expo/`, exact ignored `spike/090-runtime`, emulator 5580 process and reverse 18026,
+loopback audio server 18026. Preserve existing AVD, dependencies, global caches,
+private backup/copy evidence and unrelated marker. Delete only new owned output
+after its final dependent check; stop emulator/server and remove reverse route.
+
+| Required checkpoint criterion | Status | Evidence / boundary |
+|---|---|---|
+| General source/plan/Git/resource/retained-artifact check | PASS locally | [General report](../reports/2026-10-01-project-checkup.md); no live-state inference |
+| Guarded synthetic loopback and focused config/plugin tests | PASS locally | Focused config/plugin 2/13, audio/player checks and complete mobile gate; exact flags/target, no Auth credentials/public build secrets |
+| Actual Android body 401 → bounded retry, seek/expiry resume, tenant clear | PASS locally | Actual API36 Release / Expo media client; 401 recovery, seek, expiry resume, tenant clear and confirmed 403 no-re-ticket below. Deliberately synthetic ticket service, not connected Auth/R2 |
+| Full mobile typecheck/tests, Android build, scoped review and cleanup | PASS locally | Mobile TS/51 suites/314 tests, Android Release, normal Android/iOS JS exports, fresh root lint/TS/106 files/1066 tests/SW syntax/Next build, diff and exact cleanup PASS. Self-review only; iOS JS export is not native/runtime |
+| Native PDF stale-v1, WebView, overlapping HTTP/COMMIT, hosted/device/release | NOT RUN | Separate 090 gates; no blanket brief closure |
+
+### 1 October Android audio result / causal record
+
+Installed SDK/JDK17 and offline Gradle arm64 `assembleRelease` built successfully.
+The first install ran before Android's package/activity services were ready; the next
+command explicitly waited for `sys.boot_completed=1` before installing. No rebuild
+was needed for that environment readiness failure.
+
+The first actual media acceptance **FAILed**: ExoPlayer made four internal GET retries,
+all HTTP 401, then reported a native source error; the product never requested ticket 2
+and acceptance timed out. Installed Expo Android source emits error once in
+`AudioPlayer.onPlayerError`, while following `currentStatus()` updates emit `error:null`;
+`useAudioPlayerStatus` stores only the last event. A React-batched tick can therefore
+erase that error before the previous effect observes it. This was invisible to the
+old stable mutable-status mock. The fix subscribes to the real player's status event,
+latches error only for that source/player, and removes the listener on cleanup. New
+event-emitter regressions exercise error→null in one turn, 403, bounded second failure
+and a late old-source event. Private failure state clears with source/tenant/denial.
+
+Scoped lifecycle review also guards async seek→play/catch against request-generation
+or player changes; a pending seek completed after tenant clear cannot restart audio.
+The focused regression covers that late completion. No native dependency was patched.
+An initial test-helper Babel hoist error rejected a type-parameter name; renaming that
+type-only mock parameter repaired the helper. It is not a product RED/green result.
+
+The repaired Android run passed recovery/seek/resume/clear. A final rebuild included
+the async-resume guards and a separate actual 403 fixture; it also passed. Final APK
+SHA-256 `d96d7f9b58a6c1991391460e0659ae43106a0aece2d6490ddbda436d738981a2`.
+Afterward a type-only assertion removed TS's incorrect literal narrowing of a ref
+mutated by async `openSession`; it changes no emitted playback behavior. Complete
+mobile typecheck/tests then passed 51 suites / 314 cases after the final regression.
+
+Final Android UI hierarchy and app-PID log confirm: initial synthetic ticket 1,
+ticket 2 after one HEAD 401, loaded source, seek to 4s, ticket 3 for expiry and
+playing at >=4.2s, pause/seek2/resume without another ticket, tenant-clear owner empty,
+ticket 4 for a deliberately denied source, access-ended error without ticket 5,
+then final clear and `ALL PASS`. The loopback service saw four ExoPlayer GET 401s,
+one HEAD 401, two successful 160,044-byte GET 200s, Range `bytes=32044-` returning
+206 / 128,000 bytes; denial had four internal GET 403s and one HEAD 403. Internal
+decoder retries are distinct from the application's one permitted re-ticket.
+WAV SHA-256 `b43dde9816f8047e0c351a5a756f99d75433396ce8f4ac0b36dc1d825f26127e`.
+The emulator ran with audio output disabled: this proves playback state/HTTP/seek,
+not speaker output quality, physical-device behavior or background playback.
+
+This test uses the actual product provider and Expo/Android decoder, but deliberately
+synthetic unsigned ticket issuance and HTTP 401/403 faults. No Auth/Postgres/Deno/S3
+environment was started. It does not close native PDF cryptographic v1→v2, WebView,
+connected audio Auth/R2, or in-flight HTTP/COMMIT proof. iOS JS export passes; native
+iOS audio error-latch/seek lifecycle acceptance is **NOT RUN**, explicitly scheduled
+for 090's integrated both-platform private-client checkpoint before release, not
+silently removed. A mistaken `expo export --platform all` attempted unsupported web
+and failed before export; native-only exports avoid adding react-native-web or changing
+the product scope. 090 remains IN PROGRESS.
+
+Final gates: `npm run typecheck && npm test -- --runInBand` exits 0, 51/314.
+Source/test checkpoint: `dc46c2a`; documentation committed separately, no push.
+Normal native-only Expo exports (all acceptance flags disabled, dotenv loading off,
+placeholder public Supabase configuration) both exit 0 with 1,439 modules each.
+Fresh root `pnpm check` exits 0: ESLint, TS, 106/1066 Vitest, service-worker syntax,
+Next production build; Supabase URL/keys explicitly overridden to local/synthetic,
+VAPID blank. No hosted Auth/DB action. Focused config/plugin 2/13 and player/mini
+checks pass; final full gate includes the added bounded-second-body-failure case.
+`git diff --check`, JS syntax and changed-document link checks PASS.
+
+Cleanup: acceptance APK uninstalled, exact temporary UI dump removed, adb reverse
+18026 removed, emulator stopped and loopback audio server exited 0. No ADB device
+or listener remains. Exact newly generated `apps/mobile/android` (782,904 KiB),
+`apps/mobile/.expo` (8,576 KiB), root `.next` (477,544 KiB) and `coverage` (352 KiB)
+were deleted after their last checks. They are reproducible, not recoverable binaries;
+source, existing AVD/toolchain/dependencies/caches/private backups remain. No VM or
+secret fixture was created. Final free 25,989,296 KiB; measured phase headroom stayed
+above 10 GiB. Unrelated `supabase/.temp/cli-latest` remains unstaged. No external
+write, credentials, email, real data, push/deploy/device/distribution action occurred.

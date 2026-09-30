@@ -1,132 +1,80 @@
 # Genova — agent handoff
 
-Updated 30 September 2026 after [090](briefs/090-private-file-ticket-revocation-contract.md)
-local implementation and synthetic acceptance. Hosted release and remaining 090 gates are open.
-This is a short current-state index. Detailed historical acceptance remains in briefs and
-[progress](../memory-bank/progress.md), not duplicated here. Verify recorded state before reuse.
+Updated 1 October 2026. Evidence: [090](briefs/090-private-file-ticket-revocation-contract.md) and [check-up](reports/2026-10-01-project-checkup.md). Verify state before reuse;
+historical detail remains in briefs/[progress](../memory-bank/progress.md).
 
 ## Read first
 
 [AGENTS](../AGENTS.md) → [active context](../memory-bank/activeContext.md) → current brief →
 [execution controls](mobil-teslim-plani.md#bounded-execution-and-resource-controls).
 Use [guide](gecis-rehberi.md), [work cycle](ai-calisma-duzeni.md), relevant
-[decisions](../KARARLAR.md) and [MIGRATION](../MIGRATION.md). Profile remains permanent WebView.
+[decisions](../KARARLAR.md)/[MIGRATION](../MIGRATION.md). Repertoire is native; profile is permanent WebView.
 
-## Current outcome / next action
+## Current outcome and next action
 
-090 code/test `5f55c48` now locally binds all five private-file tickets to signed
-actor/Auth-session/choir identity and a service-only, one-snapshot SQL access decision
-on every GET/HEAD. Legacy v1 reads fail 401; active v2 URLs fail 403 after same-session
-choir switch or membership/role/visibility loss. Web online cache checks and bounded
-refresh/denial purge, native PDF/audio recovery and exact offline boundary are implemented.
-Disposable PG17 five-family SQL matrix, real local Auth/RLS/Edge/signed loopback S3
-repertoire HTTP and Android API 36 Release A PDF page 1/40 → B cache clear/new and
-old A URL 403 pass. Root 106/1066/build, mobile 50/302, five Deno checks pass.
-090 remains IN PROGRESS: the 30 September two-session SQL commit-boundary test
-`70fd23e` passes on a disposable PG17 clone. The four other families' connected
-HTTP Auth/Edge/signed-loopback-S3 test `9773958` also passes locally: exact
-full/range/HEAD bytes and old URL GET/HEAD 403 after A→B, with no provider hit.
-Installed Chrome web repertoire PDF recovery `10e9b77` now passes locally:
-one injected v1 ticket gets actual HEAD 401 then v2, one injected PDF body 401
-gets one retry and rendered canvas; same-session B selection removes A and old
-A HEAD returns 403. The browser used a declared test-only function transport
-relay to actual Deno, not an unmodified Kong route. Android WebView, native
-stale-v1/audio runtime and a provider request overlapping COMMIT remain NOT RUN.
-Fresh `pnpm check` passes 106/1066/build. Next bounded local action is Android
-WebView/native runtime or in-flight acceptance; hosted
-backup/rollout requires a separate checkpoint. See 090 for exact limits.
+090 is **IN PROGRESS**, not hosted or beta acceptance. Code `5f55c48` binds five readers'
+v2 tickets to actor/Auth-session/choir with service-only SQL authority on every GET/HEAD;
+v1 fails 401 and revoked/switched v2 fails 403. Decision #32 and local implementation
+were approved; do not re-ask the policy. Already-streaming/offline bytes are not recalled.
+30 Sep local PG17 five-family SQL and two-session commit boundary (`70fd23e`) pass.
+Connected Auth/RLS/Deno/signed-loopback-S3 HTTP for all five families (`9773958`) passes
+exact full/range/HEAD and serial A→B old-URL refusal without provider hits after denial.
+Android current-v2 PDF page 1/40/cache clear/B-only and old A URL 403 pass locally.
+Installed Chrome web PDF recovery (`10e9b77`) passes declared v1/body faults and A→B;
+its function transport relay is not unmodified Kong or Android WebView proof.
 
-[093](briefs/093-android-private-r2-read-integration.md), source/test `c3e1b28`, locally accepts the Android
-Release native private-PDF read through actual disposable Auth/PostgREST/RLS/PG17,
-loopback Deno and signed loopback S3. A 65,905-byte PDF rendered page 1/40; A→B
-cleared the private cache, B-only catalogue appeared and new A ticket under B refused
-403. The run exposed and fixed an Expo hook-owned audio-player teardown crash;
-mobile 50/299, root 103/1049/build and Android Release pass. [Visual and service
-evidence](evidence/093-android-private-r2-read/README.md). Generated runtime/build
-were cleaned; original source counts/schema unchanged. This is synthetic emulator
-evidence, **not** hosted R2, physical-phone, Drive cutover or beta acceptance. At the
-093 revision an old A URL remained usable after switch; 090's newer local v2 reader
-now refuses it. Neither revision is hosted release evidence.
+1 Oct source/test `dc46c2a`: actual API36 Android Release audio exposed lost transient Expo error events.
+The narrow source-scoped event latch now recovers once after body 401, seeks to 4s,
+renews expiry and resumes >=4.2s, pause/seek2/resumes, clears owner and refuses a
+confirmed 403 without another ticket. Async seek completion cannot restart a cleared owner.
+Full mobile TS/51 suites/314 tests, root 106/1066/build and normal Android/iOS JS exports pass.
+The media fixture issues deliberately synthetic unsigned tickets, not actual Auth/R2/v1.
+Native PDF stale-v1, Android WebView, connected audio Auth/R2, HTTP/provider overlapping
+COMMIT and native iOS error-latch/seek runtime remain NOT RUN; see 090's exact gates.
+**Next ready local action:** native Android PDF stale-v1 recovery against guarded
+connected Auth/Edge/S3, then actual permanent-WebView and in-flight HTTP acceptance.
+Hosted backup/ordered rollout is a later separate checkpoint, not the next automatic action.
 
-Owner resumes local implementation of [WF-013](briefs/WF-013-multi-tenant-remediation-plan.md),
-with operator-assisted v1 choir creation confirmed. [WF-012 audit](briefs/WF-012-commercial-multi-tenant-audit.md)
-and [report](reports/2026-09-28-commercial-multi-tenant-audit.md) remain the dated pre-fix baseline.
-089 scope `6db0144`, product/test `a8df751` is locally accepted: actual installed Chrome/Next/
-Auth/REST/RLS/PG17 two-choir profile submit → chef approve/reject → member/history passes with
-087/088, zero response mocks. Actual UI names exposed original-choir review constants; removed
-them in favor of referenced caller-RLS page-local labels and late-scope read guards. Six component
-regressions, focused 4/72, full 103 suites/1042 tests/build pass. Real browser wrong-tenant/non-chef/
-stale/finalized/role/inactive refusals preserve data; permission changes are pre-dispatch, not
-new in-flight HTTP concurrency evidence. [Evidence](evidence/089-real-profile-review-web/README.md).
-[087 submit](briefs/087-authority-safe-profile-submit.md)/[088 review](briefs/088-authority-safe-profile-review.md)
-retain historical real PG concurrency/rollback/restore acceptance, not rerun in 089.
+## Preserved evidence and remediation
 
-[091](briefs/091-connected-private-r2-read.md), historical test/config `f1e19f8`, joined actual local
-Auth/PostgREST/RLS/PG17 and Deno repertoire-file with a signed **loopback S3** server: own
-A PDF (65,905 B) and B WAV (48 B) full/ranged/HEAD bytes pass; wrong user/choir and revoked
-membership cannot issue new tickets. At that historical revision an issued A URL still worked
-after same-session B switch; 090's newer local v2 reader refuses it.
-No hosted R2, current provider read, native client or device acceptance. 091 root 103/1042/build
-passes; its VM/runtime/listeners were removed, source six-table digest preserved.
-[092](briefs/092-stale-private-file-ticket-cache.md), code/test `b0fe523`, reproduces then
-prevents a late web/WebView private-file ticket from returning/repopulating cache after tenant
-clear across six URL families. Focused 16 and root 103/1049/build PASS. This is client hygiene,
-not old-URL server revocation or a fresh browser/native/provider test; 090 remains open.
+[093](briefs/093-android-private-r2-read-integration.md)/`c3e1b28` preserves connected
+synthetic Android PDF evidence; its historical old-URL 200 was later corrected in 090.
+[091](briefs/091-connected-private-r2-read.md) joins local Auth/RLS/Deno/signed S3;
+[092](briefs/092-stale-private-file-ticket-cache.md)/`b0fe523` fixes late cache publication,
+not server revocation. Do not relabel older runs or counts as current.
+[WF-013](briefs/WF-013-multi-tenant-remediation-plan.md) step 5 stays PARTIAL:
+[089](briefs/089-real-profile-review-web-acceptance.md)/`a8df751` accepts actual local
+Chrome A/B profile submit/review/history; [087](briefs/087-authority-safe-profile-submit.md)/
+[088](briefs/088-authority-safe-profile-review.md) own PG lock/rollback/restore evidence.
+078–086 repairs remain linked in WF-013; [audit](reports/2026-09-28-commercial-multi-tenant-audit.md)
+is the dated pre-fix baseline. Manual catalogs/extra roles/confirmed fixtures do not
+accept operator-admin/signup/mail UX, all direct writers or commercial lifecycle.
+F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are not rotation.
 
-Manual synthetic catalogs/extra role and confirmed users do not accept operator-admin/signup/
-mail UX. Other direct/service writers do not join these RPC locks; push/provider, hosted and
-device layers NOT RUN. WF-013 step 5 remains PARTIAL. Active
-[090](briefs/090-private-file-ticket-revocation-contract.md) is partial at the
-**release/evidence** layer, not merely a policy proposal. Decision #32 and bounded
-local implementation were approved; `5f55c48` is not hosted. Older actorless-ticket
-descriptions elsewhere in this handoff are historical pre-090 baselines.
+## Ownership, resources and authority
 
-Earlier local acceptance is preserved: [078](briefs/078-active-membership-revocation.md) active
-authority, [079](briefs/079-message-status-rpc-privileges.md) creator-independent grants,
-[080](briefs/080-safe-link-preview.md) SSRF bounds, [081](briefs/081-local-secret-file-permissions.md)
-local modes, [082](briefs/082-atomic-repertoire-assignments.md) atomic assignments,
-[083](briefs/083-new-choir-profile-reference-isolation.md)/[084](briefs/084-stale-choir-create-guards.md)
-profile/create context guards and [085](briefs/085-two-choir-connected-backend-acceptance.md)
-connected SQL/transport. None implies hosted remediation or full commercial readiness.
-F12 creator/history/CI/rotation and legacy account risks remain open; file modes are not rotation.
-
-## Ownership / resources / release authority
-
-After the 090 Chrome evidence commit, only unrelated `supabase/.temp/cli-latest` should
-remain unstaged; verify before reuse.
-Stage owned paths only.
-089, 091 and 090 services/volumes/tunnels/VMs/profiles/data/contexts and secret-bearing runtimes removed;
-latest 090 Chrome synthetic runtime and current `.next`/coverage deleted. Free
-24,262,492 KiB after cleanup; no task listeners or adb
-device, default Docker context and 068 source row-count guard preserved. Original
-`genova_068_test_restore`, retained 068 backup,
-required private copy manifests/journals and dependencies are preserved; never purge them as caches.
-One result/one heavy process, >=10 GiB floor, two-failure causal reassessment; no blind rebuilds.
+After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
+One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
+1 Oct owned emulator/app/reverse route/audio server and derived outputs were cleaned;
+see 090 for final resource inventory/free space. No hosted database or source data changed.
+Keep original `genova_068_test_restore`, retained 068 backup, private manifests/journals,
+dependencies and existing AVD/global caches. Never rebuild deleted runtimes without preflight.
 Local scoped code/tests/commits/owned cleanup authorized. Hosted DB/Edge/provider, credentials,
-real accounts/email/data, spending, CI/push/deploy, hardware/distribution stay separately gated.
-Shared DB also serves sibling website; future schema release needs current hosted backup/restore,
-both-project impact and exact DB → web/client order. Git revert is not data recovery.
-087 helper/RPC → 088 RPC must precede web rollout and remain available through web rollback.
-Local service-role configuration was recorded stale in 069; do not use it as live Auth proof.
-For account work verify the actual profile; 070 verified `genesinova.choir@gmail.com`, not `chori`.
+real users/email/data, spending, CI/push/deploy, hardware/distribution need concrete authority.
+Shared DB serves sibling site: fresh backup/restore, both-project impact, DB→Edge→clients order.
+087 helper/RPC → 088 RPC must precede web and survive rollback; Git revert is not data recovery.
+069 local service key was stale; not hosted Auth proof. 070 verified account is
+`genesinova.choir@gmail.com`, not the earlier typo. No current remote/live revision verified.
 
-## Preserved product destination / storage queue
+## Product destination and external storage queue
 
-Same product, Android-first usable beta → complete feature/release scope → both-store acceptance.
-Keep Supabase; private R2 is Drive-exit direction, not a Railway rewrite. Prefer <=$5/month;
-five free members then additional-member billing; manual web invoicing, self-service later.
-Prices/period/seat counting, deletion/retention/last-chef policy and release accounts stay undecided.
-Follow [delivery queue](mobil-teslim-plani.md#controlled-execution-queue--24-september-2026)
-and [WF-009](briefs/WF-009-controlled-delivery-execution-queue.md), not another tiny chat feature.
-[WF-011](briefs/WF-011-release-candidate-source-preflight.md)/066–069 contain dated candidate/
-CI/Preview/dormant-hosted evidence; no current remote/live revision verified here. Never bulk-push
-the local divergence merely to obtain release evidence.
-[070](briefs/070-real-inventory-metadata-preparation.md) records private inventory/manifest;
-[071–076 copies](briefs/076-repertoire-mp3-r2-batch-2.md) record 42 verified objects / 60,969,062
-bytes, 49 MP3 / 192,361,428 bytes still pending. [077](briefs/077-repertoire-mp3-r2-batch-3.md)
-prepares the next ten / 27,472,242-byte approval packet; no copy ran. Copies are not activation/cutover;
-each remaining real-data/provider action needs exact approval. Public Drive links, bearer/offline
-revocation semantics, unsupported avatar and full private-file client integration remain open.
-004 hardware and 010 live refusals, native write/sync/offline/chat/C4/C5, store/privacy/lifecycle
-and full two-platform obligations remain in the objective. Do not mark the full goal complete
-at beta, planning or local acceptance. Canonical objective: [delivery plan](mobil-teslim-plani.md#revised-goal-text).
+Same product: Android-first usable beta → preserved full scope → both stores; Supabase retained,
+private R2 Drive-exit, no Railway rewrite; prefer <=$5/month. First five members free then
+extra-member billing, manual web invoice/assisted v1 onboarding; self-service later.
+Prices/period/seat counting, deletion/retention/last-chef and release accounts remain owner choices.
+[Delivery queue](mobil-teslim-plani.md#controlled-execution-queue--24-september-2026)/WF-009 is authoritative.
+WF-011/066–069 have historical CI/Preview/dormant-hosted evidence; never bulk-push divergence.
+[076](briefs/076-repertoire-mp3-r2-batch-2.md) preserves 42 copied objects/60,969,062 bytes;
+49 MP3/192,361,428 bytes pending. [077](briefs/077-repertoire-mp3-r2-batch-3.md) is exact
+next-ten/27,472,242-byte approval packet, not an executed copy/activation/public-link withdrawal.
+004 hardware/010 refusals, native write/sync/offline/chat/C4/C5 and privacy/lifecycle remain open; full goal is unfinished.

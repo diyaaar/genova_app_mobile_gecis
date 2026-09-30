@@ -1,5 +1,19 @@
 # İlerleme indeksi
 
+1 October — [general check-up](../docs/reports/2026-10-01-project-checkup.md) and
+[090 Android audio recovery](../docs/briefs/090-private-file-ticket-revocation-contract.md)
+completed locally as a partial 090 checkpoint, source/test `dc46c2a`. Actual Android RED showed transient Expo
+error→null losing body-401 recovery. Source/player-scoped event latch plus async seek
+generation guard now pass actual API36 Release body 401/one renewal, seek4/expiry resume,
+pause/seek2/resume, tenant clear and confirmed 403 without re-ticket. Deliberately synthetic
+unsigned tickets and loopback WAV, not Auth/R2 or v1 cryptographic proof. Mobile TS/51/314,
+normal Android/iOS exports and fresh root 106/1066/build PASS. Native PDF/WebView/connected
+audio/Auth/R2/HTTP overlap/native-iOS/hosted/device/release gates remain separate NOT RUN;
+090 stays IN PROGRESS. WF-013 stale policy pointer corrected, handoff/active condensed.
+Exact generated builds/exports/coverage and emulator app/UI dump/reverse removed, emulator/
+server stopped; 25,989,296 KiB free. Source/AVD/dependencies/backups/private copy evidence
+preserved; unrelated CLI marker unstaged. No external action; self-review, not independent.
+
 30 September follow-up — [090 installed Chrome private-PDF recovery](../docs/briefs/090-private-file-ticket-revocation-contract.md),
 test `10e9b77`, PASS locally with production-built Next, actual local Auth/RLS/
 Deno/signed loopback S3 and two declared browser fault injections. One valid
