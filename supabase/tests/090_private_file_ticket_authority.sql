@@ -98,9 +98,13 @@ insert into public.chat_media_versions(
   '82000000-0000-4000-8000-000000000090',0,'30000000-0000-4000-8000-000000000090',
   'r2','genova-private','090/avatar',16,'image/png',repeat('d',64),'avatar.png','active'
 );
+-- The private avatar alias is server-owned. Keep the 060 guard enabled and use
+-- the same privileged writer identity that the production mutation uses.
+set local role postgres;
 update public.chat_rooms set avatar_media_version_id='81000000-0000-4000-8000-000000000090',
   avatar_url='r2_chat_81000000-0000-4000-8000-000000000090'
 where id='80000000-0000-4000-8000-000000000090';
+reset role;
 
 do $test$
 declare
