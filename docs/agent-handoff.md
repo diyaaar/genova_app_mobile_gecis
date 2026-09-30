@@ -1,7 +1,7 @@
 # Genova — agent handoff
 
-Updated 30 September 2026 after the [090](briefs/090-private-file-ticket-revocation-contract.md)
-policy choice; latest local product acceptance remains [093](briefs/093-android-private-r2-read-integration.md).
+Updated 30 September 2026 after [090](briefs/090-private-file-ticket-revocation-contract.md)
+local implementation and synthetic acceptance. Hosted release and remaining 090 gates are open.
 This is a short current-state index. Detailed historical acceptance remains in briefs and
 [progress](../memory-bank/progress.md), not duplicated here. Verify recorded state before reuse.
 
@@ -14,6 +14,20 @@ Use [guide](gecis-rehberi.md), [work cycle](ai-calisma-duzeni.md), relevant
 
 ## Current outcome / next action
 
+090 code/test `5f55c48` now locally binds all five private-file tickets to signed
+actor/Auth-session/choir identity and a service-only, one-snapshot SQL access decision
+on every GET/HEAD. Legacy v1 reads fail 401; active v2 URLs fail 403 after same-session
+choir switch or membership/role/visibility loss. Web online cache checks and bounded
+refresh/denial purge, native PDF/audio recovery and exact offline boundary are implemented.
+Disposable PG17 five-family SQL matrix, real local Auth/RLS/Edge/signed loopback S3
+repertoire HTTP and Android API 36 Release A PDF page 1/40 → B cache clear/new and
+old A URL 403 pass. Root 106/1066/build, mobile 50/302, five Deno checks pass.
+090 remains IN PROGRESS: real web browser, native stale-v1/audio runtime, other four
+families' connected HTTP and concurrent request/revocation boundary are NOT RUN.
+Next bounded local action is to close those evidence gaps; hosted backup/rollout
+requires a separate checkpoint. The 30-minute fixture hold timed out after Android
+PASS traces; a final short connected runner exited 0. See 090 for exact limits.
+
 [093](briefs/093-android-private-r2-read-integration.md), source/test `c3e1b28`, locally accepts the Android
 Release native private-PDF read through actual disposable Auth/PostgREST/RLS/PG17,
 loopback Deno and signed loopback S3. A 65,905-byte PDF rendered page 1/40; A→B
@@ -22,9 +36,9 @@ cleared the private cache, B-only catalogue appeared and new A ticket under B re
 mobile 50/299, root 103/1049/build and Android Release pass. [Visual and service
 evidence](evidence/093-android-private-r2-read/README.md). Generated runtime/build
 were cleaned; original source counts/schema unchanged. This is synthetic emulator
-evidence, **not** hosted R2, physical-phone, Drive cutover or beta acceptance. Previously
-issued A URL remains usable after switch; decision #32 now selects next-online-request refusal,
-but 090 implementation and legacy-v1 transition are still open.
+evidence, **not** hosted R2, physical-phone, Drive cutover or beta acceptance. At the
+093 revision an old A URL remained usable after switch; 090's newer local v2 reader
+now refuses it. Neither revision is hosted release evidence.
 
 Owner resumes local implementation of [WF-013](briefs/WF-013-multi-tenant-remediation-plan.md),
 with operator-assisted v1 choir creation confirmed. [WF-012 audit](briefs/WF-012-commercial-multi-tenant-audit.md)
@@ -39,11 +53,11 @@ new in-flight HTTP concurrency evidence. [Evidence](evidence/089-real-profile-re
 [087 submit](briefs/087-authority-safe-profile-submit.md)/[088 review](briefs/088-authority-safe-profile-review.md)
 retain historical real PG concurrency/rollback/restore acceptance, not rerun in 089.
 
-[091](briefs/091-connected-private-r2-read.md), test/config `f1e19f8`, now joins actual local
+[091](briefs/091-connected-private-r2-read.md), historical test/config `f1e19f8`, joined actual local
 Auth/PostgREST/RLS/PG17 and Deno repertoire-file with a signed **loopback S3** server: own
 A PDF (65,905 B) and B WAV (48 B) full/ranged/HEAD bytes pass; wrong user/choir and revoked
-membership cannot issue new tickets. Previously issued A URL still works after same-session B
-switch, confirming [090](briefs/090-private-file-ticket-revocation-contract.md) remains open.
+membership cannot issue new tickets. At that historical revision an issued A URL still worked
+after same-session B switch; 090's newer local v2 reader refuses it.
 No hosted R2, current provider read, native client or device acceptance. 091 root 103/1042/build
 passes; its VM/runtime/listeners were removed, source six-table digest preserved.
 [092](briefs/092-stale-private-file-ticket-cache.md), code/test `b0fe523`, reproduces then
@@ -54,12 +68,10 @@ not old-URL server revocation or a fresh browser/native/provider test; 090 remai
 Manual synthetic catalogs/extra role and confirmed users do not accept operator-admin/signup/
 mail UX. Other direct/service writers do not join these RPC locks; push/provider, hosted and
 device layers NOT RUN. WF-013 step 5 remains PARTIAL. Active
-[090](briefs/090-private-file-ticket-revocation-contract.md) is partial: repertoire/assignment
-one-hour tickets are actorless bearer URLs; three other families recheck actor access but not
-selected session. On 30 September the owner chose rejection on the next online GET/HEAD after
-choir switch or membership/role removal ([decision #32](../KARARLAR.md)). The recommended
-immediate v1 denial, one-time 401 recovery and release checkpoint await explicit approval;
-no product/hosted change has followed this decision.
+[090](briefs/090-private-file-ticket-revocation-contract.md) is partial at the
+**release/evidence** layer, not merely a policy proposal. Decision #32 and bounded
+local implementation were approved; `5f55c48` is not hosted. Older actorless-ticket
+descriptions elsewhere in this handoff are historical pre-090 baselines.
 
 Earlier local acceptance is preserved: [078](briefs/078-active-membership-revocation.md) active
 authority, [079](briefs/079-message-status-rpc-privileges.md) creator-independent grants,
@@ -72,12 +84,13 @@ F12 creator/history/CI/rotation and legacy account risks remain open; file modes
 
 ## Ownership / resources / release authority
 
-After 093, only unrelated `supabase/.temp/cli-latest` should remain unstaged; verify before reuse.
+After the 090 documentation commit, only unrelated `supabase/.temp/cli-latest` should
+remain unstaged; verify before reuse.
 Stage owned paths only.
 089 and 091 services/volumes/tunnels/VMs/profiles/data/contexts and secret-bearing runtimes removed;
-latest 093 runtime/Android/Next/coverage recoverably in Trash. Free 23,133,344 KiB
-after 093 VM removal;
-no task listeners, default Docker context and six-table source digest preserved. Original
+latest 090 runtime/Android/Next/coverage recoverably in named Trash targets. Free
+22,561,256 KiB after 090 VM removal; no task listeners or adb device, default
+Docker context and 068 source row-count guard preserved. Original
 `genova_068_test_restore`, retained 068 backup,
 required private copy manifests/journals and dependencies are preserved; never purge them as caches.
 One result/one heavy process, >=10 GiB floor, two-failure causal reassessment; no blind rebuilds.

@@ -7,6 +7,18 @@ Historical detail is in briefs/[progress](progress.md); these indexes do not upg
 
 ## Current accepted local checkpoint
 
+[090 local private-file revocation](../docs/briefs/090-private-file-ticket-revocation-contract.md),
+code/test `5f55c48`, is implemented and synthetically accepted but **IN PROGRESS**
+for release evidence. All five Edge readers use actor/Auth-session-bound v2 tickets
+and one service-only SQL authority check per GET/HEAD; v1 fails 401. Disposable PG17
+five-family SQL matrix, real local Auth/RLS/Edge/signed loopback S3 repertoire HTTP,
+and Android API 36 Release A PDF page 1/40 → B old A URL 403/cache clear/B-only
+catalogue pass. Root 106/1066/build and mobile 50/302 PASS. Real web browser,
+native stale-v1/audio runtime, four other families' connected HTTP and concurrent
+request/revocation are NOT RUN. Hosted DB/Edge/R2/Drive/phone/push/deploy remain
+separately gated; do not treat this as beta. Next bounded local action is to close
+the remaining 090 acceptance matrix before proposing a hosted release checkpoint.
+
 [093 Android connected private-file read](../docs/briefs/093-android-private-r2-read-integration.md),
 source/test `c3e1b28`,
 accepts a synthetic Android API 36 Release path through real local Auth/PostgREST/RLS/PG17,
@@ -15,8 +27,9 @@ Deno handler and signed loopback S3. The native Expo cache/Skia reader displayed
 new A-file ticket under B returned 403. A no-source Expo audio-player teardown crash
 found in the first Release was fixed and rerun. Mobile 50/299, root 103/1049/build
 and Android Release PASS. [Evidence](../docs/evidence/093-android-private-r2-read/README.md).
-This does not accept hosted R2, real data, physical phone, old issued-URL revocation or
-beta. 090 and 077 retain their separate owner/external gates.
+This historical 093 checkpoint does not accept hosted R2, real data, physical phone
+or beta. Its old issued-URL behavior was later changed and locally tested in 090;
+077 retains its separate owner/external gate.
 
 [092 stale-ticket cache guard](../docs/briefs/092-stale-private-file-ticket-cache.md),
 code/test `b0fe523`, reproduces late A URL publication after tenant clear, then rejects
@@ -30,8 +43,8 @@ free 30,925,652 KiB; only unrelated CLI marker dirty.
 test/config `f1e19f8`, accepts actual isolated local Auth/PostgREST/RLS/PG17 → Deno file
 entrypoint → signed loopback S3 for A PDF and B WAV full/range/HEAD bytes, with foreign user/
 choir and revoked-membership **new ticket** refusals. It does not test hosted R2 or native
-device. A pre-switch A bearer URL still returns 200 after selecting B, so 090's owner contract
-and implementation remain open. Root 103 suites/1042 tests/build PASS; exact VM/runtime/
+device. At that historical revision a pre-switch A URL returned 200 after selecting B;
+the newer local 090 v2 reader refuses it. Root 103 suites/1042 tests/build PASS; exact VM/runtime/
 listeners removed, original six-table digest unchanged. Next independently approved external
 step remains 077 exact copy; no live action inferred from this local check.
 
@@ -49,23 +62,21 @@ PG lock/rollback/restore acceptance remains linked, not rerun here.
 Manual catalog/extra role fixtures and confirmed users do not accept operator-admin/signup/mail
 UX. Direct/service writers, private files, full device/product flow and hosted/provider layers
 remain open; push is not outbox/provider acceptance. WF-013 step 5 stays PARTIAL. Active
-[090](../docs/briefs/090-private-file-ticket-revocation-contract.md) is partial: repertoire and
-assignment one-hour tickets are actorless bearer URLs; three other families recheck actor but
-not selected session. Owner selected next-online-request refusal on 30 September
-([decision #32](../KARARLAR.md)); immediate v1 denial, one-time 401 recovery and release
-checkpoint remain proposed, not approved for implementation. No product or hosted action ran.
+[090](../docs/briefs/090-private-file-ticket-revocation-contract.md) has local v2 product
+code, but release/evidence gaps remain. Decision #32 and local implementation were
+approved; hosted rollout was not. No hosted action ran.
 [077](../docs/briefs/077-repertoire-mp3-r2-batch-3.md) has an exact next-ten-MP3 /
 27,472,242-byte read-only approval packet; no current source/provider copy acceptance.
 Earlier 078–086 evidence remains authoritative in linked briefs, not erased or reclassified.
 
 ## Exact ownership / resources
 
-After 093 commits, no unfinished product diff is expected; verify. Unrelated
+After the 090 documentation commit, no unfinished product diff is expected; verify. Unrelated
 `supabase/.temp/cli-latest` must stay unstaged.
-089/091 containers/volumes/tunnels/VMs/profiles/data/contexts/secret runtimes removed. Latest
-093 runtime/Android/Next/coverage recoverably trashed. Free 23,133,344 KiB after
-093 VM removal, above floor;
-Trash retains blocks. No task listeners; default context and six-table source digest preserved.
+089/091/090 containers/volumes/tunnels/VMs/profiles/data/contexts/secret runtimes removed.
+Latest 090 runtime/Android/Next/coverage recoverably trashed. Free 22,561,256 KiB
+after 090 VM removal, above floor; Trash retains blocks. No task listeners or adb
+device; default context and original 068 source row-count guard preserved.
 Keep original `genova_068_test_restore`,
 retained 068 backup and private copy evidence/dependencies; do not rebuild deleted environments
 without measured preflight or purge global caches. Main agent is single writer.

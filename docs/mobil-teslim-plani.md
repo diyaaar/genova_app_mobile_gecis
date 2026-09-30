@@ -27,9 +27,12 @@ do not manufacture a date or add unrelated features while awaiting a critical de
 29 September local integration checkpoint: [091](briefs/091-connected-private-r2-read.md)
 passes actual isolated Auth/RLS → repertoire-file → signed loopback S3 PDF/audio full/ranged/
 HEAD reads. It does not accept hosted R2, client/device output or Drive withdrawal. The
-existing URL remains readable after a same-session choir switch; [090](briefs/090-private-file-ticket-revocation-contract.md)
-now has the owner's 30 September next-online-request refusal policy ([decision #32](../KARARLAR.md)),
-but legacy-v1 denial/client retry implementation still awaits approval. [077](briefs/077-repertoire-mp3-r2-batch-3.md)
+existing URL remained readable after a same-session choir switch before 090.
+[090](briefs/090-private-file-ticket-revocation-contract.md) now has the owner's 30 September
+next-online-request refusal policy ([decision #32](../KARARLAR.md)) and a committed local v2
+implementation (`5f55c48`): synthetic connected repertoire and Android Release old-URL refusal
+pass, but remaining browser/family/concurrency and hosted/device gates keep 090 open.
+[077](briefs/077-repertoire-mp3-r2-batch-3.md)
 remains an exact, unexecuted real-copy approval checkpoint. Neither block changes the
 Android-first critical path or promotes a local test to beta acceptance.
 [092](briefs/092-stale-private-file-ticket-cache.md) additionally prevents late web/WebView
@@ -38,8 +41,9 @@ previously issued URL at the service or replace the Android/device gate.
 [093](briefs/093-android-private-r2-read-integration.md) joins the synthetic local service
 to the native Android Release Auth/catalogue/private-cache/PDF renderer and A/B isolation:
 page 1/40, cache clear and new wrong-choir ticket 403 pass. It is emulator/loopback
-evidence, not hosted R2, physical-phone, Drive cutover or beta acceptance. 090's
-already-issued URL contract and 077's real-copy approval remain separate.
+evidence, not hosted R2, physical-phone, Drive cutover or beta acceptance. 090 later
+added local old-URL refusal; its remaining acceptance and 077's real-copy approval
+remain separate.
 
 ### Controlled execution queue — 24 September 2026
 

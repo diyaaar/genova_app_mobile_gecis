@@ -1,5 +1,20 @@
 # İlerleme indeksi
 
+30 September — [090 private-file next-request revocation](../docs/briefs/090-private-file-ticket-revocation-contract.md)
+is IN PROGRESS; local code/test checkpoint `5f55c48` is committed, not pushed. Five
+file families now use session-bound v2 tickets, a service-only single-snapshot
+authority check and strict v1 GET/HEAD refusal. Disposable PG17 five-family SQL,
+connected local Auth/RLS/Edge/signed loopback S3 repertoire reads and Android API 36
+Release A→B old-URL HEAD 403 pass. Final root `pnpm check` passes 106 files/1066 tests
+and build; mobile TypeScript plus 50 suites/302 tests pass. Synthetic PDF 65,905-byte
+full/range/HEAD and Android page 1/40 pass. Real post-change browser, native stale-v1
+body/audio runtime, other four connected HTTP families and request/revocation
+concurrency remain NOT RUN; hosted DB/Edge/R2/Drive, physical phone, push and beta
+remain separately gated. Short connected runner exits 0; earlier 30-minute fixture
+hold timed out and is not a pass. Task-owned VM/runtime/build outputs were cleaned
+recoverably, 22,561,256 KiB free; unrelated CLI marker remains unstaged. Self-review
+only; no 090 closure or release claim.
+
 29 September — [093 Android connected private-file read](../docs/briefs/093-android-private-r2-read-integration.md),
 source/test `c3e1b28`, is COMPLETE LOCALLY. Actual Android API 36 Release joined synthetic local Auth/PostgREST/RLS/
 PG17, Deno signed loopback S3, Expo private file store and native PDF renderer: exact
@@ -35,19 +50,19 @@ recomputed 69 audio candidates, exact first 20 prior verified journal rows, and 
 non-overlapping rows / 27,472,242 bytes with a 6,468-byte canonical batch SHA-256 recorded in
 077. No Drive body, R2 read/write/token, hosted DB/Edge/flag, device or source ACL action ran.
 The owner must authorize the exact ten-object copy; [090](../docs/briefs/090-private-file-ticket-revocation-contract.md)
-has a selected online policy but still awaits legacy-transition/implementation approval
-before safe activation.
+subsequently received bounded local implementation approval and code, but remains
+open before safe hosted activation.
 
-29 September — [090 private-file ticket revocation contract](../docs/briefs/090-private-file-ticket-revocation-contract.md)
-is an IN-PROGRESS documentation checkpoint, not product acceptance. Source inventory found
+29 September historical decision-only checkpoint — [090 private-file ticket revocation contract](../docs/briefs/090-private-file-ticket-revocation-contract.md)
+was not product acceptance. Source inventory found
 repertoire/assignment one-hour actorless bearer tickets and three actor-bound families with
 family-access rechecks but no selected-session GET/HEAD recheck. This corrects a blanket runbook
 claim. On 30 September the owner selected next-online-request refusal after same-session
 switch or membership/role removal ([decision #32](../KARARLAR.md)). The proposed immediate
-v1 denial and one-time 401 refresh/release order await a separate checkpoint approval;
+v1 denial and one-time 401 refresh/release order then awaited a separate checkpoint approval;
 prior 021/053 intentionally permitted the expiry window. Offline bytes cannot be remotely
 erased. No code, migration, runtime, hosted copy/activation or device test ran in this
-decision-record step; 090 remains IN PROGRESS.
+decision-record step; 090 remains IN PROGRESS after its later local implementation.
 
 29 September — [089 real two-choir profile review web acceptance](../docs/briefs/089-real-profile-review-web-acceptance.md),
 scope `6db0144`, product/test `a8df751`, complete locally. Actual installed Chrome 154/Next/
