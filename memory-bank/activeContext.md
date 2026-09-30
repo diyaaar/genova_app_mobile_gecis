@@ -1,6 +1,6 @@
 # Active context
 
-Updated 29 September 2026. [Handoff](../docs/agent-handoff.md) is the short entry point;
+Updated 30 September 2026. [Handoff](../docs/agent-handoff.md) is the short entry point;
 [WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md) and
 [delivery plan](../docs/mobil-teslim-plani.md) own the queue, full objective and resource controls.
 Historical detail is in briefs/[progress](progress.md); these indexes do not upgrade evidence.
@@ -22,7 +22,8 @@ beta. 090 and 077 retain their separate owner/external gates.
 code/test `b0fe523`, reproduces late A URL publication after tenant clear, then rejects
 pending responses for six web/WebView file families. Focused 16, root 103/1049/build PASS;
 no new native/browser/service/provider acceptance. It cannot revoke a URL already issued;
-090 remains the owner decision. Generated 092 build/coverage moved recoverably to Trash,
+090 remains open despite the 30 September policy choice. Generated 092 build/coverage moved
+recoverably to Trash,
 free 30,925,652 KiB; only unrelated CLI marker dirty.
 
 [091 connected private repertoire read](../docs/briefs/091-connected-private-r2-read.md),
@@ -50,7 +51,9 @@ UX. Direct/service writers, private files, full device/product flow and hosted/p
 remain open; push is not outbox/provider acceptance. WF-013 step 5 stays PARTIAL. Active
 [090](../docs/briefs/090-private-file-ticket-revocation-contract.md) is partial: repertoire and
 assignment one-hour tickets are actorless bearer URLs; three other families recheck actor but
-not selected session. Owner's online next-request revocation choice is pending before code.
+not selected session. Owner selected next-online-request refusal on 30 September
+([decision #32](../KARARLAR.md)); immediate v1 denial, one-time 401 recovery and release
+checkpoint remain proposed, not approved for implementation. No product or hosted action ran.
 [077](../docs/briefs/077-repertoire-mp3-r2-batch-3.md) has an exact next-ten-MP3 /
 27,472,242-byte read-only approval packet; no current source/provider copy acceptance.
 Earlier 078–086 evidence remains authoritative in linked briefs, not erased or reclassified.

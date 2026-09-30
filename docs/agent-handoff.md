@@ -1,6 +1,7 @@
 # Genova — agent handoff
 
-Updated 29 September 2026 after [093](briefs/093-android-private-r2-read-integration.md).
+Updated 30 September 2026 after the [090](briefs/090-private-file-ticket-revocation-contract.md)
+policy choice; latest local product acceptance remains [093](briefs/093-android-private-r2-read-integration.md).
 This is a short current-state index. Detailed historical acceptance remains in briefs and
 [progress](../memory-bank/progress.md), not duplicated here. Verify recorded state before reuse.
 
@@ -22,7 +23,8 @@ mobile 50/299, root 103/1049/build and Android Release pass. [Visual and service
 evidence](evidence/093-android-private-r2-read/README.md). Generated runtime/build
 were cleaned; original source counts/schema unchanged. This is synthetic emulator
 evidence, **not** hosted R2, physical-phone, Drive cutover or beta acceptance. Previously
-issued A URL remains usable after switch, so 090 revocation choice stays open.
+issued A URL remains usable after switch; decision #32 now selects next-online-request refusal,
+but 090 implementation and legacy-v1 transition are still open.
 
 Owner resumes local implementation of [WF-013](briefs/WF-013-multi-tenant-remediation-plan.md),
 with operator-assisted v1 choir creation confirmed. [WF-012 audit](briefs/WF-012-commercial-multi-tenant-audit.md)
@@ -54,7 +56,10 @@ mail UX. Other direct/service writers do not join these RPC locks; push/provider
 device layers NOT RUN. WF-013 step 5 remains PARTIAL. Active
 [090](briefs/090-private-file-ticket-revocation-contract.md) is partial: repertoire/assignment
 one-hour tickets are actorless bearer URLs; three other families recheck actor access but not
-selected session. Owner's next-online-request revocation choice is pending before code.
+selected session. On 30 September the owner chose rejection on the next online GET/HEAD after
+choir switch or membership/role removal ([decision #32](../KARARLAR.md)). The recommended
+immediate v1 denial, one-time 401 recovery and release checkpoint await explicit approval;
+no product/hosted change has followed this decision.
 
 Earlier local acceptance is preserved: [078](briefs/078-active-membership-revocation.md) active
 authority, [079](briefs/079-message-status-rpc-privileges.md) creator-independent grants,

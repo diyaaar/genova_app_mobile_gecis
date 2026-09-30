@@ -35,16 +35,19 @@ recomputed 69 audio candidates, exact first 20 prior verified journal rows, and 
 non-overlapping rows / 27,472,242 bytes with a 6,468-byte canonical batch SHA-256 recorded in
 077. No Drive body, R2 read/write/token, hosted DB/Edge/flag, device or source ACL action ran.
 The owner must authorize the exact ten-object copy; [090](../docs/briefs/090-private-file-ticket-revocation-contract.md)
-separately awaits the online issued-ticket revocation decision before safe activation.
+has a selected online policy but still awaits legacy-transition/implementation approval
+before safe activation.
 
 29 September — [090 private-file ticket revocation contract](../docs/briefs/090-private-file-ticket-revocation-contract.md)
 is an IN-PROGRESS documentation checkpoint, not product acceptance. Source inventory found
 repertoire/assignment one-hour actorless bearer tickets and three actor-bound families with
 family-access rechecks but no selected-session GET/HEAD recheck. This corrects a blanket runbook
-claim. Owner was asked whether previously issued links must be refused on the next online request
-after switch/revocation; prior 021/053 intentionally permitted the expiry window. Offline bytes
-cannot be remotely erased. No code, migration, runtime, hosted copy/activation or device test
-ran; implementation waits for the contract choice and a bounded amended brief.
+claim. On 30 September the owner selected next-online-request refusal after same-session
+switch or membership/role removal ([decision #32](../KARARLAR.md)). The proposed immediate
+v1 denial and one-time 401 refresh/release order await a separate checkpoint approval;
+prior 021/053 intentionally permitted the expiry window. Offline bytes cannot be remotely
+erased. No code, migration, runtime, hosted copy/activation or device test ran in this
+decision-record step; 090 remains IN PROGRESS.
 
 29 September — [089 real two-choir profile review web acceptance](../docs/briefs/089-real-profile-review-web-acceptance.md),
 scope `6db0144`, product/test `a8df751`, complete locally. Actual installed Chrome 154/Next/

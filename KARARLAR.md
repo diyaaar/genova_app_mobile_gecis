@@ -13,6 +13,12 @@ yeni karara açıkça bağla. Eski tahminler güncel doğrulama değildir.
 | 30 | **First release sells choir plans only: first five members free, additional members billable; individual sales deferred** | Owner accepted both recommendations. The free tier is member-limited, not an approved time-limited trial. Price, billing interval and billable-member lifecycle still need definition before enforcement. Optional choir feature entitlements may be added when specified; do not invent tiers or remove existing functionality. Preserve #10's manual invoicing for v1 unless a checkout is separately selected. | 20 Sep 2026 |
 | 31 | **Web onboarding and commercial administration; mobile accesses the choir service** | Owner prefers web acceptance of terms and web payments. Mobile still exposes privacy/terms and an account-deletion entry; store disclosures and review remain required. No generic external-payment exemption is claimed. Region/business-model assessment precedes purchase links or individual digital sales. | 20 Sep 2026 |
 
+## Private-file online revocation — 30 September 2026
+
+| # | Decision | Rationale / boundary | Date |
+|---|---|---|---|
+| 32 | **Reject previously issued private-file URLs on the next online GET/HEAD after same-session choir switch or membership/role removal** | Owner explicitly chose next-request refusal across the five private file families; the prior one-hour actorless repertoire/assignment behavior is historical, not the target contract. Already-streaming or offline bytes cannot be recalled. Legacy v1 denial, client retry and release order are proposed in [090](docs/briefs/090-private-file-ticket-revocation-contract.md) but still require the next implementation checkpoint approval; this decision alone authorizes no code, migration, provider or hosted change. | 30 Sep 2026 |
+
 | # | Karar | Gerekçe | Tarih |
 |---|---|---|---|
 | 1 | Sıralama **değere** göre, kolaydan zora değil | WebView'ın gerçekten kötü olduğu ekranlar önce. Duyuruları native yapmak kullanıcıya hiçbir şey kazandırmıyor. | 2 Eyl |

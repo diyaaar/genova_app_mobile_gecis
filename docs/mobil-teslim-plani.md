@@ -28,7 +28,8 @@ do not manufacture a date or add unrelated features while awaiting a critical de
 passes actual isolated Auth/RLS → repertoire-file → signed loopback S3 PDF/audio full/ranged/
 HEAD reads. It does not accept hosted R2, client/device output or Drive withdrawal. The
 existing URL remains readable after a same-session choir switch; [090](briefs/090-private-file-ticket-revocation-contract.md)
-needs the owner's online revocation choice. [077](briefs/077-repertoire-mp3-r2-batch-3.md)
+now has the owner's 30 September next-online-request refusal policy ([decision #32](../KARARLAR.md)),
+but legacy-v1 denial/client retry implementation still awaits approval. [077](briefs/077-repertoire-mp3-r2-batch-3.md)
 remains an exact, unexecuted real-copy approval checkpoint. Neither block changes the
 Android-first critical path or promotes a local test to beta acceptance.
 [092](briefs/092-stale-private-file-ticket-cache.md) additionally prevents late web/WebView
