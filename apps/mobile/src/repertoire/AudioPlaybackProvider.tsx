@@ -79,6 +79,8 @@ export function AudioPlaybackProvider({
   const [audioSource, setAudioSource] = useState<AudioSource>(null);
   const player = useAudioPlayer(audioSource, { updateInterval: 250 });
   const status = useAudioPlayerStatus(player);
+  const [nativeFailure, setNativeFailure] = useState<{ source: AudioSource; error: string } | null>(null);
+  const bodyError = status.error ?? (nativeFailure?.source === audioSource ? nativeFailure.error : null);
   const [ticketExpiresAt, setTicketExpiresAt] = useState<number | null>(null);
   const [loadingTicket, setLoadingTicket] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -92,6 +94,17 @@ export function AudioPlaybackProvider({
   const bodyRecoveryUsed = useRef(false);
   playerRef.current = player;
   hasAudioSource.current = audioSource !== null;
+
+  useEffect(() => {
+    // Expo Android emits error once, then a normal tick with error:null. React can
+    // batch those events; retain the failure for this source rather than lose it.
+    const subscription = player.addListener('playbackStatusUpdate', event => {
+      if (event.error && audioSource && playerRef.current === player) {
+        setNativeFailure({ source: audioSource, error: event.error });
+      }
+    });
+    return () => subscription.remove();
+  }, [audioSource, player]);
 
   const clearPlaybackLoadTimer = useCallback(() => {
     if (playbackLoadTimer.current) clearTimeout(playbackLoadTimer.current);
@@ -122,6 +135,7 @@ export function AudioPlaybackProvider({
     setSession(null);
     setSelectedIndex(0);
     setAudioSource(null);
+    setNativeFailure(null);
     setTicketExpiresAt(null);
     setLoadingTicket(false);
     setError(null);
@@ -143,6 +157,7 @@ export function AudioPlaybackProvider({
     setError(null);
     pendingPlayback.current = null;
     setAudioSource(null);
+    setNativeFailure(null);
     if (!track.supported) {
       requestVersion.current += 1;
       gatewayRef.current?.clear();
@@ -202,14 +217,19 @@ export function AudioPlaybackProvider({
     const resumeAt = clampAudioPosition(pending.resumeAt, status.duration);
     const resume = async () => {
       if (resumeAt > 0) await player.seekTo(resumeAt);
+      if (pending.requestVersion !== requestVersion.current || playerRef.current !== player) return;
       if (pending.autoplay) player.play();
     };
-    void resume().catch(() => setError('Ses kaldığı yerden başlatılamadı.'));
+    void resume().catch(() => {
+      if (pending.requestVersion === requestVersion.current && playerRef.current === player) {
+        setError('Ses kaldığı yerden başlatılamadı.');
+      }
+    });
   }, [player, status.duration, status.isLoaded, ticketExpiresAt]);
 
   useEffect(() => {
-    if (status.isLoaded || status.playing || status.error) clearPlaybackLoadTimer();
-    if (!status.error || !audioSource || ticketExpiresAt === null || !session) return;
+    if (status.isLoaded || status.playing || bodyError) clearPlaybackLoadTimer();
+    if (!bodyError || !audioSource || ticketExpiresAt === null || !session) return;
     if (bodyRecoveryUsed.current) {
       setError('Ses dosyası oynatılamadı. Yeniden deneyin.');
       return;
@@ -234,6 +254,7 @@ export function AudioPlaybackProvider({
         getGateway().clear();
         pendingPlayback.current = null;
         setAudioSource(null);
+        setNativeFailure(null);
         setTicketExpiresAt(null);
         setError('Ses dosyasına erişim yetkisi sona erdi.');
         return;
@@ -248,8 +269,8 @@ export function AudioPlaybackProvider({
       });
     };
     void recover().catch(() => setError('Ses dosyası oynatılamadı. Yeniden deneyin.'));
-  }, [audioSource, clearPlaybackLoadTimer, getGateway, loadTrackForSession, probePrivateSource,
-    selectedIndex, session, status.currentTime, status.error, status.isLoaded, status.playing,
+  }, [audioSource, bodyError, clearPlaybackLoadTimer, getGateway, loadTrackForSession, probePrivateSource,
+    selectedIndex, session, status.currentTime, status.isLoaded, status.playing,
     ticketExpiresAt]);
 
   const selectedTrack = session?.tracks[selectedIndex] ?? null;

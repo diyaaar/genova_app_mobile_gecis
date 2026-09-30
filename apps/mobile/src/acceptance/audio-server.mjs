@@ -71,6 +71,17 @@ const server = createServer((request, response) => {
     response.writeHead(403).end('missing synthetic ticket');
     return;
   }
+  // Explicit test fault, not a cryptographic v1 ticket or an Auth decision.
+  if (url.searchParams.get('ticket') === 'synthetic-090-1') {
+    response.writeHead(401, { 'Cache-Control': 'no-store' }).end();
+    console.log(`090_AUDIO_FAULT method=${request.method} status=401`);
+    return;
+  }
+  if (url.searchParams.get('ticket') === 'synthetic-090-denied') {
+    response.writeHead(403, { 'Cache-Control': 'no-store' }).end();
+    console.log(`090_AUDIO_DENIED method=${request.method} status=403`);
+    return;
+  }
   const target = url.pathname.endsWith('/tone.wav')
     ? { bytes: tone, contentType: 'audio/wav' }
     : url.pathname.endsWith('/corrupt.wav')

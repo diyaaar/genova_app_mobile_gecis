@@ -32,12 +32,17 @@ jest.mock('@shopify/react-native-skia', () => {
 });
 
 jest.mock('expo-audio', () => {
+  const listeners = new Set<(mockEvent: Record<string, unknown>) => void>();
   const player = {
     play: jest.fn(),
     pause: jest.fn(),
     replace: jest.fn(),
     seekTo: jest.fn(async () => {}),
     setPlaybackRate: jest.fn(),
+    addListener: jest.fn((_event: string, callback: (mockEvent: Record<string, unknown>) => void) => {
+      listeners.add(callback);
+      return { remove: () => listeners.delete(callback) };
+    }),
   };
   const status = {
     id: 'test-player',
@@ -54,6 +59,9 @@ jest.mock('expo-audio', () => {
     useAudioPlayerStatus: jest.fn(() => status),
     __mockPlayer: player,
     __mockStatus: status,
+    __emitStatus: (event: Record<string, unknown>) => {
+      for (const callback of listeners) callback(event);
+    },
   };
 });
 

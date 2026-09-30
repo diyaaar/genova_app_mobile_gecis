@@ -9,12 +9,14 @@ import type { NativeAudioSourceGateway } from '../audio-source-gateway';
 
 const audioMock = jest.requireMock('expo-audio') as {
   useAudioPlayer: jest.Mock;
+  __emitStatus: (event: Record<string, unknown>) => void;
   __mockPlayer: {
     play: jest.Mock;
     pause: jest.Mock;
     replace: jest.Mock;
     seekTo: jest.Mock;
     setPlaybackRate: jest.Mock;
+    addListener: jest.Mock;
   };
   __mockStatus: {
     currentTime: number;
@@ -234,6 +236,92 @@ describe('AudioPlayerScreen', () => {
     expect(await screen.findByText('Ses dosyasına erişim yetkisi sona erdi.')).toBeTruthy();
     expect(denied.open).toHaveBeenCalledTimes(1);
     expect(denied.clear).toHaveBeenCalled();
+  });
+
+  it('retains a native error event even when the next status tick clears error before render', async () => {
+    const source = gateway(jest.fn()
+      .mockResolvedValueOnce({ url: 'https://project.invalid/old', expiresAt: 9_999_999_999_999 })
+      .mockResolvedValueOnce({ url: 'https://project.invalid/fresh', expiresAt: 9_999_999_999_999 }));
+    const probe = jest.fn(async () => new Response(null, { status: 401 }));
+    await render(playerElement(source, jest.fn(), probe));
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(1));
+    await act(async () => {
+      audioMock.__emitStatus({ error: 'Source error', currentTime: 0, playing: false });
+      audioMock.__emitStatus({ error: null, currentTime: 0, playing: false });
+    });
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(2));
+    expect(probe).toHaveBeenCalledTimes(1);
+    expect(probe).toHaveBeenCalledWith('https://project.invalid/old');
+  });
+
+  it('fails closed on a transient native 403 without issuing another ticket', async () => {
+    const source = gateway(async () => ({
+      url: 'https://project.invalid/denied', expiresAt: 9_999_999_999_999,
+    }));
+    const probe = jest.fn(async () => new Response(null, { status: 403 }));
+    await render(playerElement(source, jest.fn(), probe));
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(1));
+    await act(async () => {
+      audioMock.__emitStatus({ error: 'Source denied' });
+      audioMock.__emitStatus({ error: null });
+    });
+    expect(await screen.findByText('Ses dosyasına erişim yetkisi sona erdi.')).toBeTruthy();
+    expect(source.open).toHaveBeenCalledTimes(1);
+    expect(probe).toHaveBeenCalledTimes(1);
+    expect(audioMock.useAudioPlayer).toHaveBeenLastCalledWith(null, { updateInterval: 250 });
+  });
+
+  it('does not resume from an async seek completing after tenant clear', async () => {
+    const source = gateway(jest.fn()
+      .mockResolvedValueOnce({ url: 'https://project.invalid/expired', expiresAt: 1 })
+      .mockResolvedValueOnce({ url: 'https://project.invalid/fresh', expiresAt: 9_999_999_999_999 }));
+    const view = await render(playerElement(source));
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(1));
+    Object.assign(audioMock.__mockStatus, { isLoaded: true, duration: 90, currentTime: 35 });
+    await view.rerender(playerElement(source));
+    let finishSeek!: () => void;
+    audioMock.__mockPlayer.seekTo.mockImplementationOnce(() => new Promise<void>(resolve => {
+      finishSeek = resolve;
+    }));
+    await fireEvent.press(screen.getByTestId('audio-play-pause'));
+    await waitFor(() => expect(audioMock.__mockPlayer.seekTo).toHaveBeenCalledWith(35));
+    await act(async () => { await clearTenantCaches(); });
+    await act(async () => { finishSeek(); });
+    expect(audioMock.__mockPlayer.play).not.toHaveBeenCalled();
+    expect(screen.queryByTestId('audio-player-screen')).toBeNull();
+  });
+
+  it('stops after a second native body failure rather than looping new tickets', async () => {
+    const source = gateway(jest.fn()
+      .mockResolvedValueOnce({ url: 'https://project.invalid/old', expiresAt: 9_999_999_999_999 })
+      .mockResolvedValueOnce({ url: 'https://project.invalid/fresh', expiresAt: 9_999_999_999_999 }));
+    const probe = jest.fn(async () => new Response(null, { status: 401 }));
+    await render(playerElement(source, jest.fn(), probe));
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(1));
+    await act(async () => { audioMock.__emitStatus({ error: 'First body failure' }); });
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(audioMock.useAudioPlayer).toHaveBeenLastCalledWith({
+      uri: 'https://project.invalid/fresh', name: 'Soprano',
+    }, { updateInterval: 250 }));
+    await act(async () => { audioMock.__emitStatus({ error: 'Second body failure' }); });
+    expect(await screen.findByText('Ses dosyası oynatılamadı. Yeniden deneyin.')).toBeTruthy();
+    expect(source.open).toHaveBeenCalledTimes(2);
+    expect(probe).toHaveBeenCalledTimes(1);
+  });
+
+  it('ignores a captured old-source native event after tenant clear', async () => {
+    const source = gateway(async () => ({
+      url: 'https://project.invalid/old', expiresAt: 9_999_999_999_999,
+    }));
+    const probe = jest.fn(async () => new Response(null, { status: 401 }));
+    await render(playerElement(source, jest.fn(), probe));
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(1));
+    const oldListener = audioMock.__mockPlayer.addListener.mock.calls.at(-1)![1];
+    await act(async () => { await clearTenantCaches(); });
+    await act(async () => { oldListener({ error: 'Late old-source error' }); });
+    expect(probe).not.toHaveBeenCalled();
+    expect(source.open).toHaveBeenCalledTimes(1);
+    expect(screen.queryByTestId('audio-player-screen')).toBeNull();
   });
 
   it('turns a missing native error event into a bounded visible load failure', async () => {
