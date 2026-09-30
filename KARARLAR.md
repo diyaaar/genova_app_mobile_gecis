@@ -17,7 +17,7 @@ yeni karara açıkça bağla. Eski tahminler güncel doğrulama değildir.
 
 | # | Decision | Rationale / boundary | Date |
 |---|---|---|---|
-| 32 | **Reject previously issued private-file URLs on the next online GET/HEAD after same-session choir switch or membership/role removal** | Owner explicitly chose next-request refusal across the five private file families; the prior one-hour actorless repertoire/assignment behavior is historical, not the target contract. Already-streaming or offline bytes cannot be recalled. Legacy v1 denial, client retry and release order are proposed in [090](docs/briefs/090-private-file-ticket-revocation-contract.md) but still require the next implementation checkpoint approval; this decision alone authorizes no code, migration, provider or hosted change. | 30 Sep 2026 |
+| 32 | **Reject previously issued private-file URLs on the next online GET/HEAD after same-session choir switch or membership/role removal** | Owner explicitly chose next-request refusal across the five private file families; the prior one-hour actorless repertoire/assignment behavior is historical, not the target contract. Already-streaming or offline bytes cannot be recalled. This decision alone authorized no code or hosted change; the owner subsequently approved the bounded local v2 implementation and tests recorded in [090](docs/briefs/090-private-file-ticket-revocation-contract.md). Hosted migration, Edge rollout, provider and release order remain separately gated. | 30 Sep 2026 |
 
 | # | Karar | Gerekçe | Tarih |
 |---|---|---|---|

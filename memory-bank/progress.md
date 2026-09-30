@@ -1,5 +1,17 @@
 # İlerleme indeksi
 
+30 September follow-up — [090 SQL concurrency boundary](../docs/briefs/090-private-file-ticket-revocation-contract.md),
+test-only `70fd23e`, PASS locally on a disposable PG17 clone. The corrected 090
+five-family matrix exits 0 without disabling the 060 private-avatar guard. A
+second database session updates selected choir, chef role and active membership:
+before commit the old state remains visible, while a fresh post-commit authority
+statement refuses access. Root `pnpm check` passes 106/1066/build. Native local
+`postgres` trigger-owner permissions required target-only SELECT grants; failed
+setup attempts remain recorded. No four-family HTTP/provider, in-flight HTTP,
+browser, native stale-v1/audio, hosted or device acceptance is inferred. The
+17 MB clone was dropped, 068 scoped counts remain `28/1/29/9/79`, build/coverage
+were recoverably trashed, and 21,890,392 KiB remained free.
+
 30 September — [090 private-file next-request revocation](../docs/briefs/090-private-file-ticket-revocation-contract.md)
 is IN PROGRESS; local code/test checkpoint `5f55c48` is committed, not pushed. Five
 file families now use session-bound v2 tickets, a service-only single-snapshot

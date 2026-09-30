@@ -276,7 +276,8 @@ checks and bounded body refresh.
 | Full source gates | PASS | Root `pnpm check`: lint, TS, 106/1066 Vitest, service-worker syntax, Next production build. Mobile `npx tsc --noEmit && npm test -- --runInBand`: 50/302. Focused tests and `git diff --check` pass. |
 | Real web browser/WebView stale URL and body recovery | NOT RUN | Hook/component tests pass, but no post-change installed Chrome/WebView with actual Auth/Edge. Do not promote build/unit results to browser acceptance. |
 | Android stale-v1 body 401 automatic retry and native audio seek/resume runtime | NOT RUN | Jest covers bounded PDF/audio recovery, but Android Release exercised current v2 PDF and post-switch 403 only. |
-| All five families' actual HTTP GET/HEAD with provider and concurrency boundary | NOT RUN | Five-family SQL, Edge typecheck and generic handler tests pass; connected HTTP/provider only covers repertoire. No overlapping request/revocation transaction test or hosted check. |
+| Two-session SQL authorization at switch/role/member commit boundaries | PASS locally | 30 September follow-up: `supabase/tests/090_private_file_ticket_concurrency.sql` on a disposable native PG17 clone. An uncommitted peer change leaves the prior snapshot readable; a new statement after commit refuses it. This is SQL authority evidence, not an overlapping HTTP request or provider test. |
+| All five families' actual HTTP GET/HEAD with provider and in-flight boundary | NOT RUN | Five-family SQL, Edge typecheck and generic handler tests pass; connected HTTP/provider only covers repertoire. Four other connected readers and a provider request overlapping commit remain unrun. |
 | Hosted DB/Edge, sibling site, real R2/Drive, push/deploy and physical pilot | NOT RUN | Separate current backup/restore, staged release and owner authority required. |
 
 Failed attempts remain failures: first disposable migration chain lacked historical
@@ -321,10 +322,45 @@ probe or additional HTTP-family probe was run; neither gets a PASS. The exact
 disposable clone was dropped, and its absence verified. Original 068 restore
 remained untouched; free space after cleanup was 22,566,876 KiB.
 
-Next bounded action: derive the complete ordered prerequisite closure from each
+At that failed checkpoint, the next bounded action was to derive the complete ordered prerequisite closure from each
 migration preflight **before** starting another disposable clone (at minimum
 041–045, historical review-audio, 053/057–060, 090), then run the existing 090
-SQL matrix first and a two-session post-commit versus in-flight authorization
+SQL matrix first and a two-session pre-/post-commit authorization
 test. Only after that re-establish Auth/Edge/S3 to exercise the four remaining
 HTTP families. Do not treat a pre-commit snapshot read as a violation of the
 chosen post-commit next-request contract.
+
+### 30 September follow-up: two-session SQL boundary, PASS locally
+
+The complete preflight-derived chain on a new 15 MB disposable clone was
+041→045, 053, 057, historical `20260516_assignment_review_audio.sql`, 058→060,
+then 090. All applied in order. The first 090 SQL-matrix attempt failed because
+the retained native restore's `genova_003` trigger owner `postgres` lacks the
+superuser privileges it has in the Supabase stack; a **target-only** SELECT grant
+on public tables restored that test prerequisite. The next attempt exposed an
+incorrect fixture writer: 060 intentionally refuses a private avatar alias from
+the native local administrator. The test now performs only that fixture update
+under `postgres` using `SET LOCAL ROLE`, keeping the 060 trigger enabled. The
+five-family matrix then exited 0 with ROLLBACK; neither failed attempt counts as
+acceptance or a production-code defect.
+
+New `supabase/tests/090_private_file_ticket_concurrency.sql` is guarded to the
+exact disposable database name and uses a second `dblink` session. Its SQL
+authority checks pass for A→B selected-choir switch, A chef-role removal and
+A membership deactivation: before peer COMMIT the old committed state remains
+visible; a fresh statement after COMMIT refuses the same signed-ticket identity.
+The script does **not** model a provider stream already in flight, prove lock
+ordering for HTTP, or exercise all five Edge readers. `psql -X -v ON_ERROR_STOP=1`
+exited 0. Test-only code commit `70fd23e`; no product migration or reader code
+changed. Final `pnpm check` passes lint, TypeScript, 106 files/1066 tests,
+service-worker syntax and Next build. Mobile tests were not rerun because no
+mobile source changed after the preceding 090 acceptance.
+
+The 17 MB disposable clone was dropped and its absence verified. The retained
+068 restore's five scoped counts remained `28/1/29/9/79`; this is not an
+all-schema digest. The generated `.next` (477,576 KiB) and coverage (352 KiB)
+were moved to exact recoverable `genova-090-concurrency-20260930-*` Trash targets.
+Final free space was 21,890,392 KiB, above the 10 GiB floor; the unrelated CLI
+marker remains unstaged. Next ready local evidence is the four non-repertoire
+HTTP-family reads against real local Auth/Edge/PostgREST and signed loopback S3;
+browser/WebView and native stale-v1/audio runtime remain separate NOT RUN gates.

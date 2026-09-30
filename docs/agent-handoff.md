@@ -22,9 +22,11 @@ refresh/denial purge, native PDF/audio recovery and exact offline boundary are i
 Disposable PG17 five-family SQL matrix, real local Auth/RLS/Edge/signed loopback S3
 repertoire HTTP and Android API 36 Release A PDF page 1/40 → B cache clear/new and
 old A URL 403 pass. Root 106/1066/build, mobile 50/302, five Deno checks pass.
-090 remains IN PROGRESS: real web browser, native stale-v1/audio runtime, other four
-families' connected HTTP and concurrent request/revocation boundary are NOT RUN.
-Next bounded local action is to close those evidence gaps; hosted backup/rollout
+090 remains IN PROGRESS: the 30 September two-session SQL commit-boundary test
+`70fd23e` passes on a disposable PG17 clone, but real web browser, native
+stale-v1/audio runtime, other four families' connected HTTP and an in-flight
+HTTP/provider boundary are NOT RUN. `pnpm check` still passes 106/1066/build.
+Next bounded local action is the four remaining connected readers; hosted backup/rollout
 requires a separate checkpoint. The 30-minute fixture hold timed out after Android
 PASS traces; a final short connected runner exited 0. See 090 for exact limits.
 
@@ -84,13 +86,13 @@ F12 creator/history/CI/rotation and legacy account risks remain open; file modes
 
 ## Ownership / resources / release authority
 
-After the 090 documentation commit, only unrelated `supabase/.temp/cli-latest` should
+After the 090 SQL-boundary documentation commit, only unrelated `supabase/.temp/cli-latest` should
 remain unstaged; verify before reuse.
 Stage owned paths only.
 089 and 091 services/volumes/tunnels/VMs/profiles/data/contexts and secret-bearing runtimes removed;
 latest 090 runtime/Android/Next/coverage recoverably in named Trash targets. Free
-22,561,256 KiB after 090 VM removal; no task listeners or adb device, default
-Docker context and 068 source row-count guard preserved. Original
+21,890,392 KiB after the SQL test clone/build cleanup; no task listeners or adb
+device, default Docker context and 068 source row-count guard preserved. Original
 `genova_068_test_restore`, retained 068 backup,
 required private copy manifests/journals and dependencies are preserved; never purge them as caches.
 One result/one heavy process, >=10 GiB floor, two-failure causal reassessment; no blind rebuilds.

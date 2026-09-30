@@ -14,10 +14,12 @@ and one service-only SQL authority check per GET/HEAD; v1 fails 401. Disposable 
 five-family SQL matrix, real local Auth/RLS/Edge/signed loopback S3 repertoire HTTP,
 and Android API 36 Release A PDF page 1/40 → B old A URL 403/cache clear/B-only
 catalogue pass. Root 106/1066/build and mobile 50/302 PASS. Real web browser,
-native stale-v1/audio runtime, four other families' connected HTTP and concurrent
-request/revocation are NOT RUN. Hosted DB/Edge/R2/Drive/phone/push/deploy remain
+native stale-v1/audio runtime, four other families' connected HTTP and in-flight
+HTTP/provider revocation are NOT RUN. A later two-session PG17 pre-/post-commit
+authority test (`70fd23e`) passes locally; it does not close those runtime gaps.
+Hosted DB/Edge/R2/Drive/phone/push/deploy remain
 separately gated; do not treat this as beta. Next bounded local action is to close
-the remaining 090 acceptance matrix before proposing a hosted release checkpoint.
+the remaining 090 connected HTTP and client acceptance before proposing a hosted release checkpoint.
 
 [093 Android connected private-file read](../docs/briefs/093-android-private-r2-read-integration.md),
 source/test `c3e1b28`,
@@ -71,11 +73,11 @@ Earlier 078–086 evidence remains authoritative in linked briefs, not erased or
 
 ## Exact ownership / resources
 
-After the 090 documentation commit, no unfinished product diff is expected; verify. Unrelated
+After the 090 SQL-boundary documentation commit, no unfinished product diff is expected; verify. Unrelated
 `supabase/.temp/cli-latest` must stay unstaged.
 089/091/090 containers/volumes/tunnels/VMs/profiles/data/contexts/secret runtimes removed.
-Latest 090 runtime/Android/Next/coverage recoverably trashed. Free 22,561,256 KiB
-after 090 VM removal, above floor; Trash retains blocks. No task listeners or adb
+Latest 090 runtime/Android/Next/coverage recoverably trashed. Free 21,890,392 KiB
+after the SQL test clone/build cleanup, above floor; Trash retains blocks. No task listeners or adb
 device; default context and original 068 source row-count guard preserved.
 Keep original `genova_068_test_restore`,
 retained 068 backup and private copy evidence/dependencies; do not rebuild deleted environments
