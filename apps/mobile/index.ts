@@ -1,6 +1,8 @@
 import { registerRootComponent } from 'expo';
 
-const App = process.env.EXPO_PUBLIC_GENOVA_090_AUDIO_ACCEPTANCE === '1'
+const App = process.env.EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE === '1'
+  ? require('./src/acceptance/090_native-pdf-runtime').default
+  : process.env.EXPO_PUBLIC_GENOVA_090_AUDIO_ACCEPTANCE === '1'
   ? require('./src/acceptance/090_audio-runtime').default
   : process.env.EXPO_PUBLIC_GENOVA_093_ACCEPTANCE === '1'
   ? require('./src/acceptance/093_android-private-r2').default

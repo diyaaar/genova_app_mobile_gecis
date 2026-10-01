@@ -58,4 +58,19 @@ describe('021 Android loopback network guard', () => {
       expect(() => requireGuardedLoopbackEnvironment({ ...accepted, ...patch })).toThrow();
     }
   });
+
+  it('allows 090 PDF only with isolated exact local Auth and explicit entry', () => {
+    const accepted = { GENOVA_090_ANDROID_PDF_LOOPBACK: '1',
+      EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE: '1', EXPO_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54491' };
+    expect(requireGuardedLoopbackEnvironment(accepted)).toBe(true);
+    for (const patch of [
+      { EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE: '0' },
+      { EXPO_PUBLIC_SUPABASE_URL: 'https://example.com' },
+      { EXPO_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54491/?unexpected=1' },
+      { EXPO_PUBLIC_GENOVA_093_ACCEPTANCE: '1' },
+      { EXPO_PUBLIC_GENOVA_090_AUDIO_ACCEPTANCE: '1' },
+      { GENOVA_090_ANDROID_AUDIO_LOOPBACK: '1' },
+      { GENOVA_093_ANDROID_LOOPBACK: '1' }, { GENOVA_021_ANDROID_LOOPBACK: '1' },
+    ]) expect(() => requireGuardedLoopbackEnvironment({ ...accepted, ...patch })).toThrow();
+  });
 });

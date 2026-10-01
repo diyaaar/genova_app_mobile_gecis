@@ -16,6 +16,17 @@ const RESOURCE_XML = `<?xml version="1.0" encoding="utf-8"?>
 `;
 
 function requireGuardedLoopbackEnvironment(environment = process.env) {
+  if (environment.GENOVA_090_ANDROID_PDF_LOOPBACK === '1') {
+    if (environment.EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE !== '1' ||
+        environment.EXPO_PUBLIC_SUPABASE_URL !== 'http://127.0.0.1:54491' ||
+        environment.EXPO_PUBLIC_GENOVA_093_ACCEPTANCE === '1' ||
+        environment.EXPO_PUBLIC_GENOVA_090_AUDIO_ACCEPTANCE === '1' ||
+        environment.GENOVA_090_ANDROID_AUDIO_LOOPBACK === '1' ||
+        environment[ACCEPTANCE_FLAG] === '1' || environment[R2_ACCEPTANCE_FLAG] === '1') {
+      throw new Error('090 PDF requires explicit isolated local Auth loopback flags.');
+    }
+    return true;
+  }
   if (environment.GENOVA_090_ANDROID_AUDIO_LOOPBACK === '1') {
     if (environment.EXPO_PUBLIC_GENOVA_090_AUDIO_ACCEPTANCE !== '1' ||
         environment.EXPO_PUBLIC_GENOVA_026_ACCEPTANCE !== '1' ||

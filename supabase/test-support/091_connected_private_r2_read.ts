@@ -38,6 +38,11 @@ const androidFixturePath = process.env.GENOVA_093_ANDROID_FIXTURE_PATH
 if (androidFixturePath) {
   assert.equal(androidFixturePath, resolve('spike/093-runtime/.093-android-fixture.json'));
 }
+const nativePdfRecovery = process.env.GENOVA_090_ANDROID_PDF_RECOVERY === '1';
+if (nativePdfRecovery) assert.ok(androidFixturePath, '090 PDF requires the explicit owned runtime hold');
+let oneUseFixture: string | null = null;
+let fixtureConsumed = false;
+const nativeReads: { method: string; status: number; providerDelta: number }[] = [];
 const ids = {
   choirA: randomUUID(), choirB: randomUUID(), songA: randomUUID(), songB: randomUUID(),
   fileA: randomUUID(), fileB: randomUUID(), memberA: randomUUID(), memberB: randomUUID(),
@@ -59,6 +64,32 @@ let providerHits = 0;
 const provider = createServer((request, response) => {
   try {
     const url = new URL(request.url ?? '/', S3);
+    if (nativePdfRecovery && url.pathname.startsWith('/090/')) {
+      void (async () => {
+        assert.equal(request.headers.host, '127.0.0.1:18092');
+        if (url.pathname === '/090/android-fixture' && request.method === 'POST' && !url.search) {
+          if (!oneUseFixture) { response.writeHead(410); response.end(); return; }
+          const payload = oneUseFixture;
+          oneUseFixture = null;
+          fixtureConsumed = true;
+          response.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+          response.end(payload);
+          return;
+        }
+        assert.equal(url.pathname, '/090/read');
+        assert.ok(request.method === 'GET' || request.method === 'HEAD');
+        assert.equal(url.searchParams.get('fileId'), ids.fileA);
+        assert.deepEqual([...url.searchParams.keys()].sort(), ['fileId', 'ticket']);
+        const before = providerHits;
+        const actual = await fetch(`${EDGE}/${url.search}`, { method: request.method });
+        const bytes = new Uint8Array(await actual.arrayBuffer());
+        nativeReads.push({ method: request.method!, status: actual.status, providerDelta: providerHits - before });
+        console.log(`090 native observation ${request.method} ${actual.status} bytes=${bytes.length} providerDelta=${providerHits - before}`);
+        response.writeHead(actual.status, Object.fromEntries(actual.headers));
+        response.end(request.method === 'HEAD' ? undefined : bytes);
+      })().catch(() => { response.writeHead(500); response.end(); });
+      return;
+    }
     assert.match(request.headers.authorization ?? '', /^AWS4-HMAC-SHA256 /);
     assert.ok(request.headers.authorization?.includes(`Credential=${ACCESS}/`));
     assert.equal(url.search, '');
@@ -199,16 +230,27 @@ async function main() {
     assert.equal(providerHits, before, 'foreign ticket attempts contacted provider');
     if (androidFixturePath) {
       await mkdir(resolve('spike/093-runtime'), { recursive: true, mode: 0o700 });
-      await writeFile(androidFixturePath, JSON.stringify({
+      const payload = {
         email: first.data.user.email, password: passwordA, choirA: ids.choirA,
         choirB: ids.choirB, fileId: ids.fileA, pdfSha256: hash(pdf),
-      }), { mode: 0o600, flag: 'wx' });
-      console.log('READY 093 synthetic Android fixture; send SIGTERM after runtime check');
+      };
+      if (nativePdfRecovery) oneUseFixture = JSON.stringify({ ...payload, legacyUrl: legacyUrl.toString() });
+      else await writeFile(androidFixturePath, JSON.stringify(payload), { mode: 0o600, flag: 'wx' });
+      console.log(`READY ${nativePdfRecovery ? '090 one-use runtime' : '093'} synthetic Android fixture; send SIGTERM after runtime check`);
       await new Promise<void>((resolve, reject) => {
         const timeout = setTimeout(() => reject(new Error('093 Android hold timed out')), 30 * 60_000);
         process.once('SIGTERM', () => { clearTimeout(timeout); resolve(); });
       });
-      await unlink(androidFixturePath);
+      if (nativePdfRecovery) {
+        assert.equal(fixtureConsumed, true);
+        assert.equal(oneUseFixture, null);
+        assert.deepEqual(nativeReads, [
+          { method: 'GET', status: 401, providerDelta: 0 },
+          { method: 'GET', status: 200, providerDelta: 1 },
+          { method: 'HEAD', status: 403, providerDelta: 0 },
+        ], 'native stale-v1 recovery and old-URL evidence mismatch');
+        console.log('PASS 090 actual native GET v1 401, v2 bytes 200, switched URL HEAD 403; no provider on denial');
+      } else await unlink(androidFixturePath);
       console.log('PASS 093 Android hold ended; fixture secret removed');
     }
     ok((await shared.rpc('set_active_choir', { p_choir_id: ids.choirB })).error, 'select B');
@@ -233,6 +275,7 @@ async function main() {
     if (diagnostics) process.stderr.write(diagnostics.replaceAll(service, '[redacted]'));
     throw error;
   } finally {
+    oneUseFixture = null;
     if (androidFixturePath) await unlink(androidFixturePath).catch(() => {});
     edge.kill('SIGTERM');
     await Promise.race([new Promise(resolve => edge.once('exit', resolve)), new Promise(resolve => setTimeout(resolve, 2000))]);
