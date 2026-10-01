@@ -58,6 +58,19 @@
 - GitHub push için `github-genesinova` SSH alias aktif
 - genesinovachoir sitesiyle aynı Supabase DB — schema değişikliklerinde her iki projeyi göz önünde bulundur
 
+## TypeSafe / Jev skill
+
+- Use the installed `typesafe-ai` skill when working on this project; read its
+  complete SKILL.md and relevant live TypeSafe docs before AI design/integration.
+  [WF-014](docs/briefs/WF-014-typesafe-skill-adoption.md) records installation and limits.
+- Jev supplies typed semantic judgments, not generated code/text or a replacement
+  coding agent. Keep deterministic tenant/role/Auth/RLS rules in code; AI confidence
+  never grants authorization. Do not introduce AI into unrelated deterministic work.
+- Installation is not runtime migration, paid-inference/data-export or deployment
+  authority. Establish the feature, synthetic evaluation, budget and provider scope
+  first. Keep API keys private/server-side, never public env/source/logs; the supplied
+  chat key was not persisted/tested and should be replaced before integration.
+
 ## Geçiş kuralları
 - **Bir brief'te tek doğrulanabilir sonuç.** Bağlı kullanıcı akışı birden çok modüle
   dokunabilir; izinli alanları brief'te yaz. Oturum sınırı işin bitiş ölçütü değildir.

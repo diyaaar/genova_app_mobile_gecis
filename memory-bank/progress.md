@@ -1,5 +1,11 @@
 # İlerleme indeksi
 
+1 October — [WF-014 TypeSafe skill adoption](../docs/briefs/WF-014-typesafe-skill-adoption.md)
+accepted locally: one npx/global Codex installation, registration/full instruction
+read, narrow AGENTS use rule and documentation checks. No Jev runtime/coding-model
+replacement, API-key persistence/test, provider inference, product/dependency or
+090/beta scope change. Intended Jev feature/use still needs clarification.
+
 1 October — [090 permanent Android WebView recovery](../docs/briefs/090-private-file-ticket-revocation-contract.md),
 source/tests `d8139bc`, PASS locally. Actual korist-detail homework link/native confirmation;
 baseline valid-v1 GET401/no recovery reproduced, trusted-issuer/current-native-lease one-shot
