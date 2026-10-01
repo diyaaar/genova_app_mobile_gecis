@@ -121,7 +121,7 @@ function Runtime({ trace }: { trace: Trace }) {
 }
 
 export default function WebViewAcceptance() {
-  const [events, setEvents] = useState<string[]>(['090 WEBVIEW · SYNTHETIC LOOPBACK']);
+  const [events, setEvents] = useState<string[]>([`090 WEBVIEW ${Platform.OS} · SYNTHETIC LOOPBACK`]);
   const trace = useCallback<Trace>(event => {
     console.info(`[090 WebView] ${event}`);
     setEvents(current => [...current.slice(-2), event]);

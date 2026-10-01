@@ -9,7 +9,7 @@ import { createServer } from 'node:http';
 import { createClient } from '@supabase/supabase-js';
 import { createRepertoireFileTicket } from '../functions/repertoire-file/ticket';
 import { assertLocalSignature,createConnectedAudioFixture,toneWav } from './091_connected_audio_fixture';
-import { assignmentWebViewMode, assignmentVersionSeed, assertAssignmentWebViewReads } from './091_assignment_webview_fixture';
+import { assignmentWebViewMode, assignmentWebViewEvidenceTarget, assignmentVersionSeed, assertAssignmentWebViewReads } from './091_assignment_webview_fixture';
 
 const API = 'http://127.0.0.1:54491';
 const EDGE = 'http://127.0.0.1:8000';
@@ -44,6 +44,7 @@ const nativePdfRecovery = process.env.GENOVA_090_ANDROID_PDF_RECOVERY === '1';
 const webViewRecovery = process.env.GENOVA_090_ANDROID_WEBVIEW === '1';
 const nativeAudioRecovery = process.env.GENOVA_090_CONNECTED_ANDROID_AUDIO === '1';
 const assignmentWebView = assignmentWebViewMode(process.env);
+const assignmentEvidence = assignmentWebView ? assignmentWebViewEvidenceTarget(process.env) : null;
 const ASSIGNMENT_EDGE = 'http://127.0.0.1:8001';
 const webViewFamily = assignmentWebView ? 'assignment-file' : 'repertoire-file';
 if(process.env.GENOVA_090_CONNECTED_AUDIO_PLATFORM)assert.equal(nativeAudioRecovery,true,'Platform selector needs explicit audio mode');
@@ -379,7 +380,7 @@ async function main() {
       else if (webViewRecovery) oneUseFixture = JSON.stringify({ email: first.data.user.email, password: passwordA });
       else if (nativePdfRecovery) oneUseFixture = JSON.stringify({ ...payload, legacyUrl: legacyUrl.toString() });
       else await writeFile(androidFixturePath, JSON.stringify(payload), { mode: 0o600, flag: 'wx' });
-      console.log(`READY ${nativeAudioRecovery?'090 connected audio':webViewRecovery ? '090 WebView' : nativePdfRecovery ? '090 one-use runtime' : '093'} synthetic Android fixture; send SIGTERM after runtime check`);
+      console.log(`READY ${nativeAudioRecovery?'090 connected audio':webViewRecovery ? '090 WebView' : nativePdfRecovery ? '090 one-use runtime' : '093'} synthetic ${assignmentEvidence?.platform ?? 'Android'} fixture; send SIGTERM after runtime check`);
       await new Promise<void>((resolve, reject) => {
         const timeout = setTimeout(() => reject(new Error('093 Android hold timed out')), 30 * 60_000);
         process.once('SIGTERM', () => { clearTimeout(timeout); resolve(); });
@@ -389,10 +390,10 @@ async function main() {
         assert.equal(fixtureConsumed, true); assert.equal(oneUseFixture, null);
         if (assignmentWebView) {
           assertAssignmentWebViewReads(webViewReads);
-          await writeFile('docs/reports/090/2026-10-01-assignment-webview-http.json', JSON.stringify({
-            timestamp: new Date().toISOString(), result: 'PASS', family: 'assignment-file', reads: webViewReads,
+          await writeFile(assignmentEvidence!.path, JSON.stringify({
+            timestamp: new Date().toISOString(), result: 'PASS', platform: assignmentEvidence!.platform, family: 'assignment-file', reads: webViewReads,
             contentLength: pdf.length, sha256: hash(pdf),
-            boundary: 'Actual local Auth/RLS/Deno and Android permanent WebView; declared listener/URL relay; signature-verified synthetic storage, not hosted.',
+            boundary: `Actual local Auth/RLS/Deno and ${assignmentEvidence!.platform} permanent WebView; declared listener/URL relay; signature-verified synthetic storage, not hosted.`,
           }, null, 2), { flag: 'wx' });
           console.log('PASS assignment current-version WebView/native PDF/hash/B GET+HEAD403/provider0');
         } else {

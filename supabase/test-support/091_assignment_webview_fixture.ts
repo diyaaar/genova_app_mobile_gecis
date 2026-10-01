@@ -1,8 +1,21 @@
 import assert from 'node:assert/strict';
 
+/** Fixed immutable evidence target for the explicit assignment fixture, not an arbitrary output path. */
+export function assignmentWebViewEvidenceTarget(env: Record<string, string | undefined>) {
+  assert.equal(assignmentWebViewMode(env), true);
+  const platform = env.GENOVA_090_WEBVIEW_PLATFORM ?? 'android';
+  return { platform, path: platform === 'ios'
+    ? 'docs/reports/090/connected-ios-assignment-webview-http.json'
+    : 'docs/reports/090/2026-10-01-assignment-webview-http.json' };
+}
+
 /** Explicit fixture-only mode; no hosted/production authority or fallback is inferred. */
 export function assignmentWebViewMode(env: Record<string, string | undefined>) {
   const enabled = env.GENOVA_090_ANDROID_ASSIGNMENT_WEBVIEW === '1';
+  if (env.GENOVA_090_WEBVIEW_PLATFORM !== undefined) {
+    assert.equal(enabled, true, 'Platform selector requires explicit assignment WebView mode');
+    assert.ok(['android', 'ios'].includes(env.GENOVA_090_WEBVIEW_PLATFORM), 'Unsupported WebView platform');
+  }
   if (enabled) {
     assert.equal(env.GENOVA_090_ANDROID_WEBVIEW, '1');
     assert.equal(env.GENOVA_090_CONNECTED_ANDROID_AUDIO === '1', false);

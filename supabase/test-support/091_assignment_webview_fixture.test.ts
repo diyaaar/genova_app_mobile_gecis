@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { assignmentWebViewMode, assignmentVersionSeed, assertAssignmentWebViewReads } from './091_assignment_webview_fixture';
+import { assignmentWebViewMode, assignmentWebViewEvidenceTarget, assignmentVersionSeed, assertAssignmentWebViewReads } from './091_assignment_webview_fixture';
 const env = { GENOVA_090_ANDROID_ASSIGNMENT_WEBVIEW: '1', GENOVA_090_ANDROID_WEBVIEW: '1', API_URL: 'http://127.0.0.1:54491' };
 const seed = { choirId: '11111111-1111-4111-8111-111111111111', assignmentId: '22222222-2222-4222-8222-222222222222',
   memberId: '33333333-3333-4333-8333-333333333333', submissionId: '44444444-4444-4444-8444-444444444444',
@@ -8,8 +8,25 @@ const reads = [{ method: 'POST', status: 200, providerDelta: 0 }, { method: 'HEA
   { method: 'GET', status: 200, providerDelta: 1 }, { method: 'HEAD', status: 403, providerDelta: 0 },
   { method: 'GET', status: 403, providerDelta: 0 }];
 describe('assignment-version fixture authority/evidence guards', () => {
+  it('isolates immutable iOS evidence without changing the historical Android target', () => {
+    const android = assignmentWebViewEvidenceTarget(env);
+    const ios = assignmentWebViewEvidenceTarget({ ...env, GENOVA_090_WEBVIEW_PLATFORM: 'ios' });
+    expect(android).toEqual({ platform: 'android', path: 'docs/reports/090/2026-10-01-assignment-webview-http.json' });
+    expect(ios).toEqual({ platform: 'ios', path: 'docs/reports/090/connected-ios-assignment-webview-http.json' });
+    expect(ios.path).not.toBe(android.path);
+  });
   it('preserves the old consumer unless explicitly enabled', () => {
     expect(assignmentWebViewMode({})).toBe(false); expect(assignmentWebViewMode(env)).toBe(true);
+  });
+  it.each(['android', 'ios'])('accepts only the explicitly selected supported platform %s', platform => {
+    expect(assignmentWebViewEvidenceTarget({ ...env, GENOVA_090_WEBVIEW_PLATFORM: platform }).platform).toBe(platform);
+  });
+  it.each(['', 'windows', '../ios', 'IOS'])('rejects unsupported evidence platform %s', platform => {
+    expect(() => assignmentWebViewEvidenceTarget({ ...env, GENOVA_090_WEBVIEW_PLATFORM: platform })).toThrow();
+  });
+  it('refuses a platform without the explicit isolated assignment mode', () => {
+    expect(() => assignmentWebViewMode({ GENOVA_090_WEBVIEW_PLATFORM: 'ios' })).toThrow();
+    expect(() => assignmentWebViewEvidenceTarget({})).toThrow();
   });
   it.each([{ GENOVA_090_ANDROID_WEBVIEW: '0' }, { API_URL: 'https://example.com' },
     { GENOVA_090_CONNECTED_ANDROID_AUDIO: '1' }, { GENOVA_090_ANDROID_PDF_RECOVERY: '1' }])('rejects ambiguous or hosted mode %#', patch => {
