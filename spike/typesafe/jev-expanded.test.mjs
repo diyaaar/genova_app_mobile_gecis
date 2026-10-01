@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildPackets, buildFollowUps, assertExpandedPacket, validateExpandedResponse, lexicalBaseline } from './jev-expanded.mjs';
+import { buildPackets, buildFollowUps, buildCodeSearch, searchLabels, assertExpandedPacket, validateExpandedResponse, lexicalBaseline } from './jev-expanded.mjs';
 import { assertPacket } from './jev-analysis.mjs';
 import { evidenceCases, productCases, triageCases } from './jev-expanded-cases.mjs';
 
@@ -49,4 +49,16 @@ test('typed Noul response validates exact envelope and rejects NaN/range/missing
   assert.throws(() => validateExpandedResponse(p, missing));
   const wrong = structuredClone(p); wrong.questions.e01.type = 'score';
   assert.throws(() => assertExpandedPacket(wrong));
+});
+
+test('code search is seven bounded verbatim candidates with two absence controls, labels offline', async () => {
+  const [{ packet }] = await buildCodeSearch(); assertExpandedPacket(packet);
+  assert.equal(packet.state.source_candidates.length, 7);
+  assert.equal(Object.keys(packet.questions).length, 9);
+  assert.equal(JSON.stringify(packet).includes('"expected"'), false);
+  for (const c of packet.state.source_candidates) {
+    assert.equal(c.text.split('\n').length, c.last - c.first + 1);
+    assert.match(c.sourceSha256, /^[a-f0-9]{64}$/);
+  }
+  assert.equal(searchLabels.s08, 'no_match'); assert.equal(searchLabels.s09, 'no_match');
 });
