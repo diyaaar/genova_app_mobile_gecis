@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { createInterface } from 'node:readline/promises';
 import { pathToFileURL } from 'node:url';
@@ -142,6 +142,13 @@ export function lexicalBaseline({ claim, evidence }) {
   return [...a].filter(w => b.has(w)).length / Math.max(a.size, 1) >= 0.35 ? 'supports' : 'insufficient';
 }
 
+export function estimatedSpend(responses) {
+  return responses.reduce((sum, r) => {
+    if (!Number.isInteger(r.usage?.input_tokens) || r.usage.input_tokens < 0) throw new Error('Invalid prior usage');
+    return sum + r.usage.input_tokens * PRICE;
+  }, 0);
+}
+
 async function prepare(followup = false) {
   const refs = await Promise.all(sources.map(async path => ({ path, sha256: sha(await readFile(path)) })));
   const stages = followup === 'search' ? await buildCodeSearch() : followup ? buildFollowUps(refs) : buildPackets(refs);
@@ -166,6 +173,9 @@ async function prepare(followup = false) {
 }
 
 async function evaluate(followup = false) {
+  const completed = (await readdir(OUTPUT)).filter(f => f.endsWith('-response.json'));
+  let total = estimatedSpend(await Promise.all(completed.map(async f => JSON.parse(await readFile(`${OUTPUT}/${f}`, 'utf8')))));
+  if (completed.length >= 10 || total > 0.01) throw new Error('Completed pilot or cumulative cap');
   let key = process.env.TYPESAFE_API_KEY;
   if (!key) {
     if (!process.stdin.isTTY) throw new Error('Private key input required');
@@ -173,7 +183,6 @@ async function evaluate(followup = false) {
     key = (await reader.question('Private key input (terminal echo must be disabled): ')).trim(); reader.close();
   }
   if (!/^apikey_[a-f0-9]{20,80}_[a-f0-9]{64}$/iu.test(key)) throw new Error('Invalid key shape');
-  let total = 0;
   const stages = followup === 'search' ? await buildCodeSearch() : followup ? buildFollowUps() : buildPackets();
   for (const { stage } of stages) {
     const saved = JSON.parse(await readFile(`${OUTPUT}/${stage}-request.json`, 'utf8'));

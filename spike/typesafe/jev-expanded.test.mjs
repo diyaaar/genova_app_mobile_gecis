@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildPackets, buildFollowUps, buildCodeSearch, searchLabels, assertExpandedPacket, validateExpandedResponse, lexicalBaseline } from './jev-expanded.mjs';
+import { buildPackets, buildFollowUps, buildCodeSearch, searchLabels, assertExpandedPacket, validateExpandedResponse, lexicalBaseline, estimatedSpend } from './jev-expanded.mjs';
 import { assertPacket } from './jev-analysis.mjs';
 import { evidenceCases, productCases, triageCases } from './jev-expanded-cases.mjs';
 
@@ -61,4 +61,9 @@ test('code search is seven bounded verbatim candidates with two absence controls
     assert.match(c.sourceSha256, /^[a-f0-9]{64}$/);
   }
   assert.equal(searchLabels.s08, 'no_match'); assert.equal(searchLabels.s09, 'no_match');
+});
+
+test('cost cap includes prior stages rather than resetting across comparison invocations', () => {
+  assert.equal(estimatedSpend([{ usage: { input_tokens: 1_000_000 } }, { usage: { input_tokens: 500_000 } }]), 0.063);
+  assert.throws(() => estimatedSpend([{ usage: { input_tokens: -1 } }]));
 });
