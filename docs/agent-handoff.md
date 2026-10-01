@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 1 October 2026. Evidence: [090](briefs/090-private-file-ticket-revocation-contract.md)/[check-up](reports/2026-10-01-project-checkup.md)/[progress](../memory-bank/progress.md). Verify state before reuse.
+Updated 2 October 2026. Evidence: [090](briefs/090-private-file-ticket-revocation-contract.md)/[check-up](reports/2026-10-01-project-checkup.md)/[progress](../memory-bank/progress.md). Verify state before reuse.
 
 ## Read first
 
@@ -32,8 +32,8 @@ First early-global-signOut fixture exit1 retained, not accepted; no product code
 `db6cc93` [connected iOS audio](reports/2026-10-01-connected-ios-audio-acceptance.md): first expiry/resume
 FAIL retained; old-player status contamination unit-reproduced and identity-qualified. Corrected
 signed native recovery/seek/resume/B denial and fixture exit0 PASS; fresh root110/1110,mobile55/406,
-exports PASS. Jev triage advisory5/5; daily20calls$0.003070494 estimate, not invoice. **Next:** iOS
-permanent WebView, then fresh Android audio regression; hosted/beta/release/090 remain open.
+exports PASS. Jev triage advisory5/5;1Oct20calls$0.003070494 estimate, not invoice.
+`180108a` [WebView preflight](reports/2026-10-01-ios-webview-source-preflight.md): platform-specific wx evidence,19focused/root110/1118/mobile55/406/exports PASS, not native. **Next:** signed connected iOS assignment WebView, then current Android audio;090/hosted/beta remain open.
 
 ## Preserved evidence and remediation
 
@@ -55,7 +55,7 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
-Owned runtimes/VM/data/device/builds cleaned; final22,293,524KiB, audio low15,548,780KiB.
+Owned runtimes/builds/outputs cleaned; source-preflight final22,296,284KiB; prior audio low15,548,780KiB.
 Fresh original068 five hashes/counts28/1/29/9/79 unchanged. Key-input masking failed: transcript
 echo occurred, no repo/env persistence; no further call/after1Oct reuse; owner replacement needed. Keep
 `genova_068_test_restore`, retained 068 backup, private manifests/journals,

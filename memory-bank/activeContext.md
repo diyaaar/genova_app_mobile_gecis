@@ -1,6 +1,6 @@
 # Active context
 
-Updated 1 October 2026. [Handoff](../docs/agent-handoff.md) is the short entry point;
+Updated 2 October 2026. [Handoff](../docs/agent-handoff.md) is the short entry point;
 [delivery plan](../docs/mobil-teslim-plani.md)/[WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md)
 own objective/queue/resources. Evidence stays in briefs/[progress](progress.md), not upgraded here.
 
@@ -33,8 +33,8 @@ Early global-signOut first fixture exit1 retained; no product/Auth/schema/depend
 `db6cc93` [connected iOS audio](../docs/reports/2026-10-01-connected-ios-audio-acceptance.md): first expiry/
 resume FAIL retained; stale old-player status unit-reproduced and identity-qualified. Corrected
 signed native recovery/seek/resume/B denial and fixture exit0 PASS; fresh root110/1110,mobile55/406,
-exports PASS. Jev advisory5/5; daily20calls$0.003070494 estimated, not invoice. **Next:** iOS permanent
-WebView then fresh Android audio regression; phone/hosted/beta/release/090 stay open.
+exports PASS. Jev advisory5/5;1Oct20calls$0.003070494 estimate, not invoice.
+`180108a` [WebView preflight](../docs/reports/2026-10-01-ios-webview-source-preflight.md): platform-specific wx evidence,19focused/root110/1118/mobile55/406/exports PASS, not native. **Next:** signed connected iOS assignment WebView, then Android audio;090/hosted/beta stay open.
 
 ## Preserved historical evidence
 
@@ -55,7 +55,7 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary sole writer.1Oct owned VM/root/data/device/runtime/app/builds/outputs cleaned;
-final22,293,524KiB free, audio low15,548,780KiB. Fresh original068 five row hashes/counts
+source-preflight final22,296,284KiB free, prior audio low15,548,780KiB. Previous068 five row hashes/counts
 28/1/29/9/79 unchanged. Key masking failed/transcript echo, no repo/env persistence;
 no further call/after1Oct reuse; owner replacement needed. Preserve original source.
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and

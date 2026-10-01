@@ -585,3 +585,17 @@ app/build/runtime/.expo/.next/coverage removed, no task listeners/booted simulat
 Final22293524KiB; low15548780KiB abovefloor. Unrelated CLI marker unstaged; no hosted/provider/
 real data/credentials/push/deploy/hardware action.090 stays open. Next connected iOS permanent
 WebView, then current Android audio regression; beta/both stores/full product unfinished.
+
+## 1 October 2026 — iOS permanent assignment WebView evidence isolation preflight
+
+Entry23fe030; source180108a; [record](../docs/reports/2026-10-01-ios-webview-source-preflight.md).
+Observer hard-coded Android and immutable existing Android path. Narrow extraction preserves
+baseline; meaningful new iOS-target regression11oldPASS/newFAIL. Explicit assignment-only
+platform selector/fixed separate iOS target and actual nativeOS banner:19focusedPASS, no
+authority/schema/dependency/route change. Old Android SHA256 identical/wx retained; no iOS
+HTTP PASS artifact created. Fresh mobileTS55/406, root110/1118/lint/SW/Next build, normal
+Android/iOS exports PASS. Signed actual iOS WebView/PDF/share/B/fixtureexit0 NOT RUN.
+No VM/DB/native/device/provider/key/inference; new Jev cost$0, prior20calls/$0.003070494
+estimate unchanged. Owned.next/coverage/mobile.expo removed; final22296284KiB, low21808208KiB
+abovefloor. No fresh DB preservation assertion. CLI marker unstaged, old evidence/source/deps/
+caches retained.090 stillopen; next signed connected iOS assignment WebView, then Android audio.

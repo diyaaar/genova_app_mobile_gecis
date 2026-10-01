@@ -5,7 +5,8 @@ Status: IN PROGRESS / local v2 implementation and synthetic acceptance PASS on
 Five-family local HTTP overlap, connected native Android audio and current assignment-version
 Android WebView now have bounded evidence ([Android record](../reports/2026-10-01-connected-android-assignment-webview-acceptance.md));
 connected native iOS PDF/Auth/RLS/B-switch also PASS ([iOS record](../reports/2026-10-01-connected-ios-private-pdf-acceptance.md)).
-Native iOS audio/WebView, hosted and release gates remain open. Primary agent,
+Connected iOS audio also PASS ([audio record](../reports/2026-10-01-connected-ios-audio-acceptance.md));
+iOS WebView, current Android audio regression, hosted and release gates remain open. Primary agent,
 single writer. No hosted release authority.
 One result: uniform online next-request access-after-revocation for five private file
 families before `mixed`/`r2-required` cutover. This brief does not authorize live writes.
@@ -1516,3 +1517,38 @@ This local audio slice passes functional gates; credential-handling FAIL is not 
 reclassified PASS, and090 remains IN PROGRESS. Next measured iOS permanent WebView integration,
 then fresh Android native audio regression for the shared provider change before both-platform
 checkpoint closure. No hosted/provider/real data/credential/push/deploy/hardware authority inferred.
+
+### iOS permanent assignment WebView source preflight — 1 October, after23fe030
+
+Owner asks to continue; main/23fe030 and only unrelated CLI marker verified. Primary sole writer,
+no delegation. Read handoff/active, guide/work cycle/current090/095, delivery controls, TypeSafe
+skill and live documentation index/coding-agent guidance, MIGRATION route ownership/decision32.
+One observable preparation result: existing assignment WebView observer must label the actual
+platform and use a separate immutable iOS HTTP target before the next signed integration run.
+Source currently hard-codes Android and a wx Android artifact already exists, so the iOS run
+would mislabel evidence/refuse persistence. Preserve Android path/hash/strict reads/denial matrix.
+Actions: narrow platform-aware evidence selection and focused regression; root/mobile/normal
+exports; source review/evidence/cleanup/commits and executable next integration handoff.
+Allowed: existing091_assignment_webview_fixture.ts/test,091_connected_private_r2_read.ts,
+090_webview-runtime.tsx actual-platform banner, this brief/dated report/status records.
+No product authority/schema/route/dependency/plugin rewrite, no new framework/fixture runner.
+Prepared iOS flow targets current immutable assignment version from permanent chorist-detail,
+not native assignment rewrite or a fake repertoire WebView. Native build/bridge/share/B/body
+and fixtureexit0 remain required NOT RUN in this source checkpoint; no substitute JS claim.
+Entry22303208KiB; source/tests/exports/root output<=1GiB additional above10485760floor.
+No VM/simulator/native build/download; one heavy process. Owned .next/coverage/mobile.expo
+removed after final checks, dependencies/global caches/original068/old Android evidence retained.
+No new Jev inference/key use; existing advisory principles, source and deterministic tests only.
+
+Source preflight result `180108a`: [dated record](../reports/2026-10-01-ios-webview-source-preflight.md).
+Preserved hard-coded behavior extraction yields11oldPASS/newFAIL for iOS target isolation;
+platform selection fix19focusedPASS. Existing Android path/hash/wx/read-denial matrix unchanged,
+fixed separate iOS target not created without actual native acceptance. Selected observer
+platform is not runtime proof; actual Platform.OS banner and CUA inspection are required.
+Fresh mobileTS55/406, root110/1118/lint/SW/Next build, normal Android/iOS1440-module exports
+PASS. Owned.next477920KiB/coverage352KiB/mobile.expo8536KiB removed; final22296284KiB,
+low21808208KiB. No VM/native/DB/provider/real data/credentials/push/deploy action or new Jev
+request/cost ($0); prior daily20calls/$0.003070494 estimate unchanged. Source-only checkpoint
+passes; signed iOS WebView/Auth/bridge/share/B/full fixtureexit0 and current Android audio
+remain NOT RUN.090 cannot close. Next execution uses explicit assignment platformios and
+genuine local CLI public configuration, then observes full actual consumer/fixture boundaries.
