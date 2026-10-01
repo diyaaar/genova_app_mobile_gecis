@@ -34,7 +34,11 @@ exact65905B/hash and real share sheet; A→B clears cache, renders `Shared B` pr
 old A v2 HEAD403/provider0. Same helper, explicit synthetic local relay, no external share.
 Fresh mobile TS54/377, root106/1067/build, normal Android/iOS JS exports PASS.
 Not assignment-version Drive-exit: performance query/HomeworkCard still prefers legacy links.
-**Next:** overlapping HTTP/COMMIT; connected audio Auth/R2/native iOS remain NOT RUN.
+1 Oct `d448de5`: repertoire HTTP/COMMIT PASS for switch/role/member/session changes;
+new reads403/provider0, prior stream completes. Declared native-psql authority adapter,
+not fresh Auth/PostgREST. [Evidence/costs](reports/2026-10-01-repertoire-http-overlap.md):
+one Jev advisory$0.000207984, recorded daily13calls$0.001971648 estimated.
+**Next:** remaining four readers' HTTP/COMMIT; connected audio Auth/R2/native iOS NOT RUN.
 Hosted backup/ordered rollout is a separate later checkpoint; 090 stays open.
 
 ## Preserved evidence and remediation
@@ -58,7 +62,8 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
 1 Oct owned emulator/app/reverse/VM/services/derived outputs cleaned; final23,776,212 KiB
-free, lowest17,577,012 KiB (090). Original068 counts unchanged; no hosted/source-data write.
+free, lowest17,577,012 KiB (090). Latest disposable native-DB/HTTP cleanup leaves
+23,695,880KiB free; original068 hashes/counts unchanged, no hosted/source-data write.
 Keep original `genova_068_test_restore`, retained 068 backup, private manifests/journals,
 dependencies and existing AVD/global caches. Never rebuild deleted runtimes without preflight.
 Local scoped code/tests/commits/owned cleanup authorized. Hosted DB/Edge/provider, credentials,

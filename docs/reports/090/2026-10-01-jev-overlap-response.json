@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-10-01T11:07:32.934Z",
+  "requestSha256": "77da36cda482a6620a4e14cd7d2875ac8501ccca5870e5292d4da3226cef76e5",
+  "elapsedMs": 413,
+  "model": "jev-1.13.0",
+  "usage": {
+    "input_tokens": 4952,
+    "output_tokens": 388
+  },
+  "estimatedUsd": 0.000207984,
+  "answers": {
+    "held_request": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.82,
+      "probabilities": {
+        "contradicts": 0.05,
+        "insufficient": 0.07,
+        "supports": 0.88
+      }
+    },
+    "hosted": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.87,
+      "probabilities": {
+        "contradicts": 0.92,
+        "insufficient": 0.08,
+        "supports": 0
+      }
+    },
+    "concurrent_load": {
+      "type": "choice",
+      "choice": "insufficient",
+      "confidence": 0.58,
+      "probabilities": {
+        "contradicts": 0.28,
+        "insufficient": 0.72,
+        "supports": 0
+      }
+    },
+    "close_brief": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.86,
+      "probabilities": {
+        "contradicts": 0.9,
+        "insufficient": 0.09,
+        "supports": 0.01
+      }
+    },
+    "next_read": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.74,
+      "probabilities": {
+        "contradicts": 0.05,
+        "insufficient": 0.12,
+        "supports": 0.83
+      }
+    },
+    "stream": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.82,
+      "probabilities": {
+        "contradicts": 0.89,
+        "insufficient": 0.04,
+        "supports": 0.07
+      }
+    },
+    "all_families": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.98,
+      "probabilities": {
+        "contradicts": 0.99,
+        "insufficient": 0.01,
+        "supports": 0
+      }
+    },
+    "full_auth": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 1,
+      "probabilities": {
+        "contradicts": 1,
+        "insufficient": 0,
+        "supports": 0
+      }
+    },
+    "signature": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.86,
+      "probabilities": {
+        "contradicts": 0.01,
+        "insufficient": 0.09,
+        "supports": 0.9
+      }
+    }
+  }
+}

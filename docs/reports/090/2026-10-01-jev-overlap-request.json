@@ -1,0 +1,603 @@
+{
+  "packet": {
+    "model": "jev-1.13.0",
+    "state": {
+      "sourceSha256": "cfab7206dede451786009df8040c30abb110ba3f4395d5e363b6d72573db3cda",
+      "measured": {
+        "result": "PASS",
+        "family": "repertoire-file",
+        "boundary": "Actual handler/R2 helper and HTTP, nativePG17/service_role SQL via explicit psql adapter. Synthetic session rows/direct signed-v2 fixture issuance, no Auth/PostgREST/entrypoint/hosted/native proof.",
+        "provider": "AWS4 signature-verified loopback object service",
+        "providerHits": 16,
+        "providerFailures": 0,
+        "cases": [
+          {
+            "change": "choir_switch",
+            "uncommitted": [
+              {
+                "method": "GET",
+                "range": false,
+                "status": 200,
+                "providerDelta": 1,
+                "bytes": 65905
+              },
+              {
+                "method": "GET",
+                "range": true,
+                "status": 206,
+                "providerDelta": 1,
+                "bytes": 13
+              },
+              {
+                "method": "HEAD",
+                "range": false,
+                "status": 200,
+                "providerDelta": 1,
+                "bytes": 0
+              }
+            ],
+            "afterCommit": [
+              {
+                "method": "GET",
+                "range": false,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 25
+              },
+              {
+                "method": "GET",
+                "range": true,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 25
+              },
+              {
+                "method": "HEAD",
+                "range": false,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 0
+              }
+            ],
+            "heldBeforeSql": {
+              "method": "GET",
+              "range": false,
+              "status": 403,
+              "providerDelta": 0,
+              "bytes": 25
+            },
+            "streaming": {
+              "firstBytesBeforeCommit": 32,
+              "completedBytes": 65905,
+              "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+              "freshDenials": [
+                {
+                  "method": "GET",
+                  "range": false,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 25
+                },
+                {
+                  "method": "GET",
+                  "range": true,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 25
+                },
+                {
+                  "method": "HEAD",
+                  "range": false,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 0
+                }
+              ]
+            }
+          },
+          {
+            "change": "role_removal",
+            "uncommitted": [
+              {
+                "method": "GET",
+                "range": false,
+                "status": 200,
+                "providerDelta": 1,
+                "bytes": 65905
+              },
+              {
+                "method": "GET",
+                "range": true,
+                "status": 206,
+                "providerDelta": 1,
+                "bytes": 13
+              },
+              {
+                "method": "HEAD",
+                "range": false,
+                "status": 200,
+                "providerDelta": 1,
+                "bytes": 0
+              }
+            ],
+            "afterCommit": [
+              {
+                "method": "GET",
+                "range": false,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 25
+              },
+              {
+                "method": "GET",
+                "range": true,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 25
+              },
+              {
+                "method": "HEAD",
+                "range": false,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 0
+              }
+            ],
+            "heldBeforeSql": {
+              "method": "GET",
+              "range": false,
+              "status": 403,
+              "providerDelta": 0,
+              "bytes": 25
+            },
+            "streaming": {
+              "firstBytesBeforeCommit": 32,
+              "completedBytes": 65905,
+              "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+              "freshDenials": [
+                {
+                  "method": "GET",
+                  "range": false,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 25
+                },
+                {
+                  "method": "GET",
+                  "range": true,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 25
+                },
+                {
+                  "method": "HEAD",
+                  "range": false,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 0
+                }
+              ]
+            }
+          },
+          {
+            "change": "membership_inactive",
+            "uncommitted": [
+              {
+                "method": "GET",
+                "range": false,
+                "status": 200,
+                "providerDelta": 1,
+                "bytes": 65905
+              },
+              {
+                "method": "GET",
+                "range": true,
+                "status": 206,
+                "providerDelta": 1,
+                "bytes": 13
+              },
+              {
+                "method": "HEAD",
+                "range": false,
+                "status": 200,
+                "providerDelta": 1,
+                "bytes": 0
+              }
+            ],
+            "afterCommit": [
+              {
+                "method": "GET",
+                "range": false,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 25
+              },
+              {
+                "method": "GET",
+                "range": true,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 25
+              },
+              {
+                "method": "HEAD",
+                "range": false,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 0
+              }
+            ],
+            "heldBeforeSql": {
+              "method": "GET",
+              "range": false,
+              "status": 403,
+              "providerDelta": 0,
+              "bytes": 25
+            },
+            "streaming": {
+              "firstBytesBeforeCommit": 32,
+              "completedBytes": 65905,
+              "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+              "freshDenials": [
+                {
+                  "method": "GET",
+                  "range": false,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 25
+                },
+                {
+                  "method": "GET",
+                  "range": true,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 25
+                },
+                {
+                  "method": "HEAD",
+                  "range": false,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 0
+                }
+              ]
+            }
+          },
+          {
+            "change": "session_deleted",
+            "uncommitted": [
+              {
+                "method": "GET",
+                "range": false,
+                "status": 200,
+                "providerDelta": 1,
+                "bytes": 65905
+              },
+              {
+                "method": "GET",
+                "range": true,
+                "status": 206,
+                "providerDelta": 1,
+                "bytes": 13
+              },
+              {
+                "method": "HEAD",
+                "range": false,
+                "status": 200,
+                "providerDelta": 1,
+                "bytes": 0
+              }
+            ],
+            "afterCommit": [
+              {
+                "method": "GET",
+                "range": false,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 25
+              },
+              {
+                "method": "GET",
+                "range": true,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 25
+              },
+              {
+                "method": "HEAD",
+                "range": false,
+                "status": 403,
+                "providerDelta": 0,
+                "bytes": 0
+              }
+            ],
+            "heldBeforeSql": {
+              "method": "GET",
+              "range": false,
+              "status": 403,
+              "providerDelta": 0,
+              "bytes": 25
+            },
+            "streaming": {
+              "firstBytesBeforeCommit": 32,
+              "completedBytes": 65905,
+              "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+              "freshDenials": [
+                {
+                  "method": "GET",
+                  "range": false,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 25
+                },
+                {
+                  "method": "GET",
+                  "range": true,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 25
+                },
+                {
+                  "method": "HEAD",
+                  "range": false,
+                  "status": 403,
+                  "providerDelta": 0,
+                  "bytes": 0
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "event_order": [
+        {
+          "sequence": 1,
+          "phase": "peer-uncommitted",
+          "change": "choir_switch"
+        },
+        {
+          "sequence": 14,
+          "phase": "peer-commit-ack",
+          "change": "choir_switch"
+        },
+        {
+          "sequence": 24,
+          "phase": "peer-uncommitted-held-request",
+          "change": "choir_switch"
+        },
+        {
+          "sequence": 26,
+          "phase": "request-held-before-sql",
+          "change": "choir_switch"
+        },
+        {
+          "sequence": 27,
+          "phase": "peer-commit-before-authority",
+          "change": "choir_switch"
+        },
+        {
+          "sequence": 34,
+          "phase": "client-first-bytes-before-commit",
+          "change": "choir_switch"
+        },
+        {
+          "sequence": 35,
+          "phase": "peer-commit-during-stream",
+          "change": "choir_switch"
+        },
+        {
+          "sequence": 45,
+          "phase": "existing-stream-completed",
+          "change": "choir_switch"
+        },
+        {
+          "sequence": 46,
+          "phase": "peer-uncommitted",
+          "change": "role_removal"
+        },
+        {
+          "sequence": 59,
+          "phase": "peer-commit-ack",
+          "change": "role_removal"
+        },
+        {
+          "sequence": 69,
+          "phase": "peer-uncommitted-held-request",
+          "change": "role_removal"
+        },
+        {
+          "sequence": 71,
+          "phase": "request-held-before-sql",
+          "change": "role_removal"
+        },
+        {
+          "sequence": 72,
+          "phase": "peer-commit-before-authority",
+          "change": "role_removal"
+        },
+        {
+          "sequence": 79,
+          "phase": "client-first-bytes-before-commit",
+          "change": "role_removal"
+        },
+        {
+          "sequence": 80,
+          "phase": "peer-commit-during-stream",
+          "change": "role_removal"
+        },
+        {
+          "sequence": 90,
+          "phase": "existing-stream-completed",
+          "change": "role_removal"
+        },
+        {
+          "sequence": 91,
+          "phase": "peer-uncommitted",
+          "change": "membership_inactive"
+        },
+        {
+          "sequence": 104,
+          "phase": "peer-commit-ack",
+          "change": "membership_inactive"
+        },
+        {
+          "sequence": 114,
+          "phase": "peer-uncommitted-held-request",
+          "change": "membership_inactive"
+        },
+        {
+          "sequence": 116,
+          "phase": "request-held-before-sql",
+          "change": "membership_inactive"
+        },
+        {
+          "sequence": 117,
+          "phase": "peer-commit-before-authority",
+          "change": "membership_inactive"
+        },
+        {
+          "sequence": 124,
+          "phase": "client-first-bytes-before-commit",
+          "change": "membership_inactive"
+        },
+        {
+          "sequence": 125,
+          "phase": "peer-commit-during-stream",
+          "change": "membership_inactive"
+        },
+        {
+          "sequence": 135,
+          "phase": "existing-stream-completed",
+          "change": "membership_inactive"
+        },
+        {
+          "sequence": 136,
+          "phase": "peer-uncommitted",
+          "change": "session_deleted"
+        },
+        {
+          "sequence": 149,
+          "phase": "peer-commit-ack",
+          "change": "session_deleted"
+        },
+        {
+          "sequence": 159,
+          "phase": "peer-uncommitted-held-request",
+          "change": "session_deleted"
+        },
+        {
+          "sequence": 161,
+          "phase": "request-held-before-sql",
+          "change": "session_deleted"
+        },
+        {
+          "sequence": 162,
+          "phase": "peer-commit-before-authority",
+          "change": "session_deleted"
+        },
+        {
+          "sequence": 169,
+          "phase": "client-first-bytes-before-commit",
+          "change": "session_deleted"
+        },
+        {
+          "sequence": 170,
+          "phase": "peer-commit-during-stream",
+          "change": "session_deleted"
+        },
+        {
+          "sequence": 180,
+          "phase": "existing-stream-completed",
+          "change": "session_deleted"
+        }
+      ],
+      "limits": "Only repertoire handler/ticket/R2 helpers, actual HTTP and nativePG17/service_role via declared psql dependency transport; synthetic Auth-session rows and directly signed-v2 fixture ticket. No Auth/PostgREST/POST/native/hosted test. Five-family SQL matrix separately passed with ROLLBACK; other four HTTP-overlap readers, connected audio, native iOS and release gates remain open.",
+      "policy": "The approved guarantee rejects new online GET/HEAD after authority COMMIT. Already-streaming bytes and previously downloaded offline bytes cannot be recalled. Jev advises only; observed tests and primary review own acceptance."
+    },
+    "questions": {
+      "next_read": {
+        "type": "choice",
+        "instructions": "How does the supplied actual evidence relate to this claim: Actual repertoire GET, Range GET and HEAD after each committed revocation deny403 without object provider access.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and its stated scope.",
+          "contradicts": "Evidence explicitly opposes the claim or states the relevant gate was not exercised.",
+          "insufficient": "Evidence does not establish the claim; no invented runtime, scale or source proof."
+        }
+      },
+      "held_request": {
+        "type": "choice",
+        "instructions": "How does the supplied actual evidence relate to this claim: A repertoire HTTP request received before COMMIT but held before the SQL authorization check is denied after the check runs post-COMMIT.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and its stated scope.",
+          "contradicts": "Evidence explicitly opposes the claim or states the relevant gate was not exercised.",
+          "insufficient": "Evidence does not establish the claim; no invented runtime, scale or source proof."
+        }
+      },
+      "stream": {
+        "type": "choice",
+        "instructions": "How does the supplied actual evidence relate to this claim: The already-streaming download completing after COMMIT violates the chosen next-online-request policy.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and its stated scope.",
+          "contradicts": "Evidence explicitly opposes the claim or states the relevant gate was not exercised.",
+          "insufficient": "Evidence does not establish the claim; no invented runtime, scale or source proof."
+        }
+      },
+      "all_families": {
+        "type": "choice",
+        "instructions": "How does the supplied actual evidence relate to this claim: All five reader families now have actual HTTP/COMMIT overlap acceptance.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and its stated scope.",
+          "contradicts": "Evidence explicitly opposes the claim or states the relevant gate was not exercised.",
+          "insufficient": "Evidence does not establish the claim; no invented runtime, scale or source proof."
+        }
+      },
+      "full_auth": {
+        "type": "choice",
+        "instructions": "How does the supplied actual evidence relate to this claim: This checkpoint retested real Auth login, PostgREST transport and authenticated ticket POST issuance.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and its stated scope.",
+          "contradicts": "Evidence explicitly opposes the claim or states the relevant gate was not exercised.",
+          "insufficient": "Evidence does not establish the claim; no invented runtime, scale or source proof."
+        }
+      },
+      "hosted": {
+        "type": "choice",
+        "instructions": "How does the supplied actual evidence relate to this claim: The result establishes hosted Cloudflare R2 and physical-device acceptance.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and its stated scope.",
+          "contradicts": "Evidence explicitly opposes the claim or states the relevant gate was not exercised.",
+          "insufficient": "Evidence does not establish the claim; no invented runtime, scale or source proof."
+        }
+      },
+      "signature": {
+        "type": "choice",
+        "instructions": "How does the supplied actual evidence relate to this claim: Allowed repertoire bytes came from a signature-verified AWS4 loopback object service.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and its stated scope.",
+          "contradicts": "Evidence explicitly opposes the claim or states the relevant gate was not exercised.",
+          "insufficient": "Evidence does not establish the claim; no invented runtime, scale or source proof."
+        }
+      },
+      "concurrent_load": {
+        "type": "choice",
+        "instructions": "How does the supplied actual evidence relate to this claim: The observations establish acceptable performance for100 concurrently active choir tenants.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and its stated scope.",
+          "contradicts": "Evidence explicitly opposes the claim or states the relevant gate was not exercised.",
+          "insufficient": "Evidence does not establish the claim; no invented runtime, scale or source proof."
+        }
+      },
+      "close_brief": {
+        "type": "choice",
+        "instructions": "How does the supplied actual evidence relate to this claim: The entire090 brief can now be marked complete.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and its stated scope.",
+          "contradicts": "Evidence explicitly opposes the claim or states the relevant gate was not exercised.",
+          "insufficient": "Evidence does not establish the claim; no invented runtime, scale or source proof."
+        }
+      }
+    }
+  },
+  "requestSha256": "77da36cda482a6620a4e14cd7d2875ac8501ccca5870e5292d4da3226cef76e5",
+  "sourceSha256": "cfab7206dede451786009df8040c30abb110ba3f4395d5e363b6d72573db3cda"
+}

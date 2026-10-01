@@ -2,7 +2,7 @@
 
 Status: IN PROGRESS / local v2 implementation and synthetic acceptance PASS on
 30 September 2026; Android synthetic audio and connected stale-v1 PDF recovery PASS on 1 October.
-Hosted, Android WebView/in-flight HTTP/native-iOS and release gates remain open. Primary agent,
+Hosted, remaining four-family HTTP overlap, connected audio/native-iOS and release gates remain open. Primary agent,
 single writer. No hosted release authority.
 One result: uniform online next-request access-after-revocation for five private file
 families before `mixed`/`r2-required` cutover. This brief does not authorize live writes.
@@ -108,7 +108,7 @@ provider copy, push/deploy and actual Android/iOS device checks remain separatel
 | Decision #32 and 090 cross-links/consistency | Yes for this record | PASS | 30 September local link scan, `git diff --check` and scoped self-review; no source or runtime gate claimed |
 | Legacy v1 denial and compatibility checkpoint approved | Yes before implementation | PASS locally | Owner approved bounded local work on 30 September; v1 GET/HEAD now returns 401 in local tests. Hosted release was not approved. |
 | Five-family DB/Edge implementation and synthetic two-choir acceptance | Yes after contract selection | PASS locally | Disposable PG17 SQL matrix; service-only RPC; real local Auth/RLS/PostgREST/Edge + signed loopback S3 for repertoire; A/B same and separate sessions. Details below. |
-| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery and connected Android native stale-v1→v2 PDF/cache/switch PASS; Android audio recovery/seek uses deliberately unsigned synthetic issuance. Five connected HTTP readers PASS locally. Actual Android WebView, connected audio Auth/R2, native iOS and overlapping HTTP/COMMIT remain NOT RUN. |
+| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and actual permanent Android WebView recovery PASS locally. Android audio uses unsigned synthetic issuance. Five connected serial HTTP readers PASS historically; repertoire HTTP/COMMIT PASS with declared native-psql adapter on 1 October. Remaining four-family HTTP overlap, connected audio Auth/R2 and native iOS remain NOT RUN. |
 | Hosted cutover/public Drive withdrawal/offline deletion/device/beta | Later separate authority | NOT RUN | This preparation cannot accept these layers |
 
 Required NOT RUN keeps 090 open. This local implementation may be committed as a partial checkpoint;
@@ -930,3 +930,76 @@ runtime data are not retained/recoverable; tracked sources reproduce them. Origi
 mobile dependencies6409160/root1621064 KiB, private evidence and CLI marker preserved.
 Lowest observed free17577012 KiB, final23776212 KiB; both above10,485,760 KiB floor.
 No push/deploy/CI/real users/data/email/credential change, spending/hardware/distribution.
+
+## 1 October HTTP/COMMIT local checkpoint
+
+Owner says continue and report costs after WF-015. Entry main/a3c7273; unrelated
+cli-latest dirty. Read skill/AGENTS, handoff/active,090, relevant migration/decision32,
+guide/work cycle and execution controls; inspected existing PG17/handler/SQL fixtures.
+One outcome: actual repertoire GET/HEAD/Range refusal after an overlapping committed
+choir switch, role removal, membership deactivation or Auth-session deletion, while
+already-streaming bytes retain the documented boundary. No production code change.
+
+Three actions: schema-only disposable native PG17 fixture and actual-handler HTTP
+barriers; run/assert serial and overlapping observations plus five-family SQL matrix;
+run one redacted Jev claim-evidence advisory and record cost/source/cleanup.
+Allowed: narrow supabase/test-support/090_http_overlap*.{sh,ts}, this brief, small
+docs/reports/090 evidence, spike/typesafe/jev-090-evidence.mjs and handoff/active/progress.
+No product/client/schema source edits without a reproduced scoped defect; no deployment.
+
+Resource preflight free23,809,132KiB; native PostgreSQL17 already running. Additional
+peak <200MiB for schema-only20MiB DB, tiny logs/source/Deno cache checks; no Docker,
+VM, package installation or client build. Existing Deno modules cached. Exact owned
+DB genova_090_http_overlap_test; scratch spike/090-runtime/http-overlap; HTTP18190/
+provider18191 loopback only. Refuse existing DB/foreign listeners; remove owned DB/
+scratch after dependent checks. Preserve original068 row hashes/counts and caches.
+
+Boundary: use the actual repertoire handler/ticket/R2 helper and SQL090 authority
+under service_role via a DECLARED native-psql transport adapter, not Auth/PostgREST
+or the deployed entrypoint. Synthetic actor/session rows and direct signed-v2 fixture
+issuance; POST login/issuance is not retested. Signed loopback object transport, not
+hosted R2. This proves only repertoire HTTP/COMMIT; other-family HTTP overlap remains
+NOT RUN even if the five-family SQL matrix passes. Do not relabel this as connected
+Auth/RLS/native/provider acceptance or all of090. No new native/client acceptance needed.
+
+Required: runner fail-closed targets, Deno check; fresh five-family SQL; actual
+repertoire full/Range/HEAD within uncommitted revocation and denied after COMMIT;
+request held before SQL sees committed denial/provider0; observed streaming read
+survives COMMIT while new requests fail; source preservation/owned cleanup, diff/links.
+One Jev call max24KB/16questions/45s, pinned model, no retry and <$0.002 advisory cap;
+existing key authorized today only, memory-only. Report returned tokens and current
+documented$0.042/M input estimate, today's earlier$0.001763664 separately. Local
+existing-tool test creates no external provider charge; Codex per-turn price unknown.
+
+### HTTP/COMMIT acceptance — 1 October 2026
+
+Source/test `d448de5`, Jev tooling `062c034`.
+[Report](../reports/2026-10-01-repertoire-http-overlap.md) owns exact boundaries,
+costs, failures and next action; [raw trace](../reports/090/2026-10-01-http-overlap.json)
+was frozen before inference. Final run11:04UTC /14:04Istanbul.
+
+| Criterion | Required | Result | Evidence |
+| --- | --- | --- | --- |
+| Fail-closed targets and source checks | Yes | PASS | Existing scratch/DB and occupied-port probes refused without removing foreign targets; shell syntax/Deno check pass |
+| Fresh five-family SQL090 matrix | Yes | PASS | Disposable schema-only nativePG17, actual SQL, rollback |
+| Actual repertoire GET/Range/HEAD across four mutations | Yes | PASS | Uncommitted200/206/200; acknowledged COMMIT gives403/provider0 |
+| HTTP before COMMIT, SQL afterward | Yes | PASS | Explicit barrier; real authority denies all four cases/provider0 |
+| Already-streaming boundary | Yes | PASS | First32B before COMMIT, original65905B/hash completes; freshGET/Range/HEAD403/provider0 |
+| Original preservation and owned cleanup | Yes | PASS | Original five-table row hashes/counts28/1/29/9/79 unchanged; disposable DB/scratch/services removed |
+| Bounded Jev/cost record | Yes | PASS advisory only | One call4952 input/388 output,$0.000207984 estimate; nine labels agree, not independent acceptance |
+| Docs/links/diff | Yes | PASS | Local links/git diff --check |
+| Other four-family overlap; fresh Auth/PostgREST/entrypoint/native/hosted | Separate gates | NOT RUN | Not inferred from this adapter or historical serial checks |
+
+Four cases,180 ordered trace events,16 signature-verified provider hits,zero failures.
+No production/client/schema/dependency changes. Focused checks do not refresh root/
+mobile full-gate evidence or establish load capacity. Whole090 remains IN PROGRESS.
+Initial inherited-tsconfig/strict-type check failures and pre-HTTP emptyPGSERVICE
+runtime failure were reproduced/corrected; final run after ownership/guard review PASS.
+See report for details; no failed runtime relabeled HTTP PASS.
+
+Final free23,695,880KiB, above10,485,760KiB floor; preflight23,809,132KiB.
+<200MiB was allocation forecast, not measured continuous peak. Only owned disposable
+outputs removed, reproducible from sources; original068/caches/unrelated CLI preserved.
+No push/deploy/CI/hosted/real-user/email/hardware operation. Next bounded outcome:
+remaining four private-file readers' actual HTTP/COMMIT matrix. Connected audio,
+native iOS, assignment-version Drive-exit and hosted rollout remain separate gates.

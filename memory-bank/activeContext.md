@@ -31,10 +31,14 @@ v1 GET401/no recovery reproduced, one authority renewal with current native leas
 65905B/hash/real share sheet, A→B cache clear/`Shared B` profile/oldHEAD403/provider0.
 Same helper plus explicit local relay; not external sharing or assignment-version Drive-exit.
 Fresh mobile TS54/377, root106/1067/build and normal Android/iOS JS exports PASS.
-Connected audio Auth/R2 and in-flight HTTP/COMMIT remain NOT RUN.
+1 Oct `d448de5`: repertoire HTTP/COMMIT PASS for switch/role/member/session changes;
+new reads403/provider0, prior stream completes. Declared native-psql adapter, not fresh
+Auth/PostgREST. [Evidence/costs](../docs/reports/2026-10-01-repertoire-http-overlap.md):
+one Jev advisory$0.000207984, daily13calls$0.001971648 estimated, not invoice.
+Remaining four-family HTTP overlap/connected audio Auth/R2 NOT RUN.
 Native iOS audio error-latch/seek acceptance is scheduled at 090's
 integrated both-platform private-client checkpoint before release; JS export does not close it.
-**Next local action:** overlapping HTTP/COMMIT acceptance. Performance query/HomeworkCard
+**Next local action:** remaining four readers' HTTP/COMMIT acceptance. Performance query/HomeworkCard
 legacy-link/assignment-version integration remains a follow-up. Hosted rollout separately gated.
 
 ## Preserved historical evidence
@@ -56,7 +60,8 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary agent is sole writer. 1 Oct owned emulator/app/reverse/connected runtime/VM and
-generated outputs cleaned; final free23,776,212 KiB, original068 counts unchanged (090).
+generated outputs cleaned; latest disposable native DB/HTTP cleanup leaves23,695,880KiB
+free, original068 row hashes/counts unchanged (090).
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
 global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;
 one heavy process, two-failure causal reassessment, no blind rebuild or broad cleanup.

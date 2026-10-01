@@ -1,5 +1,15 @@
 # İlerleme indeksi
 
+1 October — [090 repertoire HTTP/COMMIT](../docs/reports/2026-10-01-repertoire-http-overlap.md),
+source/test `d448de5`, Jev tooling `062c034`, PASS locally. Actual handler/nativePG17
+service_role SQL via declared psql adapter: four mutations, new GET/Range/HEAD403/provider0,
+held-before-SQL denial and streaming65905B/hash boundary. Fresh five-family SQL/target
+guards/original hashes pass; owned DB/scratch/services cleaned,23,695,880KiB free.
+Other four readers' HTTP overlap next; Auth/PostgREST/connected audio/native iOS/hosted/load
+NOT RUN,090 open. One Jev advisory9/9 self-labels, not independent acceptance;4952/388
+tokens,$0.000207984 estimate. Daily13calls46944/6263,$0.001971648 estimate; invoice/Codex
+per-turn unknown. No production/external change.
+
 1 October — [WF-015 staged Jev analysis](../docs/briefs/WF-015-jev-assisted-project-analysis.md)
 initial two-stage pilot accepted, source6bb2e3d. Actual jev-1.13.0 Introduction/coding-agent
 controls6/6 and eight project-shortlist judgments; [report](../docs/reports/2026-10-01-jev-project-opportunities.md).

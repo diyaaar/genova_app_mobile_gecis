@@ -1,0 +1,1249 @@
+{
+  "timestamp": "2026-10-01T11:04:03.666Z",
+  "result": "PASS",
+  "family": "repertoire-file",
+  "boundary": "Actual handler/R2 helper and HTTP, nativePG17/service_role SQL via explicit psql adapter. Synthetic session rows/direct signed-v2 fixture issuance, no Auth/PostgREST/entrypoint/hosted/native proof.",
+  "provider": "AWS4 signature-verified loopback object service",
+  "providerHits": 16,
+  "providerFailures": 0,
+  "results": [
+    {
+      "change": "choir_switch",
+      "uncommitted": [
+        {
+          "method": "GET",
+          "range": false,
+          "status": 200,
+          "providerDelta": 1,
+          "bytes": 65905
+        },
+        {
+          "method": "GET",
+          "range": true,
+          "status": 206,
+          "providerDelta": 1,
+          "bytes": 13
+        },
+        {
+          "method": "HEAD",
+          "range": false,
+          "status": 200,
+          "providerDelta": 1,
+          "bytes": 0
+        }
+      ],
+      "afterCommit": [
+        {
+          "method": "GET",
+          "range": false,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 25
+        },
+        {
+          "method": "GET",
+          "range": true,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 25
+        },
+        {
+          "method": "HEAD",
+          "range": false,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 0
+        }
+      ],
+      "heldBeforeSql": {
+        "method": "GET",
+        "range": false,
+        "status": 403,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      "streaming": {
+        "firstBytesBeforeCommit": 32,
+        "completedBytes": 65905,
+        "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+        "freshDenials": [
+          {
+            "method": "GET",
+            "range": false,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 25
+          },
+          {
+            "method": "GET",
+            "range": true,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 25
+          },
+          {
+            "method": "HEAD",
+            "range": false,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 0
+          }
+        ]
+      }
+    },
+    {
+      "change": "role_removal",
+      "uncommitted": [
+        {
+          "method": "GET",
+          "range": false,
+          "status": 200,
+          "providerDelta": 1,
+          "bytes": 65905
+        },
+        {
+          "method": "GET",
+          "range": true,
+          "status": 206,
+          "providerDelta": 1,
+          "bytes": 13
+        },
+        {
+          "method": "HEAD",
+          "range": false,
+          "status": 200,
+          "providerDelta": 1,
+          "bytes": 0
+        }
+      ],
+      "afterCommit": [
+        {
+          "method": "GET",
+          "range": false,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 25
+        },
+        {
+          "method": "GET",
+          "range": true,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 25
+        },
+        {
+          "method": "HEAD",
+          "range": false,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 0
+        }
+      ],
+      "heldBeforeSql": {
+        "method": "GET",
+        "range": false,
+        "status": 403,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      "streaming": {
+        "firstBytesBeforeCommit": 32,
+        "completedBytes": 65905,
+        "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+        "freshDenials": [
+          {
+            "method": "GET",
+            "range": false,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 25
+          },
+          {
+            "method": "GET",
+            "range": true,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 25
+          },
+          {
+            "method": "HEAD",
+            "range": false,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 0
+          }
+        ]
+      }
+    },
+    {
+      "change": "membership_inactive",
+      "uncommitted": [
+        {
+          "method": "GET",
+          "range": false,
+          "status": 200,
+          "providerDelta": 1,
+          "bytes": 65905
+        },
+        {
+          "method": "GET",
+          "range": true,
+          "status": 206,
+          "providerDelta": 1,
+          "bytes": 13
+        },
+        {
+          "method": "HEAD",
+          "range": false,
+          "status": 200,
+          "providerDelta": 1,
+          "bytes": 0
+        }
+      ],
+      "afterCommit": [
+        {
+          "method": "GET",
+          "range": false,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 25
+        },
+        {
+          "method": "GET",
+          "range": true,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 25
+        },
+        {
+          "method": "HEAD",
+          "range": false,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 0
+        }
+      ],
+      "heldBeforeSql": {
+        "method": "GET",
+        "range": false,
+        "status": 403,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      "streaming": {
+        "firstBytesBeforeCommit": 32,
+        "completedBytes": 65905,
+        "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+        "freshDenials": [
+          {
+            "method": "GET",
+            "range": false,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 25
+          },
+          {
+            "method": "GET",
+            "range": true,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 25
+          },
+          {
+            "method": "HEAD",
+            "range": false,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 0
+          }
+        ]
+      }
+    },
+    {
+      "change": "session_deleted",
+      "uncommitted": [
+        {
+          "method": "GET",
+          "range": false,
+          "status": 200,
+          "providerDelta": 1,
+          "bytes": 65905
+        },
+        {
+          "method": "GET",
+          "range": true,
+          "status": 206,
+          "providerDelta": 1,
+          "bytes": 13
+        },
+        {
+          "method": "HEAD",
+          "range": false,
+          "status": 200,
+          "providerDelta": 1,
+          "bytes": 0
+        }
+      ],
+      "afterCommit": [
+        {
+          "method": "GET",
+          "range": false,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 25
+        },
+        {
+          "method": "GET",
+          "range": true,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 25
+        },
+        {
+          "method": "HEAD",
+          "range": false,
+          "status": 403,
+          "providerDelta": 0,
+          "bytes": 0
+        }
+      ],
+      "heldBeforeSql": {
+        "method": "GET",
+        "range": false,
+        "status": 403,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      "streaming": {
+        "firstBytesBeforeCommit": 32,
+        "completedBytes": 65905,
+        "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+        "freshDenials": [
+          {
+            "method": "GET",
+            "range": false,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 25
+          },
+          {
+            "method": "GET",
+            "range": true,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 25
+          },
+          {
+            "method": "HEAD",
+            "range": false,
+            "status": 403,
+            "providerDelta": 0,
+            "bytes": 0
+          }
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "phase": "peer-uncommitted",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 2,
+      "phase": "http-reached-authority-adapter",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 3,
+      "phase": "authority-sql-start",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 4,
+      "phase": "authority-allow",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 5,
+      "phase": "provider-request-signed",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 6,
+      "phase": "http-reached-authority-adapter",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 7,
+      "phase": "authority-sql-start",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 8,
+      "phase": "authority-allow",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 9,
+      "phase": "provider-request-signed",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 10,
+      "phase": "http-reached-authority-adapter",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 11,
+      "phase": "authority-sql-start",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 12,
+      "phase": "authority-allow",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 13,
+      "phase": "provider-request-signed",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 14,
+      "phase": "peer-commit-ack",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 15,
+      "phase": "http-reached-authority-adapter",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 16,
+      "phase": "authority-sql-start",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 17,
+      "phase": "authority-deny",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 18,
+      "phase": "http-reached-authority-adapter",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 19,
+      "phase": "authority-sql-start",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 20,
+      "phase": "authority-deny",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 21,
+      "phase": "http-reached-authority-adapter",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 22,
+      "phase": "authority-sql-start",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 23,
+      "phase": "authority-deny",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 24,
+      "phase": "peer-uncommitted-held-request",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 25,
+      "phase": "http-reached-authority-adapter",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 26,
+      "phase": "request-held-before-sql",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 27,
+      "phase": "peer-commit-before-authority",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 28,
+      "phase": "authority-sql-start",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 29,
+      "phase": "authority-deny",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 30,
+      "phase": "http-reached-authority-adapter",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 31,
+      "phase": "authority-sql-start",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 32,
+      "phase": "authority-allow",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 33,
+      "phase": "provider-request-signed",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 34,
+      "phase": "client-first-bytes-before-commit",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 35,
+      "phase": "peer-commit-during-stream",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 36,
+      "phase": "http-reached-authority-adapter",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 37,
+      "phase": "authority-sql-start",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 38,
+      "phase": "authority-deny",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 39,
+      "phase": "http-reached-authority-adapter",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 40,
+      "phase": "authority-sql-start",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 41,
+      "phase": "authority-deny",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 42,
+      "phase": "http-reached-authority-adapter",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 43,
+      "phase": "authority-sql-start",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 44,
+      "phase": "authority-deny",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 45,
+      "phase": "existing-stream-completed",
+      "change": "choir_switch"
+    },
+    {
+      "sequence": 46,
+      "phase": "peer-uncommitted",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 47,
+      "phase": "http-reached-authority-adapter",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 48,
+      "phase": "authority-sql-start",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 49,
+      "phase": "authority-allow",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 50,
+      "phase": "provider-request-signed",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 51,
+      "phase": "http-reached-authority-adapter",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 52,
+      "phase": "authority-sql-start",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 53,
+      "phase": "authority-allow",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 54,
+      "phase": "provider-request-signed",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 55,
+      "phase": "http-reached-authority-adapter",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 56,
+      "phase": "authority-sql-start",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 57,
+      "phase": "authority-allow",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 58,
+      "phase": "provider-request-signed",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 59,
+      "phase": "peer-commit-ack",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 60,
+      "phase": "http-reached-authority-adapter",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 61,
+      "phase": "authority-sql-start",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 62,
+      "phase": "authority-deny",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 63,
+      "phase": "http-reached-authority-adapter",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 64,
+      "phase": "authority-sql-start",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 65,
+      "phase": "authority-deny",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 66,
+      "phase": "http-reached-authority-adapter",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 67,
+      "phase": "authority-sql-start",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 68,
+      "phase": "authority-deny",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 69,
+      "phase": "peer-uncommitted-held-request",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 70,
+      "phase": "http-reached-authority-adapter",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 71,
+      "phase": "request-held-before-sql",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 72,
+      "phase": "peer-commit-before-authority",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 73,
+      "phase": "authority-sql-start",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 74,
+      "phase": "authority-deny",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 75,
+      "phase": "http-reached-authority-adapter",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 76,
+      "phase": "authority-sql-start",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 77,
+      "phase": "authority-allow",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 78,
+      "phase": "provider-request-signed",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 79,
+      "phase": "client-first-bytes-before-commit",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 80,
+      "phase": "peer-commit-during-stream",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 81,
+      "phase": "http-reached-authority-adapter",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 82,
+      "phase": "authority-sql-start",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 83,
+      "phase": "authority-deny",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 84,
+      "phase": "http-reached-authority-adapter",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 85,
+      "phase": "authority-sql-start",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 86,
+      "phase": "authority-deny",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 87,
+      "phase": "http-reached-authority-adapter",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 88,
+      "phase": "authority-sql-start",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 89,
+      "phase": "authority-deny",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 90,
+      "phase": "existing-stream-completed",
+      "change": "role_removal"
+    },
+    {
+      "sequence": 91,
+      "phase": "peer-uncommitted",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 92,
+      "phase": "http-reached-authority-adapter",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 93,
+      "phase": "authority-sql-start",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 94,
+      "phase": "authority-allow",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 95,
+      "phase": "provider-request-signed",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 96,
+      "phase": "http-reached-authority-adapter",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 97,
+      "phase": "authority-sql-start",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 98,
+      "phase": "authority-allow",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 99,
+      "phase": "provider-request-signed",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 100,
+      "phase": "http-reached-authority-adapter",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 101,
+      "phase": "authority-sql-start",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 102,
+      "phase": "authority-allow",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 103,
+      "phase": "provider-request-signed",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 104,
+      "phase": "peer-commit-ack",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 105,
+      "phase": "http-reached-authority-adapter",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 106,
+      "phase": "authority-sql-start",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 107,
+      "phase": "authority-deny",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 108,
+      "phase": "http-reached-authority-adapter",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 109,
+      "phase": "authority-sql-start",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 110,
+      "phase": "authority-deny",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 111,
+      "phase": "http-reached-authority-adapter",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 112,
+      "phase": "authority-sql-start",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 113,
+      "phase": "authority-deny",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 114,
+      "phase": "peer-uncommitted-held-request",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 115,
+      "phase": "http-reached-authority-adapter",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 116,
+      "phase": "request-held-before-sql",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 117,
+      "phase": "peer-commit-before-authority",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 118,
+      "phase": "authority-sql-start",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 119,
+      "phase": "authority-deny",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 120,
+      "phase": "http-reached-authority-adapter",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 121,
+      "phase": "authority-sql-start",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 122,
+      "phase": "authority-allow",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 123,
+      "phase": "provider-request-signed",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 124,
+      "phase": "client-first-bytes-before-commit",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 125,
+      "phase": "peer-commit-during-stream",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 126,
+      "phase": "http-reached-authority-adapter",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 127,
+      "phase": "authority-sql-start",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 128,
+      "phase": "authority-deny",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 129,
+      "phase": "http-reached-authority-adapter",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 130,
+      "phase": "authority-sql-start",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 131,
+      "phase": "authority-deny",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 132,
+      "phase": "http-reached-authority-adapter",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 133,
+      "phase": "authority-sql-start",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 134,
+      "phase": "authority-deny",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 135,
+      "phase": "existing-stream-completed",
+      "change": "membership_inactive"
+    },
+    {
+      "sequence": 136,
+      "phase": "peer-uncommitted",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 137,
+      "phase": "http-reached-authority-adapter",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 138,
+      "phase": "authority-sql-start",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 139,
+      "phase": "authority-allow",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 140,
+      "phase": "provider-request-signed",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 141,
+      "phase": "http-reached-authority-adapter",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 142,
+      "phase": "authority-sql-start",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 143,
+      "phase": "authority-allow",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 144,
+      "phase": "provider-request-signed",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 145,
+      "phase": "http-reached-authority-adapter",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 146,
+      "phase": "authority-sql-start",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 147,
+      "phase": "authority-allow",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 148,
+      "phase": "provider-request-signed",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 149,
+      "phase": "peer-commit-ack",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 150,
+      "phase": "http-reached-authority-adapter",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 151,
+      "phase": "authority-sql-start",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 152,
+      "phase": "authority-deny",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 153,
+      "phase": "http-reached-authority-adapter",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 154,
+      "phase": "authority-sql-start",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 155,
+      "phase": "authority-deny",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 156,
+      "phase": "http-reached-authority-adapter",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 157,
+      "phase": "authority-sql-start",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 158,
+      "phase": "authority-deny",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 159,
+      "phase": "peer-uncommitted-held-request",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 160,
+      "phase": "http-reached-authority-adapter",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 161,
+      "phase": "request-held-before-sql",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 162,
+      "phase": "peer-commit-before-authority",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 163,
+      "phase": "authority-sql-start",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 164,
+      "phase": "authority-deny",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 165,
+      "phase": "http-reached-authority-adapter",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 166,
+      "phase": "authority-sql-start",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 167,
+      "phase": "authority-allow",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 168,
+      "phase": "provider-request-signed",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 169,
+      "phase": "client-first-bytes-before-commit",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 170,
+      "phase": "peer-commit-during-stream",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 171,
+      "phase": "http-reached-authority-adapter",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 172,
+      "phase": "authority-sql-start",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 173,
+      "phase": "authority-deny",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 174,
+      "phase": "http-reached-authority-adapter",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 175,
+      "phase": "authority-sql-start",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 176,
+      "phase": "authority-deny",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 177,
+      "phase": "http-reached-authority-adapter",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 178,
+      "phase": "authority-sql-start",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 179,
+      "phase": "authority-deny",
+      "change": "session_deleted"
+    },
+    {
+      "sequence": 180,
+      "phase": "existing-stream-completed",
+      "change": "session_deleted"
+    }
+  ]
+}

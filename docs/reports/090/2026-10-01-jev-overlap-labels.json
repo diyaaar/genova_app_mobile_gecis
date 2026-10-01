@@ -1,0 +1,14 @@
+{
+  "expected": {
+    "next_read": "supports",
+    "held_request": "supports",
+    "stream": "contradicts",
+    "all_families": "contradicts",
+    "full_auth": "contradicts",
+    "hosted": "contradicts",
+    "signature": "supports",
+    "concurrent_load": "insufficient",
+    "close_brief": "contradicts"
+  },
+  "labelOwner": "Primary agent before inference; not independent review."
+}
