@@ -3,6 +3,18 @@ const {
 } = require('../with-local-loopback-network');
 
 describe('021 Android loopback network guard', () => {
+  it('090 WebView requires only its exact explicit local consumer', () => {
+    const env = { GENOVA_090_ANDROID_WEBVIEW_LOOPBACK: '1',
+      EXPO_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE: '1', EXPO_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54491' };
+    expect(requireGuardedLoopbackEnvironment(env)).toBe(true);
+    for (const patch of [
+      { EXPO_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE: '0' },
+      { EXPO_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54491/?unexpected=1' },
+      { GENOVA_090_ANDROID_PDF_LOOPBACK: '1' }, { GENOVA_090_ANDROID_AUDIO_LOOPBACK: '1' },
+      { EXPO_PUBLIC_GENOVA_033_ACCEPTANCE: '1' }, { GENOVA_093_ANDROID_LOOPBACK: '1' },
+      { EXPO_PUBLIC_GENOVA_090_AUDIO_ACCEPTANCE: '1' }, { EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE: '1' },
+    ]) expect(() => requireGuardedLoopbackEnvironment({ ...env, ...patch })).toThrow();
+  });
   it('is inert unless the explicit acceptance flag is enabled', () => {
     expect(requireGuardedLoopbackEnvironment({})).toBe(false);
   });

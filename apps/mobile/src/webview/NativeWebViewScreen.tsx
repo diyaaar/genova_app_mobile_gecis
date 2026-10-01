@@ -18,6 +18,7 @@ import { WebView, type WebViewMessageEvent } from 'react-native-webview';
 import type { BridgeDiagnostic, NativeRouteFamily } from '@shared/mobile-webview-bridge';
 import type { NativeWebViewLease, NativeWebViewLeaseOptions, PasswordChangeResult, SecureKeyValueStore } from '../auth/types';
 import { secureKeyValueStore } from '../auth/supabase-client';
+import { createPrivateFileTicketRecovery } from './private-file-ticket-recovery';
 import {
   NativeWebViewBridgeController,
   type NativeBridgeSnapshot,
@@ -159,6 +160,11 @@ export function NativeWebViewScreen({
   const protectedFileCapability = useMemo(() => suppliedProtectedFileCapability ?? new ProtectedFileCapability(
     createExpoEphemeralFileStore(),
     createExpoShareGateway(),
+    createPrivateFileTicketRecovery({
+      getIssuer: () => process.env.EXPO_PUBLIC_SUPABASE_URL,
+      getLease: options => actionsRef.current.getLease(options),
+      allowLoopback: __DEV__,
+    }),
   ), [suppliedProtectedFileCapability]);
   const bootstrap = useMemo(() => ({
     channel: 'genova.mobile.webview' as const,

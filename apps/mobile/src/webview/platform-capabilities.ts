@@ -159,6 +159,8 @@ export interface NativeShareGateway {
   share(uri: string, options: { mimeType: string; dialogTitle: string }): Promise<void>;
 }
 
+export class ProtectedFileValidationError extends Error {}
+
 function fileSuffix(fileName: string): string {
   const match = /\.[a-z0-9]{1,8}$/iu.exec(fileName);
   return match?.[0]?.toLowerCase() ?? '';
@@ -232,7 +234,7 @@ function validateDownloadedFile(file: File, mimeType: string, fileName: string) 
   try {
     const bytes = handle.readBytes(Math.min(file.size, 512));
     if (!hasExpectedPassiveFileSignature(bytes, mimeType, fileName)) {
-      throw new Error('file-content-mismatch');
+      throw new ProtectedFileValidationError('file-content-mismatch');
     }
   } finally {
     handle.close();
@@ -253,8 +255,8 @@ export function createExpoEphemeralFileStore(): EphemeralFileStore {
       try {
         const downloaded = await task.downloadAsync();
         if (!downloaded) throw new Error('file-download-paused');
-        if (!downloaded.exists || downloaded.size < 1) throw new Error('file-empty');
-        if (downloaded.size > MAX_PROTECTED_FILE_BYTES) throw new Error('file-too-large');
+        if (!downloaded.exists || downloaded.size < 1) throw new ProtectedFileValidationError('file-empty');
+        if (downloaded.size > MAX_PROTECTED_FILE_BYTES) throw new ProtectedFileValidationError('file-too-large');
         validateDownloadedFile(downloaded, mimeType, fileName);
         return { uri: downloaded.uri, size: downloaded.size };
       } catch (error) {
@@ -292,6 +294,7 @@ export class ProtectedFileCapability {
   constructor(
     private readonly files: EphemeralFileStore,
     private readonly sharing: NativeShareGateway,
+    private readonly recoverAfterFailure?: (input: { url: string; signal: AbortSignal }) => Promise<string>,
   ) {}
 
   async run(request: PreparedProtectedFileRequest): Promise<boolean> {
@@ -300,12 +303,22 @@ export class ProtectedFileCapability {
     this.abortController = controller;
     try {
       if (!await this.sharing.isAvailable()) return false;
-      const downloaded = await this.files.download({
-        url: request.canonicalUrl,
+      if (controller.signal.aborted) return false;
+      const download = (url: string) => this.files.download({
+        url,
         fileName: request.fileName,
         mimeType: request.mimeType,
         signal: controller.signal,
       });
+      let downloaded: { uri: string; size: number };
+      try {
+        downloaded = await download(request.canonicalUrl);
+      } catch (error) {
+        if (controller.signal.aborted || error instanceof ProtectedFileValidationError || !this.recoverAfterFailure) throw error;
+        const recovered = await this.recoverAfterFailure({ url: request.canonicalUrl, signal: controller.signal });
+        if (controller.signal.aborted) return false;
+        downloaded = await download(recovered); // Deliberately no second recovery.
+      }
       this.activeUri = downloaded.uri;
       if (controller.signal.aborted || downloaded.size < 1 || downloaded.size > MAX_PROTECTED_FILE_BYTES) return false;
       await this.sharing.share(downloaded.uri, {

@@ -3,6 +3,7 @@ import {
   MAX_PROTECTED_FILE_BYTES,
   MAX_WEBVIEW_IMAGE_BYTES,
   ProtectedFileCapability,
+  ProtectedFileValidationError,
   WEBVIEW_IMAGE_INPUT_POLICY,
   hasExpectedPassiveFileSignature,
   prepareProtectedFileRequest,
@@ -84,6 +85,40 @@ describe('WebView platform capability policy', () => {
 });
 
 describe('ephemeral protected file operation', () => {
+  it('renews after one opaque download failure, shares once and removes the recovered file', async () => {
+    const r = createRuntime();
+    (r.files.download as jest.Mock).mockRejectedValueOnce(new Error('HTTP unavailable'));
+    const recover = jest.fn(async () => 'https://trusted.invalid/fresh');
+    const capability = new ProtectedFileCapability(r.files, r.sharing, recover);
+    await expect(capability.run(prepareProtectedFileRequest(request(), { appOrigin: APP_WEB_ORIGIN })!)).resolves.toBe(true);
+    expect(recover).toHaveBeenCalledTimes(1); expect(r.files.download).toHaveBeenCalledTimes(2);
+    expect(r.sharing.share).toHaveBeenCalledTimes(1); expect(r.files.remove).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not renew malformed downloaded bytes or retry a second download failure', async () => {
+    for (const error of [new ProtectedFileValidationError('bad bytes'), new Error('transport')]) {
+      const r = createRuntime(); (r.files.download as jest.Mock).mockRejectedValue(error);
+      const recover = jest.fn(async () => 'https://trusted.invalid/fresh');
+      const capability = new ProtectedFileCapability(r.files, r.sharing, recover);
+      await expect(capability.run(prepareProtectedFileRequest(request(), { appOrigin: APP_WEB_ORIGIN })!)).resolves.toBe(false);
+      expect(recover).toHaveBeenCalledTimes(error instanceof ProtectedFileValidationError ? 0 : 1);
+      expect(r.files.download).toHaveBeenCalledTimes(error instanceof ProtectedFileValidationError ? 1 : 2);
+      expect(r.sharing.share).not.toHaveBeenCalled();
+    }
+  });
+
+  it('clear while renewing prevents a late recovered download or share', async () => {
+    const r = createRuntime(); (r.files.download as jest.Mock).mockRejectedValueOnce(new Error('HTTP'));
+    let release!: (url: string) => void; let entered!: () => void;
+    const started = new Promise<void>(resolve => { entered = resolve; });
+    const recover = jest.fn(() => { entered(); return new Promise<string>(resolve => { release = resolve; }); });
+    const capability = new ProtectedFileCapability(r.files, r.sharing, recover);
+    const run = capability.run(prepareProtectedFileRequest(request(), { appOrigin: APP_WEB_ORIGIN })!);
+    await started; await capability.clear(); release('https://trusted.invalid/fresh');
+    await expect(run).resolves.toBe(false);
+    expect(r.files.download).toHaveBeenCalledTimes(1); expect(r.sharing.share).not.toHaveBeenCalled();
+  });
+
   it('downloads only after confirmation, opens the requested action sheet and always removes the file', async () => {
     const runtime = createRuntime();
     const prepared = prepareProtectedFileRequest(request(), { appOrigin: APP_WEB_ORIGIN })!;
@@ -122,11 +157,14 @@ describe('ephemeral protected file operation', () => {
 
   it('aborts and cleans late download work when tenant clear wins', async () => {
     let release!: (value: { uri: string; size: number }) => void;
+    let entered!: () => void;
+    const started = new Promise<void>(resolve => { entered = resolve; });
     const pending = new Promise<{ uri: string; size: number }>((resolve) => { release = resolve; });
     const runtime = createRuntime();
-    (runtime.files.download as jest.Mock).mockImplementation(() => pending);
+    (runtime.files.download as jest.Mock).mockImplementation(() => { entered(); return pending; });
     const run = runtime.capability.run(prepareProtectedFileRequest(request(), { appOrigin: APP_WEB_ORIGIN })!);
 
+    await started;
     await runtime.capability.clear();
     release({ uri: 'file:///cache/late.pdf', size: 128 });
     await expect(run).resolves.toBe(false);

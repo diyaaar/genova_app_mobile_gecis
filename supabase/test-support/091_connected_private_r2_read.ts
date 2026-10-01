@@ -39,14 +39,23 @@ if (androidFixturePath) {
   assert.equal(androidFixturePath, resolve('spike/093-runtime/.093-android-fixture.json'));
 }
 const nativePdfRecovery = process.env.GENOVA_090_ANDROID_PDF_RECOVERY === '1';
+const webViewRecovery = process.env.GENOVA_090_ANDROID_WEBVIEW === '1';
+if (webViewRecovery) {
+  assert.ok(androidFixturePath, '090 WebView requires the explicit owned runtime hold');
+  assert.equal(nativePdfRecovery, false, '090 accepts one native consumer at a time');
+}
 if (nativePdfRecovery) assert.ok(androidFixturePath, '090 PDF requires the explicit owned runtime hold');
 let oneUseFixture: string | null = null;
+let webViewMetadata: string | null = null;
+let recoveredWebViewUrl: string | null = null;
+const webViewReads: { method: string; status: number; providerDelta: number }[] = [];
 let fixtureConsumed = false;
 const nativeReads: { method: string; status: number; providerDelta: number }[] = [];
 const ids = {
   choirA: randomUUID(), choirB: randomUUID(), songA: randomUUID(), songB: randomUUID(),
   fileA: randomUUID(), fileB: randomUUID(), memberA: randomUUID(), memberB: randomUUID(),
   outsiderB: randomUUID(), roleA: randomUUID(), roleB: randomUUID(), roleChorist: randomUUID(),
+  targetA: randomUUID(), roleChoristA: randomUUID(), homework: randomUUID(), submission: randomUUID(),
 };
 const assignmentA = randomUUID();
 const pdf = new Uint8Array(readFileSync('apps/mobile/src/repertoire/__fixtures__/score_40p.pdf'));
@@ -64,6 +73,66 @@ let providerHits = 0;
 const provider = createServer((request, response) => {
   try {
     const url = new URL(request.url ?? '/', S3);
+    if (webViewRecovery && (url.pathname.startsWith('/090/webview-') ||
+        url.pathname === '/functions/v1/repertoire-file')) {
+      void (async () => {
+        assert.equal(request.headers.host, '127.0.0.1:18092');
+        response.setHeader('Cache-Control', 'no-store');
+        if (url.pathname === '/090/webview-fixture' && request.method === 'POST' && !url.search) {
+          if (!oneUseFixture) { response.writeHead(410); response.end(); return; }
+          const payload = oneUseFixture;
+          oneUseFixture = null; fixtureConsumed = true;
+          response.writeHead(200, { 'Content-Type': 'application/json' }); response.end(payload); return;
+        }
+        if (url.pathname === '/090/webview-metadata' && request.method === 'GET' && !url.search) {
+          assert.ok(webViewMetadata);
+          response.writeHead(200, { 'Content-Type': 'application/json' }); response.end(webViewMetadata); return;
+        }
+        if (url.pathname === '/090/webview-evidence' && request.method === 'POST' && !url.search) {
+          assert.ok(recoveredWebViewUrl);
+          const before = providerHits;
+          assert.equal((await fetch(recoveredWebViewUrl, { method: 'HEAD' })).status, 403);
+          assert.equal(providerHits, before);
+          webViewReads.push({ method: 'HEAD', status: 403, providerDelta: 0 });
+          console.log('090 WebView observation old A HEAD403 providerDelta0');
+          response.writeHead(200); response.end(); return;
+        }
+        assert.equal(url.pathname, '/functions/v1/repertoire-file');
+        assert.ok(['POST', 'GET', 'HEAD'].includes(request.method ?? ''));
+        const chunks: Buffer[] = [];
+        let size = 0;
+        for await (const chunk of request) {
+          size += Buffer.byteLength(chunk); assert.ok(size <= 16_384);
+          chunks.push(Buffer.from(chunk));
+        }
+        if (request.method === 'POST') assert.equal(JSON.parse(Buffer.concat(chunks).toString()).fileId, ids.fileA);
+        else {
+          assert.equal(url.searchParams.get('fileId'), ids.fileA);
+          assert.deepEqual([...url.searchParams.keys()].sort(), ['fileId', 'ticket']);
+        }
+        const before = providerHits;
+        const actual = await fetch(`${EDGE}/${url.search}`, { method: request.method,
+          headers: request.method === 'POST' ? { 'Content-Type': 'application/json',
+            authorization: request.headers.authorization ?? '' } : {},
+          body: request.method === 'POST' ? Buffer.concat(chunks) : undefined });
+        webViewReads.push({ method: request.method!, status: actual.status, providerDelta: providerHits - before });
+        console.log(`090 WebView observation ${request.method} ${actual.status} providerDelta=${providerHits - before}`);
+        if (request.method === 'POST' && actual.ok) {
+          const body = await actual.json() as { url: string; expiresAt: number };
+          const issued = new URL(body.url, EDGE);
+          assert.equal(issued.origin, EDGE);
+          recoveredWebViewUrl = issued.toString();
+          response.writeHead(200, { 'Content-Type': 'application/json' });
+          response.end(JSON.stringify({ ...body, url: `${S3}/functions/v1/repertoire-file${issued.search}` }));
+        } else {
+          const bytes = new Uint8Array(await actual.arrayBuffer());
+          if (actual.ok && request.method === 'GET') assert.equal(hash(bytes), hash(pdf));
+          response.writeHead(actual.status, Object.fromEntries(actual.headers));
+          response.end(request.method === 'HEAD' ? undefined : bytes);
+        }
+      })().catch(() => { response.writeHead(500); response.end(); });
+      return;
+    }
     if (nativePdfRecovery && url.pathname.startsWith('/090/')) {
       void (async () => {
         assert.equal(request.headers.host, '127.0.0.1:18092');
@@ -224,6 +293,26 @@ async function main() {
     const legacy = await createRepertoireFileTicket({fileId:ids.fileA,choirId:ids.choirA},service);
     const legacyUrl = new URL(`?fileId=${ids.fileA}&ticket=${encodeURIComponent(legacy.token)}`,EDGE);
     assert.equal((await fetch(legacyUrl,{method:'HEAD'})).status,401,'v1 must be refused at read');
+    if (webViewRecovery) {
+      const webUrl = `${S3}/functions/v1/repertoire-file${legacyUrl.search}`;
+      sql(`begin;
+        insert into public.roles(id,choir_id,name) values ('${ids.roleChoristA}','${ids.choirA}','Korist');
+        insert into public.choir_members(id,choir_id,first_name,last_name,voice_group,join_date)
+          values ('${ids.targetA}','${ids.choirA}','090','Web Hedef','Alto',current_date);
+        insert into public.choir_member_roles(choir_id,member_id,role_id)
+          values ('${ids.choirA}','${ids.targetA}','${ids.roleChoristA}');
+        insert into public.assignments(id,choir_id,title,description,created_by,is_active)
+          values ('${ids.homework}','${ids.choirA}','090 protected PDF','Synthetic legacy-link acceptance','${ids.memberA}',true);
+        insert into public.assignment_targets(id,choir_id,assignment_id,member_id)
+          values ('${randomUUID()}','${ids.choirA}','${ids.homework}','${ids.targetA}');
+        insert into public.assignment_submissions(id,choir_id,assignment_id,member_id,drive_file_id,
+          drive_web_view_link,file_name,mime_type,file_size_bytes,status)
+          values ('${ids.submission}','${ids.choirA}','${ids.homework}','${ids.targetA}','091-no-drive-a',
+          '${webUrl}','score.pdf','application/pdf',${pdf.length},'pending');
+        commit;`);
+      webViewMetadata = JSON.stringify({ userId: userA, choirA: ids.choirA, choirB: ids.choirB,
+        targetMember: ids.targetA, fileId: ids.fileA, pdfSha256: hash(pdf), legacyUrl: webUrl });
+    }
     const before = providerHits;
     assert.equal((await ticket(ids.fileB, accessA)).result.status, 403);
     assert.equal((await ticket(ids.fileA, accessB)).result.status, 403);
@@ -234,14 +323,24 @@ async function main() {
         email: first.data.user.email, password: passwordA, choirA: ids.choirA,
         choirB: ids.choirB, fileId: ids.fileA, pdfSha256: hash(pdf),
       };
-      if (nativePdfRecovery) oneUseFixture = JSON.stringify({ ...payload, legacyUrl: legacyUrl.toString() });
+      if (webViewRecovery) oneUseFixture = JSON.stringify({ email: first.data.user.email, password: passwordA });
+      else if (nativePdfRecovery) oneUseFixture = JSON.stringify({ ...payload, legacyUrl: legacyUrl.toString() });
       else await writeFile(androidFixturePath, JSON.stringify(payload), { mode: 0o600, flag: 'wx' });
-      console.log(`READY ${nativePdfRecovery ? '090 one-use runtime' : '093'} synthetic Android fixture; send SIGTERM after runtime check`);
+      console.log(`READY ${webViewRecovery ? '090 WebView' : nativePdfRecovery ? '090 one-use runtime' : '093'} synthetic Android fixture; send SIGTERM after runtime check`);
       await new Promise<void>((resolve, reject) => {
         const timeout = setTimeout(() => reject(new Error('093 Android hold timed out')), 30 * 60_000);
         process.once('SIGTERM', () => { clearTimeout(timeout); resolve(); });
       });
-      if (nativePdfRecovery) {
+      if (webViewRecovery) {
+        assert.equal(fixtureConsumed, true); assert.equal(oneUseFixture, null);
+        assert.ok(webViewReads.filter(row => row.method === 'GET' && row.status === 401).length >= 2, 'baseline and repaired old body refusals missing');
+        assert.equal(webViewReads.filter(row => row.method === 'POST' && row.status === 200).length, 1, 'recovery must issue exactly one fresh ticket');
+        assert.equal(webViewReads.filter(row => row.method === 'HEAD' && row.status === 401).length, 1);
+        assert.equal(webViewReads.filter(row => row.method === 'GET' && row.status === 200).length, 1);
+        assert.equal(webViewReads.filter(row => row.method === 'HEAD' && row.status === 403).length, 1);
+        for (const row of webViewReads.filter(row => row.status >= 400)) assert.equal(row.providerDelta, 0);
+        console.log('PASS 090 real WebView baseline/refusal, one authority renewal, PDF body/hash and B oldURL403 without provider');
+      } else if (nativePdfRecovery) {
         assert.equal(fixtureConsumed, true);
         assert.equal(oneUseFixture, null);
         assert.deepEqual(nativeReads, [
