@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-10-01T10:35:44.278Z",
+  "requestSha256": "78e5edf531c692bd51f5dce87f045c98ba1298f915672321d1f7b0b316f00452",
+  "model": "jev-1.13.0",
+  "elapsedMs": 314,
+  "usage": {
+    "input_tokens": 2304,
+    "output_tokens": 112
+  },
+  "estimatedUsd": 0.000096768,
+  "answers": {
+    "e01": {
+      "type": "noul",
+      "noul": 0.87
+    },
+    "e06": {
+      "type": "noul",
+      "noul": 0.03
+    },
+    "e09": {
+      "type": "noul",
+      "noul": 0.66
+    },
+    "e11": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "e17": {
+      "type": "noul",
+      "noul": 0.76
+    },
+    "e19": {
+      "type": "noul",
+      "noul": 0.05
+    }
+  }
+}

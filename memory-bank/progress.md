@@ -441,3 +441,14 @@ WF-006 owns the original long-term plan; [WF-007](../docs/briefs/WF-007-bounded-
 owns the revised execution controls and verified cleanup. 065, WF-011 and 066 are accepted; no
 provider, hosted data, production or beta milestone advanced. The owner's R2 jurisdiction and
 activation decision gates the next external step.
+# 1 October 2026 — expanded Jev decision-support checkpoint (WF-015)
+
+Source194fe0e/7e56d60/61c9437; [expanded assessment](../docs/reports/2026-10-01-jev-expanded-assessment.md).
+Ten actual jev-1.13.0 calls/85 questions,34876input/5033output; estimated$0.001464792.
+Frozen primary labels: evidenceChoice19/20, weak lexical baseline6/20, product7/10
+then10/10 in-sample scoped comparison; triage8/8. False Noul support0.66 and planning
+disagreements retained. Actual code shortlist9/9 (absence controls2); thirteen offline
+tests/hash chains/source ranges/redaction PASS. Analysis
+accepted, NOT AI production adoption/calibration/independent audit. Existing key
+authorized today only, not persisted. RN/Expo/090 open gates unchanged; next product
+action remains overlapping HTTP/COMMIT, then current assignment-version integration.

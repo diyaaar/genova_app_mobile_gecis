@@ -1,0 +1,148 @@
+{
+  "timestamp": "2026-10-01T10:42:56.688Z",
+  "requestSha256": "831445b119ad0b25473c0e5dc11b981e2e857bd2f84772aa5ec1503b5a6a8715",
+  "model": "jev-1.13.0",
+  "elapsedMs": 380,
+  "usage": {
+    "input_tokens": 5575,
+    "output_tokens": 742
+  },
+  "estimatedUsd": 0.00023415000000000003,
+  "answers": {
+    "s01": {
+      "type": "choice",
+      "choice": "recovery",
+      "confidence": 0.97,
+      "probabilities": {
+        "legacy_card": 0,
+        "no_match": 0.03,
+        "issuer": 0,
+        "recovery": 0.97,
+        "submission_query": 0,
+        "lifecycle": 0,
+        "ticket": 0,
+        "choir_rpc": 0
+      }
+    },
+    "s02": {
+      "type": "choice",
+      "choice": "ticket",
+      "confidence": 1,
+      "probabilities": {
+        "legacy_card": 0,
+        "choir_rpc": 0,
+        "issuer": 0,
+        "recovery": 0,
+        "submission_query": 0,
+        "lifecycle": 0,
+        "ticket": 1,
+        "no_match": 0
+      }
+    },
+    "s03": {
+      "type": "choice",
+      "choice": "lifecycle",
+      "confidence": 1,
+      "probabilities": {
+        "no_match": 0,
+        "legacy_card": 0,
+        "issuer": 0,
+        "recovery": 0,
+        "submission_query": 0,
+        "lifecycle": 1,
+        "ticket": 0,
+        "choir_rpc": 0
+      }
+    },
+    "s04": {
+      "type": "choice",
+      "choice": "legacy_card",
+      "confidence": 0.99,
+      "probabilities": {
+        "no_match": 0.01,
+        "legacy_card": 0.99,
+        "issuer": 0,
+        "recovery": 0,
+        "submission_query": 0,
+        "lifecycle": 0,
+        "ticket": 0,
+        "choir_rpc": 0
+      }
+    },
+    "s05": {
+      "type": "choice",
+      "choice": "submission_query",
+      "confidence": 0.99,
+      "probabilities": {
+        "legacy_card": 0,
+        "no_match": 0.01,
+        "issuer": 0,
+        "recovery": 0,
+        "submission_query": 0.99,
+        "lifecycle": 0,
+        "ticket": 0,
+        "choir_rpc": 0
+      }
+    },
+    "s06": {
+      "type": "choice",
+      "choice": "choir_rpc",
+      "confidence": 1,
+      "probabilities": {
+        "no_match": 0,
+        "ticket": 0,
+        "issuer": 0,
+        "recovery": 0,
+        "submission_query": 0,
+        "lifecycle": 0,
+        "legacy_card": 0,
+        "choir_rpc": 1
+      }
+    },
+    "s07": {
+      "type": "choice",
+      "choice": "issuer",
+      "confidence": 1,
+      "probabilities": {
+        "no_match": 0,
+        "legacy_card": 0,
+        "issuer": 1,
+        "recovery": 0,
+        "submission_query": 0,
+        "lifecycle": 0,
+        "ticket": 0,
+        "choir_rpc": 0
+      }
+    },
+    "s08": {
+      "type": "choice",
+      "choice": "no_match",
+      "confidence": 0.92,
+      "probabilities": {
+        "legacy_card": 0,
+        "no_match": 0.9400000000000001,
+        "issuer": 0,
+        "recovery": 0.06,
+        "submission_query": 0,
+        "lifecycle": 0,
+        "ticket": 0,
+        "choir_rpc": 0
+      }
+    },
+    "s09": {
+      "type": "choice",
+      "choice": "no_match",
+      "confidence": 1,
+      "probabilities": {
+        "legacy_card": 0,
+        "no_match": 1,
+        "issuer": 0,
+        "recovery": 0,
+        "submission_query": 0,
+        "lifecycle": 0,
+        "ticket": 0,
+        "choir_rpc": 0
+      }
+    }
+  }
+}

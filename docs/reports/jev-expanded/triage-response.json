@@ -1,0 +1,125 @@
+{
+  "timestamp": "2026-10-01T10:33:05.171Z",
+  "requestSha256": "0810d9c70f077ad4a611821021b41382790821519aafa417b57524d1e5624321",
+  "model": "jev-1.13.0",
+  "elapsedMs": 272,
+  "usage": {
+    "input_tokens": 3346,
+    "output_tokens": 617
+  },
+  "estimatedUsd": 0.00014053200000000002,
+  "answers": {
+    "t01": {
+      "type": "choice",
+      "choice": "content_integrity",
+      "confidence": 0.97,
+      "probabilities": {
+        "unknown": 0,
+        "authority": 0,
+        "client_lifecycle": 0.01,
+        "evidence_scope": 0,
+        "integration": 0.01,
+        "service": 0,
+        "content_integrity": 0.98
+      }
+    },
+    "t02": {
+      "type": "choice",
+      "choice": "authority",
+      "confidence": 0.92,
+      "probabilities": {
+        "unknown": 0,
+        "client_lifecycle": 0.03,
+        "content_integrity": 0,
+        "evidence_scope": 0.01,
+        "integration": 0.03,
+        "service": 0.01,
+        "authority": 0.92
+      }
+    },
+    "t03": {
+      "type": "choice",
+      "choice": "client_lifecycle",
+      "confidence": 0.97,
+      "probabilities": {
+        "unknown": 0,
+        "client_lifecycle": 0.98,
+        "authority": 0.02,
+        "evidence_scope": 0,
+        "integration": 0,
+        "service": 0,
+        "content_integrity": 0
+      }
+    },
+    "t04": {
+      "type": "choice",
+      "choice": "client_lifecycle",
+      "confidence": 0.99,
+      "probabilities": {
+        "unknown": 0,
+        "authority": 0,
+        "service": 0,
+        "evidence_scope": 0,
+        "integration": 0,
+        "client_lifecycle": 1,
+        "content_integrity": 0
+      }
+    },
+    "t05": {
+      "type": "choice",
+      "choice": "service",
+      "confidence": 0.99,
+      "probabilities": {
+        "unknown": 0,
+        "authority": 0,
+        "service": 1,
+        "evidence_scope": 0,
+        "integration": 0,
+        "client_lifecycle": 0,
+        "content_integrity": 0
+      }
+    },
+    "t06": {
+      "type": "choice",
+      "choice": "evidence_scope",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "client_lifecycle": 0,
+        "authority": 0,
+        "evidence_scope": 1,
+        "integration": 0,
+        "service": 0,
+        "content_integrity": 0
+      }
+    },
+    "t07": {
+      "type": "choice",
+      "choice": "unknown",
+      "confidence": 0.97,
+      "probabilities": {
+        "unknown": 0.98,
+        "client_lifecycle": 0,
+        "authority": 0,
+        "evidence_scope": 0.02,
+        "integration": 0,
+        "service": 0,
+        "content_integrity": 0
+      }
+    },
+    "t08": {
+      "type": "choice",
+      "choice": "integration",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "authority": 0,
+        "service": 0,
+        "evidence_scope": 0,
+        "integration": 1,
+        "client_lifecycle": 0,
+        "content_integrity": 0
+      }
+    }
+  }
+}

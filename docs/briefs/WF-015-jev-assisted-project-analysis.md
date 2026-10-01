@@ -94,3 +94,98 @@ guaranteed. Private TYPESAFE_API_KEY env support added for future use; no creden
 stored by this task and no further inference. Source tests5/syntax PASS after change.
 No VM/build/large artifacts or services to clean. Retained source20 KiB/evidence36 KiB;
 observed free23,816,720 KiB, above floor. Existing caches/DB/dependencies preserved.
+
+## Expanded checkpoint — 1 October 2026
+
+Owner explicitly authorizes continued use of the existing key today, with later
+owner rotation. Do not rotate/persist it or export private user data. This supersedes
+the prior two-call execution cap for this NEW checkpoint only; historical calls stand.
+One outcome: source-grounded decision-support assessment across migration evidence,
+architecture boundaries, synthetic product tasks, triage and next-action selection.
+
+Entry main/daaa5a1; unrelated cli-latest remains untouched. AGENTS, handoff/active,
+WF-015, guide/work cycle, delivery controls, relevant MIGRATION/decisions and TypeSafe
+skill read; live API/models and citation-check guidance inspected. Preserve RN/Expo,
+permanent WebViews, deterministic Auth/RLS, 090 open gates and original data.
+
+Three actions: freeze 20 primary-agent-labeled evidence cases and source-grounded
+packets; run six sequential bounded requests; compare judgments to frozen labels and
+record disagreements, limits and an ordered next plan. No production implementation.
+Allowed: new spike/typesafe/jev-expanded*.mjs source/tests, small generated evidence
+under docs/reports/jev-expanded, this brief/report and progress/handoff pointers.
+No new dependencies, database, provider storage, build, device, push or deployment.
+
+Bounds: six requests maximum, pinned jev-1.13.0, <=16 questions and 24KB/request,
+45s timeout each, no automatic retry. Stop on failed schema/HTTP/cumulative estimated
+cost >$0.01. Current $0.042/M input price is an estimate, not a billing guarantee.
+All packets use author-written redacted facts or synthetic scenarios; expected labels
+are frozen BEFORE sending and excluded from model state. Exact owned state is retained
+to make this checkpoint replayable offline. Public docs are referenced, not copied.
+Preflight free23,823,484 KiB; <2MiB additional peak; no heavy runtime or installation.
+Read key via non-echo TTY into memory, never argv/source/evidence; tool transcript is
+not a secret vault. Retention/ZDR not verified. Self-labeling is not independent review.
+
+| Expanded criterion | Required? | Status | Evidence / boundary |
+|---|---|---|---|
+| Frozen labels, redacted source provenance and local runner tests | Yes | PASS | Labels frozen before inference, not sent;13 Node tests/syntax;12 source hashes and7 exact code ranges |
+| Ten actual packets with matching hashes/model/usage | Yes | PASS | Six initial plus bounded3-call comparison and owner-added search; all10 hash chains/envelopes, no cached replay |
+| Evidence/baseline comparison and error analysis | Yes | PASS | Choice19/20, weak baseline6/20, product7/10→10/10 in-sample, triage8/8; false Noul support retained |
+| Ordered source-verified recommendations and docs/diff | Yes | PASS | Linked expanded report; sources/order reviewed; local links/diff; human judgment remains authoritative |
+| Product runtime/real-user data/hosted/native/release acceptance | No, excluded | NOT RUN | No 090 gate upgrade |
+
+On checkpoint exit, retain only tiny source/JSON/report; no service/VM cleanup needed.
+On failure, preserve attempt ledger and stop dependent calls; no blind retry.
+
+### Bounded comparison after actual first-pass misses
+
+First six calls completed. Evidence19/20; product7/10; triage8/8 against frozen
+primary labels. e09 disagreement is contradiction versus insufficient, not false
+support. p03's shorthand identity label is debatable; no automatic merge warranted.
+p05/p06 abstained despite topic match. Primary hypothesis: request conflates advisory
+candidate routing with actually answering a question from missing tenant records.
+Plan's first-choice assignment integration differs from the repository next-step order;
+the original supplied state lists gates but omits an explicit authoritative order.
+This is a context omission, not proof Jev read and ignored the original handoff.
+
+Owner's broad-analysis authority covers ONE added three-call comparison, not a
+retry loop: same ten product cases with explicit route-not-answer scope; same six
+plan questions with source-derived authoritative order; six support-only Nouls to
+separate contradiction/absence from claim support. Frozen labels unchanged. No new
+product data or key persistence. Each added call retains the same size/time/model/
+cost bounds. Maximum expanded calls9; cumulative advisory cap$0.01, zero retries.
+Results after these three calls stand even if worse; no further tuning this checkpoint.
+
+### Expanded result
+
+[Expanded report](../reports/2026-10-01-jev-expanded-assessment.md): nine actual calls,
+76 questions (including repeated comparisons),29301 input/4291 output tokens,
+estimated$0.001230642. Source194fe0e. No service retry or further model tuning.
+One false-support Noul(e09,0.66) and initial planning/routing failures are preserved;
+model agreement never grants acceptance. Evaluation completed, not production adoption.
+Authoritative next product step remains overlapping HTTP/COMMIT, then bounded
+assignment-version integration; model may flag evidence, not replace tests or reorder.
+All expanded required rows accept the analysis checkpoint only; broader workflow
+adoption/project goal stays IN PROGRESS. Self-review only; no product-code/runtime gate.
+Owned source56KiB/expanded evidence188KiB; final free23,806,464KiB. No service/VM/
+derived build created; unrelated cli-latest/original data and caches preserved.
+
+### Owner-added code-search checkpoint
+
+Owner explicitly suggests using Jev during debugging and repository search. Existing
+triage8/8 remains a routing experiment. Add ONE bounded actual code-search request,
+nine questions over seven small verbatim excerpts, including two no-match controls.
+Source ranges/hashes and expected labels are frozen before inference; no whole-source
+or private-user data upload. Existing key permitted today. Same24KB/16-question/45s/
+no-retry bounds and cumulative$0.01 cap; expanded maximum10calls. No new product fix.
+Verify selected file/range manually and test parser guards; do not call a code match
+runtime or security proof. Keep Jev search/triage suggestions advisory for future work.
+
+Actual code search9/9, seven source ranges verified after inference and no-match2/2;
+source7e56d60. Added5575input/742output/380ms, estimated$0.00023415. Expanded total
+10calls/85questions,34876input/5033output, estimated$0.001464792. Twelve offline
+Node tests/syntax PASS; all10 hash chains/source ranges/redaction checks PASS. No
+product/runtime gate changed. Two document patch context mismatches made no edits;
+re-read actual contexts and applied narrower patches, no inference repetition.
+Final guard61c9437 includes previous-stage usage in cumulative budget and stops
+completed10-call pilots before key input. Latest13/13 offline tests PASS; no further
+provider request after this local guard change. No automatic product integration.

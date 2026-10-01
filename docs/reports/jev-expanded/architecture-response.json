@@ -1,0 +1,133 @@
+{
+  "timestamp": "2026-10-01T10:33:04.630Z",
+  "requestSha256": "dcb30e1efe3bf213c1b4e4dac963c3df6f1f05fd4e45cf74c27bb6d62c07a155",
+  "model": "jev-1.13.0",
+  "elapsedMs": 312,
+  "usage": {
+    "input_tokens": 3602,
+    "output_tokens": 588
+  },
+  "estimatedUsd": 0.000151284,
+  "answers": {
+    "shared_annotations": {
+      "type": "choice",
+      "choice": "preserve",
+      "confidence": 0.99,
+      "probabilities": {
+        "preserve": 1,
+        "bounded_adaptation": 0,
+        "owner_decision": 0,
+        "unknown": 0,
+        "reject": 0
+      }
+    },
+    "active_choir": {
+      "type": "choice",
+      "choice": "preserve",
+      "confidence": 0.59,
+      "probabilities": {
+        "preserve": 0.68,
+        "bounded_adaptation": 0.31,
+        "owner_decision": 0,
+        "unknown": 0,
+        "reject": 0.01
+      }
+    },
+    "chat_port": {
+      "type": "choice",
+      "choice": "reject",
+      "confidence": 0.67,
+      "probabilities": {
+        "preserve": 0,
+        "bounded_adaptation": 0.26,
+        "owner_decision": 0,
+        "unknown": 0,
+        "reject": 0.74
+      }
+    },
+    "native_server": {
+      "type": "choice",
+      "choice": "reject",
+      "confidence": 0.84,
+      "probabilities": {
+        "preserve": 0.1,
+        "bounded_adaptation": 0.03,
+        "owner_decision": 0,
+        "unknown": 0,
+        "reject": 0.87
+      }
+    },
+    "recovery": {
+      "type": "choice",
+      "choice": "preserve",
+      "confidence": 0.81,
+      "probabilities": {
+        "preserve": 0.86,
+        "bounded_adaptation": 0.14,
+        "owner_decision": 0,
+        "unknown": 0,
+        "reject": 0
+      }
+    },
+    "flutter": {
+      "type": "choice",
+      "choice": "reject",
+      "confidence": 1,
+      "probabilities": {
+        "preserve": 0,
+        "bounded_adaptation": 0,
+        "owner_decision": 0,
+        "unknown": 0,
+        "reject": 1
+      }
+    },
+    "profile": {
+      "type": "choice",
+      "choice": "reject",
+      "confidence": 0.95,
+      "probabilities": {
+        "preserve": 0.04,
+        "bounded_adaptation": 0,
+        "owner_decision": 0,
+        "unknown": 0,
+        "reject": 0.96
+      }
+    },
+    "assignment_version": {
+      "type": "choice",
+      "choice": "bounded_adaptation",
+      "confidence": 0.98,
+      "probabilities": {
+        "preserve": 0,
+        "bounded_adaptation": 0.99,
+        "owner_decision": 0,
+        "unknown": 0,
+        "reject": 0.01
+      }
+    },
+    "hosted": {
+      "type": "choice",
+      "choice": "reject",
+      "confidence": 0.99,
+      "probabilities": {
+        "preserve": 0,
+        "bounded_adaptation": 0,
+        "owner_decision": 0,
+        "unknown": 0,
+        "reject": 1
+      }
+    },
+    "uncertain_lifecycle": {
+      "type": "choice",
+      "choice": "owner_decision",
+      "confidence": 0.97,
+      "probabilities": {
+        "preserve": 0,
+        "bounded_adaptation": 0,
+        "owner_decision": 0.97,
+        "unknown": 0,
+        "reject": 0.03
+      }
+    }
+  }
+}

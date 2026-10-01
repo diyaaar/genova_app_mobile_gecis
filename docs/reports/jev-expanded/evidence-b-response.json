@@ -1,0 +1,113 @@
+{
+  "timestamp": "2026-10-01T10:33:04.315Z",
+  "requestSha256": "cb9c7b515df6261d58075694586c5434364af24be7c8be4e3d6a20f468bdec7e",
+  "model": "jev-1.13.0",
+  "elapsedMs": 403,
+  "usage": {
+    "input_tokens": 3675,
+    "output_tokens": 436
+  },
+  "estimatedUsd": 0.00015435,
+  "answers": {
+    "e11": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.5,
+      "probabilities": {
+        "insufficient": 0.32,
+        "supports": 0.67,
+        "contradicts": 0.01
+      }
+    },
+    "e12": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 1,
+      "probabilities": {
+        "insufficient": 0,
+        "supports": 0,
+        "contradicts": 1
+      }
+    },
+    "e13": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.71,
+      "probabilities": {
+        "insufficient": 0.19,
+        "supports": 0.81,
+        "contradicts": 0
+      }
+    },
+    "e14": {
+      "type": "choice",
+      "choice": "insufficient",
+      "confidence": 0.76,
+      "probabilities": {
+        "insufficient": 0.84,
+        "supports": 0,
+        "contradicts": 0.16
+      }
+    },
+    "e15": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.74,
+      "probabilities": {
+        "insufficient": 0.17,
+        "supports": 0.83,
+        "contradicts": 0
+      }
+    },
+    "e16": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.96,
+      "probabilities": {
+        "insufficient": 0.02,
+        "supports": 0,
+        "contradicts": 0.98
+      }
+    },
+    "e17": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.56,
+      "probabilities": {
+        "insufficient": 0.27,
+        "supports": 0.71,
+        "contradicts": 0.02
+      }
+    },
+    "e18": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.54,
+      "probabilities": {
+        "insufficient": 0.3,
+        "supports": 0.69,
+        "contradicts": 0.01
+      }
+    },
+    "e19": {
+      "type": "choice",
+      "choice": "insufficient",
+      "confidence": 0.31,
+      "probabilities": {
+        "insufficient": 0.54,
+        "supports": 0,
+        "contradicts": 0.46
+      }
+    },
+    "e20": {
+      "type": "choice",
+      "choice": "insufficient",
+      "confidence": 0.45,
+      "probabilities": {
+        "insufficient": 0.63,
+        "supports": 0,
+        "contradicts": 0.37
+      }
+    }
+  }
+}

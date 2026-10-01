@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-10-01T10:33:05.544Z",
+  "requestSha256": "51c03f0e604733c145c56d18a5e1f9f2eeefb6136fb7ec2e91e12645ed0f3941",
+  "model": "jev-1.13.0",
+  "elapsedMs": 372,
+  "usage": {
+    "input_tokens": 3533,
+    "output_tokens": 593
+  },
+  "estimatedUsd": 0.00014838600000000003,
+  "answers": {
+    "critical_gate": {
+      "type": "choice",
+      "choice": "assignment_integration",
+      "confidence": 0.61,
+      "probabilities": {
+        "assignment_integration": 0.67,
+        "unknown": 0,
+        "immediate_deploy": 0,
+        "rewrite_flutter": 0,
+        "evidence_assistant": 0,
+        "keep_unrun": 0.03,
+        "semantic_search": 0,
+        "overlap_test": 0.3,
+        "owner_policy": 0
+      }
+    },
+    "drive_exit": {
+      "type": "choice",
+      "choice": "assignment_integration",
+      "confidence": 0.98,
+      "probabilities": {
+        "assignment_integration": 0.99,
+        "unknown": 0.01,
+        "immediate_deploy": 0,
+        "rewrite_flutter": 0,
+        "evidence_assistant": 0,
+        "keep_unrun": 0,
+        "overlap_test": 0,
+        "semantic_search": 0,
+        "owner_policy": 0
+      }
+    },
+    "AI_first": {
+      "type": "choice",
+      "choice": "evidence_assistant",
+      "confidence": 0.34,
+      "probabilities": {
+        "assignment_integration": 0.16,
+        "unknown": 0.2,
+        "immediate_deploy": 0,
+        "rewrite_flutter": 0,
+        "evidence_assistant": 0.41,
+        "keep_unrun": 0.09,
+        "overlap_test": 0.06,
+        "semantic_search": 0.07,
+        "owner_policy": 0.01
+      }
+    },
+    "runtime_first": {
+      "type": "choice",
+      "choice": "semantic_search",
+      "confidence": 0.26,
+      "probabilities": {
+        "assignment_integration": 0.27,
+        "unknown": 0.01,
+        "immediate_deploy": 0,
+        "rewrite_flutter": 0,
+        "evidence_assistant": 0.03,
+        "keep_unrun": 0.05,
+        "overlap_test": 0.3,
+        "semantic_search": 0.34,
+        "owner_policy": 0
+      }
+    },
+    "release_claim": {
+      "type": "choice",
+      "choice": "keep_unrun",
+      "confidence": 1,
+      "probabilities": {
+        "assignment_integration": 0,
+        "unknown": 0,
+        "immediate_deploy": 0,
+        "rewrite_flutter": 0,
+        "evidence_assistant": 0,
+        "keep_unrun": 1,
+        "semantic_search": 0,
+        "overlap_test": 0,
+        "owner_policy": 0
+      }
+    },
+    "owner_choice": {
+      "type": "choice",
+      "choice": "owner_policy",
+      "confidence": 1,
+      "probabilities": {
+        "assignment_integration": 0,
+        "unknown": 0,
+        "immediate_deploy": 0,
+        "rewrite_flutter": 0,
+        "evidence_assistant": 0,
+        "keep_unrun": 0,
+        "semantic_search": 0,
+        "overlap_test": 0,
+        "owner_policy": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "requestSha256": "dcb30e1efe3bf213c1b4e4dac963c3df6f1f05fd4e45cf74c27bb6d62c07a155",
+  "requestBytes": 10709,
+  "packet": {
+    "model": "jev-1.13.0",
+    "state": {
+      "project": {
+        "stack": "Next.js/React/TypeScript web and React Native/Expo mobile; same Supabase backend retained. No Flutter migration authorized.",
+        "ownership": "Repertoire/chat/homework/home/auth/shell are native targets. Profile/choristers/announcements/attendance are permanent WebView. UI pixel parity is not a requirement.",
+        "contract": "Platform-free choir-context-core TypeScript uses injected RPC client and preference hints; database RPC revalidates user/session. Annotation types are a shared TypeScript source.",
+        "server": "New server behavior for native screens goes into Supabase Edge and web reuses it. Schema changes require backup/restore, sibling-site assessment and ordered DB/Edge/client rollout.",
+        "state": "PDF gateway uses operationVersion, AbortController and cleanup to stop late publication. WebView recovery validates issuer/family/query and current native lease; only one recovery and confirmed denials are final.",
+        "limitation": "lib/chat.ts imports a web Supabase singleton and mixes data access and pure name/URL functions. It cannot all be copied as platform-free code.",
+        "gap": "Known primary-agent finding: performance submission query lacks current_file_version_id and HomeworkCard prefers drive_web_view_link. Actual local WebView recovery is not complete assignment-version Drive-exit.",
+        "acceptance": "090 has connected local native PDF and actual WebView recovery; synthetic unsigned audio lifecycle. Overlapping HTTP/COMMIT, connected audio, native iOS, hosted R2 and physical device/release remain unrun.",
+        "business": "Independent choirs, multi-choir users, operator-assisted first-version onboarding, five free members then additional-seat billing. Pricing/seat accounting/retention/last-chef policy are owner choices, not model choices.",
+        "AI": "Jev is text-only and returns typed judgments; no tools or prose generation. Deterministic Auth/RLS owns candidate retrieval; never send other-tenant candidates. No current runtime integration proposed."
+      },
+      "source_references": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "a2f8c82ca7a8d2c18168d8c37f144060a2a20a06386031a05e7de49df0c63568"
+        },
+        {
+          "path": "MIGRATION.md",
+          "sha256": "6d56dea0a0c25b74bf967f064eb8622ec95e82be88fdc05ed1ac4b2d29e526e9"
+        },
+        {
+          "path": "docs/agent-handoff.md",
+          "sha256": "8502b6641d1fa590a7aa2b0e00a394696a36d6b49354952b9a1bd58a9e926833"
+        },
+        {
+          "path": "docs/briefs/090-private-file-ticket-revocation-contract.md",
+          "sha256": "65794f37fdc36cce63d5d658be3f72cca1e49c0cafa53239540bcd3b7a1e624b"
+        },
+        {
+          "path": "lib/choir-context-core.ts",
+          "sha256": "38fef60354ddb5ff18e3352ba46e3c1545eddd99dae79f10f24fe9e0c25188ff"
+        },
+        {
+          "path": "lib/repertuvar/annotation-types.ts",
+          "sha256": "56092bd56e87e41b1f61a9be4bf5d5649b18345529cbf94e75cf3beb73848872"
+        },
+        {
+          "path": "lib/chat.ts",
+          "sha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+        },
+        {
+          "path": "lib/korist-performance.ts",
+          "sha256": "3df2eefec3601cd9e0a24702764aef5b164650a9da1bdfe878c9101c9d53367b"
+        },
+        {
+          "path": "app/(main)/koristler/[id]/page.tsx",
+          "sha256": "bfbeabc3bbb558338938c735bbe94274580365af9bb5bcbddba82023f3ca36f1"
+        },
+        {
+          "path": "apps/mobile/src/repertoire/reader-gateway.ts",
+          "sha256": "d5cfab3af97add98d13d346133e91705ea68b55ffbb5571221b469fbee72142a"
+        },
+        {
+          "path": "apps/mobile/src/webview/private-file-ticket-recovery.ts",
+          "sha256": "2235c721de1faac6eb204d51e518338de7864ef11d2d4b77716355b36dca3813"
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+          "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+        }
+      ]
+    },
+    "questions": {
+      "shared_annotations": {
+        "type": "choice",
+        "instructions": "Given the supplied project facts, assess this architectural action: Reuse the existing shared annotation TypeScript schema across web and RN.",
+        "criteria": {
+          "preserve": "Preserve the existing approved shared contract or guarded design; no replacement required.",
+          "bounded_adaptation": "Useful scoped adaptation/integration with source/test verification; not wholesale copy or rewrite.",
+          "reject": "Conflicts with owner stack, permanent-WebView, deterministic authority or rollout safety; do not implement.",
+          "owner_decision": "Unresolved commercial/lifecycle policy requires explicit owner decision, not model authority.",
+          "unknown": "Facts insufficient to assess."
+        }
+      },
+      "active_choir": {
+        "type": "choice",
+        "instructions": "Given the supplied project facts, assess this architectural action: Share pure choir parsing/RPC contract with injected client-specific preference storage.",
+        "criteria": {
+          "preserve": "Preserve the existing approved shared contract or guarded design; no replacement required.",
+          "bounded_adaptation": "Useful scoped adaptation/integration with source/test verification; not wholesale copy or rewrite.",
+          "reject": "Conflicts with owner stack, permanent-WebView, deterministic authority or rollout safety; do not implement.",
+          "owner_decision": "Unresolved commercial/lifecycle policy requires explicit owner decision, not model authority.",
+          "unknown": "Facts insufficient to assess."
+        }
+      },
+      "chat_port": {
+        "type": "choice",
+        "instructions": "Given the supplied project facts, assess this architectural action: Move lib/chat.ts wholesale unchanged into RN, including its web Supabase singleton import.",
+        "criteria": {
+          "preserve": "Preserve the existing approved shared contract or guarded design; no replacement required.",
+          "bounded_adaptation": "Useful scoped adaptation/integration with source/test verification; not wholesale copy or rewrite.",
+          "reject": "Conflicts with owner stack, permanent-WebView, deterministic authority or rollout safety; do not implement.",
+          "owner_decision": "Unresolved commercial/lifecycle policy requires explicit owner decision, not model authority.",
+          "unknown": "Facts insufficient to assess."
+        }
+      },
+      "native_server": {
+        "type": "choice",
+        "instructions": "Given the supplied project facts, assess this architectural action: Implement a new native assignment server operation as an additional Next.js API route.",
+        "criteria": {
+          "preserve": "Preserve the existing approved shared contract or guarded design; no replacement required.",
+          "bounded_adaptation": "Useful scoped adaptation/integration with source/test verification; not wholesale copy or rewrite.",
+          "reject": "Conflicts with owner stack, permanent-WebView, deterministic authority or rollout safety; do not implement.",
+          "owner_decision": "Unresolved commercial/lifecycle policy requires explicit owner decision, not model authority.",
+          "unknown": "Facts insufficient to assess."
+        }
+      },
+      "recovery": {
+        "type": "choice",
+        "instructions": "Given the supplied project facts, assess this architectural action: Use bounded renewal with current native lease, validated issuer and denial/cancellation guards.",
+        "criteria": {
+          "preserve": "Preserve the existing approved shared contract or guarded design; no replacement required.",
+          "bounded_adaptation": "Useful scoped adaptation/integration with source/test verification; not wholesale copy or rewrite.",
+          "reject": "Conflicts with owner stack, permanent-WebView, deterministic authority or rollout safety; do not implement.",
+          "owner_decision": "Unresolved commercial/lifecycle policy requires explicit owner decision, not model authority.",
+          "unknown": "Facts insufficient to assess."
+        }
+      },
+      "flutter": {
+        "type": "choice",
+        "instructions": "Given the supplied project facts, assess this architectural action: Change the primary mobile framework to Flutter now to pursue Jev integration.",
+        "criteria": {
+          "preserve": "Preserve the existing approved shared contract or guarded design; no replacement required.",
+          "bounded_adaptation": "Useful scoped adaptation/integration with source/test verification; not wholesale copy or rewrite.",
+          "reject": "Conflicts with owner stack, permanent-WebView, deterministic authority or rollout safety; do not implement.",
+          "owner_decision": "Unresolved commercial/lifecycle policy requires explicit owner decision, not model authority.",
+          "unknown": "Facts insufficient to assess."
+        }
+      },
+      "profile": {
+        "type": "choice",
+        "instructions": "Given the supplied project facts, assess this architectural action: Rewrite the permanent WebView profile screen as native.",
+        "criteria": {
+          "preserve": "Preserve the existing approved shared contract or guarded design; no replacement required.",
+          "bounded_adaptation": "Useful scoped adaptation/integration with source/test verification; not wholesale copy or rewrite.",
+          "reject": "Conflicts with owner stack, permanent-WebView, deterministic authority or rollout safety; do not implement.",
+          "owner_decision": "Unresolved commercial/lifecycle policy requires explicit owner decision, not model authority.",
+          "unknown": "Facts insufficient to assess."
+        }
+      },
+      "assignment_version": {
+        "type": "choice",
+        "instructions": "Given the supplied project facts, assess this architectural action: Add a bounded integration of current assignment-file versions and protected reads, removing legacy link preference only with compatibility tests.",
+        "criteria": {
+          "preserve": "Preserve the existing approved shared contract or guarded design; no replacement required.",
+          "bounded_adaptation": "Useful scoped adaptation/integration with source/test verification; not wholesale copy or rewrite.",
+          "reject": "Conflicts with owner stack, permanent-WebView, deterministic authority or rollout safety; do not implement.",
+          "owner_decision": "Unresolved commercial/lifecycle policy requires explicit owner decision, not model authority.",
+          "unknown": "Facts insufficient to assess."
+        }
+      },
+      "hosted": {
+        "type": "choice",
+        "instructions": "Given the supplied project facts, assess this architectural action: Immediately deploy local file-reader fixes to shared production DB without fresh restore evidence or rollout review.",
+        "criteria": {
+          "preserve": "Preserve the existing approved shared contract or guarded design; no replacement required.",
+          "bounded_adaptation": "Useful scoped adaptation/integration with source/test verification; not wholesale copy or rewrite.",
+          "reject": "Conflicts with owner stack, permanent-WebView, deterministic authority or rollout safety; do not implement.",
+          "owner_decision": "Unresolved commercial/lifecycle policy requires explicit owner decision, not model authority.",
+          "unknown": "Facts insufficient to assess."
+        }
+      },
+      "uncertain_lifecycle": {
+        "type": "choice",
+        "instructions": "Given the supplied project facts, assess this architectural action: Automatically choose final member deletion and data-retention policy from model confidence.",
+        "criteria": {
+          "preserve": "Preserve the existing approved shared contract or guarded design; no replacement required.",
+          "bounded_adaptation": "Useful scoped adaptation/integration with source/test verification; not wholesale copy or rewrite.",
+          "reject": "Conflicts with owner stack, permanent-WebView, deterministic authority or rollout safety; do not implement.",
+          "owner_decision": "Unresolved commercial/lifecycle policy requires explicit owner decision, not model authority.",
+          "unknown": "Facts insufficient to assess."
+        }
+      }
+    }
+  }
+}

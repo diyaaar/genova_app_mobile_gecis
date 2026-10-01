@@ -1,5 +1,8 @@
 # Jev project opportunities — first two stages
 
+Historical initial pilot; the later [expanded assessment](2026-10-01-jev-expanded-assessment.md)
+records measured migration, architecture, triage, product and real-source search trials.
+
 1 October 2026. Actual TypeSafe API calls, not a simulated Jev report. Author:
 primary agent. User retains React Native/Expo; Flutter is only an alternative.
 Runner `6bb2e3d`; preparation repository baseline `8b3e1f5` plus owned pilot records.

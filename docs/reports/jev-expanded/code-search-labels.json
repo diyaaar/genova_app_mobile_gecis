@@ -1,0 +1,14 @@
+{
+  "labelOwner": "Primary agent before inference; deterministic range/source verification, not independent labels.",
+  "expected": {
+    "s01": "recovery",
+    "s02": "ticket",
+    "s03": "lifecycle",
+    "s04": "legacy_card",
+    "s05": "submission_query",
+    "s06": "choir_rpc",
+    "s07": "issuer",
+    "s08": "no_match",
+    "s09": "no_match"
+  }
+}

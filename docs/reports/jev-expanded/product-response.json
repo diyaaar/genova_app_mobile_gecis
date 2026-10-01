@@ -1,0 +1,118 @@
+{
+  "timestamp": "2026-10-01T10:33:04.897Z",
+  "requestSha256": "ede1855cbb16e50dba48821a1bb19684689fcfe752fd42c6eca482ab98204fa9",
+  "model": "jev-1.13.0",
+  "elapsedMs": 265,
+  "usage": {
+    "input_tokens": 2981,
+    "output_tokens": 457
+  },
+  "estimatedUsd": 0.000125202,
+  "answers": {
+    "p01": {
+      "type": "choice",
+      "choice": "auth_help",
+      "confidence": 0.83,
+      "probabilities": {
+        "billing": 0,
+        "repertoire": 0,
+        "auth_help": 0.87,
+        "no_match": 0.13
+      }
+    },
+    "p02": {
+      "type": "choice",
+      "choice": "support_review",
+      "confidence": 0.79,
+      "probabilities": {
+        "support_review": 0.86,
+        "grant_access": 0,
+        "no_match": 0.14
+      }
+    },
+    "p03": {
+      "type": "choice",
+      "choice": "no_match",
+      "confidence": 0.35,
+      "probabilities": {
+        "no_match": 0.5599999999999999,
+        "bach_gounod": 0.43,
+        "schubert": 0.01
+      }
+    },
+    "p04": {
+      "type": "choice",
+      "choice": "no_match",
+      "confidence": 0.98,
+      "probabilities": {
+        "schubert": 0.01,
+        "no_match": 0.98,
+        "bach_gounod": 0.01
+      }
+    },
+    "p05": {
+      "type": "choice",
+      "choice": "no_match",
+      "confidence": 0.58,
+      "probabilities": {
+        "a": 0,
+        "b": 0.31,
+        "c": 0,
+        "no_match": 0.6900000000000001
+      }
+    },
+    "p06": {
+      "type": "choice",
+      "choice": "no_match",
+      "confidence": 0.48,
+      "probabilities": {
+        "no_match": 0.62,
+        "auth": 0,
+        "billing": 0.38,
+        "repertoire": 0
+      }
+    },
+    "p07": {
+      "type": "choice",
+      "choice": "human_review",
+      "confidence": 0.83,
+      "probabilities": {
+        "no_match": 0.13,
+        "human_review": 0.87,
+        "music": 0,
+        "automated_penalty": 0
+      }
+    },
+    "p08": {
+      "type": "choice",
+      "choice": "no_match",
+      "confidence": 0.99,
+      "probabilities": {
+        "a": 0,
+        "b": 0,
+        "no_match": 1
+      }
+    },
+    "p09": {
+      "type": "choice",
+      "choice": "a",
+      "confidence": 0.38,
+      "probabilities": {
+        "a": 0.54,
+        "b": 0,
+        "c": 0,
+        "no_match": 0.46
+      }
+    },
+    "p10": {
+      "type": "choice",
+      "choice": "preserve_decision",
+      "confidence": 0.93,
+      "probabilities": {
+        "migrate": 0,
+        "preserve_decision": 0.95,
+        "no_match": 0.05
+      }
+    }
+  }
+}

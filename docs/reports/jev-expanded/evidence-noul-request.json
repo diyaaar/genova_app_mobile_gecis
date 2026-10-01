@@ -1,0 +1,148 @@
+{
+  "requestSha256": "78e5edf531c692bd51f5dce87f045c98ba1298f915672321d1f7b0b316f00452",
+  "requestBytes": 5440,
+  "packet": {
+    "model": "jev-1.13.0",
+    "state": {
+      "source_material": [
+        {
+          "id": "e01",
+          "claim": "Local Android native PDF recovered once after v1 refusal.",
+          "evidence": "1 October record: connected Android native PDF v1 GET401 followed by exactly one real v2 renewal and matching PDF hash passed locally.",
+          "source": "docs/briefs/090-private-file-ticket-revocation-contract.md"
+        },
+        {
+          "id": "e06",
+          "claim": "Clearing a client cache alone proves server-side URL revocation.",
+          "evidence": "An on-device private root was absent after tenant switch; this excerpt contains no server request or authority result.",
+          "source": "docs/briefs/090-private-file-ticket-revocation-contract.md"
+        },
+        {
+          "id": "e09",
+          "claim": "The current Android build passes based on an older test run.",
+          "evidence": "This is a historical pre-change Android build PASS. No build was run after the current change.",
+          "source": "docs/briefs/090-private-file-ticket-revocation-contract.md"
+        },
+        {
+          "id": "e11",
+          "claim": "The local WebView file flow opens the real Android share sheet.",
+          "evidence": "Repaired permanent Android chorister WebView file flow: one renewal, exact65905B/hash and actual Android share sheet PASS; no external share executed.",
+          "source": "docs/briefs/090-private-file-ticket-revocation-contract.md"
+        },
+        {
+          "id": "e17",
+          "claim": "A confirmed403 stops native recovery without a new ticket.",
+          "evidence": "The recovery helper accepts only HEAD200/401 or transport uncertainty for renewal; every other observed status throws before the lease call.",
+          "source": "apps/mobile/src/webview/private-file-ticket-recovery.ts"
+        },
+        {
+          "id": "e19",
+          "claim": "All five reader families have been tested concurrently under revocation.",
+          "evidence": "This excerpt records a single family serial GET and HEAD under revocation. It does not describe concurrent calls or other families.",
+          "source": "docs/briefs/090-private-file-ticket-revocation-contract.md"
+        }
+      ],
+      "source_references": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "a2f8c82ca7a8d2c18168d8c37f144060a2a20a06386031a05e7de49df0c63568"
+        },
+        {
+          "path": "MIGRATION.md",
+          "sha256": "6d56dea0a0c25b74bf967f064eb8622ec95e82be88fdc05ed1ac4b2d29e526e9"
+        },
+        {
+          "path": "docs/agent-handoff.md",
+          "sha256": "8502b6641d1fa590a7aa2b0e00a394696a36d6b49354952b9a1bd58a9e926833"
+        },
+        {
+          "path": "docs/briefs/090-private-file-ticket-revocation-contract.md",
+          "sha256": "65794f37fdc36cce63d5d658be3f72cca1e49c0cafa53239540bcd3b7a1e624b"
+        },
+        {
+          "path": "lib/choir-context-core.ts",
+          "sha256": "38fef60354ddb5ff18e3352ba46e3c1545eddd99dae79f10f24fe9e0c25188ff"
+        },
+        {
+          "path": "lib/repertuvar/annotation-types.ts",
+          "sha256": "56092bd56e87e41b1f61a9be4bf5d5649b18345529cbf94e75cf3beb73848872"
+        },
+        {
+          "path": "lib/chat.ts",
+          "sha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+        },
+        {
+          "path": "lib/korist-performance.ts",
+          "sha256": "3df2eefec3601cd9e0a24702764aef5b164650a9da1bdfe878c9101c9d53367b"
+        },
+        {
+          "path": "app/(main)/koristler/[id]/page.tsx",
+          "sha256": "bfbeabc3bbb558338938c735bbe94274580365af9bb5bcbddba82023f3ca36f1"
+        },
+        {
+          "path": "apps/mobile/src/repertoire/reader-gateway.ts",
+          "sha256": "d5cfab3af97add98d13d346133e91705ea68b55ffbb5571221b469fbee72142a"
+        },
+        {
+          "path": "apps/mobile/src/webview/private-file-ticket-recovery.ts",
+          "sha256": "2235c721de1faac6eb204d51e518338de7864ef11d2d4b77716355b36dca3813"
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+          "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+        }
+      ],
+      "boundary": "This asks whether evidence establishes a claim, not whether the actual system passed. Neither absence of proof nor contradictory proof supports the claim."
+    },
+    "questions": {
+      "e01": {
+        "type": "noul",
+        "instructions": "Does source_material[0].evidence establish source_material[0].claim at its exact scope?",
+        "criteria": {
+          "true": "Evidence establishes the exact claim at the recorded scope.",
+          "false": "Evidence contradicts the claim OR does not establish it, including stale, narrower or missing observations."
+        }
+      },
+      "e06": {
+        "type": "noul",
+        "instructions": "Does source_material[1].evidence establish source_material[1].claim at its exact scope?",
+        "criteria": {
+          "true": "Evidence establishes the exact claim at the recorded scope.",
+          "false": "Evidence contradicts the claim OR does not establish it, including stale, narrower or missing observations."
+        }
+      },
+      "e09": {
+        "type": "noul",
+        "instructions": "Does source_material[2].evidence establish source_material[2].claim at its exact scope?",
+        "criteria": {
+          "true": "Evidence establishes the exact claim at the recorded scope.",
+          "false": "Evidence contradicts the claim OR does not establish it, including stale, narrower or missing observations."
+        }
+      },
+      "e11": {
+        "type": "noul",
+        "instructions": "Does source_material[3].evidence establish source_material[3].claim at its exact scope?",
+        "criteria": {
+          "true": "Evidence establishes the exact claim at the recorded scope.",
+          "false": "Evidence contradicts the claim OR does not establish it, including stale, narrower or missing observations."
+        }
+      },
+      "e17": {
+        "type": "noul",
+        "instructions": "Does source_material[4].evidence establish source_material[4].claim at its exact scope?",
+        "criteria": {
+          "true": "Evidence establishes the exact claim at the recorded scope.",
+          "false": "Evidence contradicts the claim OR does not establish it, including stale, narrower or missing observations."
+        }
+      },
+      "e19": {
+        "type": "noul",
+        "instructions": "Does source_material[5].evidence establish source_material[5].claim at its exact scope?",
+        "criteria": {
+          "true": "Evidence establishes the exact claim at the recorded scope.",
+          "false": "Evidence contradicts the claim OR does not establish it, including stale, narrower or missing observations."
+        }
+      }
+    }
+  }
+}

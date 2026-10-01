@@ -1,0 +1,177 @@
+{
+  "requestSha256": "0810d9c70f077ad4a611821021b41382790821519aafa417b57524d1e5624321",
+  "requestBytes": 8953,
+  "packet": {
+    "model": "jev-1.13.0",
+    "state": {
+      "project": {
+        "stack": "Next.js/React/TypeScript web and React Native/Expo mobile; same Supabase backend retained. No Flutter migration authorized.",
+        "ownership": "Repertoire/chat/homework/home/auth/shell are native targets. Profile/choristers/announcements/attendance are permanent WebView. UI pixel parity is not a requirement.",
+        "contract": "Platform-free choir-context-core TypeScript uses injected RPC client and preference hints; database RPC revalidates user/session. Annotation types are a shared TypeScript source.",
+        "server": "New server behavior for native screens goes into Supabase Edge and web reuses it. Schema changes require backup/restore, sibling-site assessment and ordered DB/Edge/client rollout.",
+        "state": "PDF gateway uses operationVersion, AbortController and cleanup to stop late publication. WebView recovery validates issuer/family/query and current native lease; only one recovery and confirmed denials are final.",
+        "limitation": "lib/chat.ts imports a web Supabase singleton and mixes data access and pure name/URL functions. It cannot all be copied as platform-free code.",
+        "gap": "Known primary-agent finding: performance submission query lacks current_file_version_id and HomeworkCard prefers drive_web_view_link. Actual local WebView recovery is not complete assignment-version Drive-exit.",
+        "acceptance": "090 has connected local native PDF and actual WebView recovery; synthetic unsigned audio lifecycle. Overlapping HTTP/COMMIT, connected audio, native iOS, hosted R2 and physical device/release remain unrun.",
+        "business": "Independent choirs, multi-choir users, operator-assisted first-version onboarding, five free members then additional-seat billing. Pricing/seat accounting/retention/last-chef policy are owner choices, not model choices.",
+        "AI": "Jev is text-only and returns typed judgments; no tools or prose generation. Deterministic Auth/RLS owns candidate retrieval; never send other-tenant candidates. No current runtime integration proposed."
+      },
+      "source_references": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "a2f8c82ca7a8d2c18168d8c37f144060a2a20a06386031a05e7de49df0c63568"
+        },
+        {
+          "path": "MIGRATION.md",
+          "sha256": "6d56dea0a0c25b74bf967f064eb8622ec95e82be88fdc05ed1ac4b2d29e526e9"
+        },
+        {
+          "path": "docs/agent-handoff.md",
+          "sha256": "8502b6641d1fa590a7aa2b0e00a394696a36d6b49354952b9a1bd58a9e926833"
+        },
+        {
+          "path": "docs/briefs/090-private-file-ticket-revocation-contract.md",
+          "sha256": "65794f37fdc36cce63d5d658be3f72cca1e49c0cafa53239540bcd3b7a1e624b"
+        },
+        {
+          "path": "lib/choir-context-core.ts",
+          "sha256": "38fef60354ddb5ff18e3352ba46e3c1545eddd99dae79f10f24fe9e0c25188ff"
+        },
+        {
+          "path": "lib/repertuvar/annotation-types.ts",
+          "sha256": "56092bd56e87e41b1f61a9be4bf5d5649b18345529cbf94e75cf3beb73848872"
+        },
+        {
+          "path": "lib/chat.ts",
+          "sha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+        },
+        {
+          "path": "lib/korist-performance.ts",
+          "sha256": "3df2eefec3601cd9e0a24702764aef5b164650a9da1bdfe878c9101c9d53367b"
+        },
+        {
+          "path": "app/(main)/koristler/[id]/page.tsx",
+          "sha256": "bfbeabc3bbb558338938c735bbe94274580365af9bb5bcbddba82023f3ca36f1"
+        },
+        {
+          "path": "apps/mobile/src/repertoire/reader-gateway.ts",
+          "sha256": "d5cfab3af97add98d13d346133e91705ea68b55ffbb5571221b469fbee72142a"
+        },
+        {
+          "path": "apps/mobile/src/webview/private-file-ticket-recovery.ts",
+          "sha256": "2235c721de1faac6eb204d51e518338de7864ef11d2d4b77716355b36dca3813"
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+          "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+        }
+      ]
+    },
+    "questions": {
+      "t01": {
+        "type": "choice",
+        "instructions": "Route this synthetic/redacted observation to the most immediate investigation layer, not a confirmed diagnosis: PDF downloaded65905B but SHA differs from fixture; HTTP200 and correct tenant.",
+        "criteria": {
+          "content_integrity": "File bytes/checksum/MIME corruption.",
+          "authority": "Server/Auth/tenant access violation.",
+          "client_lifecycle": "Async cancellation, stale publication or native event/state lifecycle.",
+          "service": "External service/transport/rate limit.",
+          "evidence_scope": "Unsupported acceptance claim or platform/run mismatch.",
+          "integration": "Client query/component/version selection mismatch.",
+          "unknown": "Not enough evidence."
+        }
+      },
+      "t02": {
+        "type": "choice",
+        "instructions": "Route this synthetic/redacted observation to the most immediate investigation layer, not a confirmed diagnosis: Old A URL returns200 after switch to B; denied read expected403, provider hit observed.",
+        "criteria": {
+          "content_integrity": "File bytes/checksum/MIME corruption.",
+          "authority": "Server/Auth/tenant access violation.",
+          "client_lifecycle": "Async cancellation, stale publication or native event/state lifecycle.",
+          "service": "External service/transport/rate limit.",
+          "evidence_scope": "Unsupported acceptance claim or platform/run mismatch.",
+          "integration": "Client query/component/version selection mismatch.",
+          "unknown": "Not enough evidence."
+        }
+      },
+      "t03": {
+        "type": "choice",
+        "instructions": "Route this synthetic/redacted observation to the most immediate investigation layer, not a confirmed diagnosis: Native audio401 error is emitted then cleared to null by a normal status tick before UI effect sees it; no renewal occurs.",
+        "criteria": {
+          "content_integrity": "File bytes/checksum/MIME corruption.",
+          "authority": "Server/Auth/tenant access violation.",
+          "client_lifecycle": "Async cancellation, stale publication or native event/state lifecycle.",
+          "service": "External service/transport/rate limit.",
+          "evidence_scope": "Unsupported acceptance claim or platform/run mismatch.",
+          "integration": "Client query/component/version selection mismatch.",
+          "unknown": "Not enough evidence."
+        }
+      },
+      "t04": {
+        "type": "choice",
+        "instructions": "Route this synthetic/redacted observation to the most immediate investigation layer, not a confirmed diagnosis: Native render operation finishes after tenant clear and publishes old A page into B UI.",
+        "criteria": {
+          "content_integrity": "File bytes/checksum/MIME corruption.",
+          "authority": "Server/Auth/tenant access violation.",
+          "client_lifecycle": "Async cancellation, stale publication or native event/state lifecycle.",
+          "service": "External service/transport/rate limit.",
+          "evidence_scope": "Unsupported acceptance claim or platform/run mismatch.",
+          "integration": "Client query/component/version selection mismatch.",
+          "unknown": "Not enough evidence."
+        }
+      },
+      "t05": {
+        "type": "choice",
+        "instructions": "Route this synthetic/redacted observation to the most immediate investigation layer, not a confirmed diagnosis: Provider responds429; request never reaches code acceptance checks.",
+        "criteria": {
+          "content_integrity": "File bytes/checksum/MIME corruption.",
+          "authority": "Server/Auth/tenant access violation.",
+          "client_lifecycle": "Async cancellation, stale publication or native event/state lifecycle.",
+          "service": "External service/transport/rate limit.",
+          "evidence_scope": "Unsupported acceptance claim or platform/run mismatch.",
+          "integration": "Client query/component/version selection mismatch.",
+          "unknown": "Not enough evidence."
+        }
+      },
+      "t06": {
+        "type": "choice",
+        "instructions": "Route this synthetic/redacted observation to the most immediate investigation layer, not a confirmed diagnosis: A brief claims iOS device acceptance but its only evidence is iOS JavaScript export.",
+        "criteria": {
+          "content_integrity": "File bytes/checksum/MIME corruption.",
+          "authority": "Server/Auth/tenant access violation.",
+          "client_lifecycle": "Async cancellation, stale publication or native event/state lifecycle.",
+          "service": "External service/transport/rate limit.",
+          "evidence_scope": "Unsupported acceptance claim or platform/run mismatch.",
+          "integration": "Client query/component/version selection mismatch.",
+          "unknown": "Not enough evidence."
+        }
+      },
+      "t07": {
+        "type": "choice",
+        "instructions": "Route this synthetic/redacted observation to the most immediate investigation layer, not a confirmed diagnosis: The app failed. No stack trace, request result, reproduction or platform is available.",
+        "criteria": {
+          "content_integrity": "File bytes/checksum/MIME corruption.",
+          "authority": "Server/Auth/tenant access violation.",
+          "client_lifecycle": "Async cancellation, stale publication or native event/state lifecycle.",
+          "service": "External service/transport/rate limit.",
+          "evidence_scope": "Unsupported acceptance claim or platform/run mismatch.",
+          "integration": "Client query/component/version selection mismatch.",
+          "unknown": "Not enough evidence."
+        }
+      },
+      "t08": {
+        "type": "choice",
+        "instructions": "Route this synthetic/redacted observation to the most immediate investigation layer, not a confirmed diagnosis: HomeworkCard chooses legacy Drive link when a submission has that field; the query omits current_file_version_id.",
+        "criteria": {
+          "content_integrity": "File bytes/checksum/MIME corruption.",
+          "authority": "Server/Auth/tenant access violation.",
+          "client_lifecycle": "Async cancellation, stale publication or native event/state lifecycle.",
+          "service": "External service/transport/rate limit.",
+          "evidence_scope": "Unsupported acceptance claim or platform/run mismatch.",
+          "integration": "Client query/component/version selection mismatch.",
+          "unknown": "Not enough evidence."
+        }
+      }
+    }
+  }
+}
