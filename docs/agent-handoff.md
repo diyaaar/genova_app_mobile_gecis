@@ -33,8 +33,14 @@ PASS,20 cases/two runs; new403/provider0, existing stream completes. Four actual
 registrations execute via strict Supabase-fetch/psql adapter, not fresh Auth/PostgREST.
 Chat retains independent room grant after unrelated choir-role loss.
 [Evidence/costs](reports/2026-10-01-private-file-families-http-overlap.md): Jev8/10 labels,
-two retained disagreements; recorded daily14calls$0.002274384 estimated, not invoice.
-**Next:** connected native Android audio Auth/R2; integrated native iOS NOT RUN.
+two retained disagreements; historical daily14calls$0.002274384 estimate.
+`6fed2ac` connected Android audio actual AuthStore/RLS/POST/Deno/signed loopback S3
+PASS: v1 refusal/one renewal, injected client-deadline/seek/resume, B teardown/old403.
+Source-less native flags fixed by red→green regression; fresh mobile55/401, root107/1075
+and normal exports PASS. [Record/costs](reports/2026-10-01-connected-android-audio-acceptance.md):
+Jev10/11, recovery disagreement retained; daily15calls$0.002435034 estimate, not invoice.
+**Next Android critical path:** current assignment-version private reader in permanent
+WebView. Integrated native iOS NOT RUN; schedule its milestone, do not close090.
 Hosted backup/ordered rollout is a separate later checkpoint; 090 stays open.
 
 ## Preserved evidence and remediation
@@ -57,8 +63,8 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
-1 Oct owned native/VM/DB/HTTP/derived outputs cleaned; latest23,699,152KiB free,
-lowest17,577,012KiB historical (090). Original068 hashes/counts unchanged.
+1 Oct owned native/VM/DB/HTTP/derived outputs cleaned; latest22,541,468KiB free,
+lowest15,382,484KiB recorded this checkpoint (090). Original068 hash/counts unchanged.
 Keep original `genova_068_test_restore`, retained 068 backup, private manifests/journals,
 dependencies and existing AVD/global caches. Never rebuild deleted runtimes without preflight.
 Local scoped code/tests/commits/owned cleanup authorized. Hosted DB/Edge/provider, credentials,

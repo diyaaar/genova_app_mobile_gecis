@@ -472,4 +472,18 @@ disagreements retained. Actual code shortlist9/9 (absence controls2); thirteen o
 tests/hash chains/source ranges/redaction PASS. Analysis
 accepted, NOT AI production adoption/calibration/independent audit. Existing key
 authorized today only, not persisted. RN/Expo/090 open gates unchanged; next product
-action remains overlapping HTTP/COMMIT, then current assignment-version integration.
+ action remains overlapping HTTP/COMMIT, then current assignment-version integration.
+
+## 1 October 2026 — connected Android audio checkpoint (090)
+
+Source6fed2ac/tools9f07d35; [dated acceptance](../docs/reports/2026-10-01-connected-android-audio-acceptance.md).
+Actual local AuthStore/RLS/POST/Deno/signature-verified synthetic S3 → Android ExpoAudio
+v1 recovery/client-deadline/seek/resume/B teardown/old403 PASS, declared fault/relay
+boundaries retained. Two native failures led to membership-hydration harness correction
+and source-less stale-status red→green product regression; fresh mobile55/401,
+root107/1075/build, Deno11, normal Android/iOS exports PASS. No native-iOS/hosted/beta claim.
+One Jev call3825input/467output/396ms,$0.000160650 estimate;10/11 labels, recovery
+disagreement retained. Daily15calls57977input/7163output,$0.002435034 estimate, not invoice.
+Owned stack/VM/emulator/app/generated files removed; original068 hash/counts unchanged;
+22541468KiB final free.090 stays open; next Android path: current assignment-version
+protected reader in permanent WebView. No push or external/provider/device authority used.

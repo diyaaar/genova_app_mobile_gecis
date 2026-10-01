@@ -1,0 +1,75 @@
+root-final-check.log
+$ pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm test:service-worker && pnpm build
+$ eslint . --max-warnings=0
+$ tsc --noEmit
+$ vitest run --coverage
+ Test Files  107 passed (107)
+      Tests  1075 passed (1075)
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+Statements   : 90.74% ( 510/562 )
+Branches     : 84.91% ( 394/464 )
+Functions    : 98.21% ( 110/112 )
+Lines        : 96.56% ( 450/466 )
+$ node --check public/sw.js
+$ next build
+ ✓ Compiled successfully in 2.8s
+ ✓ Generating static pages (17/17)
+mobile-accepted.log
+Test Suites: 55 passed, 55 total
+Tests:       401 passed, 401 total
+Time:        3.497 s, estimated 4 s
+android-accepted-build.log
+BUILD SUCCESSFUL in 8s
+460 actionable tasks: 25 executed, 435 up-to-date
+android-final-export.log
+Exported: ../../spike/090-runtime/connected-audio/normal-android
+ios-final-export.log
+Exported: ../../spike/090-runtime/connected-audio/normal-ios
+fixture-accepted.log
+PASS 091 local actual Auth/RLS + signed loopback object bytes=160044 sha256=a368aca90c310ca6a84ff4b3e29dc3ca27d99d229edd8d8c460a97061d2297a7
+PASS 090 connected Android audio HTTP evidence retained; no secrets
+PASS 093 Android hold ended; fixture secret removed
+PASS 091 local actual Auth/RLS + signed loopback object bytes=48 sha256=eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002
+PASS 091 actual Auth/RLS A/B, foreign user and old-context POST refusals
+PASS 091 local actual Auth/RLS + signed loopback object bytes=160044 sha256=a368aca90c310ca6a84ff4b3e29dc3ca27d99d229edd8d8c460a97061d2297a7
+PASS 090 same-session switch revokes old URL; separate Auth session stays A
+PASS 090 inactive membership refuses new and already-issued tickets
+Pre-fix red regression (13 pass / 1 fail):
+  ● AudioPlayerScreen › masks stale native playing/loaded/buffering ticks after tenant clear
+
+    expect(received).toMatchObject(expected)
+
+    - Expected  - 3
+    + Received  + 3
+
+      Object {
+    -   "buffering": false,
+    +   "buffering": true,
+        "canControl": false,
+        "currentTime": 0,
+        "duration": 0,
+    -   "loaded": false,
+    -   "playing": false,
+    +   "loaded": true,
+    +   "playing": true,
+        "session": null,
+        "ticketExpiresAt": null,
+      }
+
+      112 |     await act(async () => { await clearTenantCaches(); });
+      113 |     expect(audioMock.__mockPlayer.pause).toHaveBeenCalled();
+    > 114 |     expect(observed.value).toMatchObject({ session: null, ticketExpiresAt: null, currentTime: 0, duration: 0,
+          |                            ^
+      115 |       playing: false, loaded: false, buffering: false, canControl: false });
+      116 |     // A late native tick must not restore the old tenant's outward playback state.
+      117 |     await act(async () => { audioMock.__emitStatus({ playing: true, isLoaded: true, isBuffering: true, currentTime: 3 }); });
+
+      at Object.toMatchObject (src/repertoire/__tests__/AudioPlayerScreen.test.tsx:114:28)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 13 passed, 14 total
+Snapshots:   0 total
+Time:        0.599 s, estimated 1 s
+Ran all test suites matching /src\/repertoire\/__tests__\/AudioPlayerScreen.test.tsx/i.

@@ -30,12 +30,16 @@ Fresh mobile TS54/377, root106/1067/build and normal Android/iOS JS exports PASS
 PASS,20 cases/two runs; new403/provider0, existing stream completes. Four actual index
 registrations via strict Supabase-fetch/psql, not fresh Auth/PostgREST. Chat preserves
 independent room grant after unrelated role loss. [Evidence/costs](../docs/reports/2026-10-01-private-file-families-http-overlap.md):
-Jev8/10 self-labels/two retained disagreements; daily14calls$0.002274384 estimated.
-Connected native Android audio Auth/R2 remains NOT RUN.
+Jev8/10 self-labels/two retained disagreements; historical daily14calls$0.002274384 estimate.
+`6fed2ac`: connected native Android audio actual AuthStore/RLS/POST/Deno/signed loopback
+storage PASS with declared v1/client-deadline/earlier-v2/relay faults; source-less native
+status regression fixed. Fresh mobile55/401, root107/1075, normal exports PASS.
+[Record/costs](../docs/reports/2026-10-01-connected-android-audio-acceptance.md):
+Jev10/11, recovery disagreement retained; daily15calls$0.002435034 estimated, not invoice.
 Native iOS audio error-latch/seek acceptance is scheduled at 090's
 integrated both-platform private-client checkpoint before release; JS export does not close it.
-**Next local action:** connected native Android audio Auth/R2 acceptance. Performance query/HomeworkCard
-legacy-link/assignment-version integration remains a follow-up. Hosted rollout separately gated.
+**Next Android critical-path action:** performance query/HomeworkCard current assignment-version
+private-reader integration in permanent WebView. Hosted rollout separately gated;090 stays open.
 
 ## Preserved historical evidence
 
@@ -56,7 +60,7 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary agent is sole writer. 1 Oct owned emulator/app/reverse/connected runtime/VM and
-generated outputs cleaned; latest disposable native DB/HTTP cleanup leaves23,699,152KiB
+generated outputs cleaned; latest connected-audio cleanup leaves22,541,468KiB
 free, original068 row hashes/counts unchanged (090).
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
 global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;

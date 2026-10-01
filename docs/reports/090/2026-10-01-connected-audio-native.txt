@@ -1,0 +1,14 @@
+10-01 15:10:37.589  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] real Auth sign-in/one-use runtime credentials PASS
+10-01 15:10:37.872  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] real AuthStore A selection PASS
+10-01 15:10:37.951  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] source1 real POST200 injected signed v1
+10-01 15:10:41.083  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] source2 real POST200 v2/client deadline fault
+10-01 15:10:41.205  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] native v1 refusal/one real v2 renewal PASS opens2
+10-01 15:10:41.321  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] native seek4 PASS
+10-01 15:10:42.196  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] source3 real POST200 v2
+10-01 15:10:42.541  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] declared client deadline/real renewal/resume>=4.2 PASS opens3
+10-01 15:10:43.239  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] pause/seek2/resume PASS
+10-01 15:10:43.407  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] real AuthStore B selection/player teardown PASS
+10-01 15:10:43.467  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] old A HEAD403/new A POST403 PASS
+10-01 15:10:43.472  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] source4 injected previously-issued actual v2 in B
+10-01 15:10:46.622  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] native old-v2 body403/probe/no renewal PASS opens4
+10-01 15:10:46.625  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] ALL PASS connected local Android audio; not hosted/iOS/audibility

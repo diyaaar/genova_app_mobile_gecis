@@ -2,7 +2,7 @@
 
 Status: IN PROGRESS / local v2 implementation and synthetic acceptance PASS on
 30 September 2026; Android synthetic audio and connected stale-v1 PDF recovery PASS on 1 October.
-Five-family local HTTP overlap now has bounded evidence; connected audio/native-iOS,
+Five-family local HTTP overlap and connected native Android audio now have bounded evidence; native-iOS,
 hosted and release gates remain open. Primary agent,
 single writer. No hosted release authority.
 One result: uniform online next-request access-after-revocation for five private file
@@ -109,7 +109,7 @@ provider copy, push/deploy and actual Android/iOS device checks remain separatel
 | Decision #32 and 090 cross-links/consistency | Yes for this record | PASS | 30 September local link scan, `git diff --check` and scoped self-review; no source or runtime gate claimed |
 | Legacy v1 denial and compatibility checkpoint approved | Yes before implementation | PASS locally | Owner approved bounded local work on 30 September; v1 GET/HEAD now returns 401 in local tests. Hosted release was not approved. |
 | Five-family DB/Edge implementation and synthetic two-choir acceptance | Yes after contract selection | PASS locally | Disposable PG17 SQL matrix; service-only RPC; real local Auth/RLS/PostgREST/Edge + signed loopback S3 for repertoire; A/B same and separate sessions. Details below. |
-| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and actual permanent Android WebView recovery PASS locally. Five connected serial HTTP readers PASS historically. Local overlap: repertoire dependency adapter plus four actual index registrations/Supabase-fetch-to-psql adapter PASS on 1 October; not fresh Auth/PostgREST. Android audio uses unsigned synthetic issuance; connected audio Auth/R2 and native iOS remain NOT RUN. |
+| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and actual permanent Android WebView recovery PASS locally. Five connected serial HTTP readers PASS historically. Local overlap: repertoire dependency adapter plus four actual index registrations/Supabase-fetch-to-psql adapter PASS on 1 October; not fresh Auth/PostgREST. Connected native Android audio actual Auth/RLS/POST/Deno/signed loopback storage PASS at6fed2ac, with declared v1/client-deadline/earlier-v2/relay faults; native iOS remains NOT RUN. |
 | Hosted cutover/public Drive withdrawal/offline deletion/device/beta | Later separate authority | NOT RUN | This preparation cannot accept these layers |
 
 Required NOT RUN keeps 090 open. This local implementation may be committed as a partial checkpoint;
@@ -1080,3 +1080,92 @@ audio Auth/R2 is next local gate; integrated native iOS/hosted/release remain se
 Final measured free23,699,152KiB, above10,485,760KiB; forecast<200MiB not measured peak.
 Owned synthetic DB/runtime and guard probes removed, reproducible from sources;
 original068/dependencies/global caches/unrelated CLI retained. No external changes.
+
+## 1 October connected native Android audio — work card
+
+Local gate scope amendment: fresh root TypeScript exposed the previously added
+090 Deno HTTP harness being compiled as browser/Node code (Deno globals/npm:
+imports), and Vitest would collect its Deno.test file. Exclude only that explicit
+090_http_*.ts runtime family from root TS / its test from Vitest; retain fresh
+Deno check/test as a separate required gate. This is test-runtime separation,
+not suppressing product checks. Include tsconfig.json/vitest.config.ts in the
+allowed integration files. Earlier focused Deno evidence remains historical;
+the first fresh root typecheck in this checkpoint failed.
+
+After two native failures, reassess before another run: first test selected A
+before asynchronous membership hydration; second reached playback but B teardown
+timed out. Target DB confirmed B selection and the UI showed source-less time0
+with stale `loaded`. Product AudioPlaybackProvider exposed raw native loaded /
+playing / buffering even after its session/source/ticket were cleared. Add a
+failing stale-status regression first, then mask outward flags by source presence.
+Allow the narrowly scoped AudioPlaybackProvider.tsx and AudioPlayerScreen.test.tsx
+repair. Next bounded action: fresh tests, one incremental Android rerun; investigate
+specific diagnostics if it fails, do not keep recreating environments.
+
+Owner says continue; entry main/7db195a, only unrelated cli-latest dirty. Read skill,
+live docs, AGENTS, handoff/active,090, guide/work cycle, delivery controls, relevant
+MIGRATION/decision32 and actual audio gateway/player/AuthStore plus091/PDF fixtures.
+One writer, no delegation. One outcome: actual Android Expo audio valid-v1 refusal,
+one renewal through real local Auth/RLS/Deno/signed object transport, seek/resume,
+product A→B tenant teardown and confirmed403/no re-ticket. No production audio fix
+unless a runtime defect is reproduced. Provider remains synthetic loopback, not hostedR2.
+
+Three actions: guarded connected-audio runtime/one-use fixture and focused tests;
+one local PG17/Auth/PostgREST/Deno/signed object runtime + Android Release acceptance;
+fresh mobile/root gates, bounded Jev evidence judgment/costs and owned cleanup.
+Allowed: new apps/mobile/src/acceptance/090_connected-audio* and tests, guarded
+index.ts/loopback plugin/tests, supabase/test-support/091_connected_private_r2_read.ts
+and narrow fixture support, spike/typesafe/jev-090* tooling,090/report/status pointers.
+No dependency/live schema/provider/real-user/release changes. Runtime-only login
+secret via exact one-use loopback; no public-build password/source/evidence key.
+Declare first-response v1 URL substitution, test observation relay and shortened
+client expiry deadline; no unmodified gateway or server-expiry inference.
+
+Preflight23,701,200KiB available, >10,485,760 floor. No owned VM/app/listeners/builds.
+Existing Gradle5,531,968KiB, AVD3,466,056KiB,mobile dependencies6,409,160KiB/root
+1,621,064KiB preserved. Cached SDK/JDK17/API36 installed. Forecast additional<=12GiB:
+VM/images/schema<=7GiB,Android/build/cache<=3GiB,AVD growth<=1GiB,logs/exports/root
+checks<=1GiB; projected11,118,288KiB remains above floor. Tight margin: measure each
+phase, reassess remaining allocation before build, stop growth before floor breach.
+Owned targets genova090 Colima VM/data,genova-090-runtime stack/volume,spike/090-runtime
+and exact093 runtime hold,loopback54491/54492/8000/18092,emulator5580 app/reverse,
+generated android/.expo/root.next/coverage. Dispose after final dependent checks.
+
+Required config/one-use/relay guards, actual Auth sign-in/A selection, actual v1GET401/
+HEAD401/provider0→exactly one real v2 POST/new body,correct WAV/checksum/MIME/Range,
+seek4/resume after declared client deadline, pause/seek2/resume, real AuthStore B
+selection clears player; old URL HEAD403/newPOST403 and injected previously-issued
+URL native body403/probe/no additional renewal. Server validates full AWS4 signature.
+Fresh mobile TS/full tests and pnpm check; normal Android/iOS exports with acceptance
+flags off; actual Android playback/UI and redacted HTTP observations. No physical
+audibility/native iOS/hosted/beta closure. Preserve original068 hashes/counts.
+One Jev call<=24KB/16questions/45s/no retry/<$0.002 advisory cap, owner key today only
+in process memory; actual tokens/current price estimate recorded separately from
+today's earlier14call$0.002274384. Codex cost unknown, no newly paid infrastructure.
+
+### Connected Android audio checkpoint result — 1 October
+
+Local outcome accepted at source/test `6fed2ac`, Jev tooling `9f07d35`.
+[Dated report](../reports/2026-10-01-connected-android-audio-acceptance.md)
+owns exact HTTP/native/red-regression evidence, failures, review, costs and cleanup.
+This is not whole090 closure or an independent review.
+
+| Checkpoint criterion | Required? | Result | Evidence / limit |
+|---|---|---|---|
+| Guarded one-use Auth / actual product A selection | Yes | PASS locally | Actual AuthStore/SecureStore/RLS, POST200→410 runtime credentials; no password build variable or credential file |
+| v1 native refusal / one authority v2 renewal / exact WAV body | Yes | PASS locally | Native GET401×4 codec retries, HEAD401×1, application renewal once, POST200 and full160044B GET200; AWS4/hash/MIME verified |
+| Declared client deadline / seek / pause / resume | Yes | PASS locally | source3 real POST200; seek4/play≥4.2 and pause/seek2/play≥2.2; two full200/two Range206 transfers; not server expiry |
+| Actual B teardown / earlier A HEAD + POST + native body denial | Yes | PASS locally | Source-less native flags repaired by red→green regression; earlierHEAD403/newPOST403/nativeGET403×4/probeHEAD403, provider0/no renewal |
+| Fixture teardown / source preservation / fresh gates / guard-off exports | Yes | PASS locally | Fixtureexit0, same/separate-session and inactive-member refusals; original068 aggregate hash/counts unchanged; mobile55/401, root107/1075/build, Deno11, Node3, normal Android/iOS JS exports and exact loopback XML/reference absent |
+| Bounded Jev / cost / owned cleanup | Yes | PASS advisory only | One11-question call,3825input/467output/396ms,$0.000160650 estimate,10/11 self-label agreement with retained recovery disagreement; daily15calls$0.002435034 estimate, not invoice |
+| Native iOS / hosted / real device / beta/release | Broader090/release | NOT RUN | Local audio outcome passes;090 remains IN PROGRESS |
+
+Two native failures retained: first harness selected before membership hydration;
+second playback succeeded but B cleanup exposed raw stale native status. Reassessed,
+wrote meaningful red regression, scoped outward-state fix, third native run PASS.
+See report for the root Deno/web compiler separation and non-causal regression draft.
+Accepted15:10:37–46Istanbul. Temporary stack/volume/VM/emulator/app/reverses/generated
+outputs removed; dependency/AVD/global caches/source/private backups preserved;
+lowest recorded15382484KiB, final22541468KiB. No external mutation or push.
+Next Android beta critical-path outcome: current assignment-version protected reader
+in permanent WebView; integrated native-iOS checkpoint remains explicitly scheduled.

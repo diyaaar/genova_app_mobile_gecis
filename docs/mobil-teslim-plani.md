@@ -31,8 +31,12 @@ existing URL remained readable after a same-session choir switch before 090.
 [090](briefs/090-private-file-ticket-revocation-contract.md) now has the owner's 30 September
 next-online-request refusal policy ([decision #32](../KARARLAR.md)) and a committed local v2
 implementation (`5f55c48`): synthetic connected repertoire and Android Release old-URL refusal
-pass; later two-session SQL commit-boundary checks pass at `70fd23e`, but remaining
-browser/four-family connected HTTP/in-flight provider and hosted/device gates keep 090 open.
+pass; two-session SQL commit-boundary checks pass at `70fd23e`. Later Chrome/native PDF/
+permanent Android WebView recovery, all-five declared-adapter HTTP/COMMIT and connected
+Android audio at `6fed2ac` pass locally. [Current evidence](reports/2026-10-01-connected-android-audio-acceptance.md)
+retains exact relays/faults; native iOS/hosted/device/release gates keep090 open.
+Next Android critical-path local outcome is current assignment-version private reading
+in the existing permanent WebView, not a native rewrite or blanket Drive-exit claim.
 [077](briefs/077-repertoire-mp3-r2-batch-3.md)
 remains an exact, unexecuted real-copy approval checkpoint. Neither block changes the
 Android-first critical path or promotes a local test to beta acceptance.

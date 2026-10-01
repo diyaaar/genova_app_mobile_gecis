@@ -1,0 +1,123 @@
+{
+  "timestamp": "2026-10-01T12:12:06.081Z",
+  "requestSha256": "a76a432820a52e898b9240477c19e40665fe425cf2013d641c06b0876c791c07",
+  "elapsedMs": 396,
+  "model": "jev-1.13.0",
+  "usage": {
+    "input_tokens": 3825,
+    "output_tokens": 467
+  },
+  "estimatedUsd": 0.00016065,
+  "answers": {
+    "connected": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.99,
+      "probabilities": {
+        "contradicts": 0,
+        "insufficient": 0,
+        "supports": 1
+      }
+    },
+    "recovery": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.54,
+      "probabilities": {
+        "contradicts": 0.69,
+        "insufficient": 0.11,
+        "supports": 0.2
+      }
+    },
+    "deadline": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.98,
+      "probabilities": {
+        "contradicts": 0,
+        "insufficient": 0.01,
+        "supports": 0.99
+      }
+    },
+    "switch": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.86,
+      "probabilities": {
+        "contradicts": 0.06,
+        "insufficient": 0.03,
+        "supports": 0.91
+      }
+    },
+    "authority": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.98,
+      "probabilities": {
+        "contradicts": 0.99,
+        "insufficient": 0.01,
+        "supports": 0
+      }
+    },
+    "server_expiry": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 1,
+      "probabilities": {
+        "contradicts": 1,
+        "insufficient": 0,
+        "supports": 0
+      }
+    },
+    "hosted": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 1,
+      "probabilities": {
+        "contradicts": 1,
+        "insufficient": 0,
+        "supports": 0
+      }
+    },
+    "ios": {
+      "type": "choice",
+      "choice": "insufficient",
+      "confidence": 0.9,
+      "probabilities": {
+        "contradicts": 0.07,
+        "insufficient": 0.93,
+        "supports": 0
+      }
+    },
+    "load": {
+      "type": "choice",
+      "choice": "insufficient",
+      "confidence": 1,
+      "probabilities": {
+        "contradicts": 0,
+        "insufficient": 1,
+        "supports": 0
+      }
+    },
+    "close": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.67,
+      "probabilities": {
+        "contradicts": 0.79,
+        "insufficient": 0.21,
+        "supports": 0
+      }
+    },
+    "invoice": {
+      "type": "choice",
+      "choice": "insufficient",
+      "confidence": 0.83,
+      "probabilities": {
+        "contradicts": 0.12,
+        "insufficient": 0.88,
+        "supports": 0
+      }
+    }
+  }
+}

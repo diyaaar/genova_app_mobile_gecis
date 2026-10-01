@@ -1,0 +1,16 @@
+{
+  "expected": {
+    "connected": "supports",
+    "recovery": "supports",
+    "deadline": "supports",
+    "switch": "supports",
+    "authority": "contradicts",
+    "server_expiry": "contradicts",
+    "hosted": "contradicts",
+    "ios": "insufficient",
+    "load": "insufficient",
+    "close": "contradicts",
+    "invoice": "insufficient"
+  },
+  "labelOwner": "Primary agent before inference, not independent review."
+}

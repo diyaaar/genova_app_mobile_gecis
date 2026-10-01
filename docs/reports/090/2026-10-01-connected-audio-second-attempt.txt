@@ -1,0 +1,10 @@
+10-01 15:06:18.958  3969  3992 I ReactNativeJS: [090_CONNECTED_AUDIO] real Auth sign-in/one-use runtime credentials PASS
+10-01 15:06:19.152  3969  3992 I ReactNativeJS: [090_CONNECTED_AUDIO] real AuthStore A selection PASS
+10-01 15:06:19.276  3969  3992 I ReactNativeJS: [090_CONNECTED_AUDIO] source1 real POST200 injected signed v1
+10-01 15:06:22.616  3969  3992 I ReactNativeJS: [090_CONNECTED_AUDIO] source2 real POST200 v2/client deadline fault
+10-01 15:06:22.790  3969  3992 I ReactNativeJS: [090_CONNECTED_AUDIO] native v1 refusal/one real v2 renewal PASS opens2
+10-01 15:06:22.796  3969  3992 I ReactNativeJS: [090_CONNECTED_AUDIO] native seek4 PASS
+10-01 15:06:23.804  3969  3992 I ReactNativeJS: [090_CONNECTED_AUDIO] source3 real POST200 v2
+10-01 15:06:24.388  3969  3992 I ReactNativeJS: [090_CONNECTED_AUDIO] declared client deadline/real renewal/resume>=4.2 PASS opens3
+10-01 15:06:25.090  3969  3992 I ReactNativeJS: [090_CONNECTED_AUDIO] pause/seek2/resume PASS
+10-01 15:06:40.207  3969  3992 I ReactNativeJS: [090_CONNECTED_AUDIO] FAIL B teardown timeout

@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-10-01T12:10:46.944Z",
+  "result": "PASS",
+  "tickets": [
+    200,
+    200,
+    200,
+    403
+  ],
+  "reads": [
+    {
+      "method": "GET",
+      "status": 401,
+      "providerDelta": 0,
+      "range": false,
+      "bytes": 30
+    },
+    {
+      "method": "GET",
+      "status": 401,
+      "providerDelta": 0,
+      "range": false,
+      "bytes": 30
+    },
+    {
+      "method": "GET",
+      "status": 401,
+      "providerDelta": 0,
+      "range": false,
+      "bytes": 30
+    },
+    {
+      "method": "GET",
+      "status": 401,
+      "providerDelta": 0,
+      "range": false,
+      "bytes": 30
+    },
+    {
+      "method": "HEAD",
+      "status": 401,
+      "providerDelta": 0,
+      "range": false,
+      "bytes": 0
+    },
+    {
+      "method": "GET",
+      "status": 200,
+      "providerDelta": 1,
+      "range": false,
+      "bytes": 160044
+    },
+    {
+      "method": "GET",
+      "status": 200,
+      "providerDelta": 1,
+      "range": false,
+      "bytes": 160044
+    },
+    {
+      "method": "GET",
+      "status": 206,
+      "providerDelta": 1,
+      "range": true,
+      "bytes": 96000
+    },
+    {
+      "method": "GET",
+      "status": 206,
+      "providerDelta": 1,
+      "range": true,
+      "bytes": 128000
+    },
+    {
+      "method": "HEAD",
+      "status": 403,
+      "providerDelta": 0,
+      "range": false,
+      "bytes": 0
+    },
+    {
+      "method": "GET",
+      "status": 403,
+      "providerDelta": 0,
+      "range": false,
+      "bytes": 25
+    },
+    {
+      "method": "GET",
+      "status": 403,
+      "providerDelta": 0,
+      "range": false,
+      "bytes": 25
+    },
+    {
+      "method": "GET",
+      "status": 403,
+      "providerDelta": 0,
+      "range": false,
+      "bytes": 25
+    },
+    {
+      "method": "GET",
+      "status": 403,
+      "providerDelta": 0,
+      "range": false,
+      "bytes": 25
+    },
+    {
+      "method": "HEAD",
+      "status": 403,
+      "providerDelta": 0,
+      "range": false,
+      "bytes": 0
+    }
+  ],
+  "contentLength": 160044,
+  "sha256": "a368aca90c310ca6a84ff4b3e29dc3ca27d99d229edd8d8c460a97061d2297a7",
+  "boundary": "Actual local Auth/RLS/PostgREST/Deno and Android Expo audio; declared signed-v1 URL/client-deadline/old-v2 injection and GET/HEAD/POST relay. Signature-verified synthetic loopback S3, not hosted/iOS/physical audibility/server expiry."
+}

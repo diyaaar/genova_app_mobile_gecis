@@ -1,0 +1,242 @@
+{
+  "packet": {
+    "model": "jev-1.13.0",
+    "state": {
+      "sourceHashes": {
+        "http": "5b215d2ab6220882303beda2689df565b3343b2efacb3a0b9e15393cc70ed08f",
+        "native": "b3a9f7e82d429a0a37ecbeaed59bd830d025b5083d0756be09ed7cf632f9a235"
+      },
+      "http": {
+        "timestamp": "2026-10-01T12:10:46.944Z",
+        "result": "PASS",
+        "tickets": [
+          200,
+          200,
+          200,
+          403
+        ],
+        "reads": [
+          {
+            "method": "GET",
+            "status": 401,
+            "providerDelta": 0,
+            "range": false,
+            "bytes": 30
+          },
+          {
+            "method": "GET",
+            "status": 401,
+            "providerDelta": 0,
+            "range": false,
+            "bytes": 30
+          },
+          {
+            "method": "GET",
+            "status": 401,
+            "providerDelta": 0,
+            "range": false,
+            "bytes": 30
+          },
+          {
+            "method": "GET",
+            "status": 401,
+            "providerDelta": 0,
+            "range": false,
+            "bytes": 30
+          },
+          {
+            "method": "HEAD",
+            "status": 401,
+            "providerDelta": 0,
+            "range": false,
+            "bytes": 0
+          },
+          {
+            "method": "GET",
+            "status": 200,
+            "providerDelta": 1,
+            "range": false,
+            "bytes": 160044
+          },
+          {
+            "method": "GET",
+            "status": 200,
+            "providerDelta": 1,
+            "range": false,
+            "bytes": 160044
+          },
+          {
+            "method": "GET",
+            "status": 206,
+            "providerDelta": 1,
+            "range": true,
+            "bytes": 96000
+          },
+          {
+            "method": "GET",
+            "status": 206,
+            "providerDelta": 1,
+            "range": true,
+            "bytes": 128000
+          },
+          {
+            "method": "HEAD",
+            "status": 403,
+            "providerDelta": 0,
+            "range": false,
+            "bytes": 0
+          },
+          {
+            "method": "GET",
+            "status": 403,
+            "providerDelta": 0,
+            "range": false,
+            "bytes": 25
+          },
+          {
+            "method": "GET",
+            "status": 403,
+            "providerDelta": 0,
+            "range": false,
+            "bytes": 25
+          },
+          {
+            "method": "GET",
+            "status": 403,
+            "providerDelta": 0,
+            "range": false,
+            "bytes": 25
+          },
+          {
+            "method": "GET",
+            "status": 403,
+            "providerDelta": 0,
+            "range": false,
+            "bytes": 25
+          },
+          {
+            "method": "HEAD",
+            "status": 403,
+            "providerDelta": 0,
+            "range": false,
+            "bytes": 0
+          }
+        ],
+        "contentLength": 160044,
+        "sha256": "a368aca90c310ca6a84ff4b3e29dc3ca27d99d229edd8d8c460a97061d2297a7",
+        "boundary": "Actual local Auth/RLS/PostgREST/Deno and Android Expo audio; declared signed-v1 URL/client-deadline/old-v2 injection and GET/HEAD/POST relay. Signature-verified synthetic loopback S3, not hosted/iOS/physical audibility/server expiry."
+      },
+      "nativeTrace": "10-01 15:10:37.589  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] real Auth sign-in/one-use runtime credentials PASS\n10-01 15:10:37.872  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] real AuthStore A selection PASS\n10-01 15:10:37.951  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] source1 real POST200 injected signed v1\n10-01 15:10:41.083  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] source2 real POST200 v2/client deadline fault\n10-01 15:10:41.205  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] native v1 refusal/one real v2 renewal PASS opens2\n10-01 15:10:41.321  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] native seek4 PASS\n10-01 15:10:42.196  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] source3 real POST200 v2\n10-01 15:10:42.541  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] declared client deadline/real renewal/resume>=4.2 PASS opens3\n10-01 15:10:43.239  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] pause/seek2/resume PASS\n10-01 15:10:43.407  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] real AuthStore B selection/player teardown PASS\n10-01 15:10:43.467  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] old A HEAD403/new A POST403 PASS\n10-01 15:10:43.472  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] source4 injected previously-issued actual v2 in B\n10-01 15:10:46.622  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] native old-v2 body403/probe/no renewal PASS opens4\n10-01 15:10:46.625  4386  4406 I ReactNativeJS: [090_CONNECTED_AUDIO] ALL PASS connected local Android audio; not hosted/iOS/audibility\n",
+      "method": "Primary self-reviewed local tests, not independent review. Real synthetic Auth login and product AuthStore/SecureStore/RLS/POST/Deno. Actual Android API36 Release/ExpoAudio player. Relay normalizes POST ticket URL origin/path and forwards unchanged signed query to actual Deno; GET/HEAD observations verify bytes/signature and provider counts. Valid v1 substitution, client expiresAt fault, cached earlier v2 in B are intentional injections. No expiry clock shift.",
+      "known_opposites": "SQL/Auth/Deno decides access, not Jev. Server deadline was not awaited; client deadline was explicitly injected. Object service is synthetic local, not hosted Cloudflare R2.090 cannot close: native iOS and hosted/release gates are open.",
+      "unknowns": "Integrated native iOS, physical audibility/device, hosted provider/deploy,100-tenant load and invoice are unmeasured, not proven broken.",
+      "policy": "Advisory only. Exact tests/source and human engineering review own acceptance. Current audio gate may pass locally while090 remains open."
+    },
+    "questions": {
+      "connected": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: This local checkpoint exercises the product AuthStore/SecureStore, real Auth/RLS/PostgREST/Deno ticket issuance and actual Android ExpoAudio with signature-verified synthetic object bytes.",
+        "criteria": {
+          "supports": "The supplied observations directly establish the claim within its stated scope.",
+          "contradicts": "Observed facts or explicit implementation/method contradict the claim. An unrun gate alone is NOT contradiction.",
+          "insufficient": "This behavior or measured outcome is unknown/unrun. Missing observations do not prove opposite behavior."
+        }
+      },
+      "recovery": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: A declared valid signed-v1 source fault was refused by actual native GET401 and HEAD401, then exactly one fresh actual-authority POST renewed v2 and loaded the audio.",
+        "criteria": {
+          "supports": "The supplied observations directly establish the claim within its stated scope.",
+          "contradicts": "Observed facts or explicit implementation/method contradict the claim. An unrun gate alone is NOT contradiction.",
+          "insufficient": "This behavior or measured outcome is unknown/unrun. Missing observations do not prove opposite behavior."
+        }
+      },
+      "deadline": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: A declared client-deadline fault exercised one actual-authority renewal and position-preserving playback, pause, seek and resume in Android.",
+        "criteria": {
+          "supports": "The supplied observations directly establish the claim within its stated scope.",
+          "contradicts": "Observed facts or explicit implementation/method contradict the claim. An unrun gate alone is NOT contradiction.",
+          "insufficient": "This behavior or measured outcome is unknown/unrun. Missing observations do not prove opposite behavior."
+        }
+      },
+      "switch": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: Actual AuthStore selection of B clears the player; an earlier A v2 HEAD and native body/probe fail403 without provider access or another ticket POST.",
+        "criteria": {
+          "supports": "The supplied observations directly establish the claim within its stated scope.",
+          "contradicts": "Observed facts or explicit implementation/method contradict the claim. An unrun gate alone is NOT contradiction.",
+          "insufficient": "This behavior or measured outcome is unknown/unrun. Missing observations do not prove opposite behavior."
+        }
+      },
+      "authority": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: Jev decides access grants at runtime instead of SQL authorization.",
+        "criteria": {
+          "supports": "The supplied observations directly establish the claim within its stated scope.",
+          "contradicts": "Observed facts or explicit implementation/method contradict the claim. An unrun gate alone is NOT contradiction.",
+          "insufficient": "This behavior or measured outcome is unknown/unrun. Missing observations do not prove opposite behavior."
+        }
+      },
+      "server_expiry": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The renewal test waited for the actual server-signed ticket expiration, with no injected client deadline.",
+        "criteria": {
+          "supports": "The supplied observations directly establish the claim within its stated scope.",
+          "contradicts": "Observed facts or explicit implementation/method contradict the claim. An unrun gate alone is NOT contradiction.",
+          "insufficient": "This behavior or measured outcome is unknown/unrun. Missing observations do not prove opposite behavior."
+        }
+      },
+      "hosted": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The signature-verified synthetic loopback object service is a live hosted Cloudflare R2 production deployment.",
+        "criteria": {
+          "supports": "The supplied observations directly establish the claim within its stated scope.",
+          "contradicts": "Observed facts or explicit implementation/method contradict the claim. An unrun gate alone is NOT contradiction.",
+          "insufficient": "This behavior or measured outcome is unknown/unrun. Missing observations do not prove opposite behavior."
+        }
+      },
+      "ios": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: Integrated native iOS connected audio works.",
+        "criteria": {
+          "supports": "The supplied observations directly establish the claim within its stated scope.",
+          "contradicts": "Observed facts or explicit implementation/method contradict the claim. An unrun gate alone is NOT contradiction.",
+          "insufficient": "This behavior or measured outcome is unknown/unrun. Missing observations do not prove opposite behavior."
+        }
+      },
+      "load": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: 100 simultaneously active choir tenants have acceptable audio load performance.",
+        "criteria": {
+          "supports": "The supplied observations directly establish the claim within its stated scope.",
+          "contradicts": "Observed facts or explicit implementation/method contradict the claim. An unrun gate alone is NOT contradiction.",
+          "insufficient": "This behavior or measured outcome is unknown/unrun. Missing observations do not prove opposite behavior."
+        }
+      },
+      "close": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: All mandatory090 gates are complete; the brief can close.",
+        "criteria": {
+          "supports": "The supplied observations directly establish the claim within its stated scope.",
+          "contradicts": "Observed facts or explicit implementation/method contradict the claim. An unrun gate alone is NOT contradiction.",
+          "insufficient": "This behavior or measured outcome is unknown/unrun. Missing observations do not prove opposite behavior."
+        }
+      },
+      "invoice": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: An independently verified provider invoice total is available.",
+        "criteria": {
+          "supports": "The supplied observations directly establish the claim within its stated scope.",
+          "contradicts": "Observed facts or explicit implementation/method contradict the claim. An unrun gate alone is NOT contradiction.",
+          "insufficient": "This behavior or measured outcome is unknown/unrun. Missing observations do not prove opposite behavior."
+        }
+      }
+    }
+  },
+  "sourceHashes": {
+    "http": "5b215d2ab6220882303beda2689df565b3343b2efacb3a0b9e15393cc70ed08f",
+    "native": "b3a9f7e82d429a0a37ecbeaed59bd830d025b5083d0756be09ed7cf632f9a235"
+  },
+  "requestSha256": "a76a432820a52e898b9240477c19e40665fe425cf2013d641c06b0876c791c07"
+}
