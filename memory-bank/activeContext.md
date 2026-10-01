@@ -22,11 +22,16 @@ cannot restart a cleared owner. Final API36 Release proves bounded 401 renewal, 
 expiry resume >=4.2s, pause/seek2/resume, tenant clear and 403 without re-ticket.
 Mobile TS/51 suites/314 tests, root 106/1066/build and normal iOS/Android JS exports pass.
 Audio ticket service is deliberately synthetic/unsigned; no Auth/SQL/S3/native-v1 proof.
-Native PDF stale-v1, Android WebView, connected audio Auth/R2 and in-flight HTTP/COMMIT
-remain NOT RUN. Native iOS audio error-latch/seek acceptance is scheduled at 090's
+1 Oct `364cfe4` connected Android native PDF valid-v1 GET401 → one real v2 renewal,
+exact65905B/hash, visible pages1/40 and2/40, A→B cache clear/B-only, oldHEAD403/newPOST403 PASS.
+Actual Auth/RLS/Deno/signed loopback S3; declared URL substitution/observation relay,
+runtime-only one-use credentials, no build password. Not hosted R2/unmodified Kong.
+Fresh mobile TS/52 suites/333 tests, root106/1066/build and normal Android/iOS JS exports PASS.
+Android WebView, connected audio Auth/R2 and in-flight HTTP/COMMIT remain NOT RUN.
+Native iOS audio error-latch/seek acceptance is scheduled at 090's
 integrated both-platform private-client checkpoint before release; JS export does not close it.
-**Next local action:** guarded connected Android native PDF stale-v1 recovery;
-then actual permanent-WebView/in-flight HTTP tests. Hosted rollout is separately gated.
+**Next local action:** actual permanent Android WebView private-file recovery,
+then in-flight HTTP tests. Hosted rollout is separately gated.
 
 ## Preserved historical evidence
 
@@ -46,8 +51,8 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 ## Ownership and resources
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
-Primary agent is sole writer. 1 Oct owned emulator/app/reverse/audio process and generated
-outputs cleaned; exact inventory/free space in 090. No DB/VM/source-data action in this run.
+Primary agent is sole writer. 1 Oct owned emulator/app/reverse/connected runtime/VM and
+generated outputs cleaned; final free24,923,220 KiB, original068 counts unchanged (090).
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
 global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;
 one heavy process, two-failure causal reassessment, no blind rebuild or broad cleanup.

@@ -23,17 +23,17 @@ Android current-v2 PDF page 1/40/cache clear/B-only and old A URL 403 pass local
 Installed Chrome web PDF recovery (`10e9b77`) passes declared v1/body faults and A→B;
 its function transport relay is not unmodified Kong or Android WebView proof.
 
-1 Oct source/test `dc46c2a`: actual API36 Android Release audio exposed lost transient Expo error events.
-The narrow source-scoped event latch now recovers once after body 401, seeks to 4s,
-renews expiry and resumes >=4.2s, pause/seek2/resumes, clears owner and refuses a
-confirmed 403 without another ticket. Async seek completion cannot restart a cleared owner.
-Full mobile TS/51 suites/314 tests, root 106/1066/build and normal Android/iOS JS exports pass.
-The media fixture issues deliberately synthetic unsigned tickets, not actual Auth/R2/v1.
-Native PDF stale-v1, Android WebView, connected audio Auth/R2, HTTP/provider overlapping
-COMMIT and native iOS error-latch/seek runtime remain NOT RUN; see 090's exact gates.
-**Next ready local action:** native Android PDF stale-v1 recovery against guarded
-connected Auth/Edge/S3, then actual permanent-WebView and in-flight HTTP acceptance.
-Hosted backup/ordered rollout is a later separate checkpoint, not the next automatic action.
+1 Oct `dc46c2a`: actual Android audio transient-error latch recovers once after401,
+seek4/expiry resume>=4.2s, pause/seek2/resume, tenant clear and403 without re-ticket.
+Async seek cannot restart a cleared owner; issuance is deliberately unsigned/synthetic.
+1 Oct `364cfe4`: connected Android native PDF valid-v1 GET401 → one real v2 renewal,
+exact65905B/hash, visible pages1/40 and2/40, A→B cache clear/B-only and oldHEAD403 PASS.
+Actual Auth/RLS/Deno/signed loopback S3, declared URL substitution/observation relay;
+runtime-only one-use credentials, no password in build. Not hosted R2 or unmodified Kong.
+Fresh mobile TS/52 suites/333 tests, root106/1066/build and normal native JS exports PASS.
+Android WebView, connected audio Auth/R2, overlapping HTTP/COMMIT and native iOS
+error-latch/seek remain NOT RUN. **Next:** actual permanent Android WebView recovery,
+then in-flight HTTP acceptance. Hosted backup/ordered rollout is a separate later checkpoint.
 
 ## Preserved evidence and remediation
 
@@ -55,7 +55,7 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
-1 Oct owned emulator/app/reverse route/audio server and derived outputs were cleaned;
+1 Oct owned emulator/app/reverse routes/connected VM/services and derived outputs cleaned;
 see 090 for final resource inventory/free space. No hosted database or source data changed.
 Keep original `genova_068_test_restore`, retained 068 backup, private manifests/journals,
 dependencies and existing AVD/global caches. Never rebuild deleted runtimes without preflight.

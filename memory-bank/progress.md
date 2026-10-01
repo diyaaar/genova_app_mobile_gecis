@@ -1,5 +1,18 @@
 # İlerleme indeksi
 
+1 October — [090 connected native Android stale-v1 PDF](../docs/briefs/090-private-file-ticket-revocation-contract.md),
+source/test `364cfe4`, PASS locally. Real Auth/RLS/Deno + signed loopback S3, guarded
+first-response valid-v1 substitution/GET-HEAD observation relay, runtime-only one-use
+credentials (second POST410, no public build password). Actual Expo GET401 → one v2
+renewal → exact65905B/hash, visibly rendered pages1/40 and2/40. Product A→B clears
+private cache, B-only catalogue and oldHEAD403/newPOST403; no provider hit on denial.
+Held fixture teardown exits0 with foreign/other-session/inactive-member checks. Fresh
+mobile TS52/333, native-only normal exports, root106/1066/build PASS. Exact runtime/
+VM/builds/exports removed; original068 five counts unchanged,24,923,220 KiB free.
+No hosted/provider/real data/physical device/push/deploy. WebView, connected audio,
+HTTP overlap/native iOS/release NOT RUN; 090 open, next actual permanent WebView.
+Self-review, not independent. Historical setup failures remain in the brief.
+
 1 October — [general check-up](../docs/reports/2026-10-01-project-checkup.md) and
 [090 Android audio recovery](../docs/briefs/090-private-file-ticket-revocation-contract.md)
 completed locally as a partial 090 checkpoint, source/test `dc46c2a`. Actual Android RED showed transient Expo

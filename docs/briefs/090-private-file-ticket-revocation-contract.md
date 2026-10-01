@@ -1,8 +1,8 @@
 # 090 — private-file ticket revocation contract before Android beta
 
 Status: IN PROGRESS / local v2 implementation and synthetic acceptance PASS on
-30 September 2026; Android synthetic audio recovery also PASS on 1 October.
-Hosted, Android WebView/native PDF stale-v1 and release gates remain open. Primary agent,
+30 September 2026; Android synthetic audio and connected stale-v1 PDF recovery PASS on 1 October.
+Hosted, Android WebView/in-flight HTTP/native-iOS and release gates remain open. Primary agent,
 single writer. No hosted release authority.
 One result: uniform online next-request access-after-revocation for five private file
 families before `mixed`/`r2-required` cutover. This brief does not authorize live writes.
@@ -108,7 +108,7 @@ provider copy, push/deploy and actual Android/iOS device checks remain separatel
 | Decision #32 and 090 cross-links/consistency | Yes for this record | PASS | 30 September local link scan, `git diff --check` and scoped self-review; no source or runtime gate claimed |
 | Legacy v1 denial and compatibility checkpoint approved | Yes before implementation | PASS locally | Owner approved bounded local work on 30 September; v1 GET/HEAD now returns 401 in local tests. Hosted release was not approved. |
 | Five-family DB/Edge implementation and synthetic two-choir acceptance | Yes after contract selection | PASS locally | Disposable PG17 SQL matrix; service-only RPC; real local Auth/RLS/PostgREST/Edge + signed loopback S3 for repertoire; A/B same and separate sessions. Details below. |
-| Web/native client recovery and required gates | Yes locally | PARTIAL | Web hook/body and native PDF/audio tests, full gates, Android Release old-URL denial and installed Chrome web PDF recovery PASS locally; native stale-v1/audio runtime, Android WebView and in-flight HTTP boundary NOT RUN. Five HTTP readers have separate connected local PASS. |
+| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery and connected Android native stale-v1→v2 PDF/cache/switch PASS; Android audio recovery/seek uses deliberately unsigned synthetic issuance. Five connected HTTP readers PASS locally. Actual Android WebView, connected audio Auth/R2, native iOS and overlapping HTTP/COMMIT remain NOT RUN. |
 | Hosted cutover/public Drive withdrawal/offline deletion/device/beta | Later separate authority | NOT RUN | This preparation cannot accept these layers |
 
 Required NOT RUN keeps 090 open. This local implementation may be committed as a partial checkpoint;
@@ -665,3 +665,117 @@ source, existing AVD/toolchain/dependencies/caches/private backups remain. No VM
 secret fixture was created. Final free 25,989,296 KiB; measured phase headroom stayed
 above 10 GiB. Unrelated `supabase/.temp/cli-latest` remains unstaged. No external
 write, credentials, email, real data, push/deploy/device/distribution action occurred.
+
+## 1 October native Android stale-v1 PDF — work card
+
+Continuation approved by the owner. Entry sources: AGENTS, short handoff/active,
+this brief, guide/work cycle, delivery execution controls, decisions #32, MIGRATION,
+093/091 and actual reader/Auth/file-store/renderer/acceptance sources. Verified
+`main/4cc2961`; only unrelated `supabase/.temp/cli-latest` dirty, left unstaged.
+One writer, no delegation. Original `genova_068_test_restore` remains 28 Auth users,
+1 choir, 29 memberships, 9 repertoire rows and 79 files; it is a preserved source,
+not the disposable runtime target.
+
+Outcome: actual Android Expo file download rejects a valid legacy v1 ticket, the
+product reader obtains exactly one replacement from actual local Auth/RLS/Deno,
+renders the 40-page synthetic PDF, then A→B clears private cache and refuses the
+already-issued A URL. First response URL substitution is a declared fixture fault;
+a loopback GET/HEAD observation relay forwards unchanged signed queries to the
+real Deno handler. It is not unmodified Kong, hosted R2 or a physical-device test.
+Synthetic login secrets travel once over guarded loopback at runtime, never via
+public build variables, source, trace or committed evidence.
+
+Allowed source: new `apps/mobile/src/acceptance/090_native-pdf*` and tests, existing
+loopback plugin/tests, guarded `apps/mobile/index.ts`, and
+`supabase/test-support/091_connected_private_r2_read.ts`. A product fix requires a
+runtime-reproduced reader defect and narrow regression. Records: this brief and
+short handoff/active/progress. No dependencies, live schema/provider or web changes.
+Actions: (1) guarded runtime fixture/native entry + focused tests; (2) one local
+PG17/Auth/Edge/signed-S3 runtime and Android Release, actual UI + HTTP assertions;
+(3) mobile/root gates, review, exact cleanup and separate source/docs commits.
+Exit is this local acceptance, not blanket 090 closure. Rollback: owned code revert
+and disposal of only this synthetic runtime; preserved source DB is never mutated.
+
+Preflight: 26,021,080 KiB free; existing mobile dependencies 7,480,492 KiB, root
+1,621,064 KiB, Gradle 4,448,984 KiB, AVD 3,434,124 KiB. No owned VM running.
+Additional peak <=12 GiB: VM/images/DB <=7 GiB (prior measured runtime bound),
+Android/build/cache <=3 GiB, AVD growth <=1 GiB, logs/exports <=1 GiB; projected
+free >13 GiB above 10,485,760 KiB floor. Reuse SDK/JDK17/API36, no toolchain install.
+Measure each phase and stop further allocation before the floor. Exact disposable
+targets: `genova090` Colima profile/data, `genova-090-runtime` local containers/volume,
+127.0.0.1 ports 54491/54492/8000/18092, emulator 5580 and its app/reverse routes,
+generated mobile `android/`/`.expo/`, ignored `spike/090-runtime` and the one-use
+`spike/093-runtime` fixture, root `.next`/coverage after gates. Preserve dependencies,
+existing AVD/global caches/private backups/manifests and unrelated marker.
+
+| Required checkpoint criterion | Status | Evidence / boundary |
+|---|---|---|
+| Exact loopback/config guards, no public build password | PASS locally | Focused 2 suites/26 cases; strict target/shape/relay guards, runtime-only one-use credentials with second POST 410; no full synthetic email baked in APK strings scan. No literal password is supplied to build variables |
+| Actual Android v1 GET 401 → exactly one real v2 renewal → hash/native PDF page 1/40 | PASS locally | API36 arm64 Release, actual Expo file store/renderer; server GET401/providerDelta0 then GET200/65905B/providerDelta1, exactly two successful ticket POSTs; matching SHA, visible page1/40 and page2/40 |
+| Actual A→B cache clear, old A HEAD 403 without provider access, B-only catalogue | PASS locally | Product AuthStore/AppRoot, on-device private root absent; old URL HEAD403/providerDelta0, new A POST403 in B, actual B-only catalogue UI assertion |
+| Mobile TS/full tests, root check, review, resources/cleanup | PASS locally | TS/52 suites/333 tests, normal native-only exports, root 106/1066/build, diff/lint/links and exact cleanup; source `364cfe4`. Self-review, not independent review |
+| WebView, concurrent HTTP/COMMIT, connected audio, iOS native, hosted/device/release | NOT RUN | Separate retained gates; no blanket closure |
+
+### 1 October native PDF result, bounded failures and cleanup
+
+Source/test checkpoint `364cfe4`; no production reader/Auth/backend dependency or schema
+change was needed. The existing reader's one opaque native-download retry worked with
+actual Expo Android. New code is explicitly gated local acceptance instrumentation:
+real AuthProvider/AuthStore/SecureStore and AppRoot/catalogue/PDF screen, actual POST
+authority, existing file store/renderer/annotations, declared first-response v1 URL
+substitution and GET/HEAD observation relay. Signed query bytes are forwarded unchanged
+to Deno. The signed S3-compatible object server is synthetic, not hosted Cloudflare R2;
+the relay is not unmodified Kong. No cross-client or hosted inference.
+
+Setup causal record: the first schema restore failed because a pre-created empty
+`public` conflicted with the dump's CREATE; a retry exposed previously partially
+created empty `genova_003/005/007/008`. After these two failures, inspected CREATE order
+and target schema/table inventory, then atomically dropped only those empty disposable
+schemas and restored with `--single-transaction`. No source DB write or VM rebuild.
+Applied the complete prerequisite closure (024, 041–045, 053, 057, historical review
+audio, 058–060, 078, 090). First connected fixture failed at `select A`; diagnostics
+subsequently proved the actual authenticated RPC succeeds unchanged. The initial
+redacted error does not establish an exact cause (asynchronous schema-cache readiness
+is suspected, not confirmed). A fresh synthetic fixture then passed all checks; no
+product fix is attributed to that setup failure. Prebuild completed without changes
+to package/lock files; the Release build explicitly used absolute local runtime path,
+nonempty public anon key, dotenv disabled and no public password variables.
+
+Offline Gradle arm64 Release: `BUILD SUCCESSFUL in 1m 17s`; installed SDK/JDK17/API36
+AVD `genova004_api36`, emulator5580. Waited for `sys.boot_completed=1` before install.
+APK SHA-256 `f8e552b5f0d0cf377173ca57fa404effb8689d4a98358ed9595ae5aef7303905`.
+Single-use credential POST200 then POST410; no credential JSON file was created in
+090 mode. Native trace proves ticket1 actual-authority POST with declared legacy URL,
+native download rejection, ticket2 actual v2, matching 65,905-byte checksum, native
+render page1/40 (window2) and page2/40 (window3). Screenshot visually inspected:
+synthetic coordinate-grid page1 visible, not merely renderer metadata. Native trace
+09:01:16–09:02:35 local; HTTP observer asserts exactly GET401(30B/providerDelta0),
+GET200(65905B/providerDelta1), HEAD403(0B/providerDelta0). PDF SHA-256
+`39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3`.
+The UI then clears private cache through the product tenant boundary, shows B only
+(`091 audio`, no `091 score`), denies old A HEAD and new A ticket in B. Held fixture
+exits0 after SIGTERM, including foreign-user refusal, separate session still A and
+inactive membership refusing both new and already-issued tickets.
+
+Fresh mobile `npm run typecheck && npm test -- --runInBand`: 52 suites/333 cases, exit0.
+Normal Expo Android/iOS exports (acceptance flags off, dotenv off, synthetic public
+config): each 1439 modules, exit0; these are JS checks, NOT native iOS/runtime proof.
+Fresh root `pnpm check`: ESLint, TS, 106 files/1066 tests, SW syntax and Next production
+build exit0, Supabase explicitly local/synthetic and VAPID blank. Final fixture-only
+review preserves the original malformed-URL catch and formatting; no change to the
+exercised valid relay flow or APK. Focused fixture ESLint, diff and document-link
+checks PASS. Self-review only. 090 stays IN PROGRESS; next ready local result is actual
+permanent Android WebView private-file recovery, then overlapping HTTP/COMMIT.
+
+Resources stayed above 10 GiB (lowest observed 19,271,556 KiB during Android runtime).
+Disposed exact local containers/volume, SSH tunnel and `genova090` VM/data; Colima
+returns no instances/default Docker context, no task-port listeners or adb device.
+APK uninstalled, UI dump/reverse54491/8000/18092 removed, emulator/server stopped.
+After last dependent gates deleted owned mobile `android/`789,384 KiB, `.expo/`8,528
+KiB, root `.next`477,548 KiB, coverage352 KiB, ignored runtime956 KiB (including
+screenshot/logs/schema-only dump), empty093 runtime. These derived outputs and
+synthetic runtime data are not retained/recoverable; source can reproduce them.
+Final free 24,923,220 KiB; existing AVD3,449,672 KiB, Gradle5,531,824 KiB, mobile
+dependencies6,410,064 KiB/root1,621,064 KiB and original/private evidence preserved.
+Original068 five-count guard remains `28/1/29/9/79`. Unrelated CLI marker unstaged.
+No push, live DB/Edge/provider, real data/email/user/credential change, hardware or release.
