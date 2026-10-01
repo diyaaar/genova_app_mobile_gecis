@@ -46,6 +46,7 @@ import { uploadSubmission } from '@/lib/drive';
 import { sanitizeRichText } from '@/lib/richText';
 import { createSlugLookup, isUuidLike } from '@/lib/internalPageLinks';
 import { useProtectedDriveFileUrl } from '@/hooks/useProtectedDriveFileUrl';
+import { SubmissionFileLink } from '@/components/assignments/SubmissionFileLink';
 import { createRealtimeTopic } from '@/lib/realtime';
 import { isPrivateAssignmentReviewUploadEnabled, uploadPrivateAssignmentReview } from '@/lib/assignments/review-upload';
 
@@ -598,40 +599,6 @@ async function deleteAssignmentSubmission(submissionId: string) {
   return postJsonWithAuth<DeleteSubmissionResponse>('/api/assignment-submissions/delete', {
     submissionId,
   });
-}
-
-function SubmissionFileLink({
-  submission,
-  className,
-  children,
-}: {
-  submission: Pick<AssignmentSubmission, 'drive_file_id' | 'file_name' | 'mime_type' | 'drive_web_view_link' | 'current_file_version_id'> | null | undefined;
-  className: string;
-  children?: ReactNode;
-}) {
-  const { url, loading } = useProtectedDriveFileUrl(submission, {
-    assignmentFileVersionId: submission?.current_file_version_id,
-  });
-
-  if (!submission?.drive_file_id && !submission?.drive_web_view_link) {
-    return null;
-  }
-
-  const href = submission?.drive_web_view_link ?? url;
-
-  if (!href) {
-    return (
-      <span className={className}>
-        {loading ? <Loader2 size={13} className="animate-spin" /> : <ExternalLink size={13} className="opacity-50" />}
-      </span>
-    );
-  }
-
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
-      {children ?? <ExternalLink size={13} />}
-    </a>
-  );
 }
 
 function AssignmentReviewAudioPlayer({

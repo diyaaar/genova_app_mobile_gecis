@@ -583,7 +583,7 @@ async function loadPerformanceDataset(member: ChoirMember | null, isChef: boolea
       ? supabase
           .from('assignment_submissions')
           .select(
-            'id, assignment_id, member_id, drive_file_id, drive_web_view_link, drive_download_link, file_name, mime_type, file_size_bytes, drive_member_folder_id, submitted_at, updated_at, status, submission_note, reviewer_note, approved_at, approved_by',
+            'id, assignment_id, member_id, drive_file_id, drive_web_view_link, drive_download_link, current_file_version_id, file_name, mime_type, file_size_bytes, drive_member_folder_id, submitted_at, updated_at, status, submission_note, reviewer_note, approved_at, approved_by',
           )
           .in('assignment_id', assignmentIds)
           .in('member_id', scopeMemberIds)

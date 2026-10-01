@@ -30,7 +30,7 @@ import { supabase } from '@/lib/supabase';
 import { createRealtimeTopic } from '@/lib/realtime';
 import { sanitizeRichText } from '@/lib/richText';
 import { useBackOrHome } from '@/hooks/useBackOrHome';
-import { useProtectedDriveFileUrl } from '@/hooks/useProtectedDriveFileUrl';
+import { SubmissionFileLink } from '@/components/assignments/SubmissionFileLink';
 import { SwipeBack } from '@/components/SwipeBack';
 import { authenticatedWebFetch } from '@/lib/web-auth-capability';
 import {
@@ -320,9 +320,6 @@ function buildCalendarDays(currentMonth: Date, rehearsals: PerformanceRehearsalE
 }
 
 function HomeworkCard({ item, memberId }: { item: PerformanceHomeworkEntry; memberId: string }) {
-  const protectedFileInput = item.submission?.drive_web_view_link ? null : item.submission;
-  const { url: protectedDriveUrl } = useProtectedDriveFileUrl(protectedFileInput);
-  const submissionUrl = item.submission?.drive_web_view_link ?? protectedDriveUrl;
   const assignmentParams = new URLSearchParams({
     mid: memberId,
     returnTo: `/koristler/${memberId}`,
@@ -348,20 +345,12 @@ function HomeworkCard({ item, memberId }: { item: PerformanceHomeworkEntry; memb
           <div className="grid gap-2 rounded-[8px] border border-[var(--color-border)] bg-black/10 p-3 text-[0.78rem] sm:grid-cols-2">
             <p>
               Teslim:{' '}
-              {submissionUrl ? (
-                <a
-                  href={submissionUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-genova-file-name={item.submission.file_name}
-                  data-genova-mime-type={item.submission.mime_type ?? undefined}
-                  className="font-medium text-[var(--color-accent)] underline decoration-white/20 underline-offset-2 hover:text-[var(--color-text-high)]"
-                >
-                  Drive Linki
-                </a>
-              ) : (
-                <span className="text-[var(--color-text-high)]">Drive bağlantısı hazırlanıyor...</span>
-              )}
+              <SubmissionFileLink
+                submission={item.submission}
+                className="font-medium text-[var(--color-accent)] underline decoration-white/20 underline-offset-2 hover:text-[var(--color-text-high)]"
+              >
+                Dosyayı Aç
+              </SubmissionFileLink>
             </p>
             {submittedAtLabel ? <p>Teslim Tarihi: <span className="text-[var(--color-text-high)]">{submittedAtLabel}</span></p> : null}
             {reviewedAtLabel ? <p>Değerlendirme: <span className="text-[var(--color-text-high)]">{reviewedAtLabel}</span></p> : null}

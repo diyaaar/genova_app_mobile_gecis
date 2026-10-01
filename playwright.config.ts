@@ -12,6 +12,8 @@ export default defineConfig({
   reporter: process.env.CI ? [['html', { open: 'never' }], ['github']] : 'list',
   use: {
     baseURL,
+    // Optional installed browser; leave CI's managed Chromium default unchanged.
+    channel: process.env.PLAYWRIGHT_CHROMIUM_CHANNEL,
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
