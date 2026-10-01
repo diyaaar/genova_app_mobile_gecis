@@ -230,3 +230,23 @@ New3502input/683output,$0.000147084 estimate; daily19calls71512input8986output,
 $0.003003504 estimate at$0.042/Minput/outputfree, not invoice or coding-agent cost.
 Today's key never persisted; no later triage request without new unclear runtime evidence.
 Workflow advisory checkpoint is complete;090 native integration and product gates stay open.
+
+### Actual iOS failure-triage advisory — 1 October
+
+The reserved second request was justified by a new actual native expiry/resume FAIL.
+Primary first inspected installed Expo player/event sources; Jev evaluated that narrow
+redacted hypothesis, regression/fix choices and claim/no-match controls, not the whole repo.
+[090 report](../reports/2026-10-01-connected-ios-audio-acceptance.md) links exact5420B packet,
+frozen labels, attempt/source hashes and response. One pinnedjev-1.13.0 request,409ms,
+1595input/241output;5/5 labels (three recommendations, two controls). Not independent review,
+objective diagnostic accuracy, native evidence or causal proof. Meaningful unit red→green
+and corrected signed iOS runtime/fixtureexit0 established the narrow repair independently
+of model agreement. Existing five offline validator tests and typed/hash checks PASS.
+No new runner/dependency/framework/CI/product AI integration or source/user-data upload.
+
+New$0.000066990; combined workflow+triage$0.000214074 below$0.002cap. Daily20calls73107input/
+9227output/$0.003070494 estimated at$0.042/Minput/outputfree, not invoice/coding-agent total.
+No retries or further inference. Non-echo masking FAIL: an echoing readline output put the
+already chat-exposed key in tool transcript. Not in repo/env/evidence; owner informed.
+No no-exposure claim, after1October reuse or credential rotation authority. Owner replacement
+remains required. Future private input must not attach an echoing output to readline.

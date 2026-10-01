@@ -1,0 +1,5 @@
+{
+  "labelOwner":"Primary agent before inference; hypothesis/next action labels are advisory, not objective accuracy or independent causal review.",
+  "expected":{"route":"stale_player_status","regression":"cross_player_identity","repair":"qualify_status","claim":"contradicts","invoice_search":"no_match"},
+  "maxCalls":1,"autoRetries":0,"maxRequestBytes":24000,"timeoutMs":45000,"estimatedCombinedWorkflowBudgetUsd":0.002
+}

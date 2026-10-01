@@ -1,0 +1,35 @@
+Primary transcription of actual CUA and fixture stdout; not an automatic raw-log export.
+Observed 1 October 2026, genova090-ios-audio-final, iPhone17/iOS26.5.
+Corrected normally signed Release bundle SHA256:
+b506b853f3ef2418f8415da71f0f593e3b5040c7c4be96fc77200c4a689e8691
+
+Actual visible final native trace:
+source2 real POST200 v2/client deadline fault
+native v1 refusal/one real v2 renewal PASS opens2
+native seek4 PASS
+source3 real POST200 v2
+declared client deadline/real renewal/resume>=4.2 PASS opens3
+pause/seek2/resume PASS
+real AuthStore B selection/player teardown PASS
+old A HEAD403/new A POST403 PASS
+source4 injected previously-issued actual v2 in B
+native old-v2 body403/probe/no renewal PASS opens4
+ALL PASS connected local iOS audio; not Android/hosted/audibility
+loading / 0.00s / no error
+
+Automatic observer HTTP record retained separately:
+2026-10-01-connected-ios-audio-http.json
+Ticket POSTs:200,200,200,403.
+v1 GET401/HEAD401 providerDelta0.
+v2 successful RangeGET206, including two exact160044-byte reads.
+After B: HEAD403,GET403,GET403,HEAD403, each providerDelta0.
+
+Actual unchanged fixture tail after SIGTERM to the fixture node (not early global sign-out):
+PASS actual Auth/RLS A/B, foreign user and old-context POST refusals
+PASS same-session switch revokes old URL; separate Auth session stays A
+PASS inactive membership refuses new and already-issued tickets
+fixtureExit0, signalnull.
+
+Boundary: actual local Auth/RLS/PostgREST/Deno/Expo iOS audio with explicit relay,
+signed-v1 substitution, client-deadline and previously-issued-v2 injection.
+Signature-verified synthetic S3-compatible bytes, not hosted R2/server expiry/physical audibility.

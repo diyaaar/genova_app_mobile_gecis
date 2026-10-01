@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-10-01T20:30:56.978Z",
+  "requestSha256": "ed316c490a4c94fd9773f2e49651c0f9567112a71e8c4547eb6f225c4bf87826",
+  "elapsedMs": 409,
+  "model": "jev-1.13.0",
+  "usage": {
+    "input_tokens": 1595,
+    "output_tokens": 241
+  },
+  "estimatedUsd": 0.00006699000000000001,
+  "answers": {
+    "route": {
+      "type": "choice",
+      "choice": "stale_player_status",
+      "confidence": 1,
+      "probabilities": {
+        "corrupt_bytes": 0,
+        "unknown": 0,
+        "stale_player_status": 1,
+        "tenant_policy": 0
+      }
+    },
+    "regression": {
+      "type": "choice",
+      "choice": "cross_player_identity",
+      "confidence": 1,
+      "probabilities": {
+        "remove_checks": 0,
+        "unknown": 0,
+        "same_player_transient": 0,
+        "cross_player_identity": 1
+      }
+    },
+    "repair": {
+      "type": "choice",
+      "choice": "qualify_status",
+      "confidence": 0.99,
+      "probabilities": {
+        "remove_failure_guard": 0,
+        "qualify_status": 1,
+        "broaden_authority": 0,
+        "unknown": 0
+      }
+    },
+    "claim": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 1,
+      "probabilities": {
+        "contradicts": 1,
+        "insufficient": 0,
+        "supports": 0
+      }
+    },
+    "invoice_search": {
+      "type": "choice",
+      "choice": "no_match",
+      "confidence": 1,
+      "probabilities": {
+        "app_excerpt": 0,
+        "installed_sdk_excerpt": 0,
+        "no_match": 1
+      }
+    }
+  }
+}

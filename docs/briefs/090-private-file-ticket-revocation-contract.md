@@ -1429,3 +1429,90 @@ started; no fresh DB-preservation run claimed. Existing PDF/Android evidence rem
 090/iOS audio remain IN PROGRESS. Next measured signed native audio build and actual connected
 flow using explicit server platformios; genuine local CLI public configuration, no early
 global sign-out, same full matrix, isolated output and bounded cleanup.
+
+### Connected iOS audio execution entry — 1 October, 5ea21f1
+
+Current owner approves the next logical step. Verified main/5ea21f1, only unrelated CLI marker
+dirty; primary sole writer. Read current sources, AGENTS, handoff/active, work cycle/guide,
+MIGRATION ownership, decision32 and delivery controls. Prior source gates remain dated; current
+observable outcome is actual iOS audio/recovery/seek/B teardown and unchanged fixture exit0.
+Three actions: capture genuine local public CLI configuration then stop VM/build; dispose native
+intermediates and run isolated connected native flow; evidence/gates/source preservation/cleanup.
+No hosted/provider/real user/credential/deploy/hardware action. Source preservation only five
+known tables; import schema, no source data. One guarded VM, one newly named owned simulator.
+Entry22427024KiB free; no VM/booted simulator/generatedios. Stage VM/image<=6GiB, then stopped
+VM plus native build<=4GiB additional (projected11941264KiB >10485760floor); check actual VM
+allocation before build and require12500000 safety watermark. After intermediates removed,
+runtime total<=10GiB incremental, freshly measured; no simultaneous heavy build/runtime.
+Same exact cleanup targets as preceding card, plus isolated audio.app exclusion. Preserve global
+caches/dependencies/068 restore and shared simulators. Key stays runtime-only; no inference
+unless a newly reproduced unclear failure needs the reserved bounded advisory.
+
+First actual native attempt fails expiry/resume: one-use Auth/A, v1 GET401/HEAD401/provider0,
+one v2 renewal/native Range206 and seek4 PASS; then visible generic error/expiry-resume timeout,
+no third POST. [First trace](../reports/090/2026-10-01-ios-audio-first-attempt.txt) retained;
+unchanged fixture.finish correctly exit1 because acceptance incomplete. No iOS PASS record.
+One read-only post-restore privilege query used a wrong historical RPC name; inspected090 migration,
+correct current authorized_090 signature verifies f/f/t. One node --import tsx launcher failed
+before running fixture; use the existing pnpm-shim executable, no install or dependency change.
+Primary source inspection found installed Expo useEvent retains old emitter state; useAudioPlayer
+replaces native player across sources, while our provider consumes unqualified status.error.
+Candidate cause: previous player's error/loaded state contaminates renewed source. Reproduce before
+fixing; extend allowed scope only to AudioPlaybackProvider.tsx, existing AudioPlayerScreen test and
+minimal audio test mock identity/currentStatus shape. No SDK patch/security bypass/assertion removal.
+One reserved Jev narrow redacted triage packet<=24KB/16questions,$0.002 combined advisory budget,
+one request/no retry, frozen labels/no whole SDK or private logs. Its answer is not causal proof.
+
+Meaningful unit red reproduces generic error plus loaded/canControl=true from the older player
+after renewal;14 old tests pass, new regression fails. Initial mock-shape setup required clearing
+only jest mock methods after adding native id/currentStatus metadata; no product criterion removed.
+Five-line provider change selects emitted status only when id matches current player, otherwise
+uses native player.currentStatus. Existing15 focused tests + mobile typecheck now PASS;403/no-loop
+and tenant/unmount checks retained. Native rerun is required, not replaced by that unit result.
+Failed owned first simulator deleted (uninstall on already-shutdown device refused; deleting the
+exact disposable device removed its app/data). VM stopped. Fresh build preflight18101760KiB,
+additional4GiB fits safety margin; corrected build justified by actual source regression/fix.
+Jev one triage request1595input/241output/409ms,$0.000066990 estimate;5/5 frozen labels,
+three hypotheses/actions and two claim/no-match controls, not independent causal proof.
+Daily20calls73107input9227output,$0.003070494 estimate. No retry, no key in repo/env/evidence.
+Non-echo input protection FAILED: readline with output re-echoed the already chat-exposed key
+into tool transcript despite stty-echo. Do not repeat the key/call or claim no transcript exposure;
+owner's after-today replacement remains necessary. Future private prompts must not use an
+echoing readline output. No credential rotation authority inferred here.
+
+### Corrected connected iOS audio acceptance — 1 October
+
+Product fix `db6cc93`; [full evidence and boundaries](../reports/2026-10-01-connected-ios-audio-acceptance.md).
+Normally signed corrected arm64 Release exit0/158904ms, strict signature PASS; actual native
+v1 refusal/one renewal/seek4/client deadline renewal/resume>=4.2/pause/seek2/resume PASS.
+Actual AuthStore B teardown, prior A HEAD403/new POST403/injected old-v2 native GET403/probe403
+and no renewal PASS; all refusals provider0. Isolated automatic iOS record written wx, historical
+Android HTTP hash unchanged. Same unchanged fixture tail foreign/old-context/same-session/
+separate-session/inactive-membership assertions PASS, final exit0; no early global logout.
+
+| Criterion | Status | Evidence / limit |
+|---|---|---|
+| First native failure + meaningful unit reproduction | PASS diagnostic | First native fixture exit1 retained;14oldPASS/newFAIL before narrow identity fix |
+| Corrected actual iOS recovery/seek/resume/B runtime | PASS | Signed app, actual CUA/native trace and automatic HTTP record, declared fault/relay/synthetic storage boundaries |
+| Remaining unchanged Auth/RLS matrix | PASS | Final fixture exit0; no assertion weakening |
+| Fresh full mobile/root/normal exports | PASS | TypeScript55suites406tests; root110files1110tests/lint/SW/Next build; both-platform JS exports |
+| Fresh source preservation/owned cleanup/links/diff/redaction | PASS | Five counts/hashes identical; exact task VM/data/device/app/output removed; final22293524KiB |
+| Jev narrow triage/provenance/offline validator | PASS advisory | One5420B/5question request;5labels,5offline tests; recommendations not causal/independent proof |
+| Key-input masking | FAIL, disclosed | Transcript echo occurred; no repo/env persistence; no more inference or after1Oct reuse; owner replacement needed |
+| Current permanent iOS WebView and changed-provider Android runtime | NOT RUN | Named next integrated checks, not accepted by exports or dated Android evidence |
+| Hosted/physical phone/Drive withdrawal/beta/stores/090 closure | NOT RUN | Broader required gates retained |
+
+Resource inventory: entry22427024KiB; corrected native build low15548780KiB above10485760floor.
+genova090 VM images/root/data used only for actual local Auth/RLS; removed after fixture exit0.
+First owned2BCDDBEA… device disposed before corrected build; final6D11F09C… uninstalled/stopped/
+deleted after CUA. Native generatedios/090-ios-native-build (~2.45GiB) removed before runtime;
+090-ios-audio.app46460KiB removed after final observation.090-runtime276KiB schema/function/
+config and093-runtime credentials removed; .expo8536KiB/.next477932KiB/coverage352KiB removed
+after gates. No Colima profile/Lima disk/task listener/booted simulator remains. Synthetic
+rows/builds intentionally unrecoverable, small evidence retained; original068/dependencies/
+shared devices/caches untouched. Entry and cleanup are current, not prior-run evidence.
+New Jev$0.000066990; daily20calls73107input9227output/$0.003070494 estimated, not invoice.
+This local audio slice passes functional gates; credential-handling FAIL is not hidden or
+reclassified PASS, and090 remains IN PROGRESS. Next measured iOS permanent WebView integration,
+then fresh Android native audio regression for the shared provider change before both-platform
+checkpoint closure. No hosted/provider/real data/credential/push/deploy/hardware authority inferred.

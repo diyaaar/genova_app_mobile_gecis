@@ -1,0 +1,16 @@
+Primary transcription of actual CUA accessibility text and inspected screenshot, 1 October 2026.
+Owned genova090-ios-audio / iOS26.5 / normally signed Release e8547bcb... bundle.
+Not an automatic raw-log export. No credentials or signed URLs retained.
+
+real Auth sign-in/one-use runtime credentials PASS
+real AuthStore A selection PASS
+source1 real POST200 injected signed v1
+source2 real POST200 v2/client deadline fault
+native v1 refusal/one real v2 renewal PASS opens2
+native seek4 PASS
+FAIL expiry resume timeout
+loaded · 4.00s · Ses dosyası oynatılamadı. Yeniden deneyin.
+
+Observed server stdout: ticket POST200, GET401/provider0, HEAD401/provider0,
+ticket POST200, native GET206/provider1 twice. No third ticket request observed.
+Expiry/resume/B teardown/refusal assertions NOT accepted in this attempt.

@@ -1,7 +1,6 @@
 # Genova — agent handoff
 
-Updated 1 October 2026. Evidence: [090](briefs/090-private-file-ticket-revocation-contract.md) and [check-up](reports/2026-10-01-project-checkup.md). Verify state before reuse;
-historical detail remains in briefs/[progress](../memory-bank/progress.md).
+Updated 1 October 2026. Evidence: [090](briefs/090-private-file-ticket-revocation-contract.md)/[check-up](reports/2026-10-01-project-checkup.md)/[progress](../memory-bank/progress.md). Verify state before reuse.
 
 ## Read first
 
@@ -16,9 +15,8 @@ were approved; do not re-ask the policy. Already-streaming/offline bytes are not
 Historical SQL `70fd23e`, connected five-family HTTP `9773958`, Android-v2/Chrome `10e9b77`,
 connected PDF `364cfe4` and legacy Android WebView `d8139bc` PASS within090's explicit local
 relay/fault/synthetic-storage boundaries, not hosted or the new assignment-version path.
-[HTTP/COMMIT overlap](reports/2026-10-01-private-file-families-http-overlap.md)
-`d448de5`/`cc20758`:20 cases via dependency adapter, not fresh Auth/PostgREST; preserve
-independent chat-room grants. All older detailed evidence/costs remain in090/progress.
+[HTTP/COMMIT overlap](reports/2026-10-01-private-file-families-http-overlap.md) `d448de5`/`cc20758`:
+20 dependency-adapter cases, not fresh Auth/PostgREST; independent chat grants retained.
 `6fed2ac` connected Android audio actual AuthStore/RLS/POST/Deno/signed loopback S3
 PASS: v1 refusal/one renewal, injected client-deadline/seek/resume, B teardown/old403.
 Source-less native flags repaired; fresh mobile55/401, root107/1075/exports PASS.
@@ -31,10 +29,11 @@ fresh root110/1108, mobile55/404, guard-off exports; explicit local adapters; Je
 Current [iOS PDF record](reports/2026-10-01-connected-ios-private-pdf-acceptance.md): normally signed
 Release/actual Auth/RLS/native v1→v2 PDF/pages1/2/B cache/old HEAD403/new POST403 PASS, fixture exit0.
 First early-global-signOut fixture exit1 retained, not accepted; no product code or Auth policy change.
-`fd55322` [audio source preflight](reports/2026-10-01-jev-workflow-and-ios-audio-preflight.md): platform/wx repair;
-fresh root110/1110,mobile55/405,exports PASS, not native. Jev workflow advisories/4 source controls;
-daily19calls$0.003003504 estimate, not invoice. **Next:** actual iOS audio/recovery/seek/B,
-then permanent WebView; audio build/runtime/hosted/beta/release/090 remain open.
+`db6cc93` [connected iOS audio](reports/2026-10-01-connected-ios-audio-acceptance.md): first expiry/resume
+FAIL retained; old-player status contamination unit-reproduced and identity-qualified. Corrected
+signed native recovery/seek/resume/B denial and fixture exit0 PASS; fresh root110/1110,mobile55/406,
+exports PASS. Jev triage advisory5/5; daily20calls$0.003070494 estimate, not invoice. **Next:** iOS
+permanent WebView, then fresh Android audio regression; hosted/beta/release/090 remain open.
 
 ## Preserved evidence and remediation
 
@@ -56,15 +55,15 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
-Owned runtimes cleaned; source-preflight22,437,184KiB/no new runtime; prior PDF low15,194,204KiB.
-Original068 hashes/counts28/1/29/9/79 unchanged; no fresh DB check for source-only work. Keep
+Owned runtimes/VM/data/device/builds cleaned; final22,293,524KiB, audio low15,548,780KiB.
+Fresh original068 five hashes/counts28/1/29/9/79 unchanged. Key-input masking failed: transcript
+echo occurred, no repo/env persistence; no further call/after1Oct reuse; owner replacement needed. Keep
 `genova_068_test_restore`, retained 068 backup, private manifests/journals,
 dependencies and existing AVD/global caches. Never rebuild deleted runtimes without preflight.
 Local scoped code/tests/commits/owned cleanup authorized. Hosted DB/Edge/provider, credentials,
 real users/email/data, spending, CI/push/deploy, hardware/distribution need concrete authority.
 Shared DB serves sibling site: fresh backup/restore, both-project impact, DB→Edge→clients order.
-087 helper/RPC → 088 RPC must precede web and survive rollback; Git revert is not data recovery.
-069 local service key was stale; not hosted Auth proof. 070 verified account is
+087 helper/RPC → 088 RPC precede web and survive rollback; Git revert is not data recovery.069 local key is not hosted Auth proof.070 account is
 `genesinova.choir@gmail.com`, not the earlier typo. No current remote/live revision verified.
 
 ## Product destination and external storage queue

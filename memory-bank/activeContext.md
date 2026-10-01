@@ -21,8 +21,6 @@ storage PASS with declared v1/client-deadline/earlier-v2/relay faults; source-le
 status regression fixed. Fresh mobile55/401, root107/1075, normal exports PASS.
 [Record/costs](../docs/reports/2026-10-01-connected-android-audio-acceptance.md):
 Jev10/11, recovery disagreement retained; daily15calls$0.002435034 estimated, not invoice.
-Native iOS audio error-latch/seek acceptance is scheduled at 090's
-integrated both-platform private-client checkpoint before release; JS export does not close it.
 `ee7be64` [095](../docs/briefs/095-webview-current-assignment-file-reader.md) preserves current-version links.
 `216b996`: connected Android assignment WebView/local Auth/RLS/Deno/signed private bytes PASS;
 exact five-reader anchor regression repaired, native PDF/share sheet, B teardown/old GET/HEAD403/provider0.
@@ -32,10 +30,11 @@ disagreement; daily17calls$0.002770236 estimated, not invoice.090 remains open.
 [Current iOS PDF](../docs/reports/2026-10-01-connected-ios-private-pdf-acceptance.md) normally signed
 native Release/actual Auth/RLS/v1→v2/pages1/2/B cache/old HEAD403/new POST403 PASS; fixture exit0.
 Early global-signOut first fixture exit1 retained; no product/Auth/schema/dependency change.
-`fd55322` [audio source preflight](../docs/reports/2026-10-01-jev-workflow-and-ios-audio-preflight.md): platform/wx
-repair; root110/1110,mobile55/405,exports PASS, not native. Jev workflow advisories/4 source controls;
-daily19calls$0.003003504 estimate, not invoice. **Next:** actual iOS audio/recovery/seek/B,
-then permanent WebView; audio build/runtime/phone/hosted/release/090 remain open.
+`db6cc93` [connected iOS audio](../docs/reports/2026-10-01-connected-ios-audio-acceptance.md): first expiry/
+resume FAIL retained; stale old-player status unit-reproduced and identity-qualified. Corrected
+signed native recovery/seek/resume/B denial and fixture exit0 PASS; fresh root110/1110,mobile55/406,
+exports PASS. Jev advisory5/5; daily20calls$0.003070494 estimated, not invoice. **Next:** iOS permanent
+WebView then fresh Android audio regression; phone/hosted/beta/release/090 stay open.
 
 ## Preserved historical evidence
 
@@ -55,17 +54,17 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 ## Ownership and resources
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
-Primary agent is sole writer. 1 Oct owned emulator/app/reverse/connected runtime/VM and
-generated outputs cleaned; source-preflight22,437,184KiB free, prior iOS PDF low15,194,204KiB.
-Original068 five row hashes/counts28/1/29/9/79 unchanged, preserve it.
+Primary sole writer.1Oct owned VM/root/data/device/runtime/app/builds/outputs cleaned;
+final22,293,524KiB free, audio low15,548,780KiB. Fresh original068 five row hashes/counts
+28/1/29/9/79 unchanged. Key masking failed/transcript echo, no repo/env persistence;
+no further call/after1Oct reuse; owner replacement needed. Preserve original source.
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
 global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;
 one heavy process, two-failure causal reassessment, no blind rebuild or broad cleanup.
 
 ## Scope and external checkpoints
 
-Android-first same-product beta → complete preserved scope → both stores; profile stays
-WebView. Supabase retained/R2 Drive-exit, no Railway rewrite, preferred <=$5/month.
+Android-first same-product beta → complete preserved scope → both stores; profile WebView. Supabase retained/R2 Drive-exit, no Railway rewrite, preferred <=$5/month.
 Five free choir members then additional billing/manual web invoice, assisted v1 onboarding.
 Price/period/seat counting, deletion/retention/last-chef and release accounts undecided.
 Native write/sync/offline/chat/C4/C5 and store/privacy/lifecycle are still in the objective.

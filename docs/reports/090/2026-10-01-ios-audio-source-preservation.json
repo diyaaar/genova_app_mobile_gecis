@@ -1,0 +1,14 @@
+{
+  "method": "Read-only local genova_068_test_restore queries; ordered jsonb_agg(to_jsonb(row) order by id), then MD5. Before hashes are this run's baseline, not a comparison to differently recorded historical snapshots.",
+  "sourcePort": 5432,
+  "copiedSourceRows": 0,
+  "tables": [
+    {"table":"auth.users","beforeCount":28,"beforeHash":"83d808f0bc6604be8657b12f6683ba54","afterCount":28,"afterHash":"83d808f0bc6604be8657b12f6683ba54"},
+    {"table":"public.choirs","beforeCount":1,"beforeHash":"cf1b288bff11e3426135dd16e83b120f","afterCount":1,"afterHash":"cf1b288bff11e3426135dd16e83b120f"},
+    {"table":"public.choir_members","beforeCount":29,"beforeHash":"e3f4b42d461f7232043c03fa7aa5a227","afterCount":29,"afterHash":"e3f4b42d461f7232043c03fa7aa5a227"},
+    {"table":"public.repertoire","beforeCount":9,"beforeHash":"992b78f6e19e8edb2539cb7e09a3e214","afterCount":9,"afterHash":"992b78f6e19e8edb2539cb7e09a3e214"},
+    {"table":"public.repertoire_files","beforeCount":79,"beforeHash":"4b53f243989c81a2e71f7998035b8a3d","afterCount":79,"afterHash":"4b53f243989c81a2e71f7998035b8a3d"}
+  ],
+  "result": "PASS",
+  "boundary": "Five checked tables only; this is source preservation evidence, not backup/restore or hosted/current-production verification."
+}

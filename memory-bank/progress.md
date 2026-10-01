@@ -563,3 +563,25 @@ Generated.next/coverage/.expo removed, final22437184KiB; no VM/DB/simulator/nati
 no fresh DB-preservation assertion. No hosted/provider/push/deploy/credentials/real-data changes.
 090 audio remains IN PROGRESS: next measured signed native iOS audio and connected recovery/
 seek/B teardown/fixtureexit0, then permanent WebView. Broader beta/release/product still open.
+
+## 1 October 2026 — Actual connected iOS audio recovery and player-identity repair
+
+Entry5ea21f1; source `db6cc93`; [acceptance](../docs/reports/2026-10-01-connected-ios-audio-acceptance.md).
+First actual native expiry/resume FAIL/fixtureexit1 retained. Primary installed Expo source
+inspection identified useEvent snapshot surviving native player replacement. Meaningful new
+regression14oldPASS/newFAIL; scoped identity qualification/native currentStatus fallback fixes
+it,15focusedPASS. Corrected normally signed native Release/real local AuthStore/RLS/Deno/signed
+synthetic Range audio PASS: v1 refusal/one renewal/seek4/client-deadline renewal/resume>=4.2/
+pause/seek2/B teardown/old-v2 GET403+HEAD403/provider0/no loop. Unchanged fixture tail exit0.
+Fresh mobile TS55suites406tests, root110files1110tests/SW/Next build, normal Android/iOS exports
+PASS. Actual new Android native runtime still NOT RUN; dated evidence not relabeled.
+Jev one newly justified5420B/five-question triage409ms/1595input241output/$0.000066990;
+5labels incl three recommendations, not diagnostic accuracy/independent review. Daily20calls/
+73107input9227output/$0.003070494 estimate, not invoice. Existing5offline validator tests PASS.
+Terminal masking FAILED/readline re-echoed already chat-exposed key; owner informed, no key in
+repo/env/evidence/no more inference or after1Oct reuse; owner replacement still required.
+Original068 five current hashes/counts28/1/29/9/79 identical. Exact task VM/root/data/device/
+app/build/runtime/.expo/.next/coverage removed, no task listeners/booted simulator/Lima disk.
+Final22293524KiB; low15548780KiB abovefloor. Unrelated CLI marker unstaged; no hosted/provider/
+real data/credentials/push/deploy/hardware action.090 stays open. Next connected iOS permanent
+WebView, then current Android audio regression; beta/both stores/full product unfinished.

@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-10-01T20:30:49.049Z",
+  "model": "jev-1.13.0",
+  "requestSha256": "ed316c490a4c94fd9773f2e49651c0f9567112a71e8c4547eb6f225c4bf87826",
+  "bytes": 5420,
+  "questions": 5,
+  "sources": [
+    {
+      "path": "apps/mobile/src/repertoire/AudioPlaybackProvider.tsx",
+      "sha256": "69049ef64f21f62433ee558b7a755b7e575e5950e441ff8d23d7a76cd4a00b58"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/AudioPlayerScreen.test.tsx",
+      "sha256": "ba174e5f6bead3bbfe8c75c860b67b9ee6baa3b400ae64a78831835ae636642b"
+    },
+    {
+      "path": "apps/mobile/node_modules/expo-audio/src/ExpoAudio.ts",
+      "sha256": "246e9b438c9bfc68c8b2235a3ee0fbdb51eca8ce62982bb9db37fd965e79b21a"
+    },
+    {
+      "path": "apps/mobile/node_modules/expo/src/hooks/useEvent.ts",
+      "sha256": "46594692b1bda2c5aee2199f8c37e453f85894ed56c7563d438af150cc0703b3"
+    },
+    {
+      "path": "docs/reports/090/2026-10-01-ios-audio-first-attempt.txt",
+      "sha256": "343a4dbc056f963c060d279f19e07cecf55ee5879b0e815cc448108deaa9687a"
+    }
+  ],
+  "maxCalls": 1,
+  "autoRetries": 0,
+  "timeoutMs": 45000
+}
