@@ -112,6 +112,7 @@ function currentEnvironment(): EmbeddedBootstrapEnvironment {
   const routePolicy = readComposedAcceptanceRoutePolicy({
     NEXT_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE: process.env.NEXT_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE,
     NEXT_PUBLIC_GENOVA_090_APP_ORIGIN: process.env.NEXT_PUBLIC_GENOVA_090_APP_ORIGIN,
+    NEXT_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: process.env.NEXT_PUBLIC_GENOVA_090_WEBVIEW_FAMILY,
     NEXT_PUBLIC_GENOVA_033_ACCEPTANCE: process.env.NEXT_PUBLIC_GENOVA_033_ACCEPTANCE,
     NEXT_PUBLIC_GENOVA_033_APP_ORIGIN: process.env.NEXT_PUBLIC_GENOVA_033_APP_ORIGIN,
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -134,7 +135,9 @@ function eventMessageData(event: Event): string | null {
 function isProtectedFileAnchor(anchor: HTMLAnchorElement, url: URL): boolean {
   return anchor.hasAttribute('download')
     || url.pathname.startsWith('/api/drive-file')
-    || url.pathname.includes('/functions/v1/repertoire-file');
+    || ['/functions/v1/repertoire-file', '/functions/v1/assignment-file',
+      '/functions/v1/assignment-review-file', '/functions/v1/repertoire-comment-file',
+      '/functions/v1/chat-media-file'].includes(url.pathname);
 }
 
 function commandResultMessage(ok: boolean, code: string): string | null {

@@ -19,7 +19,12 @@ require090WebViewConfig({
   EXPO_PUBLIC_GENOVA_093_ACCEPTANCE: process.env.EXPO_PUBLIC_GENOVA_093_ACCEPTANCE,
   EXPO_PUBLIC_GENOVA_090_AUDIO_ACCEPTANCE: process.env.EXPO_PUBLIC_GENOVA_090_AUDIO_ACCEPTANCE,
   EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE: process.env.EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE,
+  EXPO_PUBLIC_GENOVA_090_CONNECTED_AUDIO: process.env.EXPO_PUBLIC_GENOVA_090_CONNECTED_AUDIO,
+  EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY,
 });
+const family = process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY === 'assignment-file' ? 'assignment-file' : 'repertoire-file';
+const protectedFileOrigins = family === 'assignment-file'
+  ? [...WEBVIEW_POLICY.protectedFileOrigins, 'http://127.0.0.1:54491'] : WEBVIEW_POLICY.protectedFileOrigins;
 const client = getGenovaClient();
 type Trace = (event: string) => void;
 
@@ -51,7 +56,7 @@ function Runtime({ trace }: { trace: Trace }) {
       }
       const response = await fetch(`${WEBVIEW_FIXTURE}/090/webview-metadata`);
       if (!response.ok) throw new Error('Metadata unavailable');
-      setMetadata(validate090WebViewMetadata(await response.json()));
+      setMetadata(validate090WebViewMetadata(await response.json(), family));
     })().catch(() => trace('Auth FAIL local fixture'));
   }, [auth, trace]);
 
@@ -92,7 +97,7 @@ function Runtime({ trace }: { trace: Trace }) {
   const path = isB ? '/profil' : `/koristler/${metadata?.targetMember ?? ''}`;
   const config = useMemo(() => metadata ? createNativeWebViewRuntimeConfig({ initialPath: path,
     isDevelopment: true, developmentOrigin: WEBVIEW_APP,
-    protectedFileOrigins: WEBVIEW_POLICY.protectedFileOrigins }) : null, [metadata, path]);
+    protectedFileOrigins }) : null, [metadata, path]);
   if (!metadata || !capability || !config || auth.phase !== 'ready') {
     return <Text style={styles.text}>Yerel oturum hazırlanıyor: {auth.phase}</Text>;
   }
@@ -101,7 +106,7 @@ function Runtime({ trace }: { trace: Trace }) {
     <Pressable accessibilityRole="button" onPress={() => void (async () => {
       await auth.selectChoir(metadata.choirB);
       const result = await fetch(`${WEBVIEW_FIXTURE}/090/webview-evidence`, { method: 'POST' });
-      trace(result.ok ? 'B old A URL PASS 403/no provider' : 'B old A URL FAIL');
+      trace(result.ok ? `B old A URL PASS 403/no provider ${family}` : 'B old A URL FAIL');
     })().catch(() => trace('B switch FAIL'))} style={styles.button}>
       <Text style={styles.text}>Koro B</Text>
     </Pressable>

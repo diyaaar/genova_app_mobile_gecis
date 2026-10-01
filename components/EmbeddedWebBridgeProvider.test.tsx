@@ -359,6 +359,29 @@ describe('EmbeddedWebBridgeProvider', () => {
     expect(screen.getByRole('status')).not.toHaveTextContent('request_1234567890abcdef');
   });
 
+  it.each(['repertoire-file', 'assignment-file', 'assignment-review-file',
+    'repertoire-comment-file', 'chat-media-file'])('routes the exact %s anchor to the native file capability', async (family) => {
+    const postMessage = vi.fn();
+    const url = `https://project.supabase.co/functions/v1/${family}?fileId=${MEMBER_ID}&ticket=synthetic`;
+    mount({ environment: embeddedEnvironment(postMessage), verifyContext: vi.fn(async value => ({ ok: true, value })),
+      children: <><p>tenant child</p><a href={url} target="_blank"
+        data-genova-file-name="score.pdf" data-genova-mime-type="application/pdf">private version</a></> });
+    await hydrate(postMessage); postMessage.mockClear();
+    fireEvent.click(screen.getByRole('link', { name: 'private version' }));
+    const messages = postMessage.mock.calls.map(([raw]) => JSON.parse(raw));
+    expect(messages.map(message => message.type)).toEqual(['file.open.request']);
+    expect(messages[0].payload).toEqual({ url, disposition: 'view', fileName: 'score.pdf', mimeType: 'application/pdf' });
+  });
+
+  it.each(['assignment-file-upload', 'repertoire-file-lookalike'])('does not classify %s as a private reader', async (path) => {
+    const postMessage = vi.fn();
+    mount({ environment: embeddedEnvironment(postMessage), verifyContext: vi.fn(async value => ({ ok: true, value })),
+      children: <><p>tenant child</p><a href={`https://project.supabase.co/functions/v1/${path}`}>other link</a></> });
+    await hydrate(postMessage); postMessage.mockClear();
+    fireEvent.click(screen.getByRole('link', { name: 'other link' }));
+    expect(postMessage.mock.calls.map(([raw]) => JSON.parse(raw).type)).toEqual(['navigation.external.request']);
+  });
+
   it('intercepts native, external and denied links while preserving permanent web links', async () => {
     const postMessage = vi.fn();
     const navigateWithinWeb = vi.fn();

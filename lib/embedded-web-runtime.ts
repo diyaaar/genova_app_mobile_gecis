@@ -47,6 +47,7 @@ export interface EmbeddedBootstrapEnvironment {
 export interface ComposedAcceptanceEnvironment {
   NEXT_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE?: string;
   NEXT_PUBLIC_GENOVA_090_APP_ORIGIN?: string;
+  NEXT_PUBLIC_GENOVA_090_WEBVIEW_FAMILY?: string;
   NEXT_PUBLIC_GENOVA_033_ACCEPTANCE?: string;
   NEXT_PUBLIC_GENOVA_033_APP_ORIGIN?: string;
   NEXT_PUBLIC_SUPABASE_URL?: string;
@@ -74,10 +75,13 @@ export function readComposedAcceptanceRoutePolicy(
   if (environment.NEXT_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE === '1') {
     const appOrigin = exactLoopbackOrigin(environment.NEXT_PUBLIC_GENOVA_090_APP_ORIGIN, '31090');
     const serviceOrigin = exactLoopbackOrigin(environment.NEXT_PUBLIC_SUPABASE_URL, '54491');
-    if (!appOrigin || !serviceOrigin || environment.NEXT_PUBLIC_GENOVA_033_ACCEPTANCE === '1') {
+    if (!appOrigin || !serviceOrigin || environment.NEXT_PUBLIC_GENOVA_033_ACCEPTANCE === '1' ||
+        ![undefined, 'repertoire-file', 'assignment-file'].includes(environment.NEXT_PUBLIC_GENOVA_090_WEBVIEW_FAMILY)) {
       throw new Error('090-webview-local-runtime-refused');
     }
-    return Object.freeze({ appOrigin, protectedFileOrigins: Object.freeze(['http://127.0.0.1:18092']) });
+    return Object.freeze({ appOrigin, protectedFileOrigins: Object.freeze(
+      environment.NEXT_PUBLIC_GENOVA_090_WEBVIEW_FAMILY === 'assignment-file'
+        ? ['http://127.0.0.1:18092', serviceOrigin] : ['http://127.0.0.1:18092']) });
   }
   if (environment.NEXT_PUBLIC_GENOVA_033_ACCEPTANCE !== '1') return undefined;
   const appOrigin = exactLoopbackOrigin(environment.NEXT_PUBLIC_GENOVA_033_APP_ORIGIN, '18033');

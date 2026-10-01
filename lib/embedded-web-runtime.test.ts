@@ -22,12 +22,16 @@ describe('readComposedAcceptanceRoutePolicy', () => {
       NEXT_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54491' };
     expect(readComposedAcceptanceRoutePolicy(env)).toEqual({ appOrigin: 'http://127.0.0.1:31090',
       protectedFileOrigins: ['http://127.0.0.1:18092'] });
+    expect(readComposedAcceptanceRoutePolicy({ ...env, NEXT_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: 'assignment-file' }))
+      .toEqual({ appOrigin: 'http://127.0.0.1:31090',
+        protectedFileOrigins: ['http://127.0.0.1:18092', 'http://127.0.0.1:54491'] });
     for (const patch of [
       { NEXT_PUBLIC_SUPABASE_URL: 'https://example.com' },
       { NEXT_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54321' },
       { NEXT_PUBLIC_GENOVA_090_APP_ORIGIN: 'http://127.0.0.1:31090/?secret=1' },
       { NEXT_PUBLIC_GENOVA_090_APP_ORIGIN: 'http://user:secret@127.0.0.1:31090' },
       { NEXT_PUBLIC_GENOVA_033_ACCEPTANCE: '1' },
+      { NEXT_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: 'unknown' },
     ]) expect(() => readComposedAcceptanceRoutePolicy({ ...env, ...patch })).toThrow();
   });
   it('is dormant without the exact compile-time acceptance flag', () => {

@@ -9,6 +9,7 @@ import { createServer } from 'node:http';
 import { createClient } from '@supabase/supabase-js';
 import { createRepertoireFileTicket } from '../functions/repertoire-file/ticket';
 import { assertLocalSignature,createConnectedAudioFixture,toneWav } from './091_connected_audio_fixture';
+import { assignmentWebViewMode, assignmentVersionSeed, assertAssignmentWebViewReads } from './091_assignment_webview_fixture';
 
 const API = 'http://127.0.0.1:54491';
 const EDGE = 'http://127.0.0.1:8000';
@@ -42,6 +43,9 @@ if (androidFixturePath) {
 const nativePdfRecovery = process.env.GENOVA_090_ANDROID_PDF_RECOVERY === '1';
 const webViewRecovery = process.env.GENOVA_090_ANDROID_WEBVIEW === '1';
 const nativeAudioRecovery = process.env.GENOVA_090_CONNECTED_ANDROID_AUDIO === '1';
+const assignmentWebView = assignmentWebViewMode(process.env);
+const ASSIGNMENT_EDGE = 'http://127.0.0.1:8001';
+const webViewFamily = assignmentWebView ? 'assignment-file' : 'repertoire-file';
 if(nativeAudioRecovery){assert.ok(androidFixturePath);assert.equal(nativePdfRecovery,false);assert.equal(webViewRecovery,false);}
 if (webViewRecovery) {
   assert.ok(androidFixturePath, '090 WebView requires the explicit owned runtime hold');
@@ -59,7 +63,9 @@ const ids = {
   fileA: randomUUID(), fileB: randomUUID(), memberA: randomUUID(), memberB: randomUUID(),
   outsiderB: randomUUID(), roleA: randomUUID(), roleB: randomUUID(), roleChorist: randomUUID(),
   targetA: randomUUID(), roleChoristA: randomUUID(), homework: randomUUID(), submission: randomUUID(),
+  version: randomUUID(),
 };
+const webViewFileId = assignmentWebView ? ids.version : ids.fileA;
 const assignmentA = randomUUID();
 const pdf = nativeAudioRecovery ? toneWav() : new Uint8Array(readFileSync('apps/mobile/src/repertoire/__fixtures__/score_40p.pdf'));
 assert.equal(pdf.byteLength,nativeAudioRecovery?160044:65_905);
@@ -82,10 +88,13 @@ const provider = createServer((request, response) => {
       void connectedAudio.handle(request,response,url).catch(()=>{response.writeHead(500);response.end();});return;
     }
     if (webViewRecovery && (url.pathname.startsWith('/090/webview-') ||
-        url.pathname === '/functions/v1/repertoire-file')) {
+        url.pathname === `/functions/v1/${webViewFamily}`)) {
       void (async () => {
         assert.equal(request.headers.host, '127.0.0.1:18092');
         response.setHeader('Cache-Control', 'no-store');
+        // Normalizing the test ticket body must preserve the real handler's
+        // cross-origin contract; otherwise the browser correctly rejects POST200.
+        response.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:31090');
         if (url.pathname === '/090/webview-fixture' && request.method === 'POST' && !url.search) {
           if (!oneUseFixture) { response.writeHead(410); response.end(); return; }
           const payload = oneUseFixture;
@@ -102,36 +111,44 @@ const provider = createServer((request, response) => {
           assert.equal((await fetch(recoveredWebViewUrl, { method: 'HEAD' })).status, 403);
           assert.equal(providerHits, before);
           webViewReads.push({ method: 'HEAD', status: 403, providerDelta: 0 });
+          if (assignmentWebView) {
+            assert.equal((await fetch(recoveredWebViewUrl)).status, 403);
+            assert.equal(providerHits, before);
+            webViewReads.push({ method: 'GET', status: 403, providerDelta: 0 });
+          }
           console.log('090 WebView observation old A HEAD403 providerDelta0');
           response.writeHead(200); response.end(); return;
         }
-        assert.equal(url.pathname, '/functions/v1/repertoire-file');
-        assert.ok(['POST', 'GET', 'HEAD'].includes(request.method ?? ''));
+        assert.equal(url.pathname, `/functions/v1/${webViewFamily}`);
+        assert.ok(['POST', 'GET', 'HEAD', 'OPTIONS'].includes(request.method ?? ''));
         const chunks: Buffer[] = [];
         let size = 0;
         for await (const chunk of request) {
           size += Buffer.byteLength(chunk); assert.ok(size <= 16_384);
           chunks.push(Buffer.from(chunk));
         }
-        if (request.method === 'POST') assert.equal(JSON.parse(Buffer.concat(chunks).toString()).fileId, ids.fileA);
-        else {
-          assert.equal(url.searchParams.get('fileId'), ids.fileA);
+        if (request.method === 'POST') assert.equal(JSON.parse(Buffer.concat(chunks).toString()).fileId, webViewFileId);
+        else if (request.method !== 'OPTIONS') {
+          assert.equal(url.searchParams.get('fileId'), webViewFileId);
           assert.deepEqual([...url.searchParams.keys()].sort(), ['fileId', 'ticket']);
         }
         const before = providerHits;
-        const actual = await fetch(`${EDGE}/${url.search}`, { method: request.method,
+        const issuer = assignmentWebView ? ASSIGNMENT_EDGE : EDGE;
+        const actual = await fetch(`${issuer}/${url.search}`, { method: request.method,
           headers: request.method === 'POST' ? { 'Content-Type': 'application/json',
             authorization: request.headers.authorization ?? '' } : {},
           body: request.method === 'POST' ? Buffer.concat(chunks) : undefined });
-        webViewReads.push({ method: request.method!, status: actual.status, providerDelta: providerHits - before });
+        if (request.method !== 'OPTIONS') {
+          webViewReads.push({ method: request.method!, status: actual.status, providerDelta: providerHits - before });
+        } else assert.equal(providerHits, before, 'preflight contacted object provider');
         console.log(`090 WebView observation ${request.method} ${actual.status} providerDelta=${providerHits - before}`);
         if (request.method === 'POST' && actual.ok) {
           const body = await actual.json() as { url: string; expiresAt: number };
-          const issued = new URL(body.url, EDGE);
-          assert.equal(issued.origin, EDGE);
+          const issued = new URL(body.url, issuer);
+          assert.equal(issued.origin, issuer);
           recoveredWebViewUrl = issued.toString();
           response.writeHead(200, { 'Content-Type': 'application/json' });
-          response.end(JSON.stringify({ ...body, url: `${S3}/functions/v1/repertoire-file${issued.search}` }));
+          response.end(JSON.stringify({ ...body, url: `${assignmentWebView ? API : S3}/functions/v1/${webViewFamily}${issued.search}` }));
         } else {
           const bytes = new Uint8Array(await actual.arrayBuffer());
           if (actual.ok && request.method === 'GET') assert.equal(hash(bytes), hash(pdf));
@@ -193,10 +210,10 @@ function sql(statement: string) {
     encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'],
   }).trim();
 }
-async function ready(edge: { exitCode: number | null }) {
+async function ready(edge: { exitCode: number | null }, origin = EDGE) {
   for (let i = 0; i < 50; i += 1) {
     if (edge.exitCode !== null) throw new Error('091 Deno exited before ready');
-    try { if ((await fetch(EDGE, { method: 'OPTIONS' })).status === 204) return; } catch { /* startup */ }
+    try { if ((await fetch(origin, { method: 'OPTIONS' })).status === 204) return; } catch { /* startup */ }
     await new Promise(resolve => setTimeout(resolve, 100));
   }
   throw new Error('091 Deno did not become ready');
@@ -291,8 +308,17 @@ async function main() {
   let diagnostics = '';
   edge.stdout.on('data', chunk => { diagnostics += String(chunk); });
   edge.stderr.on('data', chunk => { diagnostics += String(chunk); });
+  const assignmentEdge = assignmentWebView ? spawn('deno', ['run', '--allow-env',
+    '--allow-net=127.0.0.1:8001,127.0.0.1:54491,127.0.0.1:18092', 'supabase/test-support/090_http_assignment_edge.ts'],
+    { env: { ...process.env, SUPABASE_URL: API, SUPABASE_ANON_KEY: anon, SUPABASE_SERVICE_ROLE_KEY: service,
+      R2_ACCOUNT_ID: ACCOUNT, R2_BUCKET: BUCKET, R2_ACCESS_KEY_ID: ACCESS, R2_SECRET_ACCESS_KEY: SECRET,
+      R2_TEST_ENDPOINT: `${S3}/`, R2_ALLOW_INSECURE_LOOPBACK: 'true', GENOVA_TEST_LOOPBACK_ONLY: '1' },
+      stdio: ['ignore', 'pipe', 'pipe'] }) : null;
+  assignmentEdge?.stdout.on('data', chunk => { diagnostics += String(chunk); });
+  assignmentEdge?.stderr.on('data', chunk => { diagnostics += String(chunk); });
   try {
     await ready(edge);
+    if (assignmentEdge) await ready(assignmentEdge, ASSIGNMENT_EDGE);
     ok((await shared.rpc('set_active_choir', { p_choir_id: ids.choirA })).error, 'select A');
     ok((await sharedSecondSession.rpc('set_active_choir', { p_choir_id: ids.choirA })).error, 'second session select A');
     const oldA = await ownRead(ids.fileA, pdf, accessA);
@@ -316,8 +342,26 @@ async function main() {
           values ('${ids.submission}','${ids.choirA}','${ids.homework}','${ids.targetA}','091-no-drive-a',
           '${webUrl}','score.pdf','application/pdf',${pdf.length},'pending');
         commit;`);
+      let metadataUrl = webUrl;
+      if (assignmentWebView) {
+        const seeded = assignmentVersionSeed({ choirId: ids.choirA, assignmentId: ids.homework,
+          memberId: ids.targetA, submissionId: ids.submission, versionId: ids.version,
+          bucket: BUCKET, bytes: pdf.length, sha256: hash(pdf) });
+        sql(seeded.sql);
+        objects.set(`/${BUCKET}/${seeded.key}`, { bytes: pdf, type: 'application/pdf' });
+        const issue = async (token: string) => fetch(ASSIGNMENT_EDGE, { method: 'POST',
+          headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fileId: ids.version }) });
+        const issued = await issue(accessA); assert.equal(issued.status, 200);
+        const body = await issued.json() as { url: string };
+        metadataUrl = `${S3}/functions/v1/assignment-file${new URL(body.url, ASSIGNMENT_EDGE).search}`;
+        const providerBefore = providerHits;
+        assert.equal((await issue(accessB)).status, 403);
+        assert.equal(providerHits, providerBefore);
+        console.log('PASS assignment current-version actual Auth/RLS/POST and foreign user403/provider0');
+      }
       webViewMetadata = JSON.stringify({ userId: userA, choirA: ids.choirA, choirB: ids.choirB,
-        targetMember: ids.targetA, fileId: ids.fileA, pdfSha256: hash(pdf), legacyUrl: webUrl });
+        targetMember: ids.targetA, fileId: webViewFileId, pdfSha256: hash(pdf), legacyUrl: metadataUrl });
     }
     const before = providerHits;
     assert.equal((await ticket(ids.fileB, accessA)).result.status, 403);
@@ -342,6 +386,15 @@ async function main() {
       if(nativeAudioRecovery)connectedAudio.finish();
       else if (webViewRecovery) {
         assert.equal(fixtureConsumed, true); assert.equal(oneUseFixture, null);
+        if (assignmentWebView) {
+          assertAssignmentWebViewReads(webViewReads);
+          await writeFile('docs/reports/090/2026-10-01-assignment-webview-http.json', JSON.stringify({
+            timestamp: new Date().toISOString(), result: 'PASS', family: 'assignment-file', reads: webViewReads,
+            contentLength: pdf.length, sha256: hash(pdf),
+            boundary: 'Actual local Auth/RLS/Deno and Android permanent WebView; declared listener/URL relay; signature-verified synthetic storage, not hosted.',
+          }, null, 2), { flag: 'wx' });
+          console.log('PASS assignment current-version WebView/native PDF/hash/B GET+HEAD403/provider0');
+        } else {
         assert.ok(webViewReads.filter(row => row.method === 'GET' && row.status === 401).length >= 2, 'baseline and repaired old body refusals missing');
         assert.equal(webViewReads.filter(row => row.method === 'POST' && row.status === 200).length, 1, 'recovery must issue exactly one fresh ticket');
         assert.equal(webViewReads.filter(row => row.method === 'HEAD' && row.status === 401).length, 1);
@@ -349,6 +402,7 @@ async function main() {
         assert.equal(webViewReads.filter(row => row.method === 'HEAD' && row.status === 403).length, 1);
         for (const row of webViewReads.filter(row => row.status >= 400)) assert.equal(row.providerDelta, 0);
         console.log('PASS 090 real WebView baseline/refusal, one authority renewal, PDF body/hash and B oldURL403 without provider');
+        }
       } else if (nativePdfRecovery) {
         assert.equal(fixtureConsumed, true);
         assert.equal(oneUseFixture, null);
@@ -387,6 +441,9 @@ async function main() {
     oneUseFixture = null;
     if (androidFixturePath) await unlink(androidFixturePath).catch(() => {});
     edge.kill('SIGTERM');
+    assignmentEdge?.kill('SIGTERM');
+    if (assignmentEdge) await Promise.race([new Promise(resolve => assignmentEdge.once('exit', resolve)),
+      new Promise(resolve => setTimeout(resolve, 2000))]);
     await Promise.race([new Promise(resolve => edge.once('exit', resolve)), new Promise(resolve => setTimeout(resolve, 2000))]);
     await new Promise<void>(resolve => provider.close(() => resolve()));
   }

@@ -13,11 +13,19 @@ describe('090 actual WebView local guard', () => {
     expect(() => require090WebViewConfig(env)).not.toThrow();
     expect(validate090WebViewMetadata(metadata)).toEqual(metadata);
   });
+  it('accepts an assignment version only under the explicitly selected assignment family', () => {
+    expect(() => require090WebViewConfig({ ...env, EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: 'assignment-file' })).not.toThrow();
+    const assignment = { ...metadata, legacyUrl: metadata.legacyUrl.replace('repertoire-file', 'assignment-file') };
+    expect(validate090WebViewMetadata(assignment, 'assignment-file')).toEqual(assignment);
+    expect(() => validate090WebViewMetadata(assignment)).toThrow();
+    expect(() => validate090WebViewMetadata(metadata, 'assignment-file')).toThrow();
+  });
   it.each([
     { EXPO_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE: '0' },
     { EXPO_PUBLIC_SUPABASE_URL: 'https://example.com' },
     { EXPO_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54491/?secret=1' },
     { EXPO_PUBLIC_GENOVA_033_ACCEPTANCE: '1' }, { EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE: '1' },
+    { EXPO_PUBLIC_GENOVA_090_CONNECTED_AUDIO: '1' }, { EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: 'chat-media-file' },
     { EXPO_PUBLIC_GENOVA_090_AUDIO_ACCEPTANCE: '1' }, { EXPO_PUBLIC_GENOVA_093_ACCEPTANCE: '1' },
     { EXPO_PUBLIC_SUPABASE_ANON_KEY: 'not-a-local-JWT' },
     { EXPO_PUBLIC_SUPABASE_ANON_KEY: `h.${btoa(JSON.stringify({ iss: 'supabase-demo', role: 'service_role' }))}.s` },
