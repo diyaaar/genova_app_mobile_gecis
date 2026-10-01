@@ -3,8 +3,11 @@ import { AwsClient } from 'npm:aws4fetch@1.0.20';
 import { createRepertoireFileHandler } from '../functions/repertoire-file/handler.ts';
 import { createPrivateFileTicketV2, verifyPrivateFileTicketV2 } from '../functions/_shared/private-file-ticket-v2.ts';
 import { fetchR2Object } from '../functions/repertoire-file/r2.ts';
+import { createActualFamilyReaders, familySpecs } from './090_http_families.ts';
 
-const DB = 'genova_090_http_overlap_test';
+const familiesMode = Deno.args[0] === 'families';
+check(Deno.args.length <= 1 && (!Deno.args.length || ['repertoire','families'].includes(Deno.args[0])), 'known mode');
+const DB = familiesMode ? 'genova_090_families_overlap_test' : 'genova_090_http_overlap_test';
 const PSQL = '/opt/homebrew/opt/postgresql@17/bin/psql';
 const EDGE = 'http://127.0.0.1:18190';
 const OBJECT = 'http://127.0.0.1:18191';
@@ -14,17 +17,18 @@ const choir = '20000000-0000-4000-8000-000000000090';
 const otherChoir = '20000000-0000-4000-8000-000000000091';
 const member = '30000000-0000-4000-8000-000000000090';
 const role = '40000000-0000-4000-8000-000000000090';
-const file = '51000000-0000-4000-8000-000000000090';
+let file = '51000000-0000-4000-8000-000000000090';
 const bucket = 'genova-private';
-const objectKey = `choirs/${choir}/repertoire/${file}/score.pdf`;
+let objectKey = `choirs/${choir}/repertoire/${file}/score.pdf`;
 const access = '090OVERLAPLOCAL';
 const secret = crypto.randomUUID();
 const ticketSecret = crypto.randomUUID();
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
-const events: { sequence: number; phase: string; change: string }[] = [];
+const events: { sequence: number; phase: string; change: string; family: string }[] = [];
+let family = 'repertoire-file';
 let change = 'initial', providerHits = 0;
-const record = (phase: string) => events.push({ sequence: events.length + 1, phase, change });
+const record = (phase: string) => events.push({ sequence: events.length + 1, phase, change, family });
 function check(condition: unknown, stage: string): asserts condition {
   if (!condition) throw new Error(`090 overlap failed: ${stage}`);
 }
@@ -48,14 +52,15 @@ async function sql(statement: string, asService = false): Promise<string> {
   return decoder.decode(result.stdout).trim();
 }
 check(await sql(`select current_database()='${DB}' and current_setting('server_version_num') like '17%'`) === 't', 'exact disposable database');
-const bytes = await Deno.readFile('apps/mobile/src/repertoire/__fixtures__/score_40p.pdf');
-check(bytes.length === 65905, 'fixture size');
+let bytes = familiesMode ? familySpecs[0].bytes as Uint8Array : await Deno.readFile('apps/mobile/src/repertoire/__fixtures__/score_40p.pdf');
+if (!familiesMode) check(bytes.length === 65905, 'fixture size');
+let mime = familiesMode ? familySpecs[0].mime as string : 'application/pdf';
 const hash = async (value: Uint8Array | string) => {
   const input = typeof value === 'string' ? encoder.encode(value) : value;
   return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new Uint8Array(input)))).map(x => x.toString(16).padStart(2, '0')).join('');
 };
-const digest = await hash(bytes);
-await sql(`insert into public.repertoire_file_storage_locations(repertoire_file_id,choir_id,provider,bucket,object_key,content_length,mime_type,sha256_hex,verified_at,is_active)
+let digest = await hash(bytes);
+if (!familiesMode) await sql(`insert into public.repertoire_file_storage_locations(repertoire_file_id,choir_id,provider,bucket,object_key,content_length,mime_type,sha256_hex,verified_at,is_active)
  values('${file}','${choir}','r2','${bucket}','${objectKey}',${bytes.length},'application/pdf','${digest}',clock_timestamp(),true)`);
 
 // Persistent peer psql session: explicit acknowledgements, never timing sleeps.
@@ -85,6 +90,12 @@ async function peerSql(statement: string) {
 let sqlGate: { reached: ReturnType<typeof deferred>; release: ReturnType<typeof deferred> } | null = null;
 let streamGate: ReturnType<typeof deferred> | null = null;
 let providerFailures = 0;
+async function beforeAuthority() {
+  record('http-reached-authority-adapter');
+  const held = sqlGate;
+  if (held) { held.reached.resolve(); await bounded(held.release.promise); }
+  record('authority-sql-start');
+}
 const hmac = async (key: Uint8Array | string, value: string) => {
   const k = await crypto.subtle.importKey('raw', typeof key === 'string' ? encoder.encode(key) : new Uint8Array(key),
     { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
@@ -112,12 +123,12 @@ const objectServer = Deno.serve({ hostname: '127.0.0.1', port: 18191, signal: pr
     const match = request.headers.get('range')?.match(/^bytes=(\d+)-(\d+)$/);
     const start = match ? Number(match[1]) : 0, end = match ? Number(match[2]) : bytes.length - 1;
     const data = bytes.subarray(start, end + 1);
-    const headers = { 'Content-Type': 'application/pdf', 'Content-Length': String(data.length),
+    const headers = { 'Content-Type': mime, 'Content-Length': String(data.length),
       ...(match ? { 'Content-Range': `bytes ${start}-${end}/${bytes.length}` } : {}) };
     const status = match ? 206 : 200;
     if (request.method === 'HEAD') return new Response(null, { status, headers });
     const held = streamGate;
-    if (!held) return new Response(data, { status, headers });
+    if (!held) return new Response(new Uint8Array(data), { status, headers });
     return new Response(new ReadableStream<Uint8Array>({
       async start(controller) {
         controller.enqueue(data.subarray(0, 32));
@@ -128,15 +139,13 @@ const objectServer = Deno.serve({ hostname: '127.0.0.1', port: 18191, signal: pr
   } catch { providerFailures++; return new Response('Synthetic provider validation failed', { status: 500 }); }
 });
 const aws = new AwsClient({ accessKeyId: access, secretAccessKey: secret, service: 's3', region: 'auto', retries: 0 });
-const handler = createRepertoireFileHandler({
+const repertoireHandler = createRepertoireFileHandler({
   storageMode: 'r2-required',
   authorize() { throw new Error('POST Auth/issuance excluded from this fixture'); },
   async authorizeTicket(t) {
-    record('http-reached-authority-adapter');
-    const held = sqlGate;
-    if (held) { held.reached.resolve(); await bounded(held.release.promise); }
+    await beforeAuthority();
     for (const value of [t.actorId, t.sessionId, t.choirId, t.fileId]) check(/^[a-f0-9-]{36}$/.test(value), 'UUID interpolation');
-    check(t.family === 'repertoire-file', 'family'); record('authority-sql-start');
+    check(t.family === 'repertoire-file', 'family');
     const result = await sql(`select public.private_file_ticket_authorized_090('${t.actorId}','${t.sessionId}','${t.choirId}','repertoire-file','${t.fileId}')`, true);
     record(result === 't' ? 'authority-allow' : 'authority-deny'); return result === 't';
   },
@@ -155,9 +164,11 @@ const handler = createRepertoireFileHandler({
       signedFetch: (input, options) => aws.fetch(input, options), testEndpoint: OBJECT, allowInsecureLoopback: true });
   },
 });
-const edgeServer = Deno.serve({ hostname: '127.0.0.1', port: 18190, signal: edgeAbort.signal, onListen() {} }, handler);
-const issued = await createPrivateFileTicketV2('repertoire-file', { actorId: actor, sessionId: session, choirId: choir, fileId: file }, ticketSecret);
-const url = `${EDGE}/?fileId=${file}&ticket=${issued.token}`;
+const actualReaders = familiesMode ? await createActualFamilyReaders({ sql, beforeAuthority, ticketSecret, access, secret }) : null;
+let handler: (r: Request) => Response | Promise<Response> = repertoireHandler;
+const edgeServer = Deno.serve({ hostname: '127.0.0.1', port: 18190, signal: edgeAbort.signal, onListen() {} }, request => handler(request));
+const issued = familiesMode ? null : await createPrivateFileTicketV2('repertoire-file', { actorId: actor, sessionId: session, choirId: choir, fileId: file }, ticketSecret);
+let url = issued ? `${EDGE}/?fileId=${file}&ticket=${issued.token}` : '';
 type Observation = { method: string; range: boolean; status: number; providerDelta: number; bytes: number };
 async function read(method = 'GET', range = false, denied = false): Promise<Observation> {
   const before = providerHits;
@@ -168,6 +179,9 @@ async function read(method = 'GET', range = false, denied = false): Promise<Obse
   check(providerHits - before === (denied ? 0 : 1), 'provider hit boundary');
   if (!denied) {
     check(response.headers.get('cache-control') === 'private, no-store', 'no-store');
+    check(response.headers.get('content-type') === mime, 'MIME');
+    if (range) check(response.headers.get('content-range') === `bytes 5-17/${bytes.length}`, 'Range metadata');
+    check(response.headers.get('content-length') === String(range ? 13 : bytes.length), 'size metadata');
     check(await hash(received) === await hash(method === 'HEAD' ? new Uint8Array() : range ? bytes.subarray(5, 18) : bytes), 'exact bytes');
   }
   return { method, range, status: response.status, providerDelta: providerHits - before, bytes: received.length };
@@ -179,16 +193,37 @@ const mutations: Record<string, string> = {
   membership_inactive: `update public.choir_members set is_active=false where id='${member}'`,
   session_deleted: `delete from auth.sessions where id='${session}'`,
 };
+const room = '80000000-0000-4000-8000-000000000090';
 async function reset() {
   await sql(`insert into auth.sessions(id,user_id) values('${session}','${actor}') on conflict(id) do nothing;
     update public.choir_members set is_active=true where id='${member}';
     insert into public.choir_member_roles(choir_id,member_id,role_id) values('${choir}','${member}','${role}') on conflict do nothing;
     insert into genova_005.active_choir_sessions(session_id,auth_user_id,choir_id) values('${session}','${actor}','${choir}')
-      on conflict(session_id) do update set choir_id=excluded.choir_id`);
+      on conflict(session_id) do update set choir_id=excluded.choir_id;
+    insert into public.chat_room_members(choir_id,room_id,member_id,role) values('${choir}','${room}','${member}','admin') on conflict do nothing`);
 }
 const results: unknown[] = [];
+const independentGrants: unknown[] = [];
 try {
-  for (const [kind, mutation] of Object.entries(mutations)) {
+  const readers = familiesMode ? familySpecs : [null];
+  for (const spec of readers) {
+    if (spec) {
+      check(actualReaders, 'actual readers registered'); family=spec.family;file=spec.file;
+      objectKey=spec.key;bytes=spec.bytes;mime=spec.mime;digest=await hash(bytes);
+      handler=actualReaders.handlers.get(family)!;check(handler, 'actual index handler');
+      const issued=await actualReaders.ticket(spec);url=`${EDGE}/?fileId=${file}&ticket=${issued.token}`;
+    }
+    if (family === 'chat-media-file') {
+      change='independent_choir_role';await reset();await peerSql(`begin; ${mutations.role_removal}; commit`);
+      record('peer-commit-independent-role');const allowed=[];
+      for (const [method,range] of variants) allowed.push(await read(method,range));
+      independentGrants.push({ family, change, allowed });
+      console.log('PASS chat-media-file: unrelated choir-role removal preserves room grant');
+    }
+    const familyMutations = family === 'chat-media-file' ? { choir_switch: mutations.choir_switch,
+      room_membership_removed: `delete from public.chat_room_members where room_id='${room}' and member_id='${member}'`,
+      membership_inactive: mutations.membership_inactive, session_deleted: mutations.session_deleted } : mutations;
+  for (const [kind, mutation] of Object.entries(familyMutations)) {
     change = kind; await reset();
     await peerSql(`begin; ${mutation}`); record('peer-uncommitted');
     const uncommitted: Observation[] = [];
@@ -219,16 +254,18 @@ try {
     const full = new Uint8Array(chunks.reduce((sum, x) => sum + x.length, 0));
     let offset = 0; for (const c of chunks) { full.set(c, offset); offset += c.length; }
     check(await hash(full) === digest, 'already-streaming complete exact bytes'); record('existing-stream-completed');
-    results.push({ change: kind, uncommitted, afterCommit, heldBeforeSql,
+    results.push({ family, change: kind, uncommitted, afterCommit, heldBeforeSql,
       streaming: { firstBytesBeforeCommit: first.value.length, completedBytes: full.length, sha256: digest, freshDenials } });
-    console.log(`PASS ${kind}: uncommitted200/206/200; committed403/provider0; held HTTP denied; existing stream65905B survives`);
+    console.log(`PASS ${family}/${kind}: uncommitted200/206/200; committed403/provider0; held HTTP denied; existing stream${bytes.length}B survives`);
+  }
   }
   check(providerFailures === 0, 'provider signatures');
   await Deno.mkdir('docs/reports/090', { recursive: true });
-  await Deno.writeTextFile('docs/reports/090/2026-10-01-http-overlap.json', JSON.stringify({
-    timestamp: new Date().toISOString(), result: 'PASS', family: 'repertoire-file',
-    boundary: 'Actual handler/R2 helper and HTTP, nativePG17/service_role SQL via explicit psql adapter. Synthetic session rows/direct signed-v2 fixture issuance, no Auth/PostgREST/entrypoint/hosted/native proof.',
-    provider: 'AWS4 signature-verified loopback object service', providerHits, providerFailures, results, events,
+  const output = familiesMode ? '2026-10-01-http-families-overlap.json' : '2026-10-01-http-overlap.json';
+  await Deno.writeTextFile(`docs/reports/090/${output}`, JSON.stringify({
+    timestamp: new Date().toISOString(), result: 'PASS', family: familiesMode ? 'remaining-four' : 'repertoire-file',
+    boundary: familiesMode ? 'Actual four index registrations/handler/ticket/R2 helper and HTTP, nativePG17/service_role SQL via explicit Supabase-fetch/psql adapter. Synthetic session rows/direct signed-v2 fixture issuance, no real Auth/PostgREST/POST/hosted/native proof.' : 'Actual handler/R2 helper and HTTP, nativePG17/service_role SQL via explicit psql adapter. Synthetic session rows/direct signed-v2 fixture issuance, no Auth/PostgREST/entrypoint/hosted/native proof.',
+    provider: 'AWS4 signature-verified loopback object service', providerHits, providerFailures, results, independentGrants, events,
   }, null, 2));
 } finally {
   sqlGate?.release.resolve(); streamGate?.resolve();
@@ -237,4 +274,5 @@ try {
   await Promise.all([stdoutDrain, stderrDrain]);
   edgeAbort.abort(); providerAbort.abort();
   await Promise.all([edgeServer.finished, objectServer.finished]);
+  actualReaders?.cleanup();
 }

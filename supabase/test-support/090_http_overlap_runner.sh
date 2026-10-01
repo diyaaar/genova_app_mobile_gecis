@@ -4,8 +4,11 @@ cd "$(dirname "$0")/../.."
 export PGHOST=127.0.0.1 PGPORT=5432
 unset PGHOSTADDR PGSERVICE PGSERVICEFILE PGPASSFILE PGOPTIONS PGDATABASE PGUSER PGPASSWORD
 SOURCE=genova_068_test_restore
+mode=${1:-repertoire}
+[ "$#" -le 1 ] && { [ "$mode" = repertoire ] || [ "$mode" = families ]; } || { echo 'REFUSED: unknown mode' >&2; exit 2; }
 TARGET=genova_090_http_overlap_test
 SCRATCH=spike/090-runtime/http-overlap
+if [ "$mode" = families ]; then TARGET=genova_090_families_overlap_test; SCRATCH=spike/090-runtime/families-overlap; fi
 owned=false
 scratch_owned=false
 refuse() { echo "REFUSED: $*" >&2; exit 2; }
@@ -22,7 +25,7 @@ snapshot() {
 cleanup() {
   if [ "$owned" = true ]; then dropdb --force "$TARGET"; owned=false; fi
   if [ "$scratch_owned" = true ] && [ -d "$SCRATCH" ] && [ ! -L "$SCRATCH" ]; then
-    node --input-type=module -e 'import fs from "node:fs"; import path from "node:path"; const p=path.resolve("spike/090-runtime/http-overlap"); if(p!==process.cwd()+"/spike/090-runtime/http-overlap"||fs.lstatSync(p).isSymbolicLink())throw Error("unsafe");fs.rmSync(p,{recursive:true});'
+    node --input-type=module -e 'import fs from "node:fs"; import path from "node:path"; const rel=process.argv[1];if(!["spike/090-runtime/http-overlap","spike/090-runtime/families-overlap"].includes(rel))throw Error("unknown");const p=path.resolve(rel);if(p!==process.cwd()+"/"+rel||fs.lstatSync(p).isSymbolicLink())throw Error("unsafe");fs.rmSync(p,{recursive:true});' "$SCRATCH"
     scratch_owned=false
   fi
 }
@@ -65,17 +68,23 @@ done
 PGOPTIONS='-c role=postgres' psql -X -q -v ON_ERROR_STOP=1 -d "$TARGET" -f supabase/tests/090_private_file_ticket_authority.sql >"$SCRATCH/matrix.log" 2>&1
 echo 'PASS fresh five-family SQL matrix (ROLLBACK)'
 # Derive only the existing synthetic setup, not source data or modified authority.
-node --input-type=module -e 'import fs from "node:fs";const s=fs.readFileSync("supabase/tests/090_private_file_ticket_authority.sql","utf8");const p=s.split("do $test$")[0];if(!p.includes("begin;")||!p.includes("insert into auth.sessions"))throw Error("fixture changed");fs.writeFileSync("spike/090-runtime/http-overlap/fixture.sql",p+"\ncommit;\n");'
+node --input-type=module -e 'import fs from "node:fs";const s=fs.readFileSync("supabase/tests/090_private_file_ticket_authority.sql","utf8");const p=s.split("do $test$")[0];if(!p.includes("begin;")||!p.includes("insert into auth.sessions"))throw Error("fixture changed");fs.writeFileSync(process.argv[1]+"/fixture.sql",p+"\ncommit;\n");' "$SCRATCH"
+if [ "$mode" = families ]; then
+  deno run --no-config --cached-only --node-modules-dir=none --no-lock \
+    --allow-read=spike/090-runtime/families-overlap/fixture.sql \
+    --allow-write=spike/090-runtime/families-overlap/fixture.sql supabase/test-support/090_http_families_fixture.ts
+fi
 PGOPTIONS='-c role=postgres' psql -X -q -v ON_ERROR_STOP=1 -d "$TARGET" -f "$SCRATCH/fixture.sql" >"$SCRATCH/fixture.log" 2>&1
 q "$TARGET" 'grant usage on schema public to service_role; grant select on public.repertoire_files,public.repertoire_file_storage_locations to service_role' >/dev/null
+if [ "$mode" = families ]; then q "$TARGET" 'grant select on public.assignment_submission_file_versions,public.assignment_review_audio_versions,public.repertoire_comment_audio_versions,public.chat_media_versions to service_role' >/dev/null; fi
 deno check --no-config --cached-only --node-modules-dir=none --no-lock supabase/test-support/090_http_overlap.ts
 deno run --no-config --cached-only --node-modules-dir=none --no-lock \
   --allow-run=/opt/homebrew/opt/postgresql@17/bin/psql \
-  --allow-env=PGHOST,PGPORT,PGDATABASE,PGUSER,PGPASSWORD,PGOPTIONS,PGSERVICE,PGSERVICEFILE,PGPASSFILE \
+  --allow-env=PGHOST,PGPORT,PGDATABASE,PGUSER,PGPASSWORD,PGOPTIONS,PGSERVICE,PGSERVICEFILE,PGPASSFILE,SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,SUPABASE_PUBLISHABLE_KEYS,SUPABASE_ANON_KEY,R2_ACCOUNT_ID,R2_BUCKET,R2_JURISDICTION,R2_ACCESS_KEY_ID,R2_SECRET_ACCESS_KEY,R2_TEST_ENDPOINT,R2_ALLOW_INSECURE_LOOPBACK \
   --allow-read=apps/mobile/src/repertoire/__fixtures__/score_40p.pdf \
   --allow-write=docs/reports/090 \
   --allow-net=127.0.0.1:18190,127.0.0.1:18191 \
-  supabase/test-support/090_http_overlap.ts
+  supabase/test-support/090_http_overlap.ts "$mode"
 [ "$(snapshot)" = "$baseline" ] || refuse original-source-changed
 echo 'PASS original068 five row hashes unchanged'
 q "$SOURCE" 'select (select count(*) from auth.users),(select count(*) from public.choirs),(select count(*) from public.choir_members),(select count(*) from public.repertoire),(select count(*) from public.repertoire_files)'
