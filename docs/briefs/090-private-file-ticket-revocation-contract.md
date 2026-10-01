@@ -2,7 +2,8 @@
 
 Status: IN PROGRESS / local v2 implementation and synthetic acceptance PASS on
 30 September 2026; Android synthetic audio and connected stale-v1 PDF recovery PASS on 1 October.
-Hosted, remaining four-family HTTP overlap, connected audio/native-iOS and release gates remain open. Primary agent,
+Five-family local HTTP overlap now has bounded evidence; connected audio/native-iOS,
+hosted and release gates remain open. Primary agent,
 single writer. No hosted release authority.
 One result: uniform online next-request access-after-revocation for five private file
 families before `mixed`/`r2-required` cutover. This brief does not authorize live writes.
@@ -108,7 +109,7 @@ provider copy, push/deploy and actual Android/iOS device checks remain separatel
 | Decision #32 and 090 cross-links/consistency | Yes for this record | PASS | 30 September local link scan, `git diff --check` and scoped self-review; no source or runtime gate claimed |
 | Legacy v1 denial and compatibility checkpoint approved | Yes before implementation | PASS locally | Owner approved bounded local work on 30 September; v1 GET/HEAD now returns 401 in local tests. Hosted release was not approved. |
 | Five-family DB/Edge implementation and synthetic two-choir acceptance | Yes after contract selection | PASS locally | Disposable PG17 SQL matrix; service-only RPC; real local Auth/RLS/PostgREST/Edge + signed loopback S3 for repertoire; A/B same and separate sessions. Details below. |
-| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and actual permanent Android WebView recovery PASS locally. Android audio uses unsigned synthetic issuance. Five connected serial HTTP readers PASS historically; repertoire HTTP/COMMIT PASS with declared native-psql adapter on 1 October. Remaining four-family HTTP overlap, connected audio Auth/R2 and native iOS remain NOT RUN. |
+| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and actual permanent Android WebView recovery PASS locally. Five connected serial HTTP readers PASS historically. Local overlap: repertoire dependency adapter plus four actual index registrations/Supabase-fetch-to-psql adapter PASS on 1 October; not fresh Auth/PostgREST. Android audio uses unsigned synthetic issuance; connected audio Auth/R2 and native iOS remain NOT RUN. |
 | Hosted cutover/public Drive withdrawal/offline deletion/device/beta | Later separate authority | NOT RUN | This preparation cannot accept these layers |
 
 Required NOT RUN keeps 090 open. This local implementation may be committed as a partial checkpoint;
@@ -1003,3 +1004,79 @@ outputs removed, reproducible from sources; original068/caches/unrelated CLI pre
 No push/deploy/CI/hosted/real-user/email/hardware operation. Next bounded outcome:
 remaining four private-file readers' actual HTTP/COMMIT matrix. Connected audio,
 native iOS, assignment-version Drive-exit and hosted rollout remain separate gates.
+
+## 1 October remaining-family HTTP/COMMIT work card
+
+Owner says continue. Entry main/a5409d6, sole unrelated cli-latest dirty. Read full
+TypeSafe skill/current live index/API/models/citation-check, AGENTS, handoff/active,
+090, delivery controls, guide/work cycle, relevant MIGRATION and decision32. Inspected
+all four index adapters and existing SQL matrix: chat room membership intentionally
+survives unrelated chef-role removal; explicitly test it, do not broaden denial.
+
+One outcome: complete bounded remaining four-family HTTP/authority-COMMIT observations.
+Three actions: extend native schema-only runner and execute actual index handlers via
+declared psql-backed Supabase fetch adapter; verify four mutation/barrier/stream cases
+per family plus chat's independent grant; one bounded redacted Jev evidence judgment,
+cost/cleanup/acceptance record. No production source changes unless a scoped defect
+is reproduced. Allowed: supabase/test-support/090_http_overlap_runner.sh and new
+090_http_families*.ts, spike/typesafe/jev-090*.mjs, this brief/reports/handoff/active/progress.
+
+Resource preflight23,718,244KiB free; original068 nativePG17/source intact, scratch
+parent0KiB. Forecast<200MiB additional schema/runtime/source; installed cached Deno,
+no downloads/VM/client build. New owned DB genova_090_families_overlap_test and scratch
+spike/090-runtime/families-overlap; reuse18190/18191 loopback after free-port check.
+Only owned outputs removed after checks. Preserve original source hashes/counts.
+
+Required: Deno/shell checks, fresh five-family SQL suite, actual four index GET/Range/
+HEAD with exact WAV/PNG bytes/MIME/no-store, committed denials/provider0, held-before-
+SQL denial, stream boundary, chat independent-role/member grant, fail-closed transport
+and target tests, preservation/cleanup, docs/links/diff. Synthetic direct-v2 issuance
+and psql-backed Supabase fetch transport are declared, not real Auth/PostgREST/hosted.
+Do not promote this to native/audio/scale/full090 acceptance. Focused test-only edits
+do not refresh root/mobile gates. One Jev call max24KB/16questions/45s/no retry/<$0.002
+advisory cap; memory-only owner-authorized key today. Record actual returned tokens,
+price estimate and earlier recorded13call$0.001971648 separately; Codex cost unknown.
+
+### Remaining-family acceptance — 1 October 2026
+
+Source/tests `cc20758`; [report](../reports/2026-10-01-private-file-families-http-overlap.md)
+owns detailed result, Jev disagreements and costs. Actual runtime11:26UTC/14:26Istanbul;
+[raw trace](../reports/090/2026-10-01-http-families-overlap.json) frozen before inference.
+
+| Criterion | Required | Result | Evidence |
+| --- | --- | --- | --- |
+| Focused Deno/shell and strict transport | Yes | PASS | Deno check,11 transport tests, existing-target/busy-port/unknown-mode probes |
+| Fresh five-family SQL090 matrix | Yes | PASS | Disposable nativePG17, real authority/guards, ROLLBACK |
+| Four actual index GET/Range/HEAD across COMMIT | Yes | PASS | 16 cases; exact48B WAV/70B PNG,MIME,size,Range/no-store; new403/provider0 |
+| Before-SQL request and already-streaming boundaries | Yes | PASS | Four cases per family; held request403/provider0; first32B before COMMIT and exact complete hash afterward |
+| Independent chat grant | Yes | PASS | Unrelated chef-role COMMIT leaves room-member GET200/Range206/HEAD200; room-member removal independently403/provider0 |
+| Preservation/cleanup | Yes | PASS | Original068 five hashes/counts28/1/29/9/79 unchanged; exact disposable DB/scratch/services removed |
+| Bounded Jev record and tooling tests | Yes | PASS advisory execution | Four offline Node tests; one10-question call,8/10 label agreement with two retained disagreements, no retry |
+| Diff/links/redaction | Yes | PASS | Local links/diff/hash linkage/sensitive-pattern scan |
+| Connected native audio/Auth/PostgREST/native iOS/hosted/load/release | Separate gates | NOT RUN | This fixture does not claim those layers;090 stays IN PROGRESS |
+
+554 ordered trace events,67 signature-verified provider hits,zero signature failures.
+Together with earlier repertoire evidence, five families have declared-adapter local
+overlap observations (20 mutation cases across two runs), not one fresh all-platform
+connected release test. Actual four production index metadata/key paths execute,
+but their Supabase fetch transport is replaced explicitly by strict service-role SQL.
+No production/client/schema/dependency changes; historical root/mobile gates not refreshed.
+
+First typecheck found narrowed capture/copy types; corrected. First runtime SQL matrix
+passed, then immutable version UPDATE was correctly refused before HTTP. Changed
+fixture preparation to final metadata BEFORE insert, kept all immutability guards
+enabled; second runtime passed fully. Jev's initial packet hit24KB guard offline;
+compressed observations deterministically without expanding cap, tests then PASS.
+No failed runtime relabeled HTTP PASS and no provider retry.
+
+Jev7,208 input/433 output,858ms,$0.000302736 estimate. Today's retained14calls:
+54,152 input/6,696 output,$0.002274384 estimate, not invoice/Codex total.
+Model all-family claim insufficient/confidence0.11 despite primary supported scoped
+label; load claim contradicts vs primary insufficient (rubric categories overlap
+for explicitly unrun gates). Retained disagreement; primary inspected raw/source,
+not silently converted uncertainty to release acceptance. Connected native Android
+audio Auth/R2 is next local gate; integrated native iOS/hosted/release remain separate.
+
+Final measured free23,699,152KiB, above10,485,760KiB; forecast<200MiB not measured peak.
+Owned synthetic DB/runtime and guard probes removed, reproducible from sources;
+original068/dependencies/global caches/unrelated CLI retained. No external changes.

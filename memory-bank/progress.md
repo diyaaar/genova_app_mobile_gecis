@@ -1,5 +1,16 @@
 # İlerleme indeksi
 
+1 October — [090 remaining-four HTTP/COMMIT](../docs/reports/2026-10-01-private-file-families-http-overlap.md),
+source/tests `cc20758`, PASS locally. Four actual index registrations with strict declared
+Supabase-fetch/nativePG17 adapter:16 mutation/barrier/stream cases,new403/provider0,
+exact WAV/PNG; unrelated chef-role removal preserves independent chat-room grant.
+Fresh five-family SQL,11 transport/four Jev-tool tests and target guards PASS; original068
+hashes/counts unchanged; owned DB/scratch/listeners cleaned,23,699,152KiB free.
+Combined with earlier repertoire:20 cases/two runs,not fresh Auth/PostgREST/all-platform
+release. One Jev call7208/433 tokens,$0.000302736 estimate;8/10 self-labels,two retained
+scope/rubric disagreements. Daily14calls54152/6696,$0.002274384 estimate,not invoice/
+Codex total.090 open; next connected native Android audio,integrated iOS/hosted unrun.
+
 1 October — [090 repertoire HTTP/COMMIT](../docs/reports/2026-10-01-repertoire-http-overlap.md),
 source/test `d448de5`, Jev tooling `062c034`, PASS locally. Actual handler/nativePG17
 service_role SQL via declared psql adapter: four mutations, new GET/Range/HEAD403/provider0,

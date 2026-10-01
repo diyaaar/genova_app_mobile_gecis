@@ -1,0 +1,15 @@
+{
+  "expected": {
+    "all_families": "supports",
+    "blanket_role": "contradicts",
+    "room_revoke": "supports",
+    "index_mapping": "supports",
+    "full_auth": "contradicts",
+    "stream": "contradicts",
+    "native_audio": "contradicts",
+    "load": "insufficient",
+    "close_brief": "contradicts",
+    "invoice": "contradicts"
+  },
+  "labelOwner": "Primary agent before inference; not independent review."
+}

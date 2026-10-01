@@ -16,29 +16,25 @@ Use [guide](gecis-rehberi.md), [work cycle](ai-calisma-duzeni.md), relevant
 v2 tickets to actor/Auth-session/choir with service-only SQL authority on every GET/HEAD;
 v1 fails 401 and revoked/switched v2 fails 403. Decision #32 and local implementation
 were approved; do not re-ask the policy. Already-streaming/offline bytes are not recalled.
-30 Sep local PG17 five-family SQL and two-session commit boundary (`70fd23e`) pass.
-Connected Auth/RLS/Deno/signed-loopback-S3 HTTP for all five families (`9773958`) passes
-exact full/range/HEAD and serial A→B old-URL refusal without provider hits after denial.
-Android current-v2 PDF page 1/40/cache clear/B-only and old A URL 403 pass locally.
-Installed Chrome web PDF recovery (`10e9b77`) passes declared v1/body faults and A→B;
-its function transport relay is not unmodified Kong or Android WebView proof.
+Historical local SQL `70fd23e`, five-family connected serial HTTP `9773958`, Android
+current-v2 PDF and Chrome recovery `10e9b77` PASS. Exact layers/relays remain in090.
 
 1 Oct `dc46c2a`: Android audio error latch/seek/401 renewal/tenant-clear/403 PASS,
 deliberately unsigned/synthetic issuance; not connected Auth/R2.
-`364cfe4`: connected Android native PDF v1 GET401 → one v2 renewal,65905B/hash,
-pages1/40+2/40, A→B cache/B-only/oldHEAD403/newPOST403 PASS. Local Auth/RLS/Deno/
-signed S3 with declared relay/runtime one-use credentials, not hosted/unmodified Kong.
+`364cfe4`: connected Android native PDF v1→v2/exact65905B/pages/cache/switch PASS;
+local Auth/RLS/Deno/signed S3 with declared relay, not hosted/unmodified Kong.
 1 Oct `d8139bc`: actual permanent Android `/koristler/<target>` WebView file flow PASS.
-Baseline v1 GET401/no renewal reproduced; one current-native-lease authority renewal,
-exact65905B/hash and real share sheet; A→B clears cache, renders `Shared B` profile,
-old A v2 HEAD403/provider0. Same helper, explicit synthetic local relay, no external share.
+One authority renewal/exact65905B/share sheet, A→B cache/B-profile/oldHEAD403/provider0.
+Explicit synthetic local relay, no external share. Details stay in090.
 Fresh mobile TS54/377, root106/1067/build, normal Android/iOS JS exports PASS.
 Not assignment-version Drive-exit: performance query/HomeworkCard still prefers legacy links.
-1 Oct `d448de5`: repertoire HTTP/COMMIT PASS for switch/role/member/session changes;
-new reads403/provider0, prior stream completes. Declared native-psql authority adapter,
-not fresh Auth/PostgREST. [Evidence/costs](reports/2026-10-01-repertoire-http-overlap.md):
-one Jev advisory$0.000207984, recorded daily13calls$0.001971648 estimated.
-**Next:** remaining four readers' HTTP/COMMIT; connected audio Auth/R2/native iOS NOT RUN.
+1 Oct `d448de5` repertoire + `cc20758` remaining-four: declared-adapter HTTP/COMMIT
+PASS,20 cases/two runs; new403/provider0, existing stream completes. Four actual index
+registrations execute via strict Supabase-fetch/psql adapter, not fresh Auth/PostgREST.
+Chat retains independent room grant after unrelated choir-role loss.
+[Evidence/costs](reports/2026-10-01-private-file-families-http-overlap.md): Jev8/10 labels,
+two retained disagreements; recorded daily14calls$0.002274384 estimated, not invoice.
+**Next:** connected native Android audio Auth/R2; integrated native iOS NOT RUN.
 Hosted backup/ordered rollout is a separate later checkpoint; 090 stays open.
 
 ## Preserved evidence and remediation
@@ -61,9 +57,8 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
-1 Oct owned emulator/app/reverse/VM/services/derived outputs cleaned; final23,776,212 KiB
-free, lowest17,577,012 KiB (090). Latest disposable native-DB/HTTP cleanup leaves
-23,695,880KiB free; original068 hashes/counts unchanged, no hosted/source-data write.
+1 Oct owned native/VM/DB/HTTP/derived outputs cleaned; latest23,699,152KiB free,
+lowest17,577,012KiB historical (090). Original068 hashes/counts unchanged.
 Keep original `genova_068_test_restore`, retained 068 backup, private manifests/journals,
 dependencies and existing AVD/global caches. Never rebuild deleted runtimes without preflight.
 Local scoped code/tests/commits/owned cleanup authorized. Hosted DB/Edge/provider, credentials,

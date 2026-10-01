@@ -1,0 +1,638 @@
+{
+  "packet": {
+    "model": "jev-1.13.0",
+    "state": {
+      "sourceHashes": {
+        "previous": "cfab7206dede451786009df8040c30abb110ba3f4395d5e363b6d72573db3cda",
+        "current": "a3df5d1364fd3b9aff6bcda2abf8e05b1aeba614f66ad9a78eb373d18e5901e1"
+      },
+      "runs": [
+        {
+          "timestamp": "2026-10-01T11:04:03.666Z",
+          "boundary": "Actual handler/R2 helper and HTTP, nativePG17/service_role SQL via explicit psql adapter. Synthetic session rows/direct signed-v2 fixture issuance, no Auth/PostgREST/entrypoint/hosted/native proof.",
+          "provider": "AWS4 signature-verified loopback object service",
+          "hits": 16,
+          "failures": 0
+        },
+        {
+          "timestamp": "2026-10-01T11:26:24.653Z",
+          "boundary": "Actual four index registrations/handler/ticket/R2 helper and HTTP, nativePG17/service_role SQL via explicit Supabase-fetch/psql adapter. Synthetic session rows/direct signed-v2 fixture issuance, no real Auth/PostgREST/POST/hosted/native proof.",
+          "provider": "AWS4 signature-verified loopback object service",
+          "hits": 67,
+          "failures": 0
+        }
+      ],
+      "observations": [
+        {
+          "family": "repertoire-file",
+          "change": "choir_switch",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 65905,
+            "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "repertoire-file",
+          "change": "role_removal",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 65905,
+            "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "repertoire-file",
+          "change": "membership_inactive",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 65905,
+            "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "repertoire-file",
+          "change": "session_deleted",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 65905,
+            "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "assignment-file",
+          "change": "choir_switch",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "assignment-file",
+          "change": "role_removal",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "assignment-file",
+          "change": "membership_inactive",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "assignment-file",
+          "change": "session_deleted",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "assignment-review-file",
+          "change": "choir_switch",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "assignment-review-file",
+          "change": "role_removal",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "assignment-review-file",
+          "change": "membership_inactive",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "assignment-review-file",
+          "change": "session_deleted",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "repertoire-comment-file",
+          "change": "choir_switch",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "repertoire-comment-file",
+          "change": "role_removal",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "repertoire-comment-file",
+          "change": "membership_inactive",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "repertoire-comment-file",
+          "change": "session_deleted",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 48,
+            "sha256": "eb2a1929367ffcb8ffc6fbd98f684a36928e46e1aa504cf10a45407d02ffe002",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "chat-media-file",
+          "change": "choir_switch",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 70,
+            "sha256": "b0e8a8eb92c36f8866407013c607f13127ae9f48b7f6750f236851d23426664d",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "chat-media-file",
+          "change": "room_membership_removed",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 70,
+            "sha256": "b0e8a8eb92c36f8866407013c607f13127ae9f48b7f6750f236851d23426664d",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "chat-media-file",
+          "change": "membership_inactive",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 70,
+            "sha256": "b0e8a8eb92c36f8866407013c607f13127ae9f48b7f6750f236851d23426664d",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        },
+        {
+          "family": "chat-media-file",
+          "change": "session_deleted",
+          "before": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ],
+          "after": [
+            "GET:403/provider0",
+            "GET/Range:403/provider0",
+            "HEAD:403/provider0"
+          ],
+          "held": "GET:403/provider0",
+          "stream": {
+            "firstBytesBeforeCommit": 32,
+            "completedBytes": 70,
+            "sha256": "b0e8a8eb92c36f8866407013c607f13127ae9f48b7f6750f236851d23426664d",
+            "freshDenials": [
+              "GET:403/provider0",
+              "GET/Range:403/provider0",
+              "HEAD:403/provider0"
+            ]
+          }
+        }
+      ],
+      "independent_chat_grant": [
+        {
+          "family": "chat-media-file",
+          "change": "independent_choir_role",
+          "afterRoleCommit": [
+            "GET:200/provider1",
+            "GET/Range:206/provider1",
+            "HEAD:200/provider1"
+          ]
+        }
+      ],
+      "method": "Actual HTTP with explicit peer COMMIT acknowledgements, before-SQL and first-byte stream barriers. Older repertoire handler dependency adapter; newer four literal production index imports capture Deno.serve, preserving real mappings/key checks; Supabase fetch requests strictly parsed then executed under service_role in nativePG17. Synthetic Auth rows/direct signed-v2 issuance, not real Auth/PostgREST/POST. These are primary self-reviewed tests, not independent review.",
+      "policy": "Refuse new online requests after loss of the applicable access grant; preserve independent chat-room membership despite unrelated choir-role loss. Already-streaming/offline bytes cannot be recalled. Model advises only; observed tests/source own acceptance.",
+      "limits": "Connected native audio, native iOS, hosted/provider/release remain NOT RUN. No load benchmark or verified invoice. Token/unit-price costs are estimates. Whole090 stays open."
+    },
+    "questions": {
+      "all_families": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this claim: The combined two local runs establish actual HTTP/COMMIT observations for all five private-file families under the explicitly declared SQL transport adapters.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and scope.",
+          "contradicts": "Evidence explicitly opposes the claim or declares the relevant gate unrun.",
+          "insufficient": "Evidence does not establish the claim; invent no runtime, scale or invoice proof."
+        }
+      },
+      "blanket_role": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this claim: Removing the chef choir role must deny the next chat-media request even when independent room membership remains valid.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and scope.",
+          "contradicts": "Evidence explicitly opposes the claim or declares the relevant gate unrun.",
+          "insufficient": "Evidence does not establish the claim; invent no runtime, scale or invoice proof."
+        }
+      },
+      "room_revoke": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this claim: Removing chat room membership after COMMIT denies new full GET, Range GET and HEAD without provider access.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and scope.",
+          "contradicts": "Evidence explicitly opposes the claim or declares the relevant gate unrun.",
+          "insufficient": "Evidence does not establish the claim; invent no runtime, scale or invoice proof."
+        }
+      },
+      "index_mapping": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this claim: The remaining-four run executes the actual four production index registrations, metadata mappings and R2 object-key checks using a declared test-only Supabase-fetch/psql adapter.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and scope.",
+          "contradicts": "Evidence explicitly opposes the claim or declares the relevant gate unrun.",
+          "insufficient": "Evidence does not establish the claim; invent no runtime, scale or invoice proof."
+        }
+      },
+      "full_auth": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this claim: These two overlap runs retested real Supabase Auth login, authenticated ticket POST issuance and actual PostgREST transport.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and scope.",
+          "contradicts": "Evidence explicitly opposes the claim or declares the relevant gate unrun.",
+          "insufficient": "Evidence does not establish the claim; invent no runtime, scale or invoice proof."
+        }
+      },
+      "stream": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this claim: An already-streaming download finishing after COMMIT violates the approved next-online-request refusal contract.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and scope.",
+          "contradicts": "Evidence explicitly opposes the claim or declares the relevant gate unrun.",
+          "insufficient": "Evidence does not establish the claim; invent no runtime, scale or invoice proof."
+        }
+      },
+      "native_audio": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this claim: The remaining-four HTTP evidence closes actual connected native Android audio Auth/R2 acceptance.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and scope.",
+          "contradicts": "Evidence explicitly opposes the claim or declares the relevant gate unrun.",
+          "insufficient": "Evidence does not establish the claim; invent no runtime, scale or invoice proof."
+        }
+      },
+      "load": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this claim: These observations establish acceptable load performance for100 concurrently active choir tenants.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and scope.",
+          "contradicts": "Evidence explicitly opposes the claim or declares the relevant gate unrun.",
+          "insufficient": "Evidence does not establish the claim; invent no runtime, scale or invoice proof."
+        }
+      },
+      "close_brief": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this claim: All mandatory090 gates are now complete and the entire brief can close.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and scope.",
+          "contradicts": "Evidence explicitly opposes the claim or declares the relevant gate unrun.",
+          "insufficient": "Evidence does not establish the claim; invent no runtime, scale or invoice proof."
+        }
+      },
+      "invoice": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this claim: Returned token counts and the documented unit price establish an independently verified provider invoice total.",
+        "criteria": {
+          "supports": "Evidence establishes the exact claim and scope.",
+          "contradicts": "Evidence explicitly opposes the claim or declares the relevant gate unrun.",
+          "insufficient": "Evidence does not establish the claim; invent no runtime, scale or invoice proof."
+        }
+      }
+    }
+  },
+  "requestSha256": "fed26b8377edb9052d59f5db9c902b9c109d8800a225a504e349837c36a1dfe2",
+  "sourceSha256": "a3df5d1364fd3b9aff6bcda2abf8e05b1aeba614f66ad9a78eb373d18e5901e1",
+  "previousSha256": "cfab7206dede451786009df8040c30abb110ba3f4395d5e363b6d72573db3cda"
+}

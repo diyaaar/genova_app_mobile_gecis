@@ -16,29 +16,25 @@ and a test-only function relay, not unmodified Kong or WebView.
 
 1 Oct [general check-up](../docs/reports/2026-10-01-project-checkup.md) found stale WF-013
 policy wording and oversized duplicate indexes; current pointers corrected, history retained.
-Actual Android audio 401 failed because Expo's transient error was erased by normal ticks; fix `dc46c2a`.
-Source/player-scoped native error latch fixes that reproduced failure; async seek completion
-cannot restart a cleared owner. Final API36 Release proves bounded 401 renewal, seek4/
-expiry resume >=4.2s, pause/seek2/resume, tenant clear and 403 without re-ticket.
-Mobile TS/51 suites/314 tests, root 106/1066/build and normal iOS/Android JS exports pass.
-Audio ticket service is deliberately synthetic/unsigned; no Auth/SQL/S3/native-v1 proof.
+`dc46c2a` fixes reproduced Android audio transient-error loss and stale seek restart;
+actual API36 bounded401 renewal/seek/resume/tenant-clear/403 PASS, deliberately
+unsigned synthetic ticket service, not Auth/SQL/S3/native-v1. Details/gates in090.
 1 Oct `364cfe4` connected Android native PDF valid-v1 GET401 → one real v2 renewal,
-exact65905B/hash, visible pages1/40 and2/40, A→B cache clear/B-only, oldHEAD403/newPOST403 PASS.
-Actual Auth/RLS/Deno/signed loopback S3; declared URL substitution/observation relay,
-runtime-only one-use credentials, no build password. Not hosted R2/unmodified Kong.
+exact65905B/pages1+2/40/cache/B-only/oldHEAD403/newPOST403 PASS. Actual local Auth/RLS/
+Deno/signed S3 with declared relay/runtime-only credentials; not hosted/unmodified Kong.
 1 Oct `d8139bc`: actual permanent Android korist-detail WebView file flow PASS: baseline
-v1 GET401/no recovery reproduced, one authority renewal with current native lease,
-65905B/hash/real share sheet, A→B cache clear/`Shared B` profile/oldHEAD403/provider0.
-Same helper plus explicit local relay; not external sharing or assignment-version Drive-exit.
+one authority renewal/65905B/share sheet/cache/B-profile/oldHEAD403/provider0.
+Explicit local relay; not external sharing or assignment-version Drive-exit.
 Fresh mobile TS54/377, root106/1067/build and normal Android/iOS JS exports PASS.
-1 Oct `d448de5`: repertoire HTTP/COMMIT PASS for switch/role/member/session changes;
-new reads403/provider0, prior stream completes. Declared native-psql adapter, not fresh
-Auth/PostgREST. [Evidence/costs](../docs/reports/2026-10-01-repertoire-http-overlap.md):
-one Jev advisory$0.000207984, daily13calls$0.001971648 estimated, not invoice.
-Remaining four-family HTTP overlap/connected audio Auth/R2 NOT RUN.
+1 Oct `d448de5` repertoire + `cc20758` remaining-four: declared-adapter HTTP/COMMIT
+PASS,20 cases/two runs; new403/provider0, existing stream completes. Four actual index
+registrations via strict Supabase-fetch/psql, not fresh Auth/PostgREST. Chat preserves
+independent room grant after unrelated role loss. [Evidence/costs](../docs/reports/2026-10-01-private-file-families-http-overlap.md):
+Jev8/10 self-labels/two retained disagreements; daily14calls$0.002274384 estimated.
+Connected native Android audio Auth/R2 remains NOT RUN.
 Native iOS audio error-latch/seek acceptance is scheduled at 090's
 integrated both-platform private-client checkpoint before release; JS export does not close it.
-**Next local action:** remaining four readers' HTTP/COMMIT acceptance. Performance query/HomeworkCard
+**Next local action:** connected native Android audio Auth/R2 acceptance. Performance query/HomeworkCard
 legacy-link/assignment-version integration remains a follow-up. Hosted rollout separately gated.
 
 ## Preserved historical evidence
@@ -60,7 +56,7 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary agent is sole writer. 1 Oct owned emulator/app/reverse/connected runtime/VM and
-generated outputs cleaned; latest disposable native DB/HTTP cleanup leaves23,695,880KiB
+generated outputs cleaned; latest disposable native DB/HTTP cleanup leaves23,699,152KiB
 free, original068 row hashes/counts unchanged (090).
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
 global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;
