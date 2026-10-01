@@ -2,7 +2,8 @@
 
 Status: IN PROGRESS / local v2 implementation and synthetic acceptance PASS on
 30 September 2026; Android synthetic audio and connected stale-v1 PDF recovery PASS on 1 October.
-Five-family local HTTP overlap and connected native Android audio now have bounded evidence; native-iOS,
+Five-family local HTTP overlap, connected native Android audio and current assignment-version
+Android WebView now have bounded evidence ([latest record](../reports/2026-10-01-connected-android-assignment-webview-acceptance.md)); native-iOS,
 hosted and release gates remain open. Primary agent,
 single writer. No hosted release authority.
 One result: uniform online next-request access-after-revocation for five private file
@@ -109,7 +110,7 @@ provider copy, push/deploy and actual Android/iOS device checks remain separatel
 | Decision #32 and 090 cross-links/consistency | Yes for this record | PASS | 30 September local link scan, `git diff --check` and scoped self-review; no source or runtime gate claimed |
 | Legacy v1 denial and compatibility checkpoint approved | Yes before implementation | PASS locally | Owner approved bounded local work on 30 September; v1 GET/HEAD now returns 401 in local tests. Hosted release was not approved. |
 | Five-family DB/Edge implementation and synthetic two-choir acceptance | Yes after contract selection | PASS locally | Disposable PG17 SQL matrix; service-only RPC; real local Auth/RLS/PostgREST/Edge + signed loopback S3 for repertoire; A/B same and separate sessions. Details below. |
-| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and actual permanent Android WebView recovery PASS locally. Five connected serial HTTP readers PASS historically. Local overlap: repertoire dependency adapter plus four actual index registrations/Supabase-fetch-to-psql adapter PASS on 1 October; not fresh Auth/PostgREST. Connected native Android audio actual Auth/RLS/POST/Deno/signed loopback storage PASS at6fed2ac, with declared v1/client-deadline/earlier-v2/relay faults; native iOS remains NOT RUN. |
+| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and actual permanent Android WebView recovery PASS locally. Five connected serial HTTP readers PASS historically. Local overlap: repertoire dependency adapter plus four actual index registrations/Supabase-fetch-to-psql adapter PASS on 1 October; not fresh Auth/PostgREST. Connected native Android audio actual Auth/RLS/POST/Deno/signed loopback storage PASS at6fed2ac, with declared v1/client-deadline/earlier-v2/relay faults. Current assignment-version connected Android WebView/native PDF/B switch/old GET/HEAD403 PASS at216b996 with explicit local API/listener adapters; latest report above. Native iOS remains NOT RUN. |
 | Hosted cutover/public Drive withdrawal/offline deletion/device/beta | Later separate authority | NOT RUN | This preparation cannot accept these layers |
 
 Required NOT RUN keeps 090 open. This local implementation may be committed as a partial checkpoint;
@@ -1182,3 +1183,89 @@ Next actual Android gate is now connected assignment-version WebView/Auth/RLS/Ed
 bytes with A→B teardown and prior URL denial. Existing Android legacy-WebView and five-family
 server results remain historical layers, not a substitute. Integrated native iOS/hosted/release
 gates remain open;090 is still IN PROGRESS. No external mutation or push.
+
+### Connected Android assignment-version work card — 1 October
+
+Start main `d5cc95f`, only unrelated CLI marker dirty. Read AGENTS, handoff/active context,
+transition guide/work cycle,095, route ownership/decisions28–32 and delivery resource controls.
+Historical legacy WebView cannot accept the new assignment family. One writer; no delegation.
+Observable result: actual permanent Android chorist WebView opens the current immutable assignment
+version through real local Auth/RLS/assignment-file Edge/signed synthetic storage, then actual
+product A→B selection clears ephemeral bytes and previously issued A GET/HEAD refuses403/provider0.
+Keep stale legacy link as a negative control, not an authorization fallback. No native rewrite.
+
+Three actions: add narrow explicit assignment mode to existing091 fixture/090 WebView config with
+focused guards; guarded isolated runtime and Android Release flow; fresh mobile/root gates,
+review/record and owned cleanup. Allowed:091 fixture plus one bounded assignment helper/tests;
+090 WebView acceptance config/runtime/tests and loopback plugin guard if needed;090/report/status.
+The existing lib/embedded-web-runtime.ts compile-time-only090 route policy and its tests may
+select the exact54491 file origin for explicit assignment-family acceptance; normal policy unchanged.
+components/EmbeddedWebBridgeProvider.tsx passes that statically compiled family flag; no live
+configuration or normal origin rule is changed. The product ticket-client same-origin check stays.
+Bounded090_assignment_api_relay.ts routes only Auth/REST to genuine Kong54493 and assignment-file
+to the observer/actual Deno. Add54493 to the owned loopback tunnel/cleanup inventory.
+No product authority/schema change unless a reproducible defect requires a scoped red regression.
+Existing product versions/policies stay unchanged; only disposable synthetic database rows are seeded.
+
+Resources:23164104KiB free; no owned runtime/build/listener currently present. Preserve Gradle
+5533696KiB, AVD3498760KiB, dependencies, original068 DB and global caches. Before heavy setup,
+verify installed SDK/JDK and stage-wise projected peak. Forecast <=11GiB additional, based on
+prior connected run's observed ~8GiB growth with a safety margin: isolated VM/images/schema<=6GiB,
+Android build/AVD growth<=3GiB, root web builds/evidence<=2GiB. Projected11629768KiB >10485760
+floor; stop allocation if new evidence invalidates the estimate. Reassess before every heavy phase.
+Owned targets:genova090 Colima VM/data,genova-090-runtime stack/volume;spike/090-runtime and exact
+093 hold;loopback54491/54492/8000/8001/18092/31090;emulator5580 acceptance app/reverses;
+generated mobile android/.expo and root.next/coverage. Remove after final dependent checks.
+No hardware/provider/hosted DB/deploy/credentials/real users/data, external share or push authority.
+Rollback is acceptance-source revert and exact disposable runtime teardown, not production DB down.
+TypeSafe advisory only; no new call required for deterministic fixture wiring. Today-only key remains
+unpersisted; any subsequent bounded inference needs frozen redacted evidence and explicit cost record.
+
+| Checkpoint criterion | Required? | Status | Evidence / boundary |
+|---|---|---|---|
+| Explicit assignment-family/config/credential/loopback guards; legacy mode preserved | Yes | PASS locally | Focused58 root cases including fixture11/policy23/provider24; mobile config19; normal flags off |
+| Genuine Auth/RLS/assignment Edge current pointer; foreign version refusals | Yes | PASS locally | Disposable real Auth/PG17/RLS/PostgREST and actual Deno index; foreign B POST403/provider0; explicit listener/API adapters |
+| Actual Android permanent page chooses assignment version over stale Drive; native exact PDF/hash and share sheet | Yes | PASS locally | Actual capability65905B/hash, system sheet inspected then dismissed; no external viewer/send claim |
+| Product B switch clears ephemeral bytes; old GET/HEAD403/provider0, B profile | Yes | PASS locally | Same native AuthStore session, ephemeral directory absent, HEAD403/GET403/provider0 and visible Shared B |
+| Fresh mobile TS/full tests, root gate, guard-off exports, review and cleanup | Yes | PASS locally | Mobile55/404, root110/1108/build, normal Android/iOS exports; source068 unchanged, owned outputs removed; scoped self-review only |
+| Native iOS/hosted/physical phone/stores/whole090 | Broader release | NOT RUN | Integrated milestone and separate authority retained |
+
+Local rows executed at216b996; broader required NOT RUN keeps090 open.
+
+Preparation reassessment: first CLI start missed the explicitly disabled VM forwarding; repaired
+with owned loopback SSH tunnel. One pre-UI fixture was intentionally stopped to load preflight
+support and failed its required unconsumed-channel assertion (not accepted). Initial Android web
+build lacked the existing acceptance-origin flag; after source inspection a guarded build retained
+the54491 service origin. First retry raced Next readiness (ERR_EMPTY_RESPONSE); verified host200
+before retry. Actual page/bridge then ran and assignment POST200 reached Deno, but the declared
+observer returned18092 while the private-ticket client correctly requires its54491 endpoint origin.
+No weaker product check: next bounded action is matching URL normalization and exact assignment-only
+acceptance route-policy origin, with red regression, same genuine Auth/RLS and explicit relay boundary.
+Red policy test reproduced missing assignment54491 origin; focused34 cases then passed. On the
+next page run, POST200 still could not publish: the observer's rewritten JSON response had lost
+the real handler's CORS header. Added only the exact31090 origin to the loopback observer response,
+retaining same-origin validation. Two partial fixtures correctly failed the missing-HEAD acceptance;
+neither is a PASS. Same APK with cleared synthetic app data is sufficient; no further native build.
+Actual final page POST/HEAD200 exposed a product defect: isProtectedFileAnchor recognizes only
+repertoire-file, so assignment-file takes rejected external navigation instead of file.open.request.
+Authorized bounded repair: exact five-reader pathname routing in EmbeddedWebBridgeProvider and
+component regressions, retaining legacy/download behavior and native consent/authority. Test
+four missing families and lookalike rejection red→green; rerun production web build and actual
+Android flow. No permission/schema/provider change and no new native rewrite/build needed.
+
+### Connected current assignment-version Android result — 1 October
+
+Local checkpoint accepted at `216b996`; [dated report](../reports/2026-10-01-connected-android-assignment-webview-acceptance.md)
+owns the exact HTTP/native observations, setup failures, source preservation and cleanup.
+POST200/provider0 → HEAD200/provider1 → GET200/provider1 → HEAD403/provider0 → GET403/provider0.
+Real native current-version PDF/hash and share sheet PASS; sheet dismissed without external sharing.
+Exact-path five-reader routing fixes the reproduced product gap; only assignment ran here.
+Fresh mobile TS55 suites/404 cases and root110 files/1108 cases/build PASS; normal Android/iOS
+JS exports PASS, not native iOS. Original068 five hashes/counts28/1/29/9/79 unchanged.
+Owned runtime/VM/emulator/derived outputs removed; final21940156KiB free, low16792772KiB.
+One bounded Jev call4394input/419output/479ms,$0.000184548 estimated;9/10 primary labels.
+Unrun-iOS disagreement and other low-confidence answers retained, not acceptance authority.
+Daily17calls65958input7962output,$0.002770236 estimated, not invoice. Key never persisted.
+Next integration milestone is measured iOS SDK/disk preflight and accumulated native private-client
+PDF/audio/WebView runtime acceptance. Hosted/provider/phone/beta/release gates remain separate;
+090 remains IN PROGRESS, no push or external mutation. Self-review is not independent review.

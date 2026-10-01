@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-10-01T18:41:46.475Z",
+  "result": "PASS",
+  "family": "assignment-file",
+  "reads": [
+    {
+      "method": "POST",
+      "status": 200,
+      "providerDelta": 0
+    },
+    {
+      "method": "HEAD",
+      "status": 200,
+      "providerDelta": 1
+    },
+    {
+      "method": "GET",
+      "status": 200,
+      "providerDelta": 1
+    },
+    {
+      "method": "HEAD",
+      "status": 403,
+      "providerDelta": 0
+    },
+    {
+      "method": "GET",
+      "status": 403,
+      "providerDelta": 0
+    }
+  ],
+  "contentLength": 65905,
+  "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+  "boundary": "Actual local Auth/RLS/Deno and Android permanent WebView; declared listener/URL relay; signature-verified synthetic storage, not hosted."
+}

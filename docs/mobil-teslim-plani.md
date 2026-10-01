@@ -35,8 +35,11 @@ pass; two-session SQL commit-boundary checks pass at `70fd23e`. Later Chrome/nat
 permanent Android WebView recovery, all-five declared-adapter HTTP/COMMIT and connected
 Android audio at `6fed2ac` pass locally. [Current evidence](reports/2026-10-01-connected-android-audio-acceptance.md)
 retains exact relays/faults; native iOS/hosted/device/release gates keep090 open.
-Next Android critical-path local outcome is current assignment-version private reading
-in the existing permanent WebView, not a native rewrite or blanket Drive-exit claim.
+`216b996` now accepts current assignment-version private reading in the permanent Android
+WebView with actual local Auth/RLS/Deno/signed synthetic bytes, B teardown and old GET/HEAD403.
+[Record](reports/2026-10-01-connected-android-assignment-webview-acceptance.md) retains adapter boundaries.
+Next integration milestone: measured iOS SDK/disk preflight, then accumulated native private-client
+PDF/audio/WebView acceptance. Not a native profile rewrite, hosted or blanket Drive-exit claim.
 [077](briefs/077-repertoire-mp3-r2-batch-3.md)
 remains an exact, unexecuted real-copy approval checkpoint. Neither block changes the
 Android-first critical path or promotes a local test to beta acceptance.

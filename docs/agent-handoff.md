@@ -27,13 +27,13 @@ PASS: v1 refusal/one renewal, injected client-deadline/seek/resume, B teardown/o
 Source-less native flags fixed by red→green regression; fresh mobile55/401, root107/1075
 and normal exports PASS. [Record/costs](reports/2026-10-01-connected-android-audio-acceptance.md):
 Jev10/11, recovery disagreement retained; daily15calls$0.002435034 estimate, not invoice.
-`ee7be64` [095](briefs/095-webview-current-assignment-file-reader.md): current assignment-version
-projection/shared version-first links accepted locally. Real-hook focused15, fresh root109/1090/build
-and final desktop/mobile Chrome8 PASS with intercepted synthetic HTTP, not Auth/RLS/Android.
-[Record/costs](reports/095/2026-10-01-acceptance.md): Jev9/9 labels, four low-confidence cases
-retained for primary review; daily16calls$0.002585688 estimate, not invoice.
-**Next Android critical path:** actual connected assignment-version WebView/Auth/RLS/Edge/private
-bytes, A→B and old URL refusal. Integrated native iOS NOT RUN; schedule its milestone, do not close090.
+`ee7be64` [095](briefs/095-webview-current-assignment-file-reader.md) preserves current-version links;
+`216b996` now accepts connected Android assignment WebView/Auth/RLS/Deno/signed synthetic bytes.
+Exact five-reader anchor routing repaired by red→green regression; actual native PDF/share sheet,
+B teardown and old GET/HEAD403/provider0 PASS. [Record](reports/2026-10-01-connected-android-assignment-webview-acceptance.md):
+fresh root110/1108, mobile55/404, guard-off exports; explicit API/listener adapters, no hosted proof.
+Jev9/10: unrun iOS disagreement retained; daily17calls$0.002770236 estimated, not invoice.
+**Next integration:** iOS SDK/disk preflight, then native PDF/audio/WebView acceptance; iOS NOT RUN, beta/hosted/release/090 open.
 
 ## Preserved evidence and remediation
 
@@ -55,8 +55,8 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
-1 Oct owned native/VM/DB/HTTP/derived outputs cleaned; latest095 final check23,235,824KiB free;
-historical090 low15,382,484KiB.095 did not start/touch a DB/VM/native runtime; original068 preserved.
+1 Oct owned native/VM/DB/HTTP/derived outputs cleaned; latest final21,940,156KiB free;
+current run low16,792,772KiB. Original068 five hashes/counts28/1/29/9/79 unchanged.
 Keep original `genova_068_test_restore`, retained 068 backup, private manifests/journals,
 dependencies and existing AVD/global caches. Never rebuild deleted runtimes without preflight.
 Local scoped code/tests/commits/owned cleanup authorized. Hosted DB/Edge/provider, credentials,

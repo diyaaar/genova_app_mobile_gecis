@@ -1,0 +1,147 @@
+{
+  "packet": {
+    "model": "jev-1.13.0",
+    "state": {
+      "sourceHashes": {
+        "docs/reports/090/2026-10-01-assignment-webview-http.json": "83437595e7ffc54864e1eb4f307e1f46b1bbd57cd25d81e054ba43a07b9220e9",
+        "docs/reports/090/2026-10-01-assignment-webview-native.txt": "3aacece4f8db3eff545de7b297b83c48223d49abf30f0d20842c768fd6aed0e9",
+        "components/EmbeddedWebBridgeProvider.tsx": "9cd3a384f21a7face8a9d4b661c5f23993cd2c0499abca9b238e2255a17a6ffc",
+        "lib/embedded-web-runtime.ts": "a8f547da5d68d1edf25d831642b27171fd84837bf43705ca2f8e4b64cc28a82e"
+      },
+      "http": {
+        "timestamp": "2026-10-01T18:41:46.475Z",
+        "result": "PASS",
+        "family": "assignment-file",
+        "reads": [
+          {
+            "method": "POST",
+            "status": 200,
+            "providerDelta": 0
+          },
+          {
+            "method": "HEAD",
+            "status": 200,
+            "providerDelta": 1
+          },
+          {
+            "method": "GET",
+            "status": 200,
+            "providerDelta": 1
+          },
+          {
+            "method": "HEAD",
+            "status": 403,
+            "providerDelta": 0
+          },
+          {
+            "method": "GET",
+            "status": 403,
+            "providerDelta": 0
+          }
+        ],
+        "contentLength": 65905,
+        "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+        "boundary": "Actual local Auth/RLS/Deno and Android permanent WebView; declared listener/URL relay; signature-verified synthetic storage, not hosted."
+      },
+      "nativeTrace": "10-01 21:39:30.039  4572  4592 I ReactNativeJS: [090 WebView] Auth PASS one-use runtime credential\n10-01 21:39:30.144  4572  4592 I ReactNativeJS: [090 WebView] ephemeral clear PASS\n10-01 21:39:30.731  4572  4592 I ReactNativeJS: [090 WebView] diagnostic bridge.ready:accepted:accepted\n10-01 21:39:30.732  4572  4592 I ReactNativeJS: [090 WebView] bridge awaiting-ack:chorister-detail\n10-01 21:39:30.809  4572  4592 I ReactNativeJS: [090 WebView] diagnostic bridge.challenge.ack:accepted:accepted\n10-01 21:39:30.809  4572  4592 I ReactNativeJS: [090 WebView] bridge loading-lease:chorister-detail\n10-01 21:39:30.809  4572  4592 I ReactNativeJS: [090 WebView] bridge awaiting-web-proof:chorister-detail\n10-01 21:39:30.981  4572  4592 I ReactNativeJS: [090 WebView] diagnostic navigation.state:accepted:accepted\n10-01 21:39:30.981  4572  4592 I ReactNativeJS: [090 WebView] bridge running:chorister-detail\n10-01 21:40:16.883  4572  4592 I ReactNativeJS: [090 WebView] diagnostic file.open.request:accepted:accepted\n10-01 21:40:30.373  4572  4592 I ReactNativeJS: [090 WebView] native PDF/hash PASS 65905B\n10-01 21:40:30.373  4572  4592 I ReactNativeJS: [090 WebView] actual share sheet RUNNING\n10-01 21:41:10.197  4572  4592 I ReactNativeJS: [090 WebView] actual share sheet returned\n10-01 21:41:12.449  4572  4592 I ReactNativeJS: [090 WebView] ephemeral clear PASS\n10-01 21:41:12.509  4572  4592 I ReactNativeJS: [090 WebView] ephemeral clear PASS\n10-01 21:41:12.529  4572  4592 I ReactNativeJS: [090 WebView] B old A URL PASS 403/no provider assignment-file\n10-01 21:41:12.879  4572  4592 I ReactNativeJS: [090 WebView] diagnostic bridge.ready:accepted:accepted\n10-01 21:41:12.879  4572  4592 I ReactNativeJS: [090 WebView] bridge awaiting-ack:profile\n10-01 21:41:12.896  4572  4592 I ReactNativeJS: [090 WebView] diagnostic bridge.challenge.ack:accepted:accepted\n10-01 21:41:12.896  4572  4592 I ReactNativeJS: [090 WebView] bridge loading-lease:profile\n10-01 21:41:12.896  4572  4592 I ReactNativeJS: [090 WebView] bridge awaiting-web-proof:profile\n10-01 21:41:13.046  4572  4592 I ReactNativeJS: [090 WebView] diagnostic navigation.state:accepted:accepted\n10-01 21:41:13.046  4572  4592 I ReactNativeJS: [090 WebView] bridge running:profile\n",
+      "routing": "function isProtectedFileAnchor(anchor: HTMLAnchorElement, url: URL): boolean {\n  return anchor.hasAttribute('download')\n    || url.pathname.startsWith('/api/drive-file')\n    || ['/functions/v1/repertoire-file', '/functions/v1/assignment-file',\n      '/functions/v1/assignment-review-file', '/functions/v1/repertoire-comment-file',\n      '/functions/v1/chat-media-file'].includes(url.pathname);\n}\n\n",
+      "routePolicy": "export function readComposedAcceptanceRoutePolicy(\n  environment: ComposedAcceptanceEnvironment,\n): AppRoutePolicy | undefined {\n  if (environment.NEXT_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE === '1') {\n    const appOrigin = exactLoopbackOrigin(environment.NEXT_PUBLIC_GENOVA_090_APP_ORIGIN, '31090');\n    const serviceOrigin = exactLoopbackOrigin(environment.NEXT_PUBLIC_SUPABASE_URL, '54491');\n    if (!appOrigin || !serviceOrigin || environment.NEXT_PUBLIC_GENOVA_033_ACCEPTANCE === '1' ||\n        ![undefined, 'repertoire-file', 'assignment-file'].includes(environment.NEXT_PUBLIC_GENOVA_090_WEBVIEW_FAMILY)) {\n      throw new Error('090-webview-local-runtime-refused');\n    }\n    return Object.freeze({ appOrigin, protectedFileOrigins: Object.freeze(\n      environment.NEXT_PUBLIC_GENOVA_090_WEBVIEW_FAMILY === 'assignment-file'\n        ? ['http://127.0.0.1:18092', serviceOrigin] : ['http://127.0.0.1:18092']) });\n  }\n  if (environment.NEXT_PUBLIC_GENOVA_033_ACCEPTANCE !== '1') return undefined;\n  const appOrigin = exactLoopbackOrigin(environment.NEXT_PUBLIC_GENOVA_033_APP_ORIGIN, '18033');\n  const serviceOrigin = exactLoopbackOrigin(environment.NEXT_PUBLIC_SUPABASE_URL, '54321');\n  if (!appOrigin || !serviceOrigin) throw new Error('033-local-runtime-refused');\n  return Object.freeze({ appOrigin, protectedFileOrigins: Object.freeze([serviceOrigin]) });\n}\n\n",
+      "tests": "Primary red→green: missing four-family file.open routes and one repertoire-lookalike, then actual provider24/24; focused combined58/58. Mobile TS and55/404 fresh PASS. Normal Android1440/iOS1440 JS exports and prebuild guard XML/reference absent PASS. These exports are not native iOS runtime.",
+      "method": "Genuine disposable local Auth/PG17/PostgREST/RLS and literal Deno assignment-file handler; declared loopback API routing and URL normalization forward unchanged signed queries. Synthetic AWS4-verified object server, not hosted R2. Real Android API36 Release/native capability/PDF byte SHA256/system share sheet. Visually inspected sheet, dismissed with Back; no external target selected or file sent. Actual B profile Shared B observed. No authority/schema changes. Self-review only.",
+      "limits": "Hosted/live deployment and actual native iOS/physical phone not run. External PDF viewer page rendering not observed. No load test or verified invoice.090 remains open, Android beta and whole commercial product not accepted. Jev advises only; SQL/Auth/Deno decide authorization, tests and primary engineer own acceptance."
+    },
+    "questions": {
+      "connected": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: This checkpoint exercises the current immutable assignment version in the permanent Android chorist WebView, with genuine local Auth/RLS/Deno and exact signature-verified synthetic PDF bytes.",
+        "criteria": {
+          "supports": "Observed evidence or explicit source establishes this exact claim in its stated scope.",
+          "contradicts": "Explicit method or observed facts contradict this claim; an unrun gate alone is not a contradiction.",
+          "insufficient": "Behavior or measured outcome is unobserved; missing evidence does not prove its opposite."
+        }
+      },
+      "routing": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The component repair recognizes the five exact private-reader paths for native file.open.request, while a repertoire-file-lookalike does not become a private reader.",
+        "criteria": {
+          "supports": "Observed evidence or explicit source establishes this exact claim in its stated scope.",
+          "contradicts": "Explicit method or observed facts contradict this claim; an unrun gate alone is not a contradiction.",
+          "insufficient": "Behavior or measured outcome is unobserved; missing evidence does not prove its opposite."
+        }
+      },
+      "switch": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: Actual native choir B selection clears the ephemeral file directory; the earlier A URL is refused on GET and HEAD without touching the object provider.",
+        "criteria": {
+          "supports": "Observed evidence or explicit source establishes this exact claim in its stated scope.",
+          "contradicts": "Explicit method or observed facts contradict this claim; an unrun gate alone is not a contradiction.",
+          "insufficient": "Behavior or measured outcome is unobserved; missing evidence does not prove its opposite."
+        }
+      },
+      "normal": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: Explicit assignment-only loopback acceptance configuration does not broaden the normal production route policy; normal native exports and guard removal are separately checked.",
+        "criteria": {
+          "supports": "Observed evidence or explicit source establishes this exact claim in its stated scope.",
+          "contradicts": "Explicit method or observed facts contradict this claim; an unrun gate alone is not a contradiction.",
+          "insufficient": "Behavior or measured outcome is unobserved; missing evidence does not prove its opposite."
+        }
+      },
+      "hosted": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The object server used here is hosted production Cloudflare R2, and this run deployed live Supabase changes.",
+        "criteria": {
+          "supports": "Observed evidence or explicit source establishes this exact claim in its stated scope.",
+          "contradicts": "Explicit method or observed facts contradict this claim; an unrun gate alone is not a contradiction.",
+          "insufficient": "Behavior or measured outcome is unobserved; missing evidence does not prove its opposite."
+        }
+      },
+      "ios": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The integrated native iOS assignment WebView flow works.",
+        "criteria": {
+          "supports": "Observed evidence or explicit source establishes this exact claim in its stated scope.",
+          "contradicts": "Explicit method or observed facts contradict this claim; an unrun gate alone is not a contradiction.",
+          "insufficient": "Behavior or measured outcome is unobserved; missing evidence does not prove its opposite."
+        }
+      },
+      "viewer": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: An external PDF viewer successfully renders the downloaded file's pages.",
+        "criteria": {
+          "supports": "Observed evidence or explicit source establishes this exact claim in its stated scope.",
+          "contradicts": "Explicit method or observed facts contradict this claim; an unrun gate alone is not a contradiction.",
+          "insufficient": "Behavior or measured outcome is unobserved; missing evidence does not prove its opposite."
+        }
+      },
+      "load": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The application performs acceptably with100 concurrently active choir tenants.",
+        "criteria": {
+          "supports": "Observed evidence or explicit source establishes this exact claim in its stated scope.",
+          "contradicts": "Explicit method or observed facts contradict this claim; an unrun gate alone is not a contradiction.",
+          "insufficient": "Behavior or measured outcome is unobserved; missing evidence does not prove its opposite."
+        }
+      },
+      "close": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The entire090 brief and Android beta can now be marked complete.",
+        "criteria": {
+          "supports": "Observed evidence or explicit source establishes this exact claim in its stated scope.",
+          "contradicts": "Explicit method or observed facts contradict this claim; an unrun gate alone is not a contradiction.",
+          "insufficient": "Behavior or measured outcome is unobserved; missing evidence does not prove its opposite."
+        }
+      },
+      "invoice": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: An independently verified provider invoice total is available.",
+        "criteria": {
+          "supports": "Observed evidence or explicit source establishes this exact claim in its stated scope.",
+          "contradicts": "Explicit method or observed facts contradict this claim; an unrun gate alone is not a contradiction.",
+          "insufficient": "Behavior or measured outcome is unobserved; missing evidence does not prove its opposite."
+        }
+      }
+    }
+  },
+  "requestSha256": "6634834f0088b0dea5dcd3356504a198bf80cc35599e5d08c5a0f54be3d26a1b"
+}

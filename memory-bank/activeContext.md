@@ -23,13 +23,14 @@ status regression fixed. Fresh mobile55/401, root107/1075, normal exports PASS.
 Jev10/11, recovery disagreement retained; daily15calls$0.002435034 estimated, not invoice.
 Native iOS audio error-latch/seek acceptance is scheduled at 090's
 integrated both-platform private-client checkpoint before release; JS export does not close it.
-`ee7be64` [095](../docs/briefs/095-webview-current-assignment-file-reader.md): current-version
-projection/shared private links, denial/late-source teardown and legacy compatibility accepted locally.
-Focused15, fresh root109/1090/build and final production desktop/mobile Chrome8 PASS with intercepted
-HTTP, not Android/Auth/RLS. [Record/costs](../docs/reports/095/2026-10-01-acceptance.md): Jev9/9 labels,
-four low-confidence cases retained; daily16calls$0.002585688 estimated, not invoice.
-**Next Android critical-path action:** connected actual assignment-version WebView/local Auth/RLS/
-Edge/signed private bytes, A→B teardown and old URL refusal. Hosted rollout separately gated;090 open.
+`ee7be64` [095](../docs/briefs/095-webview-current-assignment-file-reader.md) preserves current-version links.
+`216b996`: connected Android assignment WebView/local Auth/RLS/Deno/signed private bytes PASS;
+exact five-reader anchor regression repaired, native PDF/share sheet, B teardown/old GET/HEAD403/provider0.
+[Record](../docs/reports/2026-10-01-connected-android-assignment-webview-acceptance.md): fresh root110/1108,
+mobile55/404 and normal exports; explicit local adapters, not hosted proof. Jev9/10 retains unrun-iOS
+disagreement; daily17calls$0.002770236 estimated, not invoice.090 remains open.
+**Next integration action:** measured iOS SDK/disk preflight, then accumulated native private-client
+PDF/audio/WebView acceptance. iOS/physical phone/hosted/release remain separate unrun gates.
 
 ## Preserved historical evidence
 
@@ -50,8 +51,8 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary agent is sole writer. 1 Oct owned emulator/app/reverse/connected runtime/VM and
-generated outputs cleaned; latest095 final check leaves23,235,824KiB free.095 did not touch a DB/VM/native
-runtime; historical090 original068 row hashes/counts unchanged, preserve it.
+generated outputs cleaned; latest final leaves21,940,156KiB free, run low16,792,772KiB.
+Original068 five row hashes/counts28/1/29/9/79 unchanged, preserve it.
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
 global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;
 one heavy process, two-failure causal reassessment, no blind rebuild or broad cleanup.

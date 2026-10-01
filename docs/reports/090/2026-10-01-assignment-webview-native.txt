@@ -1,0 +1,23 @@
+10-01 21:39:30.039  4572  4592 I ReactNativeJS: [090 WebView] Auth PASS one-use runtime credential
+10-01 21:39:30.144  4572  4592 I ReactNativeJS: [090 WebView] ephemeral clear PASS
+10-01 21:39:30.731  4572  4592 I ReactNativeJS: [090 WebView] diagnostic bridge.ready:accepted:accepted
+10-01 21:39:30.732  4572  4592 I ReactNativeJS: [090 WebView] bridge awaiting-ack:chorister-detail
+10-01 21:39:30.809  4572  4592 I ReactNativeJS: [090 WebView] diagnostic bridge.challenge.ack:accepted:accepted
+10-01 21:39:30.809  4572  4592 I ReactNativeJS: [090 WebView] bridge loading-lease:chorister-detail
+10-01 21:39:30.809  4572  4592 I ReactNativeJS: [090 WebView] bridge awaiting-web-proof:chorister-detail
+10-01 21:39:30.981  4572  4592 I ReactNativeJS: [090 WebView] diagnostic navigation.state:accepted:accepted
+10-01 21:39:30.981  4572  4592 I ReactNativeJS: [090 WebView] bridge running:chorister-detail
+10-01 21:40:16.883  4572  4592 I ReactNativeJS: [090 WebView] diagnostic file.open.request:accepted:accepted
+10-01 21:40:30.373  4572  4592 I ReactNativeJS: [090 WebView] native PDF/hash PASS 65905B
+10-01 21:40:30.373  4572  4592 I ReactNativeJS: [090 WebView] actual share sheet RUNNING
+10-01 21:41:10.197  4572  4592 I ReactNativeJS: [090 WebView] actual share sheet returned
+10-01 21:41:12.449  4572  4592 I ReactNativeJS: [090 WebView] ephemeral clear PASS
+10-01 21:41:12.509  4572  4592 I ReactNativeJS: [090 WebView] ephemeral clear PASS
+10-01 21:41:12.529  4572  4592 I ReactNativeJS: [090 WebView] B old A URL PASS 403/no provider assignment-file
+10-01 21:41:12.879  4572  4592 I ReactNativeJS: [090 WebView] diagnostic bridge.ready:accepted:accepted
+10-01 21:41:12.879  4572  4592 I ReactNativeJS: [090 WebView] bridge awaiting-ack:profile
+10-01 21:41:12.896  4572  4592 I ReactNativeJS: [090 WebView] diagnostic bridge.challenge.ack:accepted:accepted
+10-01 21:41:12.896  4572  4592 I ReactNativeJS: [090 WebView] bridge loading-lease:profile
+10-01 21:41:12.896  4572  4592 I ReactNativeJS: [090 WebView] bridge awaiting-web-proof:profile
+10-01 21:41:13.046  4572  4592 I ReactNativeJS: [090 WebView] diagnostic navigation.state:accepted:accepted
+10-01 21:41:13.046  4572  4592 I ReactNativeJS: [090 WebView] bridge running:profile

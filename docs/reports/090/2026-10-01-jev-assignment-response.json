@@ -1,0 +1,113 @@
+{
+  "timestamp": "2026-10-01T18:46:37.838Z",
+  "requestSha256": "6634834f0088b0dea5dcd3356504a198bf80cc35599e5d08c5a0f54be3d26a1b",
+  "elapsedMs": 479,
+  "model": "jev-1.13.0",
+  "usage": {
+    "input_tokens": 4394,
+    "output_tokens": 419
+  },
+  "estimatedUsd": 0.000184548,
+  "answers": {
+    "connected": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.14,
+      "probabilities": {
+        "supports": 0.42,
+        "contradicts": 0.33,
+        "insufficient": 0.25
+      }
+    },
+    "routing": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.58,
+      "probabilities": {
+        "supports": 0.72,
+        "contradicts": 0.13,
+        "insufficient": 0.15
+      }
+    },
+    "switch": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.86,
+      "probabilities": {
+        "supports": 0.91,
+        "contradicts": 0.02,
+        "insufficient": 0.07
+      }
+    },
+    "normal": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.76,
+      "probabilities": {
+        "supports": 0.84,
+        "contradicts": 0.03,
+        "insufficient": 0.13
+      }
+    },
+    "hosted": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 1,
+      "probabilities": {
+        "supports": 0,
+        "contradicts": 1,
+        "insufficient": 0
+      }
+    },
+    "ios": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.27,
+      "probabilities": {
+        "supports": 0,
+        "contradicts": 0.52,
+        "insufficient": 0.48
+      }
+    },
+    "viewer": {
+      "type": "choice",
+      "choice": "insufficient",
+      "confidence": 0.63,
+      "probabilities": {
+        "supports": 0,
+        "contradicts": 0.25,
+        "insufficient": 0.75
+      }
+    },
+    "load": {
+      "type": "choice",
+      "choice": "insufficient",
+      "confidence": 0.93,
+      "probabilities": {
+        "supports": 0,
+        "contradicts": 0.05,
+        "insufficient": 0.95
+      }
+    },
+    "close": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.84,
+      "probabilities": {
+        "supports": 0,
+        "contradicts": 0.89,
+        "insufficient": 0.11
+      }
+    },
+    "invoice": {
+      "type": "choice",
+      "choice": "insufficient",
+      "confidence": 0.28,
+      "probabilities": {
+        "supports": 0,
+        "contradicts": 0.48,
+        "insufficient": 0.52
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "labelOwner": "Primary agent frozen before inference; advisory, not independent review or acceptance authority.",
+  "claims": {
+    "connected": "This checkpoint exercises the current immutable assignment version in the permanent Android chorist WebView, with genuine local Auth/RLS/Deno and exact signature-verified synthetic PDF bytes.",
+    "routing": "The component repair recognizes the five exact private-reader paths for native file.open.request, while a repertoire-file-lookalike does not become a private reader.",
+    "switch": "Actual native choir B selection clears the ephemeral file directory; the earlier A URL is refused on GET and HEAD without touching the object provider.",
+    "normal": "Explicit assignment-only loopback acceptance configuration does not broaden the normal production route policy; normal native exports and guard removal are separately checked.",
+    "hosted": "The object server used here is hosted production Cloudflare R2, and this run deployed live Supabase changes.",
+    "ios": "The integrated native iOS assignment WebView flow works.",
+    "viewer": "An external PDF viewer successfully renders the downloaded file's pages.",
+    "load": "The application performs acceptably with100 concurrently active choir tenants.",
+    "close": "The entire090 brief and Android beta can now be marked complete.",
+    "invoice": "An independently verified provider invoice total is available."
+  },
+  "expected": {
+    "connected": "supports", "routing": "supports", "switch": "supports", "normal": "supports",
+    "hosted": "contradicts", "ios": "insufficient", "viewer": "insufficient", "load": "insufficient",
+    "close": "contradicts", "invoice": "insufficient"
+  }
+}

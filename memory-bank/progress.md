@@ -503,3 +503,22 @@ Owned loopback/build/test output stopped/removed (~529.65MiB); final23235824KiB 
 runtime touched, original068/global caches/dependencies and unrelated CLI marker preserved.
 095 local-web result accepted;090 remains open. Next: actual connected Android assignment-version
 WebView/local Auth/RLS/Edge/signed synthetic bytes, A→B and old URL refusal. No push/deploy.
+
+## 1 October 2026 — connected Android current assignment-version WebView (090)
+
+Source/test `216b996`; [dated acceptance](../docs/reports/2026-10-01-connected-android-assignment-webview-acceptance.md).
+Actual permanent page/current immutable version → real local Auth/RLS/assignment Deno/signed synthetic
+storage → native capability/PDF65905B/hash/system share sheet PASS; external sheet dismissed.
+Actual AuthStore B switch clears ephemeral directory; previously issued A HEAD403 + GET403/provider0,
+new B profile inspected. Foreign B POST403/provider0. Declared API/listener adapters, not hosted proof.
+Runtime found missing assignment/four-family native anchor routing and repertoire lookalike overmatch;
+red→green exact five-reader component regression repaired it. Focused58 root and19 mobile config;
+fresh mobile TS55/404, root110/1108/build, normal Android/iOS JS exports PASS. Not native iOS runtime.
+One Jev call4394input/419output/479ms,$0.000184548 estimated;9/10 labels, unrun-iOS contradiction
+not accepted and low-confidence cases retained. Daily17calls65958input7962output,$0.002770236
+estimated, not invoice/independent review. Today-only key never persisted.
+Owned stack/VM/emulator/app/reverses/tunnels/outputs removed; original068 five hashes/counts28/1/29/9/79
+unchanged, dependencies/AVD/global caches preserved. Final21940156KiB free, low16792772KiB.
+090 stays open. Next integration milestone: measured iOS SDK/disk preflight, then accumulated native
+private PDF/audio/WebView acceptance. Hosted/provider/real-copy077/phone/beta/release separately gated.
+No push/deploy, external share, provider/user-data or credential mutation.
