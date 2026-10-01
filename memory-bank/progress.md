@@ -1,5 +1,18 @@
 # İlerleme indeksi
 
+1 October — [090 permanent Android WebView recovery](../docs/briefs/090-private-file-ticket-revocation-contract.md),
+source/tests `d8139bc`, PASS locally. Actual korist-detail homework link/native confirmation;
+baseline valid-v1 GET401/no recovery reproduced, trusted-issuer/current-native-lease one-shot
+repair now GET401/HEAD401/POST200/GET200, exact65905B/hash and real Android share sheet.
+A→B cache clear, actual `Shared B` profile and old A v2 HEAD403/provider0. Real local
+Auth/RLS/Deno/signed loopback S3; explicit transport relay, runtime-only one-use credentials,
+no external share. Guard/denial/race regressions, mobile TS54/377, root106/1067/build,
+normal Android/iOS JS exports PASS. Exact runtime/VM/derived output cleanup; original068
+counts unchanged,23,776,212 KiB free. Self-review, not independent; 090 remains open.
+Not assignment-version/complete Drive-exit: performance query/HomeworkCard legacy links
+remain. Next overlapping HTTP/COMMIT; connected audio/native iOS/hosted/device/release
+NOT RUN. No push/real data/provider/email/spending/credential/hardware action.
+
 1 October — [090 connected native Android stale-v1 PDF](../docs/briefs/090-private-file-ticket-revocation-contract.md),
 source/test `364cfe4`, PASS locally. Real Auth/RLS/Deno + signed loopback S3, guarded
 first-response valid-v1 substitution/GET-HEAD observation relay, runtime-only one-use

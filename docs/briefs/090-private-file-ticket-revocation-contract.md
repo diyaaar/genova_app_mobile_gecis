@@ -779,3 +779,154 @@ Final free 24,923,220 KiB; existing AVD3,449,672 KiB, Gradle5,531,824 KiB, mobil
 dependencies6,410,064 KiB/root1,621,064 KiB and original/private evidence preserved.
 Original068 five-count guard remains `28/1/29/9/79`. Unrelated CLI marker unstaged.
 No push, live DB/Edge/provider, real data/email/user/credential change, hardware or release.
+
+## 1 October permanent Android WebView — work card
+
+Owner asked to continue. Read AGENTS, handoff/active, current 090, execution controls,
+MIGRATION route ownership and actual NativeWebViewScreen/platform capability/bridge,
+embedded web policy, 033 composed fixture and korist-detail homework link. Verified
+`main/86dc5e3`; only unrelated CLI marker dirty. Single writer, no delegation. Guide
+and work cycle unchanged from prior checkpoint. Memory's pre-090 old-URL policy note
+is stale; decision #32/current implementation remain authoritative.
+
+One outcome: a real permanent `/koristler/<target>` page in actual Android WebView
+must deliver its protected PDF through the native confirmation/download/share flow,
+renew once when a valid old v1 body is refused, then fail closed after A→B. Source
+shows `ProtectedFileCapability.run` currently downloads a URL once and returns false
+on failure, with no authority re-ticket. Reproduce before changing product behavior.
+Repertoire is native-owned: do not use a fake WebView repertoire route or claim Chrome
+as WebView. Use the existing 033 legacy-submission-link pattern pointing to a synthetic
+repertoire PDF. This does not accept assignment-version integration or all WebView media.
+The performance query omits `current_file_version_id` and prefers legacy links;
+record that follow-up rather than silently accepting Drive-exit completeness.
+
+Allowed: `apps/mobile/src/acceptance/090_webview*`/focused tests, guarded index and
+existing local network plugin/tests; `supabase/test-support/091_connected_private_r2_read.ts`
+plus narrow test-only relay/fixture support if needed; compile-time loopback policy in
+`lib/embedded-web-runtime.ts`, its tests and `components/EmbeddedWebBridgeProvider.tsx`.
+Only after Android RED: narrow native `platform-capabilities.ts`, NativeWebViewScreen,
+one pure private-ticket recovery helper and focused regressions. No route/schema/
+dependency changes, native rewrite, hosted action or auth/permission weakening.
+Records: this brief + handoff/active/progress. Actions: (1) guarded one-use fixture,
+real production web peer and baseline Android RED; (2) causal minimal repair and
+same-environment Android acceptance; (3) full gates/review, owned cleanup, separate
+source/docs commits. Required: actual bridge challenge/verified lease, body401→one
+renewal/hash/share-sheet, B-context oldURL403/no provider and private-file cleanup,
+focused guards/races/denial tests, mobile TS/full tests and root check. Exit is this
+local partial checkpoint; 090's other gates remain. Rollback: owned code revert and
+disposable local runtime removal, not original DB or external data rollback.
+
+Preflight: free24,929,192 KiB; existing mobile dependencies7,491,952 KiB, root1,621,064,
+Gradle4,449,132, AVD3,449,672, Colima24. No VM/device. Additional peak <=11 GiB:
+VM/images/DB <=7 GiB (last runtime ~5 GiB), Android/cache <=2 GiB (last output~0.8 GiB),
+AVD growth <=1 GiB, web/export/log <=1 GiB; projected >12 GiB above10,485,760 KiB floor.
+Reuse installed SDK/JDK17/API36; no toolchain download. Measure phases and stop
+allocation before floor breach. Owned exact disposable set: `genova090` VM/data/
+`genova-090-runtime` stack/volume, loopback54491/54492/8000/18092/31090, emulator5580
+app/reverses/UI dump, generated mobile android/.expo, root .next/coverage, ignored
+spike/090-runtime and empty093 fixture directory. Preserve original068 restore/private
+backups/manifests, existing dependencies/AVD/global caches and unrelated marker.
+
+| Required checkpoint criterion | Status | Evidence / boundary |
+|---|---|---|
+| Exact isolated loopback/native/web policy, one-use runtime login | PASS locally | Guarded local Auth/Next/API36 Release, one-use POST200/410 and actual challenge/lease/web proof |
+| Baseline real WebView old v1 refusal identifies recovery gap | PASS reproduced | Actual `/koristler/<target>` homework link → native confirmation → GET401, no renewal/hash/share before repair |
+| Bounded authority renewal, exact native PDF, real share UI | PASS locally | GET401 → HEAD401 → exactly one POST200 → GET200;65905B/hash, actual Android share sheet; negative/race tests |
+| Same-session B revokes A and ephemeral private cache clears | PASS locally | Actual B `Shared B` profile, root cache absent, old A HEAD403/providerDelta0 |
+| Fresh mobile/root gates, review and exact cleanup | PASS locally | Mobile TS54/377; root106/1067/build; normal Android/iOS JS exports, self-review/diff/links/cleanup |
+| Connected audio, HTTP overlap, native iOS, hosted/device/release | NOT RUN | Other retained 090 gates |
+
+### WebView local acceptance — 1 October 2026
+
+Source/tests `d8139bc`. This is a partial checkpoint, **not closure of 090**, all
+WebView media, assignment-version Drive-exit, beta, hosted R2 or physical-device proof.
+The actual permanent korist-detail page/HomeworkCard supplies a synthetic legacy
+submission URL pointing to the repertoire PDF; no fake repertoire WebView route.
+Production-built Next15.5.25 serves127.0.0.1:31090. Disposable PG17/Auth/PostgREST
+on54491/54492, actual Deno repertoire-file on8000 and AWS4-checked loopback object
+service/declared observation relay on18092. Original068 source was queried read-only;
+schema-only copy and complete ordered local migration chain restored into the owned
+empty target. Unlike the earlier prerequisite attempt, restore/migrations passed
+first time this run. No hosted Auth, provider, DB or schema action.
+
+Baseline offline arm64 Android Release build PASS in1m17s; APK SHA-256
+`58b36ab3d7c2d7f2c148d340fce6f2f8cfd7e655c3f5b3c1e2d4c9da3ea833f7`.
+Existing API36 AVD/emulator5580 boot-completed before install. Native one-use runtime
+login POST200 then410, real challenged bridge/verified lease, real homework link and
+native `Dosyayı aç` confirmation. At11:28:36–11:28:43 local the actual downloader's
+valid-v1 GET returned401/providerDelta0. Baseline had no fresh ticket, PDF hash or
+share sheet: reproduced product gap, not merely a mocked rejection.
+
+Minimal repair: ProtectedFileCapability supports one optional download-failure
+recovery; the default NativeWebViewScreen wires the native helper with current
+actionsRef lease and configured Supabase issuer, not the bridge-selected origin.
+All five exact private-reader paths/UUID/exact fileId+ticket query are accepted;
+unknown/foreign/credential-bearing URLs are refused before any probe or native-token
+use. HEAD is token-free; confirmed403 (also other non200/401 statuses) is final.
+HEAD401, HEAD200 with opaque body failure, or a transport failure permits one
+authority POST using a forced-fresh native lease, then at most one replacement
+download. No re-ticket loop, content/size validation failure recovery or late work
+after abort. Abort is checked after lease/issuance and before replacement download;
+sharing and temporary-file removal retain their original lifetime boundaries.
+The acceptance adapter uses the **same helper** with explicitly guarded local relay
+issuer, real files and real sharing; it is not a replacement recovery implementation.
+
+Repaired offline build PASS in19s, APK SHA-256
+`4ee644b8055c6f545e69c4fd6a333d8ccf61490b0e6374ac04d9161a6a61d798`.
+Installed with `-r`, preserving the same SecureStore/Auth session and one-use channel.
+At11:34:23–11:34:58 native trace and actual server observer prove precisely
+GET401/provider0 → HEAD401/provider0 → POST200/provider0 → GET200/provider1;
+65905B with SHA-256 `39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3`.
+Actual Android share sheet visually inspected, displaying the PDF and system share
+targets. Dismissed with Back; shareAsync returned. No external target was selected,
+file sent or external PDF viewer rendering claimed. At11:35 native B selection
+cleared the private-cache directory; actual `/profil` rendered `Shared B` and a new
+challenge/lease/web proof. Previously issued A v2 HEAD403/providerDelta0 observed by
+the actual Deno authority, not a local-only fake. Fixture SIGTERM teardown exited0:
+exact one renewal/body, denied reads never touch provider, foreign-user/new A ticket
+refusal, a separate Auth session staying A, inactive membership refusing issued/new
+URLs. No synthetic-password file was produced in this mode or placed in public env.
+
+Focused preparation uncovered one overly broad metadata query check; exact keys/path
+added, config/plugin2 suites25 cases and root policy23 cases then PASS. Initial mobile
+test typecheck found strict optional-call indexing; corrected. A pre-existing late
+download test then cleared before its download started because the new pre-download
+abort check refuses that work earlier. Reassessed causally, added an explicit started
+barrier, retained late-file removal assertions, and added separate during-renewal
+clear coverage. No blind runtime/build retry or removed acceptance. Final regressions
+cover five readers, foreign/malformed/duplicate URLs, confirmed denials, POST403,
+explicit loopback gating, redirect-error options, second-download bound, content
+refusal and clear during lease/renewal. Installed Expo's default global fetch uses
+its native redirect policy (`NativeRequest.followRedirects(false)`/error handling);
+no RN-fetch override was used. Redirect refusal was unit/source-reviewed, not an
+actual injected native redirect run or native iOS acceptance.
+
+Fresh mobile typecheck/full Jest:54 suites/377 cases, exit0. Fresh root `pnpm check`:
+ESLint/TS/106 files1067 tests/SW syntax/Next production build exit0; Supabase explicitly
+local/synthetic, VAPID blank, acceptance flags off. Final normal Expo native-only
+exports with dotenv/acceptance flags off and synthetic public config: Android1436,
+iOS1440 modules, exit0. JS exports are **not native iOS** or production-native-network
+acceptance. No native debug exposure, dependencies, permissions/schema or route
+ownership changed. Self-review only; not independent review. Diff/local links PASS.
+
+Follow-up retained: `lib/korist-performance.ts` omits current_file_version_id in its
+submission selection and the korist-detail HomeworkCard prefers legacy links. This
+checkpoint accepts the existing file-capability path, **not** assignment-file version
+integration/complete Drive-exit. Fix that in a bounded product-read integration,
+without rewriting permanent WebView routes or pretending native repertoire is web.
+Next ready 090 local outcome: overlapping HTTP request / authority-COMMIT evidence;
+connected audio Auth/R2 and integrated native-iOS remain separately required.
+
+Cleanup after dependent gates: fixture/Deno/object service, Next process, SSH tunnel,
+owned Supabase stack/volume and genova090 VM/data removed. No Colima instances, Docker
+context default, no task-port listeners or adb device. APK uninstalled, dump and
+reverse54491/18092/31090 removed, emulator stopped. Generated android774708 KiB,
+.expo4 KiB, .next552732 KiB, coverage352 KiB, runtime9628 KiB (APK-related logs,
+schema-only dump, screenshot, normal exports) and empty093 hold directory deleted.
+Validated exact non-symlink ignored output targets; broad shell force-removal was
+rejected, then guarded filesystem removal completed. Derived outputs/synthetic
+runtime data are not retained/recoverable; tracked sources reproduce them. Original
+068 five counts remain28/1/29/9/79; existing AVD3466056 KiB, Gradle5531968 KiB,
+mobile dependencies6409160/root1621064 KiB, private evidence and CLI marker preserved.
+Lowest observed free17577012 KiB, final23776212 KiB; both above10,485,760 KiB floor.
+No push/deploy/CI/real users/data/email/credential change, spending/hardware/distribution.

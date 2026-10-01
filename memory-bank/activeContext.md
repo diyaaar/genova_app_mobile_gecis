@@ -26,12 +26,16 @@ Audio ticket service is deliberately synthetic/unsigned; no Auth/SQL/S3/native-v
 exact65905B/hash, visible pages1/40 and2/40, A→B cache clear/B-only, oldHEAD403/newPOST403 PASS.
 Actual Auth/RLS/Deno/signed loopback S3; declared URL substitution/observation relay,
 runtime-only one-use credentials, no build password. Not hosted R2/unmodified Kong.
-Fresh mobile TS/52 suites/333 tests, root106/1066/build and normal Android/iOS JS exports PASS.
-Android WebView, connected audio Auth/R2 and in-flight HTTP/COMMIT remain NOT RUN.
+1 Oct `d8139bc`: actual permanent Android korist-detail WebView file flow PASS: baseline
+v1 GET401/no recovery reproduced, one authority renewal with current native lease,
+65905B/hash/real share sheet, A→B cache clear/`Shared B` profile/oldHEAD403/provider0.
+Same helper plus explicit local relay; not external sharing or assignment-version Drive-exit.
+Fresh mobile TS54/377, root106/1067/build and normal Android/iOS JS exports PASS.
+Connected audio Auth/R2 and in-flight HTTP/COMMIT remain NOT RUN.
 Native iOS audio error-latch/seek acceptance is scheduled at 090's
 integrated both-platform private-client checkpoint before release; JS export does not close it.
-**Next local action:** actual permanent Android WebView private-file recovery,
-then in-flight HTTP tests. Hosted rollout is separately gated.
+**Next local action:** overlapping HTTP/COMMIT acceptance. Performance query/HomeworkCard
+legacy-link/assignment-version integration remains a follow-up. Hosted rollout separately gated.
 
 ## Preserved historical evidence
 
@@ -52,7 +56,7 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary agent is sole writer. 1 Oct owned emulator/app/reverse/connected runtime/VM and
-generated outputs cleaned; final free24,923,220 KiB, original068 counts unchanged (090).
+generated outputs cleaned; final free23,776,212 KiB, original068 counts unchanged (090).
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
 global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;
 one heavy process, two-failure causal reassessment, no blind rebuild or broad cleanup.
