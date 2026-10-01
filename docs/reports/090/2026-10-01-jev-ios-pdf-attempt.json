@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-10-01T19:43:01.693Z",
+  "model": "jev-1.13.0",
+  "requestSha256": "649bd01393ec95d11b5439c7f6a8a065bf1632abe23b71d67f4fe3c31ae93c2d",
+  "requestBytes": 6795,
+  "maxCalls": 1,
+  "autoRetries": 0,
+  "estimatedCostCapUsd": 0.002,
+  "docs": ["https://docs.typesafe.ai/api.md", "https://docs.typesafe.ai/primitives/choice.md", "https://docs.typesafe.ai/cookbooks/citation_check.md", "https://docs.typesafe.ai/models.md"]
+}

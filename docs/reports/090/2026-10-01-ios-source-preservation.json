@@ -1,0 +1,13 @@
+{
+  "method": "Read-only before/after local genova_068_test_restore queries; primary transcription of actual count and ordered row MD5 outputs, not source row export.",
+  "sourcePort": 5432,
+  "copiedSourceRows": 0,
+  "tables": [
+    {"table":"auth.users","beforeCount":28,"afterCount":28,"beforeHash":"ce22be410bc701028751583ae02c3ddb","afterHash":"ce22be410bc701028751583ae02c3ddb"},
+    {"table":"public.choirs","beforeCount":1,"afterCount":1,"beforeHash":"1beed75a45a08c52c8966033e28b92b8","afterHash":"1beed75a45a08c52c8966033e28b92b8"},
+    {"table":"public.choir_members","beforeCount":29,"afterCount":29,"beforeHash":"ed43b85dbdd0d58b23135ee938d96e8c","afterHash":"ed43b85dbdd0d58b23135ee938d96e8c"},
+    {"table":"public.repertoire","beforeCount":9,"afterCount":9,"beforeHash":"28e1a02a8bd57d589ddf0ddfeed86444","afterHash":"28e1a02a8bd57d589ddf0ddfeed86444"},
+    {"table":"public.repertoire_files","beforeCount":79,"afterCount":79,"beforeHash":"d98039ebc968222761838b9bfdc5b3bd","afterHash":"d98039ebc968222761838b9bfdc5b3bd"}
+  ],
+  "boundary": "Five checked tables only; this is source preservation evidence, not backup/restore or hosted/current-production verification."
+}

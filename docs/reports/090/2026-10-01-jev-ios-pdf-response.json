@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-10-01T19:43:33.691Z",
+  "requestSha256": "649bd01393ec95d11b5439c7f6a8a065bf1632abe23b71d67f4fe3c31ae93c2d",
+  "elapsedMs": 515,
+  "model": "jev-1.13.0",
+  "answers": {
+    "native_pdf": {"type":"choice","choice":"supports","confidence":0.99,"probabilities":{"contradicts":0,"supports":0.99,"insufficient":0.01}},
+    "switch": {"type":"choice","choice":"supports","confidence":0.89,"probabilities":{"supports":0.92,"contradicts":0.01,"insufficient":0.07}},
+    "failure_cause": {"type":"choice","choice":"supports","confidence":0.99,"probabilities":{"supports":1,"contradicts":0,"insufficient":0}},
+    "native_old_get": {"type":"choice","choice":"contradicts","confidence":0.46,"probabilities":{"contradicts":0.64,"supports":0.1,"insufficient":0.26}},
+    "ios_audio": {"type":"choice","choice":"insufficient","confidence":0.97,"probabilities":{"contradicts":0,"supports":0.02,"insufficient":0.98}},
+    "hosted": {"type":"choice","choice":"contradicts","confidence":1,"probabilities":{"contradicts":1,"supports":0,"insufficient":0}},
+    "closure": {"type":"choice","choice":"contradicts","confidence":0.92,"probabilities":{"contradicts":0.94,"supports":0,"insufficient":0.06}},
+    "preservation": {"type":"choice","choice":"supports","confidence":1,"probabilities":{"contradicts":0,"supports":1,"insufficient":0}}
+  },
+  "usage": {"input_tokens":2052,"output_tokens":341},
+  "estimatedUsd": 0.000086184,
+  "primaryReview": "7/8 frozen labels match. native_old_get disagrees at confidence0.46; primary retains insufficient because only native HEAD was observed. No new request, relabeling or acceptance authority inferred.",
+  "dailyTotal": {"calls":18,"input_tokens":68010,"output_tokens":8303,"estimatedUsd":0.00285642},
+  "costBoundary": "Usage-based estimate at live documented $0.042/M input, output free; not a provider invoice. Key entered through non-echoing runtime input only, not saved."
+}

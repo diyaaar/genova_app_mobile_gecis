@@ -29,8 +29,12 @@ exact five-reader anchor regression repaired, native PDF/share sheet, B teardown
 [Record](../docs/reports/2026-10-01-connected-android-assignment-webview-acceptance.md): fresh root110/1108,
 mobile55/404 and normal exports; explicit local adapters, not hosted proof. Jev9/10 retains unrun-iOS
 disagreement; daily17calls$0.002770236 estimated, not invoice.090 remains open.
-**Next integration action:** measured iOS SDK/disk preflight, then accumulated native private-client
-PDF/audio/WebView acceptance. iOS/physical phone/hosted/release remain separate unrun gates.
+[Current iOS PDF](../docs/reports/2026-10-01-connected-ios-private-pdf-acceptance.md) normally signed
+native Release/actual Auth/RLS/v1→v2/pages1/2/B cache/old HEAD403/new POST403 PASS; fixture exit0.
+Early global-signOut first fixture exit1 retained; no product/Auth/schema/dependency change.
+Fresh mobile55/404; no root-gate trigger/rerun. Jev7/8 unknown-GET disagreement retained;
+daily18calls$0.002856420 estimated, not invoice. **Next:** measured connected iOS audio/recovery/
+seek/B teardown, then permanent WebView. Those/physical phone/hosted/release/090 stay open.
 
 ## Preserved historical evidence
 
@@ -51,7 +55,7 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary agent is sole writer. 1 Oct owned emulator/app/reverse/connected runtime/VM and
-generated outputs cleaned; latest final leaves21,940,156KiB free, run low16,792,772KiB.
+generated outputs cleaned; latest final leaves21,416,800KiB free, iOS run low15,194,204KiB.
 Original068 five row hashes/counts28/1/29/9/79 unchanged, preserve it.
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
 global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;

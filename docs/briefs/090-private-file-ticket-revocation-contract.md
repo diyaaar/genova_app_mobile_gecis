@@ -3,8 +3,9 @@
 Status: IN PROGRESS / local v2 implementation and synthetic acceptance PASS on
 30 September 2026; Android synthetic audio and connected stale-v1 PDF recovery PASS on 1 October.
 Five-family local HTTP overlap, connected native Android audio and current assignment-version
-Android WebView now have bounded evidence ([latest record](../reports/2026-10-01-connected-android-assignment-webview-acceptance.md)); native-iOS,
-hosted and release gates remain open. Primary agent,
+Android WebView now have bounded evidence ([Android record](../reports/2026-10-01-connected-android-assignment-webview-acceptance.md));
+connected native iOS PDF/Auth/RLS/B-switch also PASS ([iOS record](../reports/2026-10-01-connected-ios-private-pdf-acceptance.md)).
+Native iOS audio/WebView, hosted and release gates remain open. Primary agent,
 single writer. No hosted release authority.
 One result: uniform online next-request access-after-revocation for five private file
 families before `mixed`/`r2-required` cutover. This brief does not authorize live writes.
@@ -110,7 +111,7 @@ provider copy, push/deploy and actual Android/iOS device checks remain separatel
 | Decision #32 and 090 cross-links/consistency | Yes for this record | PASS | 30 September local link scan, `git diff --check` and scoped self-review; no source or runtime gate claimed |
 | Legacy v1 denial and compatibility checkpoint approved | Yes before implementation | PASS locally | Owner approved bounded local work on 30 September; v1 GET/HEAD now returns 401 in local tests. Hosted release was not approved. |
 | Five-family DB/Edge implementation and synthetic two-choir acceptance | Yes after contract selection | PASS locally | Disposable PG17 SQL matrix; service-only RPC; real local Auth/RLS/PostgREST/Edge + signed loopback S3 for repertoire; A/B same and separate sessions. Details below. |
-| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and actual permanent Android WebView recovery PASS locally. Five connected serial HTTP readers PASS historically. Local overlap: repertoire dependency adapter plus four actual index registrations/Supabase-fetch-to-psql adapter PASS on 1 October; not fresh Auth/PostgREST. Connected native Android audio actual Auth/RLS/POST/Deno/signed loopback storage PASS at6fed2ac, with declared v1/client-deadline/earlier-v2/relay faults. Current assignment-version connected Android WebView/native PDF/B switch/old GET/HEAD403 PASS at216b996 with explicit local API/listener adapters; latest report above. Native iOS remains NOT RUN. |
+| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and actual permanent Android WebView recovery PASS locally. Five connected serial HTTP readers PASS historically. Local overlap: repertoire dependency adapter plus four actual index registrations/Supabase-fetch-to-psql adapter PASS on 1 October; not fresh Auth/PostgREST. Connected native Android audio actual Auth/RLS/POST/Deno/signed loopback storage PASS at6fed2ac, with declared v1/client-deadline/earlier-v2/relay faults. Current assignment-version connected Android WebView/native PDF/B switch/old GET/HEAD403 PASS at216b996 with explicit local API/listener adapters. Current native iOS PDF/Auth/RLS/pages/B cache/old HEAD403/new POST403 and final fixture exit0 PASS, latest iOS report above; iOS audio/WebView remain NOT RUN. |
 | Hosted cutover/public Drive withdrawal/offline deletion/device/beta | Later separate authority | NOT RUN | This preparation cannot accept these layers |
 
 Required NOT RUN keeps 090 open. This local implementation may be committed as a partial checkpoint;
@@ -1269,3 +1270,113 @@ Daily17calls65958input7962output,$0.002770236 estimated, not invoice. Key never 
 Next integration milestone is measured iOS SDK/disk preflight and accumulated native private-client
 PDF/audio/WebView runtime acceptance. Hosted/provider/phone/beta/release gates remain separate;
 090 remains IN PROGRESS, no push or external mutation. Self-review is not independent review.
+
+### Integrated iOS private-client work card — 1 October, after0602e49
+
+Entry main/0602e49; only unrelated supabase/.temp/cli-latest dirty. Read AGENTS,
+handoff/active, current090 work cards, guide/work cycle, delivery execution controls,
+MIGRATION screen ownership, decisions28–32,019 and relevant033 signed-native/resource evidence.
+One writer, no delegation. Observable first integration slice: the existing native iOS
+private PDF client recovers once from signed-v1 refusal through genuine disposable Auth/RLS/
+Edge, renders actual PDF pages, then B selection clears bytes and denies prior/new A access.
+Accumulated audio/seek and permanent WebView follow as remaining integration rows, not silently
+closed by this slice. Reuse current090 harnesses; no native rewrite/dependency upgrade.
+
+Three actions: cached-toolchain native build with frozen local public config; remove build
+intermediates before isolated runtime/simulator integration; review, record required evidence,
+cost and owned cleanup. Allowed:.gitignore exact owned generated iOS exclusions;
+090 acceptance sources/tests only for a reproduced platform
+defect, existing091 local fixture/adapters,090 records/handoff/active/progress/delivery pointers.
+No production Auth/schema/provider/credentials/accounts, push/CI/deploy/hardware/share authority.
+Synthetic runtime passwords stay one-use runtime-only; no public build secret or persisted key.
+
+Preflight21944024KiB free; floor10485760KiB. Xcode26.6, CocoaPods and installed iOS26.5
+runtime available; all devices stopped, no Colima instance, generated iOS absent. Existing
+shared DerivedData1823808KiB, CocoaPods977876KiB and simulator devices10227320KiB preserved;
+existing iPhone17 device9261A02F-8244-406A-872F-0FF8EFBFDBF2 is not a cleanup target.
+Historical033 generated iOS633752KiB/DerivedData1849260KiB and signed app47484KiB inform
+a conservative build-only7340032KiB cap (projected14603992KiB >floor), no VM/simulator during
+compile. Remove owned build/generated iOS after retaining exact signed app for immediate runtime.
+Then reassess a separate runtime peak: VM/schema<=6GiB, new owned iOS simulator<=3.2GiB,
+web/observations<=0.8GiB; total<=10GiB, only if fresh free space meets floor+budget.
+Combined historic11953592KiB allocation would not fit today's budget; do not run native build
+and VM together. Safety stop12500000KiB during build, stage-wise measurements/no blind rebuild.
+Owned paths:spike/090-ios-native-build,spike/090-ios-pdf.app,apps/mobile/ios,.expo;
+later exact named genova090-ios simulator, genova090 VM/runtime/tunnels if approved by measured
+preflight. No global cache purge. Source068/private evidence/dependencies retained.
+
+| Integration criterion | Required? | Status | Boundary |
+|---|---|---|---|
+| Measured native/tool/resource preflight and exact local config | Yes | PASS preparation | Installed tools and historical measured allocation; actual allocation still monitored |
+| Current normally signed iOS native build and exact app | Yes | PASS locally | Corrected normal arm64 Release184658ms, strict signature PASS, actual local public key; no manual signing/entitlement/SecureStore override |
+| Actual iOS Auth/RLS/v1 refusal/one v2 PDF renewal/hash/render | Yes | PASS locally | GET401/provider0→GET200/provider1/65905B/exact hash, actual pages1/2 of40; final fixture exit0; disposable service/signed synthetic storage, not hosted |
+| Actual product B selection/cache clear/old and new A403/provider0 | Yes | PASS locally | Native AuthStore B, cache absent, old HEAD403/provider0/new POST403, B-only catalogue; no native old GET claim |
+| Fresh affected gates/review/source preservation/owned cleanup | Yes | PASS locally | Mobile TS55/404, source five counts/hashes unchanged, exact owned outputs/runtime removed, local links/diff; root check not triggered/rerun; self-review only |
+| Accumulated native iOS audio and permanent WebView | Integrated090 | NOT RUN | Expand only after first real flow and measured budget |
+| Physical phone/hosted/provider/Drive cutover/beta/stores | Separate authority | NOT RUN | Whole090 remains open |
+
+TypeSafe skill consulted for evidence/uncertainty discipline; deterministic tool/resource checks
+need no inference. Any later useful semantic call requires a frozen redacted packet and cost record.
+
+Native preparation result: prebuild/Pods and normally signed arm64 Release exit0 (171396ms),
+strict signature PASS, empty effective entitlements; minimum free19417028KiB. Generated
+iOS633892KiB/build1839456KiB removed, exact49392KiB app retained for immediate checks.
+Mobile TS55/404 PASS. First Pod invocation from root failed module resolution; rerun from
+generated ios cwd passed, no product change. Two source hash queries used historical generic
+song table names; stopped guessing, inspected pg_tables/fixture and used actual public.repertoire.
+Original five count/hash baseline captured read-only; no row data printed/copied.
+
+Runtime preflight21831488KiB free, separate10GiB cap fits above floor. Owned simulator created
+as4CF1E907-0F54-4FF9-ACA7-2A0E8BF5F933 (genova090-ios/iPhone17/iOS26.5), not yet booted.
+Guarded VM/loopback four-service Auth/REST/Kong/DB started successfully. Before any app sign-in,
+actual local CLI anon hash check found preflight-generated public key differs from Kong's
+configured anon credential; built bundle lacks runtime anon key. This is a configuration FAIL,
+not Auth/RLS bypass or a product defect. Do not inject new Kong credentials or replace/re-sign
+the bundle manually. Bounded next action: retain actual anon only in process memory, stop VM,
+regenerate and rebuild with genuine local public key, then resume same runtime. No service key
+in the bundle. Revised native budget based on this exact observed2.4GiB build:4GiB including
+~1.6GiB reserve; current17899960KiB projects13705656KiB >floor, safety stop12500000KiB.
+One heavy process, simulator remains stopped. Prior binary will be removed after corrected build.
+
+Corrected native build exit0 (184658ms), minimum15194204KiB, strict signature PASS. Actual
+runtime anon is present and service key absent in final bundle; no manual signing/substitution.
+App manifest0547b7576a244a4b2201a8a8dd5910300e48c8f280e5324e5d28cd6e15c52d14;
+bundlebcb4a5e063568ecaa4c6319089a9e2c69d9d6cf8d974d8d764c085a7fe5d657d.
+First atomic schema import as factory postgres failed default privileges owned by supabase_admin
+and rolled back to empty. Changed approach: preserve dump owners/ACLs, restore as local container
+superuser, then SET ROLE postgres for committed migrations. One transaction passed, source rows
+not copied,090 RPC execute privileges f/f/t for anon/authenticated/service. Exact three sibling
+notification triggers disabled only in disposable target. No broad application grants/bypass added.
+Opening Simulator through CUA auto-booted the previously stopped shared iPhone17; shut it back
+down without changing/deleting its app/data. Only the explicitly created owned device is used.
+
+First actual iOS flow: runtime-only Auth PASS, A catalogue, native GET401/provider0 → one v2
+renewal → GET200/provider1/exact PDF/hash, visibly distinct pages1/40 and2/40. Actual B switch
+cleared private cache, prior HEAD403/provider0 and new POST403; B-only audio catalogue visible.
+Extra sign-out UI also returned to normal empty sign-in and cache absent. However this sign-out
+used the SDK's default GLOBAL scope before the fixture's remaining same-user/session checks;
+all shared-user Auth sessions were removed (actual target count0). Fixture native assertion
+passed, then tail expected POST403 but got401 at line419, exit1. This run is NOT full acceptance.
+Retain the failure; do not change Auth/sign-out policy or loosen403 assertion. Bounded rerun:
+same signed app/VM/source, fresh owned simulator/synthetic users, execute native A/PDF/B flow,
+finish fixture's existing matrix before optional sign-out. Native/VM rebuild unnecessary.
+Partial owned simulator was removed; app retained only for immediate rerun. Fresh17308352KiB
+free, <=3.2GiB simulator budget fits above floor. No inference needed for this verified cause.
+
+### Connected iOS PDF final result — 1 October
+
+[Dated record](../reports/2026-10-01-connected-ios-private-pdf-acceptance.md) owns exact local
+HTTP/native/build/failure boundaries. Final E9E63857… owned device used same app/VM/source,
+fresh synthetic user and no early sign-out. Actual pages1/2 of40 inspected; GET401/provider0→
+GET200/provider1/exact65905B/hash, B/cache absent/old HEAD403/provider0/new POST403 PASS.
+Unchanged fixture tail's foreign/same/separate session/membership assertions PASS, exit0.
+First exit1 is retained, not overwritten. Mobile TS55/404 fresh; no product code/schema/dependency
+edit or root-gate trigger. Only exact.gitignore generated build/app exclusions added.
+Source068 five counts28/1/29/9/79 and hashes unchanged. Owned generated iOS/build/app/schema/
+runtime/VM/root/data/volume and first/final simulator removed; no task listeners/booted device.
+Final21416800KiB free, low15194204KiB, above10485760floor; shared caches/dependencies/restore retained.
+One Jev evidence-vs-claim advisory call2052input/341output/515ms,$0.000086184 estimated;7/8 labels.
+Unobserved native-old-GET disagreement atconfidence0.46 retained as unknown, not failure.
+Daily18calls68010input8303output,$0.002856420 estimated, not invoice; key never persisted.
+090 remains IN PROGRESS. Next measured integration: connected native iOS audio/recovery/seek/B
+teardown, then permanent WebView. Hosted/provider/phone/beta/stores gates remain separate.

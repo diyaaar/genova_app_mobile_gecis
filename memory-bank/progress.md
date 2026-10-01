@@ -522,3 +522,23 @@ unchanged, dependencies/AVD/global caches preserved. Final21940156KiB free, low1
 090 stays open. Next integration milestone: measured iOS SDK/disk preflight, then accumulated native
 private PDF/audio/WebView acceptance. Hosted/provider/real-copy077/phone/beta/release separately gated.
 No push/deploy, external share, provider/user-data or credential mutation.
+
+## 1 October 2026 — connected native iOS private PDF (090)
+
+Entry0602e49; [dated record](../docs/reports/2026-10-01-connected-ios-private-pdf-acceptance.md).
+Normally signed current arm64 Release/strict signature, real disposable AuthStore/SecureStore/
+Auth/RLS/Deno/signed synthetic storage to actual native PDF PASS. Declared v1 fault refuses
+GET401/provider0, one v2 renewal GET200/provider1/65905B/exact hash; CUA actual pages1/2 of40.
+Product B/cache absent/old HEAD403/provider0/new POST403/B-only catalogue PASS. Native old GET
+not run. Final unchanged fixture foreign/session/membership matrix exit0. First early-global-
+signOut tail401/expected403 exit1 retained, not accepted; causal retry same app/VM/source,
+fresh synthetic user, no policy/assertion changes. Key mismatch/atomic restore setup failures
+also retained. No product/schema/dependency change; exact.gitignore owned build/app exclusions.
+Fresh mobile TS55/404; root gate not triggered/rerun. One Jev2052input/341output/515ms,
+$0.000086184 estimate,7/8 labels; low-confidence unobserved-GET contradiction not accepted.
+Daily18calls68010input8303output,$0.002856420 estimate, not invoice; key never persisted.
+Owned generated iOS/app/build/schema/runtime/VM/root/data/volume and both owned simulators removed;
+task listeners gone; shared simulator/cache/dependencies/original068 retained. Five source
+counts28/1/29/9/79 and hashes unchanged. Final21416800KiB free, low15194204KiB >10485760floor.
+090 remains open; next measured iOS audio/recovery/seek/B teardown, then permanent WebView.
+No hosted/provider/hardware/real data/share/push/deploy; beta/stores/full product unfinished.

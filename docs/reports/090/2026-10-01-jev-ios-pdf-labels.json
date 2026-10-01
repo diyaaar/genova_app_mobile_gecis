@@ -1,0 +1,14 @@
+{
+  "labelOwner": "Primary agent frozen before inference; not independent review.",
+  "expected": {
+    "native_pdf": "supports",
+    "switch": "supports",
+    "failure_cause": "supports",
+    "native_old_get": "insufficient",
+    "ios_audio": "insufficient",
+    "hosted": "contradicts",
+    "closure": "contradicts",
+    "preservation": "supports"
+  },
+  "note": "An unperformed native old GET is unknown, not proof it fails. Explicit synthetic storage contradicts a claim about what provider this run used. Unrun audio does not prove broken audio."
+}

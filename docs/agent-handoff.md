@@ -5,15 +5,12 @@ historical detail remains in briefs/[progress](../memory-bank/progress.md).
 
 ## Read first
 
-[AGENTS](../AGENTS.md) → [active context](../memory-bank/activeContext.md) → current brief →
-[execution controls](mobil-teslim-plani.md#bounded-execution-and-resource-controls).
-Use [guide](gecis-rehberi.md), [work cycle](ai-calisma-duzeni.md), relevant
-[decisions](../KARARLAR.md)/[MIGRATION](../MIGRATION.md). Repertoire is native; profile is permanent WebView.
+[AGENTS](../AGENTS.md) → [active](../memory-bank/activeContext.md) → brief → [execution controls](mobil-teslim-plani.md#bounded-execution-and-resource-controls).
+Use [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md)/[decisions](../KARARLAR.md)/[MIGRATION](../MIGRATION.md). Repertoire native; profile permanent WebView.
 
 ## Current outcome and next action
 
-090 is **IN PROGRESS**, not hosted or beta acceptance. Code `5f55c48` binds five readers'
-v2 tickets to actor/Auth-session/choir with service-only SQL authority on every GET/HEAD;
+090 **IN PROGRESS**, not hosted/beta. `5f55c48` binds five readers' v2 to actor/Auth-session/choir with service-only SQL authority on GET/HEAD;
 v1 fails 401 and revoked/switched v2 fails 403. Decision #32 and local implementation
 were approved; do not re-ask the policy. Already-streaming/offline bytes are not recalled.
 Historical SQL `70fd23e`, connected five-family HTTP `9773958`, Android-v2/Chrome `10e9b77`,
@@ -24,16 +21,19 @@ relay/fault/synthetic-storage boundaries, not hosted or the new assignment-versi
 independent chat-room grants. All older detailed evidence/costs remain in090/progress.
 `6fed2ac` connected Android audio actual AuthStore/RLS/POST/Deno/signed loopback S3
 PASS: v1 refusal/one renewal, injected client-deadline/seek/resume, B teardown/old403.
-Source-less native flags fixed by red→green regression; fresh mobile55/401, root107/1075
-and normal exports PASS. [Record/costs](reports/2026-10-01-connected-android-audio-acceptance.md):
-Jev10/11, recovery disagreement retained; daily15calls$0.002435034 estimate, not invoice.
+Source-less native flags repaired; fresh mobile55/401, root107/1075/exports PASS.
+[Audio record/costs](reports/2026-10-01-connected-android-audio-acceptance.md) retain Jev disagreement.
 `ee7be64` [095](briefs/095-webview-current-assignment-file-reader.md) preserves current-version links;
 `216b996` now accepts connected Android assignment WebView/Auth/RLS/Deno/signed synthetic bytes.
 Exact five-reader anchor routing repaired by red→green regression; actual native PDF/share sheet,
 B teardown and old GET/HEAD403/provider0 PASS. [Record](reports/2026-10-01-connected-android-assignment-webview-acceptance.md):
-fresh root110/1108, mobile55/404, guard-off exports; explicit API/listener adapters, no hosted proof.
-Jev9/10: unrun iOS disagreement retained; daily17calls$0.002770236 estimated, not invoice.
-**Next integration:** iOS SDK/disk preflight, then native PDF/audio/WebView acceptance; iOS NOT RUN, beta/hosted/release/090 open.
+fresh root110/1108, mobile55/404, guard-off exports; explicit local adapters; Jev9/10 disagreement retained.
+Current [iOS PDF record](reports/2026-10-01-connected-ios-private-pdf-acceptance.md): normally signed
+Release/actual Auth/RLS/native v1→v2 PDF/pages1/2/B cache/old HEAD403/new POST403 PASS, fixture exit0.
+First early-global-signOut fixture exit1 retained, not accepted; no product code or Auth policy change.
+Fresh mobile55/404; root gate not rerun (no web/shared/dependency edit). Jev7/8 retains unknown-GET
+disagreement; daily18calls$0.002856420 estimated, not invoice. **Next:** fresh measured iOS connected
+audio/recovery/seek/B teardown, then permanent WebView; those/hosted/beta/release/090 remain open.
 
 ## Preserved evidence and remediation
 
@@ -55,8 +55,8 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
-1 Oct owned native/VM/DB/HTTP/derived outputs cleaned; latest final21,940,156KiB free;
-current run low16,792,772KiB. Original068 five hashes/counts28/1/29/9/79 unchanged.
+1 Oct owned native/VM/DB/HTTP/derived outputs cleaned; latest final21,416,800KiB free;
+current iOS run low15,194,204KiB. Original068 five hashes/counts28/1/29/9/79 unchanged.
 Keep original `genova_068_test_restore`, retained 068 backup, private manifests/journals,
 dependencies and existing AVD/global caches. Never rebuild deleted runtimes without preflight.
 Local scoped code/tests/commits/owned cleanup authorized. Hosted DB/Edge/provider, credentials,

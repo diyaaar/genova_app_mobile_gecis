@@ -400,6 +400,9 @@ does not waive mobile privacy, deletion, disclosures or payment-policy assessmen
 Follow select -> implement -> focused test -> review -> required integration/release gates ->
 record -> cleanup -> continue. Use Android for ordinary runtime development; group iOS acceptance
 at integration/candidate milestones and test earlier when an iOS-specific change demands it.
+Current090 integration: [native iOS PDF](reports/2026-10-01-connected-ios-private-pdf-acceptance.md)
+locally accepted; next measured connected iOS audio/recovery/seek/B teardown, then permanent
+WebView. These remaining rows and hosted/provider/phone/beta/release gates are not accepted by PDF.
 Run full gates after code review and targeted repairs stabilize, not after every diagnostic edit;
 never call earlier evidence current after a relevant change. Keep one active outcome, one heavy
 process, >=10 GiB free, bounded artifacts and causal reassessment after two failed approaches.

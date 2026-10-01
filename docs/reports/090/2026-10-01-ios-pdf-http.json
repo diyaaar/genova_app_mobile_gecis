@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "date": "2026-10-01",
+  "sourceRevision": "0602e49",
+  "capture": "Primary transcription of actual connected fixture stdout and CUA observations; not an independent or automatic transcript capture.",
+  "platform": "iOS 26.5 iPhone 17 Simulator, normally signed arm64 Release",
+  "reads": [
+    { "method": "GET", "status": 401, "bytes": 30, "providerDelta": 0 },
+    { "method": "GET", "status": 200, "bytes": 65905, "providerDelta": 1 },
+    { "method": "HEAD", "status": 403, "bytes": 0, "providerDelta": 0 }
+  ],
+  "newATicketAfterNativeBSelection": 403,
+  "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+  "renewals": 1,
+  "nativePageObservations": [1, 2],
+  "pageCount": 40,
+  "privateCachePresentAfterB": false,
+  "fixtureExit": 0,
+  "fixtureTail": ["foreign and old-context POST refusals", "same-session old URL denial", "separate Auth session stays A", "inactive membership new and issued ticket refusals"],
+  "boundary": "Genuine disposable Auth/RLS/PostgREST/Deno plus signed synthetic loopback object storage. Declared valid v1 fault and observer URL relay. Native post-switch request is HEAD, not GET. No hosted R2, real users, hardware, iOS audio or WebView acceptance."
+}

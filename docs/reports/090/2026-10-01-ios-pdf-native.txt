@@ -1,0 +1,18 @@
+Primary transcription from actual CUA screenshots/AX and fixture stdout, 1 October 2026.
+Source main/0602e49; existing 090 acceptance harness, no product code change.
+Normally signed Xcode26.6 arm64 Release build exit0,184658ms; strict codesign PASS.
+Bundle SHA256 bcb4a5e063568ecaa4c6319089a9e2c69d9d6cf8d974d8d764c085a7fe5d657d.
+App manifest SHA256 0547b7576a244a4b2201a8a8dd5910300e48c8f280e5324e5d28cd6e15c52d14.
+Actual local public anon present; service key absent. No manual signing or entitlement override.
+Runtime-only credentials POST200 then410; genuine AuthStore/SecureStore login and A selection.
+Native GET401/provider0 -> one actual v2 renewal -> GET200/provider1,65905 bytes/exact hash.
+CUA inspected nonblank SAYFA1 and distinct SAYFA2,1/40 then2/40; native windows2 then3.
+Actual product B selection; private PDF cache absent by native harness and filesystem check.
+Old A signed URL HEAD403/provider0; fresh A ticket POST403. B-only audio catalogue, no A score.
+Fixture's remaining actual Auth/RLS/session/membership assertions PASS; exit0.
+First runtime attempt had the same PDF/B observations but optional global sign-out happened
+before remaining same-user fixture checks. Sessions0; expectedPOST403 got401; exit1.
+First failure retained, not accepted. Final run used same app/VM/source and fresh synthetic user;
+no sign-out until complete fixture, no weaker assertion or Auth policy change.
+Final owned simulator E9E63857-8DF8-4FE9-ACB3-EC0E3F3B241A uninstalled/shut down/deleted.
+ALL PASS connected local iOS PDF slice; not iOS audio/WebView, hosted/provider/hardware/beta.
