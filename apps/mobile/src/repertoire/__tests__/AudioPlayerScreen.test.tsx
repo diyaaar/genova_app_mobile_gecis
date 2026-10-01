@@ -11,6 +11,7 @@ const audioMock = jest.requireMock('expo-audio') as {
   useAudioPlayer: jest.Mock;
   __emitStatus: (event: Record<string, unknown>) => void;
   __mockPlayer: {
+    id: string;
     play: jest.Mock;
     pause: jest.Mock;
     replace: jest.Mock;
@@ -19,6 +20,7 @@ const audioMock = jest.requireMock('expo-audio') as {
     addListener: jest.Mock;
   };
   __mockStatus: {
+    id: string;
     currentTime: number;
     duration: number;
     playing: boolean;
@@ -83,6 +85,7 @@ function playerElement(
 describe('AudioPlayerScreen', () => {
   beforeEach(() => {
     Object.assign(audioMock.__mockStatus, {
+      id: 'test-player',
       currentTime: 0,
       duration: 0,
       playing: false,
@@ -91,8 +94,9 @@ describe('AudioPlayerScreen', () => {
       playbackRate: 1,
       error: null,
     });
-    for (const method of Object.values(audioMock.__mockPlayer)) method.mockClear();
+    for (const method of Object.values(audioMock.__mockPlayer)) if (jest.isMockFunction(method)) method.mockClear();
     audioMock.useAudioPlayer.mockClear();
+    audioMock.useAudioPlayer.mockImplementation(() => audioMock.__mockPlayer);
   });
 
   it('masks stale native playing/loaded/buffering ticks after tenant clear', async () => {
@@ -275,6 +279,44 @@ describe('AudioPlayerScreen', () => {
     await waitFor(() => expect(source.open).toHaveBeenCalledTimes(2));
     expect(probe).toHaveBeenCalledTimes(1);
     expect(probe).toHaveBeenCalledWith('https://project.invalid/old');
+  });
+
+  it('does not carry the previous player error/loaded tick into a renewed native player', async () => {
+    const source = gateway(jest.fn()
+      .mockResolvedValueOnce({ url: 'https://project.invalid/old', expiresAt: 9_999_999_999_999 })
+      .mockResolvedValueOnce({ url: 'https://project.invalid/fresh', expiresAt: 1 })
+      .mockResolvedValueOnce({ url: 'https://project.invalid/resumed', expiresAt: 9_999_999_999_999 }));
+    const probe = jest.fn(async () => new Response(null, { status: 401 }));
+    const oldPlayer = { ...audioMock.__mockPlayer, id: 'older-player' };
+    const freshStatus = { ...audioMock.__mockStatus, id: 'renewed-player' };
+    const freshPlayer = { ...audioMock.__mockPlayer, id: 'renewed-player',
+      get currentStatus() { return freshStatus; } };
+    Object.assign(audioMock.__mockStatus, { id: 'older-player' });
+    audioMock.useAudioPlayer.mockImplementation((input: { uri?: string } | null) =>
+      input?.uri?.endsWith('/fresh') || input?.uri?.endsWith('/resumed') ? freshPlayer : oldPlayer);
+    const observed = { value: null as ReturnType<typeof useAudioPlayback> | null };
+    function Observer() {
+      const playback = useAudioPlayback(); observed.value = playback;
+      useEffect(() => { void playback.openSession(session); }, [playback.openSession]);
+      return null;
+    }
+    const element = () => <AudioPlaybackProvider gateway={source} probePrivateSource={probe}><Observer /></AudioPlaybackProvider>;
+    const view = await render(element());
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(1));
+    Object.assign(audioMock.__mockStatus, { error: 'Old player failed', isLoaded: true, duration: 10 });
+    await view.rerender(element());
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(audioMock.useAudioPlayer).toHaveBeenLastCalledWith({ uri: 'https://project.invalid/fresh', name: 'Soprano' }, { updateInterval: 250 }));
+    // Expo useEvent can retain the previous emitter snapshot until a new-player tick.
+    expect(observed.value).toMatchObject({ error: null, loaded: false, canControl: false, currentTime: 0 });
+    Object.assign(freshStatus, { isLoaded: true, duration: 10, currentTime: 4 });
+    Object.assign(audioMock.__mockStatus, freshStatus);
+    await view.rerender(element());
+    await act(async () => { await observed.value!.togglePlayback(); });
+    await waitFor(() => expect(source.open).toHaveBeenCalledTimes(3));
+    expect(audioMock.__mockPlayer.seekTo).toHaveBeenCalledWith(4);
+    expect(audioMock.__mockPlayer.play).toHaveBeenCalledTimes(1);
+    expect(probe).toHaveBeenCalledTimes(1);
   });
 
   it('fails closed on a transient native 403 without issuing another ticket', async () => {

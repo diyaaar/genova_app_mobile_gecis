@@ -78,7 +78,10 @@ export function AudioPlaybackProvider({
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [audioSource, setAudioSource] = useState<AudioSource>(null);
   const player = useAudioPlayer(audioSource, { updateInterval: 250 });
-  const status = useAudioPlayerStatus(player);
+  const emittedStatus = useAudioPlayerStatus(player);
+  // Expo's event hook retains its last snapshot while subscribing to a new player.
+  // Never apply a previous source's error/loaded/position state to this native object.
+  const status = emittedStatus.id === player.id ? emittedStatus : player.currentStatus;
   const [nativeFailure, setNativeFailure] = useState<{ source: AudioSource; error: string } | null>(null);
   const bodyError = status.error ?? (nativeFailure?.source === audioSource ? nativeFailure.error : null);
   const [ticketExpiresAt, setTicketExpiresAt] = useState<number | null>(null);

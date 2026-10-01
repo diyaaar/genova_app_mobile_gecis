@@ -34,6 +34,8 @@ jest.mock('@shopify/react-native-skia', () => {
 jest.mock('expo-audio', () => {
   const listeners = new Set<(mockEvent: Record<string, unknown>) => void>();
   const player = {
+    id: 'test-player',
+    get currentStatus() { return status; },
     play: jest.fn(),
     pause: jest.fn(),
     replace: jest.fn(),

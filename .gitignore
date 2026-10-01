@@ -34,5 +34,6 @@ spike/*/public/canvaskit.wasm
 /spike/090-runtime/
 /spike/090-ios-native-build/
 /spike/090-ios-pdf.app/
+/spike/090-ios-audio.app/
 /spike/091-runtime/
 /spike/093-runtime/
