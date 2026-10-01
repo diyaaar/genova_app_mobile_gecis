@@ -1169,3 +1169,16 @@ outputs removed; dependency/AVD/global caches/source/private backups preserved;
 lowest recorded15382484KiB, final22541468KiB. No external mutation or push.
 Next Android beta critical-path outcome: current assignment-version protected reader
 in permanent WebView; integrated native-iOS checkpoint remains explicitly scheduled.
+
+### Current assignment-version web checkpoint — 1 October
+
+[095](095-webview-current-assignment-file-reader.md) / `ee7be64` closes the local web integration
+gap: performance projection retains the immutable version; shared version-first links replace stale
+Drive priority in chorist and assignment detail. Focused15 and fresh root109 files/1090 cases/build
+PASS; final production Chrome8 at desktop/mobile PASS with intercepted synthetic HTTP. This is not
+new Auth/RLS/Android proof. [Record](../reports/095/2026-10-01-acceptance.md) retains failures,
+self-review, cleanup and Jev9/9 with low-confidence cases; daily16calls$0.002585688 estimated.
+Next actual Android gate is now connected assignment-version WebView/Auth/RLS/Edge/signed private
+bytes with A→B teardown and prior URL denial. Existing Android legacy-WebView and five-family
+server results remain historical layers, not a substitute. Integrated native iOS/hosted/release
+gates remain open;090 is still IN PROGRESS. No external mutation or push.

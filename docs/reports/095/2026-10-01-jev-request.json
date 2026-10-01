@@ -1,0 +1,150 @@
+{
+  "packet": {
+    "model": "jev-1.13.0",
+    "state": {
+      "browser": {
+        "timestamp": "2026-10-01T16:58:03.198Z",
+        "boundary": "Production Next build; installed Chrome disposable profiles; synthetic intercepted HTTP; not native/Auth/RLS",
+        "passed": 8,
+        "unexpected": 0,
+        "tests": [
+          {
+            "title": "chorist page uses the immutable private version despite a stale Drive URL",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "title": "online private HEAD denial exposes no old Drive or private link",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "title": "legacy-only submission still exposes its existing link without a private request",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "title": "chorist to assignment-detail continuation keeps the private version and bridge metadata",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "title": "chorist page uses the immutable private version despite a stale Drive URL",
+            "project": "mobile-chrome",
+            "status": "expected"
+          },
+          {
+            "title": "online private HEAD denial exposes no old Drive or private link",
+            "project": "mobile-chrome",
+            "status": "expected"
+          },
+          {
+            "title": "legacy-only submission still exposes its existing link without a private request",
+            "project": "mobile-chrome",
+            "status": "expected"
+          },
+          {
+            "title": "chorist to assignment-detail continuation keeps the private version and bridge metadata",
+            "project": "mobile-chrome",
+            "status": "expected"
+          }
+        ]
+      },
+      "sourceHashes": {
+        "browser": "c6c35ec44ed361924ba7f0ba9afb40d09bdf72fbd20f5642b14ceb34815eb56b",
+        "components/assignments/SubmissionFileLink.tsx": "8d795611a74b4d33b5121567f5fcf2956fb972b98ea0b1b0453c833a0b9ed58d",
+        "lib/korist-performance.ts": "db59a3b1a3ed16be40cea0cd65cb6b2e2dadd5bfea51c47aa56d88abe4710b26",
+        "tests/e2e/assignment-files.spec.ts": "25ba4ac12078408be767fd996d35efe2a0ece31ccc0cca3ab3a049e9f73a8a0b",
+        "components/assignments/SubmissionFileLink.test.tsx": "62422e515cb5b7376417f0ee3a26a4212050470bd6e55e27bc985e5b39b1e377"
+      },
+      "code": "'use client';\n\nimport type { ReactNode } from 'react';\nimport { ExternalLink, Loader2 } from 'lucide-react';\nimport { useAuth } from '@/components/AuthProvider';\nimport { useProtectedDriveFileUrl } from '@/hooks/useProtectedDriveFileUrl';\nimport { isUuidLike } from '@/lib/internalPageLinks';\nimport type { AssignmentSubmission } from '@/lib/supabase';\n\ntype SubmissionFile = Pick<AssignmentSubmission,\n  'drive_file_id' | 'file_name' | 'mime_type' | 'drive_web_view_link' | 'current_file_version_id'>;\n\ninterface Props {\n  submission: SubmissionFile | null | undefined;\n  className: string;\n  children?: ReactNode;\n}\n\n/** Version pointers override legacy URLs. Identity/source replacement unmounts any pending read;\n * the existing private reader, not this UI, authorizes each online ticket/body request. */\nexport function SubmissionFileLink(props: Props) {\n  const { user, member, activeChoir, isLoading, isSwitchingChoir } = useAuth();\n  if (!props.submission) return null;\n  if (isLoading || isSwitchingChoir || !user || !member || !activeChoir) return null;\n\n  const pointer = props.submission.current_file_version_id;\n  if (pointer != null && !isUuidLike(pointer)) {\n    return <UnavailableLink className={props.className} compact={props.children == null} error />;\n  }\n  const sourceKey = JSON.stringify([user.id, activeChoir.choir_id, member.id, pointer,\n    props.submission.drive_file_id, props.submission.drive_web_view_link,\n    props.submission.file_name, props.submission.mime_type]);\n  return <ResolvedSubmissionFileLink key={sourceKey} {...props} />;\n}\n\nfunction ResolvedSubmissionFileLink({ submission, className, children }: Props) {\n  const versionId = submission?.current_file_version_id?.trim();\n  const legacyUrl = versionId ? null : (submission?.drive_web_view_link || null);\n  // R2 versions need no legacy Drive ID. This matches the immutable cache identity written\n  // by the submission transaction, so two versions never share the old Drive cache key.\n  const file = submission && !legacyUrl\n    ? { ...submission, drive_file_id: versionId ? `r2_${versionId}` : submission.drive_file_id }\n    : null;\n  const { url, error } = useProtectedDriveFileUrl(file, { assignmentFileVersionId: versionId });\n  if (!versionId && !legacyUrl && !submission?.drive_file_id) return null;\n  const href = legacyUrl ?? url;\n  if (!href) {\n    return <UnavailableLink className={className} compact={children == null} error={Boolean(error)} />;\n  }\n  return (\n    <a href={href} target=\"_blank\" rel=\"noopener noreferrer\" className={className}\n      aria-label={children == null ? `Dosyayı aç: ${submission?.file_name}` : undefined}\n      data-genova-file-name={submission?.file_name}\n      data-genova-mime-type={submission?.mime_type ?? undefined}>\n      {children ?? <ExternalLink size={13} />}\n    </a>\n  );\n}\n\nfunction UnavailableLink({ className, compact, error }: { className: string; compact: boolean; error: boolean }) {\n  const message = error ? 'Dosyaya erişilemiyor.' : 'Dosya hazırlanıyor...';\n  return <span className={className} role=\"status\" aria-label={message} title={message}>\n    {compact ? (error ? <ExternalLink size={13} className=\"opacity-50\" /> : <Loader2 size={13} className=\"animate-spin\" />) : message}\n  </span>;\n}\n\nPerformance submission projection:\n    showHomeworkMetrics && assignmentIds.length > 0\n      ? supabase.from('assignment_targets').select('assignment_id, member_id').in('assignment_id', assignmentIds)\n      : Promise.resolve({ data: [], error: null as null });\n\n  const submissionPromise =\n    showHomeworkMetrics && assignmentIds.length > 0 && scopeMemberIds.length > 0\n      ? supabase\n          .from('assignment_submissions')\n          .select(\n            'id, assignment_id, member_id, drive_file_id, drive_web_view_link, drive_download_link, current_file_version_id, file_name, mime_type, file_size_bytes, drive_member_folder_id, submitted_at, updated_at, status, submission_note, reviewer_note, approved_at, approved_by',\n          )\n          .in('assignment_id', assignmentIds)\n          .in('member_id', scopeMemberIds)\n      : Promise.resolve({ data: [], error: null as null });\n\n  const [\n    { data: inviteRows, error: inviteError },\n    { data: attendanceRows, error: attendanceError },\n    { data: targetRows, error: targetError },",
+      "method": "Actual local production Next build, installed Chrome with disposable profiles and desktop/mobile viewports. All remote HTTP intercepted with synthetic responses. Primary self-review and focused Vitest15/15 with actual hook but mocked Auth/ticket/cache boundaries. No actual database authorization proof or independent review.",
+      "limits": "No new Android/iOS assignment runtime was run. Android connected assignment-version flow is the next090 checkpoint. No live schema/provider/deployment/account/data or external sharing.090 stays open; iOS and hosted/release gates remain pending.",
+      "policy": "Jev is advisory only, never authorization or acceptance authority. Missing native observations mean unknown, not broken. Source/tests and primary engineering judgment own local acceptance."
+    },
+    "questions": {
+      "version": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The current production chorist-detail web page chooses the immutable assignment version instead of its stale Drive link.",
+        "criteria": {
+          "supports": "The exact claim is established within its stated source/test scope.",
+          "contradicts": "Explicit source, method or action contradicts the claim; an unrun test alone is not contradiction.",
+          "insufficient": "The behavior has not been observed; missing runtime evidence does not establish opposite behavior."
+        }
+      },
+      "denial": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The tested web UI exposes neither its private nor old Drive link when the synthetic online private HEAD returns403.",
+        "criteria": {
+          "supports": "The exact claim is established within its stated source/test scope.",
+          "contradicts": "Explicit source, method or action contradicts the claim; an unrun test alone is not contradiction.",
+          "insufficient": "The behavior has not been observed; missing runtime evidence does not establish opposite behavior."
+        }
+      },
+      "continuation": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The tested chorist to assignment-detail continuation retains the version-backed link and native-bridge file metadata.",
+        "criteria": {
+          "supports": "The exact claim is established within its stated source/test scope.",
+          "contradicts": "Explicit source, method or action contradicts the claim; an unrun test alone is not contradiction.",
+          "insufficient": "The behavior has not been observed; missing runtime evidence does not establish opposite behavior."
+        }
+      },
+      "identity": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The component uses source/actor/choir/member identity remounting and switching guards; focused mocked-boundary tests assert cancellation of late prior-context publication.",
+        "criteria": {
+          "supports": "The exact claim is established within its stated source/test scope.",
+          "contradicts": "Explicit source, method or action contradicts the claim; an unrun test alone is not contradiction.",
+          "insufficient": "The behavior has not been observed; missing runtime evidence does not establish opposite behavior."
+        }
+      },
+      "legacy": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: Legacy-only submissions still use their existing links, without issuing an unnecessary private-version request.",
+        "criteria": {
+          "supports": "The exact claim is established within its stated source/test scope.",
+          "contradicts": "Explicit source, method or action contradicts the claim; an unrun test alone is not contradiction.",
+          "insufficient": "The behavior has not been observed; missing runtime evidence does not establish opposite behavior."
+        }
+      },
+      "rls": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: These Chrome scenarios exercise genuine Supabase authentication and database row-level policies without intercepted responses.",
+        "criteria": {
+          "supports": "The exact claim is established within its stated source/test scope.",
+          "contradicts": "Explicit source, method or action contradicts the claim; an unrun test alone is not contradiction.",
+          "insufficient": "The behavior has not been observed; missing runtime evidence does not establish opposite behavior."
+        }
+      },
+      "android": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: This new assignment-version UI has passed the connected Android WebView Auth/RLS/Edge/private-byte integration.",
+        "criteria": {
+          "supports": "The exact claim is established within its stated source/test scope.",
+          "contradicts": "Explicit source, method or action contradicts the claim; an unrun test alone is not contradiction.",
+          "insufficient": "The behavior has not been observed; missing runtime evidence does not establish opposite behavior."
+        }
+      },
+      "hosted": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: This095 checkpoint deployed or modified live Supabase or Cloudflare storage.",
+        "criteria": {
+          "supports": "The exact claim is established within its stated source/test scope.",
+          "contradicts": "Explicit source, method or action contradicts the claim; an unrun test alone is not contradiction.",
+          "insufficient": "The behavior has not been observed; missing runtime evidence does not establish opposite behavior."
+        }
+      },
+      "whole090": {
+        "type": "choice",
+        "instructions": "How does the supplied evidence relate to this exact claim: The broader090 Android/iOS/hosted/release brief is complete and can close.",
+        "criteria": {
+          "supports": "The exact claim is established within its stated source/test scope.",
+          "contradicts": "Explicit source, method or action contradicts the claim; an unrun test alone is not contradiction.",
+          "insufficient": "The behavior has not been observed; missing runtime evidence does not establish opposite behavior."
+        }
+      }
+    }
+  },
+  "requestSha256": "347de3da9fa70aa45e6f7faad579d6446edcbaeaf72dda5820dc86a35e5c38a5"
+}

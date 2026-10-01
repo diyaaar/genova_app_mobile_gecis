@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-10-01T16:58:03.198Z",
+  "boundary": "Production Next build; installed Chrome disposable profiles; synthetic intercepted HTTP; not native/Auth/RLS",
+  "passed": 8,
+  "unexpected": 0,
+  "tests": [
+    {
+      "title": "chorist page uses the immutable private version despite a stale Drive URL",
+      "project": "chromium",
+      "status": "expected"
+    },
+    {
+      "title": "online private HEAD denial exposes no old Drive or private link",
+      "project": "chromium",
+      "status": "expected"
+    },
+    {
+      "title": "legacy-only submission still exposes its existing link without a private request",
+      "project": "chromium",
+      "status": "expected"
+    },
+    {
+      "title": "chorist to assignment-detail continuation keeps the private version and bridge metadata",
+      "project": "chromium",
+      "status": "expected"
+    },
+    {
+      "title": "chorist page uses the immutable private version despite a stale Drive URL",
+      "project": "mobile-chrome",
+      "status": "expected"
+    },
+    {
+      "title": "online private HEAD denial exposes no old Drive or private link",
+      "project": "mobile-chrome",
+      "status": "expected"
+    },
+    {
+      "title": "legacy-only submission still exposes its existing link without a private request",
+      "project": "mobile-chrome",
+      "status": "expected"
+    },
+    {
+      "title": "chorist to assignment-detail continuation keeps the private version and bridge metadata",
+      "project": "mobile-chrome",
+      "status": "expected"
+    }
+  ]
+}

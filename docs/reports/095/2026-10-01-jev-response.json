@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-10-01T16:58:57.822Z",
+  "requestSha256": "347de3da9fa70aa45e6f7faad579d6446edcbaeaf72dda5820dc86a35e5c38a5",
+  "elapsedMs": 476,
+  "model": "jev-1.13.0",
+  "usage": {
+    "input_tokens": 3587,
+    "output_tokens": 380
+  },
+  "estimatedUsd": 0.00015065399999999998,
+  "answers": {
+    "version": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.98,
+      "probabilities": {
+        "insufficient": 0.01,
+        "contradicts": 0,
+        "supports": 0.99
+      }
+    },
+    "denial": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.96,
+      "probabilities": {
+        "insufficient": 0.02,
+        "contradicts": 0,
+        "supports": 0.98
+      }
+    },
+    "continuation": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.93,
+      "probabilities": {
+        "insufficient": 0.05,
+        "contradicts": 0,
+        "supports": 0.95
+      }
+    },
+    "identity": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.64,
+      "probabilities": {
+        "insufficient": 0.21,
+        "contradicts": 0.03,
+        "supports": 0.76
+      }
+    },
+    "legacy": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.97,
+      "probabilities": {
+        "insufficient": 0.02,
+        "contradicts": 0,
+        "supports": 0.98
+      }
+    },
+    "rls": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 1,
+      "probabilities": {
+        "insufficient": 0,
+        "contradicts": 1,
+        "supports": 0
+      }
+    },
+    "android": {
+      "type": "choice",
+      "choice": "insufficient",
+      "confidence": 0.36,
+      "probabilities": {
+        "insufficient": 0.58,
+        "contradicts": 0.42,
+        "supports": 0
+      }
+    },
+    "hosted": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.64,
+      "probabilities": {
+        "insufficient": 0.24,
+        "contradicts": 0.76,
+        "supports": 0
+      }
+    },
+    "whole090": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.61,
+      "probabilities": {
+        "insufficient": 0.26,
+        "contradicts": 0.74,
+        "supports": 0
+      }
+    }
+  }
+}

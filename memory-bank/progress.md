@@ -487,3 +487,19 @@ disagreement retained. Daily15calls57977input/7163output,$0.002435034 estimate, 
 Owned stack/VM/emulator/app/generated files removed; original068 hash/counts unchanged;
 22541468KiB final free.090 stays open; next Android path: current assignment-version
 protected reader in permanent WebView. No push or external/provider/device authority used.
+
+## 1 October 2026 — current assignment-version WebView links (095)
+
+Source/test `ee7be64`; [095 acceptance](../docs/reports/095/2026-10-01-acceptance.md).
+Performance projection and shared version-first links preserve current immutable files and bridge
+metadata, refuse Drive fallback on private denial/malformed pointers, cancel late prior-source/context
+publication and retain legacy-only compatibility. Focused2 files/15 cases; fresh root109/1090/build;
+final production desktop/mobile Chrome8 including assignment continuation PASS. Remote HTTP is
+intercepted synthetic; no actual Android/Auth/RLS/Edge/body acceptance is claimed for this change.
+Jev one9-question call3587input/380output/476ms,$0.000150654 estimated;9/9 primary labels agree,
+four low-confidence answers retained. Daily16calls61564input7543output,$0.002585688 estimated,
+not provider invoice/independent review. Three offline advisory guards pass. Key never persisted.
+Owned loopback/build/test output stopped/removed (~529.65MiB); final23235824KiB free, no DB/VM/native
+runtime touched, original068/global caches/dependencies and unrelated CLI marker preserved.
+095 local-web result accepted;090 remains open. Next: actual connected Android assignment-version
+WebView/local Auth/RLS/Edge/signed synthetic bytes, A→B and old URL refusal. No push/deploy.

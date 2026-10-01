@@ -9,28 +9,13 @@ own objective/queue/resources. Evidence stays in briefs/[progress](progress.md),
 [090](../docs/briefs/090-private-file-ticket-revocation-contract.md) remains IN PROGRESS.
 Approved #32 next-online-request policy is implemented locally (`5f55c48`):
 five-family actor/Auth-session/choir v2 authority per GET/HEAD, v1 401 and revoked v2 403.
-30 Sep PG17 matrix/two-session SQL (`70fd23e`), five-family connected Auth/RLS/Deno/
-signed-loopback-S3 HTTP (`9773958`), Android current-v2 PDF/switch/cache/old URL 403
-and actual Chrome PDF recovery (`10e9b77`) pass. Chrome used declared fault injections
-and a test-only function relay, not unmodified Kong or WebView.
-
-1 Oct [general check-up](../docs/reports/2026-10-01-project-checkup.md) found stale WF-013
-policy wording and oversized duplicate indexes; current pointers corrected, history retained.
-`dc46c2a` fixes reproduced Android audio transient-error loss and stale seek restart;
-actual API36 bounded401 renewal/seek/resume/tenant-clear/403 PASS, deliberately
-unsigned synthetic ticket service, not Auth/SQL/S3/native-v1. Details/gates in090.
-1 Oct `364cfe4` connected Android native PDF valid-v1 GET401 → one real v2 renewal,
-exact65905B/pages1+2/40/cache/B-only/oldHEAD403/newPOST403 PASS. Actual local Auth/RLS/
-Deno/signed S3 with declared relay/runtime-only credentials; not hosted/unmodified Kong.
-1 Oct `d8139bc`: actual permanent Android korist-detail WebView file flow PASS: baseline
-one authority renewal/65905B/share sheet/cache/B-profile/oldHEAD403/provider0.
-Explicit local relay; not external sharing or assignment-version Drive-exit.
-Fresh mobile TS54/377, root106/1067/build and normal Android/iOS JS exports PASS.
-1 Oct `d448de5` repertoire + `cc20758` remaining-four: declared-adapter HTTP/COMMIT
-PASS,20 cases/two runs; new403/provider0, existing stream completes. Four actual index
-registrations via strict Supabase-fetch/psql, not fresh Auth/PostgREST. Chat preserves
-independent room grant after unrelated role loss. [Evidence/costs](../docs/reports/2026-10-01-private-file-families-http-overlap.md):
-Jev8/10 self-labels/two retained disagreements; historical daily14calls$0.002274384 estimate.
+Historical SQL/two-session `70fd23e`, connected five-family HTTP `9773958`, Android-v2/Chrome
+`10e9b77`, connected PDF `364cfe4` and legacy WebView `d8139bc` PASS within090's declared
+local relay/fault/synthetic-storage boundaries, not hosted or new assignment integration.
+[General check-up](../docs/reports/2026-10-01-project-checkup.md) corrected stale policy/indexes.
+[HTTP/COMMIT overlap](../docs/reports/2026-10-01-private-file-families-http-overlap.md)
+`d448de5`/`cc20758`:20 cases via dependency adapter, not fresh Auth/PostgREST; independent
+chat-room grants retained. All detailed historical evidence/costs remain in090/progress.
 `6fed2ac`: connected native Android audio actual AuthStore/RLS/POST/Deno/signed loopback
 storage PASS with declared v1/client-deadline/earlier-v2/relay faults; source-less native
 status regression fixed. Fresh mobile55/401, root107/1075, normal exports PASS.
@@ -38,8 +23,13 @@ status regression fixed. Fresh mobile55/401, root107/1075, normal exports PASS.
 Jev10/11, recovery disagreement retained; daily15calls$0.002435034 estimated, not invoice.
 Native iOS audio error-latch/seek acceptance is scheduled at 090's
 integrated both-platform private-client checkpoint before release; JS export does not close it.
-**Next Android critical-path action:** performance query/HomeworkCard current assignment-version
-private-reader integration in permanent WebView. Hosted rollout separately gated;090 stays open.
+`ee7be64` [095](../docs/briefs/095-webview-current-assignment-file-reader.md): current-version
+projection/shared private links, denial/late-source teardown and legacy compatibility accepted locally.
+Focused15, fresh root109/1090/build and final production desktop/mobile Chrome8 PASS with intercepted
+HTTP, not Android/Auth/RLS. [Record/costs](../docs/reports/095/2026-10-01-acceptance.md): Jev9/9 labels,
+four low-confidence cases retained; daily16calls$0.002585688 estimated, not invoice.
+**Next Android critical-path action:** connected actual assignment-version WebView/local Auth/RLS/
+Edge/signed private bytes, A→B teardown and old URL refusal. Hosted rollout separately gated;090 open.
 
 ## Preserved historical evidence
 
@@ -60,8 +50,8 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary agent is sole writer. 1 Oct owned emulator/app/reverse/connected runtime/VM and
-generated outputs cleaned; latest connected-audio cleanup leaves22,541,468KiB
-free, original068 row hashes/counts unchanged (090).
+generated outputs cleaned; latest095 final check leaves23,235,824KiB free.095 did not touch a DB/VM/native
+runtime; historical090 original068 row hashes/counts unchanged, preserve it.
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
 global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;
 one heavy process, two-failure causal reassessment, no blind rebuild or broad cleanup.

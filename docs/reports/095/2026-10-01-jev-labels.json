@@ -1,0 +1,14 @@
+{
+  "expected": {
+    "version": "supports",
+    "denial": "supports",
+    "continuation": "supports",
+    "identity": "supports",
+    "legacy": "supports",
+    "rls": "contradicts",
+    "android": "insufficient",
+    "hosted": "contradicts",
+    "whole090": "contradicts"
+  },
+  "labelOwner": "Primary agent frozen before inference; not independent."
+}
