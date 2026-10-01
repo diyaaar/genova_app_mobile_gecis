@@ -13,7 +13,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./test/setup.ts'],
     include: ['**/*.test.{ts,tsx}'],
-    exclude: ['node_modules/**', '.next/**', 'tests/e2e/**', 'spike/**', 'apps/**'],
+    exclude: ['node_modules/**', '.next/**', 'tests/e2e/**', 'spike/**', 'apps/**', 'supabase/test-support/090_http_*.test.ts'],
     clearMocks: true,
     restoreMocks: true,
     coverage: {

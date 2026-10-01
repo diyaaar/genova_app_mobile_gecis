@@ -95,6 +95,29 @@ describe('AudioPlayerScreen', () => {
     audioMock.useAudioPlayer.mockClear();
   });
 
+  it('masks stale native playing/loaded/buffering ticks after tenant clear', async () => {
+    const source = gateway(async () => ({ url: 'https://project.invalid/audio', expiresAt: 9_999_999_999_999 }));
+    const observed = { value: null as ReturnType<typeof useAudioPlayback> | null };
+    function Observer() {
+      const playback = useAudioPlayback(); observed.value = playback;
+      useEffect(() => { void playback.openSession(session); }, [playback.openSession]);
+      return null;
+    }
+    const element = () => <AudioPlaybackProvider gateway={source}><Observer /></AudioPlaybackProvider>;
+    const view = await render(element());
+    await waitFor(() => expect(typeof observed.value?.ticketExpiresAt).toBe('number'));
+    Object.assign(audioMock.__mockStatus, { playing: true, isLoaded: true, isBuffering: true, currentTime: 2, duration: 10 });
+    await view.rerender(element());
+    expect(observed.value?.playing).toBe(true);
+    await act(async () => { await clearTenantCaches(); });
+    expect(audioMock.__mockPlayer.pause).toHaveBeenCalled();
+    expect(observed.value).toMatchObject({ session: null, ticketExpiresAt: null, currentTime: 0, duration: 0,
+      playing: false, loaded: false, buffering: false, canControl: false });
+    // A late native tick must not restore the old tenant's outward playback state.
+    await act(async () => { audioMock.__emitStatus({ playing: true, isLoaded: true, isBuffering: true, currentTime: 3 }); });
+    expect(observed.value).toMatchObject({ session: null, playing: false, loaded: false, buffering: false });
+  });
+
   it('loads a protected source and exposes play, seek, rate and track controls', async () => {
     const source = gateway(async (fileId) => ({
       url: `https://project.invalid/audio?fileId=${fileId}`,

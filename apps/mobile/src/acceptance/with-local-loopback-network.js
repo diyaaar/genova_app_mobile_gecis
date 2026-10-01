@@ -16,6 +16,20 @@ const RESOURCE_XML = `<?xml version="1.0" encoding="utf-8"?>
 `;
 
 function requireGuardedLoopbackEnvironment(environment = process.env) {
+  if (environment.GENOVA_090_CONNECTED_ANDROID_AUDIO_LOOPBACK === '1') {
+    if (environment.EXPO_PUBLIC_GENOVA_090_CONNECTED_AUDIO !== '1' ||
+        environment.EXPO_PUBLIC_SUPABASE_URL !== 'http://127.0.0.1:54491' ||
+        ['GENOVA_090_ANDROID_WEBVIEW_LOOPBACK','GENOVA_090_ANDROID_PDF_LOOPBACK','GENOVA_090_ANDROID_AUDIO_LOOPBACK',
+          'EXPO_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE','EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE',
+          'EXPO_PUBLIC_GENOVA_090_AUDIO_ACCEPTANCE','EXPO_PUBLIC_GENOVA_093_ACCEPTANCE','EXPO_PUBLIC_GENOVA_026_ACCEPTANCE',
+          'EXPO_PUBLIC_GENOVA_033_ACCEPTANCE',ACCEPTANCE_FLAG,R2_ACCEPTANCE_FLAG].some(key=>environment[key]==='1')) {
+      throw new Error('090 connected audio requires only exact isolated Auth flags.');
+    }
+    return true;
+  }
+  if (environment.EXPO_PUBLIC_GENOVA_090_CONNECTED_AUDIO === '1') {
+    throw new Error('090 connected audio requires its explicit loopback build guard.');
+  }
   if (environment.GENOVA_090_ANDROID_WEBVIEW_LOOPBACK === '1') {
     if (environment.EXPO_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE !== '1' ||
         environment.EXPO_PUBLIC_SUPABASE_URL !== 'http://127.0.0.1:54491' ||

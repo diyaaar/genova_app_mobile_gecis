@@ -8,6 +8,7 @@ import { resolve } from 'node:path';
 import { createServer } from 'node:http';
 import { createClient } from '@supabase/supabase-js';
 import { createRepertoireFileTicket } from '../functions/repertoire-file/ticket';
+import { assertLocalSignature,createConnectedAudioFixture,toneWav } from './091_connected_audio_fixture';
 
 const API = 'http://127.0.0.1:54491';
 const EDGE = 'http://127.0.0.1:8000';
@@ -40,6 +41,8 @@ if (androidFixturePath) {
 }
 const nativePdfRecovery = process.env.GENOVA_090_ANDROID_PDF_RECOVERY === '1';
 const webViewRecovery = process.env.GENOVA_090_ANDROID_WEBVIEW === '1';
+const nativeAudioRecovery = process.env.GENOVA_090_CONNECTED_ANDROID_AUDIO === '1';
+if(nativeAudioRecovery){assert.ok(androidFixturePath);assert.equal(nativePdfRecovery,false);assert.equal(webViewRecovery,false);}
 if (webViewRecovery) {
   assert.ok(androidFixturePath, '090 WebView requires the explicit owned runtime hold');
   assert.equal(nativePdfRecovery, false, '090 accepts one native consumer at a time');
@@ -58,21 +61,26 @@ const ids = {
   targetA: randomUUID(), roleChoristA: randomUUID(), homework: randomUUID(), submission: randomUUID(),
 };
 const assignmentA = randomUUID();
-const pdf = new Uint8Array(readFileSync('apps/mobile/src/repertoire/__fixtures__/score_40p.pdf'));
-assert.equal(pdf.byteLength, 65_905);
+const pdf = nativeAudioRecovery ? toneWav() : new Uint8Array(readFileSync('apps/mobile/src/repertoire/__fixtures__/score_40p.pdf'));
+assert.equal(pdf.byteLength,nativeAudioRecovery?160044:65_905);
+const fileAKey=`choirs/${ids.choirA}/repertoire/${ids.fileA}/${nativeAudioRecovery?'tone.wav':'score.pdf'}`;
 const wav = Buffer.concat([
   Buffer.from('RIFF'), Buffer.from([40, 0, 0, 0]), Buffer.from('WAVEfmt '),
   Buffer.from([16, 0, 0, 0, 1, 0, 1, 0, 64, 31, 0, 0, 128, 62, 0, 0, 2, 0, 16, 0]),
   Buffer.from('data'), Buffer.from([4, 0, 0, 0, 0, 0, 1, 0]),
 ]);
 const objects = new Map<string, { bytes: Uint8Array; type: string }>([
-  [`/${BUCKET}/choirs/${ids.choirA}/repertoire/${ids.fileA}/score.pdf`, { bytes: pdf, type: 'application/pdf' }],
+  [`/${BUCKET}/${fileAKey}`, { bytes: pdf, type: nativeAudioRecovery?'audio/wav':'application/pdf' }],
   [`/${BUCKET}/choirs/${ids.choirB}/repertoire/${ids.fileB}/rehearsal.wav`, { bytes: wav, type: 'audio/wav' }],
 ]);
 let providerHits = 0;
+const connectedAudio=createConnectedAudioFixture(ids.fileA,pdf,()=>providerHits);
 const provider = createServer((request, response) => {
   try {
     const url = new URL(request.url ?? '/', S3);
+    if(nativeAudioRecovery&&url.pathname.startsWith('/090/audio-')){
+      void connectedAudio.handle(request,response,url).catch(()=>{response.writeHead(500);response.end();});return;
+    }
     if (webViewRecovery && (url.pathname.startsWith('/090/webview-') ||
         url.pathname === '/functions/v1/repertoire-file')) {
       void (async () => {
@@ -159,9 +167,7 @@ const provider = createServer((request, response) => {
       })().catch(() => { response.writeHead(500); response.end(); });
       return;
     }
-    assert.match(request.headers.authorization ?? '', /^AWS4-HMAC-SHA256 /);
-    assert.ok(request.headers.authorization?.includes(`Credential=${ACCESS}/`));
-    assert.equal(url.search, '');
+    assertLocalSignature(request,url,ACCESS,SECRET);
     providerHits += 1;
     const item = objects.get(decodeURI(url.pathname));
     if (!item) { response.writeHead(404); response.end(); return; }
@@ -257,13 +263,13 @@ async function main() {
       ('${ids.songA}','${ids.choirA}','091 score','091-synthetic-no-provider',true),
       ('${ids.songB}','${ids.choirB}','091 audio','091-synthetic-no-provider',true);
     insert into public.repertoire_files(id,choir_id,song_id,file_name,file_type,drive_file_id,mime_type,file_size_bytes) values
-      ('${ids.fileA}','${ids.choirA}','${ids.songA}','score.pdf','sheet','091-no-drive-a','application/pdf',${pdf.length}),
+      ('${ids.fileA}','${ids.choirA}','${ids.songA}','${nativeAudioRecovery?'tone.wav':'score.pdf'}','${nativeAudioRecovery?'audio':'sheet'}','091-no-drive-a','${nativeAudioRecovery?'audio/wav':'application/pdf'}',${pdf.length}),
       ('${ids.fileB}','${ids.choirB}','${ids.songB}','rehearsal.wav','audio','091-no-drive-b','audio/wav',${wav.length});
     insert into public.song_assignments(id,choir_id,song_id,member_id,assigned_by,part_name) values
       ('${assignmentA}','${ids.choirA}','${ids.songA}','${ids.memberA}','${ids.memberA}','Alto');
     insert into public.repertoire_file_storage_locations
       (repertoire_file_id,choir_id,provider,bucket,object_key,content_length,mime_type,sha256_hex,verified_at,is_active) values
-      ('${ids.fileA}','${ids.choirA}','r2','${BUCKET}','choirs/${ids.choirA}/repertoire/${ids.fileA}/score.pdf',${pdf.length},'application/pdf','${hash(pdf)}',now(),true),
+      ('${ids.fileA}','${ids.choirA}','r2','${BUCKET}','${fileAKey}',${pdf.length},'${nativeAudioRecovery?'audio/wav':'application/pdf'}','${hash(pdf)}',now(),true),
       ('${ids.fileB}','${ids.choirB}','r2','${BUCKET}','choirs/${ids.choirB}/repertoire/${ids.fileB}/rehearsal.wav',${wav.length},'audio/wav','${hash(wav)}',now(),true);
     commit;`);
   const shared = userClient(), sharedSecondSession = userClient(), outsider = userClient();
@@ -323,15 +329,18 @@ async function main() {
         email: first.data.user.email, password: passwordA, choirA: ids.choirA,
         choirB: ids.choirB, fileId: ids.fileA, pdfSha256: hash(pdf),
       };
-      if (webViewRecovery) oneUseFixture = JSON.stringify({ email: first.data.user.email, password: passwordA });
+      if(nativeAudioRecovery)connectedAudio.setFixture({email:first.data.user.email,password:passwordA,choirA:ids.choirA,
+        choirB:ids.choirB,fileId:ids.fileA,songId:ids.songA,audioSha256:hash(pdf),legacyUrl:legacyUrl.toString()});
+      else if (webViewRecovery) oneUseFixture = JSON.stringify({ email: first.data.user.email, password: passwordA });
       else if (nativePdfRecovery) oneUseFixture = JSON.stringify({ ...payload, legacyUrl: legacyUrl.toString() });
       else await writeFile(androidFixturePath, JSON.stringify(payload), { mode: 0o600, flag: 'wx' });
-      console.log(`READY ${webViewRecovery ? '090 WebView' : nativePdfRecovery ? '090 one-use runtime' : '093'} synthetic Android fixture; send SIGTERM after runtime check`);
+      console.log(`READY ${nativeAudioRecovery?'090 connected audio':webViewRecovery ? '090 WebView' : nativePdfRecovery ? '090 one-use runtime' : '093'} synthetic Android fixture; send SIGTERM after runtime check`);
       await new Promise<void>((resolve, reject) => {
         const timeout = setTimeout(() => reject(new Error('093 Android hold timed out')), 30 * 60_000);
         process.once('SIGTERM', () => { clearTimeout(timeout); resolve(); });
       });
-      if (webViewRecovery) {
+      if(nativeAudioRecovery)connectedAudio.finish();
+      else if (webViewRecovery) {
         assert.equal(fixtureConsumed, true); assert.equal(oneUseFixture, null);
         assert.ok(webViewReads.filter(row => row.method === 'GET' && row.status === 401).length >= 2, 'baseline and repaired old body refusals missing');
         assert.equal(webViewReads.filter(row => row.method === 'POST' && row.status === 200).length, 1, 'recovery must issue exactly one fresh ticket');
@@ -374,6 +383,7 @@ async function main() {
     if (diagnostics) process.stderr.write(diagnostics.replaceAll(service, '[redacted]'));
     throw error;
   } finally {
+    connectedAudio.clear();
     oneUseFixture = null;
     if (androidFixturePath) await unlink(androidFixturePath).catch(() => {});
     edge.kill('SIGTERM');

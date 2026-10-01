@@ -325,9 +325,11 @@ export function AudioPlaybackProvider({
     playbackRate,
     currentTime,
     duration,
-    playing: status.playing,
-    buffering: status.isBuffering,
-    loaded: status.isLoaded,
+    // Native status can retain the previous source's last tick after pause /
+    // replace(null). No source means no outward playback state for that tenant.
+    playing: hasSource && status.playing,
+    buffering: hasSource && status.isBuffering,
+    loaded: hasSource && status.isLoaded,
     busy: !error && (loadingTicket || (hasSource && (status.isBuffering || !status.isLoaded))),
     canControl,
     openSession,
