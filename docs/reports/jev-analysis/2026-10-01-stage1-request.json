@@ -1,0 +1,74 @@
+{
+  "model": "jev-1.13.0",
+  "requestSha256": "f0e991f14cb1198f06e50a8c19d04d73d15e3ba8a3eb0c6a4a0c111e2f2acbce",
+  "requestBytes": 9863,
+  "publicDocuments": [
+    {
+      "url": "https://docs.typesafe.ai/introduction.md",
+      "sha256": "e484b102dfe5bc25d71b4601712499835d02777da2d5dee4541436dd0c4a6c8a"
+    },
+    {
+      "url": "https://docs.typesafe.ai/introduction/coding-agents.md",
+      "sha256": "591c36ffd02bacc587c880584a042c6ca1ae94f3775f67c56d289d23531aa831"
+    }
+  ],
+  "state": {},
+  "questions": {
+    "output": {
+      "type": "choice",
+      "instructions": "According to the provided documentation, what does Jev output?",
+      "criteria": {
+        "typed_judgments": "Typed choices/scores/probabilities.",
+        "generated_report": "A free-form report or generated code.",
+        "unknown": "Not established."
+      }
+    },
+    "repository": {
+      "type": "choice",
+      "instructions": "How can Jev examine repository behavior according to the documentation?",
+      "criteria": {
+        "prepared_context": "Code or a coding agent supplies relevant evidence as state.",
+        "autonomous_tools": "Jev itself browses the filesystem and runs shell tools.",
+        "unknown": "Not established."
+      }
+    },
+    "code": {
+      "type": "choice",
+      "instructions": "Who writes and edits application code in the documented workflow?",
+      "criteria": {
+        "coding_agent": "The external LLM coding agent or engineer.",
+        "jev_itself": "Jev replaces the code-writing agent.",
+        "unknown": "Not established."
+      }
+    },
+    "analysis": {
+      "type": "choice",
+      "instructions": "How should a broad migration analysis needing several independent judgments use Jev?",
+      "criteria": {
+        "atomic_questions": "Separate narrow questions, then combine their results in code.",
+        "generated_essay": "Ask Jev to generate one long reasoning essay.",
+        "unknown": "Not established."
+      }
+    },
+    "relevance": {
+      "type": "choice",
+      "instructions": "Which documented primitive selects one relevant source candidate from a defined list?",
+      "criteria": {
+        "choice": "Choice.",
+        "score": "Score.",
+        "noul": "Noul.",
+        "unknown": "Not established."
+      }
+    },
+    "proof": {
+      "type": "choice",
+      "instructions": "Can a Jev decision that a test claim sounds supported replace actually executing the native test?",
+      "criteria": {
+        "execution_required": "No; execution and its evidence remain external.",
+        "model_proof": "Yes; model confidence proves the test ran.",
+        "unknown": "Not established."
+      }
+    }
+  },
+  "limit": "Public document bodies are not retained in this record. Original hash/URL identify fetched version; current upstream can change."
+}

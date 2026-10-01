@@ -1,0 +1,157 @@
+{
+  "model": "jev-1.13.0",
+  "requestSha256": "8c3431f0c61155ef479e8600c7b42a6ff736e18a1851e1c7736e5b5889056efd",
+  "requestBytes": 15936,
+  "publicDocuments": [
+    {
+      "url": "https://docs.typesafe.ai/introduction.md",
+      "sha256": "e484b102dfe5bc25d71b4601712499835d02777da2d5dee4541436dd0c4a6c8a"
+    }
+  ],
+  "state": {
+    "project": {
+      "stack": "Next.js/React/TypeScript web and React Native/Expo native product in one repository; Supabase Auth/Postgres/RLS/Edge/Realtime; private file migration away from Drive.",
+      "ownership": "Auth/shell/repertoire/chat/homework/home are native targets. Announcements/choristers/profile/attendance are permanent WebView; do not rewrite them as native.",
+      "invariants": "Platform-free TypeScript active-choir/annotation contracts are shared. Session/choir/member/role authority and file access stay deterministic in DB/Edge. No AI authorization.",
+      "evidence": "Dated briefs distinguish local SQL/HTTP/Chrome/emulator checks from hosted/provider/physical-device/release gates; self-review is not independent review.",
+      "current_gap": "The korist-performance submission select lacks current_file_version_id, while HomeworkCard prefers a legacy drive_web_view_link. This is a known integration follow-up, not model-discovered evidence.",
+      "owner_choice": "React Native/Expo retained; Flutter is only a comparison alternative. Human architecture ownership unchanged.",
+      "scope": "Development decision support first; no provider integration or sending choir/user data. Recommendations must survive source/test/human checks."
+    },
+    "source_references": [
+      {
+        "path": "MIGRATION.md",
+        "sha256": "6d56dea0a0c25b74bf967f064eb8622ec95e82be88fdc05ed1ac4b2d29e526e9"
+      },
+      {
+        "path": "AGENTS.md",
+        "sha256": "a086b86db94eae0f43e6c48484d5f045be615ba0c59491874b388ba2706d8328"
+      },
+      {
+        "path": "docs/agent-handoff.md",
+        "sha256": "8502b6641d1fa590a7aa2b0e00a394696a36d6b49354952b9a1bd58a9e926833"
+      },
+      {
+        "path": "lib/choir-context-core.ts",
+        "sha256": "38fef60354ddb5ff18e3352ba46e3c1545eddd99dae79f10f24fe9e0c25188ff"
+      },
+      {
+        "path": "lib/repertuvar/annotation-types.ts",
+        "sha256": "56092bd56e87e41b1f61a9be4bf5d5649b18345529cbf94e75cf3beb73848872"
+      },
+      {
+        "path": "apps/mobile/src/repertoire/reader-gateway.ts",
+        "sha256": "d5cfab3af97add98d13d346133e91705ea68b55ffbb5571221b469fbee72142a"
+      },
+      {
+        "path": "lib/korist-performance.ts",
+        "sha256": "3df2eefec3601cd9e0a24702764aef5b164650a9da1bdfe878c9101c9d53367b"
+      },
+      {
+        "path": "app/(main)/koristler/[id]/page.tsx",
+        "sha256": "bfbeabc3bbb558338938c735bbe94274580365af9bb5bcbddba82023f3ca36f1"
+      }
+    ],
+    "candidates": {
+      "migration_parity": "Compare one web behavior description with its native counterpart and decide whether an invariant is preserved; humans supply source excerpts and run tests.",
+      "evidence_match": "Select which dated source/test excerpt supports a brief acceptance claim, with unsupported/no-match choices; do not declare a test passed.",
+      "failure_triage": "Route redacted test failure text to a likely owner/layer, including unknown; an engineer reproduces and confirms the diagnosis.",
+      "documentation_drift": "Flag narrative contradictions between dated briefs, current source summaries and the approved migration plan; current source/owner decides.",
+      "authorized_search": "Rank textual repertoire or help-document candidates already fetched under deterministic tenant authorization; no new data access.",
+      "repertoire_matching": "Select a likely equivalent work/title/composer from code-prepared candidate metadata; deterministic normalization handles exact matches; ambiguous merges need human approval.",
+      "access_authority": "Replace DB Auth/RLS/role/membership checks with a model confidence judgment that directly grants Choir B file access to a Choir A actor.",
+      "binary_validation": "Ask Jev itself to inspect PDF pixels, singer audio, stylus pressure or actual native rendering without preprocessing or platform tests."
+    }
+  },
+  "questions": {
+    "migration_parity": {
+      "type": "choice",
+      "instructions": "Given the documented capabilities, project facts and this candidate: Compare one web behavior description with its native counterpart and decide whether an invariant is preserved; humans supply source excerpts and run tests.\nWhich approach best fits this bounded task? Do not evaluate facts missing from the supplied state.",
+      "criteria": {
+        "candidate_selection": "Useful semantic selection among code-prepared options; prototype with Choice and a no-match option.",
+        "evidence_verification": "Useful bounded semantic consistency or claim verification; prototype with Noul per assertion and human/test confirmation.",
+        "graded_ranking": "Useful graded semantic ranking; prototype with explicit Score dimensions and evaluate thresholds.",
+        "deterministic_only": "Known exact rule, access authority, or non-text/platform verification; use deterministic code/tests, not Jev inference.",
+        "insufficient_evidence": "Evidence is too limited or this candidate cannot usefully fit the supported primitives."
+      }
+    },
+    "evidence_match": {
+      "type": "choice",
+      "instructions": "Given the documented capabilities, project facts and this candidate: Select which dated source/test excerpt supports a brief acceptance claim, with unsupported/no-match choices; do not declare a test passed.\nWhich approach best fits this bounded task? Do not evaluate facts missing from the supplied state.",
+      "criteria": {
+        "candidate_selection": "Useful semantic selection among code-prepared options; prototype with Choice and a no-match option.",
+        "evidence_verification": "Useful bounded semantic consistency or claim verification; prototype with Noul per assertion and human/test confirmation.",
+        "graded_ranking": "Useful graded semantic ranking; prototype with explicit Score dimensions and evaluate thresholds.",
+        "deterministic_only": "Known exact rule, access authority, or non-text/platform verification; use deterministic code/tests, not Jev inference.",
+        "insufficient_evidence": "Evidence is too limited or this candidate cannot usefully fit the supported primitives."
+      }
+    },
+    "failure_triage": {
+      "type": "choice",
+      "instructions": "Given the documented capabilities, project facts and this candidate: Route redacted test failure text to a likely owner/layer, including unknown; an engineer reproduces and confirms the diagnosis.\nWhich approach best fits this bounded task? Do not evaluate facts missing from the supplied state.",
+      "criteria": {
+        "candidate_selection": "Useful semantic selection among code-prepared options; prototype with Choice and a no-match option.",
+        "evidence_verification": "Useful bounded semantic consistency or claim verification; prototype with Noul per assertion and human/test confirmation.",
+        "graded_ranking": "Useful graded semantic ranking; prototype with explicit Score dimensions and evaluate thresholds.",
+        "deterministic_only": "Known exact rule, access authority, or non-text/platform verification; use deterministic code/tests, not Jev inference.",
+        "insufficient_evidence": "Evidence is too limited or this candidate cannot usefully fit the supported primitives."
+      }
+    },
+    "documentation_drift": {
+      "type": "choice",
+      "instructions": "Given the documented capabilities, project facts and this candidate: Flag narrative contradictions between dated briefs, current source summaries and the approved migration plan; current source/owner decides.\nWhich approach best fits this bounded task? Do not evaluate facts missing from the supplied state.",
+      "criteria": {
+        "candidate_selection": "Useful semantic selection among code-prepared options; prototype with Choice and a no-match option.",
+        "evidence_verification": "Useful bounded semantic consistency or claim verification; prototype with Noul per assertion and human/test confirmation.",
+        "graded_ranking": "Useful graded semantic ranking; prototype with explicit Score dimensions and evaluate thresholds.",
+        "deterministic_only": "Known exact rule, access authority, or non-text/platform verification; use deterministic code/tests, not Jev inference.",
+        "insufficient_evidence": "Evidence is too limited or this candidate cannot usefully fit the supported primitives."
+      }
+    },
+    "authorized_search": {
+      "type": "choice",
+      "instructions": "Given the documented capabilities, project facts and this candidate: Rank textual repertoire or help-document candidates already fetched under deterministic tenant authorization; no new data access.\nWhich approach best fits this bounded task? Do not evaluate facts missing from the supplied state.",
+      "criteria": {
+        "candidate_selection": "Useful semantic selection among code-prepared options; prototype with Choice and a no-match option.",
+        "evidence_verification": "Useful bounded semantic consistency or claim verification; prototype with Noul per assertion and human/test confirmation.",
+        "graded_ranking": "Useful graded semantic ranking; prototype with explicit Score dimensions and evaluate thresholds.",
+        "deterministic_only": "Known exact rule, access authority, or non-text/platform verification; use deterministic code/tests, not Jev inference.",
+        "insufficient_evidence": "Evidence is too limited or this candidate cannot usefully fit the supported primitives."
+      }
+    },
+    "repertoire_matching": {
+      "type": "choice",
+      "instructions": "Given the documented capabilities, project facts and this candidate: Select a likely equivalent work/title/composer from code-prepared candidate metadata; deterministic normalization handles exact matches; ambiguous merges need human approval.\nWhich approach best fits this bounded task? Do not evaluate facts missing from the supplied state.",
+      "criteria": {
+        "candidate_selection": "Useful semantic selection among code-prepared options; prototype with Choice and a no-match option.",
+        "evidence_verification": "Useful bounded semantic consistency or claim verification; prototype with Noul per assertion and human/test confirmation.",
+        "graded_ranking": "Useful graded semantic ranking; prototype with explicit Score dimensions and evaluate thresholds.",
+        "deterministic_only": "Known exact rule, access authority, or non-text/platform verification; use deterministic code/tests, not Jev inference.",
+        "insufficient_evidence": "Evidence is too limited or this candidate cannot usefully fit the supported primitives."
+      }
+    },
+    "access_authority": {
+      "type": "choice",
+      "instructions": "Given the documented capabilities, project facts and this candidate: Replace DB Auth/RLS/role/membership checks with a model confidence judgment that directly grants Choir B file access to a Choir A actor.\nWhich approach best fits this bounded task? Do not evaluate facts missing from the supplied state.",
+      "criteria": {
+        "candidate_selection": "Useful semantic selection among code-prepared options; prototype with Choice and a no-match option.",
+        "evidence_verification": "Useful bounded semantic consistency or claim verification; prototype with Noul per assertion and human/test confirmation.",
+        "graded_ranking": "Useful graded semantic ranking; prototype with explicit Score dimensions and evaluate thresholds.",
+        "deterministic_only": "Known exact rule, access authority, or non-text/platform verification; use deterministic code/tests, not Jev inference.",
+        "insufficient_evidence": "Evidence is too limited or this candidate cannot usefully fit the supported primitives."
+      }
+    },
+    "binary_validation": {
+      "type": "choice",
+      "instructions": "Given the documented capabilities, project facts and this candidate: Ask Jev itself to inspect PDF pixels, singer audio, stylus pressure or actual native rendering without preprocessing or platform tests.\nWhich approach best fits this bounded task? Do not evaluate facts missing from the supplied state.",
+      "criteria": {
+        "candidate_selection": "Useful semantic selection among code-prepared options; prototype with Choice and a no-match option.",
+        "evidence_verification": "Useful bounded semantic consistency or claim verification; prototype with Noul per assertion and human/test confirmation.",
+        "graded_ranking": "Useful graded semantic ranking; prototype with explicit Score dimensions and evaluate thresholds.",
+        "deterministic_only": "Known exact rule, access authority, or non-text/platform verification; use deterministic code/tests, not Jev inference.",
+        "insufficient_evidence": "Evidence is too limited or this candidate cannot usefully fit the supported primitives."
+      }
+    }
+  },
+  "limit": "Public document bodies are not retained in this record. Original hash/URL identify fetched version; current upstream can change."
+}

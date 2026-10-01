@@ -1,5 +1,13 @@
 # İlerleme indeksi
 
+1 October — [WF-015 staged Jev analysis](../docs/briefs/WF-015-jev-assisted-project-analysis.md)
+initial two-stage pilot accepted, source6bb2e3d. Actual jev-1.13.0 Introduction/coding-agent
+controls6/6 and eight project-shortlist judgments; [report](../docs/reports/2026-10-01-jev-project-opportunities.md).
+7116 input/842 output tokens, estimated$0.000298872; no invoice/accuracy/independent-review
+or whole-source inspection claim. RN/Expo retained by owner; Flutter alternative only.
+No application/DB/provider-release change, no retained key/real-user content. Broader
+analysis stays open; next labeled private-file web/native parity/evidence pilot supports090.
+
 1 October — [WF-014 TypeSafe skill adoption](../docs/briefs/WF-014-typesafe-skill-adoption.md)
 accepted locally: one npx/global Codex installation, registration/full instruction
 read, narrow AGENTS use rule and documentation checks. No Jev runtime/coding-model

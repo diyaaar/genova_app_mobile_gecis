@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-10-01T09:10:11.521Z",
+  "requestSha256": "f0e991f14cb1198f06e50a8c19d04d73d15e3ba8a3eb0c6a4a0c111e2f2acbce",
+  "elapsedMs": 3535,
+  "model": "jev-1.13.0",
+  "usage": {
+    "input_tokens": 2731,
+    "output_tokens": 249
+  },
+  "estimatedUsd": 0.00011470200000000001,
+  "answers": {
+    "output": {
+      "type": "choice",
+      "choice": "typed_judgments",
+      "confidence": 1,
+      "probabilities": {
+        "typed_judgments": 1,
+        "unknown": 0,
+        "generated_report": 0
+      }
+    },
+    "repository": {
+      "type": "choice",
+      "choice": "prepared_context",
+      "confidence": 0.82,
+      "probabilities": {
+        "unknown": 0.12,
+        "autonomous_tools": 0,
+        "prepared_context": 0.88
+      }
+    },
+    "code": {
+      "type": "choice",
+      "choice": "coding_agent",
+      "confidence": 1,
+      "probabilities": {
+        "coding_agent": 1,
+        "jev_itself": 0,
+        "unknown": 0
+      }
+    },
+    "analysis": {
+      "type": "choice",
+      "choice": "atomic_questions",
+      "confidence": 1,
+      "probabilities": {
+        "generated_essay": 0,
+        "unknown": 0,
+        "atomic_questions": 1
+      }
+    },
+    "relevance": {
+      "type": "choice",
+      "choice": "choice",
+      "confidence": 1,
+      "probabilities": {
+        "score": 0,
+        "unknown": 0,
+        "choice": 1,
+        "noul": 0
+      }
+    },
+    "proof": {
+      "type": "choice",
+      "choice": "execution_required",
+      "confidence": 0.56,
+      "probabilities": {
+        "execution_required": 0.71,
+        "unknown": 0.29,
+        "model_proof": 0
+      }
+    }
+  }
+}

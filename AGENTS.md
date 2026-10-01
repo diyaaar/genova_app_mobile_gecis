@@ -68,8 +68,13 @@
   never grants authorization. Do not introduce AI into unrelated deterministic work.
 - Installation is not runtime migration, paid-inference/data-export or deployment
   authority. Establish the feature, synthetic evaluation, budget and provider scope
-  first. Keep API keys private/server-side, never public env/source/logs; the supplied
-  chat key was not persisted/tested and should be replaced before integration.
+  first. Keep API keys private/server-side, never public env/source/logs. WF-015 used
+  the supplied chat-exposed key without persisting it; replace it before broader use.
+- For Jev-assisted development decisions, use staged bounded packets and retain
+  model/version/usage, probabilities, input provenance and disagreements separately
+  from verified facts. [WF-015](docs/briefs/WF-015-jev-assisted-project-analysis.md)
+  records the first actual analysis calls. Jev advises; source/tests and the owner
+  remain authoritative. Do not send whole repositories or private choir/user data.
 
 ## Geçiş kuralları
 - **Bir brief'te tek doğrulanabilir sonuç.** Bağlı kullanıcı akışı birden çok modüle
