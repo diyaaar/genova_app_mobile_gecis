@@ -1,0 +1,23 @@
+{
+  "timestamp":"2026-10-01T19:58:16.005Z",
+  "requestSha256":"bdd510ec7225e228dec3b14e72aec64526efc4d629cd0fc201531765586a2849",
+  "elapsedMs":541,"model":"jev-1.13.0",
+  "answers":{
+    "semantic_lint":{"type":"choice","choice":"workflow_now","confidence":1,"probabilities":{"deterministic_platform":0,"workflow_now":1,"unknown":0,"synthetic_later":0}},
+    "test_gap":{"type":"choice","choice":"workflow_now","confidence":0.94,"probabilities":{"deterministic_platform":0.04,"workflow_now":0.96,"unknown":0,"synthetic_later":0}},
+    "impact_route":{"type":"choice","choice":"workflow_now","confidence":0.98,"probabilities":{"deterministic_platform":0.01,"workflow_now":0.99,"unknown":0,"synthetic_later":0}},
+    "release_claims":{"type":"choice","choice":"workflow_now","confidence":0.92,"probabilities":{"workflow_now":0.94,"deterministic_platform":0.05,"unknown":0,"synthetic_later":0.01}},
+    "incident_dedupe":{"type":"choice","choice":"workflow_now","confidence":0.94,"probabilities":{"deterministic_platform":0.02,"workflow_now":0.96,"unknown":0,"synthetic_later":0.02}},
+    "catalog_match":{"type":"choice","choice":"synthetic_later","confidence":1,"probabilities":{"deterministic_platform":0,"workflow_now":0,"unknown":0,"synthetic_later":1}},
+    "tenant_authority":{"type":"choice","choice":"deterministic_platform","confidence":0.79,"probabilities":{"workflow_now":0,"deterministic_platform":0.85,"unknown":0.02,"synthetic_later":0.13}},
+    "native_audio_pixels":{"type":"choice","choice":"deterministic_platform","confidence":0.87,"probabilities":{"deterministic_platform":0.9,"workflow_now":0,"unknown":0.06,"synthetic_later":0.04}},
+    "evidence_writer":{"type":"choice","choice":"fixture_evidence","confidence":0.95,"probabilities":{"fixture_evidence":0.96,"no_match":0.02,"product_playback":0,"native_automation":0.02,"native_config":0}},
+    "native_selection":{"type":"choice","choice":"native_automation","confidence":0.97,"probabilities":{"fixture_evidence":0,"no_match":0.02,"product_playback":0.01,"native_automation":0.97,"native_config":0}},
+    "missing_billing":{"type":"choice","choice":"no_match","confidence":1,"probabilities":{"fixture_evidence":0,"native_automation":0,"product_playback":0,"no_match":1,"native_config":0}},
+    "portability":{"type":"choice","choice":"harness_gap","confidence":1,"probabilities":{"harness_gap":1,"unknown":0,"runtime_pass":0,"security_bypass":0}}
+  },
+  "usage":{"input_tokens":3502,"output_tokens":683},"estimatedUsd":0.000147084,
+  "primaryReview":"12/12 frozen recommendations/controls agree. Four direct source/no-match/preflight controls verified by primary source reading. Eight opportunities are recommendations, not accuracy/calibration or product approvals. No runtime gate closed by inference.",
+  "dailyTotal":{"calls":19,"input_tokens":71512,"output_tokens":8986,"estimatedUsd":0.003003504},
+  "costBoundary":"Usage-based estimate at current documented $0.042/M input/outputfree, not invoice or coding-agent cost. Key runtime-only; no retry."
+}

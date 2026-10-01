@@ -32,9 +32,10 @@ disagreement; daily17calls$0.002770236 estimated, not invoice.090 remains open.
 [Current iOS PDF](../docs/reports/2026-10-01-connected-ios-private-pdf-acceptance.md) normally signed
 native Release/actual Auth/RLS/v1→v2/pages1/2/B cache/old HEAD403/new POST403 PASS; fixture exit0.
 Early global-signOut first fixture exit1 retained; no product/Auth/schema/dependency change.
-Fresh mobile55/404; no root-gate trigger/rerun. Jev7/8 unknown-GET disagreement retained;
-daily18calls$0.002856420 estimated, not invoice. **Next:** measured connected iOS audio/recovery/
-seek/B teardown, then permanent WebView. Those/physical phone/hosted/release/090 stay open.
+`fd55322` [audio source preflight](../docs/reports/2026-10-01-jev-workflow-and-ios-audio-preflight.md): platform/wx
+repair; root110/1110,mobile55/405,exports PASS, not native. Jev workflow advisories/4 source controls;
+daily19calls$0.003003504 estimate, not invoice. **Next:** actual iOS audio/recovery/seek/B,
+then permanent WebView; audio build/runtime/phone/hosted/release/090 remain open.
 
 ## Preserved historical evidence
 
@@ -55,7 +56,7 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary agent is sole writer. 1 Oct owned emulator/app/reverse/connected runtime/VM and
-generated outputs cleaned; latest final leaves21,416,800KiB free, iOS run low15,194,204KiB.
+generated outputs cleaned; source-preflight22,437,184KiB free, prior iOS PDF low15,194,204KiB.
 Original068 five row hashes/counts28/1/29/9/79 unchanged, preserve it.
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
 global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;

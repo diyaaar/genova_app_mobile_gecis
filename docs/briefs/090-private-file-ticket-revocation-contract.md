@@ -1380,3 +1380,52 @@ Unobserved native-old-GET disagreement atconfidence0.46 retained as unknown, not
 Daily18calls68010input8303output,$0.002856420 estimated, not invoice; key never persisted.
 090 remains IN PROGRESS. Next measured integration: connected native iOS audio/recovery/seek/B
 teardown, then permanent WebView. Hosted/provider/phone/beta/stores gates remain separate.
+
+### Connected iOS audio work card — 1 October, afterb390fac
+
+Entry main/b390fac; only unrelated cli-latest dirty. Read AGENTS/handoff/active/090,
+guide/work cycle, delivery controls, relevant MIGRATION and current connected audio source/tests.
+One writer, one outcome: current iOS native audio/Auth/RLS/v1 recovery/client-deadline/seek/
+resume/B teardown through existing actual local fixture. PDF checkpoint not replayed.
+Three actions: source/semantic preflight and focused harness regression; measured normal signed
+native build then disposable runtime; full affected gates/review/evidence/cost/owned cleanup.
+Allowed:090_connected-audio-{config,runtime} and tests;091_connected_audio_fixture.ts/tests and
+its explicit runner platform wiring; exact.gitignore iOS-audio app exclusion;090/status/report.
+No product Auth/schema/dependency/permission change without a reproduced scoped regression.
+Source preflight found Android-only success wording and immutable dated Android evidence path
+already present; fix platform-specific evidence without overwriting it or relabeling old results.
+Normal production entry/guards remain unchanged. Rollback is source revert plus exact disposable
+target teardown, not production data rollback. No hosted/provider/real-user/hardware/push authority.
+Required: focused red→green harness checks, mobileTS/full tests, rootpnpmcheck for fixture edits,
+normally signed native build, actual iOS recovery/seek/B denial and fixtureexit0; normal guard-off
+exports and original source preservation/owned cleanup. Unrun/FAIL keep this slice partial.
+Preflight22467888KiB free, no owned runtime/build/device. Build-only additional<=4GiB based on
+last measured~2.4GiB plus reserve. Runtime-only<=10GiB fits above10485760floor. Stage separately,
+stop at12500000KiB safety watermark. Before build get genuine local CLIanon key in memory then
+stop VM; no guessed public credential/re-sign. Owned genova090 VM/stack,spike/090-runtime,
+spike/093-runtime,spike/090-ios-native-build,spike/090-ios-audio.app,generatedios/.expo and one
+new named genova090-ios-audio simulator. No cache/original restore/shared simulator cleanup.
+
+### Connected iOS audio source-preparation checkpoint — 1 October
+
+[Dated record](../reports/2026-10-01-jev-workflow-and-ios-audio-preflight.md) retains the
+platform/evidence-path regression and Jev advisory packet. Sole writer/self-review only.
+Native acceptance wording now identifies actual Platform.OS; fixed iOS evidence target is
+separate from immutable Android evidence, retains wx and the full existing refusal matrix.
+No product playback/Auth/schema/dependency/entry-guard change. Android report hash unchanged.
+
+| Criterion | Status | Evidence / limit |
+|---|---|---|
+| Focused wrong-path red→green / platform guards | PASS | Server10/mobile23 tests; mocked HTTP/filesystem, not actual native/Auth |
+| Fresh full affected gates | PASS | Root110 files1110 tests/Next build; mobile TS55 suites405 tests |
+| Guard-off normal exports | PASS | Sequential Android/iOS JS exports; not native builds |
+| Bounded Jev source/no-match/workflow advisory | PASS advisory |4 source-checkable controls,8 recommendations; no independent review |
+| Actual signed iOS audio build/recovery/seek/B flow/fixtureexit0 | NOT RUN | Required before this integration slice can close |
+| Scoped links/diff/redaction/owned cleanup | PASS | Generated.next/coverage/.expo removed; final22437184KiB free |
+
+One Jev3502input/683output/541ms,$0.000147084 estimate; daily19calls71512input8986output,
+$0.003003504 estimated, not invoice. No failure-triage retry needed. No VM/DB/device/native build
+started; no fresh DB-preservation run claimed. Existing PDF/Android evidence remains dated.
+090/iOS audio remain IN PROGRESS. Next measured signed native audio build and actual connected
+flow using explicit server platformios; genuine local CLI public configuration, no early
+global sign-out, same full matrix, isolated output and bounded cleanup.

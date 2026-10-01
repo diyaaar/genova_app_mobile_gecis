@@ -1,0 +1,6 @@
+{
+  "timestamp":"2026-10-01T19:57:29.817Z",
+  "model":"jev-1.13.0",
+  "requestSha256":"bdd510ec7225e228dec3b14e72aec64526efc4d629cd0fc201531765586a2849",
+  "bytes":12399,"questions":12,"maxCalls":1,"autoRetries":0,"estimatedCostCapUsd":0.002
+}

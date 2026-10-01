@@ -189,3 +189,44 @@ re-read actual contexts and applied narrower patches, no inference repetition.
 Final guard61c9437 includes previous-stage usage in cumulative budget and stops
 completed10-call pilots before key input. Latest13/13 offline tests PASS; no further
 provider request after this local guard change. No automatic product integration.
+
+### Owner-added workflow use cases / iOS audio source preflight — 1 October
+
+Owner requests further useful Jev applications and current introduction review while090 proceeds.
+One bounded advisory packet: new semantic-lint/test-gap/impact/release-note/incident-deduplication
+opportunities plus current audio source search, no-match and portability judgments. Primary source
+preflight already identified two harness blockers; do not attribute their discovery to the model.
+Use live introduction/coding-agent/use-case-map/API/Choice/semantic-find/models guidance; preserve
+RN/Expo, permanent WebViews and deterministic access authority. No product AI runtime adoption.
+Allowed new small docs/reports/jev-workflow evidence/report, this brief/progress; existing validator
+used unchanged. No framework/dependency/CI work. At most one opportunity/preflight request and
+one later actual redacted failure-triage request only if new runtime evidence needs it. Pinned
+jev-1.13.0,24KB/16questions,45s/no retry, combined new estimated cap$0.002. Freeze labels before
+inference, exclude labels from state; retain exact request/hash/provenance, answers/uncertainty.
+Today's exposed key is runtime-only via non-echo TTY, never persisted; no reuse after1October.
+Public doc-derived facts and minimal source excerpts only; no private logs/users/files/source
+database functions. Preflight22467888KiB/<2MiB for this advisory slice; no heavy environment needed.
+090 owns actual native runtime gates; advisory agreement does not close them or reorder delivery.
+
+### Workflow / audio-preflight advisory result — 1 October
+
+[Record and exact packet](../reports/2026-10-01-jev-workflow-and-ios-audio-preflight.md): one
+actual request12399B/12questions, pinnedjev-1.13.0,541ms/no retry. Jev recommends semantic lint,
+test-gap mapping, change-impact ranking, release-claim checking and incident matching; synthetic
+catalog matching deferred. Tenant authorization and direct audio/pixel inspection remain
+deterministic/platform responsibilities. Source-search/no-match/portability controls4/4;
+eight opportunity judgments agree with frozen primary labels but are not objective accuracy.
+Primary already found the two source blockers; do not claim model discovery or cost savings.
+
+| Criterion | Status | Evidence / limit |
+|---|---|---|
+| Current official guidance / bounded redacted context | PASS | Public facts and minimal source excerpts; no whole repo/private data |
+| Frozen labels / request provenance / validated response | PASS | Exact five retained JSON records, hash/schema/distribution checks |
+| Useful advisory decisions / manually verified source controls | PASS advisory |12 labels, of which4 directly checkable; primary review only |
+| Existing offline validator / scoped links/diff/redaction | PASS |5 offline tests; no new framework/dependency/CI |
+| Actual iOS audio/native/hosted acceptance | NOT RUN |090 owns these; model agreement cannot accept them |
+
+New3502input/683output,$0.000147084 estimate; daily19calls71512input8986output,
+$0.003003504 estimate at$0.042/Minput/outputfree, not invoice or coding-agent cost.
+Today's key never persisted; no later triage request without new unclear runtime evidence.
+Workflow advisory checkpoint is complete;090 native integration and product gates stay open.

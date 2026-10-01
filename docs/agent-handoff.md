@@ -31,9 +31,10 @@ fresh root110/1108, mobile55/404, guard-off exports; explicit local adapters; Je
 Current [iOS PDF record](reports/2026-10-01-connected-ios-private-pdf-acceptance.md): normally signed
 Release/actual Auth/RLS/native v1→v2 PDF/pages1/2/B cache/old HEAD403/new POST403 PASS, fixture exit0.
 First early-global-signOut fixture exit1 retained, not accepted; no product code or Auth policy change.
-Fresh mobile55/404; root gate not rerun (no web/shared/dependency edit). Jev7/8 retains unknown-GET
-disagreement; daily18calls$0.002856420 estimated, not invoice. **Next:** fresh measured iOS connected
-audio/recovery/seek/B teardown, then permanent WebView; those/hosted/beta/release/090 remain open.
+`fd55322` [audio source preflight](reports/2026-10-01-jev-workflow-and-ios-audio-preflight.md): platform/wx repair;
+fresh root110/1110,mobile55/405,exports PASS, not native. Jev workflow advisories/4 source controls;
+daily19calls$0.003003504 estimate, not invoice. **Next:** actual iOS audio/recovery/seek/B,
+then permanent WebView; audio build/runtime/hosted/beta/release/090 remain open.
 
 ## Preserved evidence and remediation
 
@@ -55,9 +56,9 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
-1 Oct owned native/VM/DB/HTTP/derived outputs cleaned; latest final21,416,800KiB free;
-current iOS run low15,194,204KiB. Original068 five hashes/counts28/1/29/9/79 unchanged.
-Keep original `genova_068_test_restore`, retained 068 backup, private manifests/journals,
+Owned runtimes cleaned; source-preflight22,437,184KiB/no new runtime; prior PDF low15,194,204KiB.
+Original068 hashes/counts28/1/29/9/79 unchanged; no fresh DB check for source-only work. Keep
+`genova_068_test_restore`, retained 068 backup, private manifests/journals,
 dependencies and existing AVD/global caches. Never rebuild deleted runtimes without preflight.
 Local scoped code/tests/commits/owned cleanup authorized. Hosted DB/Edge/provider, credentials,
 real users/email/data, spending, CI/push/deploy, hardware/distribution need concrete authority.

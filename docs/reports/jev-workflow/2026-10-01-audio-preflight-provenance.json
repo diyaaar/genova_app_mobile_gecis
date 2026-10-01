@@ -1,0 +1,13 @@
+{
+  "sourceRevision":"b390fac",
+  "summaryMethod":"Primary-authored condensed source descriptions, not claimed verbatim. Exact pre-change files checked before inference. Public live document bodies inspected but not copied to Git.",
+  "files":[
+    {"path":"apps/mobile/src/acceptance/090_connected-audio-runtime.tsx","sha256":"737189bbd5f55656611d1ab624f4a2e8b97384930bfb7659a5d57df690f30f71"},
+    {"path":"apps/mobile/src/acceptance/090_connected-audio-config.ts","sha256":"904dec6a65d22be28188d64d7bf46f83206a46475b23626add715f1a40caf55c"},
+    {"path":"supabase/test-support/091_connected_audio_fixture.ts","sha256":"b608d8b3cf19c8d160ed6f2813088c76324c044303b81c28f935bab7119daa07"},
+    {"path":"apps/mobile/src/repertoire/AudioPlaybackProvider.tsx","sha256":"69049ef64f21f62433ee558b7a755b7e575e5950e441ff8d23d7a76cd4a00b58"}
+  ],
+  "sourceEstablishedBeforeInference":["Android-only native success wording","Immutable retained Android HTTP evidence path conflicts with new run"],
+  "docsRead":["introduction","introduction/coding-agents","concepts/use-case-map","api","primitives/choice","cookbooks/semantic_find","models"],
+  "unknowns":["Current actual iOS audio runtime","Held-out semantic-lint/search quality","Product AI data permissions and calibration"]
+}

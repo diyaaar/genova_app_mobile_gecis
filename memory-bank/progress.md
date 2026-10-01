@@ -542,3 +542,24 @@ task listeners gone; shared simulator/cache/dependencies/original068 retained. F
 counts28/1/29/9/79 and hashes unchanged. Final21416800KiB free, low15194204KiB >10485760floor.
 090 remains open; next measured iOS audio/recovery/seek/B teardown, then permanent WebView.
 No hosted/provider/hardware/real data/share/push/deploy; beta/stores/full product unfinished.
+
+## 1 October 2026 — Jev workflow advisory and iOS audio source preparation
+
+Entryb390fac; [dated record](../docs/reports/2026-10-01-jev-workflow-and-ios-audio-preflight.md).
+Current official introduction/coding-agent/use-case-map/model/semantic-find guidance read with
+TypeSafe skill. One12-question bounded request: semantic lint/test-gap/impact/release-claim/
+incident matching useful now, catalog matching synthetic later, access/audio/pixels remain
+deterministic/platform. Four source/no-match/portability controls4/4; eight recommendations
+are not accuracy/calibration/independent review. Existing validator reused; no AI framework.
+Primary source preflight already found Android-only wording and immutable Android wx output;
+meaningful handler red→green fixes actual platform and isolated fixed iOS evidence target,
+retains all existing matrix/signature/no-overwrite assertions. Unit mocks not actual Auth/native.
+Mock export-shape/EEXIST failures retained; original Android SHA256 unchanged. Product playback,
+Auth/schema/dependency/entry guards unchanged. Fresh root110files1110tests/Next build, mobile
+TS55suites405tests, normal Android/iOS JS exports PASS; no actual iOS audio build/runtime yet.
+Jev3502input/683output/541ms,$0.000147084 new estimate; daily19calls71512input8986output,
+$0.003003504 estimate, not invoice/coding-agent cost. No retry/key persistence/private upload.
+Generated.next/coverage/.expo removed, final22437184KiB; no VM/DB/simulator/native build started,
+no fresh DB-preservation assertion. No hosted/provider/push/deploy/credentials/real-data changes.
+090 audio remains IN PROGRESS: next measured signed native iOS audio and connected recovery/
+seek/B teardown/fixtureexit0, then permanent WebView. Broader beta/release/product still open.

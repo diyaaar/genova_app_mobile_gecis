@@ -1,0 +1,5 @@
+{
+  "labelOwner":"Primary agent frozen before inference, not independent review or calibration.",
+  "expected":{"semantic_lint":"workflow_now","test_gap":"workflow_now","impact_route":"workflow_now","release_claims":"workflow_now","incident_dedupe":"workflow_now","catalog_match":"synthetic_later","tenant_authority":"deterministic_platform","native_audio_pixels":"deterministic_platform","evidence_writer":"fixture_evidence","native_selection":"native_automation","missing_billing":"no_match","portability":"harness_gap"},
+  "interpretation":"Opportunity labels are engineering recommendations, not objective model accuracy. Four source/negative/preflight controls can be checked directly; actual iOS runtime and later product pilots remain separate."
+}
