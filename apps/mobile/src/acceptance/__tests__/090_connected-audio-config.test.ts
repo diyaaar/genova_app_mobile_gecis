@@ -1,10 +1,15 @@
-import { read090ConnectedAudioConfig,validate090ConnectedAudioFixture,observed090AudioUrl } from '../090_connected-audio-config';
+import { read090ConnectedAudioConfig,validate090ConnectedAudioFixture,observed090AudioUrl,connectedAudioAcceptanceSummary } from '../090_connected-audio-config';
 const env={EXPO_PUBLIC_GENOVA_090_CONNECTED_AUDIO:'1',EXPO_PUBLIC_SUPABASE_URL:'http://127.0.0.1:54491',EXPO_PUBLIC_SUPABASE_ANON_KEY:'synthetic-local'};
 const fixture={email:'shared-091-aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa@example.invalid',password:'a'.repeat(32),
   choirA:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',choirB:'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
   fileId:'cccccccc-cccc-cccc-cccc-cccccccccccc',songId:'dddddddd-dddd-dddd-dddd-dddddddddddd',audioSha256:'a'.repeat(64),
   legacyUrl:'http://127.0.0.1:8000/?fileId=cccccccc-cccc-cccc-cccc-cccccccccccc&ticket=synthetic%2Fsigned%3D'};
 describe('090 connected audio isolated configuration',()=>{
+  it('reports only the platform actually under test, without accepting its counterpart',()=>{
+    expect(connectedAudioAcceptanceSummary('ios')).toBe('ALL PASS connected local iOS audio; not Android/hosted/audibility');
+    expect(connectedAudioAcceptanceSummary('android')).toBe('ALL PASS connected local Android audio; not hosted/iOS/audibility');
+    expect(()=>connectedAudioAcceptanceSummary('web')).toThrow();
+  });
   it('accepts exact local runtime metadata and preserves query bytes',()=>{
     expect(read090ConnectedAudioConfig(env).endpoint).toBe('http://127.0.0.1:18092/090/audio-ticket');
     expect(validate090ConnectedAudioFixture(fixture)).toEqual(fixture);

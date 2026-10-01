@@ -46,6 +46,7 @@ const nativeAudioRecovery = process.env.GENOVA_090_CONNECTED_ANDROID_AUDIO === '
 const assignmentWebView = assignmentWebViewMode(process.env);
 const ASSIGNMENT_EDGE = 'http://127.0.0.1:8001';
 const webViewFamily = assignmentWebView ? 'assignment-file' : 'repertoire-file';
+if(process.env.GENOVA_090_CONNECTED_AUDIO_PLATFORM)assert.equal(nativeAudioRecovery,true,'Platform selector needs explicit audio mode');
 if(nativeAudioRecovery){assert.ok(androidFixturePath);assert.equal(nativePdfRecovery,false);assert.equal(webViewRecovery,false);}
 if (webViewRecovery) {
   assert.ok(androidFixturePath, '090 WebView requires the explicit owned runtime hold');
@@ -80,7 +81,7 @@ const objects = new Map<string, { bytes: Uint8Array; type: string }>([
   [`/${BUCKET}/choirs/${ids.choirB}/repertoire/${ids.fileB}/rehearsal.wav`, { bytes: wav, type: 'audio/wav' }],
 ]);
 let providerHits = 0;
-const connectedAudio=createConnectedAudioFixture(ids.fileA,pdf,()=>providerHits);
+const connectedAudio=createConnectedAudioFixture(ids.fileA,pdf,()=>providerHits,process.env.GENOVA_090_CONNECTED_AUDIO_PLATFORM??'android');
 const provider = createServer((request, response) => {
   try {
     const url = new URL(request.url ?? '/', S3);

@@ -1,6 +1,12 @@
 const EDGE = 'http://127.0.0.1:8000';
 export const AUDIO_FIXTURE = 'http://127.0.0.1:18092';
 const UUID = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
+/** Acceptance wording identifies only the observed runtime; it grants no other platform gate. */
+export function connectedAudioAcceptanceSummary(platform:string):string {
+  if(platform==='android')return 'ALL PASS connected local Android audio; not hosted/iOS/audibility';
+  if(platform==='ios')return 'ALL PASS connected local iOS audio; not Android/hosted/audibility';
+  throw Error('Connected audio acceptance requires Android or iOS.');
+}
 export function read090ConnectedAudioConfig(env: Record<string,string|undefined>) {
   if (env.EXPO_PUBLIC_GENOVA_090_CONNECTED_AUDIO !== '1' || env.EXPO_PUBLIC_SUPABASE_URL !== 'http://127.0.0.1:54491' ||
       !env.EXPO_PUBLIC_SUPABASE_ANON_KEY || ['EXPO_PUBLIC_GENOVA_090_AUDIO_ACCEPTANCE','EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE',

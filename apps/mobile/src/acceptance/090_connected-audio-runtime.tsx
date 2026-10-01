@@ -1,5 +1,5 @@
 import { useEffect,useMemo,useRef,useState } from 'react';
-import { SafeAreaView,Text } from 'react-native';
+import { Platform,SafeAreaView,Text } from 'react-native';
 import { ProtectedFileRequestError,requestProtectedRepertoireFileTicket } from '@shared/repertuvar/protected-file-client';
 import { AuthProvider,useAuth } from '../auth/AuthProvider';
 import { getGenovaClient } from '../auth/supabase-client';
@@ -7,7 +7,7 @@ import { AudioPlaybackProvider,useAudioPlayback } from '../repertoire/AudioPlayb
 import { createNativeAudioSourceGateway } from '../repertoire/audio-source-gateway';
 import type { NativeAudioSession } from '../repertoire/audio-contract';
 import type { ProtectedRepertoireFileTicket } from '@shared/repertuvar/protected-file-client';
-import { observed090AudioUrl,read090ConnectedAudioConfig,validate090ConnectedAudioFixture,
+import { connectedAudioAcceptanceSummary,observed090AudioUrl,read090ConnectedAudioConfig,validate090ConnectedAudioFixture,
   type ConnectedAudioFixture } from './090_connected-audio-config';
 
 const config=read090ConnectedAudioConfig({
@@ -92,7 +92,7 @@ function Automation({fixture,opens,saved,authRef,trace}:{fixture:PublicFixture;o
       latest.current.close();
       const response=await fetch('http://127.0.0.1:18092/090/audio-evidence',{method:'POST'});
       if(response.status!==200)throw Error('server audio evidence');
-      trace('ALL PASS connected local Android audio; not hosted/iOS/audibility');
+      trace(connectedAudioAcceptanceSummary(Platform.OS));
     })().catch(error=>{if(!cancelled)trace(`FAIL ${error instanceof Error?error.message:'local audio'}`);});
     return()=>{cancelled=true;};
   },[authRef,fixture,opens,saved,trace]);

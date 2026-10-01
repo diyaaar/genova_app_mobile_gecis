@@ -23,7 +23,14 @@ export function assertLocalSignature(request:IncomingMessage,url:URL,access:stri
   const signing=hmac(hmac(hmac(hmac(`AWS4${secret}`,date),region),service),end);
   assert.equal(hmac(signing,`AWS4-HMAC-SHA256\n${request.headers['x-amz-date']}\n${date}/${region}/${service}/${end}\n${hash(canonical)}`).toString('hex'),m[3]);
 }
-export function createConnectedAudioFixture(fileId:string,bytes:Uint8Array,providerHits:()=>number) {
+/** Fixed trusted evidence targets; no caller-controlled path and no platform cross-acceptance. */
+export function connectedAudioEvidenceTarget(platform:string='android') {
+  assert.ok(platform==='android'||platform==='ios','Unsupported connected audio platform');
+  return {platform,path:platform==='ios'?'docs/reports/090/2026-10-01-connected-ios-audio-http.json':
+    'docs/reports/090/2026-10-01-connected-audio-http.json'};
+}
+export function createConnectedAudioFixture(fileId:string,bytes:Uint8Array,providerHits:()=>number,platform:string='android') {
+  const evidenceTarget=connectedAudioEvidenceTarget(platform);
   let oneUse:string|null=null,consumed=false,accepted=false;
   const reads:{method:string;status:number;providerDelta:number;range:boolean;bytes:number}[]=[];
   const tickets:number[]=[];
@@ -43,11 +50,11 @@ export function createConnectedAudioFixture(fileId:string,bytes:Uint8Array,provi
       assert.ok(reads.some(r=>r.method==='GET'&&r.status===403));
       assert.ok(reads.filter(r=>r.method==='HEAD'&&r.status===403).length>=2);
       for(const r of reads)assert.equal(r.providerDelta,r.status>=400?0:1);
-      const evidence={timestamp:new Date().toISOString(),result:'PASS',tickets,reads,contentLength:bytes.length,sha256:hash(bytes),
-        boundary:'Actual local Auth/RLS/PostgREST/Deno and Android Expo audio; declared signed-v1 URL/client-deadline/old-v2 injection and GET/HEAD/POST relay. Signature-verified synthetic loopback S3, not hosted/iOS/physical audibility/server expiry.'};
+      const evidence={timestamp:new Date().toISOString(),result:'PASS',platform:evidenceTarget.platform,tickets,reads,contentLength:bytes.length,sha256:hash(bytes),
+        boundary:`Actual local Auth/RLS/PostgREST/Deno and ${platform==='ios'?'iOS':'Android'} Expo audio; declared signed-v1 URL/client-deadline/old-v2 injection and GET/HEAD/POST relay. Signature-verified synthetic loopback S3, not hosted/${platform==='ios'?'Android':'iOS'}/physical audibility/server expiry.`};
       await mkdir('docs/reports/090',{recursive:true});
-      await writeFile('docs/reports/090/2026-10-01-connected-audio-http.json',JSON.stringify(evidence,null,2),{flag:'wx'});
-      accepted=true;response.writeHead(200);response.end();console.log('PASS 090 connected Android audio HTTP evidence retained; no secrets');return;
+      await writeFile(evidenceTarget.path,JSON.stringify(evidence,null,2),{flag:'wx'});
+      accepted=true;response.writeHead(200);response.end();console.log(`PASS 090 connected ${platform} audio HTTP evidence retained; no secrets`);return;
     }
     const isTicket=url.pathname==='/090/audio-ticket';assert.ok(isTicket||url.pathname==='/090/audio-read');
     let body:Buffer|undefined;
