@@ -628,3 +628,19 @@ simulator/profile/Lima disk. Final20,682,900KiB free; five original source hashe
 unchanged. Earlier mobile55/406/exports/build/signature results dated, not repeated. Documents
 only/new Jev cost$0, no hosted/provider/real data/push/deploy.090 open; fresh bounded signed iOS
 current-assignment full flow with usable input/manual assistance is next, then current Android audio.
+
+### 2 October — measurable iOS current-assignment goal accepted locally
+
+Base7b3d0a0; [fresh record](../docs/reports/2026-10-02-ios-assignment-measurable-goal.md),
+[fixture-owned immutable iOS HTTP](../docs/reports/090/connected-ios-assignment-webview-http.json).
+Fresh normally signed native Auth/permanent A page, owner-assisted one actual file click/Preview,
+native PDF65905B/hash/share-return, agent same-PDF Preview/share inspection+dismiss, B Shared B/
+cache absent/oldGET+HEAD403/provider0 PASS. Unchanged matrix and complete fixtureexit0; independent
+session remains A and inactive membership denies new/already-issued tickets. Earlier timeout
+retained as historical FAIL. Fresh mobile55/406 and normal Android/iOS1440-module exports PASS;
+rootcheck NOT RUN, no web/shared/build source changes; fresh guarded web production build PASS.
+Five original source counts/hashes unchanged, historical Android HTTP unchanged. Exact owned
+runtime/VM/root/data/device/generated outputs removed, no ports/profile/Lima disk; final20578932KiB
+abovefloor. No product fix/new dependency/inference/hosted/push/deploy/real data; new API cost$0.
+One measurable goal only, not090/beta/product closure. Next current Android audio afterdb6cc93,
+then legacy-v1 iOS WebView; new runtime needs fresh preflight. Primary review not independent.

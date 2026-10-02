@@ -1616,3 +1616,47 @@ fix. Fixture hold timeout actualexit1 retained; PDF/share/B matrix NOT RUN, no a
 Exact task stack/VM/root/data/device/app/build/outputs cleaned; no listeners/profile/Lima disk,
 final20682900KiB abovefloor. Source five counts/hashes unchanged again; no new inference/cost$0.
 Next fresh bounded signed iOS assignment full flow;090 remains open. Details in execution record.
+
+### Measurable goal execution — 2 October, after7b3d0a0
+
+Owner explicitly requests a measurable goal and persistence; Codex goal created for this one
+missing current-assignment iOS integration, not whole090/beta/product. main7b3d0a0 verified;
+only unrelated CLI marker dirty, primary sole writer. Read handoff/active/current090/095,
+guide/work cycle/controls, decision32/MIGRATION ownership, literal fixture/relay/entry adapter.
+One outcome: signed actual permanent A page -> current PDF65905B/hash/share -> B clear/profile/
+oldGET+HEAD403/provider0 -> unchanged full fixtureexit0 and separate immutable iOS HTTP.
+Three actions: fresh isolated service/schema/public config and staged signed build; complete
+actual native flow with direct click-hold gesture/manual owner input if automation unavailable;
+fresh final gates/preservation/strict review/cleanup/English evidence/separate commits.
+Changed approach from prior timeout: manual native scroll now actual-UI proven; request precise
+bounded assistance only when needed, never relaunch/double-issue in an accepted fixture. No
+criterion/ticket/authorization relaxation. New fixture has fresh synthetic IDs/sessions; preserve
+failed prior record/Android artifact. Product fix only for newly reproduced causal scoped defect.
+Allowed existing090 native helper/test,091 fixture/relay/listener, disposable090 config/runtime/
+schema, guarded web/native build, this brief/reports/handoff/active/progress. No new runner,
+dependency/route/native assignment rewrite/provider/schema policy. No delegation/inference/key
+reuse/hosted/real data/push/CI/deploy/hardware/external share; inherited authority not broadened.
+Entry20692908KiB, floor10485760. VM/images<=6GiB plus web<=0.5GiB projected13877164KiB;
+then VMstop and fresh native<=3GiB projection >=12500000 safety watermark; remove native
+intermediates before VMrestart/device<=3.2GiB. Measure every phase, one heavy process, two
+failures cause reassessment. Reason for rebuild: prior signed artifact/device were removed
+after diagnostic expiry; new acceptance needs actual signed consumer, not prior build counts.
+Owned same genova090 profile/root/data/four-service stack, named iOSdevice/exactnewUUID,
+spike090/093 runtime/app/nativebuild/generatedios/.expo/.next/coverage and loopbackports
+54491/54492/54493/8000/8001/18092/31090; delete after dependent checks, no history copies.
+Preserve original068/backup/private manifests/dependencies/caches/shared devices/old reports.
+Exit requires all goal criteria PASS, mobile full gates and normal guard-off exports; rootcheck
+only for changed web/shared/build source, guarded web production build still required. Fresh
+five-table source before/after/link/diff/cleanup; self-review not independent review. Goal remains
+active on partial evidence; no completion because time, test count or planning record is green.
+
+Goal result~10:41: [fresh iOS current-assignment record](../reports/2026-10-02-ios-assignment-measurable-goal.md)
+and [immutable HTTP](../reports/090/connected-ios-assignment-webview-http.json): normally signed
+actual permanent A page, owner-assisted one file click/Preview, native65905B/hash/share-return,
+agent same-PDF Preview/share inspect+dismiss, B Shared B/cache absent/oldGET+HEAD403/provider0 PASS.
+Unchanged strict matrix and complete fixtureexit0, independent-session A preserved/inactive-member
+denials PASS; fresh mobile55/406/guard-off normal exports/source five counts+hashes unchanged.
+No product defect/fix/inference/hosted action; new API cost$0. Exact owned runtime/VM/root/data/
+device/outputs cleaned; no ports/profile/Lima disk, final20578932KiB abovefloor. Earlier timeout
+remains FAIL, not rewritten. This one measurable goal only;090/hosted/beta/full product remain open.
+Next current Android audio afterdb6cc93, then legacy-v1 iOS WebView; new resource preflight required.
