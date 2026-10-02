@@ -1,0 +1,24 @@
+2 October 2026, Istanbul; fresh Android API36 Release on emulator5580.
+Primary extraction of exact [090_CONNECTED_AUDIO] lines from this owned app's
+ReactNativeJS diagnostic stream; not a CUA screenshot or physical-audibility proof.
+11:40:02.594 real Auth sign-in/one-use runtime credentials PASS
+11:40:02.860 real AuthStore A selection PASS
+11:40:02.933 source1 real POST200 injected signed v1
+11:40:06.061 source2 real POST200 v2/client deadline fault
+11:40:06.193 native v1 refusal/one real v2 renewal PASS opens2
+11:40:06.195 native seek4 PASS
+11:40:07.177 source3 real POST200 v2
+11:40:07.526 declared client deadline/real renewal/resume>=4.2 PASS opens3
+11:40:08.227 pause/seek2/resume PASS
+11:40:08.394 real AuthStore B selection/player teardown PASS
+11:40:08.447 old A HEAD403/new A POST403 PASS
+11:40:08.452 source4 injected previously-issued actual v2 in B
+11:40:11.594 native old-v2 body403/probe/no renewal PASS opens4
+11:40:11.601 ALL PASS connected local Android audio; not hosted/iOS/audibility
+
+Fixture-owned HTTP revision player-id recorded 08:40:11.924UTC, SHA256
+1144ce29ec85c090240120b66d4ee8b4cd4db9e98a01377498a2f87311ffb853.
+Complete fixture tail after verified listener SIGTERM: exit0/signalnull;
+foreign/old-context POST refusal, separate A Auth session preserved,
+same-session switch revocation and inactive-membership new/issued-ticket refusal PASS.
+No global signOut, retry/assertion relaxation or manual HTTP evidence creation.

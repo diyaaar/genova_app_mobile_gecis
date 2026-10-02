@@ -36,7 +36,7 @@ signed native recovery/seek/resume/B denial and fixture exit0 PASS; fresh root11
 exports PASS. Jev advisory5/5;1Oct20calls$0.003070494 estimate, not invoice.
 `180108a` [WebView preflight](../docs/reports/2026-10-01-ios-webview-source-preflight.md): platform-specific wx evidence,19focused/root110/1118/mobile55/406/exports PASS, not native;090/hosted/beta stay open.
 
-2Oct [fresh measurable iOS assignment goal](../docs/reports/2026-10-02-ios-assignment-measurable-goal.md): normally signed Release/permanent A page, owner-assisted actual file click, native65905B/hash/share-return, actual Preview/share inspect+dismiss, B profile/cache clear/oldGET+HEAD403/provider0 PASS. Unchanged strict fixtureexit0, separate immutable iOS HTTP, fresh mobile55/406/normal exports/source preservation PASS. Earlier timeout stays historical FAIL; no product fix. Next current Android audio afterdb6cc93, then legacy-v1 iOS WebView;090/hosted/beta stay open.
+2Oct [iOS current-assignment goal](../docs/reports/2026-10-02-ios-assignment-measurable-goal.md)/f7c2b22 PASS: owner-assisted file click, native PDF/hash/share-return, Preview/share inspect+dismiss, B/cache/oldGET+HEAD403/provider0/fixtureexit0. [Current Android audio](../docs/reports/2026-10-02-android-audio-player-id-acceptance.md)/9bd442e PASS afterdb6cc93: actual Auth/Expo/v1 refusal/one renewal/seek/deadline/resume/B oldGET+HEAD403/provider0/no-loop/full fixtureexit0, separate immutable revision HTTP; mobile55/406/root110/1120/normal exports. Diagnostics/HTTP, not CUA visual/audibility. Earlier failed records retained. Next legacy-v1 iOS permanent WebView recovery;090/hosted/beta stay open.
 
 ## Preserved historical evidence
 
@@ -58,7 +58,7 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary sole writer.1Oct owned VM/root/data/device/runtime/app/builds/outputs cleaned;
 source-preflight final22,296,284KiB free, prior audio low15,548,780KiB. Current068 five hashes/counts28/1/29/9/79 unchanged.
-2Oct fresh-goal owned runtime/VM/root/data/device/app/build/outputs cleaned; no task listeners/profile/Lima disk. Final20,578,932KiB free, observed postbuild13,699,512 abovefloor; new runtime needs fresh preflight.
+2Oct current-Android-goal owned runtime/VM/root/data/emulator/app/reverses/build/outputs cleaned; no task listeners/profile/Lima disk. Final20,461,732KiB free, postbuild15,565,468 abovefloor; existing AVD/global caches preserved. New runtime needs fresh preflight.
 Key masking failed/transcript echo, no repo/env persistence;
 no further call/after1Oct reuse; owner replacement needed. Preserve original source.
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and

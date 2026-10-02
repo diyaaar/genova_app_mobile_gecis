@@ -644,3 +644,21 @@ runtime/VM/root/data/device/generated outputs removed, no ports/profile/Lima dis
 abovefloor. No product fix/new dependency/inference/hosted/push/deploy/real data; new API cost$0.
 One measurable goal only, not090/beta/product closure. Next current Android audio afterdb6cc93,
 then legacy-v1 iOS WebView; new runtime needs fresh preflight. Primary review not independent.
+
+### 2 October — current Android audio after player-id repair accepted locally
+
+Entryf7c2b22; helper9bd442e; [fresh record](../docs/reports/2026-10-02-android-audio-player-id-acceptance.md).
+Fixed trusted Android-only revision target red10pass/2fail→12PASS preserves wx historic evidence,
+unknown/iOS rejection and complete unchanged matrix. Actual fresh API36arm64offlineRelease/
+apksigner/real AuthStore/Expo/local RLS/Deno/signed synthetic storage PASS: v1 refusal/one renewal,
+seek4/deadline renewal/resume/pause/seek2, actualB teardown/oldGET+HEAD403/provider0/newPOST403/
+no-loop. First native attempt accepted; full fixtureexit0 with separate-session A and inactive
+membership denial. Native scoped diagnostics/HTTP, no CUA visual/audibility/server-expiry claim.
+No product repair here; existingdb6cc93 validated on Android. Separate immutable current HTTP,
+historical Android/iOSaudio unchanged. Fresh mobile55/406/root110/1120/normal Android+iOS1440
+exports/guardoffconfig PASS. Preparation restore defaultACL failure rolled back; dump-owner role
+thenpostgres migrations corrected without ACL stripping. Source five counts/hashes unchanged.
+Owned stack/VMroot/data/app/reverses/emulator/generatedoutputs removed; no ports/profile/disk,
+final20461732KiB abovefloor, existing AVD/global caches retained. TypeSafe skill evidence
+distinction retained/no new inference/key use/APIcost$0. No hosted/push/deploy/real data/hardware.
+One measurable local goal, not090/beta/product closure; next legacy-v1 iOS permanent WebView.

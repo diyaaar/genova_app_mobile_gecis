@@ -6,7 +6,9 @@ Five-family local HTTP overlap, connected native Android audio and current assig
 Android WebView now have bounded evidence ([Android record](../reports/2026-10-01-connected-android-assignment-webview-acceptance.md));
 connected native iOS PDF/Auth/RLS/B-switch also PASS ([iOS record](../reports/2026-10-01-connected-ios-private-pdf-acceptance.md)).
 Connected iOS audio also PASS ([audio record](../reports/2026-10-01-connected-ios-audio-acceptance.md));
-iOS WebView, current Android audio regression, hosted and release gates remain open. Primary agent,
+Current-assignment iOS WebView also PASS ([2 October goal](../reports/2026-10-02-ios-assignment-measurable-goal.md));
+current Android audio afterdb6cc93 PASS ([fresh record](../reports/2026-10-02-android-audio-player-id-acceptance.md)).
+Legacy-v1 iOS WebView recovery, hosted and release gates remain open. Primary agent,
 single writer. No hosted release authority.
 One result: uniform online next-request access-after-revocation for five private file
 families before `mixed`/`r2-required` cutover. This brief does not authorize live writes.
@@ -112,7 +114,7 @@ provider copy, push/deploy and actual Android/iOS device checks remain separatel
 | Decision #32 and 090 cross-links/consistency | Yes for this record | PASS | 30 September local link scan, `git diff --check` and scoped self-review; no source or runtime gate claimed |
 | Legacy v1 denial and compatibility checkpoint approved | Yes before implementation | PASS locally | Owner approved bounded local work on 30 September; v1 GET/HEAD now returns 401 in local tests. Hosted release was not approved. |
 | Five-family DB/Edge implementation and synthetic two-choir acceptance | Yes after contract selection | PASS locally | Disposable PG17 SQL matrix; service-only RPC; real local Auth/RLS/PostgREST/Edge + signed loopback S3 for repertoire; A/B same and separate sessions. Details below. |
-| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and actual permanent Android WebView recovery PASS locally. Five connected serial HTTP readers PASS historically. Local overlap: repertoire dependency adapter plus four actual index registrations/Supabase-fetch-to-psql adapter PASS on 1 October; not fresh Auth/PostgREST. Connected native Android audio actual Auth/RLS/POST/Deno/signed loopback storage PASS at6fed2ac, with declared v1/client-deadline/earlier-v2/relay faults. Current assignment-version connected Android WebView/native PDF/B switch/old GET/HEAD403 PASS at216b996 with explicit local API/listener adapters. Current native iOS PDF/Auth/RLS/pages/B cache/old HEAD403/new POST403 and final fixture exit0 PASS, latest iOS report above; iOS audio/WebView remain NOT RUN. |
+| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and permanent Android WebView recovery PASS locally. Five serial HTTP readers PASS historically; 1October overlap uses dependency/psql adapters, not fresh Auth/PostgREST. Connected native Android audio originally at6fed2ac, current player-id regression on2October also PASS with declared v1/client-deadline/old-v2 faults. Current assignment-version Android WebView at216b996 and iOS atf7c2b22 PASS, explicit local adapters. Native iOS PDF/audio/full fixtureexit0 PASS in linked records. Legacy-v1 iOS WebView recovery and hosted/release layers remain NOT RUN; no whole090 closure. |
 | Hosted cutover/public Drive withdrawal/offline deletion/device/beta | Later separate authority | NOT RUN | This preparation cannot accept these layers |
 
 Required NOT RUN keeps 090 open. This local implementation may be committed as a partial checkpoint;
@@ -1660,3 +1662,51 @@ No product defect/fix/inference/hosted action; new API cost$0. Exact owned runti
 device/outputs cleaned; no ports/profile/Lima disk, final20578932KiB abovefloor. Earlier timeout
 remains FAIL, not rewritten. This one measurable goal only;090/hosted/beta/full product remain open.
 Next current Android audio afterdb6cc93, then legacy-v1 iOS WebView; new resource preflight required.
+
+### Measurable current Android audio goal — 2 October, afterf7c2b22
+
+Owner requests another measurable goal and completion. mainf7c2b22 verified, only unrelated
+CLI marker dirty. Read AGENTS/handoff/active/090/guide/work cycle/controls, MIGRATION/decision32,
+connected Android/iOS audio records and actual runtime/config/fixture/plugin. Sole writer.
+TypeSafe skill read completely; live index reviewed, building-guide fetch unavailable. This
+deterministic integration needs no inference; no after1October exposed-key reuse/new API cost.
+Outcome: fresh Android Release proves shared player-id fixdb6cc93 preserves v1 refusal/one
+renewal, seek4/client-deadline renewal/resume/pause/seek2, actual B teardown, oldGET+HEAD403/
+provider0/newPOST403/no-loop; full fixtureexit0 and separate immutable current Android HTTP.
+Historical fixed wx evidence already exists; minimal trusted Android revision target/test is
+required, never overwrite/remove old evidence. No criterion or product authorization change.
+Three actions: narrow red→green target guard/tests + isolated schema/service; staged Android
+Release/real connected runtime; fresh final gates/source comparison/cleanup/English handoff/commits.
+Allowed091 fixture/helper/tests, existing090 mobile audio/runtime/config only for reproduced
+causal defect, disposable090/093 environment and brief/reports/handoff/active/progress. No new
+general runner/dependency/provider/schema policy/native WebView rewrite/delegation/hosted/real
+data/push/CI/deploy/hardware/external share/inference/credentials. Preserve RN/Expo ownership.
+Entry20510968KiB/floor10485760; existing SDK36/JDK17/Gradle/AVD verified, no toolchain download.
+VM/images<=6GiB first; then VMstop/native<=3GiB separately, remove native intermediates keeping
+one APK before VMrestart. Runtime AVDgrowth<=1GiB and final gates/exports<=1GiB: additional
+<=8GiB projected12122360KiB abovefloor; actual fresh check every stage, one heavy process.
+Owned genova090 VM/root/data/four-service stack,090/093runtime, generatedandroid/.expo/.next/
+coverage, one090 APK, emulator5580 app/reverses andloopback54491/54492/8000/18092. Stop/delete
+after final dependent checks; preserve existing AVD/dependencies/global caches/original068/
+backup/private evidence/historic HTTP. Two unsuccessful approaches require causal reassessment.
+Exit all observable criteria PASS + mobilefull/rootpnpmcheck/normal Android+iOSexports, fresh
+five original source counts/hashes and exact cleanup/link/diff/self-review/scoped commits.
+Self-review not independent. This goal only, not090/hosted/beta/product closure; server expiry
+and physical audibility unproven. Legacy-v1 iOS WebView follows; no second simulator this goal.
+
+Preparation failure retained: initial restore as localpostgres exited3 at supabase_admin
+default ACLs (permission denied to change default privileges). Transaction rolled back,
+actual target public table count0. Corrected dump-owner restoration as local supabase_admin,
+then SET LOCAL ROLEpostgres for migrations, no ACL stripping/grant expansion/source mutation.
+
+Goal result2October~11:53: [current Android audio record](../reports/2026-10-02-android-audio-player-id-acceptance.md),
+evidence helper9bd442e. Fresh offline API36arm64Release/apksigner/config PASS; actual native
+Auth/Expo/v1 refusal/one renewal/seek4/deadline/resume/pause/seek2/B teardown/oldGET+HEAD403/
+provider0/newPOST403/no-loop PASS first attempt. Immutable separate player-id HTTP and full
+fixtureexit0; separate-session A/inactive-member denial PASS. No new product behavior fix.
+Fresh mobile55/406/root110/1120/normal Android+iOS1440-module exports/guardoffconfig PASS.
+Source five counts/hashes and historic audio HTTP unchanged; owned app/reverses/emulator/VM/
+root/data/generatedoutputs removed, no ports/profile/disk, final20461732KiB abovefloor.
+CUA could not bind emulator, so native diagnostic/HTTP acceptance only, no visual/audibility claim.
+TypeSafe evidence distinction retained, no inference/after1October key reuse; new API cost$0.
+This measurable local goal only,090/hosted/beta remain open; next legacy-v1 iOS WebView recovery.
