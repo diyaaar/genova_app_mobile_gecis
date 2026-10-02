@@ -15,6 +15,39 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 2 October — approved local legacy compatibility implementation
+
+Checkpoint sourcefe8cd19: [dated local acceptance](../reports/2026-10-02-legacy-reader-local-implementation.md)
+and [local source manifest](../reports/090/2026-10-02-legacy-local-source-manifest.json).
+Local SQL/current-authority/legacy HTTP/client-source gates PASS; final root113files/1167tests,
+focused5files/63tests,Node9/9,cached-only Deno checks PASS. Required full refreshed/old-cached
+browser/WebView/PDF/audio and complete production release closure/hosted layers NOT RUN.
+Neither whole090 nor R1 is closed; local implementation does not authorize deployment.
+Final cleanup: owned VM/container removed19:17; HTTP fixture users/choirs0 and listeners absent.
+After final gates, exact generated .next/coverage and newly created task Lima image-cache copy
+removed; matching pinned image remains in the earlier recoverable task Trash copy. Source,
+protected R1 backup and original068 preserved. Final measured free space21,033,852KiB,
+above10GiB floor. These generated outputs are reproducible; retained backup was not deleted.
+
+Owner approved the bounded [local package](../reports/2026-10-02-legacy-reader-compatibility-local-plan.md)
+after the terminal blocked audit. One outcome: current actor/session/choir/resource authority
+on each legacy GET/HEAD, preserving legitimate non-versioned Drive/Storage reads and the old
+POST/relative-URL contract. Primary agent is the sole writer; unrelated CLI marker is excluded.
+Steps: service-only SQL and Edge authority; fixed-origin Next adapters; minimal cache/audio
+adoption and focused/full regression. Allowed paths are the linked plan's exact source closure.
+Required SQL/runtime/client gates remain NOT RUN until exercised; no hosted mutation/push/deploy.
+Fresh preflight: 20,996,440 KiB available, no task VM; one heavy process and 10 GiB floor.
+Do not recreate a runtime until the new SQL acceptance needs it. Preserve the protected R1 backup
+and original 068 restore. The goal tool's old BLOCKED value is not completion or a new scope veto.
+
+SQL resource card: new legacy migration now needs an actual supported-PG restore/caller gate.
+Reuse the retained R1 backup and pinned PG17.6 image in owned `genova090r1`/`genova090r1-db`.
+Entry ~20,996,440 KiB free; estimated new peak <=7.5 GiB, above 10 GiB floor. VM: 2 CPU,
+2 GiB RAM, 8 GiB virtual disk; no mounts, DB network none/no ports. One heavy process.
+Generated runtime/cache and test clone expire after legacy SQL/integrated acceptance; retain
+only protected backup and small redacted records. Existing task Trash cache is counted in free
+space and may be reused only after matching its base-image hash; no global cache cleanup.
+
 ### 2 October — terminal blocked audit, not completion
 
 Goal tool returned BLOCKED15:35:56UTC. Missing approval for the proposed new local production

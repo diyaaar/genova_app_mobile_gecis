@@ -1,0 +1,35 @@
+{
+  "recordedAt": "2026-10-02T16:11:45.443Z",
+  "status": "HTTP_CHECKS_PASS_CLEANUP_FAIL_NOT_ACCEPTED",
+  "observations": [
+    {
+      "alias": "legacy_repertoire",
+      "post": 200,
+      "get": 206,
+      "head": 200
+    },
+    {
+      "alias": "legacy_submission",
+      "post": 200,
+      "get": 206,
+      "head": 200
+    },
+    {
+      "alias": "legacy_review",
+      "post": 200,
+      "get": 206,
+      "head": 200
+    },
+    {
+      "alias": "legacy_comment",
+      "post": 200,
+      "get": 206,
+      "head": 200
+    }
+  ],
+  "authorityCalls": 20,
+  "providerHits": 8,
+  "deniedAfterCommittedRevoke": 8,
+  "deniedProviderAttempts": 0,
+  "limit": "Real loopback HTTP and actual index/SDK/Next adapter/service SQL. Explicit synthetic Auth, RPC transport and Drive provider; not real PostgREST/Auth/browser/Drive ACL."
+}

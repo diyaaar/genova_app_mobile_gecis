@@ -1,5 +1,20 @@
 # İlerleme indeksi
 
+2 October — [090 approved local legacy implementation](../docs/reports/2026-10-02-legacy-reader-local-implementation.md),
+sourcefe8cd19: renewed owner scope supersedes the old missing-approval blocker. Service-only
+current actor/session/choir/resource/alias SQL, sixth legacy Edge reader, fixed-origin Next adapters,
+old POST/relative URL preserved; minimal cache/late-session race/audio selected-track repair.
+Fresh offline restore23schemas/101counts,32roles/22memberships/sixextensions; actual callers/
+visibility/alias/Storage matrix and six unsafe mutants caught. Loopback HTTP actual index/SDK/
+Next/serviceSQL covers five legacy kinds inclStorage, ten revokedGET/HEAD403/provider0 extra;
+final exact fixture cleanupPASS. Synthetic Auth/RPC transport/provider,not hosted/browser.
+Fresh final pnpm check19:20:113files/1167tests/coverage/SW/build; focused5files/63tests,Deno
+cached-only typechecks,Node9/9 PASS. First regex/cleanup/type-boundary failures retained.
+VM/container removed19:17,backup/original068 preserved; final cleanup inventory in090.
+No new Jev call($0),push/live schema/deploy/provider/site changes. R1/090 OPEN/NO-GO for full
+refreshed/old-cached browser transition and complete production-baseline release closure;
+local eight-module manifest NOT deployment manifest. Source/docs separate commits.
+
 2 October — [090 production legacy-client source rehearsal](../docs/reports/2026-10-02-production-legacy-client-source-rehearsal.md),
 test356a348: exact a13f696 loader/AST-selected audio callback executed with synthetic adapters.
 Automatic401 recovery/same-user new-session cache/deniedPOST raw fallback FAIL at source-unit

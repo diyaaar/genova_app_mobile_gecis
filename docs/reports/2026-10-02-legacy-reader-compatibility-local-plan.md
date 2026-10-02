@@ -1,6 +1,9 @@
 # 090 — bounded Genova legacy reader compatibility proposal
 
-2 October 2026. **LOCAL IMPLEMENTATION APPROVAL REQUESTED; NOT a release manifest/permission.**
+2 October 2026. **LOCAL IMPLEMENTATION APPROVED; NOT a release manifest/permission.**
+Owner's subsequent `onaylıyorum` explicitly approves this local SQL/Edge/Next and minimal
+web-app client package. The previous blocked audit is historical; implementation resumes.
+No hosted SQL, deploy, push, sibling-website or provider mutation is authorized by this approval.
 Later [exact production-client rehearsal](2026-10-02-production-legacy-client-source-rehearsal.md)
 adds measured loader/cache/audio-fallback failures. Scope includes minimal web-app client
 adoption/refresh as well as server adapters; server-only response compatibility is insufficient.
@@ -71,12 +74,16 @@ recorded reason; not a broad refactor):
 
 | Gate | Required observable result | Current state |
 |---|---|---|
-| Exact old URL refusal | Forged/expired/actorless old GET+HEAD401, provider attempts0 | FAIL until implementation |
-| Compatible issuance and valid legacy reads | Old POST shape/response; authorized non-versioned repertoire/comment/public-private review/submission Drive/Storage; GET/HEAD/Range/MIME/no-store | NOT RUN |
-| Live identity in offline SQL rehearsal | Service-only actual RPC; anon/auth execution refusal; A→B, inactive/role/session removal, hidden/withdrawn/replaced resources, same actor second session | NOT RUN for new legacy RPC; existing090 caller layer PASS separately |
-| Upstream error/authority failure/concurrency | Fail closed without provider on denied/error decisions; fresh request after committed revoke refuses; in-flight boundary explicit | NOT RUN |
+| Exact old URL refusal | Forged/expired/actorless old GET+HEAD401, provider attempts0 | PASS local source composition; hosted NOT RUN |
+| Compatible issuance and valid legacy reads | Old POST shape/response; authorized non-versioned repertoire/comment/public-private review/submission Drive/Storage; GET/HEAD/Range/MIME/no-store | PASS local actual index/SDK/Next/SQL HTTP, synthetic providers; real providers NOT RUN |
+| Live identity in offline SQL rehearsal | Service-only actual RPC; anon/auth execution refusal; A→B, inactive/role/session removal, hidden/withdrawn/replaced resources, same actor second session | PASS new actual role/behavior matrix and six unsafe mutants; hosted Auth/PostgREST NOT RUN |
+| Upstream error/authority failure/concurrency | Fail closed without provider on denied/error decisions; fresh request after committed revoke refuses; in-flight boundary explicit | PASS scoped handler/composition and committed-revoke HTTP; not real provider concurrency |
 | Exact old cache/WebView/PDF/audio | Current production source and proposed adapter in isolated runtime;401 recovery and403 stop; no uncontrolled retries or cross-tenant cached display | Production loader/cache/denied-audio-callback FAIL in source rehearsal; full browser/new adapter NOT RUN; unsupported clients require owner transition choice |
-| Regression and reviewed closure | Existing five-family tests, focused new tests, pnpm check, exact import/SQL/config/client manifest and scoped review | NOT RUN for implementation; earlier manifest is insufficient |
+| Regression and reviewed closure | Existing five-family tests, focused new tests, pnpm check, exact import/SQL/config/client manifest and scoped review | PASS local sourcefe8cd19/113files/1167tests/focused63/Node9/Deno/self-review; eight legacy Edge modules pinned; full production client release closure/independent review NOT RUN |
+
+Current checkpoint details and evidence layers are owned by the
+[local implementation acceptance](2026-10-02-legacy-reader-local-implementation.md).
+Required browser/complete-release NOT RUN rows still prevent R1/090 closure or publication.
 
 Resource plan must use a fresh disk/process preflight. Earlier supported image/runtime was
 cleaned; recreate only for a concrete new SQL/client runtime gate, one heavy process, measured
@@ -95,5 +102,5 @@ guarantee may be claimed mid-partial deployment. If rollout fails, strict fail-c
 not automatic restoration of actorless URLs or078's inactive-member defect.
 
 This plan is primary-engineer source analysis, not Jev-generated architecture or independent
-review. No new Jev call/cost. Its purpose is to obtain the material production-source scope
-choice; it does not close the active R1 goal while required FAIL/NOT RUN remains.
+review. No new Jev call/cost. The material local source scope was approved and implemented;
+publication remains separate, and required FAIL/NOT RUN prevents closing R1.

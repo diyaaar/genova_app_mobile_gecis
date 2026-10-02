@@ -1,0 +1,52 @@
+{
+  "recordedAt": "2026-10-02T16:15:33.817Z",
+  "status": "LOCAL_HTTP_ACTUAL_INDEX_NEXT_SQL_PASS",
+  "observations": [
+    {
+      "alias": "legacy_repertoire",
+      "kind": "repertoire",
+      "provider": "Drive",
+      "post": 200,
+      "get": 206,
+      "head": 200
+    },
+    {
+      "alias": "legacy_submission",
+      "kind": "submission",
+      "provider": "Storage",
+      "post": 200,
+      "get": 206,
+      "head": 200
+    },
+    {
+      "alias": "legacy_review",
+      "kind": "review",
+      "provider": "Drive",
+      "post": 200,
+      "get": 206,
+      "head": 200
+    },
+    {
+      "alias": "legacy_comment",
+      "kind": "comment",
+      "provider": "Drive",
+      "post": 200,
+      "get": 206,
+      "head": 200
+    },
+    {
+      "alias": "legacy_review",
+      "kind": "private-review",
+      "provider": "Drive",
+      "post": 200,
+      "get": 206,
+      "head": 200
+    }
+  ],
+  "authorityCalls": 25,
+  "providerHits": 10,
+  "deniedAfterCommittedRevoke": 10,
+  "deniedProviderAttempts": 0,
+  "limit": "Real loopback HTTP and actual index/SDK/Next adapter/service SQL. Explicit synthetic Auth, RPC transport and Drive provider; not real PostgREST/Auth/browser/Drive ACL.",
+  "cleanup": "PASS: exact synthetic children/parents removed transactionally"
+}

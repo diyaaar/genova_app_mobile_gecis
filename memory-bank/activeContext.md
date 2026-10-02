@@ -1,88 +1,60 @@
 # Active context
 
-Updated 2 October 2026. [Handoff](../docs/agent-handoff.md) → [090](../docs/briefs/090-private-file-ticket-revocation-contract.md);
-[delivery plan](../docs/mobil-teslim-plani.md)/[WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md)
-own queue/resources. Verify dated evidence; no self-scoring or scope reduction.
+Updated 2 October 2026. [Handoff](../docs/agent-handoff.md) → [090](../docs/briefs/090-private-file-ticket-revocation-contract.md)
+→ [plan](../docs/mobil-teslim-plani.md)/[WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md).
+Verify actual source/state, one writer, English records/Turkish user updates.
 
-## Active measurable goal
+## Current result and next measurable checkpoint
 
-**Goal status BLOCKED,15:35:56UTC/2October.** Missing local legacy SQL/Edge/Next + minimal
-web-app client scope approval repeated on three consecutive applicable goal turns. Independent
-recovery/caller/production-source rehearsal completed; final docs f48cea0. Fresh completion
-audit verifies backup/hash/modes/restored roles/caller artifacts but legacy FAIL/safe renewal
-NOT RUN persist. No runtime/wait or meaningful independent required action. Await explicit
-owner local-package approval; no live authority. Goal not complete and must not auto-resume.
+Owner approved the previously blocked LOCAL legacy SQL/Edge/Next/minimal client package.
+Source **fe8cd19**; [acceptance](../docs/reports/2026-10-02-legacy-reader-local-implementation.md).
+Earlier missing-authority BLOCKED audit is historical. The old goal-tool blocked value cannot
+be resumed through agent tools; no fake completion/duplicate goal. Approved work continued.
+**090/R1 OPEN, live NO-GO:** full refreshed and old-cached browser/WebView/PDF/audio, complete
+production-baseline release closure/independent review and hosted gates remain NOT RUN.
 
-[Latest legacy-client source rehearsal](../docs/reports/2026-10-02-production-legacy-client-source-rehearsal.md)/356a348:
-actual old URL loader401/same-user-session cache and deniedPOST→raw audio fallback FAIL;
-clear/expiry positive controls PASS. New4/4 and standalone7/7/syntax/ESLint PASS; no actual
-browser/provider/DriveACL claim. Proposed scope now requires minimal web-app client adoption/
-refresh, not only server adapters. Awaiting owner choice on second consecutive applicable goal
-turn; safe independent rehearsal checkpointed. Third unchanged genuine impasse requires blocked
-audit/tool status, not more unchanged builds/status commits. No pending process/runtime wait.
+Implemented old POST/relative-URL compatibility with new legacy-family actor/session/current
+choir/resource/alias/source-bound tickets. Service-only current-authority SQL uses one snapshot;
+Next is a fixed-origin adapter, not another provider/auth service. Valid non-versioned Drive/
+Storage preserved, public/private review mirrors resolved; no R2 activation or v1 grace.
+Same-user/session/late-lookup cache races covered; typed403 stops; selected online audio probes.
+Downloaded/offline bytes and authorized in-flight reads remain outside retroactive revocation.
 
-**R1/090 OPEN; release NO-GO.** [Fresh recovery/rehearsal](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md):
-1,623,637B protected consistent logical backup,23schemas/101counts, actual offline PG17.6.
-After explicit local extension/role bootstrap, six extensions' versions/owners,32 roles/
-22 memberships, seven helper definitions/ACL and18 selected relation catalogs match.
-078 inactive-authority assertion red→green; exact078→090,005/012/five-family/service-role
-SQL negatives PASS; final baseline101counts unchanged. Object bodies/Vault values/net queues/
-Storage metadata/passwords/settings excluded. Later roles snapshot is not row-snapshot parity.
-No live Auth/PostgREST/HTTP/client/provider proof or hosted schema/deploy/password write.
+Latest local PASS: supported offline PG17.6 restore23schemas/101counts;32roles/22memberships/
+sixextension parity; actual service/anon/auth RPC matrix and six unsafe mutants caught.
+Actual index/SDK/Next adapter + SQL through loopback HTTP: five legacy kinds incl Storage,
+ten new GET/HEAD403 after committed inactive membership, provider0 extra; exact fixture cleanup.
+Auth/RPC transport/provider are synthetic; not hosted Auth/PostgREST/Drive/browser acceptance.
+Final pnpm check19:20:113files/1167tests/coverage/SW/build; focused5files/63tests; standalone
+Node9/9 (historical failures still reproduced); cached-only Deno index/HTTP type checks PASS.
+First PostgreSQL regex/HTTP cleanup/type-boundary failures and last cache race repair retained.
 
-**Next action needs material scope choice:** [local compatibility proposal](../docs/reports/2026-10-02-legacy-reader-compatibility-local-plan.md)
-requests owner approval for new production SQL/Edge/Next source, not live writes. Recovery-only
-approval is not automatically expanded; no implementation/deploy started for that new package.
-Close legacy Next bypass with the bounded package after approval.
-Actual production a13f696/current HEAD route/token identical. Synthetic real-source execution:
-GET200/HEAD200,upstream2,current-authority0. Five Edge releases cannot fix that endpoint.
-Require old GET/HEAD refusal before upstream AND safe authorized old POST renewal/response
-shape, including valid non-versioned assignment/review/comment and repertoire files.
-New server logic in Edge/shared SQL; existing Next route may be adapter. Do not fabricate
-immutable versions, activate R2, drop valid legacy flows or bulk-push hundreds of changes.
+NEXT: production-baseline minimal refreshed client release candidate + old open-tab/WebView/
+PDF/audio transition evidence. No silent refresh/maintenance live action. Exact old source fails
+auto401/cache/raw-fallback; runtime units do not prove old bundles adopt new code. Complete
+six-reader/SQL/config/client manifest and review/recovery/forward-repair before live authority.
+[Local manifest](../docs/reports/090/2026-10-02-legacy-local-source-manifest.json) pins eight legacy Edge modules/source,
+NOT deployment approval. Older bdf34b8 five-reader packet does not cover the sixth reader/client.
 
-## Latest owner correction
+## Scope and resource boundaries
 
-[Actual caller acceptance](../docs/reports/2026-10-02-rpc-caller-recovery-acceptance.md)/31483fd
-PASS on a fresh same-backup restore: service5allow/16deny,anon5/auth5 actual execution refusals;
-three permission mutants caught, unchanged fixture passes afterward,101baselinecounts preserved.
-Role/extension parity32/22/6; not live Auth/PostgREST/HTTP/client proof. Earlier NOT RUN historical.
+Owner#33: sibling site no longer on this DB, **NO SITE CHANGES**; owner-reported not endpoint
+verified. Historical site findings not Genova blocker; no retained-table deletion/RLS relaxation.
+No push/CI/live DB/Edge/web deploy/provider ACL/credentials/real users/email/device action here.
+Local source/tests/scoped commits/owned cleanup authorized; exclude unrelated CLI marker.
+DB→Edge→compatible clients, recovery before writes; no automatic v1 or078-defect rollback.
 
-Decision#33: sibling website is no longer on this database; **NO WEBSITE CHANGES**.
-This supersedes old shared-site delivery assumptions. Current disconnection owner-reported,
-not independently production-endpoint verified. Keep historical catalog/source/SQL observations,
-but no website remediation/acceptance dependency for Genova. Do not delete retained tables
-or relax tenant RLS; Genova web/mobile and actual retained DB consumers remain in scope.
+Owned VM/container removed19:17 and synthetic users/choirs0 verified; no loopback listeners.
+Final cleanup/free-space inventory in090; recoverable Trash moves are NOT freed disk.
+Protected R1 backup remains0700/0600 outside Git; original068/backup/dependencies/global caches/
+AVD preserved. Fresh runtime requires >=10GiB measured preflight/one heavy process/bounded retries.
+[R1](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md) coverage exclusions unchanged:
+Vault/net queues/Storage metadata/provider bytes/password/settings excluded, roles later snapshot.
+No new Jev inference($0); same key reuse authorized2October, none saved to env/repo/logs.
+Historical two calls$0.000097902 estimate,not invoice/day/Codex cost.
 
-## Evidence boundaries and destination
-
-[R0](../docs/reports/2026-10-02-hosted-revocation-r0-connected-preflight.md) metadata COMPLETE:
-68migrations/no078090, inactive-helper gap, five version1/JWTfalse bundle identities.
-[Manifest](../docs/reports/090/2026-10-02-hosted-revocation-source-manifest.json) pinsbdf34b8
-twoSQL/five readers/12modules/30imports, not this follow-up client/legacy function package.
-[Local iOS legacy](../docs/reports/2026-10-02-ios-legacy-webview-acceptance.md)/earlier090 Android/
-iOS PDF/audio/current-assignment tests retain declared local fault/relay/synthetic boundaries,
-not today's production Next, phone or hosted acceptance. Earlier failures stay visible.
-Fresh root pnpm check PASS:111files/1130tests/coverage/SW/build; standalone node3/3 PASS.
-[WF-013](../docs/briefs/WF-013-multi-tenant-remediation-plan.md) step5 PARTIAL;089 local forms only;
-F12/rotation/legacy-account risks open. Permanent profile WebView; RN/Expo retained.
-
-Latest caller/root18:16/node3/3 gates PASS; runtime removed18:15. Exact task cache/build outputs
-moved to Trash recoverably, not claimed as freed space;18:17 free21,002,984KiB. No new Jev call.
-One writer; exclude unrelated supabase/.temp/cli-latest. OwnedR1 VM/container/copies removed;
-Source93ca043/separate docs checkpoint; final post-scope root111/1130/node3/3/387links/7anchors/
-9hashes/22-file redaction/diff PASS. Final build outputs removed17:51,free22,771,852KiB.
-post-removal22,950,380KiB before root gate. Private fresh backup directorygenova-090-r1-5bfGvo
-outside Git retained0700/0600; original068 DB/backup/dependencies/AVD/global caches preserved.
-New runtime needs measured >=10GiB floor preflight; one heavy process, bounded causal retries.
-Same Jev key explicitly renewed2October; owner permits analysis spending, not other providers.
-R1 two redacted calls,estimate$0.000097902; no key persisted to env/repo,not invoice/daily total.
-Scoped local work/commit/cleanup approved. Live schema/Edge/provider/real data/email/credentials/
-push/CI/deploy/hardware/distribution require exact scope; no publication before prerequisites.
-Recovery before DB→Edge→compatible clients. Forward strict repair, never automatic v1 rollback.
-
-Android-first beta → preserved full scope → both stores, Supabase/privateR2 retained.
-Five members free then extra billing/manual invoice/assisted onboarding. Price/counting/
-retention/deletion/last-chef decisions pending.07642objects/60,969,062B;077nextten unexecuted,
-49MP3/192,361,428B pending. Copy/activation/source ACL withdrawal/real phone/store separate.
-Native write/sync/offline/chat/C4/C5/privacy/lifecycle remain; full objective unfinished.
+Android-first beta → full preserved product → both stores; Supabase/privateR2 retained,noRailway.
+Five free members, assisted v1 onboarding, extra-seat/manual billing; product owner choices open.
+RN/Expo retained, profile permanent WebView. WF-013 step5 PARTIAL,089 local only,F12 risks open.
+07642copies/60,969,062B;077unexecuted,49MP3/192,361,428B pending; Drive ACL/phone/store separate.
+Native write/sync/offline/chat/C4/C5/privacy/lifecycle/full-product acceptance remain open.
