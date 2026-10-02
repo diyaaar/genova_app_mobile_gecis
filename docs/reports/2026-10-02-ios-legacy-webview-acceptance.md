@@ -90,3 +90,14 @@ not authorization/client/product changes. Required native file/share/B/full fixt
 final cleanup remain open. The measurable Codex goal is active, not complete or paused.
 At13:09 source checkpoint passes, same actual native page still visible and HTTP target absent;
 owner one-click assistance remains the concrete blocking action. No further build/restart needed.
+
+Automatic goal continuation at13:12–13:15Turkey: previous turn made source/evidence/gate
+progress but reached the human-input blocker. Verified the same live fixture handle45777,
+Node92872, web92478 and SSH92337; no terminal output/restart inferred, free13690028KiB.
+Fresh actual Simulator AX still A/chorister-detail and no file confirmation. A bounded
+coordinate-free alternative used the observed I/O→Input→Send Keyboard Input to Device
+command: actual capture title appeared, Page_Down/Tab did not scroll/focus the WebView.
+Escape did not exit capture; same observed menu command restored ordinary iOS26.5 title.
+No persistent setting or file/session change. Alternative exhausted, no product defect
+established; same owner file-click remains necessary. Goal remains active on this second
+consecutive blocker turn; no required criterion or objective narrowed/marked complete.
