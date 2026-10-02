@@ -703,3 +703,16 @@ leave native confirmation, no repeat/relaunch/reload/signOut. Fresh device/runti
 ~15:31Turkey hold/removal point in record; intermediates removed,14614932KiB abovefloor.
 No product/Auth/schema behavior change, source rows copied, hosted/push/spending/new inference.
 APIcost$0; sole primary scoped self-review. Preserve original source/dependencies/global caches.
+
+### 2 October — owner click accepted, fixture expiry retained, bounded runtime reuse
+
+[Resume1](../docs/reports/2026-10-02-ios-legacy-webview-acceptance.md): actual GET401/HEAD401/
+onePOST200/GET200, native65905B/hash and actual share sheet observed/AX Cancel return PASS.
+Actual B profile/cache PASS; fixture30minutehold expired before old HEAD, completeexit1 and
+no accepted HTTP retained, not a product bug or full goal completion. Changed approach: no
+build/image/schema/test change; erase only owned synthetic device and boot28s with fresh
+measured projection13,210,664KiB, same signed app/web/service/schema. Resume2 newfixture1216/
+session9263 READY~15:34Turkey/expires~16:04, actual fresh A observed; owner asked file+Devam et
+once/leave share. Agent AX Cancel/B now proven. Full original objective/matrix unchanged;
+required old denial/fixtureexit0/immutable artifact still NOT RUN. Source/backups/caches and
+unrelated CLI marker preserved; APIcost$0, hosted/release/product remains unaccepted.

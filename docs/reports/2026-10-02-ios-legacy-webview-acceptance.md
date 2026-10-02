@@ -4,10 +4,11 @@ Date: 2 October 2026. Base main/f63aa49. Sole primary writer; scoped self-review
 Scope: the missing legacy-v1 consumer in [090](../briefs/090-private-file-ticket-revocation-contract.md),
 not a current-version assignment rerun, hosted cutover, usable beta or whole product acceptance.
 Repertoire remains native; chorist-detail/profile remain permanent WebView.
-Current outcome: **BLOCKED / not accepted**. Native file interaction requires owner
-assistance or functioning coordinate input. All task-owned heavy runtime output is removed.
+Current outcome: **IN PROGRESS / owner-assisted runtime retry, not accepted**.
+Earlier blocked closeout/failures remain below. The latest resume/ownership is at the end;
+no full native/HTTP acceptance yet. Do not reuse the first attempt's removed environment.
 
-## Evidence
+## First attempt evidence — historical, before owner-assisted resumes
 
 | Required criterion | Result | Evidence / limit |
 | --- | --- | --- |
