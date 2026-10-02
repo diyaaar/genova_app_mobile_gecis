@@ -63,3 +63,22 @@ exposed key was not reused. No hosted DB/Edge/provider/real users/email/push/CI/
 or external share. New `.gitignore` exclusion prevents generated signed app publication.
 Legacy-v1 iOS WebView recovery, current Android audio afterdb6cc93 and all hosted/release gates
 remain separate open work;090/usable beta/full product are not complete.
+
+### Owner-assisted inspection / reopen, ~09:10 Turkey
+
+Owner reports manual scrolling did not work and wonders whether content extends below viewport;
+asks to inspect/reopen for another try. One bounded diagnostic: inspect existing owned page/source,
+relaunch already installed signed app without rebuild, ask for explicit click-hold upward drag.
+Only unrelated CLI marker dirty at entry,13,963,944KiB free; existing listeners18092/31090 alive.
+CUA first observes `Web görünümü kapandı`/bridge clearing/cache clear, not an open scroll area;
+cause of closure unknown. `simctl terminate`/launch same owned bundle returns72637, actual A
+chorist-detail bridge running and page visible again. Screenshot shows top of the next metrics
+card clipped below personal-information card: content does extend below visible viewport.
+Source flex1 nesting and library native/codegen default scrollEnabled=true inspected; no causal
+defect established, no product/dependency change. Ask owner to click-hold within page and drag up,
+not merely wheel/trackpad scroll, and avoid B/close/file during diagnosis. This is not a scroll PASS.
+Observer now contains a second POST200/HEAD200 pair after reopen, so this reused fixture no longer
+meets its exactly-one-issuance acceptance matrix. Preserve it as diagnostic, never loosen counts;
+a later full acceptance needs a fresh synthetic fixture with verified expiry/ownership, not another
+native rebuild. ~09:15 hold expiry and cleanup obligation unchanged. No gates rerun without changed
+source, no Jev/provider/real data/hosted action; new API cost$0.

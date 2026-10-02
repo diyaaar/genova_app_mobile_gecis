@@ -1597,3 +1597,9 @@ accepted iOS file artifact created or090 closure. Fresh mobile55/406 and normal 
 five original source hashes/counts unchanged. Active task-owned runtime has bounded~09:15Turkey
 fixture expiry; verify state before resume and perform exact cleanup after last dependent checks.
 No product behavior change/new Jev call; new API cost$0. Historical Android evidence preserved.
+
+Owner-assisted09:10 diagnostic: owner could not scroll; actual view was closed, cause unknown.
+Existing signed app relaunched without rebuild; A page/bridge visible, next card clipped atbottom,
+so content continues. Source default scroll enabled, no causal defect established. Explicit manual
+click-hold upward drag requested. Reopen adds second issuance: current fixture is diagnostic only,
+cannot satisfy unchanged exactly-one matrix; fresh fixture required for later acceptance. See record.
