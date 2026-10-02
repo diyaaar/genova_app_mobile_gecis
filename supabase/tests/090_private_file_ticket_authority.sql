@@ -123,11 +123,34 @@ declare
     '63000000-0000-4000-8000-000000000090'::uuid,
     '71000000-0000-4000-8000-000000000090'::uuid,
     '81000000-0000-4000-8000-000000000090'::uuid];
+  original_role text:=current_user;
+  denied_role text;
 begin
   if has_function_privilege('anon','public.private_file_ticket_authorized_090(uuid,uuid,uuid,text,uuid)','EXECUTE')
     or has_function_privilege('authenticated','public.private_file_ticket_authorized_090(uuid,uuid,uuid,text,uuid)','EXECUTE')
     or not has_function_privilege('service_role','public.private_file_ticket_authorized_090(uuid,uuid,uuid,text,uuid)','EXECUTE') then
     raise exception '090 RPC privilege boundary failed';
+  end if;
+  -- Execute, rather than infer from ACL predicates. Do not catch a failed role
+  -- switch as a successful RPC refusal. All five families must refuse both roles.
+  foreach denied_role in array array['anon','authenticated'] loop
+    execute format('set local role %I',denied_role);
+    if current_user<>denied_role then
+      raise exception '090 caller identity switch failed';
+    end if;
+    for i in 1..5 loop
+      begin
+        perform public.private_file_ticket_authorized_090(actor,session_a,choir_a,families[i],files[i]);
+        raise exception '090 % unexpectedly executed % RPC',denied_role,families[i];
+      exception when insufficient_privilege then
+        null;
+      end;
+    end loop;
+    execute format('set local role %I',original_role);
+  end loop;
+  set local role service_role;
+  if current_user<>'service_role' then
+    raise exception '090 service caller identity switch failed';
   end if;
   for i in 1..5 loop
     if not public.private_file_ticket_authorized_090(actor,session_a,choir_a,families[i],files[i])
@@ -140,6 +163,8 @@ begin
   if public.private_file_ticket_authorized_090(actor,session_a,choir_a,'unknown',files[1]) then
     raise exception '090 unknown family accepted';
   end if;
+  execute format('set local role %I',original_role);
+  raise notice '090 actual RPC callers PASS: service_role five-family allow/deny; anon/authenticated ten execution denials';
 
   if not public.private_file_ticket_authorized_090(target_actor,target_session,choir_a,families[1],files[1])
     or not public.private_file_ticket_authorized_090(target_actor,target_session,choir_a,families[2],files[2])

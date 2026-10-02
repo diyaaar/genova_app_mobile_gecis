@@ -11,7 +11,9 @@ function docker(args, input, quiet = false) {
   const r = spawnSync('docker', ['--host', HOST, ...args], { input, encoding: 'utf8',
     maxBuffer: 4194304, timeout: 120000 });
   if (r.status !== 0) {
-    fs.writeFileSync(DIR + '/rehearsal-error.log', (r.stderr ?? '') + (r.stdout ?? ''), { mode: 0o600 });
+    const errorName=process.argv[2]==='--fresh-role-execution-repeat'
+      ? 'role-execution-repeat-error.log' : 'rehearsal-error.log';
+    fs.writeFileSync(DIR + '/' + errorName, (r.stderr ?? '') + (r.stdout ?? ''), { mode: 0o600 });
     // SQL error logs may echo row data. Return only SQLSTATE/message without DETAIL/context.
     const line = (r.stderr ?? '').split('\n').find(l => /ERROR:|FATAL:/.test(l));
     throw Error('Local command failed; protected log retained' + (quiet ? '' : ': ' + (line ?? 'no safe SQL error').slice(0,200)));
@@ -24,8 +26,11 @@ function sql(query, db = DB) {
 }
 const inspect = JSON.parse(docker(['inspect', CONTAINER]))[0];
 const rebuilding = process.argv[2] === '--rebuild-owned-restore';
+const repeating = process.argv[2] === '--fresh-role-execution-repeat';
+const summaryName = repeating ? 'role-execution-repeat-summary.json' : 'rehearsal-summary.json';
+const restoreName = repeating ? 'role-execution-repeat-restore.log' : 'restore.log';
 if (process.cwd() !== '/Users/alidiyarduran/Antigravity/genovakorist'
-  || (!rebuilding && process.argv[2] !== '--restore-and-test') || process.argv.length !== 3
+  || (!rebuilding && !repeating && process.argv[2] !== '--restore-and-test') || process.argv.length !== 3
   || inspect.Config.Image !== IMAGE || inspect.HostConfig.NetworkMode !== 'none'
   || inspect.Mounts.length || Object.keys(inspect.HostConfig.PortBindings ?? {}).length) throw Error('REFUSED isolated target');
 const summary = JSON.parse(fs.readFileSync(DIR + '/summary.json'));
@@ -33,6 +38,9 @@ const snapshot = JSON.parse(fs.readFileSync(DIR + '/snapshot.json'));
 const dump = fs.readFileSync(DIR + '/database.sql');
 if (crypto.createHash('sha256').update(dump).digest('hex') !== summary.sha256) throw Error('REFUSED backup hash');
 if (sql('show supautils.privileged_extensions;', 'postgres') !== '') throw Error('REFUSED image owner override; explicit offline setup required');
+if (repeating && [summaryName,restoreName].some(name=>fs.existsSync(DIR+'/'+name))) {
+  throw Error('REFUSED overwrite of repeated recovery evidence');
+}
 if (rebuilding) {
   const prior = JSON.parse(fs.readFileSync(DIR + '/rehearsal-summary.json'));
   if (prior.backupSha256 !== summary.sha256 || prior.baselineDatabase !== DB
@@ -74,7 +82,7 @@ const original = dump.toString();
 if (original.split('CREATE SCHEMA vault;').length !== 2) throw Error('REFUSED schema seed boundary changed');
 const restored = original.replace('CREATE SCHEMA vault;', 'CREATE SCHEMA vault;\n' + seed);
 const output = executeFileFromText(restored);
-fs.writeFileSync(DIR + '/restore.log', output, { mode: 0o600 });
+fs.writeFileSync(DIR + '/' + restoreName, output, { flag:'wx', mode: 0o600 });
 function executeFileFromText(text) { return sql('begin;\n' + text + '\ncommit;\n'); }
 const schemas = JSON.parse(sql(`select json_agg(nspname order by nspname) from pg_namespace
   where nspname in ('auth','public','supabase_migrations','extensions','vault') or nspname ~ '^genova_[0-9]{3}$';`));
@@ -106,6 +114,6 @@ testFile('supabase/tests/090_private_file_ticket_authority.sql');
 const result = { date: new Date().toISOString(), stage: 'RESTORE_AND_SQL_MATRIX_PASS',
   baselineDatabase: DB, testDatabase: TEST, schemas: schemas.length, tables: Object.keys(counts).length,
   extensions, backupSha256: summary.sha256,
-  limits: 'Synthetic SQL fixtures/direct request claims, not Auth service/PostgREST/live HTTP/client proof. Both-site tests and role membership/catalog comparison remain required.' };
-fs.writeFileSync(DIR + '/rehearsal-summary.json', JSON.stringify(result, null, 2), { flag: 'wx', mode: 0o600 });
+  limits: 'Synthetic SQL fixtures/direct request claims, not Auth service/PostgREST/live HTTP/client proof. Role membership/catalog comparison remains required; owner excludes sibling-site changes.' };
+fs.writeFileSync(DIR + '/' + summaryName, JSON.stringify(result, null, 2), { flag: 'wx', mode: 0o600 });
 console.log(JSON.stringify(result));

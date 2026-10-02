@@ -12,13 +12,17 @@ function docker(args,input) {
   return r.stdout.trim();
 }
 const target=JSON.parse(docker(['inspect',container]))[0];
-if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv[2]!=='--owned-offline'
+const repeating=process.argv[2]==='--fresh-role-execution-repeat';
+const outputName=repeating?'role-execution-repeat-parity.json':'role-rehearsal.json';
+if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||(!repeating&&process.argv[2]!=='--owned-offline')
   ||process.argv.length!==3||target.HostConfig.NetworkMode!=='none'||target.Mounts.length
+  ||Object.keys(target.HostConfig.PortBindings??{}).length
   ||target.Config.Image!=='supabase/postgres@sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00') throw Error('REFUSED role target');
 function sql(q,db='genova_090_r1_restore') {
   return docker(['exec','-i','-e','PGPASSWORD=090-synthetic-local-only',container,'psql','-X','-Atq','-w',
     '-U','supabase_admin','-d',db,'-v','ON_ERROR_STOP=1'],q);
 }
+if(fs.existsSync(dir+'/'+outputName)) throw Error('REFUSED overwrite of role evidence');
 const source=JSON.parse(fs.readFileSync(dir+'/role-extension-catalog.json'));
 const query=`select json_build_object('roles',(select json_agg(json_build_object('name',rolname,'super',rolsuper,'inherit',rolinherit,
  'createrole',rolcreaterole,'createdb',rolcreatedb,'login',rolcanlogin,'replication',rolreplication,'bypassrls',rolbypassrls,
@@ -56,5 +60,5 @@ const result={recordedAt:new Date().toISOString(),status:'ROLE_EXTENSION_PARITY_
  changedRoles:source.roles.filter(r=>!before.roles.some(p=>isDeepStrictEqual(p,r))).map(r=>r.name),
  addedOrChangedMemberships:source.memberships.filter(r=>!before.memberships.some(p=>isDeepStrictEqual(p,r))),
  limit:source.limit+' No live Auth/PostgREST/client/provider or password/config recovery claim.',before,after};
-fs.writeFileSync(dir+'/role-rehearsal.json',JSON.stringify(result,null,2),{flag:'wx',mode:0o600});
+fs.writeFileSync(dir+'/'+outputName,JSON.stringify(result,null,2),{flag:'wx',mode:0o600});
 console.log(JSON.stringify({...result,before:undefined,after:undefined}));
