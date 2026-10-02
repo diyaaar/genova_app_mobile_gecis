@@ -11,13 +11,13 @@ declare
   session_a uuid := gen_random_uuid();
   session_b uuid := '77777777-7777-7777-7777-777777777777';
   session_single uuid := gen_random_uuid();
-  choir_a uuid;
+  choir_a uuid := gen_random_uuid();
   choir_b uuid := gen_random_uuid();
   choir_outsider uuid := gen_random_uuid();
   member_a uuid := gen_random_uuid();
   member_b uuid := gen_random_uuid();
   member_single uuid := gen_random_uuid();
-  role_a uuid;
+  role_a uuid := gen_random_uuid();
   role_b uuid := gen_random_uuid();
   repertoire_a uuid := gen_random_uuid();
   repertoire_b uuid := gen_random_uuid();
@@ -31,10 +31,10 @@ begin
     raise exception '005 private schema or RPC grants violate least privilege';
   end if;
 
-  select id into strict choir_a from public.choirs where slug = 'genesi-nova';
-  select id into strict role_a
-  from public.roles
-  where choir_id = choir_a and name = 'Şef';
+  -- Do not attach fixtures to a restored real choir or depend on its seed roles.
+  insert into public.choirs(id,slug,name)
+  values(choir_a,'005-a-'||choir_a,'005 Independent Choir A');
+  insert into public.roles(id,choir_id,name) values(role_a,choir_a,'Şef');
 
   insert into auth.users (
     id, instance_id, aud, role, email, encrypted_password,
