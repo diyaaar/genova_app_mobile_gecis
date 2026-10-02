@@ -42,10 +42,15 @@ exports PASS. Jev triage advisory5/5;1Oct20calls$0.003070494 estimate, not invoi
 
 **Next packet prepared:** [090 hosted approval](reports/2026-10-02-hosted-revocation-approval-packet.md)
 and [manifest](reports/090/2026-10-02-hosted-revocation-source-manifest.json), sourcebdf34b8.
-Proposed078→090/shared-site plus exactly five readers,12-module/30-import closure. No live
-metadata/backup/deploy performed. Next R0: verify designated Genesinova connection and read
-catalog/ledger/function/release metadata only; no rows/secrets/mutations. R1–R5 need separate
-scope. Cached origin/main=a13f696 gives320commits/849files gap, not live evidence or push authority.
+Proposed078→090/shared-site plus exactly five readers,12-module/30-import closure.
+[Authorized R0](reports/2026-10-02-hosted-revocation-r0-preflight.md) PARTIAL/NO-GO:
+exact dashboard identity/ledger through065/no078090/public090 absent, five JWTflags false,
+legacy/false flag digests, PG17.6.1.063 and current app VercelReady/Git maina13f696 verified.
+MCP project read denied; full helper/ACL/shared-view catalogs/five versionIDs/sibling provider
+alias NOT RUN. Sibling remote00be086/GitHub provider success is not its current alias proof.
+Next: restore designated read-only metadata access and finish R0; no credential/config changes
+without scope. No rows/bodies/secret values/backup/deploy; initial digest overread recorded.
+R1–R5 separate authority. Pin gap320commits/849files is not bulk-push authority.
 
 [093](briefs/093-android-private-r2-read-integration.md)/`c3e1b28` preserves connected
 synthetic Android PDF evidence; its historical old-URL 200 was later corrected in 090.
@@ -75,7 +80,7 @@ Local scoped code/tests/commits/owned cleanup authorized. Hosted DB/Edge/provide
 real users/email/data, spending, CI/push/deploy, hardware/distribution need concrete authority.
 Shared DB serves sibling site: fresh backup/restore, both-project impact, DB→Edge→clients order.
 087 helper/RPC → 088 RPC precede web and survive rollback; Git revert is not data recovery.069 local key is not hosted Auth proof.070 account is
-`genesinova.choir@gmail.com`, not the earlier typo. No current remote/live revision verified.
+`genesinova.choir@gmail.com`, not the earlier typo. Current release metadata is bounded by R0 above.
 
 ## Product destination and external storage queue
 

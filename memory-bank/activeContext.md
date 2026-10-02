@@ -44,9 +44,13 @@ exports PASS. Jev advisory5/5;1Oct20calls$0.003070494 estimate, not invoice.
 **Next packet prepared:** [090 hosted approval](../docs/reports/2026-10-02-hosted-revocation-approval-packet.md)
 and [manifest](../docs/reports/090/2026-10-02-hosted-revocation-source-manifest.json), sourcebdf34b8.
 Proposed078→090 and five readers,12-module/30-import closure; shared-site/old-client gates explicit.
-No fresh hosted state/backup/deploy. Next R0 metadata-only after designated connection verification;
-no real rows/secrets/mutations. R1–R5 separate scope. Cached a13f696 gap320commits/849files is
-not live evidence or bulk-push authority. Document-only goal; no runtime or paid inference.
+[Authorized R0](../docs/reports/2026-10-02-hosted-revocation-r0-preflight.md) PARTIAL/NO-GO:
+exact dashboard/ledger through065/no078090/public090 absent, five JWTflags false, legacy/false
+flags and PG17.6.1.063 verified. Current app Git main/VercelReadya13f696; sibling remote00be086/
+GitHub provider success only. MCP project read denied; full catalog/ACL/five versionIDs/sibling
+alias unrun. Next: designated read-only metadata access, then remaining R0. No rows/bodies/
+secret values/backup/mutations/deploy; initial digest overread recorded. R1–R5 separate authority.
+Source gap320commits/849files not bulk-push permission. No runtime/new inference.
 
 [093](../docs/briefs/093-android-private-r2-read-integration.md)/`c3e1b28`: connected local
 Auth/PG17/Deno/signed S3 to Android native PDF40, A→B cache/new-ticket denial. Its old URL
@@ -79,7 +83,7 @@ Android-first same-product beta → complete preserved scope → both stores; pr
 Five free choir members then additional billing/manual web invoice, assisted v1 onboarding.
 Price/period/seat counting, deletion/retention/last-chef and release accounts undecided.
 Native write/sync/offline/chat/C4/C5 and store/privacy/lifecycle are still in the objective.
-WF-011/066–069 have dated CI/Preview/dormant-hosted proof; no current remote/live revision,
+WF-011/066–069 have dated CI/Preview/dormant-hosted proof; current metadata limited to R0 above,
 no bulk push. [076](../docs/briefs/076-repertoire-mp3-r2-batch-2.md) records 42 objects/
 60,969,062 bytes verified; 49 MP3/192,361,428 bytes pending. [077](../docs/briefs/077-repertoire-mp3-r2-batch-3.md)
 prepares next-ten/27,472,242-byte approval; no copy/activation/public-link withdrawal implied.

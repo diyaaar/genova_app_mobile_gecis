@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-02",
+  "observationWindowUtc": "12:58-13:18",
+  "entryRevision": "cafd336daa29fae2d5f36d72470df65171b1936a",
+  "sourceRevision": "bdf34b80a239fe7a69188746e5543caf3b12cbf3",
+  "projectRef": "hievmwwctjjlhmssoxsu",
+  "status": "PARTIAL_NO_GO",
+  "authority": "R0 metadata only; no hosted mutations, user rows, file bodies or secret values",
+  "mcpProjectRead": "PERMISSION_DENIED",
+  "dashboardIdentity": {"organization": "genesinovachoir", "project": "genesinovachoir's Project", "branch": "main Production", "region": "ap-northeast-1"},
+  "dashboardServiceVersions": {"postgres": "17.6.1.063", "auth": "2.197.0", "postgrest": "14.5"},
+  "enabledExtensionsUi": [
+    ["pgcrypto", "1.3", "extensions"],
+    ["pg_stat_statements", "1.11", "extensions"],
+    ["pg_net", "0.19.5", "public"],
+    ["uuid-ossp", "1.1", "extensions"],
+    ["plpgsql", "1.0", "pg_catalog"]
+  ],
+  "recentMigrationLedgerUi": [
+    ["20260925083611", "private_r2_activation_065"],
+    ["20260923194500", "private_r2_copy_inventory_063"],
+    ["20260923193000", "private_r2_chat_media_060"],
+    ["20260923170000", "private_r2_repertoire_comment_audio_059"],
+    ["20260923103000", "private_r2_assignment_review_audio_058"],
+    ["20260922221500", "private_r2_assignment_versions_057"],
+    ["20260922171847", "private_r2_repertoire_cover_056"],
+    ["20260922071942", "private_r2_repertoire_lifecycle_055"],
+    ["20260921185113", "private_r2_repertoire_upload_054"],
+    ["20260920205054", "private_r2_repertoire_read_053"],
+    ["20260919213000", "chat_text_send_idempotency_045"],
+    ["20260919201500", "chat_core_message_authority_044"],
+    ["20260919194500", "chat_message_status_authority_043"],
+    ["20260919193000", "chat_social_membership_authority_042"],
+    ["20260919190000", "chat_room_membership_authority_041"],
+    ["20260919183000", "assignment_review_audio_069_prerequisite"]
+  ],
+  "proposedMigrationsPresentInLedgerUi": {"20260928140000": false, "20260930080046": false},
+  "publicFunctionTable": {"displayedRows": 55, "private_file_ticket_authorized_090_present": false, "fullCatalogAcl": "NOT_RUN"},
+  "edgeListTotalUi": 21,
+  "readers": [
+    {"slug": "repertoire-file", "verifyJwtUi": false, "updatedLabel": "5 days ago", "version": null},
+    {"slug": "assignment-file", "verifyJwtUi": false, "updatedLabel": "5 days ago", "version": null},
+    {"slug": "assignment-review-file", "verifyJwtUi": false, "updatedLabel": "5 days ago", "version": null},
+    {"slug": "repertoire-comment-file", "verifyJwtUi": false, "updatedLabel": "5 days ago", "version": null},
+    {"slug": "chat-media-file", "verifyJwtUi": false, "updatedLabel": "5 days ago", "version": null}
+  ],
+  "customSecretNamesOnly": ["SMTP_PASS", "SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_TO", "SMTP_FROM", "DRIVE_CLIENT_ID", "DRIVE_CLIENT_SECRET", "DRIVE_REFRESH_TOKEN", "GOOGLE_DRIVE_ROOT_FOLDER_ID", "GENOVA_RESEND_INBOUND_KEY", "GENOVA_RESEND_WEBHOOK_SECRET", "GENOVA_REPLY_FORWARD_TO", "R2_ACCOUNT_ID", "R2_BUCKET", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_JURISDICTION", "REPERTOIRE_STORAGE_MODE", "REPERTOIRE_R2_UPLOAD_ENABLED", "ASSIGNMENT_STORAGE_MODE", "ASSIGNMENT_R2_UPLOAD_ENABLED", "ASSIGNMENT_REVIEW_R2_ENABLED", "REPERTOIRE_COMMENT_R2_ENABLED", "CHAT_STORAGE_MODE", "CHAT_R2_MEDIA_ENABLED"],
+  "nonSecretFlagDigests": {
+    "legacy": "c49fea7425fa7f8699897a97c159c6690267d9003bb78c53fafa8fc15c325d84",
+    "false": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+  },
+  "digestMatches": {"REPERTOIRE_STORAGE_MODE": "legacy", "ASSIGNMENT_STORAGE_MODE": "legacy", "CHAT_STORAGE_MODE": "legacy", "REPERTOIRE_R2_UPLOAD_ENABLED": "false", "ASSIGNMENT_R2_UPLOAD_ENABLED": "false", "ASSIGNMENT_REVIEW_R2_ENABLED": "false", "REPERTOIRE_COMMENT_R2_ENABLED": "false", "CHAT_R2_MEDIA_ENABLED": "false"},
+  "appRelease": {"remoteMain": "a13f696da8c731e9af2a2bce473d4f4ae4a81587", "githubDeploymentId": 6316967607, "githubProviderStatus": "success", "vercelCurrentProduction": "Ready", "vercelDeploymentId": "ApCrcavKPpHSdBzdpv8JvESEiKc5", "domain": "app.genesinovachoir.com"},
+  "siblingRelease": {"remoteMain": "00be08678b0fc597b082e3e6255d6abef2e849e8", "githubDeploymentId": 6664487073, "githubProviderStatus": "success", "currentVercelAlias": "NOT_RUN", "sharedViewPolicyAcceptance": "NOT_RUN"},
+  "backupOverviewLabel": "No backups; not evidence against external068 logical backup",
+  "newJevCostUsd": 0,
+  "limits": ["UI observations are not full catalog/ACL or live access tests", "null Edge version means not verified, not version zero", "credential digests initially overread in tool output but not persisted; no secret values read", "R1 backup and R2-R5 release not authorized"]
+}

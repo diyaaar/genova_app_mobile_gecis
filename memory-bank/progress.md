@@ -1,5 +1,16 @@
 # İlerleme indeksi
 
+2 October — [090 authorized R0 metadata](../docs/reports/2026-10-02-hosted-revocation-r0-preflight.md),
+entrycafd336/sourcepinbdf34b8, PARTIAL/NO-GO. Correct signed-in Genesinova dashboard identity,
+ledger through065/no078090/public090 authority absent, five reader JWTflags false, legacy/false
+digests, server/extension metadata and app Git main/VercelReadya13f696 freshly observed.
+MCP get_project denied; full helper/ACL/shared-view/custom-operator catalogs/five deployment
+versions/sibling current alias NOT RUN. Sibling Git main00be086/GitHub provider success only.
+Initial credential-digest metadata overread recorded, no credential values read/digests persisted.
+No backup export/hosted writes/provider/copy/activation/client release/CI/push/auth changes,
+runtime or new Jev cost($0). Assessment delivered, R0/090 remain open. Next finish designated
+read-only access prerequisite/catalogs before separate R1 fresh recovery/compatibility authority.
+
 1 October — [090 remaining-four HTTP/COMMIT](../docs/reports/2026-10-01-private-file-families-http-overlap.md),
 source/tests `cc20758`, PASS locally. Four actual index registrations with strict declared
 Supabase-fetch/nativePG17 adapter:16 mutation/barrier/stream cases,new403/provider0,

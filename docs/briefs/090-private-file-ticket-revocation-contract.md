@@ -15,6 +15,36 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 2 October — authorized R0 metadata assessment
+
+[R0 record](../reports/2026-10-02-hosted-revocation-r0-preflight.md) and
+[selected metadata](../reports/090/2026-10-02-hosted-revocation-r0-metadata.json):
+PARTIAL/NO-GO, not release acceptance. Owner approved R0-only; main/cafd336, sole writer,
+only unrelated CLI marker dirty. Read AGENTS/handoff/active/090/packet, guide/work cycle/
+template/delivery controls/MIGRATION/decisions28–32; Supabase skill used for target boundaries.
+One outcome: honest current release-gap assessment. Three actions: verify exact identity and
+accessible metadata; compare source proposal/current releases; record gaps/check/commit docs.
+Allowed: R0 report/JSON, this card, packet dated addendum, runbook/delivery and handoff/active/
+progress. No rows/bodies/secret values/hosted mutation/backup export/auth/config/push/runtime.
+Entry19859888KiB free, doc-only environment/peak N/A; no cleaned environment recreated.
+MCP project read denied; exact signed-in Genesinova dashboard independently verified.
+Ledger through065/no078090, public090 authority absent from displayed55-row table;
+five reader JWT flags false, mode/write digests legacy/false; PG17.6.1.063/extensions observed.
+App current VercelReady/Git maina13f696; sibling remote00be086/GitHub provider success only.
+Full helper/ACL/shared-view/custom-operator catalog, five deployment versions/source IDs and
+sibling current provider alias NOT RUN. Initial credential-digest metadata overread recorded;
+no credential digest/value persisted. Next: designated read-only connector prerequisite,
+then remaining R0; R1 fresh recovery/compatibility requires separate authority.
+Assessment exit checks: local links/JSON/pinned hashes/redaction/diff/ownership and scoped090
+docs commit. R0 remains partial with required NOT RUN rows; no product tests rerun or release claim.
+
+Actual local record gates PASS:397 local links/6 anchors across eight Markdown records,
+nine owned files/JSON contract,15 source hashes/bytes unchanged frombdf34b8, eight non-secret
+digest mappings, scoped credential-format scan0hits and git diff --check. Primary self-review
+retains all required NOT RUN rows and initial scope deviation; no independent/runtime claim.
+Final measured free19800168KiB abovefloor; no new runtime/output retained. Only unrelated
+CLI marker excluded from the scoped documentation commit. Assessment goal complete, not R0 gate.
+
 ### 2 October — source-pinned hosted approval preparation
 
 Current result: [validated approval packet](../reports/2026-10-02-hosted-revocation-approval-packet.md)

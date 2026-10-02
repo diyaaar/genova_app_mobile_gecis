@@ -42,6 +42,9 @@ WebView with actual local Auth/RLS/Deno/signed synthetic bytes, B teardown and o
 acceptance now PASS locally, with current Android audio also PASS; earlier failures retained,
 owned runtimes removed. Next is [090's source-pinned hosted approval packet](reports/2026-10-02-hosted-revocation-approval-packet.md):
 R0 metadata → fresh recovery/sibling/old-client gates → separately approved narrow server release.
+[Authorized R0](reports/2026-10-02-hosted-revocation-r0-preflight.md) is PARTIAL/NO-GO:
+exact dashboard identity/ledger/flags and app release observed; designated MCP catalog access
+denied, five version IDs and sibling current alias incomplete. Finish R0 prerequisites before R1.
 Not a native profile rewrite, hosted release or blanket Drive-exit claim; no bulk main push.
 [077](briefs/077-repertoire-mp3-r2-batch-3.md)
 remains an exact, unexecuted real-copy approval checkpoint. Neither block changes the
