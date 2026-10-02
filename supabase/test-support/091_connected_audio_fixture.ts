@@ -24,13 +24,18 @@ export function assertLocalSignature(request:IncomingMessage,url:URL,access:stri
   assert.equal(hmac(signing,`AWS4-HMAC-SHA256\n${request.headers['x-amz-date']}\n${date}/${region}/${service}/${end}\n${hash(canonical)}`).toString('hex'),m[3]);
 }
 /** Fixed trusted evidence targets; no caller-controlled path and no platform cross-acceptance. */
-export function connectedAudioEvidenceTarget(platform:string='android') {
+export function connectedAudioEvidenceTarget(platform:string='android',revision?:string) {
   assert.ok(platform==='android'||platform==='ios','Unsupported connected audio platform');
+  if(revision!==undefined){
+    assert.equal(revision,'player-id','Unsupported connected audio revision');
+    assert.equal(platform,'android','Player-id regression target is Android-only');
+    return {platform,path:'docs/reports/090/connected-android-audio-player-id-http.json'};
+  }
   return {platform,path:platform==='ios'?'docs/reports/090/2026-10-01-connected-ios-audio-http.json':
     'docs/reports/090/2026-10-01-connected-audio-http.json'};
 }
-export function createConnectedAudioFixture(fileId:string,bytes:Uint8Array,providerHits:()=>number,platform:string='android') {
-  const evidenceTarget=connectedAudioEvidenceTarget(platform);
+export function createConnectedAudioFixture(fileId:string,bytes:Uint8Array,providerHits:()=>number,platform:string='android',revision?:string) {
+  const evidenceTarget=connectedAudioEvidenceTarget(platform,revision);
   let oneUse:string|null=null,consumed=false,accepted=false;
   const reads:{method:string;status:number;providerDelta:number;range:boolean;bytes:number}[]=[];
   const tickets:number[]=[];
@@ -50,7 +55,7 @@ export function createConnectedAudioFixture(fileId:string,bytes:Uint8Array,provi
       assert.ok(reads.some(r=>r.method==='GET'&&r.status===403));
       assert.ok(reads.filter(r=>r.method==='HEAD'&&r.status===403).length>=2);
       for(const r of reads)assert.equal(r.providerDelta,r.status>=400?0:1);
-      const evidence={timestamp:new Date().toISOString(),result:'PASS',platform:evidenceTarget.platform,tickets,reads,contentLength:bytes.length,sha256:hash(bytes),
+      const evidence={timestamp:new Date().toISOString(),result:'PASS',platform:evidenceTarget.platform,...(revision?{revision}:{}),tickets,reads,contentLength:bytes.length,sha256:hash(bytes),
         boundary:`Actual local Auth/RLS/PostgREST/Deno and ${platform==='ios'?'iOS':'Android'} Expo audio; declared signed-v1 URL/client-deadline/old-v2 injection and GET/HEAD/POST relay. Signature-verified synthetic loopback S3, not hosted/${platform==='ios'?'Android':'iOS'}/physical audibility/server expiry.`};
       await mkdir('docs/reports/090',{recursive:true});
       await writeFile(evidenceTarget.path,JSON.stringify(evidence,null,2),{flag:'wx'});

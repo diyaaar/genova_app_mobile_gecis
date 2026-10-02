@@ -18,9 +18,12 @@ function response() {
   return {out,result};
 }
 describe('connected audio fixture keeps credentials and evidence bounded',()=>{
-  it('actual iOS evidence handler preserves full refusal matrix and writes only its own wx record',async()=>{
+  it.each([
+    {platform:'ios',revision:undefined,target:'docs/reports/090/2026-10-01-connected-ios-audio-http.json'},
+    {platform:'android',revision:'player-id',target:'docs/reports/090/connected-android-audio-player-id-http.json'},
+  ])('$platform/$revision evidence handler preserves full refusal matrix and its own wx record',async({platform,revision,target:expectedTarget})=>{
     const bytes=toneWav();let hits=0;
-    const fixture=createConnectedAudioFixture('fixture',bytes,()=>hits,'ios');
+    const fixture=createConnectedAudioFixture('fixture',bytes,()=>hits,platform,revision);
     fixture.setFixture({password:'synthetic'});
     await fixture.handle(request(),response().out,new URL(`${origin}/090/audio-fixture`));
     const statuses=[200,200,200,403,401,401,200,200,403,403,403];
@@ -40,10 +43,11 @@ describe('connected audio fixture keeps credentials and evidence bounded',()=>{
       await fixture.handle(request(),response().out,new URL(`${origin}/090/audio-evidence`));
       expect(fixture.finish()).toBeUndefined();
       const [target,body,options]=vi.mocked(writeFile).mock.calls.at(-1)!;
-      expect(target).toBe('docs/reports/090/2026-10-01-connected-ios-audio-http.json');
+      expect(target).toBe(expectedTarget);
       expect(options).toEqual({flag:'wx'});
-      const evidence=JSON.parse(String(body));expect(evidence.platform).toBe('ios');
-      expect(evidence.tickets).toEqual([200,200,200,403]);expect(evidence.boundary).toContain('not hosted/Android/physical');
+      const evidence=JSON.parse(String(body));expect(evidence.platform).toBe(platform);
+      expect(evidence.revision).toBe(revision);
+      expect(evidence.tickets).toEqual([200,200,200,403]);expect(evidence.boundary).toContain(`not hosted/${platform==='ios'?'Android':'iOS'}/physical`);
       expect(evidence.reads.filter((r:{status:number})=>r.status>=400).every((r:{providerDelta:number})=>r.providerDelta===0)).toBe(true);
     }finally{fetchMock.mockRestore();}
   });
@@ -52,6 +56,12 @@ describe('connected audio fixture keeps credentials and evidence bounded',()=>{
     expect(connectedAudioEvidenceTarget('ios')).toEqual({platform:'ios',path:'docs/reports/090/2026-10-01-connected-ios-audio-http.json'});
     expect(()=>connectedAudioEvidenceTarget('web')).toThrow();
     expect(()=>connectedAudioEvidenceTarget('../other')).toThrow();
+  });
+  it('selects only the fixed Android player-id revision target without overwriting historical evidence',()=>{
+    expect(connectedAudioEvidenceTarget('android','player-id')).toEqual({platform:'android',path:'docs/reports/090/connected-android-audio-player-id-http.json'});
+    expect(()=>connectedAudioEvidenceTarget('ios','player-id')).toThrow();
+    expect(()=>connectedAudioEvidenceTarget('android','../other')).toThrow();
+    expect(()=>connectedAudioEvidenceTarget('android','')).toThrow();
   });
   it('creates a decodable ten-second PCM fixture',()=>{
     const bytes=toneWav();expect(bytes.length).toBe(160044);expect(bytes.toString('ascii',0,4)).toBe('RIFF');
