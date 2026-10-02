@@ -16,7 +16,9 @@ Not live Auth/PostgREST/HTTP/provider/client proof. Vault values/net queues/Stor
 object bodies/role passwords/settings excluded. Role metadata came from a later snapshot.
 Private backup retained outside Git; no hosted DDL/DML/Edge/password/provider/push/CI.
 
-**Critical ready follow-up:** exact production a13f696 and current local legacy Next route/token
+**Critical follow-up scope approval requested:** [bounded local compatibility proposal](reports/2026-10-02-legacy-reader-compatibility-local-plan.md).
+Recovery-only scope does not authorize the new SQL/Edge/Next production package or any live release.
+Exact production a13f696 and current local legacy Next route/token
 are byte-identical: GET/HEAD200,upstream2,current-authority0 in a synthetic production-source
 probe. Five proposed Edge deployments cannot close that different endpoint. Next local
 package: legacy GET/HEAD fail closed before provider AND safe authorized old POST renewal,
@@ -31,8 +33,10 @@ or tenant-policy relaxation. Genova web/mobile and actual retained consumers rem
 
 ## Preserved evidence
 
-090 service-only ACL predicates PASS; actual service/anon/auth invocation NOT RUN on R1 copy.
-Include this caller-execution coverage in the next isolated compatibility package.
+[Actual caller follow-up](reports/2026-10-02-rpc-caller-recovery-acceptance.md)/31483fd PASS:
+new same-backup offline restore,32roles/22memberships/six extension owners/versions; service5allow/
+16deny,anon5/auth5 execution denial, three permission mutants caught, baseline101counts unchanged.
+Not Auth/PostgREST/HTTP acceptance. Earlier NOT RUN is historical, not the current caller status.
 
 [Approval packet](reports/2026-10-02-hosted-revocation-approval-packet.md)/[manifest](reports/090/2026-10-02-hosted-revocation-source-manifest.json)
 pins bdf34b8 exact078→090/five readers/12modules/30imports; R1 changes the readiness assessment,
@@ -49,10 +53,14 @@ standalone node guards/source-probe3/3 PASS; not E2E/CI/device/hosted proof.
 
 ## Ownership, resource and authority boundaries
 
+Latest31483fd caller source; fresh root111/1130/coverage/SW/build18:16 and node3/3 PASS.
+VM/container removed18:15; task cache/.next/coverage moved recoverably to Trash, NOT freed disk.
+18:17 free21,002,984KiB; original068/private artifact hash/0700/allfiles0600 verified.
+No new Jev inference/cost. New production-source package awaiting owner scope choice.
 Only unrelated supabase/.temp/cli-latest should remain after owned090 checkpoints; verify.
 Source93ca043, separate docs checkpoint. Final post-scope-change root111/1130 and node3/3 PASS;
 387links/7anchors/9hashes/22-file redaction/diff PASS. Final generated outputs removed;
-17:51 free22,771,852KiB. Required old-client/actual three-role rows still FAIL/NOT RUN.
+17:51 free22,771,852KiB historical. Old-client rows still FAIL/NOT RUN; actual callers now PASS.
 R1 task VM/container/private DB copies removed17:30:53;22,950,380KiB free before root gate.
 Fresh protected backup /Users/alidiyarduran/Documents/Codex/2026-10-02/genova-090-r1-5bfGvo/
 0700/files0600 retained. Original genova_068_test_restore/068 backup/dependencies/AVD/global

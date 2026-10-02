@@ -15,7 +15,10 @@ SQL negatives PASS; final baseline101counts unchanged. Object bodies/Vault value
 Storage metadata/passwords/settings excluded. Later roles snapshot is not row-snapshot parity.
 No live Auth/PostgREST/HTTP/client/provider proof or hosted schema/deploy/password write.
 
-**Next safe action:** close legacy Next bypass with a bounded local compatibility package.
+**Next action needs material scope choice:** [local compatibility proposal](../docs/reports/2026-10-02-legacy-reader-compatibility-local-plan.md)
+requests owner approval for new production SQL/Edge/Next source, not live writes. Recovery-only
+approval is not automatically expanded; no implementation/deploy started for that new package.
+Close legacy Next bypass with the bounded package after approval.
 Actual production a13f696/current HEAD route/token identical. Synthetic real-source execution:
 GET200/HEAD200,upstream2,current-authority0. Five Edge releases cannot fix that endpoint.
 Require old GET/HEAD refusal before upstream AND safe authorized old POST renewal/response
@@ -25,8 +28,10 @@ immutable versions, activate R2, drop valid legacy flows or bulk-push hundreds o
 
 ## Latest owner correction
 
-090 service-only ACL predicates PASS; actual three-role invocation NOT RUN on fresh R1 copy.
-Required caller-execution coverage belongs in the next isolated compatibility package.
+[Actual caller acceptance](../docs/reports/2026-10-02-rpc-caller-recovery-acceptance.md)/31483fd
+PASS on a fresh same-backup restore: service5allow/16deny,anon5/auth5 actual execution refusals;
+three permission mutants caught, unchanged fixture passes afterward,101baselinecounts preserved.
+Role/extension parity32/22/6; not live Auth/PostgREST/HTTP/client proof. Earlier NOT RUN historical.
 
 Decision#33: sibling website is no longer on this database; **NO WEBSITE CHANGES**.
 This supersedes old shared-site delivery assumptions. Current disconnection owner-reported,
@@ -47,6 +52,8 @@ Fresh root pnpm check PASS:111files/1130tests/coverage/SW/build; standalone node
 [WF-013](../docs/briefs/WF-013-multi-tenant-remediation-plan.md) step5 PARTIAL;089 local forms only;
 F12/rotation/legacy-account risks open. Permanent profile WebView; RN/Expo retained.
 
+Latest caller/root18:16/node3/3 gates PASS; runtime removed18:15. Exact task cache/build outputs
+moved to Trash recoverably, not claimed as freed space;18:17 free21,002,984KiB. No new Jev call.
 One writer; exclude unrelated supabase/.temp/cli-latest. OwnedR1 VM/container/copies removed;
 Source93ca043/separate docs checkpoint; final post-scope root111/1130/node3/3/387links/7anchors/
 9hashes/22-file redaction/diff PASS. Final build outputs removed17:51,free22,771,852KiB.

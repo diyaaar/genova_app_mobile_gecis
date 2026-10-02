@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-10-02T15:12:13.993Z",
+  "entryRevision": "e39ba60",
+  "sourceCheckpoint": "31483fd",
+  "status": "CALLER_CHECKPOINT_PASS_R1_OPEN_RELEASE_NO_GO",
+  "authority": "Owned offline restore/tests only; no hosted/website/provider/client release",
+  "backupSha256": "9b73831cda2809273e3f671031b35ab990707c3613f2c3ffb30ddba143f15cd2",
+  "repeatRestore": {"date":"2026-10-02T15:05:26.869Z","schemas":23,"tables":101,"network":"none","mounts":0,"ports":0},
+  "repeatParity": {"date":"2026-10-02T15:05:49.740Z","roles":32,"memberships":22,"extensions":6,"ownersAndVersionsMatch":true},
+  "actualRpcCalls": {"families":5,"serviceAllowed":5,"serviceActorSessionChoirDenied":15,"serviceUnknownDenied":1,"anonExecutionDenied":5,"authenticatedExecutionDenied":5,"callerIdentityAsserted":true},
+  "permissionMutants": [
+    {"role":"anon","expectedFailure":"090 anon unexpectedly executed repertoire-file RPC","status":"EXPECTED_FAIL"},
+    {"role":"authenticated","expectedFailure":"090 authenticated unexpectedly executed repertoire-file RPC","status":"EXPECTED_FAIL"},
+    {"role":"service_role","expectedFailure":"permission denied for function private_file_ticket_authorized_090","status":"EXPECTED_FAIL"}
+  ],
+  "postMutantFixture": "PASS; grants rolled back",
+  "baselineTableCountsUnchanged": 101,
+  "sourceGates": {"nodeTests":"3/3 PASS","changedHelperSyntax":3,"scopedESLint":"PASS","pnpmCheck":"PASS exit0","vitestFiles":111,"vitestTests":1130,"coverageThresholds":"PASS","SW":"PASS","NextBuild":"PASS"},
+  "boundary": "Synthetic direct SQL on supported fresh restore, not hosted Auth/PostgREST/HTTP/provider/client",
+  "legacyNextRevocation": "FAIL; GET200/HEAD200/provider2/authority0",
+  "safeLegacyClientRenewal": "NOT RUN; separate production-source scope approval requested",
+  "resources": {"entryFreeKiB":22755340,"observedBeforeCleanupFreeKiB":16078428,"floorKiB":10485760,"ownedVMKiB":6356004,"vmRemovedAt":"2026-10-02T15:15:32Z","cacheAndOutputs":"Task-only exact paths moved to Trash; recoverable, NOT freed disk","finalFreeKiB":21002984,"original068DatabasePresent":true,"privateModes":"0700/allfiles0600","backupHashUnchanged":true},
+  "newJevCalls":0,
+  "incrementalEstimatedJevUsd":0,
+  "sourceHashes": [
+    {"path":"supabase/test-support/090_isolated_rehearsal.mjs","bytes":8573,"sha256":"97b4be80b27ff502cabd11fd7f74da7c83fed8e2d431f68737348dc5e39a4fb9"},
+    {"path":"supabase/test-support/090_role_rehearsal.mjs","bytes":5033,"sha256":"6d5367153c11bb85f1d7a18dbaa634bb580ee909e629c471e984505a0768a755"},
+    {"path":"supabase/test-support/090_rpc_caller_rehearsal.mjs","bytes":5073,"sha256":"314cc14b2c39db72aff05d66a2e66d1d73f0f175fa2e624756a70ea91db114d0"},
+    {"path":"supabase/tests/090_private_file_ticket_authority.sql","bytes":14613,"sha256":"556cc7ed932267534070b043f4cf012d0dadf538b191d3820798607af75e18db"}
+  ]
+}

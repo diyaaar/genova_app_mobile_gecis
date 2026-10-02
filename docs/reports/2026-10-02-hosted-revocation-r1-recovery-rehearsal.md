@@ -2,6 +2,9 @@
 
 Date: 2 October 2026. Entry main/63b36d7; one writer, no delegation.
 **Recovery/SQL checkpoint PASS; R1/client compatibility and live release remain NO-GO.**
+Later [actual caller follow-up](2026-10-02-rpc-caller-recovery-acceptance.md)/31483fd closes
+the three-role NOT RUN row with a fresh repeat restore and three permission mutants.
+Historical source hashes below belong to93ca043, not modified current helper bytes.
 This is not hosted090, a beta, full provider recovery or an independent review.
 [Redacted machine evidence](090/2026-10-02-hosted-revocation-r1-evidence.json) pins the nine
 owned source/test files and measured layers; private SQL/row contents remain outside Git.
@@ -93,7 +96,7 @@ Catalog observations were earlier on2October, not the data snapshot itself.
 | 078 inactive-member defect red→green | yes | PASS | Fresh baseline fails exact inactive-selection assertion; exact078 then passes | Direct SQL claims, not Auth-service HTTP |
 | Multi-choir selection and picker contract | yes | PASS | Fresh005/012 on repaired role setup | 005 now creates its own A choir/chef role; no real choir seed dependency |
 | 090 five-family actor/session/choir/visibility/role/session-removal boundaries | yes | PASS | Exact090 migration and090_private_file_ticket_authority.sql on repaired fresh clone | Direct SQL service/RLS fixtures; no hosted transport |
-| Actual090 RPC invocation as service_role and execution refusal as anon/authenticated | yes | NOT RUN | Existing090 fixture checks has_function_privilege, then executes family logic as owner; no three-role invocation switch | ACL predicates PASS, not an actual service-caller/HTTP acceptance; include fresh execution in next isolated package |
+| Actual090 RPC invocation as service_role and execution refusal as anon/authenticated | yes | PASS in later follow-up |31483fd/fresh repeat restore: service5allow/16deny,anon5/auth5 execution refusal; three permission mutants fail | Before follow-up NOT RUN; now actual SQL callers, still not Auth/PostgREST/HTTP |
 | Exact production legacy Next GET/HEAD satisfies next-request revocation | yes | FAIL | Actual a13f696 route/token bodies, synthetic key/upstream: GET200,HEAD200,provider2,current authority0 | Source execution with injected upstream, NOT a live-user revocation/exploit |
 | Exact proposed compatible old-web renewal/cache/PDF/audio flows | yes | NOT RUN | A safe compatible legacy gateway/transition must first close the reproduced bypass | Historical local newer clients do not substitute |
 | Sibling contact/collab/subscriber INSERT plus private SELECT refusal | Historical investigation; no longer production gate | PASS | Rollback-only baseline and078090 clone; exact00be086 request shapes | No UI/PostgREST/email delivery |
@@ -182,8 +185,8 @@ The active goal/090 stay open for the required old-client FAIL/NOT RUN rows. Do 
 R1 release-ready merely because backup/SQL/root checks pass. No website fix is pending.
 After the owner's correction, role-rehearsal source no longer automatically repeats the
 historical sibling fixture. Previous execution evidence is retained; final source gates
-are rerun for this scoped replay change. Actual three-role090 invocation remains an explicit
-coverage gap, not an ACL inference promoted to execution.
+are rerun for this scoped replay change. Actual three-role090 invocation was an explicit
+coverage gap at this checkpoint; the later linked caller report supplies actual execution.
 
 ## Checkpoint handoff
 
@@ -192,4 +195,5 @@ Documentation/decision#33/English handoff/index evidence committed separately; n
 387 local links/7 anchors, nine source hashes and22-file exact-sensitive-value/key-format
 scan PASS; JSON/status/ownership/diff checks PASS. Sibling checkout untouched; unrelated
 supabase/.temp/cli-latest excluded. Ready action: bounded local legacy reader/POST compatibility
-closure plus real three-role invocation, before refreshing the exact live approval package.
+closure, before refreshing the exact live approval package. Three-role execution is now accepted
+in the linked follow-up, not inferred from the earlier ACL predicates.

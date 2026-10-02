@@ -4,6 +4,7 @@
   "serverSourcePin": "bdf34b80a239fe7a69188746e5543caf3b12cbf3",
   "status": "R1_OPEN_RELEASE_NO_GO",
   "sourceCheckpoint": "93ca0430e72520cd47697a9caa6756d6a4d79832",
+  "laterCallerEvidence": "2026-10-02-rpc-caller-recovery-evidence.json; supersedes actualThreeRoleInvocation NOT RUN, retains original dated observations/hashes",
   "finalRecordChecks": { "localLinks": 387, "anchors": 7, "sourceHashes": 9, "redactionFiles": 22, "status": "PASS" },
   "authority": "Protected read-only hosted logical export and isolated rehearsal; NO hosted DDL/DML/Edge/provider/password/push/CI",
   "ownerScopeCorrection": {

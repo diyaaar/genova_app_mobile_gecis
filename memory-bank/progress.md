@@ -1,5 +1,17 @@
 # İlerleme indeksi
 
+2 October — [090 actual RPC caller follow-up](../docs/reports/2026-10-02-rpc-caller-recovery-acceptance.md),
+source31483fd. Same protected fresh backup/new offline restore23schemas/101counts;32roles/
+22memberships/six extension versions/owners match. Actual service5allow/16deny,anon5/auth5
+permission refusals; three in-memory permission mutants independently fail, unchanged fixture
+passes afterward and baseline101counts unchanged. Caller NOT RUN now closed, not an ACL inference.
+Fresh pnpm check111files/1130tests/coverage/SW/build18:16, node3/3 and syntax/ESLint PASS.
+VM/container removed18:15; task cache/build outputs moved recoverably to Trash, no freed-space
+claim. Free21002984KiB; original068/private backup/hash/0700/allfiles0600 verified. No hosted/
+website/provider/client change, no new Jev inference($0). R1/goal OPEN for legacy FAIL/NOT RUN;
+[new local production-source package](../docs/reports/2026-10-02-legacy-reader-compatibility-local-plan.md)
+approval requested separately; no live scope inferred. Separate code/docs commits, no push.
+
 2 October — [090 R1 fresh recovery/rehearsal](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md),
 entry63b36d7. Consistent private backup1623637B/23schemas/101counts, actual offlinePG17.6 restore;
 initial managed-extension owner mismatch repaired and retained. Final six versions/owners,

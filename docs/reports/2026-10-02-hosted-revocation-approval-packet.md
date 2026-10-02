@@ -1,5 +1,10 @@
 # 090 — source-pinned hosted revocation approval packet
 
+Later [actual caller execution](2026-10-02-rpc-caller-recovery-acceptance.md)/31483fd PASS
+on a fresh repeat restore, including three permission mutants. This does not close legacy
+Next/client compatibility. [New local package scope](2026-10-02-legacy-reader-compatibility-local-plan.md)
+approval requested; no new sixth-reader/migration/Next release authorized by this historical pin.
+
 **R1 addendum:** [fresh recovery/rehearsal](2026-10-02-hosted-revocation-r1-recovery-rehearsal.md)
 has actual protected restore/ACL/role/078090 SQL evidence. Release remains NO-GO: current
 legacy Next GET/HEAD bypass the five proposed Edge endpoints. This pin is insufficient for

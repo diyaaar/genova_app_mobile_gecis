@@ -15,6 +15,43 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 2 October — missing actual RPC caller execution follow-up
+
+Entry e39ba60; single writer, unrelated CLI marker preserved. Read handoff/active/current
+brief/controls, transition guide, exact090 SQL/fixture and recovery helpers. TypeSafe skill
+read; deterministic privilege execution stays SQL, not a model verdict. Supabase skill files
+are now unavailable; official PostgreSQL17 SET ROLE/error handling documents consulted.
+One result: actual five-family RPC execution under service_role and ten anon/authenticated
+permission failures, on a newly isolated restore of the retained verified backup. No website
+execution/change, no hosted operations, no provider/Edge/web release. Allowed090 fixture,
+existing restore/role helpers and090_rpc_caller_rehearsal.mjs with explicit non-overwriting repeat records, and dated evidence/
+handoff indexes. Legacy endpoint FAIL remains separate; this is not whole-R1 completion.
+Reason for recreating cleaned runtime: actual caller execution was found missing after prior
+cleanup; native PG lacks managed extensions, so stripped security dependencies are unacceptable.
+Entry22755340KiB free. Same measured image digest and pinned Ubuntu base, one2CPU/2GiB VM,
+8GiB virtual disk, physical incremental cap7.5GiB,12MKiB watermark/10GiB floor; projected
+14891020KiB above floor. No concurrent build/simulator. Container networkNONE/no mounts/ports;
+restore hash verified, baseline counts and32roles/22memberships/sixextensions rechecked before
+fresh acceptance. Existing protected historical artifacts cannot be overwritten. Remove exact
+task runtime after final dependent tests; preserve original068 and fresh protected backup.
+Required evidence: identity-checked caller switches, service allow/cross-tenant denials,
+SQLSTATE42501 refusals, fresh role parity/rollback/baseline preservation and focused gates.
+No Auth/PostgREST/hosted HTTP claim. Missing or failed criteria remain open.
+
+Exit [caller acceptance](../reports/2026-10-02-rpc-caller-recovery-acceptance.md) PASS:
+same backup/new restore23schemas/101counts,32roles/22memberships/six extension versions/owners;
+service5allow/16deny,anon5/authenticated5 execution denials. Three in-memory permission mutants
+fail at actual invocation, unchanged fixture passes afterward, baseline101counts unchanged.
+Code/test31483fd; fresh node3/3/helper syntax/scoped ESLint/pnpm check111files/1130tests/coverage/
+SW/build PASS. No sibling fixture run. VM/container removed18:15; exact task cache/build outputs
+moved recoverably to Trash, not claimed as freed bytes. Final21002984KiB; original068/private
+backup/hash/0700/allfiles0600 preserved. No new Jev inference, incremental cost$0.
+R1/goal still OPEN for legacy web FAIL/safe renewal NOT RUN. New production-source
+[compatibility package](../reports/2026-10-02-legacy-reader-compatibility-local-plan.md) approval
+requested; no local production implementation or live authority inferred from recovery approval.
+Record checks:228local links/4anchors/current4+historical9 source hashes,14-file exact-value/key-format
+scan and JSON/goal-status/diff PASS; historical hashes verified against93ca043, not current files.
+
 ### 2 October — R1 recovery checkpoint and corrected website scope
 
 Final source/test checkpoint93ca043, nine owned paths; final root gate after owner#33 replay
@@ -23,10 +60,11 @@ links/7anchors,9source hashes,22-file redaction/status/JSON/diff checks PASS; do
 No task VM/container/root outputs remain; final17:51 free22771852KiB. Private fresh backup and
 original068 retained, unrelated CLI marker excluded. No publication/goal-complete claim.
 
-Coverage review:090 uses service/anon/auth has_function_privilege predicates, then owner
+Historical checkpoint coverage review:090 used service/anon/auth has_function_privilege predicates, then owner
 calls. Actual three-role RPC invocation on this restored copy is NOT RUN, not a claimed PASS;
 include it in the next isolated legacy/client package. Historical connected HTTP cannot
-substitute for this exact fresh role setup. Required gap keeps R1/goal open.
+substitute for this exact fresh role setup. Later caller-execution follow-up above closes this
+gap with actual execution and permission mutants; old-client FAIL still keeps R1/goal open.
 
 [R1 evidence/plan](../reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md): protected
 consistent fresh backup1623637B/23schemas/101counts; actual offline PG17.6 restore. Initial
