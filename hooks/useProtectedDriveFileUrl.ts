@@ -26,6 +26,7 @@ export function useProtectedDriveFileUrl(
   const [error, setError] = useState<string | null>(null);
   const [isLocal, setIsLocal] = useState(false);
   const [isStaleLocal, setIsStaleLocal] = useState(false);
+  const [online, setOnline] = useState(() => typeof navigator === 'undefined' || navigator.onLine);
   const [bodyRetry, setBodyRetry] = useState(0);
   const bodyRetryRef = useRef<{ key: string; used: boolean }>({ key: '', used: false });
   const driveFileId = file?.drive_file_id;
@@ -34,9 +35,17 @@ export function useProtectedDriveFileUrl(
   const mimeType = file?.mime_type;
   const updatedAt = file?.updated_at;
   const fileSizeBytes = file?.file_size_bytes;
-  const privateFamily = Boolean(options.repertoireFile || options.assignmentFileVersionId ||
-    options.assignmentReviewFileVersionId || options.repertoireCommentFileVersionId);
   const fileKey = `${repositoryFileId ?? ''}:${driveFileId ?? ''}:${options.assignmentFileVersionId ?? ''}:${options.assignmentReviewFileVersionId ?? ''}:${options.repertoireCommentFileVersionId ?? ''}`;
+
+  useEffect(() => {
+    const updateOnline = () => setOnline(navigator.onLine);
+    window.addEventListener('online', updateOnline);
+    window.addEventListener('offline', updateOnline);
+    return () => {
+      window.removeEventListener('online', updateOnline);
+      window.removeEventListener('offline', updateOnline);
+    };
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -63,20 +72,20 @@ export function useProtectedDriveFileUrl(
       // Review visibility can be revoked by a chef. Never let a previously visible
       // review bypass the live authorization check through the offline cache.
       const runtimeSupported = isRepertoireRuntimeCacheSupported() && !options.assignmentReviewFileVersionId && !options.repertoireCommentFileVersionId;
-      const online = typeof navigator === 'undefined' ? true : navigator.onLine;
-      let localFallbackUrl: string | null = null;
-      let localFallbackStale = false;
 
       try {
         setLoading(true);
         setError(null);
+        setUrl(null);
+        setIsLocal(false);
+        setIsStaleLocal(false);
 
-        if (runtimeSupported && localUrl && (!online || !privateFamily)) {
+        // Non-versioned legacy files are private too. Cache freshness never proves
+        // current access; only actually-offline viewing may select downloaded bytes.
+        if (runtimeSupported && localUrl && !online) {
           try {
             const status = await getRuntimeDriveFileCacheStatus(driveFileId, runtimeVersion);
             if (!cancelled && status.cached) {
-              localFallbackUrl = localUrl;
-              localFallbackStale = status.stale;
               setUrl(localUrl);
               setIsLocal(true);
               setIsStaleLocal(status.stale);
@@ -127,9 +136,7 @@ export function useProtectedDriveFileUrl(
             file_name: fileName ?? '',
             mime_type: mimeType ?? null,
           });
-        const nextUrl = privateFamily
-          ? await getOnlineAuthorizedPrivateFileUrl(loadTicketUrl)
-          : await loadTicketUrl();
+        const nextUrl = await getOnlineAuthorizedPrivateFileUrl(loadTicketUrl);
 
         if (cancelled) {
           return;
@@ -154,23 +161,17 @@ export function useProtectedDriveFileUrl(
         if (!cancelled) {
           const denied = loadError instanceof ProtectedFileRequestError &&
             (loadError.status === 401 || loadError.status === 403);
-          if (denied && privateFamily) {
+          if (denied) {
             clearProtectedDriveFileUrlCache();
             await clearProtectedDriveFileCaches().catch(() => {
               // Still fail closed in this view if offline cache cleanup is unavailable.
             });
           }
-          if (localFallbackUrl && !privateFamily) {
-            setUrl(localFallbackUrl);
-            setIsLocal(true);
-            setIsStaleLocal(localFallbackStale);
-            setError('Güncel dosya alınamadı; son local kopya gösteriliyor.');
-          } else {
-            setUrl(null);
-            setIsLocal(false);
-            setIsStaleLocal(false);
-            setError(loadError instanceof Error ? loadError.message : 'Dosya erişim bağlantısı oluşturulamadı.');
-          }
+          if (cancelled) return;
+          setUrl(null);
+          setIsLocal(false);
+          setIsStaleLocal(false);
+          setError(loadError instanceof Error ? loadError.message : 'Dosya erişim bağlantısı oluşturulamadı.');
         }
       } finally {
         if (!cancelled) {
@@ -184,10 +185,10 @@ export function useProtectedDriveFileUrl(
     return () => {
       cancelled = true;
     };
-  }, [driveFileId, fileName, mimeType, options.assignmentFileVersionId, options.assignmentReviewFileVersionId, options.repertoireCommentFileVersionId, options.repertoireFile, repositoryFileId, updatedAt, fileSizeBytes, bodyRetry, privateFamily]);
+  }, [driveFileId, fileName, mimeType, options.assignmentFileVersionId, options.assignmentReviewFileVersionId, options.repertoireCommentFileVersionId, options.repertoireFile, repositoryFileId, updatedAt, fileSizeBytes, bodyRetry, online]);
 
   const onBodyError = useCallback(() => {
-    if (!privateFamily || !driveFileId || (typeof navigator !== 'undefined' && !navigator.onLine)) return;
+    if (!driveFileId || (typeof navigator !== 'undefined' && !navigator.onLine)) return;
     if (bodyRetryRef.current.key !== fileKey) bodyRetryRef.current = { key: fileKey, used: false };
     setUrl(null);
     if (!bodyRetryRef.current.used) {
@@ -195,7 +196,9 @@ export function useProtectedDriveFileUrl(
       clearProtectedDriveFileUrlCache();
       setBodyRetry((value) => value + 1);
     }
-  }, [driveFileId, fileKey, privateFamily]);
+  }, [driveFileId, fileKey]);
 
-  return { url, loading, error, isLocal, isStaleLocal, onBodyError };
+  // Reconnect renders before the next effect; never expose the old offline source
+  // during that render while its fresh online authority decision is still pending.
+  return { url: isLocal && online ? null : url, loading, error, isLocal, isStaleLocal, onBodyError };
 }
