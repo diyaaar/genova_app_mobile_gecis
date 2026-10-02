@@ -906,10 +906,8 @@ function AudioPanel({
     async function buildAndSetTracks() {
       const resolvedTracks = await Promise.all(
         audioFiles.map(async (file) => {
-          // For the currently selected file, prefer the already-resolved selectedAudioSource.
-          if (file.id === selectedAudio?.id && selectedAudioSource) {
-            return { id: file.id, label: getAudioDisplayName(file), source: selectedAudioSource };
-          }
+          // Online selected tracks need the same fresh decision as every other track.
+          // Already-downloaded/offline bytes remain outside server-side revocation.
           // For others: use offline route only when offline fallback is explicitly active.
           if (allowOfflineFallback) {
             const offlineUrl = getOfflineDriveFileUrl(file, buildRuntimeDriveFileVersion(file));

@@ -1,93 +1,50 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-
-const mocks = vi.hoisted(() => ({
-  requireAuthenticatedUser: vi.fn(),
-  authorizeDriveFileAccess: vi.fn(),
-  createDriveFileToken: vi.fn(),
-}));
-
-vi.mock('@/lib/server/supabase-auth', () => ({
-  requireAuthenticatedUser: mocks.requireAuthenticatedUser,
-}));
-
-vi.mock('@/lib/server/drive-file-access', () => ({
-  authorizeDriveFileAccess: mocks.authorizeDriveFileAccess,
-}));
-
-vi.mock('@/lib/server/drive-file-token', () => ({
-  createDriveFileToken: mocks.createDriveFileToken,
-}));
-
-import { POST } from '@/app/api/drive-file-token/route';
-
-function request(body: unknown, authorized = true) {
-  return new Request('http://localhost/api/drive-file-token', {
-    method: 'POST',
-    headers: authorized ? { Authorization: 'Bearer token', 'Content-Type': 'application/json' } : { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-}
-
-describe('POST /api/drive-file-token', () => {
+// @vitest-environment node
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { POST } from './route';
+describe('legacy POST fixed-origin adapter', () => {
+  const fetcher = vi.fn();
   beforeEach(() => {
-    mocks.requireAuthenticatedUser.mockResolvedValue({ user: { id: 'auth-user-1' }, accessToken: 'access-token-1' });
-    mocks.authorizeDriveFileAccess.mockResolvedValue({
-      driveFileId: 'safe_file-1',
-      fileName: 'partisyon.pdf',
-      mimeType: 'application/pdf',
-      kind: 'repertoire',
-    });
-    mocks.createDriveFileToken.mockReturnValue({ token: 'signed-token', expiresAt: 1_900_000_000_000 });
+    vi.stubEnv('NEXT_PUBLIC_SUPABASE_URL', 'https://project.supabase.co');
+    vi.stubGlobal('fetch', fetcher);
+    fetcher.mockReset();
+    fetcher.mockResolvedValue(Response.json({ url: 'https://project.supabase.co/functions/v1/legacy-file?alias=file_1&ticket=body.signature', expiresAt: Date.now() + 60_000 }));
   });
-
-  it('requires authentication', async () => {
-    mocks.requireAuthenticatedUser.mockRejectedValue(new Error('Unauthorized'));
-
-    const response = await POST(request({ driveFileId: 'safe_file-1' }, false));
-
-    expect(response.status).toBe(401);
-    expect(mocks.authorizeDriveFileAccess).not.toHaveBeenCalled();
+  afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
+  function request(auth = true) {
+    return new Request('https://web.test/api/drive-file-token', { method: 'POST',
+      headers: auth ? { Authorization: 'Bearer user-token' } : {},
+      body: JSON.stringify({ driveFileId: 'file_1', fileName: 'caller.pdf', mimeType: 'application/pdf' }) });
+  }
+  it('requires bearer before contacting Edge', async () => {
+    expect((await POST(request(false))).status).toBe(401);
+    expect(fetcher).not.toHaveBeenCalled();
   });
-
-  it('rejects malformed Drive IDs before authorization', async () => {
-    const response = await POST(request({ driveFileId: '../../etc/passwd' }));
-
-    expect(response.status).toBe(400);
-    expect(mocks.authorizeDriveFileAccess).not.toHaveBeenCalled();
-  });
-
-  it('does not mint a URL for unauthorized files', async () => {
-    mocks.authorizeDriveFileAccess.mockResolvedValue(null);
-
-    const response = await POST(request({ driveFileId: 'safe_file-1' }));
-
-    expect(response.status).toBe(403);
-    expect(mocks.createDriveFileToken).not.toHaveBeenCalled();
-  });
-
-  it('blocks active content before issuing a signed URL', async () => {
-    mocks.authorizeDriveFileAccess.mockResolvedValue({
-      driveFileId: 'active_file-1',
-      fileName: 'payload.svg',
-      mimeType: 'image/svg+xml',
-      kind: 'repertoire',
-    });
-
-    const response = await POST(request({ driveFileId: 'active_file-1' }));
-
-    expect(response.status).toBe(415);
-    expect(response.headers.get('x-content-type-options')).toBe('nosniff');
-    expect(mocks.createDriveFileToken).not.toHaveBeenCalled();
-  });
-
-  it('returns a URL only after authorization and policy checks', async () => {
-    const response = await POST(request({ driveFileId: 'safe_file-1' }));
-
+  it('preserves old response and request shape, without creating Next tokens', async () => {
+    const response = await POST(request());
     expect(response.status).toBe(200);
-    expect(await response.json()).toEqual({
-      url: '/api/drive-file/safe_file-1?token=signed-token',
-      expiresAt: 1_900_000_000_000,
-    });
-    expect(mocks.authorizeDriveFileAccess).toHaveBeenCalledWith('auth-user-1', 'access-token-1', 'safe_file-1');
+    expect(await response.json()).toEqual({ url: '/api/drive-file/file_1?token=body.signature', expiresAt: expect.any(Number) });
+    expect(fetcher.mock.calls[0][0].toString()).toBe('https://project.supabase.co/functions/v1/legacy-file');
+    const init = fetcher.mock.calls[0][1];
+    expect(init.headers.get('Authorization')).toBe('Bearer user-token');
+    expect(await new Response(init.body).json()).toEqual({ driveFileId: 'file_1', fileName: 'caller.pdf', mimeType: 'application/pdf' });
+    expect(init.redirect).toBe('manual');
+    expect(init.cache).toBe('no-store');
+  });
+  it.each([400, 401, 403, 415, 503])('preserves Edge refusal %s with no retry', async (status) => {
+    fetcher.mockResolvedValueOnce(new Response(null, { status }));
+    expect((await POST(request())).status).toBe(status);
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
+  it.each(['https://attacker.test/functions/v1/legacy-file?alias=file_1&ticket=a.b', 'https://project.supabase.co/storage/v1/object?alias=file_1&ticket=a.b'])('rejects foreign or different endpoint responses', async (url) => {
+    fetcher.mockResolvedValueOnce(Response.json({ url, expiresAt: Date.now() + 60_000 }));
+    expect((await POST(request())).status).toBe(502);
+  });
+  it('fails closed when configured origin is missing/insecure or Edge fails', async () => {
+    vi.stubEnv('NEXT_PUBLIC_SUPABASE_URL', 'http://attacker.test');
+    expect((await POST(request())).status).toBe(503);
+    expect(fetcher).not.toHaveBeenCalled();
+    vi.stubEnv('NEXT_PUBLIC_SUPABASE_URL', 'https://project.supabase.co');
+    fetcher.mockRejectedValueOnce(new Error('transport'));
+    expect((await POST(request())).status).toBe(503);
   });
 });

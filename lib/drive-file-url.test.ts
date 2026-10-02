@@ -91,6 +91,47 @@ describe('protected Drive URL cache', () => {
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
+  it('does not reuse a same-user ticket after the bearer/session changes', async () => {
+    mocks.getSession.mockResolvedValueOnce(session('user-a', 'session-a'))
+      .mockResolvedValueOnce(session('user-a', 'session-b'));
+    await getProtectedDriveFileUrl(file);
+    await getProtectedDriveFileUrl(file);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(fetchMock.mock.calls[1][1].headers.get('Authorization')).toBe('Bearer session-b');
+  });
+
+  it('invalidates an older in-flight result when a same-user new session is observed', async () => {
+    mocks.getSession.mockResolvedValueOnce(session('user-a', 'session-a'))
+      .mockResolvedValueOnce(session('user-a', 'session-b'));
+    let finish!: (response: Response) => void;
+    fetchMock.mockImplementationOnce(() => new Promise((resolve) => { finish = resolve; }));
+    const first = getProtectedDriveFileUrl(file);
+    await vi.waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1));
+    await getProtectedDriveFileUrl(file);
+    finish(Response.json({ url: 'old-session-a', expiresAt: Date.now() + 60_000 }));
+    await expect(first).rejects.toThrow('Koro oturumu değişti');
+  });
+
+  it('rejects a stale session lookup that completes after the new session lookup', async () => {
+    let finish!: (value: ReturnType<typeof session>) => void;
+    mocks.getSession.mockImplementationOnce(() => new Promise((resolve) => { finish = resolve; }))
+      .mockResolvedValueOnce(session('user-a', 'session-b'));
+    const old = getProtectedDriveFileUrl(file);
+    await getProtectedDriveFileUrl(file);
+    finish(session('user-a', 'session-a'));
+    await expect(old).rejects.toThrow('Koro oturumu değişti');
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(fetchMock.mock.calls[0][1].headers.get('Authorization')).toBe('Bearer session-b');
+  });
+
+  it('preserves a legacy POST 403 as a non-retriable typed denial', async () => {
+    mocks.getSession.mockResolvedValue(session('user-a', 'session-a'));
+    fetchMock.mockResolvedValueOnce(new Response('denied', { status: 403 }));
+    await expect(getOnlineAuthorizedPrivateFileUrl(() => getProtectedDriveFileUrl(file)))
+      .rejects.toMatchObject({ status: 403 });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
   it('checks a cached private URL online and renews exactly once after legacy 401', async () => {
     const load = vi.fn().mockResolvedValueOnce('https://example.test/old-v1')
       .mockResolvedValueOnce('https://example.test/new-v2');

@@ -17,6 +17,10 @@ verify_jwt = true
 # reject ticket-only browser/PDF requests before the handler can verify them.
 verify_jwt = false
 
+[functions.legacy-file]
+# POST verifies Auth; GET/HEAD verify a signed ticket and current service-only SQL authority.
+verify_jwt = false
+
 [functions.repertoire-upload]
 # Auth.getUser verifies the bearer; the service-only RPC rechecks current choir and manager role.
 verify_jwt = false

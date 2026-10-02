@@ -26,9 +26,12 @@ function sql(query, db = DB) {
 }
 const inspect = JSON.parse(docker(['inspect', CONTAINER]))[0];
 const rebuilding = process.argv[2] === '--rebuild-owned-restore';
-const repeating = process.argv[2] === '--fresh-role-execution-repeat';
-const summaryName = repeating ? 'role-execution-repeat-summary.json' : 'rehearsal-summary.json';
-const restoreName = repeating ? 'role-execution-repeat-restore.log' : 'restore.log';
+const legacy = process.argv[2] === '--legacy-compatibility-restore';
+const repeating = process.argv[2] === '--fresh-role-execution-repeat' || legacy;
+const summaryName = legacy ? 'legacy-compatibility-restore-summary.json'
+  : repeating ? 'role-execution-repeat-summary.json' : 'rehearsal-summary.json';
+const restoreName = legacy ? 'legacy-compatibility-restore.log'
+  : repeating ? 'role-execution-repeat-restore.log' : 'restore.log';
 if (process.cwd() !== '/Users/alidiyarduran/Antigravity/genovakorist'
   || (!rebuilding && !repeating && process.argv[2] !== '--restore-and-test') || process.argv.length !== 3
   || inspect.Config.Image !== IMAGE || inspect.HostConfig.NetworkMode !== 'none'

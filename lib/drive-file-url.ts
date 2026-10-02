@@ -10,6 +10,9 @@ interface CachedDriveUrl {
 
 const driveUrlCache = new Map<string, CachedDriveUrl>();
 let cacheGeneration = 0;
+let cacheIdentity: string | null = null;
+let sessionRequestSequence = 0;
+let lastResolvedSessionRequest = 0;
 
 async function resolveCachedUrl(
   cacheKey: string,
@@ -69,6 +72,7 @@ function getChatMediaEndpoint() {
 export function clearProtectedDriveFileUrlCache() {
   cacheGeneration += 1;
   driveUrlCache.clear();
+  cacheIdentity = null;
 }
 
 /** Online readers must not display a cached URL or local copy without a fresh HEAD decision.
@@ -107,8 +111,20 @@ export async function getOnlineAuthorizedPrivateFileUrl(
   throw new Error('Dosya bağlantısı yenilenemedi.');
 }
 
-async function requireCurrentSession() {
-  return requireCurrentWebAccess();
+async function requireCurrentSession(generation: number) {
+  const requestSequence = ++sessionRequestSequence;
+  const access = await requireCurrentWebAccess();
+  if (generation !== cacheGeneration) throw new Error('Koro oturumu değişti. Dosyayı yeniden açın.');
+  // Memory-only bearer identity prevents reuse across same-user sessions or refresh.
+  // Tenant lifecycle clears on choir changes; the server also checks every new read.
+  const identity = `${access.userId}:${access.accessToken}`;
+  if (requestSequence < lastResolvedSessionRequest && cacheIdentity !== identity) {
+    throw new Error('Koro oturumu değişti. Dosyayı yeniden açın.');
+  }
+  lastResolvedSessionRequest = Math.max(lastResolvedSessionRequest, requestSequence);
+  if (cacheIdentity !== null && cacheIdentity !== identity) clearProtectedDriveFileUrlCache();
+  cacheIdentity = identity;
+  return access;
 }
 
 export async function getProtectedDriveFileUrl(file: Pick<RepertoireFile, 'drive_file_id' | 'file_name' | 'mime_type'>) {
@@ -117,11 +133,11 @@ export async function getProtectedDriveFileUrl(file: Pick<RepertoireFile, 'drive
     return null;
   }
 
-  const access = await requireCurrentSession();
+  const access = await requireCurrentSession(generation);
   const { userId } = access;
 
   const cacheKey = getCacheKey(userId, `legacy:${file.drive_file_id}`, file.file_name, file.mime_type);
-  return resolveCachedUrl(cacheKey, generation, async () => {
+  return resolveCachedUrl(cacheKey, cacheGeneration, async () => {
     const response = await authenticatedWebFetch('/api/drive-file-token', {
       method: 'POST',
       headers: {
@@ -134,7 +150,7 @@ export async function getProtectedDriveFileUrl(file: Pick<RepertoireFile, 'drive
       }),
     }, access);
     if (!response.ok) {
-      throw new Error((await response.text()) || 'Dosya erişim bağlantısı oluşturulamadı.');
+      throw new ProtectedFileRequestError((await response.text()) || 'Dosya erişim bağlantısı oluşturulamadı.', response.status);
     }
     return response.json() as Promise<CachedDriveUrl>;
   });
@@ -145,10 +161,10 @@ export async function getProtectedRepertoireFileUrl(
 ) {
   const generation = cacheGeneration;
   if (!file.id || !file.drive_file_id) return null;
-  const access = await requireCurrentSession();
+  const access = await requireCurrentSession(generation);
   const { accessToken, userId } = access;
   const cacheKey = getCacheKey(userId, `repertoire:${file.id}`, file.file_name, file.mime_type);
-  return resolveCachedUrl(cacheKey, generation, () => requestProtectedRepertoireFileTicket({
+  return resolveCachedUrl(cacheKey, cacheGeneration, () => requestProtectedRepertoireFileTicket({
     endpoint: getEndpoint(),
     accessToken,
     fileId: file.id,
@@ -161,9 +177,9 @@ export async function getProtectedAssignmentFileUrl(
   file: Pick<RepertoireFile, 'file_name' | 'mime_type'>,
 ) {
   const generation = cacheGeneration;
-  const access = await requireCurrentSession();
+  const access = await requireCurrentSession(generation);
   const cacheKey = getCacheKey(access.userId, `assignment:${versionId}`, file.file_name, file.mime_type);
-  return resolveCachedUrl(cacheKey, generation, () => requestProtectedRepertoireFileTicket({
+  return resolveCachedUrl(cacheKey, cacheGeneration, () => requestProtectedRepertoireFileTicket({
     endpoint: getAssignmentEndpoint(), accessToken: access.accessToken, fileId: versionId,
     fetcher: (input, init) => authenticatedWebFetch(input, init, access),
   }));
@@ -174,9 +190,9 @@ export async function getProtectedAssignmentReviewFileUrl(
   file: Pick<RepertoireFile, 'file_name' | 'mime_type'>,
 ) {
   const generation = cacheGeneration;
-  const access = await requireCurrentSession();
+  const access = await requireCurrentSession(generation);
   const cacheKey = getCacheKey(access.userId, `assignment-review:${versionId}`, file.file_name, file.mime_type);
-  return resolveCachedUrl(cacheKey, generation, () => requestProtectedRepertoireFileTicket({
+  return resolveCachedUrl(cacheKey, cacheGeneration, () => requestProtectedRepertoireFileTicket({
     endpoint: getAssignmentReviewEndpoint(), accessToken: access.accessToken, fileId: versionId,
     fetcher: (input, init) => authenticatedWebFetch(input, init, access),
   }));
@@ -187,9 +203,9 @@ export async function getProtectedRepertoireCommentFileUrl(
   file: Pick<RepertoireFile, 'file_name' | 'mime_type'>,
 ) {
   const generation = cacheGeneration;
-  const access = await requireCurrentSession();
+  const access = await requireCurrentSession(generation);
   const cacheKey = getCacheKey(access.userId, `repertoire-comment:${versionId}`, file.file_name, file.mime_type);
-  return resolveCachedUrl(cacheKey, generation, () => requestProtectedRepertoireFileTicket({
+  return resolveCachedUrl(cacheKey, cacheGeneration, () => requestProtectedRepertoireFileTicket({
     endpoint: getRepertoireCommentEndpoint(), accessToken: access.accessToken, fileId: versionId,
     fetcher: (input, init) => authenticatedWebFetch(input, init, access),
   }));
@@ -200,9 +216,9 @@ export async function getProtectedChatMediaFileUrl(
   file: Pick<RepertoireFile, 'file_name' | 'mime_type'>,
 ) {
   const generation = cacheGeneration;
-  const access = await requireCurrentSession();
+  const access = await requireCurrentSession(generation);
   const cacheKey = getCacheKey(access.userId, `chat-media:${versionId}`, file.file_name, file.mime_type);
-  return resolveCachedUrl(cacheKey, generation, () => requestProtectedRepertoireFileTicket({
+  return resolveCachedUrl(cacheKey, cacheGeneration, () => requestProtectedRepertoireFileTicket({
     endpoint: getChatMediaEndpoint(), accessToken: access.accessToken, fileId: versionId,
     fetcher: (input, init) => authenticatedWebFetch(input, init, access),
   }));

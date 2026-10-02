@@ -12,8 +12,10 @@ function docker(args,input) {
   return r.stdout.trim();
 }
 const target=JSON.parse(docker(['inspect',container]))[0];
-const repeating=process.argv[2]==='--fresh-role-execution-repeat';
-const outputName=repeating?'role-execution-repeat-parity.json':'role-rehearsal.json';
+const legacy=process.argv[2]==='--legacy-compatibility-restore';
+const repeating=process.argv[2]==='--fresh-role-execution-repeat'||legacy;
+const outputName=legacy?'legacy-compatibility-role-parity.json'
+  :repeating?'role-execution-repeat-parity.json':'role-rehearsal.json';
 if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||(!repeating&&process.argv[2]!=='--owned-offline')
   ||process.argv.length!==3||target.HostConfig.NetworkMode!=='none'||target.Mounts.length
   ||Object.keys(target.HostConfig.PortBindings??{}).length
