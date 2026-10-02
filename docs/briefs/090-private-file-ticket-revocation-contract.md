@@ -1603,3 +1603,16 @@ Existing signed app relaunched without rebuild; A page/bridge visible, next card
 so content continues. Source default scroll enabled, no causal defect established. Explicit manual
 click-hold upward drag requested. Reopen adds second issuance: current fixture is diagnostic only,
 cannot satisfy unchanged exactly-one matrix; fresh fixture required for later acceptance. See record.
+
+09:21 owner confirms no issue; actual CUA screenshot now shows calendar/assignment section,
+so manual native WebView scroll PASS (not automatic input PASS). One bounded closeout:
+record actual hold timeout exit1 without accepted iOS HTTP; stop/remove exact owned runtime/
+device/generated outputs after this last dependent check; verify ports/disks/free space and
+source preservation, then update short handoff and commit documents. No product fix/rebuild,
+fresh fixture, authority-policy change, hosted action or new Jev call in this diagnostic closeout.
+
+Closeout~09:24: manual scroll PASS confirmed actual calendar/assignment UI. No product scrolling
+fix. Fixture hold timeout actualexit1 retained; PDF/share/B matrix NOT RUN, no accepted iOS HTTP.
+Exact task stack/VM/root/data/device/app/build/outputs cleaned; no listeners/profile/Lima disk,
+final20682900KiB abovefloor. Source five counts/hashes unchanged again; no new inference/cost$0.
+Next fresh bounded signed iOS assignment full flow;090 remains open. Details in execution record.

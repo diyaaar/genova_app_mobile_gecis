@@ -35,7 +35,7 @@ signed native recovery/seek/resume/B denial and fixture exit0 PASS; fresh root11
 exports PASS. Jev triage advisory5/5;1Oct20calls$0.003070494 estimate, not invoice.
 `180108a` [WebView preflight](reports/2026-10-01-ios-webview-source-preflight.md): platform-specific wx evidence,19focused/root110/1118/mobile55/406/exports PASS, not native;090/hosted/beta remain open.
 
-2Oct [active iOS execution](reports/2026-10-02-connected-ios-assignment-webview-acceptance.md): signed Release/actual Auth/bridge/A page PASS; input automation cannot scroll. Owner manual-scroll diagnostic requested. PDF/share/B/full fixtureexit0 NOT RUN, no accepted iOS HTTP. **Immediate next:** verify bounded live runtime/fixture(~09:15Turkey expiry), resolve input observation, then complete actual flow or exact cleanup; do not rebuild blindly or promote partial evidence.
+2Oct [iOS diagnostic closeout](reports/2026-10-02-connected-ios-assignment-webview-acceptance.md): signed Release/actual Auth/bridge/A page PASS; owner and actual scrolled calendar/assignment UI confirm manual scroll PASS, no product fix. Fixture timed out exit1; PDF/share/B matrix NOT RUN, no accepted iOS HTTP. **Next:** fresh bounded signed iOS current-assignment integration with usable input/manual assistance, then current Android audio; do not promote partial or timed-out evidence.
 
 ## Preserved evidence and remediation
 
@@ -58,7 +58,7 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
 Owned runtimes/builds/outputs cleaned; source-preflight final22,296,284KiB; prior audio low15,548,780KiB.
-Exception:2Oct current test runtime/device active for owner input diagnosis; record lists exact ownership. Latest13,971,728KiB free, >=10GiBfloor; cleanup NOT RUN, generated native build/ios already removed.
+2Oct owned runtime/VM/root/data/device/app/build/outputs cleaned, no task listeners/profile/Lima disk; final20,682,900KiB free, observed buildlow13,826,916 >=10GiBfloor. New runtime requires fresh resource preflight.
 Fresh original068 five hashes/counts28/1/29/9/79 unchanged. Key-input masking failed: transcript
 echo occurred, no repo/env persistence; no further call/after1Oct reuse; owner replacement needed. Keep
 `genova_068_test_restore`, retained 068 backup, private manifests/journals,

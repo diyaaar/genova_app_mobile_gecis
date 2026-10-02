@@ -617,3 +617,14 @@ ports/web/app intentionally active only for immediate owner diagnostic; exact ow
 in record, full cleanup NOT RUN. Verify fixture~09:15Turkey expiry/live state before use; never
 reuse consumed login or relabel partial observer output. No hosted/provider/real data/push/CI/
 deploy/hardware/external share/key/Jev action; new API cost$0. Historical Android SHA256 unchanged.
+
+### 2 October — owner-assisted scroll diagnosis closed, runtime cleaned
+
+Owner reports no issue; actual same native WebView now visibly scrolled to calendar/assignments,
+manual scroll PASS, no demonstrated product defect/no code fix. Fixture30-minute hold timeout
+actualexit1 retained, no accepted iOS HTTP; PDF/share/B full matrix NOT RUN. Exact owned stack/
+VM/root/data/device/app/generated files removed after last dependent check; no task ports/booted
+simulator/profile/Lima disk. Final20,682,900KiB free; five original source hashes/counts again
+unchanged. Earlier mobile55/406/exports/build/signature results dated, not repeated. Documents
+only/new Jev cost$0, no hosted/provider/real data/push/deploy.090 open; fresh bounded signed iOS
+current-assignment full flow with usable input/manual assistance is next, then current Android audio.
