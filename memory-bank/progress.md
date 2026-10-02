@@ -678,3 +678,16 @@ Xcode command/preflight failures and Hermes regex false positive retained with c
 exact current CLI secrets absent in public bundle. CLI factory-key redaction miss retained.
 Goal active/not complete;090/hosted/beta still open. No new inference/key use/APIcost$0,
 product/Auth change, hosted/push/deploy/real data/hardware. Primary self-review only.
+
+### 2 October — iOS legacy goal blocked, owned runtime cleaned
+
+[Closeout](../docs/reports/2026-10-02-ios-legacy-webview-acceptance.md): same owner-input/CUA
+coordinate blocker verified >=3 turns, keyboard alternative exhausted. Native file click/
+recovery/hash/share/B NOT RUN; unchanged fixture SIGTERMexit1/signalnull, accepted HTTP absent.
+No goal/090/beta completion; full objective preserved. Exact service/VMroot/data/device/app/
+builds/generated outputs removed; ports/profile/Lima disk absent. Final13:21 free20273560KiB,
+14:37 live20154736 abovefloor. [Five-table closeout](../docs/reports/090/2026-10-02-ios-legacy-closeout-source-preservation.json)
+and fresh14:38 read-only query unchanged; original068/backups/dependencies/AVD/global caches
+preserved. Sourceb29e24b/docs64fb396+b7f1d31 retained; no push, hosted/new inference/key use,
+real data/hardware action, APIcost$0. Next: input readiness then fresh preflight/full same-flow
+acceptance, not another blind rebuild. Interrupted third-turn record finished in continuation.

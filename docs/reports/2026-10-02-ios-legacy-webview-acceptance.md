@@ -4,6 +4,8 @@ Date: 2 October 2026. Base main/f63aa49. Sole primary writer; scoped self-review
 Scope: the missing legacy-v1 consumer in [090](../briefs/090-private-file-ticket-revocation-contract.md),
 not a current-version assignment rerun, hosted cutover, usable beta or whole product acceptance.
 Repertoire remains native; chorist-detail/profile remain permanent WebView.
+Current outcome: **BLOCKED / not accepted**. Native file interaction requires owner
+assistance or functioning coordinate input. All task-owned heavy runtime output is removed.
 
 ## Evidence
 
@@ -15,12 +17,12 @@ Repertoire remains native; chorist-detail/profile remain permanent WebView.
 | Guarded production web build | PASS | Fresh pnpm build exit0 with actual CLI public anon/local service config and explicit repertoire-file guard. |
 | Signed iOS Release/public-secret boundary | PASS | Corrected xcodebuild exit0 in169773ms,1116 warning matches/no error lines. Normal strict deep signature verification. Actual CLI anon present; exact JWT_SECRET/SECRET_KEY/SERVICE_ROLE_KEY absent in copied bundle. |
 | Actual iOS Auth/bridge/permanent page | PASS, limited | Fresh device537E75EA-F618-4D13-BBCA-D8B4EC052594/iOS26.5, first launch actual AuthStore/bridge running:chorister-detail, synthetic090 Web Hedef/Alto visible. Not file acceptance. |
-| Native GET401/HEAD401/onePOST/PDF65905B/hash/share | NOT RUN | Explicit separate read-only HTTP legacy baseline planned; not a reproduced iOS pre-fix product failure. |
+| Native GET401/HEAD401/onePOST/PDF65905B/hash/share | NOT RUN | Only explicit separate prelaunch HTTP legacy GET401/provider0 ran. No actual file click/native confirmation, native downloader refusal/renewal/hash/share. Not an iOS pre-fix defect reproduction. |
 | Actual B profile/cache/oldHEAD403/provider0 | NOT RUN | Required native and server evidence. |
-| Immutable iOS HTTP plus unchanged complete fixtureexit0 | NOT RUN | No manual PASS artifact; fixture writes wx only after matrix. Full tail remains independent of HTTP artifact. |
+| Immutable iOS HTTP plus unchanged complete fixtureexit0 | FAIL | After verified third blocker turn, exact fixture92872 SIGTERM produced exit1/signalnull: unchanged baseline/repaired-body assertion fails because native click never ran. Accepted iOS HTTP absent; tail did not pass, no fabricated artifact or relaxed assertion. |
 | Fresh mobile full gate/normal Android+iOS exports | PASS | npm run check -- --runInBand, TypeScript55suites406tests exit0; EXPO_NO_DOTENV=1 and all acceptance flags removed, sequential normal Android theniOS1440modules each exit0. Synthetic public export-only config, not native acceptance. |
-| Original five-table after comparison | PASS checkpoint / final pending | [Read-only checkpoint comparison](090/2026-10-02-ios-legacy-checkpoint-source-preservation.json), all five hashes/counts unchanged. Repeat after remaining dependent native checks before goal closure. |
-| Exact cleanup/resources/document gates | PARTIAL | Document checkpoint:209local links/5Markdown files, source JSON comparison, negative secret scan and git diff --check PASS. Final cleanup NOT RUN while same-flow owner action is pending; source/backups/dependencies/historical HTTP preserved. |
+| Original five-table after comparison | PASS | [Closeout comparison](090/2026-10-02-ios-legacy-closeout-source-preservation.json) after last native/fixture checks; all five hashes/counts unchanged. Fresh read-only14:38 verification also matches that before snapshot; no source rows copied. Not native acceptance. |
+| Exact cleanup/resources/document gates | PASS cleanup / document closeout | Owned processes/ports/device/profile/root/data/Lima disk/generated outputs absent; final cleanup20273560KiB, later14:37 live20154736KiB abovefloor. Original source/backups/dependencies/global caches/historical evidence preserved. Scoped document/link/diff verification below; no new product gates claimed. |
 
 ## Bounded preparation failures and changed approach
 
@@ -76,7 +78,7 @@ Source/lockfiles/original068/retained backups/private evidence/dependencies/shar
 caches and unrelated supabase/.temp/cli-latest remain outside cleanup/staging.
 Required NOT RUN prevents this goal's acceptance;090 remains IN PROGRESS.
 
-Current runtime inventory at13:03Turkey: web Node92478/launcher92450, fixture Node92872/
+Historical runtime inventory at13:03Turkey: web Node92478/launcher92450, fixture Node92872/
 launcher92818/Deno92895, SSH92337. Actual one-use native credential consumed; nativepage
 visible, no file click/issuance yet. Snapshot owner device app container
 D0F213A7-CDAB-48A9-9849-4C0B958974EE. Entry afterboot14826416, fixture setup14022680,
@@ -87,7 +89,7 @@ record exit1/NOT RUN, never write accepted evidence manually, stop/remove exact 
 
 Checkpoint source/tests commitb29e24b; no push. Only evidence selection/assertion extraction,
 not authorization/client/product changes. Required native file/share/B/full fixtureexit0 and
-final cleanup remain open. The measurable Codex goal is active, not complete or paused.
+final cleanup remained open at that checkpoint. The measurable Codex goal was active, not complete or paused.
 At13:09 source checkpoint passes, same actual native page still visible and HTTP target absent;
 owner one-click assistance remains the concrete blocking action. No further build/restart needed.
 
@@ -101,3 +103,48 @@ Escape did not exit capture; same observed menu command restored ordinary iOS26.
 No persistent setting or file/session change. Alternative exhausted, no product defect
 established; same owner file-click remains necessary. Goal remains active on this second
 consecutive blocker turn; no required criterion or objective narrowed/marked complete.
+
+## Third-turn blocker audit and final owned cleanup
+
+At13:17Turkey the same fixture handle45777/Node92872 and actual A native page were still
+live; no file confirmation or owner reply. Original goal turn1 made preparation progress
+and reached this blocker; continuation2 verified the live wait and exhausted keyboard input;
+continuation3 revalidated the same blocker. All safe in-scope input alternatives exhausted:
+no coordinate window access, no device keyboard scroll/focus, no bridge/DOM injection or
+test-policy weakening. Missing user action or functioning input is necessary; not a slow
+test, observation timeout, token budget or merely difficult implementation.
+
+After last dependent checks, signaled the exact verified fixture process92872, not a stale
+lock/launcher. Full fixture exit1/signalnull, baseline and repaired old body refusals missing.
+No accepted iOS legacy HTTP file was created. Native PDF/hash/share/B/old-ticket refusal
+remain NOT RUN; goal requirements do not change. This failure is incomplete UI execution,
+not a newly reproduced product bug. Do not relabel preparation/unit/build checks as acceptance.
+
+Exact owned device terminated/shutdown/deleted, Next listener92478 stopped (web childexit0),
+Supabase stop --workdir spike/090-runtime --no-backup exit0, genova090 --data deletion exit0.
+Verified SSH/fixture/web/Deno ports/processes absent, device/profile/root/data/Lima disk absent.
+Removed ignored verified realpath/non-symlink/untracked .next83068KiB/mobile.expo8536KiB/
+coverage352KiB/spike090runtime308KiB/empty093runtime/signedapp46596KiB, after prior native
+intermediate removal. Original source, retained backups/private records, working dependencies,
+existing AVD/global caches/historic HTTP remain. Generated-only outputs are regenerable;
+no user data removed or broad cache purge. Local factory secrets disappear with owned runtime.
+First-failure Xcode result bundle removal guard rejected /var→/private/var alias; inspected
+the exact observed canonical path, then removed only that task-owned result bundle.
+
+Actual final13:21 free20273560KiB (~19.33GiB) abovefloor; all owned listeners/device/VM/disks
+absent. Third turn interrupted before record/goal-card closeout.14:37 continuation verifies
+cleanup and missing accepted HTTP again, free20154736KiB; fresh original five hashes/counts
+unchanged at14:38. No rebuild/restart or test rerun for document-only closeout.
+
+Blocked audit satisfies >=3 consecutive turns with the same genuine human-input blocker;
+mark goal blocked, not complete/paused. Full original objective and mandatory criteria retained.
+Resume only when actual iOS file-click assistance is available or coordinate input is repaired;
+fresh resource preflight and one fresh isolated fixture/signed app then prove the entire same
+flow, unchanged full fixtureexit0 and immutable HTTP, followed by source preservation/cleanup.
+No automatic repeated environment rebuild while that prerequisite remains unresolved.
+Sourceb29e24b/document64fb396+b7f1d31 and this cleanup record are local only; no push.
+Incremental Jev APIcost$0; skills keep deterministic authorization/evidence separate from inference.
+
+Document-only closeout verification PASS: five updated Markdown records/212 existing local
+links, JSON before/after equality for all five source tables, scoped credential-format scan,
+and git diff --check. No product gate rerun or self-review promoted to independent review.

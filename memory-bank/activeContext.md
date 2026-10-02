@@ -37,7 +37,7 @@ exports PASS. Jev advisory5/5;1Oct20calls$0.003070494 estimate, not invoice.
 `180108a` [WebView preflight](../docs/reports/2026-10-01-ios-webview-source-preflight.md): platform-specific wx evidence,19focused/root110/1118/mobile55/406/exports PASS, not native;090/hosted/beta stay open.
 
 2Oct [iOS current-assignment](../docs/reports/2026-10-02-ios-assignment-measurable-goal.md)/f7c2b22 and [current Android audio](../docs/reports/2026-10-02-android-audio-player-id-acceptance.md)/9bd442e PASS within recorded local boundaries; prior failures retained.
-**Active:** [iOS legacy-v1 WebView goal](../docs/reports/2026-10-02-ios-legacy-webview-acceptance.md), helperb29e24b. Signed native/actual Auth+A page/root111/1130/mobile55/406/normal exports PASS; file/share/B/full fixtureexit0 NOT RUN, no accepted HTTP JSON. Owner one-click help requested after CUA coordinate noWindowsAvailable; AX/menu works. Same owned runtime READY~13:00Turkey/expires~13:30, verify before reuse, no relaunch/reload/global signOut/blind rebuild. Goal active/not complete;090/hosted/beta remain open.
+**Blocked local goal:** [iOS legacy-v1 WebView](../docs/reports/2026-10-02-ios-legacy-webview-acceptance.md), helperb29e24b. Signed native/actual Auth+A page/root111/1130/mobile55/406/normal exports PASS; file/share/B NOT RUN, complete fixtureexit1 after no file click, accepted HTTP absent. Same user-input/CUA-coordinate blocker verified >=3 turns; keyboard alternative exhausted, full objective unchanged/not accepted. Runtime cleaned. Next: owner actual click availability or working coordinate input, fresh preflight and full same-flow acceptance; no blind rebuild.090/hosted/beta open.
 
 ## Preserved historical evidence
 
@@ -59,7 +59,7 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary sole writer.1Oct owned VM/root/data/device/runtime/app/builds/outputs cleaned;
 source-preflight final22,296,284KiB free, prior audio low15,548,780KiB. Current068 five hashes/counts28/1/29/9/79 unchanged.
-Prior Android goal cleaned/final20,461,732KiB. Current legacy goal owns genova090 VM/four services, device537E75EA-F618-4D13-BBCA-D8B4EC052594, .next/mobile.expo/spike090/093/signedapp; ports54491/54492/8000/18092/31090,13,690,040KiB current. Native intermediates/Next cache removed; source checkpoint hashes unchanged. Same-task reuse only until~13:30; exact cleanup after last check/timeout, inventory/PIDs in record. Existing AVD/caches/dependencies/original068 preserved.
+Prior Android goal cleaned/final20,461,732KiB. Legacy goal services/VMroot/data/device/signedapp/builds/generated outputs removed; ports/profile/device/Lima disk absent. Final13:21 free20,273,560KiB;14:37 live20,154,736 abovefloor. Closeout five source hashes/counts and fresh14:38 query unchanged. AVD/global caches/dependencies/original068 preserved; no live acceptance environment. New runtime requires actual input readiness plus fresh preflight.
 Key masking failed/transcript echo, no repo/env persistence;
 no further call/after1Oct reuse; owner replacement needed. Preserve original source.
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and

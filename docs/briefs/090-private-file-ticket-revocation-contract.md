@@ -69,6 +69,18 @@ exact inventory/removal point in record; fresh resource floor maintained, native
 removed, remaining runtime kept only for pending same-flow action. Goal active/not complete,
 090 stays IN PROGRESS. No rebuild/product fix/hosted/new inference; incremental APIcost$0.
 
+2 October blocked closeout: same actual native A page/no file confirmation and live fixture
+verified on third consecutive blocker turn13:17. Keyboard/AX alternatives exhausted; input
+assistance still needed. Exact fixture SIGTERM returns exit1/signalnull, unchanged baseline/
+body assertions fail because native file click never ran; accepted iOS legacy HTTP absent.
+Native recovery/PDF/hash/share/B NOT RUN; no relaxed tests or whole090 completion.
+Owned services/VMroot/data/device/builds/signedapp/generated outputs removed; no owned ports/
+profile/Lima disk. Final13:21 free20273560KiB;14:37 revalidation20154736 abovefloor. Original
+five hashes/counts unchanged in closeout and fresh14:38 query, backups/dependencies/caches
+preserved. Third turn interrupted before durable closeout; next continuation finishes record
+and blocked-status audit, not another build. Full goal remains intact; resume only with actual
+file-click assistance/working input and a fresh measured environment. [Full record](../reports/2026-10-02-ios-legacy-webview-acceptance.md).
+
 The original “devam” resumed the Android-first Drive-exit queue after local 089. Read AGENTS,
 handoff/active, WF-009/WF-013, current delivery controls, migration guide, MIGRATION, decisions
 #28–31, 015/021/053, 065/076 and the R2 runbook. At that earlier checkpoint

@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-10-02T10:19:45.038Z",
+  "result": "PASS original source preservation; native acceptance not achieved",
+  "source": "local genova_068_test_restore; read-only aggregates, no rows copied",
+  "before": [
+    {
+      "md5": "83d808f0bc6604be8657b12f6683ba54",
+      "count": 28,
+      "table": "auth.users"
+    },
+    {
+      "md5": "cf1b288bff11e3426135dd16e83b120f",
+      "count": 1,
+      "table": "public.choirs"
+    },
+    {
+      "md5": "e3f4b42d461f7232043c03fa7aa5a227",
+      "count": 29,
+      "table": "public.choir_members"
+    },
+    {
+      "md5": "992b78f6e19e8edb2539cb7e09a3e214",
+      "count": 9,
+      "table": "public.repertoire"
+    },
+    {
+      "md5": "4b53f243989c81a2e71f7998035b8a3d",
+      "count": 79,
+      "table": "public.repertoire_files"
+    }
+  ],
+  "after": [
+    {
+      "md5": "83d808f0bc6604be8657b12f6683ba54",
+      "count": 28,
+      "table": "auth.users"
+    },
+    {
+      "md5": "cf1b288bff11e3426135dd16e83b120f",
+      "count": 1,
+      "table": "public.choirs"
+    },
+    {
+      "md5": "e3f4b42d461f7232043c03fa7aa5a227",
+      "count": 29,
+      "table": "public.choir_members"
+    },
+    {
+      "md5": "992b78f6e19e8edb2539cb7e09a3e214",
+      "count": 9,
+      "table": "public.repertoire"
+    },
+    {
+      "md5": "4b53f243989c81a2e71f7998035b8a3d",
+      "count": 79,
+      "table": "public.repertoire_files"
+    }
+  ]
+}
