@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-02T17:09:34.507Z",
+  "baseline": "a13f696da8c731e9af2a2bce473d4f4ae4a81587",
+  "pins": [
+    {
+      "path": "hooks/useProtectedDriveFileUrl.ts",
+      "old": "24335cedc7edca104e17546700f10c19877a58d6bb73ca12c30130ecab664295",
+      "current": "2eef4d5e2fb39989cd765b77ee0504a3be88256e0124af310316d72a2577b74a"
+    },
+    {
+      "path": "lib/drive-file-url.ts",
+      "old": "e7b5076a5e18690acac88134bb46769dda05977af37e9606537ba30ae7e3f1f7",
+      "current": "7199d56ecec6e93ecbefca6b62c4d938191cb1ddc3aafde40418d036b4772dea"
+    },
+    {
+      "path": "lib/repertuvar/offline.ts",
+      "old": "0c1c5169e5744e2cf1d9eed2591996fc54c310eafe2cf6e566876721c04cf9e8",
+      "current": "f2c5a841c565d22386c566d54889dcdfc49b3d9d75ed32cf0cb0132612c3e0fe"
+    },
+    {
+      "path": "public/sw.js",
+      "old": "a9fd093994eaca7ba2c640fafac9486d49cc09d2e326ad62dc5e54c08b5c113a",
+      "current": "a9fd093994eaca7ba2c640fafac9486d49cc09d2e326ad62dc5e54c08b5c113a"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "already-open-old-bundle-online-cache",
+      "contract": "FAIL_REPRODUCED",
+      "actuallyPlayed": true,
+      "newAuthorityRequests": 0,
+      "limit": "Previously downloaded bytes; not server/provided-online-byte leakage. Old code remains unsafe until refreshed."
+    },
+    {
+      "name": "explicit-refresh-online-denied-cache",
+      "status": "PASS",
+      "providerDelta": 0
+    },
+    {
+      "name": "refreshed-audio-play-seek-and-pdf-canvas",
+      "status": "PASS",
+      "score": {
+        "pages": 1,
+        "ink": 1932
+      }
+    },
+    {
+      "name": "cached-ticket-401-one-renewal",
+      "status": "PASS",
+      "newPosts": 1
+    },
+    {
+      "name": "actually-offline-cached-playback",
+      "status": "PASS"
+    },
+    {
+      "name": "reconnect-cached-v2-403-stop",
+      "status": "PASS",
+      "headDelta": 1,
+      "postDelta": 0,
+      "providerDelta": 0
+    }
+  ],
+  "boundary": "Actual React hook/loader/SW/Next adapter/legacy handler/HMAC and browser PDF/WAV; synthetic Auth/access/provider. Not whole Next workspace, candidate, SQL, PostgREST, native WebView or hosted proof.",
+  "counters": {
+    "posts": 5,
+    "heads": 5,
+    "gets": 6,
+    "providers": 9,
+    "outside": 0
+  },
+  "statuses": [
+    {
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 206
+    },
+    {
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "HEAD",
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 206
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "HEAD",
+      "status": 403
+    }
+  ],
+  "browser": "154.0.8037.93",
+  "status": "LOCAL_BROWSER_CHECKPOINT_PASS_WITH_OLD_BUNDLE_FAILURE_REPRODUCED",
+  "cleanup": "browser/context closed, loopback server closed; no repository/runtime copy or downloaded media"
+}

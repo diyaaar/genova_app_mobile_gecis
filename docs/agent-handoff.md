@@ -8,7 +8,9 @@ English agent records, Turkish user/product copy. One writer; verify recorded st
 ## Current checkpoint and next action
 
 Owner explicitly approved the previously missing LOCAL SQL/Edge/Next/minimal web-client scope.
-Source **fe8cd19** implements it; [acceptance](reports/2026-10-02-legacy-reader-local-implementation.md).
+Server source **fe8cd19**; [acceptance](reports/2026-10-02-legacy-reader-local-implementation.md).
+Latest **15fc8c9** repairs the actual legacy hook's online-cache bypass and reconnect;
+[cache/refresh acceptance](reports/2026-10-02-legacy-client-cache-transition.md).
 The earlier BLOCKED authority audit is historical. The goal tool retains its earlier blocked
 value (no agent resume API); do not fake completion or recreate the goal. Work authorization
 is renewed; R1/090 remains OPEN and live publication NO-GO because required gates remain open.
@@ -23,12 +25,16 @@ Latest PASS: actual offline PG17.6 restore23schemas/101counts;32roles/22membersh
 new service/anon/auth RPC matrix and six permission/predicate mutants; actual index/SDK/Next/
 SQL via loopback HTTP covers five legacy kinds incl Storage, ten revoked GET/HEAD403/provider0.
 Synthetic Auth/RPC transport/provider, NOT real hosted Auth/PostgREST/Drive/browser proof.
-Final root19:20:113files/1167tests/coverage/SW/build PASS; focused5files/63tests; Node9/9;
-cached-only Deno index/HTTP harness check PASS. First regex and cleanup failures retained.
+Historical server root19:20:113/1167/focused63/Node9/Deno PASS; failures retained.
+Latest root20:11–20:12:113files/1172tests/coverage/SW/build; focused2files/32tests PASS.
+Installed Chrome actual React hook/loader/SW/Next-adapter/Edge-handler/HMAC:7scenarios,
+PDF canvas/audio play+seek/offline/401renew/403stop/session refusal PASS with synthetic
+Auth/access/provider. Exact old open hook bundle online-cached playback FAIL_REPRODUCED;
+explicit reload refuses denied cached file/provider0. Not whole Next UI/SQL/index/WebView proof.
 
 NEXT: narrowly scoped production-baseline refreshed client candidate + full old-cached-tab/
 WebView/PDF/audio transition acceptance. Exact old production source still fails auto401/cache/
-raw-fallback controls; unit/HTTP success is NOT browser acceptance. Then complete six-reader/
+raw-fallback controls; small hook-browser evidence is NOT full client acceptance. Then complete six-reader/
 SQL/config/client manifest/independent review/hosted preflight/forward-repair packet BEFORE
 requesting exact live authority. No bulk-push main. [Local manifest](reports/090/2026-10-02-legacy-local-source-manifest.json)
 pins eight legacy Edge modules and source evidence only, NOT a full deployment manifest.
@@ -43,9 +49,11 @@ provider ACL/password/config/real-user/email/hardware/distribution action in thi
 DB→Edge→compatible clients, recovery before writes; Git revert is not data recovery.
 078 reversal reopens inactive-member access; never automatic v1 rollback.
 
+Owner withdrew tentative old-note deletion; no notes/data removed. Preserve them.
 Only unrelated supabase/.temp/cli-latest should remain after docs commit; exclude it.
 VM/container removed19:17; exact fixture cleanup/users/choirs0 and no listeners verified.
-Fresh build outputs/task image cache have final cleanup inventory in090; Trash is not freed disk.
+Latest browser/18196 closed; task-created .next/coverage removed; final21,488,172KiB free.
+Task image-cache cleanup history in090; Trash is not freed disk.
 Protected fresh R1 backup retained outside Git: genova-090-r1-5bfGvo,0700/files0600.
 Original068/backup/dependencies/global caches/AVD preserved. New runtime needs fresh >=10GiB
 preflight, one heavy process, causal reassessment after two failed approaches.

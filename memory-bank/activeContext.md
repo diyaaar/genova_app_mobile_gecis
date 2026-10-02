@@ -7,7 +7,9 @@ Verify actual source/state, one writer, English records/Turkish user updates.
 ## Current result and next measurable checkpoint
 
 Owner approved the previously blocked LOCAL legacy SQL/Edge/Next/minimal client package.
-Source **fe8cd19**; [acceptance](../docs/reports/2026-10-02-legacy-reader-local-implementation.md).
+Server **fe8cd19**; [acceptance](../docs/reports/2026-10-02-legacy-reader-local-implementation.md).
+Latest **15fc8c9** fixes actual non-versioned legacy online-cache bypass/reconnect;
+[cache/refresh evidence](../docs/reports/2026-10-02-legacy-client-cache-transition.md).
 Earlier missing-authority BLOCKED audit is historical. The old goal-tool blocked value cannot
 be resumed through agent tools; no fake completion/duplicate goal. Approved work continued.
 **090/R1 OPEN, live NO-GO:** full refreshed and old-cached browser/WebView/PDF/audio, complete
@@ -25,13 +27,17 @@ sixextension parity; actual service/anon/auth RPC matrix and six unsafe mutants 
 Actual index/SDK/Next adapter + SQL through loopback HTTP: five legacy kinds incl Storage,
 ten new GET/HEAD403 after committed inactive membership, provider0 extra; exact fixture cleanup.
 Auth/RPC transport/provider are synthetic; not hosted Auth/PostgREST/Drive/browser acceptance.
-Final pnpm check19:20:113files/1167tests/coverage/SW/build; focused5files/63tests; standalone
-Node9/9 (historical failures still reproduced); cached-only Deno index/HTTP type checks PASS.
+Historical server19:20:113/1167/focused63/Node9/Deno PASS, not current hook evidence.
+Latest root20:11–20:12:113files/1172tests/lint/types/coverage/SW/build; focused2files/32tests PASS.
+Actual Chrome React hook/loader/SW/Next/legacy-handler/HMAC7scenarios: refreshed PDF canvas,
+WAV play/seek/offline/401renew/403stop/new-invalid-session PASS. Synthetic Auth/access/provider.
+Exact old-open hook bundle still plays downloaded bytes online without a new authority request:
+FAIL_REPRODUCED, explicit reload refuses/provider0. Not whole Next/SQL/index/WebView proof.
 First PostgreSQL regex/HTTP cleanup/type-boundary failures and last cache race repair retained.
 
 NEXT: production-baseline minimal refreshed client release candidate + old open-tab/WebView/
 PDF/audio transition evidence. No silent refresh/maintenance live action. Exact old source fails
-auto401/cache/raw-fallback; runtime units do not prove old bundles adopt new code. Complete
+auto401/cache/raw-fallback; small browser harness does not prove full old tabs adopt code. Complete
 six-reader/SQL/config/client manifest and review/recovery/forward-repair before live authority.
 [Local manifest](../docs/reports/090/2026-10-02-legacy-local-source-manifest.json) pins eight legacy Edge modules/source,
 NOT deployment approval. Older bdf34b8 five-reader packet does not cover the sixth reader/client.
@@ -42,10 +48,12 @@ Owner#33: sibling site no longer on this DB, **NO SITE CHANGES**; owner-reported
 verified. Historical site findings not Genova blocker; no retained-table deletion/RLS relaxation.
 No push/CI/live DB/Edge/web deploy/provider ACL/credentials/real users/email/device action here.
 Local source/tests/scoped commits/owned cleanup authorized; exclude unrelated CLI marker.
+Owner withdrew tentative old-note deletion; no notes/data removed.
 DB→Edge→compatible clients, recovery before writes; no automatic v1 or078-defect rollback.
 
 Owned VM/container removed19:17 and synthetic users/choirs0 verified; no loopback listeners.
-Final cleanup/free-space inventory in090; recoverable Trash moves are NOT freed disk.
+Latest browser/18196 closed; owned .next/coverage removed, final21,488,172KiB free.
+Cleanup inventory in090; recoverable Trash moves are NOT freed disk.
 Protected R1 backup remains0700/0600 outside Git; original068/backup/dependencies/global caches/
 AVD preserved. Fresh runtime requires >=10GiB measured preflight/one heavy process/bounded retries.
 [R1](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md) coverage exclusions unchanged:

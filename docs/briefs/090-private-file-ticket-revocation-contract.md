@@ -15,6 +15,44 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 2 October — legacy client cache boundary follow-up
+
+Entry8fdf3dc, sole writer; preserve unrelated supabase/.temp/cli-latest. Read handoff,
+active090/approved local plan/latest acceptance/controls/guide/work cycle/template/MIGRATION/
+decision33, full TypeSafe/Supabase skills and current Auth docs. No AI authority decision.
+One outcome: old non-versioned comment/review/submission consumers must not select cached
+local bytes while online, including offline→online reconnect, and must use bounded401
+renewal/403-stop. Investigation found the actual shared hook only protects flagged versioned
+families; the legacy branch can return a fresh-looking runtime cache before any request.
+The necessary imported client closure therefore includes hooks/useProtectedDriveFileUrl.ts
+and its test, dedicated090 browser harness and dated report/indexes. No API/SQL/Edge changes,
+provider ACL, sibling website, native UI, dependency installation or live operation.
+Three actions: red regression for actual legacy hook; smallest cache/reconnect repair;
+installed-Chrome actual React hook/loader/SW runtime, focused/full gates and scoped commits.
+The production-baseline candidate/full workspace/WebView/device/six-reader release closure
+remain required later; a small React harness is NOT full Next UI acceptance.
+Fresh available21,520,872KiB; existing deps/Chrome, no task VM. In-memory build/loopback browser,
+estimated incremental <=256MiB; final root outputs <=1GiB, one heavy process,10GiB floor.
+No repository copy/download. Browser context ephemeral/closed at exit; exact .next/coverage
+expire after final verification, source/small redacted records retained. Rollback local source
+only; do not turn historical server refusal into an actorless grace period.
+Required: regression red→green, online cache0/HEAD authority,401 one renewal/403 stop,
+offline cached rendering and reconnect refusal, real Chrome playback/SW observation with
+synthetic Auth/authority/provider clearly labeled, pnpm check and links/diff. No closure
+of090/R1 while full-client/hosted/release criteria remain NOT RUN. Self-review only.
+
+Exit source15fc8c9: [cache/transition acceptance](../reports/2026-10-02-legacy-client-cache-transition.md).
+Three actual legacy-hook red regressions repaired; final focused2files/32tests, root20:11–20:12
+113files/1172tests/lint/types/coverage/SW/build PASS. Actual Chrome React/SW/Next-adapter/Edge-
+handler/HMAC harness:7scenarios, old-open online-cache FAIL_REPRODUCED, explicit reload refuses;
+current PDF canvas/WAV play+seek/offline playback/401-one-renewal/403-stop/new-invalid-session PASS.
+Synthetic identity/authority/provider, NOT full Next workspace/production candidate/SQL/index/SDK/
+WebView/hosted evidence. Full candidate/six-reader/refresh-release/independent gates still OPEN.
+No notes/data removed: owner withdrew the tentative deletion request. No live/push/site changes.
+Browser/context/18196 server closed, no listener; no runtime copy/VM/download. Exact generated
+.next477220KiB/coverage348KiB removed after checks, final21,488,172KiB available. One sole writer,
+CLI marker preserved. New Jev inference$0; self-review only. Source and docs separate commits.
+
 ### 2 October — approved local legacy compatibility implementation
 
 Checkpoint sourcefe8cd19: [dated local acceptance](../reports/2026-10-02-legacy-reader-local-implementation.md)

@@ -5,6 +5,12 @@ the [bounded local package](2026-10-02-legacy-reader-compatibility-local-plan.md
 hosted SQL/Edge/web deploy, real-user operation, provider ACL change or sibling-site edit.
 **Local source/security checkpoint PASS. Whole090/R1 OPEN; publication NO-GO.**
 
+Later source15fc8c9 [cache/transition follow-up](2026-10-02-legacy-client-cache-transition.md)
+found and repaired an untested non-versioned-hook online-cache bypass. This report's
+SQL/server/loader results remain historical evidence at their stated layers, not proof
+of the whole legacy UI. The follow-up adds small actual React/Chrome/SW evidence;
+full production-baseline candidate/Next UI/WebView/release gates remain open.
+
 ## Implemented contract and architecture
 
 Old `{driveFileId,fileName,mimeType}` POST and relative `/api/drive-file/...?...` response
