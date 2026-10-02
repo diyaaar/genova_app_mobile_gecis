@@ -15,6 +15,33 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 2 October — connected R0 metadata completion
+
+[Connected record](../reports/2026-10-02-hosted-revocation-r0-connected-preflight.md) and
+[catalog evidence](../reports/090/2026-10-02-hosted-revocation-r0-connected-metadata.json).
+Owner connected Supabase, resuming prior R0-only authority. Entry main/ef33e21; sole writer,
+unrelated CLI marker preserved/excluded. Read current handoff/active/090/packet/controls and
+relevant exact migrations/sibling sources; Supabase skill enforces exact target and secret scope.
+One outcome: finish bounded metadata gap assessment, not security release. Three actions:
+identity/catalog/deployment observations; pinned source/shared-site comparison; docs checks/commit.
+Allowed report/JSON/card/packet/runbook/delivery/handoff/active/progress only. No rows/bodies/
+credentials/export/DDL/DML/Edge/provider writes/push/CI/auth/settings/runtime/inference/delegation.
+Entry19860684KiB free; doc-only environment/peak/cleanup N/A. Explicit READ ONLY/ROLLBACK catalogs.
+Correct MCP now works;68 ledger entries/no078090/schema/authority absent, seven helper definitions/
+ACL and18 relation catalogs/47 selected source column checks;329 dependency edges/208 policy references
+on41 tables. Shared005 lacks active predicate; six extensions include Vault0.3.1. Five readers
+ACTIVE/version1/JWTfalse/exact bundle identities; fresh sibling VercelReady00be086/current alias.
+Public-directory issue is bounded catalog/source inference, not a production-data/UI test.
+R0 METADATA COMPLETE, RELEASE NO-GO; prior partial/digest deviation retained. Exit requires local
+links/JSON/pinned-source/redaction/diff/ownership and scoped090 docs commit; record actual results.
+Next separate R1 authority for fresh protected recovery/isolated exact078→090/both-site/old-client
+rehearsal. R1–R5/whole090 still NOT RUN/open; metadata PASS must not close functional gates.
+
+Actual local record gates PASS:408 links/6 anchors across nine Markdown records, machine-readable
+JSON/status/dependency contracts and15 pinned file hashes/bytes; ten owned files credential-format
+scan0hits, diff --check PASS. Primary scoped self-review only. Final19829644KiB free; no runtime/
+build retained. Only unrelated CLI marker left outside scoped090 documentation checkpoint.
+
 ### 2 October — authorized R0 metadata assessment
 
 [R0 record](../reports/2026-10-02-hosted-revocation-r0-preflight.md) and

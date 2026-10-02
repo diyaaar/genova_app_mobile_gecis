@@ -1,0 +1,2519 @@
+{
+  "recordedAt": "2026-10-02T13:38:32Z",
+  "entryRevision": "ef33e215ead18c1ce84e32ec6d3e6299f6e73367",
+  "sourceRevision": "bdf34b80a239fe7a69188746e5543caf3b12cbf3",
+  "status": "R0_METADATA_COMPLETE_RELEASE_NO_GO",
+  "authority": "Previously approved R0 metadata only; owner connected Supabase. No R1 backup/export or live write authority.",
+  "project": {
+    "id": "hievmwwctjjlhmssoxsu",
+    "ref": "hievmwwctjjlhmssoxsu",
+    "organization_id": "urpuzollmvvdkayavnhd",
+    "organization_slug": "urpuzollmvvdkayavnhd",
+    "name": "genesinovachoir's Project",
+    "region": "ap-northeast-1",
+    "status": "ACTIVE_HEALTHY",
+    "database": {
+      "host": "db.hievmwwctjjlhmssoxsu.supabase.co",
+      "version": "17.6.1.063",
+      "postgres_engine": "17",
+      "release_channel": "ga"
+    },
+    "created_at": "2026-02-14T22:22:32.332158Z"
+  },
+  "extensions": [
+    {
+      "name": "pgcrypto",
+      "schema": "extensions",
+      "installed_version": "1.3"
+    },
+    {
+      "name": "pg_stat_statements",
+      "schema": "extensions",
+      "installed_version": "1.11"
+    },
+    {
+      "name": "supabase_vault",
+      "schema": "vault",
+      "installed_version": "0.3.1"
+    },
+    {
+      "name": "pg_net",
+      "schema": "public",
+      "installed_version": "0.19.5"
+    },
+    {
+      "name": "uuid-ossp",
+      "schema": "extensions",
+      "installed_version": "1.1"
+    },
+    {
+      "name": "plpgsql",
+      "schema": "pg_catalog",
+      "installed_version": "1.0"
+    }
+  ],
+  "migrations": [
+    {
+      "version": "20260324130119",
+      "name": "create_choir_tables"
+    },
+    {
+      "version": "20260324130210",
+      "name": "add_school_department_to_choir_members"
+    },
+    {
+      "version": "20260324130240",
+      "name": "create_schools_departments_tables"
+    },
+    {
+      "version": "20260324132103",
+      "name": "add_social_media_to_choir_members"
+    },
+    {
+      "version": "20260329162504",
+      "name": "add_sef_role"
+    },
+    {
+      "version": "20260329164251",
+      "name": "make_voice_group_nullable"
+    },
+    {
+      "version": "20260416103636",
+      "name": "add_auth_email_phone_roles"
+    },
+    {
+      "version": "20260416103651",
+      "name": "create_announcements_table"
+    },
+    {
+      "version": "20260416103718",
+      "name": "create_rehearsals_and_attendance"
+    },
+    {
+      "version": "20260416103729",
+      "name": "enable_realtime_publications"
+    },
+    {
+      "version": "20260416105432",
+      "name": "fix_choir_members_rls_self_read"
+    },
+    {
+      "version": "20260416112752",
+      "name": "add_birth_date_and_fix_member_data"
+    },
+    {
+      "version": "20260416115719",
+      "name": "public_choir_members_view"
+    },
+    {
+      "version": "20260416120738",
+      "name": "create_get_pending_approvals_rpc"
+    },
+    {
+      "version": "20260416131045",
+      "name": "add_announcements_delete_and_auto_approve"
+    },
+    {
+      "version": "20260416135611",
+      "name": "storage_announcements_images_policy"
+    },
+    {
+      "version": "20260416155403",
+      "name": "add_drive_repertoire_system"
+    },
+    {
+      "version": "20260416155441",
+      "name": "rls_drive_tables"
+    },
+    {
+      "version": "20260417112427",
+      "name": "create_assignment_targets"
+    },
+    {
+      "version": "20260417163241",
+      "name": "20260417_repertoire_generic_visibility"
+    },
+    {
+      "version": "20260418113456",
+      "name": "add_homework_approval_fields"
+    },
+    {
+      "version": "20260418113515",
+      "name": "create_continuity_calculation_function"
+    },
+    {
+      "version": "20260418140231",
+      "name": "create_assignment_submissions_bucket"
+    },
+    {
+      "version": "20260419171448",
+      "name": "restrict_assignment_updates"
+    },
+    {
+      "version": "20260419173750",
+      "name": "20260419_rehearsals_section_leader_management"
+    },
+    {
+      "version": "20260419183924",
+      "name": "add_is_revision_to_submissions"
+    },
+    {
+      "version": "20260420200123",
+      "name": "add_update_policy_to_repertoire_tags"
+    },
+    {
+      "version": "20260421003851",
+      "name": "announcements_targeting"
+    },
+    {
+      "version": "20260421004648",
+      "name": "strict_announcement_targeting"
+    },
+    {
+      "version": "20260421004923",
+      "name": "remove_loose_announcement_policy"
+    },
+    {
+      "version": "20260421005329",
+      "name": "robust_announcement_targeting_rls"
+    },
+    {
+      "version": "20260421005442",
+      "name": "supersafe_announcement_rls"
+    },
+    {
+      "version": "20260421005530",
+      "name": "add_member_lookup_functions_for_rls"
+    },
+    {
+      "version": "20260504134341",
+      "name": "create_chat_schema"
+    },
+    {
+      "version": "20260504134415",
+      "name": "chat_rls_policies"
+    },
+    {
+      "version": "20260504140805",
+      "name": "fix_chat_rls_infinite_recursion"
+    },
+    {
+      "version": "20260504170217",
+      "name": "add_chat_starred_messages"
+    },
+    {
+      "version": "20260504171639",
+      "name": "fix_chat_rooms_insert_policy"
+    },
+    {
+      "version": "20260504202010",
+      "name": "add_check_slug_available_rpc"
+    },
+    {
+      "version": "20260504204454",
+      "name": "fix_chat_rooms_select_policy_for_creator"
+    },
+    {
+      "version": "20260504205002",
+      "name": "fix_infinite_recursion_chat_room_members"
+    },
+    {
+      "version": "20260504205307",
+      "name": "fix_chat_room_members_recursion_policies"
+    },
+    {
+      "version": "20260512172559",
+      "name": "song_comments_is_hidden"
+    },
+    {
+      "version": "20260512174312",
+      "name": "song_comments_chef_hide_policy"
+    },
+    {
+      "version": "20260512214945",
+      "name": "add_about_text_to_choir_members"
+    },
+    {
+      "version": "20260512215239",
+      "name": "fix_member_continuity_for_section_leaders"
+    },
+    {
+      "version": "20260903214901",
+      "name": "tenant_schema_003"
+    },
+    {
+      "version": "20260905003154",
+      "name": "multi_membership_active_choir_005"
+    },
+    {
+      "version": "20260905102806",
+      "name": "membership_admin_lockdown_006"
+    },
+    {
+      "version": "20260905160539",
+      "name": "operator_controlled_choir_creation_007"
+    },
+    {
+      "version": "20260905210953",
+      "name": "choir_invitations_008"
+    },
+    {
+      "version": "20260907210932",
+      "name": "list_my_choirs_is_current_not_null_012"
+    },
+    {
+      "version": "20260919183000",
+      "name": "assignment_review_audio_069_prerequisite"
+    },
+    {
+      "version": "20260919190000",
+      "name": "chat_room_membership_authority_041"
+    },
+    {
+      "version": "20260919193000",
+      "name": "chat_social_membership_authority_042"
+    },
+    {
+      "version": "20260919194500",
+      "name": "chat_message_status_authority_043"
+    },
+    {
+      "version": "20260919201500",
+      "name": "chat_core_message_authority_044"
+    },
+    {
+      "version": "20260919213000",
+      "name": "chat_text_send_idempotency_045"
+    },
+    {
+      "version": "20260920205054",
+      "name": "private_r2_repertoire_read_053"
+    },
+    {
+      "version": "20260921185113",
+      "name": "private_r2_repertoire_upload_054"
+    },
+    {
+      "version": "20260922071942",
+      "name": "private_r2_repertoire_lifecycle_055"
+    },
+    {
+      "version": "20260922171847",
+      "name": "private_r2_repertoire_cover_056"
+    },
+    {
+      "version": "20260922221500",
+      "name": "private_r2_assignment_versions_057"
+    },
+    {
+      "version": "20260923103000",
+      "name": "private_r2_assignment_review_audio_058"
+    },
+    {
+      "version": "20260923170000",
+      "name": "private_r2_repertoire_comment_audio_059"
+    },
+    {
+      "version": "20260923193000",
+      "name": "private_r2_chat_media_060"
+    },
+    {
+      "version": "20260923194500",
+      "name": "private_r2_copy_inventory_063"
+    },
+    {
+      "version": "20260925083611",
+      "name": "private_r2_activation_065"
+    }
+  ],
+  "catalog": {
+    "server_version": "17.6",
+    "schema078": null,
+    "schema090": null,
+    "auth_sessions": "auth.sessions",
+    "active_sessions": "genova_005.active_choir_sessions",
+    "session_helper": "genova_005.current_session_id()",
+    "assignment_versions": "assignment_submission_file_versions",
+    "review_versions": "assignment_review_audio_versions",
+    "comment_versions": "repertoire_comment_audio_versions",
+    "chat_read": "can_read_chat_media_060(uuid,uuid,uuid)",
+    "authority090": null,
+    "helpers": [
+      {
+        "acl": "{postgres=X/postgres,service_role=X/postgres}",
+        "owner": "postgres",
+        "config": [
+          "search_path=\"\""
+        ],
+        "signature": "can_read_chat_media_060(uuid,uuid,uuid)",
+        "definition": "CREATE OR REPLACE FUNCTION public.can_read_chat_media_060(p_actor_id uuid, p_choir_id uuid, p_file_version_id uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\n  select exists(\n    select 1 from public.chat_media_versions v\n    join public.choir_members actor on actor.auth_user_id=p_actor_id and actor.choir_id=v.choir_id and actor.is_active\n    join public.chat_room_members rm on rm.room_id=v.room_id and rm.choir_id=v.choir_id and rm.member_id=actor.id\n    where v.id=p_file_version_id and v.choir_id=p_choir_id and v.state='active' and (\n      (v.kind='room-avatar' and exists(select 1 from public.chat_rooms r\n        where r.id=v.room_id and r.avatar_media_version_id=v.id))\n      or (v.kind='message-image' and exists(select 1 from public.chat_messages m\n        where m.id=v.message_id and m.room_id=v.room_id and not m.is_deleted\n          and (m.metadata_json->'private_media_version_ids') ? v.id::text))\n    )\n  );\n$function$\n",
+        "anon_execute": false,
+        "service_execute": true,
+        "security_definer": true,
+        "authenticated_execute": false
+      },
+      {
+        "acl": "{postgres=X/postgres,authenticated=X/postgres,service_role=X/postgres,anon=X/postgres}",
+        "owner": "postgres",
+        "config": [
+          "search_path=\"\""
+        ],
+        "signature": "current_choir_id()",
+        "definition": "CREATE OR REPLACE FUNCTION public.current_choir_id()\n RETURNS uuid\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\n  with request_context as (\n    select\n      (select auth.uid()) as auth_user_id,\n      genova_005.current_session_id() as session_id\n  ),\n  selected_membership as (\n    select active.choir_id\n    from request_context context\n    join genova_005.active_choir_sessions active\n      on active.session_id = context.session_id\n     and active.auth_user_id = context.auth_user_id\n    join public.choir_members member\n      on member.choir_id = active.choir_id\n     and member.auth_user_id = active.auth_user_id\n    limit 1\n  ),\n  only_membership as (\n    select\n      case when count(*) = 1 then (array_agg(member.choir_id))[1] end as choir_id\n    from public.choir_members member\n    where member.auth_user_id = (select auth_user_id from request_context)\n  )\n  select coalesce(\n    (select choir_id from selected_membership),\n    (select choir_id from only_membership)\n  );\n$function$\n",
+        "anon_execute": true,
+        "service_execute": true,
+        "security_definer": true,
+        "authenticated_execute": true
+      },
+      {
+        "acl": "{=X/postgres,postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}",
+        "owner": "postgres",
+        "config": [
+          "search_path=\"\""
+        ],
+        "signature": "current_choir_member_id()",
+        "definition": "CREATE OR REPLACE FUNCTION public.current_choir_member_id()\n RETURNS uuid\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\n  select member.id\n  from public.choir_members member\n  where member.auth_user_id = (select auth.uid())\n    and member.choir_id = public.current_choir_id()\n  limit 1;\n$function$\n",
+        "anon_execute": true,
+        "service_execute": true,
+        "security_definer": true,
+        "authenticated_execute": true
+      },
+      {
+        "acl": "{=X/postgres,postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}",
+        "owner": "postgres",
+        "config": [
+          "search_path=\"\""
+        ],
+        "signature": "current_member_has_role(text)",
+        "definition": "CREATE OR REPLACE FUNCTION public.current_member_has_role(role_name text)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\n  select exists (\n    select 1\n    from public.choir_member_roles member_role\n    join public.roles role on role.id = member_role.role_id\n    where member_role.member_id = public.current_choir_member_id()\n      and member_role.choir_id = public.current_choir_id()\n      and role.choir_id = member_role.choir_id\n      and (\n        role.name = role_name\n        or (\n          role_name in ('Şef', 'Åef', 'Sef')\n          and role.name in ('Şef', 'Åef', 'Sef')\n        )\n        or (\n          role_name in ('Partisyon Şefi', 'Partisyon Åefi', 'Partisyon Sefi')\n          and role.name in ('Partisyon Şefi', 'Partisyon Åefi', 'Partisyon Sefi')\n        )\n      )\n  );\n$function$\n",
+        "anon_execute": true,
+        "service_execute": true,
+        "security_definer": true,
+        "authenticated_execute": true
+      },
+      {
+        "acl": "{=X/postgres,postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}",
+        "owner": "postgres",
+        "config": [
+          "search_path=\"\""
+        ],
+        "signature": "current_member_voice_group()",
+        "definition": "CREATE OR REPLACE FUNCTION public.current_member_voice_group()\n RETURNS text\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\n  select member.voice_group\n  from public.choir_members member\n  where member.id = public.current_choir_member_id()\n    and member.choir_id = public.current_choir_id()\n  limit 1;\n$function$\n",
+        "anon_execute": true,
+        "service_execute": true,
+        "security_definer": true,
+        "authenticated_execute": true
+      },
+      {
+        "acl": "{postgres=X/postgres}",
+        "owner": "postgres",
+        "config": [
+          "search_path=\"\""
+        ],
+        "signature": "genova_005.current_session_id()",
+        "definition": "CREATE OR REPLACE FUNCTION genova_005.current_session_id()\n RETURNS uuid\n LANGUAGE sql\n STABLE\n SET search_path TO ''\nAS $function$\n  select case\n    when coalesce((select auth.jwt()->>'session_id'), '') ~*\n      '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'\n    then ((select auth.jwt()->>'session_id'))::uuid\n    else null\n  end;\n$function$\n",
+        "anon_execute": false,
+        "service_execute": false,
+        "security_definer": false,
+        "authenticated_execute": false
+      },
+      {
+        "acl": "{postgres=X/postgres,authenticated=X/postgres}",
+        "owner": "postgres",
+        "config": [
+          "search_path=\"\""
+        ],
+        "signature": "set_active_choir(uuid)",
+        "definition": "CREATE OR REPLACE FUNCTION public.set_active_choir(p_choir_id uuid)\n RETURNS uuid\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare\n  caller_id uuid := (select auth.uid());\n  caller_session_id uuid := genova_005.current_session_id();\nbegin\n  if caller_id is null or caller_session_id is null then\n    raise exception 'Geçerli kullanıcı oturumu bulunamadı.' using errcode = '28000';\n  end if;\n\n  if not exists (\n    select 1\n    from public.choir_members member\n    where member.auth_user_id = caller_id\n      and member.choir_id = p_choir_id\n  ) then\n    raise exception 'Bu koro için üyelik bulunamadı.' using errcode = '42501';\n  end if;\n\n  insert into genova_005.active_choir_sessions (\n    session_id,\n    auth_user_id,\n    choir_id,\n    selected_at\n  )\n  values (caller_session_id, caller_id, p_choir_id, now())\n  on conflict (session_id) do update\n    set choir_id = excluded.choir_id,\n        selected_at = excluded.selected_at\n    where genova_005.active_choir_sessions.auth_user_id = excluded.auth_user_id;\n\n  if not found then\n    raise exception 'Oturum başka bir kullanıcıyla eşleşiyor.' using errcode = '42501';\n  end if;\n\n  return p_choir_id;\nend;\n$function$\n",
+        "anon_execute": false,
+        "service_execute": false,
+        "security_definer": true,
+        "authenticated_execute": true
+      }
+    ]
+  },
+  "sharedSiteCatalog": {
+    "sibling_relations": [
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "name": "choir_members",
+        "owner": "postgres",
+        "schema": "public",
+        "options": null,
+        "force_rls": false,
+        "definition": null,
+        "anon_insert": true,
+        "anon_select": true,
+        "authenticated_insert": true,
+        "authenticated_select": true
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "name": "collab_inquiries",
+        "owner": "postgres",
+        "schema": "public",
+        "options": null,
+        "force_rls": false,
+        "definition": null,
+        "anon_insert": true,
+        "anon_select": true,
+        "authenticated_insert": true,
+        "authenticated_select": true
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "name": "contact_messages",
+        "owner": "postgres",
+        "schema": "public",
+        "options": null,
+        "force_rls": false,
+        "definition": null,
+        "anon_insert": true,
+        "anon_select": true,
+        "authenticated_insert": true,
+        "authenticated_select": true
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": false,
+        "kind": "v",
+        "name": "public_choir_members",
+        "owner": "postgres",
+        "schema": "public",
+        "options": [
+          "security_invoker=true"
+        ],
+        "force_rls": false,
+        "definition": " SELECT id,\n    first_name,\n    last_name,\n    voice_group,\n    photo_url,\n    instagram_url,\n    linkedin_url,\n    youtube_url,\n    spotify_url,\n    tiktok_url,\n    x_url,\n    join_date,\n    is_active\n   FROM choir_members;",
+        "anon_insert": true,
+        "anon_select": true,
+        "authenticated_insert": true,
+        "authenticated_select": true
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "name": "subscribers",
+        "owner": "postgres",
+        "schema": "public",
+        "options": null,
+        "force_rls": false,
+        "definition": null,
+        "anon_insert": true,
+        "anon_select": true,
+        "authenticated_insert": true,
+        "authenticated_select": true
+      }
+    ],
+    "sibling_policies": [
+      {
+        "cmd": "DELETE",
+        "name": "Auth delete choir_members",
+        "check": null,
+        "roles": [
+          "authenticated"
+        ],
+        "table": "public.choir_members",
+        "using": "(true AND (choir_id = current_choir_id()))",
+        "permissive": "PERMISSIVE"
+      },
+      {
+        "cmd": "INSERT",
+        "name": "Auth insert choir_members",
+        "check": "(true AND (choir_id = current_choir_id()))",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "public.choir_members",
+        "using": null,
+        "permissive": "PERMISSIVE"
+      },
+      {
+        "cmd": "UPDATE",
+        "name": "Auth update choir_members",
+        "check": "(true AND (choir_id = current_choir_id()))",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "public.choir_members",
+        "using": "(true AND (choir_id = current_choir_id()))",
+        "permissive": "PERMISSIVE"
+      },
+      {
+        "cmd": "DELETE",
+        "name": "membership_admin_lockdown_006_delete",
+        "check": null,
+        "roles": [
+          "authenticated"
+        ],
+        "table": "public.choir_members",
+        "using": "((choir_id = current_choir_id()) AND false)",
+        "permissive": "RESTRICTIVE"
+      },
+      {
+        "cmd": "INSERT",
+        "name": "membership_admin_lockdown_006_insert",
+        "check": "((choir_id = current_choir_id()) AND false)",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "public.choir_members",
+        "using": null,
+        "permissive": "RESTRICTIVE"
+      },
+      {
+        "cmd": "UPDATE",
+        "name": "membership_admin_lockdown_006_update",
+        "check": "((choir_id = current_choir_id()) AND false)",
+        "roles": [
+          "authenticated"
+        ],
+        "table": "public.choir_members",
+        "using": "((choir_id = current_choir_id()) AND false)",
+        "permissive": "RESTRICTIVE"
+      },
+      {
+        "cmd": "SELECT",
+        "name": "read_choir_members",
+        "check": null,
+        "roles": [
+          "authenticated"
+        ],
+        "table": "public.choir_members",
+        "using": "(((is_active = true) OR (auth_user_id = auth.uid())) AND (choir_id = current_choir_id()))",
+        "permissive": "PERMISSIVE"
+      },
+      {
+        "cmd": "ALL",
+        "name": "tenant_isolation_003",
+        "check": "(choir_id = current_choir_id())",
+        "roles": [
+          "public"
+        ],
+        "table": "public.choir_members",
+        "using": "(choir_id = current_choir_id())",
+        "permissive": "RESTRICTIVE"
+      },
+      {
+        "cmd": "INSERT",
+        "name": "anon_insert_collab",
+        "check": "((length(name) <= 200) AND (length(email) <= 320) AND (length(message) <= 5000) AND (email ~ '^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$'::text) AND (inquiry_type = ANY (ARRAY['invite'::text, 'create'::text, 'sponsor'::text])))",
+        "roles": [
+          "anon"
+        ],
+        "table": "public.collab_inquiries",
+        "using": null,
+        "permissive": "PERMISSIVE"
+      },
+      {
+        "cmd": "INSERT",
+        "name": "anon_insert_contact",
+        "check": "((length(name) <= 200) AND (length(email) <= 320) AND (length(message) <= 5000) AND (email ~ '^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$'::text))",
+        "roles": [
+          "anon"
+        ],
+        "table": "public.contact_messages",
+        "using": null,
+        "permissive": "PERMISSIVE"
+      },
+      {
+        "cmd": "INSERT",
+        "name": "anon_insert_subscriber",
+        "check": "((email ~ '^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$'::text) AND ((name IS NULL) OR (length(name) <= 200)))",
+        "roles": [
+          "anon"
+        ],
+        "table": "public.subscribers",
+        "using": null,
+        "permissive": "PERMISSIVE"
+      }
+    ],
+    "role_attributes": [
+      {
+        "role": "anon",
+        "inherit": true,
+        "can_login": false,
+        "superuser": false,
+        "bypass_rls": false
+      },
+      {
+        "role": "authenticated",
+        "inherit": true,
+        "can_login": false,
+        "superuser": false,
+        "bypass_rls": false
+      },
+      {
+        "role": "postgres",
+        "inherit": true,
+        "can_login": true,
+        "superuser": false,
+        "bypass_rls": true
+      },
+      {
+        "role": "service_role",
+        "inherit": true,
+        "can_login": false,
+        "superuser": false,
+        "bypass_rls": true
+      }
+    ],
+    "custom_operators": null,
+    "authority_schemas": [
+      {
+        "acl": "{postgres=UC/postgres}",
+        "owner": "postgres",
+        "schema": "genova_005"
+      }
+    ],
+    "active_session_columns": [
+      {
+        "type": "uuid",
+        "column": "session_id",
+        "not_null": true
+      },
+      {
+        "type": "uuid",
+        "column": "auth_user_id",
+        "not_null": true
+      },
+      {
+        "type": "uuid",
+        "column": "choir_id",
+        "not_null": true
+      },
+      {
+        "type": "timestamp with time zone",
+        "column": "selected_at",
+        "not_null": true
+      }
+    ]
+  },
+  "prerequisites": {
+    "required_relations": [
+      {
+        "acl": "{postgres=ar*wdDxtm/supabase_auth_admin,supabase_auth_admin=arwdDxtm/supabase_auth_admin,dashboard_user=arwdDxtm/supabase_auth_admin}",
+        "rls": true,
+        "kind": "r",
+        "schema": "auth",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "user_id",
+            "type": "uuid"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "factor_id",
+            "type": "uuid"
+          },
+          {
+            "name": "aal",
+            "type": "auth.aal_level"
+          },
+          {
+            "name": "not_after",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "refreshed_at",
+            "type": "timestamp without time zone"
+          },
+          {
+            "name": "user_agent",
+            "type": "text"
+          },
+          {
+            "name": "ip",
+            "type": "inet"
+          },
+          {
+            "name": "tag",
+            "type": "text"
+          },
+          {
+            "name": "oauth_client_id",
+            "type": "uuid"
+          },
+          {
+            "name": "refresh_token_hmac_key",
+            "type": "text"
+          },
+          {
+            "name": "refresh_token_counter",
+            "type": "bigint"
+          },
+          {
+            "name": "scopes",
+            "type": "text"
+          }
+        ],
+        "relation": "sessions"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres}",
+        "rls": false,
+        "kind": "r",
+        "schema": "genova_005",
+        "columns": [
+          {
+            "name": "session_id",
+            "type": "uuid"
+          },
+          {
+            "name": "auth_user_id",
+            "type": "uuid"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          },
+          {
+            "name": "selected_at",
+            "type": "timestamp with time zone"
+          }
+        ],
+        "relation": "active_choir_sessions"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,service_role=arwdDxtm/postgres,authenticated=r/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          },
+          {
+            "name": "submission_id",
+            "type": "uuid"
+          },
+          {
+            "name": "assignment_id",
+            "type": "uuid"
+          },
+          {
+            "name": "member_id",
+            "type": "uuid"
+          },
+          {
+            "name": "created_by",
+            "type": "uuid"
+          },
+          {
+            "name": "version_number",
+            "type": "integer"
+          },
+          {
+            "name": "provider",
+            "type": "text"
+          },
+          {
+            "name": "bucket",
+            "type": "text"
+          },
+          {
+            "name": "object_key",
+            "type": "text"
+          },
+          {
+            "name": "content_length",
+            "type": "bigint"
+          },
+          {
+            "name": "mime_type",
+            "type": "text"
+          },
+          {
+            "name": "sha256_hex",
+            "type": "text"
+          },
+          {
+            "name": "file_name",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          }
+        ],
+        "relation": "assignment_review_audio_versions"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,service_role=arwdDxtm/postgres,authenticated=r/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          },
+          {
+            "name": "submission_id",
+            "type": "uuid"
+          },
+          {
+            "name": "assignment_id",
+            "type": "uuid"
+          },
+          {
+            "name": "member_id",
+            "type": "uuid"
+          },
+          {
+            "name": "version_number",
+            "type": "integer"
+          },
+          {
+            "name": "provider",
+            "type": "text"
+          },
+          {
+            "name": "bucket",
+            "type": "text"
+          },
+          {
+            "name": "object_key",
+            "type": "text"
+          },
+          {
+            "name": "content_length",
+            "type": "bigint"
+          },
+          {
+            "name": "mime_type",
+            "type": "text"
+          },
+          {
+            "name": "sha256_hex",
+            "type": "text"
+          },
+          {
+            "name": "file_name",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          }
+        ],
+        "relation": "assignment_submission_file_versions"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "assignment_id",
+            "type": "uuid"
+          },
+          {
+            "name": "member_id",
+            "type": "uuid"
+          },
+          {
+            "name": "source_submission_id",
+            "type": "uuid"
+          },
+          {
+            "name": "drive_file_id",
+            "type": "text"
+          },
+          {
+            "name": "drive_web_view_link",
+            "type": "text"
+          },
+          {
+            "name": "drive_download_link",
+            "type": "text"
+          },
+          {
+            "name": "file_name",
+            "type": "text"
+          },
+          {
+            "name": "mime_type",
+            "type": "text"
+          },
+          {
+            "name": "file_size_bytes",
+            "type": "bigint"
+          },
+          {
+            "name": "drive_member_folder_id",
+            "type": "text"
+          },
+          {
+            "name": "submitted_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "status",
+            "type": "text"
+          },
+          {
+            "name": "submission_note",
+            "type": "text"
+          },
+          {
+            "name": "reviewer_note",
+            "type": "text"
+          },
+          {
+            "name": "approved_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "approved_by",
+            "type": "uuid"
+          },
+          {
+            "name": "archived_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "archive_reason",
+            "type": "text"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          },
+          {
+            "name": "reviewer_audio_drive_file_id",
+            "type": "text"
+          },
+          {
+            "name": "reviewer_audio_file_name",
+            "type": "text"
+          },
+          {
+            "name": "reviewer_audio_mime_type",
+            "type": "text"
+          },
+          {
+            "name": "reviewer_audio_file_size_bytes",
+            "type": "bigint"
+          },
+          {
+            "name": "file_version_id",
+            "type": "uuid"
+          },
+          {
+            "name": "reviewer_audio_file_version_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "assignment_submission_history"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "assignment_id",
+            "type": "uuid"
+          },
+          {
+            "name": "member_id",
+            "type": "uuid"
+          },
+          {
+            "name": "drive_file_id",
+            "type": "text"
+          },
+          {
+            "name": "drive_web_view_link",
+            "type": "text"
+          },
+          {
+            "name": "drive_download_link",
+            "type": "text"
+          },
+          {
+            "name": "file_name",
+            "type": "text"
+          },
+          {
+            "name": "mime_type",
+            "type": "text"
+          },
+          {
+            "name": "file_size_bytes",
+            "type": "bigint"
+          },
+          {
+            "name": "drive_member_folder_id",
+            "type": "text"
+          },
+          {
+            "name": "submitted_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "status",
+            "type": "text"
+          },
+          {
+            "name": "submission_note",
+            "type": "text"
+          },
+          {
+            "name": "reviewer_note",
+            "type": "text"
+          },
+          {
+            "name": "approved_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "approved_by",
+            "type": "uuid"
+          },
+          {
+            "name": "is_revision",
+            "type": "boolean"
+          },
+          {
+            "name": "is_reviewer_note_hidden",
+            "type": "boolean"
+          },
+          {
+            "name": "reviewer_note_history",
+            "type": "jsonb"
+          },
+          {
+            "name": "submission_note_history",
+            "type": "jsonb"
+          },
+          {
+            "name": "hidden_by",
+            "type": "uuid"
+          },
+          {
+            "name": "hidden_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          },
+          {
+            "name": "reviewer_audio_drive_file_id",
+            "type": "text"
+          },
+          {
+            "name": "reviewer_audio_file_name",
+            "type": "text"
+          },
+          {
+            "name": "reviewer_audio_mime_type",
+            "type": "text"
+          },
+          {
+            "name": "reviewer_audio_file_size_bytes",
+            "type": "bigint"
+          },
+          {
+            "name": "current_file_version_id",
+            "type": "uuid"
+          },
+          {
+            "name": "reviewer_audio_file_version_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "assignment_submissions"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,service_role=arwdDxtm/postgres,authenticated=r/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          },
+          {
+            "name": "room_id",
+            "type": "uuid"
+          },
+          {
+            "name": "kind",
+            "type": "text"
+          },
+          {
+            "name": "batch_id",
+            "type": "uuid"
+          },
+          {
+            "name": "position",
+            "type": "smallint"
+          },
+          {
+            "name": "message_id",
+            "type": "uuid"
+          },
+          {
+            "name": "created_by",
+            "type": "uuid"
+          },
+          {
+            "name": "provider",
+            "type": "text"
+          },
+          {
+            "name": "bucket",
+            "type": "text"
+          },
+          {
+            "name": "object_key",
+            "type": "text"
+          },
+          {
+            "name": "content_length",
+            "type": "bigint"
+          },
+          {
+            "name": "mime_type",
+            "type": "text"
+          },
+          {
+            "name": "sha256_hex",
+            "type": "text"
+          },
+          {
+            "name": "file_name",
+            "type": "text"
+          },
+          {
+            "name": "state",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          }
+        ],
+        "relation": "chat_media_versions"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "room_id",
+            "type": "uuid"
+          },
+          {
+            "name": "sender_id",
+            "type": "uuid"
+          },
+          {
+            "name": "content",
+            "type": "text"
+          },
+          {
+            "name": "message_type",
+            "type": "text"
+          },
+          {
+            "name": "reply_to_id",
+            "type": "uuid"
+          },
+          {
+            "name": "metadata_json",
+            "type": "jsonb"
+          },
+          {
+            "name": "is_edited",
+            "type": "boolean"
+          },
+          {
+            "name": "is_deleted",
+            "type": "boolean"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          },
+          {
+            "name": "client_mutation_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "chat_messages"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "room_id",
+            "type": "uuid"
+          },
+          {
+            "name": "member_id",
+            "type": "uuid"
+          },
+          {
+            "name": "nickname",
+            "type": "text"
+          },
+          {
+            "name": "role",
+            "type": "text"
+          },
+          {
+            "name": "joined_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "last_read_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "notifications_enabled",
+            "type": "boolean"
+          },
+          {
+            "name": "hidden_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "chat_room_members"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "description",
+            "type": "text"
+          },
+          {
+            "name": "type",
+            "type": "text"
+          },
+          {
+            "name": "created_by",
+            "type": "uuid"
+          },
+          {
+            "name": "avatar_url",
+            "type": "text"
+          },
+          {
+            "name": "is_archived",
+            "type": "boolean"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "drive_folder_id",
+            "type": "text"
+          },
+          {
+            "name": "slug",
+            "type": "text"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          },
+          {
+            "name": "avatar_media_version_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "chat_rooms"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "member_id",
+            "type": "uuid"
+          },
+          {
+            "name": "role_id",
+            "type": "uuid"
+          },
+          {
+            "name": "assigned_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "choir_member_roles"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "first_name",
+            "type": "text"
+          },
+          {
+            "name": "last_name",
+            "type": "text"
+          },
+          {
+            "name": "voice_group",
+            "type": "text"
+          },
+          {
+            "name": "join_date",
+            "type": "date"
+          },
+          {
+            "name": "is_active",
+            "type": "boolean"
+          },
+          {
+            "name": "leave_date",
+            "type": "date"
+          },
+          {
+            "name": "favorite_song_id",
+            "type": "uuid"
+          },
+          {
+            "name": "birth_date",
+            "type": "date"
+          },
+          {
+            "name": "photo_url",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "school_id",
+            "type": "uuid"
+          },
+          {
+            "name": "department_id",
+            "type": "uuid"
+          },
+          {
+            "name": "linkedin_url",
+            "type": "text"
+          },
+          {
+            "name": "instagram_url",
+            "type": "text"
+          },
+          {
+            "name": "youtube_url",
+            "type": "text"
+          },
+          {
+            "name": "spotify_url",
+            "type": "text"
+          },
+          {
+            "name": "tiktok_url",
+            "type": "text"
+          },
+          {
+            "name": "x_url",
+            "type": "text"
+          },
+          {
+            "name": "auth_user_id",
+            "type": "uuid"
+          },
+          {
+            "name": "email",
+            "type": "text"
+          },
+          {
+            "name": "phone",
+            "type": "text"
+          },
+          {
+            "name": "sub_voice_group",
+            "type": "text"
+          },
+          {
+            "name": "about_text",
+            "type": "text"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "choir_members"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "title",
+            "type": "text"
+          },
+          {
+            "name": "composer",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "drive_folder_id",
+            "type": "text"
+          },
+          {
+            "name": "is_visible",
+            "type": "boolean"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "repertoire"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,service_role=arwdDxtm/postgres,authenticated=r/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          },
+          {
+            "name": "comment_id",
+            "type": "uuid"
+          },
+          {
+            "name": "song_id",
+            "type": "uuid"
+          },
+          {
+            "name": "created_by",
+            "type": "uuid"
+          },
+          {
+            "name": "provider",
+            "type": "text"
+          },
+          {
+            "name": "bucket",
+            "type": "text"
+          },
+          {
+            "name": "object_key",
+            "type": "text"
+          },
+          {
+            "name": "content_length",
+            "type": "bigint"
+          },
+          {
+            "name": "mime_type",
+            "type": "text"
+          },
+          {
+            "name": "sha256_hex",
+            "type": "text"
+          },
+          {
+            "name": "file_name",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          }
+        ],
+        "relation": "repertoire_comment_audio_versions"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "song_id",
+            "type": "uuid"
+          },
+          {
+            "name": "file_name",
+            "type": "text"
+          },
+          {
+            "name": "file_type",
+            "type": "text"
+          },
+          {
+            "name": "partition_label",
+            "type": "text"
+          },
+          {
+            "name": "drive_file_id",
+            "type": "text"
+          },
+          {
+            "name": "drive_web_view_link",
+            "type": "text"
+          },
+          {
+            "name": "drive_download_link",
+            "type": "text"
+          },
+          {
+            "name": "mime_type",
+            "type": "text"
+          },
+          {
+            "name": "file_size_bytes",
+            "type": "bigint"
+          },
+          {
+            "name": "uploaded_by",
+            "type": "uuid"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "repertoire_files"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "song_id",
+            "type": "uuid"
+          },
+          {
+            "name": "content_html",
+            "type": "text"
+          },
+          {
+            "name": "created_by",
+            "type": "uuid"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "target_voice_group",
+            "type": "text"
+          },
+          {
+            "name": "audio_drive_file_id",
+            "type": "text"
+          },
+          {
+            "name": "audio_file_name",
+            "type": "text"
+          },
+          {
+            "name": "audio_mime_type",
+            "type": "text"
+          },
+          {
+            "name": "audio_file_size_bytes",
+            "type": "bigint"
+          },
+          {
+            "name": "is_hidden",
+            "type": "boolean"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          },
+          {
+            "name": "audio_file_version_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "repertoire_song_comments"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "roles"
+      },
+      {
+        "acl": "{postgres=arwdDxtm/postgres,anon=arwdDxtm/postgres,authenticated=arwdDxtm/postgres,service_role=arwdDxtm/postgres}",
+        "rls": true,
+        "kind": "r",
+        "schema": "public",
+        "columns": [
+          {
+            "name": "id",
+            "type": "uuid"
+          },
+          {
+            "name": "song_id",
+            "type": "uuid"
+          },
+          {
+            "name": "member_id",
+            "type": "uuid"
+          },
+          {
+            "name": "assigned_by",
+            "type": "uuid"
+          },
+          {
+            "name": "assigned_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "part_name",
+            "type": "text"
+          },
+          {
+            "name": "choir_id",
+            "type": "uuid"
+          }
+        ],
+        "relation": "song_assignments"
+      }
+    ],
+    "tracked_helper_dependency_summary": {
+      "total": 329,
+      "defaults": [
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column created_by of table repertoire_pdf_annotations",
+          "depends_on": "current_choir_member_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column updated_by of table repertoire_pdf_annotations",
+          "depends_on": "current_choir_member_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column created_by of table repertoire_song_comments",
+          "depends_on": "current_choir_member_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table announcements",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table assignment_submission_audit_logs",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table assignment_submission_history",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table assignment_submission_private_notes",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table assignment_submissions",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table assignment_targets",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table assignments",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table attendance",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table chat_message_status",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table chat_messages",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table chat_notification_preferences",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table chat_poll_votes",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table chat_polls",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table chat_reactions",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table chat_room_members",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table chat_rooms",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table chat_starred_messages",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table choir_member_roles",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table choir_members",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table departments",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table profile_change_requests",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table push_subscriptions",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table rehearsal_invitees",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table rehearsals",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table repertoire",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table repertoire_cache_versions",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table repertoire_files",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table repertoire_pdf_annotations",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table repertoire_song_comments",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table repertoire_song_tags",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table repertoire_tags",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table roles",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table schools",
+          "depends_on": "current_choir_id()"
+        },
+        {
+          "kind": "pg_attrdef",
+          "object": "default value for column choir_id of table song_assignments",
+          "depends_on": "current_choir_id()"
+        }
+      ],
+      "policyDependencyEdges": 292
+    },
+    "helper_policy_reference_summary": {
+      "total": 208,
+      "perTable": {
+        "public.announcements": 9,
+        "public.assignment_review_audio_versions": 1,
+        "public.assignment_submission_audit_logs": 5,
+        "public.assignment_submission_file_versions": 1,
+        "public.assignment_submission_history": 2,
+        "public.assignment_submission_private_history": 1,
+        "public.assignment_submission_private_notes": 5,
+        "public.assignment_submissions": 7,
+        "public.assignment_targets": 8,
+        "public.assignments": 12,
+        "public.attendance": 5,
+        "public.chat_media_versions": 1,
+        "public.chat_message_hidden_members": 2,
+        "public.chat_message_status": 2,
+        "public.chat_messages": 2,
+        "public.chat_notification_preferences": 4,
+        "public.chat_poll_votes": 1,
+        "public.chat_polls": 1,
+        "public.chat_reactions": 1,
+        "public.chat_room_members": 6,
+        "public.chat_rooms": 4,
+        "public.chat_starred_messages": 1,
+        "public.choir_member_roles": 8,
+        "public.choir_members": 8,
+        "public.choirs": 1,
+        "public.departments": 8,
+        "public.profile_change_requests": 4,
+        "public.push_subscriptions": 5,
+        "public.rehearsal_invitees": 7,
+        "public.rehearsals": 7,
+        "public.repertoire": 12,
+        "public.repertoire_cache_versions": 2,
+        "public.repertoire_comment_audio_versions": 1,
+        "public.repertoire_files": 6,
+        "public.repertoire_pdf_annotations": 13,
+        "public.repertoire_song_comments": 9,
+        "public.repertoire_song_tags": 4,
+        "public.repertoire_tags": 5,
+        "public.roles": 8,
+        "public.schools": 8,
+        "public.song_assignments": 11
+      }
+    }
+  },
+  "columnComparison": {
+    "checks": [
+      {
+        "relation": "auth.sessions",
+        "column": "id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "auth.sessions",
+        "column": "user_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "genova_005.active_choir_sessions",
+        "column": "session_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "genova_005.active_choir_sessions",
+        "column": "auth_user_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "genova_005.active_choir_sessions",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "genova_005.active_choir_sessions",
+        "column": "selected_at",
+        "expected": "timestamp with time zone",
+        "actual": "timestamp with time zone"
+      },
+      {
+        "relation": "public.choir_members",
+        "column": "id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.choir_members",
+        "column": "auth_user_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.choir_members",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.choir_members",
+        "column": "is_active",
+        "expected": "boolean",
+        "actual": "boolean"
+      },
+      {
+        "relation": "public.choir_members",
+        "column": "voice_group",
+        "expected": "text",
+        "actual": "text"
+      },
+      {
+        "relation": "public.choir_member_roles",
+        "column": "member_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.choir_member_roles",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.choir_member_roles",
+        "column": "role_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.roles",
+        "column": "id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.roles",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.roles",
+        "column": "name",
+        "expected": "text",
+        "actual": "text"
+      },
+      {
+        "relation": "public.repertoire_files",
+        "column": "id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire_files",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire_files",
+        "column": "song_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.song_assignments",
+        "column": "song_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.song_assignments",
+        "column": "member_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire",
+        "column": "id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire",
+        "column": "is_visible",
+        "expected": "boolean",
+        "actual": "boolean"
+      },
+      {
+        "relation": "public.assignment_submission_file_versions",
+        "column": "id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_submission_file_versions",
+        "column": "member_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_submission_file_versions",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_review_audio_versions",
+        "column": "id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_review_audio_versions",
+        "column": "member_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_review_audio_versions",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_review_audio_versions",
+        "column": "submission_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_submissions",
+        "column": "id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_submissions",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_submissions",
+        "column": "is_reviewer_note_hidden",
+        "expected": "boolean",
+        "actual": "boolean"
+      },
+      {
+        "relation": "public.assignment_submissions",
+        "column": "reviewer_audio_file_version_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_submission_history",
+        "column": "member_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_submission_history",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.assignment_submission_history",
+        "column": "reviewer_audio_file_version_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire_comment_audio_versions",
+        "column": "id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire_comment_audio_versions",
+        "column": "comment_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire_comment_audio_versions",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire_song_comments",
+        "column": "id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire_song_comments",
+        "column": "choir_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire_song_comments",
+        "column": "audio_file_version_id",
+        "expected": "uuid",
+        "actual": "uuid"
+      },
+      {
+        "relation": "public.repertoire_song_comments",
+        "column": "is_hidden",
+        "expected": "boolean",
+        "actual": "boolean"
+      },
+      {
+        "relation": "public.repertoire_song_comments",
+        "column": "target_voice_group",
+        "expected": "text",
+        "actual": "text"
+      }
+    ],
+    "mismatches": []
+  },
+  "constraints": [
+    {
+      "schema": "auth",
+      "relation": "sessions",
+      "name": "sessions_oauth_client_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (oauth_client_id) REFERENCES auth.oauth_clients(id) ON DELETE CASCADE"
+    },
+    {
+      "schema": "auth",
+      "relation": "sessions",
+      "name": "sessions_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "schema": "auth",
+      "relation": "sessions",
+      "name": "sessions_scopes_length",
+      "type": "c",
+      "definition": "CHECK ((char_length(scopes) <= 4096))"
+    },
+    {
+      "schema": "auth",
+      "relation": "sessions",
+      "name": "sessions_user_id_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+    },
+    {
+      "schema": "genova_005",
+      "relation": "active_choir_sessions",
+      "name": "active_choir_sessions_membership_fkey",
+      "type": "f",
+      "definition": "FOREIGN KEY (choir_id, auth_user_id) REFERENCES choir_members(choir_id, auth_user_id) ON UPDATE CASCADE ON DELETE CASCADE"
+    },
+    {
+      "schema": "genova_005",
+      "relation": "active_choir_sessions",
+      "name": "active_choir_sessions_pkey",
+      "type": "p",
+      "definition": "PRIMARY KEY (session_id)"
+    }
+  ],
+  "edgeReaders": [
+    {
+      "id": "9e0c6c73-c6be-4e83-b3eb-e14d5eeb4545",
+      "slug": "repertoire-file",
+      "name": "repertoire-file",
+      "status": "ACTIVE",
+      "version": 1,
+      "created_at": 1790520710751,
+      "updated_at": 1790520710751,
+      "verify_jwt": false,
+      "import_map": false,
+      "ezbr_sha256": "b54cc7c698ce9263c11256314c048b8822cf2c6d8f8f5d6e4e916880a9d71d93"
+    },
+    {
+      "id": "76682ca5-8751-428f-982c-8bf8cf86d8aa",
+      "slug": "assignment-file",
+      "name": "assignment-file",
+      "status": "ACTIVE",
+      "version": 1,
+      "created_at": 1790520715202,
+      "updated_at": 1790520715202,
+      "verify_jwt": false,
+      "import_map": false,
+      "ezbr_sha256": "9f725c61d6c5c8125719a20ae10e1eaa018a79cb7e6902aeb08ab0dcc512b476"
+    },
+    {
+      "id": "9e553ea3-d0b6-4427-92f5-cbe2b9472db8",
+      "slug": "assignment-review-file",
+      "name": "assignment-review-file",
+      "status": "ACTIVE",
+      "version": 1,
+      "created_at": 1790520879867,
+      "updated_at": 1790520879867,
+      "verify_jwt": false,
+      "import_map": false,
+      "ezbr_sha256": "e83d19c088a1f1c34fc3507e3235c890d39c9fcf7497e90f1efe7450518ba70d"
+    },
+    {
+      "id": "c2ee8580-a5c4-40e4-aed5-d60d85a70cee",
+      "slug": "repertoire-comment-file",
+      "name": "repertoire-comment-file",
+      "status": "ACTIVE",
+      "version": 1,
+      "created_at": 1790520883159,
+      "updated_at": 1790520883159,
+      "verify_jwt": false,
+      "import_map": false,
+      "ezbr_sha256": "bbff71b4a805c4a4f88226bdf385c3c93ab5f72cd29199e4d1610abec5a7cbf9"
+    },
+    {
+      "id": "32e60441-6fa2-4890-a3ad-45682b001110",
+      "slug": "chat-media-file",
+      "name": "chat-media-file",
+      "status": "ACTIVE",
+      "version": 1,
+      "created_at": 1790520887979,
+      "updated_at": 1790520887979,
+      "verify_jwt": false,
+      "import_map": false,
+      "ezbr_sha256": "45a3449a40e15ba523707fe1eed1e01bbaeb69263c60f6a53c52cb0c8ac029d9"
+    }
+  ],
+  "queries": {
+    "Catalog": "begin transaction read only;\nselect\n  current_setting('server_version') as server_version,\n  to_regnamespace('genova_078')::text as schema078,\n  to_regnamespace('genova_090')::text as schema090,\n  to_regclass('auth.sessions')::text as auth_sessions,\n  to_regclass('genova_005.active_choir_sessions')::text as active_sessions,\n  to_regprocedure('genova_005.current_session_id()')::text as session_helper,\n  to_regclass('public.assignment_submission_file_versions')::text as assignment_versions,\n  to_regclass('public.assignment_review_audio_versions')::text as review_versions,\n  to_regclass('public.repertoire_comment_audio_versions')::text as comment_versions,\n  to_regprocedure('public.can_read_chat_media_060(uuid,uuid,uuid)')::text as chat_read,\n  to_regprocedure('public.private_file_ticket_authorized_090(uuid,uuid,uuid,text,uuid)')::text as authority090,\n  (select jsonb_agg(jsonb_build_object('signature',p.oid::regprocedure::text,\n    'owner',pg_get_userbyid(p.proowner),'security_definer',p.prosecdef,\n    'config',p.proconfig,'acl',p.proacl::text,'definition',pg_get_functiondef(p.oid),\n    'anon_execute',has_function_privilege('anon',p.oid,'EXECUTE'),\n    'authenticated_execute',has_function_privilege('authenticated',p.oid,'EXECUTE'),\n    'service_execute',has_function_privilege('service_role',p.oid,'EXECUTE')) order by p.proname)\n    from pg_proc p join pg_namespace n on n.oid=p.pronamespace\n    where (n.nspname='public' and p.proname in\n      ('current_choir_id','current_choir_member_id','set_active_choir',\n       'current_member_has_role','current_member_voice_group','can_read_chat_media_060',\n       'private_file_ticket_authorized_090'))\n      or (n.nspname='genova_005' and p.proname='current_session_id')) as helpers;\nrollback;",
+    "Impact": "begin transaction read only;\nselect\n  (select jsonb_agg(jsonb_build_object('schema',n.nspname,'name',c.relname,\n    'kind',c.relkind,'owner',pg_get_userbyid(c.relowner),'options',c.reloptions,\n    'rls',c.relrowsecurity,'force_rls',c.relforcerowsecurity,'acl',c.relacl::text,\n    'anon_select',has_table_privilege('anon',c.oid,'SELECT'),\n    'anon_insert',has_table_privilege('anon',c.oid,'INSERT'),\n    'authenticated_select',has_table_privilege('authenticated',c.oid,'SELECT'),\n    'authenticated_insert',has_table_privilege('authenticated',c.oid,'INSERT'),\n    'definition',case when c.relkind='v' then pg_get_viewdef(c.oid,true) else null end)\n    order by c.relname)\n    from pg_class c join pg_namespace n on n.oid=c.relnamespace\n    where n.nspname='public' and c.relname in\n      ('public_choir_members','choir_members','contact_messages','newsletter_subscribers','subscribers','collab_inquiries')) as sibling_relations,\n  (select jsonb_agg(jsonb_build_object('table',schemaname||'.'||tablename,\n    'name',policyname,'permissive',permissive,'roles',roles,'cmd',cmd,\n    'using',qual,'check',with_check) order by tablename,policyname)\n    from pg_policies where schemaname='public' and tablename in\n      ('choir_members','contact_messages','newsletter_subscribers','subscribers','collab_inquiries')) as sibling_policies,\n  (select jsonb_agg(jsonb_build_object('role',rolname,'superuser',rolsuper,\n    'inherit',rolinherit,'bypass_rls',rolbypassrls,'can_login',rolcanlogin) order by rolname)\n    from pg_roles where rolname in ('postgres','anon','authenticated','service_role')) as role_attributes,\n  (select jsonb_agg(jsonb_build_object('schema',n.nspname,'name',o.oprname,\n    'left',format_type(o.oprleft,null),'right',format_type(o.oprright,null))\n    order by n.nspname,o.oprname)\n    from pg_operator o join pg_namespace n on n.oid=o.oprnamespace\n    where n.nspname not in ('pg_catalog','information_schema')) as custom_operators,\n  (select jsonb_agg(jsonb_build_object('schema',n.nspname,'owner',pg_get_userbyid(n.nspowner),'acl',n.nspacl::text))\n    from pg_namespace n where n.nspname in ('genova_005','genova_078','genova_090')) as authority_schemas,\n  (select jsonb_agg(jsonb_build_object('column',a.attname,'type',format_type(a.atttypid,a.atttypmod),'not_null',a.attnotnull) order by a.attnum)\n    from pg_attribute a where a.attrelid='genova_005.active_choir_sessions'::regclass and a.attnum>0 and not a.attisdropped) as active_session_columns;\nrollback;",
+    "Prereq": "begin transaction read only;\nselect\n (select jsonb_agg(jsonb_build_object('schema',n.nspname,'relation',c.relname,'kind',c.relkind,\n   'rls',c.relrowsecurity,'acl',c.relacl::text,\n   'columns',(select jsonb_agg(jsonb_build_object('name',a.attname,'type',format_type(a.atttypid,a.atttypmod)) order by a.attnum)\n     from pg_attribute a where a.attrelid=c.oid and a.attnum>0 and not a.attisdropped))\n   order by n.nspname,c.relname)\n   from pg_class c join pg_namespace n on n.oid=c.relnamespace\n   where (n.nspname='public' and c.relname in ('choir_members','roles','choir_member_roles','repertoire_files','song_assignments','repertoire',\n     'assignment_submission_file_versions','assignment_review_audio_versions','repertoire_comment_audio_versions','assignment_submissions',\n     'assignment_submission_history','repertoire_song_comments','chat_media_versions','chat_room_members','chat_rooms','chat_messages'))\n     or (n.nspname='auth' and c.relname='sessions')\n     or (n.nspname='genova_005' and c.relname='active_choir_sessions')) as required_relations,\n (select jsonb_agg(jsonb_build_object('kind',case when d.classid='pg_proc'::regclass then 'function' when d.classid='pg_policy'::regclass then 'policy' when d.classid='pg_rewrite'::regclass then 'rewrite' else d.classid::regclass::text end,\n   'object',pg_describe_object(d.classid,d.objid,d.objsubid),\n   'depends_on',d.refobjid::regprocedure::text) order by d.classid,d.objid)\n   from pg_depend d where d.refclassid='pg_proc'::regclass and d.refobjid in\n      ('public.current_choir_id()'::regprocedure,'public.current_choir_member_id()'::regprocedure,\n       'public.set_active_choir(uuid)'::regprocedure)) as tracked_helper_dependencies,\n (select jsonb_agg(jsonb_build_object('table',schemaname||'.'||tablename,'policy',policyname,'command',cmd,'roles',roles,'permissive',permissive,'using',qual,'check',with_check)\n   order by tablename,policyname) from pg_policies where\n    coalesce(qual,'')||' '||coalesce(with_check,'') ~ '(current_choir_id|current_choir_member_id|current_member_has_role|current_member_voice_group)') as helper_policy_references;\nrollback;",
+    "Constraints": "begin read only; select n.nspname as schema,c.relname as relation,k.conname as name,k.contype as type,pg_get_constraintdef(k.oid) as definition from pg_constraint k join pg_class c on c.oid=k.conrelid join pg_namespace n on n.oid=c.relnamespace where (n.nspname='genova_005' and c.relname='active_choir_sessions') or (n.nspname='auth' and c.relname='sessions') order by n.nspname,c.relname,k.conname; rollback;"
+  },
+  "releases": {
+    "app": {
+      "source": "Earlier 2 October R0 dashboard/GitHub observation, not repeated in connector resume",
+      "revision": "a13f696da8c731e9af2a2bce473d4f4ae4a81587",
+      "status": "Ready",
+      "domain": "app.genesinovachoir.com"
+    },
+    "sibling": {
+      "source": "Fresh 2 October signed-in Vercel Production Deployment DOM",
+      "revision": "00be08678b0fc597b082e3e6255d6abef2e849e8",
+      "status": "Ready",
+      "deploymentId": "GrXZ7J1KJtbimbqGZpNS2ZU6H6Jb",
+      "deploymentHost": "genesinovachoir-djd57rmi9-genesi-nova-choirs-projects.vercel.app",
+      "displayedProductionDomain": "www.genesinovachoir.com",
+      "visitAlias": "genovasite.vercel.app"
+    }
+  },
+  "limits": [
+    "Metadata/catalog only; no user rows, files, credentials/digests or runtime RPC invocation",
+    "Provider Edge bundle hashes identify the hosted artifact, not an individual local source file or its behavior",
+    "208 policy references on 41 tables plus 329 catalog dependency edges are a bounded dependency scan, not an exhaustive authorization audit",
+    "Sibling public-directory availability inferred from dirty local source and live catalog; no public UI/data query performed",
+    "Flags are earlier same-day R0 evidence, not reread in this resume",
+    "Fresh backup/restore, exact migration/client rehearsal and R2-R5 remain NOT RUN"
+  ],
+  "newJevCostUsd": 0
+}

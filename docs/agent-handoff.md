@@ -43,13 +43,17 @@ exports PASS. Jev triage advisory5/5;1Oct20calls$0.003070494 estimate, not invoi
 **Next packet prepared:** [090 hosted approval](reports/2026-10-02-hosted-revocation-approval-packet.md)
 and [manifest](reports/090/2026-10-02-hosted-revocation-source-manifest.json), sourcebdf34b8.
 Proposed078→090/shared-site plus exactly five readers,12-module/30-import closure.
-[Authorized R0](reports/2026-10-02-hosted-revocation-r0-preflight.md) PARTIAL/NO-GO:
-exact dashboard identity/ledger through065/no078090/public090 absent, five JWTflags false,
-legacy/false flag digests, PG17.6.1.063 and current app VercelReady/Git maina13f696 verified.
-MCP project read denied; full helper/ACL/shared-view catalogs/five versionIDs/sibling provider
-alias NOT RUN. Sibling remote00be086/GitHub provider success is not its current alias proof.
-Next: restore designated read-only metadata access and finish R0; no credential/config changes
-without scope. No rows/bodies/secret values/backup/deploy; initial digest overread recorded.
+[Earlier R0](reports/2026-10-02-hosted-revocation-r0-preflight.md) PARTIAL remains historical.
+[Connected R0 completion](reports/2026-10-02-hosted-revocation-r0-connected-preflight.md):
+exact Genesinova MCP works;68 migrations/no078090/namespaces/authority absent; seven helper
+definitions/ACL,18 relation catalogs/47 selected column comparisons,329 dependency edges/208 policy
+references on41 tables captured. Shared005 helpers omit is_active; six extensions include
+Vault0.3.1. Five readers ACTIVE/version1/JWTfalse/exact bundle hashes; fresh sibling VercelReady
+00be086/production alias verified. Public-directory shared-view dependency is catalog/source
+inference, not live user-data acceptance. Appa13f696 and legacy/false flags remain earlier
+same-day evidence. R0 METADATA COMPLETE, RELEASE NO-GO; next separately approve R1 protected
+fresh backup/isolated restore/exact078→090/old-client/both-site rehearsal. No rows/bodies/secrets/
+backup/writes/deploy; initial earlier digest overread preserved, not repeated.
 R1–R5 separate authority. Pin gap320commits/849files is not bulk-push authority.
 
 [093](briefs/093-android-private-r2-read-integration.md)/`c3e1b28` preserves connected

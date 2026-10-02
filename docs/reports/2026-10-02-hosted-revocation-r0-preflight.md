@@ -1,5 +1,9 @@
 # 090 — authorized R0 metadata preflight
 
+Subsequent [connected R0 completion](2026-10-02-hosted-revocation-r0-connected-preflight.md)
+resolves the catalog/version/sibling-alias gaps below after owner connection. This earlier
+PARTIAL record and its scope deviation remain historical; no later gate or live release closed.
+
 Date: 2 October 2026; primary agent, sole writer. Entry main/cafd336.
 Result: **PARTIAL / NO-GO for release**. The bounded assessment is delivered; the
 required R0 release gate and whole090 remain open. This is not hosted revocation acceptance.

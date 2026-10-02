@@ -1,8 +1,8 @@
 # Private R2 release runbook
 
 Status: **DORMANT HOSTED BACKEND ACCEPTED27SEP;42 COPIES ACCEPTED THROUGH076; ACTIVATION OPEN**.
-2October [R0 metadata](reports/2026-10-02-hosted-revocation-r0-preflight.md) is PARTIAL/NO-GO,
-not hosted access/provider acceptance.070–076 own historical real
+2October [connected R0 metadata](reports/2026-10-02-hosted-revocation-r0-connected-preflight.md)
+is COMPLETE, RELEASE NO-GO; not hosted access/provider acceptance.070–076 own historical real
 inventory/copy evidence;077 is an unexecuted next-ten approval packet.
 Owner: release operator designated by the product owner. This is the single 053–065 release index;
 individual briefs remain the acceptance authority for each local implementation.
@@ -12,9 +12,11 @@ individual briefs remain the acceptance authority for each local implementation.
 [090 approval packet](reports/2026-10-02-hosted-revocation-approval-packet.md) pins proposed
 078→090 and only five reader closures to main/bdf34b8. Local web/Android/iOS PDF/audio/permanent
 WebView recovery and old-ticket denial now have bounded evidence; hosted/current old-client,
-sibling-site, fresh backup/restore and phone/release gates remain open. R0 dashboard/release
-observations are recorded; required catalog/ACL/version/sibling evidence remains unavailable.
-Next is designated read-only metadata access and remaining R0; no live write, bulk db push, five-reader
+sibling-site functional compatibility, fresh backup/restore and phone/release gates remain open.
+R0 exact connector/catalog/ACL/five bundle versions/sibling current alias now recorded, including
+missing078090, inactive-member helper gap and shared public-directory dependency. Next separately
+approve R1 protected fresh recovery and isolated exact migration/old-client/both-site rehearsal.
+No live write, bulk db push, five-reader
 deployment, provider/copy/activation or main promotion is authorized by this runbook.
 Historical order below remains the053–065 baseline, not permission to replay it.
 

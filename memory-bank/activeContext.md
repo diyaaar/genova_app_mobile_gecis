@@ -44,12 +44,16 @@ exports PASS. Jev advisory5/5;1Oct20calls$0.003070494 estimate, not invoice.
 **Next packet prepared:** [090 hosted approval](../docs/reports/2026-10-02-hosted-revocation-approval-packet.md)
 and [manifest](../docs/reports/090/2026-10-02-hosted-revocation-source-manifest.json), sourcebdf34b8.
 Proposed078→090 and five readers,12-module/30-import closure; shared-site/old-client gates explicit.
-[Authorized R0](../docs/reports/2026-10-02-hosted-revocation-r0-preflight.md) PARTIAL/NO-GO:
-exact dashboard/ledger through065/no078090/public090 absent, five JWTflags false, legacy/false
-flags and PG17.6.1.063 verified. Current app Git main/VercelReadya13f696; sibling remote00be086/
-GitHub provider success only. MCP project read denied; full catalog/ACL/five versionIDs/sibling
-alias unrun. Next: designated read-only metadata access, then remaining R0. No rows/bodies/
-secret values/backup/mutations/deploy; initial digest overread recorded. R1–R5 separate authority.
+[Earlier R0](../docs/reports/2026-10-02-hosted-revocation-r0-preflight.md) PARTIAL retained.
+[Connected R0 completion](../docs/reports/2026-10-02-hosted-revocation-r0-connected-preflight.md):
+correct MCP now works;68 migrations/no078090/authority absent; seven helper ACL/definitions,
+18 relation catalogs/47 selected column checks,329 dependency edges/208 policy references on41 tables.
+Shared005 helpers omit is_active. Six extensions include Vault; five readers version1/JWTfalse/
+bundle IDs verified, sibling VercelReady00be086/alias fresh. Public-directory dependency inferred
+from catalog/dirty local source, not production-user-data testing. Earlier appa13f696/legacyfalse
+flags remain dated. R0 METADATA COMPLETE, RELEASE NO-GO; next separate R1 protected fresh backup/
+isolated restore/exact078→090/both-site/old-client rehearsal. No rows/bodies/secrets/backup/
+mutations/deploy; prior digest overread retained, not repeated. R1–R5 separate authority.
 Source gap320commits/849files not bulk-push permission. No runtime/new inference.
 
 [093](../docs/briefs/093-android-private-r2-read-integration.md)/`c3e1b28`: connected local

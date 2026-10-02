@@ -1,5 +1,15 @@
 # İlerleme indeksi
 
+2 October — [090 connected R0 completion](../docs/reports/2026-10-02-hosted-revocation-r0-connected-preflight.md),
+entryef33e21/sourcepinbdf34b8. Owner connection resolves exact Genesinova MCP access.68 migrations/
+no078090; seven helper definitions/ACL,18 relation catalogs/47 selected source column checks;329 dependency
+edges/208 policy references on41 tables. Shared005 active predicate missing; six extensions include
+Vault0.3.1; five ACTIVE/version1/JWTfalse bundle hashes and fresh sibling VercelReady00be086/alias.
+Public-directory dependency is catalog/source inference, not live rows/UI proof. R0 METADATA COMPLETE,
+RELEASE NO-GO; next separate R1 fresh protected backup/isolated exact SQL/old-client/both-site rehearsal.
+Earlier partial/gap/digest scope deviation retained; no new secret reading, user rows/export/writes,
+provider/CI/push/runtime/inference; Jev$0. Whole090/R1–R5 remain open.
+
 2 October — [090 authorized R0 metadata](../docs/reports/2026-10-02-hosted-revocation-r0-preflight.md),
 entrycafd336/sourcepinbdf34b8, PARTIAL/NO-GO. Correct signed-in Genesinova dashboard identity,
 ledger through065/no078090/public090 authority absent, five reader JWTflags false, legacy/false

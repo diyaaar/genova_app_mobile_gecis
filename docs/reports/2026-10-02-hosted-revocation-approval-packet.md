@@ -1,9 +1,11 @@
 # 090 — source-pinned hosted revocation approval packet
 
-Subsequent authorized [R0 metadata assessment](2026-10-02-hosted-revocation-r0-preflight.md)
-is PARTIAL/NO-GO. Its dated observations supersede the preparation's unrun metadata state
-below, not its pinned source or R1–R5 authority. Remaining catalog/ACL/version/sibling gates
-must pass before recovery/release progression; no hosted mutation occurred.
+Subsequent authorized [partial R0](2026-10-02-hosted-revocation-r0-preflight.md) and
+[connected R0 completion](2026-10-02-hosted-revocation-r0-connected-preflight.md) supersede
+the preparation's unrun metadata state below, not its pinned source or R1–R5 authority.
+R0 metadata is complete; live release remains NO-GO. Exact078/090 absent, inactive-helper
+gap and sibling public-directory dependency identified. Next separately approve R1 fresh
+protected recovery and isolated compatibility rehearsal; no hosted mutation occurred.
 
 Date: 2 October 2026. Source: main/bdf34b80a239fe7a69188746e5543caf3b12cbf3.
 Outcome: **PREPARATION COMPLETE; LIVE RELEASE NO-GO until the external gates below pass**.
