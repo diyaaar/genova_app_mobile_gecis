@@ -193,3 +193,36 @@ SafeAreaView/punycode/npm-config warnings retained. Guard-off normal Android the
 flags removed. [Preparation/gates metadata](090/2026-10-02-ios-legacy-resume-preparation.json)
 is not accepted HTTP/native evidence. Current free14614932KiB at15:03Turkey, abovefloor.
 Primary scoped self-review only; no source/lockfile/product or authority change.
+
+Owner-assisted resume1,15:29–15:32Turkey: owner reports actual click. Observer records
+native GET401/provider0, HEAD401/provider0, exactly one POST200/provider0, GET200/provider1.
+Actual iOS screen shows native PDF/hash PASS65905B and open share sheet with PDF thumbnail;
+agent uses exposed AX PopoverDismissRegion Cancel, then actual share sheet returned visible.
+Agent clicks actual Koro B once; cache clears and actual Shared B/profile bridge observed.
+However fixture30minutehold expired before old-URL evidence request: complete fixtureexit1,
+093 Android hold timed out; B switch FAIL trace means observer unavailable, not Auth switch
+failure or demonstrated product denial defect. Accepted HTTP remains absent. Preserve failure;
+PDF/hash/share and B profile/cache are partial PASS, old HEAD403/provider0/fixtureexit0 NOT RUN.
+No fake HTTP record, timeout extension, relaxed assertion or fixture-success signal after expiry.
+
+Bounded changed approach: actual owner input now works and AX Cancel/B actions are proven.
+Reuse current genuine task DB/schema/web and already normally signed app; no rebuild/image
+download/source change/gate rerun. Inspect current B cache before removing old synthetic
+device session, shutdown/erase exact owned607D43A7 device (no shared/user device), fresh boot
+and one fresh fixture/one-use Auth, new IDs in same disposable target. Keep timeout/matrix
+unchanged; ask owner promptly for the real file link once, then agent handles share dismissal
+and B. New allocation only one measured owned-device replacement; preflight remains mandatory.
+The same full objective is retained, not a new narrower goal. APIcost$0, no hosted action.
+
+Resume2 preparation15:33–15:34Turkey: exact owned old cache root absent after B in container
+39F23818-EF2C-47DF-A7A1-FB9025467F7D. Exact owned device terminate/shutdown/erase exit0;
+no user/shared-device/global cache removed. Fresh device replacement preflight16566108
+minus3355444=13210664KiB abovefloor/safety, boot28s; same app installed/launch1276, no build.
+New fixture listenerNode1216/session9263/Deno1232, READY~15:34/hold~16:04; existing web98957/
+session64842/SSH98620 and four services/schema reused. Actual new A page/bridge observed;
+separate explicit prelaunch legacy GET401/provider0, no native file reads yet. Owner asked
+actual file once plus native Devam et once and leave share sheet; agent now has proven AX
+Cancel/B actions. Do not repeat file click/B or global signOut; fixture owns unchanged accepted
+HTTP only after matrix. Current14780068KiB abovefloor. Gates already fresh before this
+unchanged-source runtime retry, not rerun. Exact cleanup at final dependent check/expiry;
+do not preserve generated environment as history or rebuild while awaiting input.
