@@ -716,3 +716,23 @@ session9263 READY~15:34Turkey/expires~16:04, actual fresh A observed; owner aske
 once/leave share. Agent AX Cancel/B now proven. Full original objective/matrix unchanged;
 required old denial/fixtureexit0/immutable artifact still NOT RUN. Source/backups/caches and
 unrelated CLI marker preserved; APIcost$0, hosted/release/product remains unaccepted.
+
+### 2 October — full local legacy iOS WebView goal accepted and cleaned
+
+[Final resume2 record](../docs/reports/2026-10-02-ios-legacy-webview-acceptance.md): owner actual
+file/Devam et, actual native GET401/HEAD401→exactly one authorityPOST200→GET200,
+verified65905B/hash and real share sheet/AX Cancel return PASS. Actual native B/profile,
+ephemeral cache absent, old A HEAD403/provider0 PASS. [Fixture-owned immutable HTTP](../docs/reports/090/connected-ios-legacy-webview-http.json)
+written after unchanged matrix; complete session9263 exit0/signalnull including distinct-session
+and inactive-membership/foreign-context checks. No early global signOut. Initial blocked
+and resume1 expired attempts remain failed, not relabeled or overwritten. Sourceb29e24b
+unchanged; dated root111/1130, fresh resume mobile55/406/guard-off normal Android+iOS exports,
+normally signed app/exact secret boundary retained, no runtime-retry rebuild/test claim.
+[Fresh five-table preservation](../docs/reports/090/2026-10-02-ios-legacy-accepted-source-preservation.json)
+at12:43UTC unchanged28/1/29/9/79/all hashes. Exact owned device/services/VMroot/data/Lima disk/
+processes/ports/generated outputs removed; final15:44 free19873272KiB abovefloor. Source,
+backups/private journals/dependencies/AVD/global caches and unrelated CLI marker preserved.
+One measurable local goal complete, not whole090/hosted/physical-device/beta/product acceptance.
+No new Jev call/key use/APIcost$0, hosted/push/deploy/CI/real data/external share action.
+Next ready checkpoint:090 hosted/release authority packet with backup/restore, sibling-site
+impact and DB→Edge→clients sequence; no live mutation before concrete approval.

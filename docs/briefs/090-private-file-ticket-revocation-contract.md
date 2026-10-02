@@ -8,12 +8,25 @@ connected native iOS PDF/Auth/RLS/B-switch also PASS ([iOS record](../reports/20
 Connected iOS audio also PASS ([audio record](../reports/2026-10-01-connected-ios-audio-acceptance.md));
 Current-assignment iOS WebView also PASS ([2 October goal](../reports/2026-10-02-ios-assignment-measurable-goal.md));
 current Android audio afterdb6cc93 PASS ([fresh record](../reports/2026-10-02-android-audio-player-id-acceptance.md)).
-Legacy-v1 iOS WebView recovery, hosted and release gates remain open. Primary agent,
-single writer. No hosted release authority.
+Legacy-v1 iOS WebView recovery now PASS locally ([2 October acceptance](../reports/2026-10-02-ios-legacy-webview-acceptance.md));
+hosted and release gates remain open. Primary agent, single writer. No hosted release authority.
 One result: uniform online next-request access-after-revocation for five private file
 families before `mixed`/`r2-required` cutover. This brief does not authorize live writes.
 
 ## Work card / transition start check
+
+### 2 October — local legacy iOS goal accepted, owned runtime removed
+
+Sourceb29e24b; [final record](../reports/2026-10-02-ios-legacy-webview-acceptance.md).
+Owner-assisted resume2 actual native GET401/HEAD401, one POST200/GET200, verified65905B/hash,
+actual system share sheet/Cancel return, B cache clearing and old HEAD403/provider0 PASS.
+Unchanged full fixtureexit0/signalnull; [immutable fixture-owned HTTP](../reports/090/connected-ios-legacy-webview-http.json).
+Fresh original five-table hashes/counts unchanged, dated source/root/mobile/export gates
+retained honestly. All owned device/VM/root/data/processes/ports/generated outputs removed;
+final15:44 free19873272KiB abovefloor. Earlier blocked/expired attempts remain failures.
+No product/Auth/RLS change, hosted/push/deploy/CI/external share or new inference; APIcost$0.
+This measurable goal closes, not whole090/beta/product. Next ready boundary is concrete
+hosted/release approval packet with backup/restore, sibling impact and DB→Edge→clients order.
 
 ### 2 October — owner-assisted legacy iOS acceptance resume
 
@@ -200,7 +213,7 @@ provider copy, push/deploy and actual Android/iOS device checks remain separatel
 | Decision #32 and 090 cross-links/consistency | Yes for this record | PASS | 30 September local link scan, `git diff --check` and scoped self-review; no source or runtime gate claimed |
 | Legacy v1 denial and compatibility checkpoint approved | Yes before implementation | PASS locally | Owner approved bounded local work on 30 September; v1 GET/HEAD now returns 401 in local tests. Hosted release was not approved. |
 | Five-family DB/Edge implementation and synthetic two-choir acceptance | Yes after contract selection | PASS locally | Disposable PG17 SQL matrix; service-only RPC; real local Auth/RLS/PostgREST/Edge + signed loopback S3 for repertoire; A/B same and separate sessions. Details below. |
-| Web/native client recovery and required gates | Yes locally | PARTIAL | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and permanent Android WebView recovery PASS locally. Five serial HTTP readers PASS historically; 1October overlap uses dependency/psql adapters, not fresh Auth/PostgREST. Connected native Android audio originally at6fed2ac, current player-id regression on2October also PASS with declared v1/client-deadline/old-v2 faults. Current assignment-version Android WebView at216b996 and iOS atf7c2b22 PASS, explicit local adapters. Native iOS PDF/audio/full fixtureexit0 PASS in linked records. Legacy-v1 iOS WebView recovery and hosted/release layers remain NOT RUN; no whole090 closure. |
+| Web/native client recovery and required gates | Yes locally | PASS locally / hosted NOT RUN | Chrome PDF recovery, connected Android native stale-v1→v2 PDF/cache/switch and permanent Android WebView recovery PASS locally. Five serial HTTP readers PASS historically; 1October overlap uses dependency/psql adapters, not fresh Auth/PostgREST. Connected native Android audio originally at6fed2ac, current player-id regression on2October also PASS with declared v1/client-deadline/old-v2 faults. Current assignment-version Android WebView at216b996 and iOS atf7c2b22 PASS, explicit local adapters. Native iOS PDF/audio/full fixtureexit0 PASS in linked records. Legacy-v1 iOS WebView recovery/share/B old403/provider0 and unchanged full fixtureexit0 PASS in2October final record; hosted/release layers remain NOT RUN, no whole090 closure. |
 | Hosted cutover/public Drive withdrawal/offline deletion/device/beta | Later separate authority | NOT RUN | This preparation cannot accept these layers |
 
 Required NOT RUN keeps 090 open. This local implementation may be committed as a partial checkpoint;

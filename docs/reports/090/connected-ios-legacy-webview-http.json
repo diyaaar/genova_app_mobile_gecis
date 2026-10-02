@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-10-02T12:40:16.174Z",
+  "result": "PASS",
+  "platform": "ios",
+  "family": "repertoire-file",
+  "consumer": "legacy-v1 permanent WebView recovery",
+  "reads": [
+    {
+      "method": "GET",
+      "status": 401,
+      "providerDelta": 0
+    },
+    {
+      "method": "GET",
+      "status": 401,
+      "providerDelta": 0
+    },
+    {
+      "method": "HEAD",
+      "status": 401,
+      "providerDelta": 0
+    },
+    {
+      "method": "POST",
+      "status": 200,
+      "providerDelta": 0
+    },
+    {
+      "method": "GET",
+      "status": 200,
+      "providerDelta": 1
+    },
+    {
+      "method": "HEAD",
+      "status": 403,
+      "providerDelta": 0
+    }
+  ],
+  "contentLength": 65905,
+  "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3",
+  "boundary": "Actual local Auth/RLS/Deno and iOS permanent WebView; declared listener/URL relay; signature-verified synthetic storage, not hosted."
+}

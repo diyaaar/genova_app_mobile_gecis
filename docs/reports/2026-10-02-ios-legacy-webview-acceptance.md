@@ -4,9 +4,10 @@ Date: 2 October 2026. Base main/f63aa49. Sole primary writer; scoped self-review
 Scope: the missing legacy-v1 consumer in [090](../briefs/090-private-file-ticket-revocation-contract.md),
 not a current-version assignment rerun, hosted cutover, usable beta or whole product acceptance.
 Repertoire remains native; chorist-detail/profile remain permanent WebView.
-Current outcome: **IN PROGRESS / owner-assisted runtime retry, not accepted**.
-Earlier blocked closeout/failures remain below. The latest resume/ownership is at the end;
-no full native/HTTP acceptance yet. Do not reuse the first attempt's removed environment.
+Current outcome: **PASS / complete local iOS legacy-WebView acceptance goal, 2 October15:40Turkey**.
+Earlier blocked closeout and resume1 expiry remain historical below. The final accepted
+resume2 evidence is at the end; all owned runtime outputs have been removed. Whole090,
+hosted cutover, physical-device/store and usable-beta acceptance remain open.
 
 ## First attempt evidence — historical, before owner-assisted resumes
 
@@ -227,3 +228,49 @@ Cancel/B actions. Do not repeat file click/B or global signOut; fixture owns unc
 HTTP only after matrix. Current14780068KiB abovefloor. Gates already fresh before this
 unchanged-source runtime retry, not rerun. Exact cleanup at final dependent check/expiry;
 do not preserve generated environment as history or rebuild while awaiting input.
+
+## Final accepted resume2 — 2 October15:39–15:44Turkey
+
+Owner reports actual file click/native Devam et and opening. Actual CUA native trace shows
+PDF/hash PASS65905B and share sheet RUNNING; real system sheet has PDF thumbnail66KB.
+Agent invokes exposed PopoverDismissRegion Cancel (no recipient or external send), observes
+actual share sheet returned, then clicks actual Koro B once. Native trace shows ephemeral
+clear PASS twice and old A URL PASS403/no provider repertoire-file. Actual Shared B/profile
+and bridge running:profile visible. Verified owned container05D19490-1F55-4557-8A4A-516968ECB866
+belongs to device607D43A7; Library/Caches/genova-webview-files absent. No global signOut
+before fixture tail. Exact listener1216 identity/port verified, then SIGTERM; session9263
+completes exit0/signalnull, all unchanged091/090 assertions pass. Deno/provider finally exits.
+
+| Required criterion | Result | Evidence / boundary |
+| --- | --- | --- |
+| Explicit immutable ios-only evidence guard and unchanged assertions | PASS | Source/testb29e24b,29 focused cases; fixture wx-write after legacy matrix; no timeout/assertion relaxation |
+| Isolated services and normally signed actual native app | PASS | Resume preparation above and [metadata](090/2026-10-02-ios-legacy-resume-preparation.json); actual local Auth/RLS/Deno, iOS26.5 permanent WebView; signed app reused for resume2, not rebuilt |
+| Actual native stale GET/HEAD denial and exactly one renewal | PASS | [Fixture-owned HTTP](090/connected-ios-legacy-webview-http.json): separate prelaunch GET401/provider0, actual native GET401/HEAD401/provider0, exactly one POST200/provider0 then GET200/provider1 |
+| Native body/hash and actual share sheet return | PASS | Native verified65905B/SHA25639fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3, actual sheet thumbnail and AX Cancel return; no external sharing |
+| Actual B/cache and old A URL denial without provider | PASS | Native B trace/Shared B/profile observed, exact cache absent; HTTP HEAD403/provider0 in same real native Auth session |
+| Unchanged complete fixture exit0 | PASS | Session9263 exit0/signalnull; PASS090 matrix and PASS091 signed bytes48/PDF65905, actual Auth/RLS foreign-user/context POST refusals, separate Auth-session preservation and inactive-membership denial; generic historical log label Android is not the explicit ios mode |
+| Root/mobile and normal Android+iOS export gates | PASS, dated | Unchanged-source root pnpm check111files1130tests earlier2Oct; fresh resume mobile TypeScript55suites406tests and sequential guard-off Android/iOS1440modules each exit0. No new run claimed after runtime-only retry; warnings above retained |
+| Fresh original five-table preservation | PASS | [Final comparison](090/2026-10-02-ios-legacy-accepted-source-preservation.json) at12:43:24UTC, original local068 counts28/1/29/9/79 and all ordered hashes identical; read-only, no rows copied |
+| Exact owned cleanup and measured resource floor | PASS | Web session64842 exit0; exact owned device terminate/shutdown/delete; normal Supabase stop --no-backup exit0; genova090 --data deletion exit0. All five listeners/PIDs/profile/root/data/Lima disk absent; final15:44 free19873272KiB (~18.95GiB), above10GiBfloor |
+| Scoped document/link/diff/credential and evidence checks | PASS | Final local checks recorded below; primary self-review only, not independent review or hosted acceptance |
+
+Cleanup removed only validated ignored, realpath/non-symlink, untracked task outputs:
+.next82996KiB, mobile.expo8536KiB, spike090runtime308KiB, empty093runtime,
+signedapp46596KiB. Native intermediates already removed and remain absent. The one owned
+device, VM/root/data/four containers are gone. Outputs are regenerable; no user/shared-device
+data, original068/backups/private journals/source/lockfiles/dependencies/AVD/global caches
+removed. Unrelated supabase/.temp/cli-latest remains unstaged. No push/deploy/hosted/CI action.
+
+This closes only the original measurable local legacy-iOS goal. Resume1 expired failure and
+initial input-blocked failure are not relabeled PASS. Sourceb29e24b and final separate
+docs/evidence commit travel together locally. No product/Auth/RLS behavior change in this
+goal. The declared listener/URL relay and signature-verified synthetic storage are not a
+real R2 provider or hosted rollout. Incremental Jev APIcost$0, no new call/key use.
+Next ready checkpoint:090 hosted/release backup/restore, sibling-site impact and DB→Edge→client
+rollout approval packet before any live mutation; preserve Android-first delivery queue.
+
+Final document verification PASS:226 local Markdown links in five owned records resolve;
+scoped credential-format scan clean; fixture HTTP exact six-entry matrix/body/hash/platform
+and original source before/after equality verified; exact owned outputs/profile/root/data/
+disk/device/listeners absent. git diff --check PASS. Source and lockfiles unchanged; only
+seven owned docs/evidence files staged for final090 commit, unrelated CLI marker excluded.

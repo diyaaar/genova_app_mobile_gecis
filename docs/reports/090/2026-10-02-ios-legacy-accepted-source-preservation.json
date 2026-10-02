@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-10-02T12:43:24.126Z",
+  "result": "PASS",
+  "boundary": "Read-only ordered row hashes/counts in original local genova_068_test_restore; no rows copied; not hosted.",
+  "before": [
+    {"table":"auth.users","count":28,"md5":"83d808f0bc6604be8657b12f6683ba54"},
+    {"table":"public.choirs","count":1,"md5":"cf1b288bff11e3426135dd16e83b120f"},
+    {"table":"public.choir_members","count":29,"md5":"e3f4b42d461f7232043c03fa7aa5a227"},
+    {"table":"public.repertoire","count":9,"md5":"992b78f6e19e8edb2539cb7e09a3e214"},
+    {"table":"public.repertoire_files","count":79,"md5":"4b53f243989c81a2e71f7998035b8a3d"}
+  ],
+  "after": [
+    {"table":"auth.users","count":28,"md5":"83d808f0bc6604be8657b12f6683ba54"},
+    {"table":"public.choirs","count":1,"md5":"cf1b288bff11e3426135dd16e83b120f"},
+    {"table":"public.choir_members","count":29,"md5":"e3f4b42d461f7232043c03fa7aa5a227"},
+    {"table":"public.repertoire","count":9,"md5":"992b78f6e19e8edb2539cb7e09a3e214"},
+    {"table":"public.repertoire_files","count":79,"md5":"4b53f243989c81a2e71f7998035b8a3d"}
+  ]
+}
