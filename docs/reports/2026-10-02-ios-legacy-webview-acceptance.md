@@ -148,3 +148,48 @@ Incremental Jev APIcost$0; skills keep deterministic authorization/evidence sepa
 Document-only closeout verification PASS: five updated Markdown records/212 existing local
 links, JSON before/after equality for all five source tables, scoped credential-format scan,
 and git diff --check. No product gate rerun or self-review promoted to independent review.
+
+## Owner-assisted resume — 2 October, after blocked closeout
+
+Owner reports readiness. The original failed/NOT RUN evidence above stays historical;
+the input prerequisite is now owner assistance, not an automation repair claim. Same full
+objective and unchanged legacy HTTP matrix. Starting main/50bf979, source unchanged,
+only unrelated CLI marker dirty. Fresh preflight free20264192KiB, unused owned ports and
+no prior task environment/device/build. Resource caps/ownership/three actions in090 start card.
+Reviewed and recovered temporary same-thread controller sources via apply_patch only.
+CLI2.107.0 retained; no upgrade. New-format factory-key/JWT/DSN masking active before output.
+CLI start exit0 with normal health checks/four actual services. CLI warns about historical
+exclude aliases; actual only DB/Auth/Kong/REST running, no health bypass or hosted action.
+Schema-only268085B restored to verified empty task target, same committed chain, grants f/f/t.
+Source-before five counts/hashes match prior closeout. Guarded web/new normally signed native
+build then connected owner-assisted UI; native required result still NOT RUN until observed.
+Prior root111/1130/mobile55/406/normal export gates are unchanged-source dated results, not
+new runs in this resume. Remove owned web cache after last build; stop VM during native build;
+remove native intermediates before owned-device boot/runtime. Incremental Jev APIcost$0.
+
+Resume preparation PASS: guarded web build exit0/24266ms; native normal signed Release
+exit0/172422ms,1116 warning matches/no compiler-error lines. Native projection16253056
+minus3145728=13107328KiB; low13762752, after13716712, intermediate cleanup16167640.
+Bundle2390487B/8d68db65049939770176cf62846bc7e3574ac487663cb9ddf03f308bf28cc411;
+actual current CLI anon present and exact SECRET_KEY/SERVICE_ROLE_KEY/JWT_SECRET absent,
+verified again after same-VM restart. No public password or service secret.
+Device preflight15931416 minus3355444=12575972KiB; owned iOS26.5 device
+607D43A7-25AC-47A0-8701-9D7EB28F3F58, boot25s, bundle launched99259. Actual one-use
+Auth and permanent A bridge running:chorister-detail/090 Web Hedef visible at15:01Turkey.
+Fixture READY~15:01/hold~15:31. Explicit separate prelaunch GET401/provider0, not native
+baseline; actual file/confirmation/share/B still NOT RUN until observed. Owner asked once
+to click actual file link and leave confirmation. Do not relaunch/reload/sign out or repeat
+file click; unchanged exactly-one-renewal matrix. Runtime same-task retention only to hold
+expiry, sufficient headroom and concrete pending click; no accepted HTTP JSON yet.
+Owned fixture listenerNode99201/session48478/Deno99227, webNode98957/session64842,
+SSH98620; verify identities before signaling. VM config portForwarder:none retained;
+actual host54491/54492/8000/18092/31090 listeners are loopback only. Native intermediates
+already removed; .next/mobile.expo/signedapp/spike090/093/device/VM/data remain
+owned until last dependent check. No actual share/external recipient action yet.
+
+Fresh resume mobile gate PASS: TypeScript/55 Jest suites406 tests,3.797s; unchanged
+SafeAreaView/punycode/npm-config warnings retained. Guard-off normal Android then iOS exports
+1440modules each/exit0, EXPO_NO_DOTENV=1, synthetic public export-only settings and acceptance
+flags removed. [Preparation/gates metadata](090/2026-10-02-ios-legacy-resume-preparation.json)
+is not accepted HTTP/native evidence. Current free14614932KiB at15:03Turkey, abovefloor.
+Primary scoped self-review only; no source/lockfile/product or authority change.

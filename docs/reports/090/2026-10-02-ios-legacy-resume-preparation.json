@@ -1,0 +1,89 @@
+{
+  "timestamp": "2026-10-02T12:04:59.757Z",
+  "boundary": "Preparation and gates only; actual native file acceptance pending",
+  "build": {
+    "entryFreeKiB": 16332336,
+    "steps": [
+      {
+        "cmd": "pnpm build",
+        "code": 0,
+        "signal": null,
+        "ms": 24266,
+        "lowFreeKiB": 15928640,
+        "afterFreeKiB": 15864876,
+        "warningMatches": 0,
+        "errorLines": 0
+      },
+      {
+        "cmd": "colima stop genova090",
+        "code": 0,
+        "signal": null,
+        "ms": 12351,
+        "lowFreeKiB": 15863064,
+        "afterFreeKiB": 15862812,
+        "warningMatches": 0,
+        "errorLines": 0
+      },
+      {
+        "cmd": "npx expo prebuild --platform ios --no-install",
+        "code": 0,
+        "signal": null,
+        "ms": 1004,
+        "lowFreeKiB": 16253056,
+        "afterFreeKiB": 16252328,
+        "warningMatches": 0,
+        "errorLines": 0
+      },
+      {
+        "cmd": "pod install --no-repo-update",
+        "code": 0,
+        "signal": null,
+        "ms": 21127,
+        "lowFreeKiB": 15022532,
+        "afterFreeKiB": 14985480,
+        "warningMatches": 0,
+        "errorLines": 0
+      },
+      {
+        "cmd": "xcodebuild -workspace ios/Genova.xcworkspace -scheme Genova -configuration Release -sdk iphonesimulator -destination generic/platform=iOS Simulator ARCHS=arm64 ONLY_ACTIVE_ARCH=YES -jobs 2 -derivedDataPath /Users/alidiyarduran/Antigravity/genovakorist/spike/090-ios-native-build build",
+        "code": 0,
+        "signal": null,
+        "ms": 172422,
+        "lowFreeKiB": 13762752,
+        "afterFreeKiB": 13716712,
+        "warningMatches": 1116,
+        "errorLines": 0
+      }
+    ],
+    "bundle": {
+      "bytes": 2390487,
+      "sha256": "8d68db65049939770176cf62846bc7e3574ac487663cb9ddf03f308bf28cc411",
+      "publicAnonPresent": true,
+      "serviceAbsent": true
+    },
+    "afterNativeCleanupKiB": 16167640
+  },
+  "gates": {
+    "timestamp": "2026-10-02T12:03:08.763Z",
+    "steps": [
+      {
+        "cmd": "npm run check -- --runInBand",
+        "code": 0,
+        "signal": null,
+        "modules": null
+      },
+      {
+        "cmd": "npx expo export --platform android --output-dir .expo/090-normal-android",
+        "code": 0,
+        "signal": null,
+        "modules": "1440"
+      },
+      {
+        "cmd": "npx expo export --platform ios --output-dir .expo/090-normal-ios",
+        "code": 0,
+        "signal": null,
+        "modules": "1440"
+      }
+    ]
+  }
+}

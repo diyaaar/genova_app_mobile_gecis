@@ -36,7 +36,7 @@ exports PASS. Jev triage advisory5/5;1Oct20calls$0.003070494 estimate, not invoi
 `180108a` [WebView preflight](reports/2026-10-01-ios-webview-source-preflight.md): platform-specific wx evidence,19focused/root110/1118/mobile55/406/exports PASS, not native;090/hosted/beta remain open.
 
 2Oct [iOS current-assignment](reports/2026-10-02-ios-assignment-measurable-goal.md)/f7c2b22 and [current Android audio](reports/2026-10-02-android-audio-player-id-acceptance.md)/9bd442e PASS within their recorded local boundaries; earlier failures retained.
-**Blocked local goal:** [iOS legacy-v1 WebView](reports/2026-10-02-ios-legacy-webview-acceptance.md), helperb29e24b. Signed Release/actual Auth+A page/root111/1130/mobile55/406/normal exports PASS; PDF/share/B NOT RUN, complete fixtureexit1 after no file click, accepted HTTP absent. Same owner-input/CUA-coordinate blocker verified >=3 turns; keyboard alternative exhausted. Full objective retained, not accepted. Owned runtime cleaned. Next: owner available for actual file click or functioning coordinate input, then fresh resource preflight and full same-flow acceptance; no blind rebuild.090/hosted/beta open.
+**Owner-assisted resume:** [iOS legacy-v1 WebView](reports/2026-10-02-ios-legacy-webview-acceptance.md), helperb29e24b. Earlier blocked/fixtureexit1 evidence preserved. Owner ready; fresh isolated schema/guarded web/signed native/Auth+A/mobile55/406/normal exports PASS. Native file/share/B/fixtureexit0 NOT RUN, accepted HTTP absent. Asked owner once to scroll/click file and leave confirmation; no relaunch/reload/signOut/repeat click. Same full objective/not accepted;090/hosted/beta open. Verify runtime and finish same flow before~15:31Turkey expiry or clean exact owned resources.
 
 ## Preserved evidence and remediation
 
@@ -59,7 +59,7 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
 Owned runtimes/builds/outputs cleaned; source-preflight final22,296,284KiB; prior audio low15,548,780KiB.
-Prior Android goal cleaned/final20,461,732KiB. Legacy goal owned services/VMroot/data/device/signedapp/builds/.next/mobile.expo/coverage/spike090/093 removed; ports/profile/device/Lima disk absent. Final13:21 free20,273,560KiB;14:37 live20,154,736 abovefloor. Source five hashes/counts unchanged in closeout and fresh14:38 query; dependencies/AVD/global caches/original068 retained. No live acceptance environment remains. New runtime needs input readiness and fresh preflight.
+Prior blocked legacy runtime cleaned; final13:21 free20,273,560KiB. Owner-assisted fresh entry20,264,192; native intermediates/cache removed, current14,614,932 abovefloor. Owned genova090 VM/four services/root/data, device607D43A7-25AC-47A0-8701-9D7EB28F3F58, .next/mobile.expo/spike090/093/signedapp; ports54491/54492/8000/18092/31090 loopback. Fixture99201/session48478/web98957/session64842/SSH98620; verify identities. Exact cleanup after last same-flow check/expiry, no blind rebuild. Original068 before hashes unchanged, dependencies/AVD/global caches preserved.
 Fresh original068 five hashes/counts28/1/29/9/79 unchanged. Key-input masking failed: transcript
 echo occurred, no repo/env persistence; no further call/after1Oct reuse; owner replacement needed. Keep
 `genova_068_test_restore`, retained 068 backup, private manifests/journals,

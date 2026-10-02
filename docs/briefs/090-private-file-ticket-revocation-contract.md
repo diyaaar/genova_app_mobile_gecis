@@ -15,6 +15,26 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 2 October — owner-assisted legacy iOS acceptance resume
+
+Owner reports readiness after blocked closeout; previous input prerequisite now has human
+assistance. Same full goal, not a narrower replacement: actual legacy PDF recovery/share,
+B cache clearing/old HEAD403, immutable HTTP and unchanged fixture exit0. Read AGENTS,
+handoff/active/current090/guide/work cycle/delivery controls/MIGRATION/decision32 and actual
+fixture/native/config sources; Supabase skill/changelog/CLI help consulted. main/50bf979,
+only unrelated CLI marker dirty; sole writer. No production/Auth/schema behavior change.
+Actions: fresh isolated schema/service and signed guarded app; owner-assisted real UI flow;
+evidence/source preservation/owned cleanup/document commit. Previous unchanged source-test
+gates remain dated evidence, not newly run; fresh actual builds/runtime and affected gates
+must be recorded separately. No hosted/provider/real rows/push/spending/key use.
+Entry free20264192KiB; owned runtime/device/build absent and target ports unused. Same owned
+genova090 VM/data <=6GiB, web <=0.6GiB, native <=3GiB with VM stopped, named iOS device
+<=3.2GiB after native intermediates removed. Fresh projections before each phase must remain
+above10GiB floor; native retains12500000KiB safety stop. One heavy process, original068 and
+dependencies/caches/shared devices preserved. Temporary controllers recovered from reviewed
+same-thread source via apply_patch, not arbitrary transcript execution. Cleanup after last
+dependent check; retain only essential redacted evidence. No fake native success.
+
 ### 2 October — iOS legacy-v1 permanent WebView goal start
 
 Read current AGENTS, handoff/active, this brief's relevant start/current checkpoints,

@@ -691,3 +691,15 @@ and fresh14:38 read-only query unchanged; original068/backups/dependencies/AVD/g
 preserved. Sourceb29e24b/docs64fb396+b7f1d31 retained; no push, hosted/new inference/key use,
 real data/hardware action, APIcost$0. Next: input readiness then fresh preflight/full same-flow
 acceptance, not another blind rebuild. Interrupted third-turn record finished in continuation.
+
+### 2 October — owner-assisted iOS legacy resume preparation
+
+[Same full goal](../docs/reports/2026-10-02-ios-legacy-webview-acceptance.md): owner readiness
+permits fresh measured environment, not deletion of prior failed evidence. Guarded web/signed
+native/strict signature/exact current factory-secret absence/Auth+A PASS. Native build172422ms,
+mobile55suites406tests/normal sequential Android+iOS1440module exports PASS. Actual file/share/
+B/full fixtureexit0 NOT RUN, accepted HTTP absent. Same owner actual link click once requested;
+leave native confirmation, no repeat/relaunch/reload/signOut. Fresh device/runtime ownership and
+~15:31Turkey hold/removal point in record; intermediates removed,14614932KiB abovefloor.
+No product/Auth/schema behavior change, source rows copied, hosted/push/spending/new inference.
+APIcost$0; sole primary scoped self-review. Preserve original source/dependencies/global caches.
