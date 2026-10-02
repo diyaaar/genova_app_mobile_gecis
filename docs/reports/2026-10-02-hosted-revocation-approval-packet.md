@@ -1,5 +1,15 @@
 # 090 — source-pinned hosted revocation approval packet
 
+**R1 addendum:** [fresh recovery/rehearsal](2026-10-02-hosted-revocation-r1-recovery-rehearsal.md)
+has actual protected restore/ACL/role/078090 SQL evidence. Release remains NO-GO: current
+legacy Next GET/HEAD bypass the five proposed Edge endpoints. This pin is insufficient for
+the new compatibility package; regenerate/review its complete closure before deployment.
+Owner correction#33: sibling website no longer uses this DB; NO website changes. Its old
+source/catalog/isolated findings below are historical, not a Genova release blocker. No
+independent current disconnection proof, table deletion or tenant policy relaxation implied.
+R0/R1 authorization and observed results are in the later records; this historical preparation
+does not cancel owner-renewed2October Jev authority or re-authorize any live write.
+
 Subsequent authorized [partial R0](2026-10-02-hosted-revocation-r0-preflight.md) and
 [connected R0 completion](2026-10-02-hosted-revocation-r0-connected-preflight.md) supersede
 the preparation's unrun metadata state below, not its pinned source or R1–R5 authority.

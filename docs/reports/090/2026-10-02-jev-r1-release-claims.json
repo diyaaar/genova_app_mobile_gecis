@@ -1,0 +1,150 @@
+{
+  "timestamp": "2026-10-02T14:28:39.921Z",
+  "requestSha256": "321512339344097f765a5446e050b7bc47acb5953efd554bc506f835358d0cd8",
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "recovery": "Fresh consistent logical backup, real offline supported PG restore, 23 schemas/101 counts, selected helper/ACL/RLS catalogs match. After explicit offline extension bootstrap and non-secret role seed, all six extension versions/owners, 32 role attributes and 22 role memberships match. No hosted write; no live Auth/PostgREST/service HTTP or UI in this rehearsal. Password/config/Vault/network queue/object bytes excluded. Role metadata was captured later than row snapshot.",
+      "security": "078 red before migration proves inactive member retains authority; after exact078 and exact090, negative synthetic SQL cases for actor/session/choir/roles and all five file families pass. Current production web source legacy Next route validates only signature/expiry. Its synthetic GET/HEAD return200 with two injected upstream calls and zero current authority calls. Proposed five Edge readers are different endpoints; legacy Next route is still present unchanged locally.",
+      "sibling": "Exact current sibling source requests public_choir_members under anon and uses fallback mock members on errors. Shared view is security_invoker and underlying table requires current tenant. Offline synthetic anon directory count0 both before078 and after078090. Contact/collab/subscriber insert shapes succeed anonymously, but anon cannot SELECT those synthetic private submissions. No website UI/PostgREST or email delivery proof.",
+      "contract": "User accepts denial of an old private file URL on next online GET/HEAD after membership/session/role change. Offline downloaded bytes cannot be recalled. Preserve old client request shape where safe, not old unauthorized access. A broad main push of hundreds of unrelated changed files is not an accepted minimal release. Public user publication and source Drive link withdrawal require their own data/provider scope."
+    },
+    "questions": {
+      "sql_ready": {
+        "type": "choice",
+        "instructions": "Evaluate this claim against the supplied observations and limits: The offline SQL matrix proves deployed service and native beta readiness.",
+        "criteria": {
+          "supports": "Evidence supports this precise claim within its explicit layer.",
+          "contradicts": "Evidence contradicts this claim or its claimed verification scope.",
+          "unknown": "Evidence does not decide the claim."
+        }
+      },
+      "next_gap": {
+        "type": "choice",
+        "instructions": "Evaluate this claim against the supplied observations and limits: Deploying only five proposed Edge functions does not fix the unchanged legacy Next GET/HEAD path.",
+        "criteria": {
+          "supports": "Evidence supports this precise claim within its explicit layer.",
+          "contradicts": "Evidence contradicts this claim or its claimed verification scope.",
+          "unknown": "Evidence does not decide the claim."
+        }
+      },
+      "directory_regression": {
+        "type": "choice",
+        "instructions": "Evaluate this claim against the supplied observations and limits: The synthetic result proves that078 introduced a previously working anonymous directory regression.",
+        "criteria": {
+          "supports": "Evidence supports this precise claim within its explicit layer.",
+          "contradicts": "Evidence contradicts this claim or its claimed verification scope.",
+          "unknown": "Evidence does not decide the claim."
+        }
+      },
+      "forms_email": {
+        "type": "choice",
+        "instructions": "Evaluate this claim against the supplied observations and limits: Successful offline inserts prove production email notifications are delivered.",
+        "criteria": {
+          "supports": "Evidence supports this precise claim within its explicit layer.",
+          "contradicts": "Evidence contradicts this claim or its claimed verification scope.",
+          "unknown": "Evidence does not decide the claim."
+        }
+      },
+      "recovery_global": {
+        "type": "choice",
+        "instructions": "Evaluate this claim against the supplied observations and limits: This recovery artifact includes original role passwords and external object bytes.",
+        "criteria": {
+          "supports": "Evidence supports this precise claim within its explicit layer.",
+          "contradicts": "Evidence contradicts this claim or its claimed verification scope.",
+          "unknown": "Evidence does not decide the claim."
+        }
+      },
+      "next_fix": {
+        "type": "choice",
+        "instructions": "Which next scoped engineering package best preserves the accepted contract and explains the observed old web bypass?",
+        "criteria": {
+          "legacy_gateway": "First close the signature-only legacy GET/HEAD path and preserve authorized legacy POST/client response shape through actor/session/choir-bound authority, then test old URL refusal and safe renewal before release.",
+          "edge_only": "Deploy five Edge readers and treat the unchanged legacy Next path as secure without testing it.",
+          "anonymous_directory": "Make all choir member rows globally anonymous-readable before investigating the legacy file bypass.",
+          "no_match": "None of the supplied fixes addresses the observed boundary."
+        }
+      }
+    }
+  },
+  "elapsedMs": 567,
+  "model": "jev-1.13.0",
+  "usage": {
+    "input_tokens": 1335,
+    "output_tokens": 253
+  },
+  "estimatedUsd": 0.000056070000000000004,
+  "answers": {
+    "sql_ready": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.99,
+      "probabilities": {
+        "supports": 0,
+        "unknown": 0,
+        "contradicts": 1
+      }
+    },
+    "next_gap": {
+      "type": "choice",
+      "choice": "supports",
+      "confidence": 0.99,
+      "probabilities": {
+        "supports": 1,
+        "unknown": 0,
+        "contradicts": 0
+      }
+    },
+    "directory_regression": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.92,
+      "probabilities": {
+        "supports": 0.01,
+        "unknown": 0.04,
+        "contradicts": 0.95
+      }
+    },
+    "forms_email": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.96,
+      "probabilities": {
+        "supports": 0,
+        "unknown": 0.03,
+        "contradicts": 0.97
+      }
+    },
+    "recovery_global": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 1,
+      "probabilities": {
+        "supports": 0,
+        "unknown": 0,
+        "contradicts": 1
+      }
+    },
+    "next_fix": {
+      "type": "choice",
+      "choice": "legacy_gateway",
+      "confidence": 1,
+      "probabilities": {
+        "anonymous_directory": 0,
+        "no_match": 0,
+        "edge_only": 0,
+        "legacy_gateway": 1
+      }
+    }
+  },
+  "engineerExpected": {
+    "sql_ready": "contradicts",
+    "next_gap": "supports",
+    "directory_regression": "contradicts",
+    "forms_email": "contradicts",
+    "recovery_global": "contradicts",
+    "next_fix": "legacy_gateway"
+  },
+  "agreements": 6,
+  "limit": "Advisory semantic claim review over redacted engineering summaries, not independent execution/security authority. All disagreements retained. Public documentation: typesafe citation_check/models/API read2October; no private rows/backup/credentials sent."
+}

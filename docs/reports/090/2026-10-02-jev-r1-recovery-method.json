@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-10-02T13:54:48.134Z",
+  "stage": "R1 recovery-method review",
+  "requestSha256": "d7dc5a2c2b58f7303be5071e646d5a8dc69d5a5bd31f4b9c09ae47bf0fced0bb",
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "authority": "Owner approved fresh read-only logical export to restricted local storage and isolated restore/rehearsal. Production schema/Edge deployment only after prerequisites and concrete reviewed plan. No private rows/secrets exported to this analysis.",
+      "observed": "Hosted PG17 has 21 selected Auth/public/custom/migration schemas, seven relevant helpers, six installed extensions including pg_net in public and Vault in vault. Native PG17 client/server tools exist; native backend does not offer pg_net/Vault. Supabase official matching arm64 backend image exists. Recovery needs owners/ACL/RLS, Auth sessions and relevant runtime helpers, not only table counts.",
+      "security": "Do not copy Vault values, pending network requests, hosted credential material, or execute real-user mutations during rehearsal. Synthetic fixtures only. A read-only repeatable-read snapshot can be held across logical export and counts. Logical DB backup does not contain Storage/Drive/R2 object bodies.",
+      "current": "Five hosted reader artifacts still have version1 metadata, while proposed readers reject legacy URLs and use service-only online revocation RPC. Current production web and sibling sources must be checked for their request/data contracts; historical local/native tests do not prove exact current production-client compatibility."
+    },
+    "questions": {
+      "native_parity": {
+        "type": "choice",
+        "instructions": "Does a restore with stripped ownership/ACL and omitted pg_net objects establish the intended security recovery parity?",
+        "criteria": {
+          "supports": "It preserves the actual access/extension dependency contract.",
+          "contradicts": "It changes the security or extension dependency contract and cannot establish intended parity.",
+          "insufficient": "No relevant contract evidence is supplied."
+        }
+      },
+      "backup_scope": {
+        "type": "choice",
+        "instructions": "Does this described logical export establish object-byte recovery for private Storage/Drive/R2 files?",
+        "criteria": {
+          "supports": "Export contains independently recoverable object bytes.",
+          "contradicts": "The declared recovery scope excludes those object bodies.",
+          "insufficient": "Object byte coverage is unspecified."
+        }
+      },
+      "image_selection": {
+        "type": "choice",
+        "instructions": "Which bounded next investigation best addresses observed native-extension mismatch while preserving security fidelity?",
+        "criteria": {
+          "managed_image": "Inspect a digest-pinned official matching PG image, verify actual extension availability and isolate network before restoring private data.",
+          "strip_security": "Strip missing definitions/ownership/grants and call the restore equivalent.",
+          "deploy_first": "Deploy current proposed security package before fresh recovery/compatibility checks.",
+          "no_match": "None of these options addresses the observed mismatch."
+        }
+      },
+      "compatibility": {
+        "type": "choice",
+        "instructions": "Do historical local native tests alone establish compatibility of the exact current hosted web/sibling with strict legacy URL rejection?",
+        "criteria": {
+          "supports": "The exact hosted clients were exercised against the proposed readers.",
+          "contradicts": "The evidence explicitly requires exact current production sources and fresh compatibility rehearsal, which historical local tests do not establish.",
+          "insufficient": "No client identities or relevant boundary evidence is present."
+        }
+      }
+    }
+  },
+  "elapsedMs": 475,
+  "model": "jev-1.13.0",
+  "usage": {
+    "input_tokens": 996,
+    "output_tokens": 183
+  },
+  "estimatedUsd": 0.000041832,
+  "answers": {
+    "native_parity": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 1,
+      "probabilities": {
+        "contradicts": 1,
+        "supports": 0,
+        "insufficient": 0
+      }
+    },
+    "backup_scope": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 1,
+      "probabilities": {
+        "contradicts": 1,
+        "supports": 0,
+        "insufficient": 0
+      }
+    },
+    "image_selection": {
+      "type": "choice",
+      "choice": "managed_image",
+      "confidence": 1,
+      "probabilities": {
+        "no_match": 0,
+        "managed_image": 1,
+        "strip_security": 0,
+        "deploy_first": 0
+      }
+    },
+    "compatibility": {
+      "type": "choice",
+      "choice": "contradicts",
+      "confidence": 0.99,
+      "probabilities": {
+        "contradicts": 1,
+        "supports": 0,
+        "insufficient": 0
+      }
+    }
+  },
+  "expected": {
+    "native_parity": "contradicts",
+    "backup_scope": "contradicts",
+    "image_selection": "managed_image",
+    "compatibility": "contradicts"
+  },
+  "limits": "Advisory semantic judgments, not execution, independent review, recovery proof or invoice. Key from owner-provided same-thread message, renewed today; never persisted."
+}

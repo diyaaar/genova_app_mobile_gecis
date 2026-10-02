@@ -1,0 +1,191 @@
+{
+  "recordedAt": "2026-10-02T14:43:19.436Z",
+  "entryRevision": "63b36d7c765ed5b9e9b6378e0d6a21c77ca88f19",
+  "serverSourcePin": "bdf34b80a239fe7a69188746e5543caf3b12cbf3",
+  "status": "R1_OPEN_RELEASE_NO_GO",
+  "sourceCheckpoint": "93ca0430e72520cd47697a9caa6756d6a4d79832",
+  "finalRecordChecks": { "localLinks": 387, "anchors": 7, "sourceHashes": 9, "redactionFiles": 22, "status": "PASS" },
+  "authority": "Protected read-only hosted logical export and isolated rehearsal; NO hosted DDL/DML/Edge/provider/password/push/CI",
+  "ownerScopeCorrection": {
+    "decision": 33,
+    "siblingWebsite": "NO CHANGES; owner says no longer uses this DB",
+    "independentDisconnectionVerification": "NOT RUN",
+    "retainedTables": "Preserve; no deletion/policy relaxation"
+  },
+  "backup": {
+    "date": "2026-10-02T13:58:30.616Z",
+    "projectRef": "hievmwwctjjlhmssoxsu",
+    "bytes": 1623637,
+    "sha256": "9b73831cda2809273e3f671031b35ab990707c3613f2c3ffb30ddba143f15cd2",
+    "schemas": 23,
+    "tables": 101,
+    "consistentDataSnapshot": true,
+    "privateModes": "0700 directory/0600 files"
+  },
+  "restore": {
+    "date": "2026-10-02T14:24:21.042Z",
+    "stage": "RESTORE_AND_SQL_MATRIX_PASS",
+    "backendImage": "supabase/postgres@sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00",
+    "network": "none",
+    "mounts": 0,
+    "ports": 0,
+    "extensions": [
+      {
+        "name": "pg_net",
+        "version": "0.19.5",
+        "owner": "supabase_admin"
+      },
+      {
+        "name": "pg_stat_statements",
+        "version": "1.11",
+        "owner": "postgres"
+      },
+      {
+        "name": "pgcrypto",
+        "version": "1.3",
+        "owner": "postgres"
+      },
+      {
+        "name": "plpgsql",
+        "version": "1.0",
+        "owner": "supabase_admin"
+      },
+      {
+        "name": "supabase_vault",
+        "version": "0.3.1",
+        "owner": "supabase_admin"
+      },
+      {
+        "name": "uuid-ossp",
+        "version": "1.1",
+        "owner": "postgres"
+      }
+    ],
+    "roleStage": "ROLE_EXTENSION_PARITY_AND_FRESH_SQL_PASS",
+    "roles": 32,
+    "memberships": 22,
+    "roleDate": "2026-10-02T14:26:05.510Z",
+    "catalogStage": "SELECTED_CATALOG_FIDELITY_PASS",
+    "helpers": 7,
+    "relations": 18,
+    "countsPreserved": "FINAL_BASELINE_COUNTS_AND_PRIVATE_MODES_PASS"
+  },
+  "recoveryExclusions": [
+    "Vault table data",
+    "net queues/responses",
+    "Storage metadata and object bodies",
+    "Drive/R2 bodies",
+    "role passwords/validity/settings",
+    "external provider configuration/secrets"
+  ],
+  "sql": {
+    "redBefore078": "Expected inactive-selection authority assertion",
+    "after078090": "PASS",
+    "fixtures": [
+      "078_active_membership_revocation.sql",
+      "005_active_choir_isolation.sql",
+      "012_list_my_choirs_is_current.sql",
+      "090_private_file_ticket_authority.sql"
+    ],
+    "boundary": "Synthetic rolled-back direct SQL/claims; not live Auth/PostgREST/HTTP",
+    "serviceOnlyAclPredicates": "PASS",
+    "actualThreeRoleInvocation": "NOT RUN"
+  },
+  "legacyWeb": {
+    "productionRevision": "a13f696da8c731e9af2a2bce473d4f4ae4a81587",
+    "currentSourceBytesEqual": true,
+    "desiredRevocation": "FAIL",
+    "observations": {
+      "GET": 200,
+      "HEAD": 200,
+      "upstreamCalls": 2,
+      "currentAuthorityCalls": 0
+    },
+    "oldClientSafeRenewal": "NOT RUN",
+    "boundary": "Exact Git source/transpiled handlers/synthetic signature/injected upstream; no live exploit or user mutation"
+  },
+  "historicalSibling": {
+    "formsAndPrivateSelectRefusal": "PASS",
+    "directory": "FAIL before and after SQL; zero synthetic visible rows",
+    "currentReleaseGate": "N/A owner corrected scope",
+    "websiteWrites": 0
+  },
+  "sourceGates": {
+    "nodeTests": 3,
+    "passed": 3,
+    "nodeSyntax": 7,
+    "pnpmCheck": "PASS exit0",
+    "vitestFiles": 111,
+    "vitestTests": 1130,
+    "coverage": {
+      "statements": 90.74,
+      "branches": 84.91,
+      "functions": 98.21,
+      "lines": 96.56
+    },
+    "SW": "PASS",
+    "build": "PASS",
+    "hostedE2E": "NOT RUN",
+    "mobileGate": "N/A no mobile source change",
+    "independentReview": "NOT RUN; primary self-review only"
+  },
+  "resources": {
+    "entryKiB": 19824444,
+    "floorKiB": 10485760,
+    "observedLowKiB": 13482796,
+    "vmAllocatedBeforeRemovalKiB": 6358328,
+    "removedOwnedVmAndContainerAt": "2026-10-02T14:30:53Z",
+    "afterVmCleanupKiB": 22950380,
+    "afterRootOutputCleanupKiB": 22949412,
+    "afterFinalScopeChangeGateCleanupKiB": 22771852,
+    "preserved": "Fresh restricted artifact, original068 restore/backup/dependencies/AVD/global caches"
+  },
+  "sourceHashes": [
+    {
+      "path": "supabase/test-support/090_hosted_recovery.mjs",
+      "sha256": "a01cb741a61c0dab1be444e57b0b618c4c0dd1591bbf582fff5b561e26126d39",
+      "bytes": 8250
+    },
+    {
+      "path": "supabase/test-support/090_hosted_recovery.test.mjs",
+      "sha256": "2263b1cbd959ef9f3d6f9af627e46b331c6971123d9beedb5f849f45327984cb",
+      "bytes": 1149
+    },
+    {
+      "path": "supabase/test-support/090_hosted_role_catalog.mjs",
+      "sha256": "8eb87fcd9b5ad9f7826c8f3ca5652416a1312739d15dd45b282e2ceef2ae5a8b",
+      "bytes": 3246
+    },
+    {
+      "path": "supabase/test-support/090_isolated_rehearsal.mjs",
+      "sha256": "97f4a1ab2c00b51e7e47b1ae055f818e16e237b00e960d95fac7aed4b571ad11",
+      "bytes": 7998
+    },
+    {
+      "path": "supabase/test-support/090_legacy_release_contract.test.mjs",
+      "sha256": "88e88572b41dd88b50d703d1c5482cf341780ac0d42a524d170aaf867e3d5dcc",
+      "bytes": 3640
+    },
+    {
+      "path": "supabase/test-support/090_recovery_catalog.mjs",
+      "sha256": "75ed4a31956c207cc048e05361f14084dd48356b7ae765dcc553d5ccfe523e63",
+      "bytes": 3990
+    },
+    {
+      "path": "supabase/test-support/090_role_rehearsal.mjs",
+      "sha256": "bf57ede29ff3c601ede8c5da324c3e178da787587f4edf6aca062a692067eecd",
+      "bytes": 4726
+    },
+    {
+      "path": "supabase/tests/005_active_choir_isolation.sql",
+      "sha256": "950dbf6b622aa60e61f971b50d0cafd199b95a29c98e2a7dc8589d60668469d6",
+      "bytes": 9749
+    },
+    {
+      "path": "supabase/tests/090_shared_site_compatibility.sql",
+      "sha256": "6cb21728a92ffb6d4561fb50b62117e195fec524c71d938b1d77138442c0dfa2",
+      "bytes": 2405
+    }
+  ],
+  "sourceBoundary": "Runtime observations precede owner33 no-sibling automatic replay removal; final role helper source excludes that historical fixture. Source gates rerun after this change."
+}

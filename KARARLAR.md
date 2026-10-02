@@ -19,6 +19,12 @@ yeni karara açıkça bağla. Eski tahminler güncel doğrulama değildir.
 |---|---|---|---|
 | 32 | **Reject previously issued private-file URLs on the next online GET/HEAD after same-session choir switch or membership/role removal** | Owner explicitly chose next-request refusal across the five private file families; the prior one-hour actorless repertoire/assignment behavior is historical, not the target contract. Already-streaming or offline bytes cannot be recalled. This decision alone authorized no code or hosted change; the owner subsequently approved the bounded local v2 implementation and tests recorded in [090](docs/briefs/090-private-file-ticket-revocation-contract.md). Hosted migration, Edge rollout, provider and release order remain separately gated. | 30 Sep 2026 |
 
+## Website scope correction — 2 October 2026
+
+| # | Decision | Rationale / boundary | Date |
+|---|---|---|---|
+| 33 | **Do not change the sibling website; owner reports it no longer uses the Genova DB** | Supersedes earlier shared-site delivery assumption. Old catalog/source/isolated observations remain historical, not a new website remediation or Genova release blocker. No independent current endpoint/disconnection verification is claimed. Preserve retained tables; no data/schema deletion or policy relaxation follows. Genova web/mobile recovery, tenant isolation and exact old-file-client compatibility remain required. [R1 record](docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md). | 2 Oct 2026 |
+
 | # | Karar | Gerekçe | Tarih |
 |---|---|---|---|
 | 1 | Sıralama **değere** göre, kolaydan zora değil | WebView'ın gerçekten kötü olduğu ekranlar önce. Duyuruları native yapmak kullanıcıya hiçbir şey kazandırmıyor. | 2 Eyl |

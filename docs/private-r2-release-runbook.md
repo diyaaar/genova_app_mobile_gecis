@@ -9,6 +9,15 @@ individual briefs remain the acceptance authority for each local implementation.
 
 ## Current revocation release boundary — 2 October 2026
 
+[R1 fresh recovery](reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md) now proves
+consistent23-schema/101-count restore, owner/ACL/role fidelity and exact078→090 SQL negatives.
+Release still NO-GO: exact production/current legacy Next GET/HEAD remains signature-only;
+five Edge updates cannot fix it. Close the authorized old-web renewal/refusal contract and
+review the new exact closure before writes. Owner correction#33 excludes sibling website
+changes: it no longer uses this DB (owner-reported, not current endpoint-tested). Earlier
+shared-site prerequisites below are historical; preserve retained tables and tenant policies.
+No live migration/Edge/provider/cutover/CI/push/main promotion occurred in R1.
+
 [090 approval packet](reports/2026-10-02-hosted-revocation-approval-packet.md) pins proposed
 078→090 and only five reader closures to main/bdf34b8. Local web/Android/iOS PDF/audio/permanent
 WebView recovery and old-ticket denial now have bounded evidence; hosted/current old-client,

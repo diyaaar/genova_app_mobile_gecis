@@ -51,6 +51,14 @@ Not a native profile rewrite, hosted release or blanket Drive-exit claim; no bul
 [077](briefs/077-repertoire-mp3-r2-batch-3.md)
 remains an exact, unexecuted real-copy approval checkpoint. Neither block changes the
 Android-first critical path or promotes a local test to beta acceptance.
+
+2October [R1 recovery checkpoint](reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md):
+fresh consistent23schemas/101counts restore, six extension versions/owners,32roles/22memberships,
+selected ACL/catalog and exact078→090 SQL negatives PASS. Required old-web contract FAIL:
+legacy Next GET/HEAD signature-only path survives five Edge updates. Next local safe renewal/
+refusal package precedes a newly pinned release; no live write or bulk main push. Owner#33
+excludes detached sibling website changes; old shared-site observations remain historical,
+not a Genova beta blocker. Genova web/mobile/device/provider/Drive-exit gates remain required.
 [092](briefs/092-stale-private-file-ticket-cache.md) additionally prevents late web/WebView
 responses from restoring old ticket URLs after tenant cache clear; it does not revoke a
 previously issued URL at the service or replace the Android/device gate.

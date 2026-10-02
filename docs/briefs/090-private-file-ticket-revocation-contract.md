@@ -15,6 +15,103 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 2 October — R1 recovery checkpoint and corrected website scope
+
+Final source/test checkpoint93ca043, nine owned paths; final root gate after owner#33 replay
+scope change PASS111files/1130tests/coverage/SW/build, fresh node3/3/helper syntax PASS.387 local
+links/7anchors,9source hashes,22-file redaction/status/JSON/diff checks PASS; docs commit separate.
+No task VM/container/root outputs remain; final17:51 free22771852KiB. Private fresh backup and
+original068 retained, unrelated CLI marker excluded. No publication/goal-complete claim.
+
+Coverage review:090 uses service/anon/auth has_function_privilege predicates, then owner
+calls. Actual three-role RPC invocation on this restored copy is NOT RUN, not a claimed PASS;
+include it in the next isolated legacy/client package. Historical connected HTTP cannot
+substitute for this exact fresh role setup. Required gap keeps R1/goal open.
+
+[R1 evidence/plan](../reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md): protected
+consistent fresh backup1623637B/23schemas/101counts; actual offline PG17.6 restore. Initial
+extension-owner mismatch repaired without editing away ACL/RLS; six extensions' versions/owners,
+32 role attributes/22 memberships and seven helpers/18 selected relation catalogs match.
+Exact078 red→green and078→090/005/012/five-family SQL tests PASS after final role repair;
+final baseline101counts unchanged.005 test now owns its A choir/role, not a real seed choir.
+Allowed paths clarified: dedicated090 test-support helpers/tests,005 isolation fixture and
+090_shared_site_compatibility.sql; report/two redacted Jev records/current indexes/decision#33.
+No production/API/Edge source altered by this recovery checkpoint. No hosted write/deploy.
+Fresh pnpm check PASS111files/1130tests/coverage/SW/build; node3/3 plus syntax checks PASS.
+Not live Auth/PostgREST/HTTP/client/provider/phone proof. Recovery excludes secrets/settings/
+Vault values/net queues/Storage metadata/object bytes; role metadata is a later snapshot.
+
+Exact a13f696/current HEAD legacy Next route remains signature-only: synthetic GET200/HEAD200,
+upstream2/current-authority0. Required old-web next-request criterion FAIL; safe exact legacy
+renewal/runtime NOT RUN, so R1/090/active goal remain open. Next bounded LOCAL package closes
+that endpoint while preserving authorized old POST response/valid non-versioned files; no blind
+version mapping, new parallel Next authorization logic, R2 activation or bulk main promotion.
+Any new server closure gets a new reviewed manifest before separately gated release.
+
+Owner now says sibling website no longer uses this DB and requests NO website changes.
+Decision#33 supersedes earlier automatic both-site prerequisite: historical baseline/pre/post
+form inserts/privacy PASS/directory0 remain evidence, not a website remediation or Genova
+release blocker. No independent production disconnection proof or retained-table removal claim.
+Required Genova web/mobile/client checks remain; scope correction does not turn their FAIL green.
+Jev authority renewed2October; two redacted R1 calls10self-labels/10agreements,2331input/436output,
+estimate$0.000097902,not invoice/whole-day/Codex cost/independent review. No key persisted.
+Task-owned VM/container/private copies removed17:30:53,post-removal22950380KiB. Original068
+restore/backup preserved, fresh protected external artifact retained. Final docs/output cleanup
+and separate scoped code/docs commits follow; unrelated CLI marker excluded.
+
+### 2 October — approved R1 fresh recovery and rehearsal
+
+Entry main/63b36d7; primary sole writer; unrelated CLI marker excluded. Owner approves the
+proposed protected fresh DB/Auth backup and isolated restore/exact078→090/both-site/old-client
+rehearsal, requests a measurable persistent goal and concrete gated live-release plan. No
+release before recovery/compatibility prerequisites. Owner renews same Jev key use on2October
+and permits analysis spending; no arbitrary spend needed. Only redacted code/semantic packets,
+no private backup/user data/secrets to Jev. Supabase/TypeSafe/Postgres skills read; guide/work
+cycle/template/controls/068/current090/MIGRATION/decision32 and pinned packet consulted.
+One outcome: fresh recovery plus measured security/compatibility readiness, not beta completion.
+Three actions: exact hosted snapshot/private artifact and recovery coverage; supported isolated
+restore/exact migrations/negative compatibility tests; scoped review/gates/cleanup/commit and
+live-release decision. Allowed dedicated090 recovery helper/tests, existing078/090 fixtures,
+private external artifact directory, task-owned isolated PG/VM and090 reports/indexes only.
+No real-user revocation/deletion/mail, real object writes, source deletion, account/password
+changes, blanket db push/main promotion or provider activation. Fail closed on wrong target,
+existing restore, secret export, missing extension/ACL or disk floor.
+Entry19824444KiB; existing nativePG data86828KiB and retained068 evidence1332KiB preserved.
+Hosted size22506643B; included relations7356416B. Private artifact<=128MiB/native restore<=512MiB;
+if managed extensions require Linux, separately measured official image/base metadata and a
+<=7.5GiB total incremental cap must keep free>=10485760KiB. One heavy process; no simulator/build.
+Private path `/Users/alidiyarduran/Documents/Codex/2026-10-02/genova-090-r1-*`0700 with0600
+backup/logs; no private content in Git/chat. Baseline068 remains untouched. Temporary090 VM/DB
+removed after final dependent tests; one protected backup retained for the gated release.
+Required exit: exact consistent snapshot/hash/coverage; actual restore/schema/count/ACL fidelity;
+078 red→green and090 five-family/session/service-only denials; shared-site/current-production/
+old-client compatibility evidence; scoped source gates, redaction/links/diff/cleanup. Every
+required FAIL/NOT RUN keeps the goal/R1 open. Self-review is not independent acceptance.
+
+R1 measured supported-backend plan: official supabase/postgres17.6.1.063 arm64 manifest
+sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00,
+compressed1010225613B; official Ubuntu minimal arm64 base408748032B with template-pinned
+SHA256. Native PG lacks net/Vault; no ACL/definition stripping permitted. One task VM
+`genova090r1`,2CPU/2GiB RAM/6GiB virtual disk, no host mounts. Conservative total incremental
+allocation<=7.5GiB projects11960124KiB abovefloor; remeasure every phase, stop new allocation
+at12000000KiB watermark. Only one PG container, network=none and no published ports; operate
+via explicit docker exec/pipe, never mount private backup into a network-enabled service.
+No native/API/UI build during image/setup. Verify actual extension versions before private
+restore. Remove exact VM/container/data after final dependent checks; keep only protected
+backup/metadata plus small redacted evidence. This is a reasoned recreation for the missing
+managed-extension recovery gate, not automatic reuse of the previously removed090 VM.
+
+First image pull FAIL: guest root5003916KiB is too small for base1608176KiB plus compressed
+1010225613B and expanded layer tar3249138688B. Docker discarded failed layer content; fresh
+host free17492088KiB/VM1791272KiB. New causal evidence: read the four-byte gzip trailers of all
+54 official layers (range-only, no second full download) to measure expansion. Change only owned
+VM virtual disk6→8GiB, preserve physical cap7.5GiB/watermark/floor. Remove the newly downloaded
+and URL/hash-verified task-only Lima base cache
+`/Users/alidiyarduran/Library/Caches/lima/download/by-url-sha256/7cfbb8a5d15ac38ce5356c8c06cc7f6e540f249b045192111be70fe8df47b4f6`
+(1401364KiB); VM already has its verified base, no global cache purge. Estimated actual VM/image
+and restore<=7GiB after this cleanup. Resume only after fresh space/guest capacity verification;
+no new image/version or missing-object/ACL bypass. This is first failed approach, retained.
+
 ### 2 October — connected R0 metadata completion
 
 [Connected record](../reports/2026-10-02-hosted-revocation-r0-connected-preflight.md) and

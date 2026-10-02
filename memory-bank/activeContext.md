@@ -1,99 +1,66 @@
 # Active context
 
-Updated 2 October 2026. [Handoff](../docs/agent-handoff.md) is the short entry point;
+Updated 2 October 2026. [Handoff](../docs/agent-handoff.md) → [090](../docs/briefs/090-private-file-ticket-revocation-contract.md);
 [delivery plan](../docs/mobil-teslim-plani.md)/[WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md)
-own objective/queue/resources. Evidence stays in briefs/[progress](progress.md), not upgraded here.
+own queue/resources. Verify dated evidence; no self-scoring or scope reduction.
 
-## Current checkpoint and next action
+## Active measurable goal
 
-[090](../docs/briefs/090-private-file-ticket-revocation-contract.md) remains IN PROGRESS.
-Approved #32 next-online-request policy is implemented locally (`5f55c48`):
-five-family actor/Auth-session/choir v2 authority per GET/HEAD, v1 401 and revoked v2 403.
-Historical SQL/two-session `70fd23e`, connected five-family HTTP `9773958`, Android-v2/Chrome
-`10e9b77`, connected PDF `364cfe4` and legacy WebView `d8139bc` PASS within090's declared
-local relay/fault/synthetic-storage boundaries, not hosted or new assignment integration.
-[General check-up](../docs/reports/2026-10-01-project-checkup.md) corrected stale policy/indexes.
-[HTTP/COMMIT overlap](../docs/reports/2026-10-01-private-file-families-http-overlap.md)
-`d448de5`/`cc20758`:20 cases via dependency adapter, not fresh Auth/PostgREST; independent
-chat-room grants retained. All detailed historical evidence/costs remain in090/progress.
-`6fed2ac`: connected native Android audio actual AuthStore/RLS/POST/Deno/signed loopback
-storage PASS with declared v1/client-deadline/earlier-v2/relay faults; source-less native
-status regression fixed. Fresh mobile55/401, root107/1075, normal exports PASS.
-[Record/costs](../docs/reports/2026-10-01-connected-android-audio-acceptance.md):
-Jev10/11, recovery disagreement retained; daily15calls$0.002435034 estimated, not invoice.
-`ee7be64` [095](../docs/briefs/095-webview-current-assignment-file-reader.md) preserves current-version links.
-`216b996`: connected Android assignment WebView/local Auth/RLS/Deno/signed private bytes PASS;
-exact five-reader anchor regression repaired, native PDF/share sheet, B teardown/old GET/HEAD403/provider0.
-[Record](../docs/reports/2026-10-01-connected-android-assignment-webview-acceptance.md): fresh root110/1108,
-mobile55/404 and normal exports; explicit local adapters, not hosted proof. Jev9/10 retains unrun-iOS
-disagreement; daily17calls$0.002770236 estimated, not invoice.090 remains open.
-[Current iOS PDF](../docs/reports/2026-10-01-connected-ios-private-pdf-acceptance.md) normally signed
-native Release/actual Auth/RLS/v1→v2/pages1/2/B cache/old HEAD403/new POST403 PASS; fixture exit0.
-Early global-signOut first fixture exit1 retained; no product/Auth/schema/dependency change.
-`db6cc93` [connected iOS audio](../docs/reports/2026-10-01-connected-ios-audio-acceptance.md): first expiry/
-resume FAIL retained; stale old-player status unit-reproduced and identity-qualified. Corrected
-signed native recovery/seek/resume/B denial and fixture exit0 PASS; fresh root110/1110,mobile55/406,
-exports PASS. Jev advisory5/5;1Oct20calls$0.003070494 estimate, not invoice.
-`180108a` [WebView preflight](../docs/reports/2026-10-01-ios-webview-source-preflight.md): platform-specific wx evidence,19focused/root110/1118/mobile55/406/exports PASS, not native;090/hosted/beta stay open.
+**R1/090 OPEN; release NO-GO.** [Fresh recovery/rehearsal](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md):
+1,623,637B protected consistent logical backup,23schemas/101counts, actual offline PG17.6.
+After explicit local extension/role bootstrap, six extensions' versions/owners,32 roles/
+22 memberships, seven helper definitions/ACL and18 selected relation catalogs match.
+078 inactive-authority assertion red→green; exact078→090,005/012/five-family/service-role
+SQL negatives PASS; final baseline101counts unchanged. Object bodies/Vault values/net queues/
+Storage metadata/passwords/settings excluded. Later roles snapshot is not row-snapshot parity.
+No live Auth/PostgREST/HTTP/client/provider proof or hosted schema/deploy/password write.
 
-2Oct [iOS current-assignment](../docs/reports/2026-10-02-ios-assignment-measurable-goal.md)/f7c2b22 and [current Android audio](../docs/reports/2026-10-02-android-audio-player-id-acceptance.md)/9bd442e PASS within recorded local boundaries; prior failures retained.
-**Local legacy iOS goal complete:** [Final record](../docs/reports/2026-10-02-ios-legacy-webview-acceptance.md), helperb29e24b. Resume2 actual native GET401/HEAD401→onePOST200→GET200, verified65905B/hash/system share/Cancel return, actual B/cache clearing/old HEAD403/provider0 and unchanged full fixtureexit0 PASS. [Fixture-owned immutable HTTP](../docs/reports/090/connected-ios-legacy-webview-http.json), fresh five-table preservation and exact cleanup PASS. Initial blocked and resume1 expired/exit1 failures retained. No further click/runtime reuse needed; whole090/hosted/beta open. Next ready checkpoint is hosted/release authority packet: fresh backup/restore, sibling impact and DB→Edge→clients order before live mutation.
+**Next safe action:** close legacy Next bypass with a bounded local compatibility package.
+Actual production a13f696/current HEAD route/token identical. Synthetic real-source execution:
+GET200/HEAD200,upstream2,current-authority0. Five Edge releases cannot fix that endpoint.
+Require old GET/HEAD refusal before upstream AND safe authorized old POST renewal/response
+shape, including valid non-versioned assignment/review/comment and repertoire files.
+New server logic in Edge/shared SQL; existing Next route may be adapter. Do not fabricate
+immutable versions, activate R2, drop valid legacy flows or bulk-push hundreds of changes.
 
-## Preserved historical evidence
+## Latest owner correction
 
-**Next packet prepared:** [090 hosted approval](../docs/reports/2026-10-02-hosted-revocation-approval-packet.md)
-and [manifest](../docs/reports/090/2026-10-02-hosted-revocation-source-manifest.json), sourcebdf34b8.
-Proposed078→090 and five readers,12-module/30-import closure; shared-site/old-client gates explicit.
-[Earlier R0](../docs/reports/2026-10-02-hosted-revocation-r0-preflight.md) PARTIAL retained.
-[Connected R0 completion](../docs/reports/2026-10-02-hosted-revocation-r0-connected-preflight.md):
-correct MCP now works;68 migrations/no078090/authority absent; seven helper ACL/definitions,
-18 relation catalogs/47 selected column checks,329 dependency edges/208 policy references on41 tables.
-Shared005 helpers omit is_active. Six extensions include Vault; five readers version1/JWTfalse/
-bundle IDs verified, sibling VercelReady00be086/alias fresh. Public-directory dependency inferred
-from catalog/dirty local source, not production-user-data testing. Earlier appa13f696/legacyfalse
-flags remain dated. R0 METADATA COMPLETE, RELEASE NO-GO; next separate R1 protected fresh backup/
-isolated restore/exact078→090/both-site/old-client rehearsal. No rows/bodies/secrets/backup/
-mutations/deploy; prior digest overread retained, not repeated. R1–R5 separate authority.
-Source gap320commits/849files not bulk-push permission. No runtime/new inference.
+090 service-only ACL predicates PASS; actual three-role invocation NOT RUN on fresh R1 copy.
+Required caller-execution coverage belongs in the next isolated compatibility package.
 
-[093](../docs/briefs/093-android-private-r2-read-integration.md)/`c3e1b28`: connected local
-Auth/PG17/Deno/signed S3 to Android native PDF40, A→B cache/new-ticket denial. Its old URL
-200 is a historical pre-090 baseline, not current local v2 behavior.
-[091](../docs/briefs/091-connected-private-r2-read.md) owns connected transport;
-[092](../docs/briefs/092-stale-private-file-ticket-cache.md)/`b0fe523` owns late cache guards.
-[WF-013](../docs/briefs/WF-013-multi-tenant-remediation-plan.md) step 5 remains PARTIAL;
-[089](../docs/briefs/089-real-profile-review-web-acceptance.md)/`a8df751` locally proves real
-Chrome A/B profile form/review/member/history. [087](../docs/briefs/087-authority-safe-profile-submit.md)/
-[088](../docs/briefs/088-authority-safe-profile-review.md) retain PG lock/rollback/restore evidence.
-078–086 and dated pre-fix WF-012 findings stay linked; manual synthetic catalogs/roles/
-confirmed users do not accept operator admin/signup/mail, all direct writers or full lifecycle.
-F12 history/CI/rotation and legacy-account risks remain; file modes are not credential rotation.
+Decision#33: sibling website is no longer on this database; **NO WEBSITE CHANGES**.
+This supersedes old shared-site delivery assumptions. Current disconnection owner-reported,
+not independently production-endpoint verified. Keep historical catalog/source/SQL observations,
+but no website remediation/acceptance dependency for Genova. Do not delete retained tables
+or relax tenant RLS; Genova web/mobile and actual retained DB consumers remain in scope.
 
-## Ownership and resources
+## Evidence boundaries and destination
 
-After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
-Primary sole writer.1Oct owned VM/root/data/device/runtime/app/builds/outputs cleaned;
-source-preflight final22,296,284KiB free, prior audio low15,548,780KiB. Current068 five hashes/counts28/1/29/9/79 unchanged.
-Legacy resume2 completed15:40Turkey, fixture9263 exit0. Exact owned genova090 VM/root/data/four services/Lima disk/device607D43A7/.next/mobile.expo/spike090/093/signedapp removed; all five listeners and task processes absent. Final15:44 free19,873,272KiB above10GiBfloor; fresh12:43UTC original068 hashes/counts unchanged. Source/backups/dependencies/AVD/global caches retained; no running task environment to reuse. New runtime requires fresh preflight.
-Key masking failed/transcript echo, no repo/env persistence;
-no further call/after1Oct reuse; owner replacement needed. Preserve original source.
-Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
-global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;
-one heavy process, two-failure causal reassessment, no blind rebuild or broad cleanup.
+[R0](../docs/reports/2026-10-02-hosted-revocation-r0-connected-preflight.md) metadata COMPLETE:
+68migrations/no078090, inactive-helper gap, five version1/JWTfalse bundle identities.
+[Manifest](../docs/reports/090/2026-10-02-hosted-revocation-source-manifest.json) pinsbdf34b8
+twoSQL/five readers/12modules/30imports, not this follow-up client/legacy function package.
+[Local iOS legacy](../docs/reports/2026-10-02-ios-legacy-webview-acceptance.md)/earlier090 Android/
+iOS PDF/audio/current-assignment tests retain declared local fault/relay/synthetic boundaries,
+not today's production Next, phone or hosted acceptance. Earlier failures stay visible.
+Fresh root pnpm check PASS:111files/1130tests/coverage/SW/build; standalone node3/3 PASS.
+[WF-013](../docs/briefs/WF-013-multi-tenant-remediation-plan.md) step5 PARTIAL;089 local forms only;
+F12/rotation/legacy-account risks open. Permanent profile WebView; RN/Expo retained.
 
-## Scope and external checkpoints
+One writer; exclude unrelated supabase/.temp/cli-latest. OwnedR1 VM/container/copies removed;
+Source93ca043/separate docs checkpoint; final post-scope root111/1130/node3/3/387links/7anchors/
+9hashes/22-file redaction/diff PASS. Final build outputs removed17:51,free22,771,852KiB.
+post-removal22,950,380KiB before root gate. Private fresh backup directorygenova-090-r1-5bfGvo
+outside Git retained0700/0600; original068 DB/backup/dependencies/AVD/global caches preserved.
+New runtime needs measured >=10GiB floor preflight; one heavy process, bounded causal retries.
+Same Jev key explicitly renewed2October; owner permits analysis spending, not other providers.
+R1 two redacted calls,estimate$0.000097902; no key persisted to env/repo,not invoice/daily total.
+Scoped local work/commit/cleanup approved. Live schema/Edge/provider/real data/email/credentials/
+push/CI/deploy/hardware/distribution require exact scope; no publication before prerequisites.
+Recovery before DB→Edge→compatible clients. Forward strict repair, never automatic v1 rollback.
 
-Android-first same-product beta → complete preserved scope → both stores; profile WebView. Supabase retained/R2 Drive-exit, no Railway rewrite, preferred <=$5/month.
-Five free choir members then additional billing/manual web invoice, assisted v1 onboarding.
-Price/period/seat counting, deletion/retention/last-chef and release accounts undecided.
-Native write/sync/offline/chat/C4/C5 and store/privacy/lifecycle are still in the objective.
-WF-011/066–069 have dated CI/Preview/dormant-hosted proof; current metadata limited to R0 above,
-no bulk push. [076](../docs/briefs/076-repertoire-mp3-r2-batch-2.md) records 42 objects/
-60,969,062 bytes verified; 49 MP3/192,361,428 bytes pending. [077](../docs/briefs/077-repertoire-mp3-r2-batch-3.md)
-prepares next-ten/27,472,242-byte approval; no copy/activation/public-link withdrawal implied.
-Local scoped implementation/tests/commits/owned cleanup authorized. Hosted DB/Edge/provider,
-credentials/real users/email/data/spending/CI/push/deploy/hardware/distribution need concrete
-authority. Shared DB: current backup/restore, sibling impact and DB→Edge→client rollout;
-087 helper/RPC → 088 RPC precede adapters and survive rollback. Git revert is not data recovery.
-069 local service key is not live Auth proof. Full goal remains unfinished; ask only genuinely
-blocking choices after safe preparation, not repeat an already approved local checkpoint.
+Android-first beta → preserved full scope → both stores, Supabase/privateR2 retained.
+Five members free then extra billing/manual invoice/assisted onboarding. Price/counting/
+retention/deletion/last-chef decisions pending.07642objects/60,969,062B;077nextten unexecuted,
+49MP3/192,361,428B pending. Copy/activation/source ACL withdrawal/real phone/store separate.
+Native write/sync/offline/chat/C4/C5/privacy/lifecycle remain; full objective unfinished.

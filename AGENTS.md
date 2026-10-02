@@ -44,7 +44,9 @@
 - **MCP Server:** `supabase-genesinova`
 - **Project ID:** `hievmwwctjjlhmssoxsu`
 - **URL:** `https://hievmwwctjjlhmssoxsu.supabase.co`
-- **Not:** genesinovachoir web sitesiyle aynı Supabase projesini kullanır
+- **Not:** 2 October owner correction: the sibling genesinovachoir website no longer
+  uses this database. Do not modify that website in this work. Earlier shared-site
+  catalogs remain historical, not current consumer proof; do not drop retained tables.
 - **Tablo sorgusu, migration, log için:** `supabase-genesinova` MCP'yi kullan
 
 ## Tech Stack
@@ -56,7 +58,8 @@
 ## Önemli Kurallar
 - Supabase işlemleri için `supabase-genesinova` MCP kullan, `supabase-diyar` kullanma
 - GitHub push için `github-genesinova` SSH alias aktif
-- genesinovachoir sitesiyle aynı Supabase DB — schema değişikliklerinde her iki projeyi göz önünde bulundur
+- Schema changes must assess actual Genova web/mobile consumers and retained dependencies;
+  do not reopen the detached sibling website as a release blocker (owner,2October).
 
 ## TypeSafe / Jev skill
 
@@ -100,7 +103,7 @@
 - **Anotasyon şeması ortak sözleşmedir.** `lib/repertuvar/annotation-types.ts` tek doğru kaynaktır. RN aynı TypeScript sözleşmesini paylaşır; ayrı Dart aynası üretilmez. Değişiklikte iki istemci ve eski mobil sürümler birlikte değerlendirilir.
 - **Sunucu mantığı Edge Function'a.** Native'e taşınan bir ekran için yeni Next.js API route'u açma; `supabase/functions/` altına yaz ve web'i de aynı fonksiyona bağla.
 - **WebView'da kalacak ekranları native olarak yeniden yazma.** Liste `MIGRATION.md`'de.
-- **Ortak DB:** Şema işinden önce güncel yedek, geri yükleme kanıtı, iki proje etkisi
+- **Ortak DB:** Şema işinden önce güncel yedek, geri yükleme kanıtı, gerçek tüketicilerin etkisi
   ve web/Edge/DB sürüm sırası gerekir. Git revert veri geri dönüşü değildir.
 
 ## Git disiplini

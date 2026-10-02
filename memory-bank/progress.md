@@ -1,5 +1,25 @@
 # İlerleme indeksi
 
+2 October — [090 R1 fresh recovery/rehearsal](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md),
+entry63b36d7. Consistent private backup1623637B/23schemas/101counts, actual offlinePG17.6 restore;
+initial managed-extension owner mismatch repaired and retained. Final six versions/owners,
+32roles/22memberships and seven helpers/18 selected relations/ACL match. Exact078 red→green,
+005/012 and090 five-family negatives PASS on repaired roles; baseline counts unchanged.
+005 no longer uses real seed choir/role. Source-level current-production legacy Next gap
+reproduced: GET200/HEAD200/upstream2/current-authority0; bytes same as local HEAD. R1/090/goal
+OPEN/NO-GO, compatible old-web renewal/runtime NOT RUN; next local legacy closure before new
+manifest/live plan. Owner#33 excludes sibling website changes; disconnection owner-reported,
+not endpoint-verified. Historical sibling form/privacy PASS/directoryFAIL not a Genova blocker.
+Root pnpm check PASS111files/1130tests/coverage/SW/build; separate node3/3 PASS. Not hosted/
+AuthHTTP/client/phone acceptance. No live SQL/Edge/password/provider/email/CI/push. R1 two
+redacted Jev calls2331input/436output,$0.000097902 estimate,not invoice/day total;10/10 self-labels.
+Task VM/container/copies removed17:30:53,22950380KiB before root gate; protected fresh artifact
+retained0700/0600 and original068 database/backup preserved. Final doc/cleanup checkpoints follow.
+Final source/test commit93ca043, nine paths; doc records separate. After owner scope correction,
+fresh root111/1130/coverage/SW/build and node3/3 PASS;387links/7anchors/9hashes/22-file redaction/
+JSON/diff PASS. Root outputs/VM absent,17:51 free22771852KiB; actual three-role090 invocation
+explicitly NOT RUN (ACL predicates only), so R1/goal still OPEN alongside old-client gap.
+
 2 October — [090 connected R0 completion](../docs/reports/2026-10-02-hosted-revocation-r0-connected-preflight.md),
 entryef33e21/sourcepinbdf34b8. Owner connection resolves exact Genesinova MCP access.68 migrations/
 no078090; seven helper definitions/ACL,18 relation catalogs/47 selected source column checks;329 dependency
