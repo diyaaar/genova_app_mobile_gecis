@@ -1552,3 +1552,48 @@ request/cost ($0); prior daily20calls/$0.003070494 estimate unchanged. Source-on
 passes; signed iOS WebView/Auth/bridge/share/B/full fixtureexit0 and current Android audio
 remain NOT RUN.090 cannot close. Next execution uses explicit assignment platformios and
 genuine local CLI public configuration, then observes full actual consumer/fixture boundaries.
+
+### Connected iOS assignment WebView execution — 2 October,779c923
+
+Owner continues; main779c923/only unrelated CLI marker verified; sole primary writer.
+Read current handoff/active/090/source preflight, guide, controls, MIGRATION/decision32,
+existing runtime/helper/transport/embedded policy; work cycle unchanged and previously read.
+One actual outcome: permanent chorist-detail current-version assignment PDF native download/
+share-sheet, B teardown/oldGET+HEAD403/provider0 and unchanged full fixtureexit0 on signed iOS.
+Three actions: genuine isolated service/public config then staged signed build; exact connected
+native/WebView flow and preserved matrix; source preservation/evidence/gates/cleanup/commits.
+Allowed exact.gitignore generated app exclusion, disposable090 config/schema/runtime,091 fixture/
+existing assignment relay, guarded web build and runtime; dated records/brief/handoff/active/progress.
+Product changes only for reproduced causal failures, bounded native/WebView helper/test scope.
+No hosted/real user/provider/DB migration/push/deploy/hardware/external-share/key/inference action.
+Entry20783292KiB; floor10485760KiB. Existing prior-build ios633892KiB+derived~1.84GiB informs
+<=3GiB additional native cap after stopping VM; VM/image<=6GiB first, then require freshly
+measured native projection abovefloor and12500000 safety threshold. Remove native intermediates
+before runtime. Runtime device<=3.2GiB/web+export<=1GiB plus actual VM, separate preflight;
+stop allocation beforefloor, one heavy process. Never claim initial projection passes every phase.
+Owned genova090 VM/root/data/stack, named genova090-ios-webview device, spike090/093 runtime,
+090-ios-native-build/090-ios-webview.app/generatedios/.expo/.next/coverage, loopback54491/54492/
+54493/8000/8001/18092/31090. Delete after last dependent checks; preserve original068 five tables/
+backup/private manifests/dependencies/global caches/shared devices/old Android evidence.
+Only schema imported; no source row copy. Fresh current five-table baseline and comparison.
+Exit requires signed native actual bridge/download/hash/share/B/old denial AND fixtureexit0;
+mobile full gates, normal guard-off exports, links/diff/owned cleanup. Root pnpm check only if
+web/shared/build code changes; guarded actual production web build still required. Legacy-v1
+WebView recovery/Android current audio/hosted/release remain separate open gates. No inference
+using yesterday's exposed TypeSafe key; current deterministic execution does not need it.
+
+Preparation failure: first Supabase start used assignment-ready host Kong tunnel54493,
+but CLI readiness probes configured54491/rest-admin/v1/ready; connection refused and CLI
+removed failed stack (exit1). Images remain task-owned. Causal correction: direct54491
+tunnel only for factory health/config capture; later switch to54493 plus explicit API relay
+for the existing assignment flow. No readiness bypass/debug credential log/product change.
+
+2 October [execution checkpoint](../reports/2026-10-02-connected-ios-assignment-webview-acceptance.md):
+healthy disposable service/schema/grants, guarded web build and normally signed iOS Release PASS.
+Actual native one-use Auth/bridge/permanent synthetic A page PASS; native touch/wheel automation
+does not move the page, causal product defect not established. Owner manual-scroll diagnostic
+requested. PDF/share/B/full fixtureexit0/immutable iOS HTTP/final cleanup remain NOT RUN; no
+accepted iOS file artifact created or090 closure. Fresh mobile55/406 and normal exports PASS;
+five original source hashes/counts unchanged. Active task-owned runtime has bounded~09:15Turkey
+fixture expiry; verify state before resume and perform exact cleanup after last dependent checks.
+No product behavior change/new Jev call; new API cost$0. Historical Android evidence preserved.

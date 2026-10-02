@@ -34,7 +34,9 @@ Early global-signOut first fixture exit1 retained; no product/Auth/schema/depend
 resume FAIL retained; stale old-player status unit-reproduced and identity-qualified. Corrected
 signed native recovery/seek/resume/B denial and fixture exit0 PASS; fresh root110/1110,mobile55/406,
 exports PASS. Jev advisory5/5;1Oct20calls$0.003070494 estimate, not invoice.
-`180108a` [WebView preflight](../docs/reports/2026-10-01-ios-webview-source-preflight.md): platform-specific wx evidence,19focused/root110/1118/mobile55/406/exports PASS, not native. **Next:** signed connected iOS assignment WebView, then Android audio;090/hosted/beta stay open.
+`180108a` [WebView preflight](../docs/reports/2026-10-01-ios-webview-source-preflight.md): platform-specific wx evidence,19focused/root110/1118/mobile55/406/exports PASS, not native;090/hosted/beta stay open.
+
+2Oct [active iOS execution](../docs/reports/2026-10-02-connected-ios-assignment-webview-acceptance.md): normal signed Release/actual Auth/bridge/A page PASS; automatic touch/wheel cannot scroll, owner diagnostic requested. PDF/share/B/full fixtureexit0 NOT RUN, no accepted HTTP. Next verify bounded live state(~09:15Turkey fixture expiry), resolve actual input and finish flow or exact cleanup; no blind rebuild/product fix without causal evidence.
 
 ## Preserved historical evidence
 
@@ -55,8 +57,9 @@ F12 history/CI/rotation and legacy-account risks remain; file modes are not cred
 
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should remain unstaged.
 Primary sole writer.1Oct owned VM/root/data/device/runtime/app/builds/outputs cleaned;
-source-preflight final22,296,284KiB free, prior audio low15,548,780KiB. Previous068 five row hashes/counts
-28/1/29/9/79 unchanged. Key masking failed/transcript echo, no repo/env persistence;
+source-preflight final22,296,284KiB free, prior audio low15,548,780KiB. Current068 five hashes/counts28/1/29/9/79 unchanged.
+2Oct exception: task-owned runtime/device active for immediate owner diagnostic; exact list in record. Latest13,971,728KiB free abovefloor; cleanup NOT RUN, native build/ios removed.
+Key masking failed/transcript echo, no repo/env persistence;
 no further call/after1Oct reuse; owner replacement needed. Preserve original source.
 Preserve original 068 restore/backup/private copy evidence, dependencies, existing AVD and
 global caches. New runtime/build needs fresh peak estimate and >=10 GiB measured headroom;

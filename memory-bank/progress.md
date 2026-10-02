@@ -599,3 +599,21 @@ No VM/DB/native/device/provider/key/inference; new Jev cost$0, prior20calls/$0.0
 estimate unchanged. Owned.next/coverage/mobile.expo removed; final22296284KiB, low21808208KiB
 abovefloor. No fresh DB preservation assertion. CLI marker unstaged, old evidence/source/deps/
 caches retained.090 stillopen; next signed connected iOS assignment WebView, then Android audio.
+
+## 2 October 2026 — actual signed iOS assignment WebView, owner input diagnostic
+
+Base779c923; [execution record](../docs/reports/2026-10-02-connected-ios-assignment-webview-acceptance.md).
+Initial local CLI health exit1 due host54493 vs configured54491 retained; corrected tunnel health
+exit0, schema-only disposable target/no original rows, ticket authority grantsf/f/t. Guarded web
+production build and normally signed arm64 Release PASS; app installed on task-owned iOS26.5.
+Actual one-use native Auth/bridge/permanent A synthetic member page PASS; no PDF/native share/B
+or full fixtureexit0 yet. CUA coordinate touch/wheel cannot move page despite AX/menu control;
+manual owner scroll diagnostic requested, causal product defect unknown. No product behavior fix
+or accepted iOS HTTP artifact; required criteria stay NOT RUN and090 remains IN PROGRESS.
+Fresh mobileTS55/406, normal iOS/Android1440-module exports, five original068 count/hash comparison
+PASS. No fresh rootpnpmcheck: web/shared/build code unchanged, actual guarded build is separate.
+Latest13,971,728KiB free abovefloor; native build/ios intermediates removed. Runtime VM/device/
+ports/web/app intentionally active only for immediate owner diagnostic; exact ownership/expiry
+in record, full cleanup NOT RUN. Verify fixture~09:15Turkey expiry/live state before use; never
+reuse consumed login or relabel partial observer output. No hosted/provider/real data/push/CI/
+deploy/hardware/external share/key/Jev action; new API cost$0. Historical Android SHA256 unchanged.
