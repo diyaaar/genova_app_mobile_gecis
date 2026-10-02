@@ -15,6 +15,18 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 2 October — terminal blocked audit, not completion
+
+Goal tool returned BLOCKED15:35:56UTC. Missing approval for the proposed new local production
+legacy SQL/Edge/Next + minimal web-app client package persisted across three consecutive
+applicable goal turns; first two made independent caller/source-rehearsal progress. Third
+finished interrupted docs f48cea0 and revalidated exact retained backup hash/modes, repeat
+restore23/101,role parity32/22/6,actual three-role/mutants and runtime absence. Required legacy
+FAIL/safe renewal NOT RUN persist, so completion is disproved. No live process wait or other
+meaningful approved required action remains. No implementation/publication inferred from
+automatic continuation. Stop goal work; explicit owner scope choice required to resume.
+Local-plan link above preserves the full scope; sibling website remains NO CHANGES.
+
 ### 2 October — source-pinned old-client recovery challenge, no production changes
 
 Entry a00b358, sole writer; unrelated CLI marker preserved. Previous goal turn PROGRESS:

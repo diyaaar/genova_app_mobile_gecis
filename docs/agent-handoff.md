@@ -7,6 +7,15 @@ English agent records, Turkish user/product copy. One writer; verify actual stat
 
 ## Active goal and next action
 
+**Goal tool status BLOCKED (2 October,15:35:56UTC).** Third consecutive applicable turn
+revalidated missing owner approval for the new local legacy SQL/Edge/Next + minimal web-app
+client package. No dependent implementation or live release authorized. Recovery/caller/source
+rehearsal evidence committed,latest docs f48cea0. Completion audit rechecked retained backup
+hash/modes, restore/32roles/22memberships/sixextensions and actual RPC record; legacy FAIL/
+safe renewal NOT RUN remain. No runtime/process wait or other meaningful required independent
+approved action remains. Ask for the explicit local package choice, then start a fresh blocked
+audit after a user resume; do not auto-resume or mark R1 complete.
+
 [Latest exact old-client rehearsal](reports/2026-10-02-production-legacy-client-source-rehearsal.md)/356a348:
 node4/4 reproduces cache401/session-reuse/raw-audio fallback failures plus positive controls;
 combined standalone7/7/syntax/scoped ESLint PASS. Not a fix/full browser/provider proof.

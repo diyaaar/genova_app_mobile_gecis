@@ -6,6 +6,13 @@ own queue/resources. Verify dated evidence; no self-scoring or scope reduction.
 
 ## Active measurable goal
 
+**Goal status BLOCKED,15:35:56UTC/2October.** Missing local legacy SQL/Edge/Next + minimal
+web-app client scope approval repeated on three consecutive applicable goal turns. Independent
+recovery/caller/production-source rehearsal completed; final docs f48cea0. Fresh completion
+audit verifies backup/hash/modes/restored roles/caller artifacts but legacy FAIL/safe renewal
+NOT RUN persist. No runtime/wait or meaningful independent required action. Await explicit
+owner local-package approval; no live authority. Goal not complete and must not auto-resume.
+
 [Latest legacy-client source rehearsal](../docs/reports/2026-10-02-production-legacy-client-source-rehearsal.md)/356a348:
 actual old URL loader401/same-user-session cache and deniedPOST→raw audio fallback FAIL;
 clear/expiry positive controls PASS. New4/4 and standalone7/7/syntax/ESLint PASS; no actual
