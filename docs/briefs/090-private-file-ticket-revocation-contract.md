@@ -15,6 +15,33 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 2 October — source-pinned hosted approval preparation
+
+Current result: [validated approval packet](../reports/2026-10-02-hosted-revocation-approval-packet.md)
+and [source manifest](../reports/090/2026-10-02-hosted-revocation-source-manifest.json),
+source main/bdf34b8. One observable preparation outcome, not hosted090/beta completion.
+Read AGENTS/handoff/active, this brief, template/guide/work cycle, delivery controls/MIGRATION/
+decisions28–32,061/069/076/077/runbook and actual078/090/five readers. Supabase/TypeSafe skills
+and current docs consulted; no inference/APIcost$0. Sole writer; only unrelated CLI marker
+dirty at entry, sibling checkout read only and its pre-existing changes preserved.
+Three actions: inspect exact dependency/compatibility/rollback evidence; pin source and R0–R5
+authority scopes; validate local records and commit docs only. Allowed: packet/manifest, this
+card, runbook/delivery status, handoff/active/progress. No code/runtime/hosted/real rows/push.
+Entry free19862280KiB, document-only resources N/A; no generated environment recreated.
+Proposed078→090 plus five explicit readers,12-module/30-import closure.078 is shared POST
+authority repair, not090's structural SQL prerequisite. Cached a13f696→source gap320commits/
+849files is not current remote proof or bulk-push authority. R0 metadata and fresh R1 recovery
+are unrun external gates; all later writes/provider/clients/devices remain separately gated.
+Exit: preparation criteria PASS, links/anchors/source hashes/status/redaction/diff verified,
+unrelated paths unstaged and scoped090 docs commit. Whole090 mandatory hosted rows stay open.
+
+Preparation gate actual2October PASS:386 local links/6 local anchors in seven Markdown records,
+15 source/config/migration hashes and byte counts equal pinned Git source, scoped eight-file
+credential-format scan clean; git diff --check PASS. No runtime recreated, final19850404KiB
+available. Source/lockfiles/sibling tree unchanged, CLI marker remains excluded. Primary
+self-review only; no product gate rerun or hosted/readiness claim. Packet criteria all PASS;
+R0–R5 external criteria remain NOT RUN and are not weakened to close the preparation goal.
+
 ### 2 October — local legacy iOS goal accepted, owned runtime removed
 
 Sourceb29e24b; [final record](../reports/2026-10-02-ios-legacy-webview-acceptance.md).

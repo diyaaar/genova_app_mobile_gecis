@@ -1,8 +1,20 @@
 # Private R2 release runbook
 
-Status: **DORMANT HOSTED BACKEND ACCEPTED — REAL INVENTORY/COPY NOT RUN** on 27 September 2026.
+Status: **DORMANT HOSTED BACKEND ACCEPTED27SEP;42 COPIES ACCEPTED THROUGH076; ACTIVATION OPEN**.
+2October source review does not refresh hosted/provider state.070–076 own historical real
+inventory/copy evidence;077 is an unexecuted next-ten approval packet.
 Owner: release operator designated by the product owner. This is the single 053–065 release index;
 individual briefs remain the acceptance authority for each local implementation.
+
+## Current revocation release boundary — 2 October 2026
+
+[090 approval packet](reports/2026-10-02-hosted-revocation-approval-packet.md) pins proposed
+078→090 and only five reader closures to main/bdf34b8. Local web/Android/iOS PDF/audio/permanent
+WebView recovery and old-ticket denial now have bounded evidence; hosted/current old-client,
+sibling-site, fresh backup/restore and phone/release gates remain open. Next is R0 metadata-only
+preflight on the designated Genesinova connection; no live write, bulk db push, five-reader
+deployment, provider/copy/activation or main promotion is authorized by this runbook.
+Historical order below remains the053–065 baseline, not permission to replay it.
 
 ## Candidate and immutable boundaries
 
@@ -90,11 +102,13 @@ R2-object acceptance. No real 063 inventory, R2 object, activation or client fla
 Every entry below is explicit in `supabase/config.toml` with `verify_jwt = false`. This does not make
 the function public: the handler owns method-specific authentication. Upload/lifecycle POST or
 DELETE requests verify the user bearer and server RPC authority; file POST verifies the bearer.
-Ticket-only GET/HEAD currently differs by family: review/comment/chat tickets bind an actor and
+Historical27September ticket-only GET/HEAD differs by family: review/comment/chat tickets bind an actor and
 recheck family-specific access, while repertoire/assignment tickets bind only file, choir and
 expiry. None of the five rechecks the selected Auth session on GET/HEAD. The uniform online
-revocation decision and implementation remain open in [090](briefs/090-private-file-ticket-revocation-contract.md);
-do not describe the existing one-hour bearer URLs as immediately revocable.
+revocation decision and implementation were then open. [090](briefs/090-private-file-ticket-revocation-contract.md)
+now implements/accepts strict v2 plus service-only session/choir/family checks locally; hosted
+version is unverified until R0 and release gates. Do not describe a historical deployed v1 URL
+as immediately revocable or the local implementation as already hosted.
 
 | Family | Function slugs |
 |---|---|

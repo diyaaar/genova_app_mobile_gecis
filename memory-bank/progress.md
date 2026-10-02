@@ -736,3 +736,20 @@ One measurable local goal complete, not whole090/hosted/physical-device/beta/pro
 No new Jev call/key use/APIcost$0, hosted/push/deploy/CI/real data/external share action.
 Next ready checkpoint:090 hosted/release authority packet with backup/restore, sibling-site
 impact and DB→Edge→clients sequence; no live mutation before concrete approval.
+
+### 2 October — source-pinned hosted revocation approval packet
+
+[090 packet](../docs/reports/2026-10-02-hosted-revocation-approval-packet.md) and
+[manifest](../docs/reports/090/2026-10-02-hosted-revocation-source-manifest.json) prepared from
+main/bdf34b8. Proposed078 shared active-membership repair→090 additive service-only authority,
+five explicit file readers, AST12localmodules/30importedges, pinned npm specifiers and SHA256.
+No missing function helpers silently omitted or unrelated function deployment implied.
+Compatibility/sibling-source impact, security-preserving rollback/no090-down assumption and
+R0–R5 separate authority scopes recorded. Cached origin/main=a13f696 gap320commits/849files is
+not fresh remote/live state; no bulk promotion. Initial verification regex did not allow config
+comments, corrected with existing section-aware pattern; no product change. Read-only Node module
+format failure corrected with ESM; documentation Markdown fetch fallback succeeded. No test
+criterion relaxed. All hosted/current-provider/client/device gates NOT RUN, whole090/beta open.
+Document-only local links/anchors/hashes/status/secret/diff review; no build/environment/new key
+or inference/APIcost$0. Original068/backups/dependencies and sibling/unrelated changes retained.
+Next bounded request: R0 metadata-only with designated exact-project connection, not live writes.

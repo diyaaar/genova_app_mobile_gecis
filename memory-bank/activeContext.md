@@ -41,6 +41,13 @@ exports PASS. Jev advisory5/5;1Oct20calls$0.003070494 estimate, not invoice.
 
 ## Preserved historical evidence
 
+**Next packet prepared:** [090 hosted approval](../docs/reports/2026-10-02-hosted-revocation-approval-packet.md)
+and [manifest](../docs/reports/090/2026-10-02-hosted-revocation-source-manifest.json), sourcebdf34b8.
+Proposed078→090 and five readers,12-module/30-import closure; shared-site/old-client gates explicit.
+No fresh hosted state/backup/deploy. Next R0 metadata-only after designated connection verification;
+no real rows/secrets/mutations. R1–R5 separate scope. Cached a13f696 gap320commits/849files is
+not live evidence or bulk-push authority. Document-only goal; no runtime or paid inference.
+
 [093](../docs/briefs/093-android-private-r2-read-integration.md)/`c3e1b28`: connected local
 Auth/PG17/Deno/signed S3 to Android native PDF40, A→B cache/new-ticket denial. Its old URL
 200 is a historical pre-090 baseline, not current local v2 behavior.

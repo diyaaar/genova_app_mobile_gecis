@@ -40,6 +40,13 @@ exports PASS. Jev triage advisory5/5;1Oct20calls$0.003070494 estimate, not invoi
 
 ## Preserved evidence and remediation
 
+**Next packet prepared:** [090 hosted approval](reports/2026-10-02-hosted-revocation-approval-packet.md)
+and [manifest](reports/090/2026-10-02-hosted-revocation-source-manifest.json), sourcebdf34b8.
+Proposed078→090/shared-site plus exactly five readers,12-module/30-import closure. No live
+metadata/backup/deploy performed. Next R0: verify designated Genesinova connection and read
+catalog/ledger/function/release metadata only; no rows/secrets/mutations. R1–R5 need separate
+scope. Cached origin/main=a13f696 gives320commits/849files gap, not live evidence or push authority.
+
 [093](briefs/093-android-private-r2-read-integration.md)/`c3e1b28` preserves connected
 synthetic Android PDF evidence; its historical old-URL 200 was later corrected in 090.
 [091](briefs/091-connected-private-r2-read.md) joins local Auth/RLS/Deno/signed S3;

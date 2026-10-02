@@ -1,0 +1,221 @@
+{
+  "recordedAt": "2026-10-02T12:57:04.408Z",
+  "sourceRevision": "bdf34b80a239fe7a69188746e5543caf3b12cbf3",
+  "projectRef": "hievmwwctjjlhmssoxsu",
+  "status": "SOURCE_ONLY_NOT_DEPLOYED",
+  "scope": "078 shared membership repair plus 090 authority and five reader Edge dependency closures; not a full web release manifest.",
+  "proposedMigrationOrder": [
+    {
+      "path": "supabase/migrations/20260928140000_active_membership_revocation_078.sql",
+      "bytes": 4327,
+      "sha256": "3637722b0aa4822c6c4ac96789554d2eedce52410c552cc94f4471948cc705bb"
+    },
+    {
+      "path": "supabase/migrations/20260930080046_private_file_ticket_authority_090.sql",
+      "bytes": 6365,
+      "sha256": "4f345d968fa6945aa746b4d00b7852c293047a984beabd79c4b7a64629c0ad86"
+    }
+  ],
+  "edgeSlugs": [
+    "repertoire-file",
+    "assignment-file",
+    "assignment-review-file",
+    "repertoire-comment-file",
+    "chat-media-file"
+  ],
+  "localModuleFiles": [
+    {
+      "path": "lib/server/drive-file-content.ts",
+      "bytes": 1565,
+      "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+    },
+    {
+      "path": "supabase/functions/_shared/private-file-authority.ts",
+      "bytes": 704,
+      "sha256": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a"
+    },
+    {
+      "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+      "bytes": 4239,
+      "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+    },
+    {
+      "path": "supabase/functions/assignment-file/index.ts",
+      "bytes": 5984,
+      "sha256": "dfe67a9a3dd941c4a4d08ca8ea42300577c794907e890479680ce08e42a281ad"
+    },
+    {
+      "path": "supabase/functions/assignment-review-file/index.ts",
+      "bytes": 5112,
+      "sha256": "4e11956ed83aee5275e5bc7c9ab2b478dd09f0fedf7ccd40ee0ba5a26aacbb70"
+    },
+    {
+      "path": "supabase/functions/chat-media-file/index.ts",
+      "bytes": 5103,
+      "sha256": "c43605526cd7e27af3ce20c4570b2e7123ea452eca792bb67e4e8d132fe92c02"
+    },
+    {
+      "path": "supabase/functions/create-choir/create-choir-core.ts",
+      "bytes": 3964,
+      "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+    },
+    {
+      "path": "supabase/functions/repertoire-comment-file/index.ts",
+      "bytes": 5067,
+      "sha256": "c0d42f786eef1b5a43463e43aca4255ecbc1ae8cb4b28a46f1e18e1197fa1753"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/handler.ts",
+      "bytes": 15810,
+      "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/index.ts",
+      "bytes": 6105,
+      "sha256": "e445074facb9031c2f92451813b2442ccfccf638cf60632aa25ead7b23c1711e"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/r2.ts",
+      "bytes": 2603,
+      "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/storage.ts",
+      "bytes": 2951,
+      "sha256": "3dbffa6503c9c009d5112ed2eb6d25f1f5b0b206544f82c09224dc989633eae8"
+    }
+  ],
+  "relativeImportEdges": [
+    {
+      "from": "supabase/functions/_shared/private-file-authority.ts",
+      "to": "supabase/functions/_shared/private-file-ticket-v2.ts"
+    },
+    {
+      "from": "supabase/functions/assignment-file/index.ts",
+      "to": "supabase/functions/_shared/private-file-authority.ts"
+    },
+    {
+      "from": "supabase/functions/assignment-file/index.ts",
+      "to": "supabase/functions/_shared/private-file-ticket-v2.ts"
+    },
+    {
+      "from": "supabase/functions/assignment-file/index.ts",
+      "to": "supabase/functions/create-choir/create-choir-core.ts"
+    },
+    {
+      "from": "supabase/functions/assignment-file/index.ts",
+      "to": "supabase/functions/repertoire-file/handler.ts"
+    },
+    {
+      "from": "supabase/functions/assignment-file/index.ts",
+      "to": "supabase/functions/repertoire-file/r2.ts"
+    },
+    {
+      "from": "supabase/functions/assignment-review-file/index.ts",
+      "to": "supabase/functions/_shared/private-file-authority.ts"
+    },
+    {
+      "from": "supabase/functions/assignment-review-file/index.ts",
+      "to": "supabase/functions/_shared/private-file-ticket-v2.ts"
+    },
+    {
+      "from": "supabase/functions/assignment-review-file/index.ts",
+      "to": "supabase/functions/create-choir/create-choir-core.ts"
+    },
+    {
+      "from": "supabase/functions/assignment-review-file/index.ts",
+      "to": "supabase/functions/repertoire-file/handler.ts"
+    },
+    {
+      "from": "supabase/functions/assignment-review-file/index.ts",
+      "to": "supabase/functions/repertoire-file/r2.ts"
+    },
+    {
+      "from": "supabase/functions/chat-media-file/index.ts",
+      "to": "supabase/functions/_shared/private-file-authority.ts"
+    },
+    {
+      "from": "supabase/functions/chat-media-file/index.ts",
+      "to": "supabase/functions/_shared/private-file-ticket-v2.ts"
+    },
+    {
+      "from": "supabase/functions/chat-media-file/index.ts",
+      "to": "supabase/functions/create-choir/create-choir-core.ts"
+    },
+    {
+      "from": "supabase/functions/chat-media-file/index.ts",
+      "to": "supabase/functions/repertoire-file/handler.ts"
+    },
+    {
+      "from": "supabase/functions/chat-media-file/index.ts",
+      "to": "supabase/functions/repertoire-file/r2.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-comment-file/index.ts",
+      "to": "supabase/functions/_shared/private-file-authority.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-comment-file/index.ts",
+      "to": "supabase/functions/_shared/private-file-ticket-v2.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-comment-file/index.ts",
+      "to": "supabase/functions/create-choir/create-choir-core.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-comment-file/index.ts",
+      "to": "supabase/functions/repertoire-file/handler.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-comment-file/index.ts",
+      "to": "supabase/functions/repertoire-file/r2.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-file/handler.ts",
+      "to": "lib/server/drive-file-content.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-file/handler.ts",
+      "to": "supabase/functions/_shared/private-file-ticket-v2.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-file/index.ts",
+      "to": "supabase/functions/_shared/private-file-authority.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-file/index.ts",
+      "to": "supabase/functions/_shared/private-file-ticket-v2.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-file/index.ts",
+      "to": "supabase/functions/create-choir/create-choir-core.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-file/index.ts",
+      "to": "supabase/functions/repertoire-file/handler.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-file/index.ts",
+      "to": "supabase/functions/repertoire-file/r2.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-file/index.ts",
+      "to": "supabase/functions/repertoire-file/storage.ts"
+    },
+    {
+      "from": "supabase/functions/repertoire-file/storage.ts",
+      "to": "lib/server/drive-file-content.ts"
+    }
+  ],
+  "externalModuleSpecifiers": [
+    "npm:@supabase/supabase-js@2.112.4",
+    "npm:aws4fetch@1.0.20"
+  ],
+  "gatewayConfig": {
+    "path": "supabase/config.toml",
+    "bytes": 2704,
+    "sha256": "a938873d79663abfc1ce4cd170e0be3c80a7d5adaa433260b66c46920f378342"
+  },
+  "excluded": "No upload/lifecycle or unrelated function deployment. Historical 069 prerequisites are verify-only; no bulk db push. Current hosted ledger/functions/flags/live web unknown.",
+  "verification": "TypeScript AST literal import/export closure, exact source SHA256 and explicit gateway/source-v2 bindings verified; not a deploy bundle or Deno/runtime result."
+}

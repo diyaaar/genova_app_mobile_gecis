@@ -34,12 +34,15 @@ implementation (`5f55c48`): synthetic connected repertoire and Android Release o
 pass; two-session SQL commit-boundary checks pass at `70fd23e`. Later Chrome/native PDF/
 permanent Android WebView recovery, all-five declared-adapter HTTP/COMMIT and connected
 Android audio at `6fed2ac` pass locally. [Current evidence](reports/2026-10-01-connected-android-audio-acceptance.md)
-retains exact relays/faults; native iOS/hosted/device/release gates keep090 open.
+retains exact relays/faults; hosted/device/release gates keep090 open.
 `216b996` now accepts current assignment-version private reading in the permanent Android
 WebView with actual local Auth/RLS/Deno/signed synthetic bytes, B teardown and old GET/HEAD403.
 [Record](reports/2026-10-01-connected-android-assignment-webview-acceptance.md) retains adapter boundaries.
-Next integration milestone: measured iOS SDK/disk preflight, then accumulated native private-client
-PDF/audio/WebView acceptance. Not a native profile rewrite, hosted or blanket Drive-exit claim.
+2October accumulated iOS PDF/audio/current-assignment and [legacy-v1 WebView](reports/2026-10-02-ios-legacy-webview-acceptance.md)
+acceptance now PASS locally, with current Android audio also PASS; earlier failures retained,
+owned runtimes removed. Next is [090's source-pinned hosted approval packet](reports/2026-10-02-hosted-revocation-approval-packet.md):
+R0 metadata → fresh recovery/sibling/old-client gates → separately approved narrow server release.
+Not a native profile rewrite, hosted release or blanket Drive-exit claim; no bulk main push.
 [077](briefs/077-repertoire-mp3-r2-batch-3.md)
 remains an exact, unexecuted real-copy approval checkpoint. Neither block changes the
 Android-first critical path or promotes a local test to beta acceptance.
@@ -400,9 +403,10 @@ does not waive mobile privacy, deletion, disclosures or payment-policy assessmen
 Follow select -> implement -> focused test -> review -> required integration/release gates ->
 record -> cleanup -> continue. Use Android for ordinary runtime development; group iOS acceptance
 at integration/candidate milestones and test earlier when an iOS-specific change demands it.
-Current090 integration: [native iOS PDF](reports/2026-10-01-connected-ios-private-pdf-acceptance.md)
-locally accepted; next measured connected iOS audio/recovery/seek/B teardown, then permanent
-WebView. These remaining rows and hosted/provider/phone/beta/release gates are not accepted by PDF.
+Current090 integration: [native iOS PDF](reports/2026-10-01-connected-ios-private-pdf-acceptance.md),
+audio/recovery/seek/B teardown and both current-assignment/legacy permanent WebViews now have
+local acceptance through2October. [Hosted approval preparation](reports/2026-10-02-hosted-revocation-approval-packet.md)
+owns the next concrete boundary; hosted/provider/phone/beta/release gates remain open.
 Run full gates after code review and targeted repairs stabilize, not after every diagnostic edit;
 never call earlier evidence current after a relevant change. Keep one active outcome, one heavy
 process, >=10 GiB free, bounded artifacts and causal reassessment after two failed approaches.
