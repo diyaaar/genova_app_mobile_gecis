@@ -662,3 +662,19 @@ Owned stack/VMroot/data/app/reverses/emulator/generatedoutputs removed; no ports
 final20461732KiB abovefloor, existing AVD/global caches retained. TypeSafe skill evidence
 distinction retained/no new inference/key use/APIcost$0. No hosted/push/deploy/real data/hardware.
 One measurable local goal, not090/beta/product closure; next legacy-v1 iOS permanent WebView.
+
+### 2 October — iOS legacy-v1 WebView goal preparation, native click pending
+
+Basef63aa49/helperb29e24b; [dated checkpoint](../docs/reports/2026-10-02-ios-legacy-webview-acceptance.md).
+Fixed ios-only wx target, unchanged legacy matrix,29 focused tests/root111files1130tests PASS.
+Healthy isolated schema-only restore/service grants f/f/t, guarded web/signed native Release,
+actual iOS Auth/bridge/permanent A page PASS; fresh mobile55/406/normal1440module exports PASS.
+Native file/hash/share/B/complete fixtureexit0 and accepted HTTP artifact NOT RUN.
+CUA coordinate window error, AX/menu works; owner one actual file-link click requested,
+no relaunch/reload/B press. Runtime READY~13:00Turkey/expires~13:30; inventory in report,
+same-task reuse only, exact cleanup on final check/timeout. Native intermediates/cache removed;
+current13690040KiB abovefloor, original five checkpoint hashes/counts unchanged.
+Xcode command/preflight failures and Hermes regex false positive retained with causal corrections;
+exact current CLI secrets absent in public bundle. CLI factory-key redaction miss retained.
+Goal active/not complete;090/hosted/beta still open. No new inference/key use/APIcost$0,
+product/Auth change, hosted/push/deploy/real data/hardware. Primary self-review only.

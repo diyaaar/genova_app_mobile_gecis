@@ -15,6 +15,60 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 2 October — iOS legacy-v1 permanent WebView goal start
+
+Read current AGENTS, handoff/active, this brief's relevant start/current checkpoints,
+guide/work cycle, delivery controls, MIGRATION, decision32, installed TypeSafe/Supabase
+skills and actual fixture/runtime/config/authority sources. Verified main/f63aa49;
+only unrelated supabase/.temp/cli-latest dirty. Sole writer, no delegated work.
+One result: actual signed iOS permanent chorist WebView stale-v1 PDF recovery,
+one authority renewal, native65905B/hash/share and B cache/old HEAD403/provider0,
+unchanged complete fixtureexit0 plus separate immutable iOS legacy evidence.
+Three actions: isolated service/schema and signed guarded build; connected native flow;
+fresh gates/source comparison/evidence/owned cleanup and separate code/docs commits.
+Allowed: existing091 connected fixture, narrow091 legacy evidence helper/tests,
+ignored spike090/093 runtime/config/schema/signedapp/nativebuild and generated mobileios,
+guarded existing web build; this brief, dated090 records and handoff/active/progress.
+No product refactor or behavior change unless a causal in-scope defect is reproduced.
+Historical evidence must not be overwritten; fixture owns new JSON with wx after unchanged
+legacy assertions. No hosted DB/Edge/provider, user rows, push/deploy/CI, spending, email,
+hardware/external sharing or yesterday's exposed key. New Jev API cost$0.
+Entry20451676KiB; floor10485760. Existing owned heavy outputs absent.
+Estimate VM/images<=6GiB, web<=0.6GiB; stop VM before <=3GiB native build and require
+fresh projected headroom abovefloor/12500000 safety threshold. Remove native intermediates
+before restarting VM; new named iOS device<=3.2GiB and normal exports<=1GiB require
+their own measured preflight. One heavy process; stop allocation if floor threatened.
+Owned targets: genova090 VM/root/data/four containers and loopback54491/54492/8000/18092/31090,
+one genova090-ios-webview device, spike090-runtime/093-runtime/090-ios-native-build/
+090-ios-webview.app, generated mobileios/.expo/coverage/.next. Remove after last dependent check;
+preserve original068/source hashes, retained backups/private evidence/dependencies/global caches.
+Exit requires actual native flow AND fixtureexit0, immutable matrix, fresh mobile/root gates,
+guard-off Android/iOS exports, original five-table preservation, links/diff and exact cleanup.
+Simulator/synthetic provider is not physical-device or hosted acceptance; whole090 stays open.
+
+Preparation reassessment: first xcodebuild exit70 because -destination and -arch conflict;
+change only to ARCHS=arm64/ONLY_ACTIVE_ARCH=YES, normal signing retained. The next attempt
+stopped BEFORE build allocation: fresh14296192KiB minus2GiB projected12199040, abovefloor
+but below the declared12500000 safety threshold. Do not rerun the whole environment/build.
+Inspect only owned post-build Next cache for removal after its last dependent build, and
+reuse the actual CLI public anon already embedded in the guarded web output while VM stays
+stopped. Require a new measured projection before one bounded corrected native build.
+No changed product/test acceptance or source-table mutation. Initial CLI masking missed
+new sb_secret/sb_publishable factory formats; transient local-only transcript exposure,
+not a hosted credential. Subsequent masking covers both formats; no key value stored in records.
+
+[iOS legacy checkpoint](../reports/2026-10-02-ios-legacy-webview-acceptance.md)/b29e24b:
+normal signed Release169773ms, actual CLI public/private bundle checks and first native Auth/
+permanent A bridge/page PASS. Root111/1130/mobile55/406/normal exports PASS. Raw Hermes-key
+regex false positive investigated; exact factory secrets absent, no weakened criterion.
+CUA observes native page and AX/menu actions work; coordinate drag/scroll fails and Page_Down
+does not scroll. Owner actual file-link click once requested; native confirmation/share/B and
+complete fixtureexit0/immutable iOS legacy HTTP still NOT RUN, no fabricated artifact.
+Source checkpoint five hashes/counts unchanged. Same runtime READY~13:00Turkey/expires~13:30,
+exact inventory/removal point in record; fresh resource floor maintained, native intermediates
+removed, remaining runtime kept only for pending same-flow action. Goal active/not complete,
+090 stays IN PROGRESS. No rebuild/product fix/hosted/new inference; incremental APIcost$0.
+
 The original “devam” resumed the Android-first Drive-exit queue after local 089. Read AGENTS,
 handoff/active, WF-009/WF-013, current delivery controls, migration guide, MIGRATION, decisions
 #28–31, 015/021/053, 065/076 and the R2 runbook. At that earlier checkpoint

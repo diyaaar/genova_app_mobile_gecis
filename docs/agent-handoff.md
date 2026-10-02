@@ -35,7 +35,8 @@ signed native recovery/seek/resume/B denial and fixture exit0 PASS; fresh root11
 exports PASS. Jev triage advisory5/5;1Oct20calls$0.003070494 estimate, not invoice.
 `180108a` [WebView preflight](reports/2026-10-01-ios-webview-source-preflight.md): platform-specific wx evidence,19focused/root110/1118/mobile55/406/exports PASS, not native;090/hosted/beta remain open.
 
-2Oct [iOS current-assignment goal](reports/2026-10-02-ios-assignment-measurable-goal.md)/f7c2b22 PASS: owner-assisted file click, native PDF/hash/share-return, Preview/share inspect+dismiss, B/cache/oldGET+HEAD403/provider0, fixtureexit0. [Current Android audio](reports/2026-10-02-android-audio-player-id-acceptance.md)/9bd442e PASS afterdb6cc93: real Auth/Expo/v1→one renewal/seek/deadline/resume/B oldGET+HEAD403/provider0/no-loop, fixtureexit0; immutable revision evidence, mobile55/406/root110/1120/normal exports. Native diagnostics/HTTP, not CUA visual screen or audibility. Earlier failed records retained. **Next:** legacy-v1 iOS permanent WebView recovery;090/hosted/beta remain open.
+2Oct [iOS current-assignment](reports/2026-10-02-ios-assignment-measurable-goal.md)/f7c2b22 and [current Android audio](reports/2026-10-02-android-audio-player-id-acceptance.md)/9bd442e PASS within their recorded local boundaries; earlier failures retained.
+**Active goal:** [iOS legacy-v1 WebView](reports/2026-10-02-ios-legacy-webview-acceptance.md), helperb29e24b. Signed Release/actual Auth+permanent A page/root111/1130/mobile55/406/normal exports PASS; PDF/share/B/fixtureexit0 NOT RUN, no accepted HTTP JSON. CUA AX/menu works but coordinate input fails; owner asked to scroll/click file once and leave native confirmation. No relaunch/reload/global signOut or blind rebuild. Verify same owned runtime before reuse; READY~13:00Turkey, hold expires~13:30. Goal active/not complete;090/hosted/beta open.
 
 ## Preserved evidence and remediation
 
@@ -58,7 +59,7 @@ F12 history/CI/rotation and legacy-account/password risks remain; 0600 modes are
 After checkpoint commits only unrelated `supabase/.temp/cli-latest` should be dirty; verify.
 One writer/result/heavy process, measured >=10 GiB floor, reassess after two failed approaches.
 Owned runtimes/builds/outputs cleaned; source-preflight final22,296,284KiB; prior audio low15,548,780KiB.
-2Oct current-Android-goal owned runtime/VM/root/data/emulator/app/reverses/build/outputs cleaned, no task listeners/profile/Lima disk; final20,461,732KiB free, Android postbuild15,565,468 >=10GiBfloor. Existing AVD/global caches preserved. New runtime requires fresh resource preflight.
+Prior Android goal cleaned/final20,461,732KiB. Current legacy goal owns genova090 VM/four services, device537E75EA-F618-4D13-BBCA-D8B4EC052594, .next/mobile.expo/spike090/093/signedapp; ports54491/54492/8000/18092/31090, current13,690,040KiB. Native intermediates/Next cache removed. Same-task click reuse only until~13:30; exact cleanup after final dependent check/timeout, no accepted artifact on failure. Inventory/PIDs in current record; preserve dependencies/AVD/global caches/original068. New runtime needs fresh preflight.
 Fresh original068 five hashes/counts28/1/29/9/79 unchanged. Key-input masking failed: transcript
 echo occurred, no repo/env persistence; no further call/after1Oct reuse; owner replacement needed. Keep
 `genova_068_test_restore`, retained 068 backup, private manifests/journals,
