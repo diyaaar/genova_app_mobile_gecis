@@ -10,6 +10,7 @@ import { createClient } from '@supabase/supabase-js';
 import { createRepertoireFileTicket } from '../functions/repertoire-file/ticket';
 import { assertLocalSignature,createConnectedAudioFixture,toneWav } from './091_connected_audio_fixture';
 import { assignmentWebViewMode, assignmentWebViewEvidenceTarget, assignmentVersionSeed, assertAssignmentWebViewReads } from './091_assignment_webview_fixture';
+import { legacyWebViewEvidenceTarget, assertLegacyWebViewReads } from './091_legacy_webview_fixture';
 
 const API = 'http://127.0.0.1:54491';
 const EDGE = 'http://127.0.0.1:8000';
@@ -45,6 +46,7 @@ const webViewRecovery = process.env.GENOVA_090_ANDROID_WEBVIEW === '1';
 const nativeAudioRecovery = process.env.GENOVA_090_CONNECTED_ANDROID_AUDIO === '1';
 const assignmentWebView = assignmentWebViewMode(process.env);
 const assignmentEvidence = assignmentWebView ? assignmentWebViewEvidenceTarget(process.env) : null;
+const legacyEvidence = legacyWebViewEvidenceTarget(process.env);
 const ASSIGNMENT_EDGE = 'http://127.0.0.1:8001';
 const webViewFamily = assignmentWebView ? 'assignment-file' : 'repertoire-file';
 if(process.env.GENOVA_090_CONNECTED_AUDIO_PLATFORM)assert.equal(nativeAudioRecovery,true,'Platform selector needs explicit audio mode');
@@ -381,7 +383,7 @@ async function main() {
       else if (webViewRecovery) oneUseFixture = JSON.stringify({ email: first.data.user.email, password: passwordA });
       else if (nativePdfRecovery) oneUseFixture = JSON.stringify({ ...payload, legacyUrl: legacyUrl.toString() });
       else await writeFile(androidFixturePath, JSON.stringify(payload), { mode: 0o600, flag: 'wx' });
-      console.log(`READY ${nativeAudioRecovery?'090 connected audio':webViewRecovery ? '090 WebView' : nativePdfRecovery ? '090 one-use runtime' : '093'} synthetic ${assignmentEvidence?.platform ?? 'Android'} fixture; send SIGTERM after runtime check`);
+      console.log(`READY ${nativeAudioRecovery?'090 connected audio':webViewRecovery ? '090 WebView' : nativePdfRecovery ? '090 one-use runtime' : '093'} synthetic ${assignmentEvidence?.platform ?? legacyEvidence?.platform ?? 'Android'} fixture; send SIGTERM after runtime check`);
       await new Promise<void>((resolve, reject) => {
         const timeout = setTimeout(() => reject(new Error('093 Android hold timed out')), 30 * 60_000);
         process.once('SIGTERM', () => { clearTimeout(timeout); resolve(); });
@@ -398,12 +400,13 @@ async function main() {
           }, null, 2), { flag: 'wx' });
           console.log('PASS assignment current-version WebView/native PDF/hash/B GET+HEAD403/provider0');
         } else {
-        assert.ok(webViewReads.filter(row => row.method === 'GET' && row.status === 401).length >= 2, 'baseline and repaired old body refusals missing');
-        assert.equal(webViewReads.filter(row => row.method === 'POST' && row.status === 200).length, 1, 'recovery must issue exactly one fresh ticket');
-        assert.equal(webViewReads.filter(row => row.method === 'HEAD' && row.status === 401).length, 1);
-        assert.equal(webViewReads.filter(row => row.method === 'GET' && row.status === 200).length, 1);
-        assert.equal(webViewReads.filter(row => row.method === 'HEAD' && row.status === 403).length, 1);
-        for (const row of webViewReads.filter(row => row.status >= 400)) assert.equal(row.providerDelta, 0);
+        assertLegacyWebViewReads(webViewReads);
+        if (legacyEvidence) await writeFile(legacyEvidence.path, JSON.stringify({
+          timestamp: new Date().toISOString(), result: 'PASS', platform: legacyEvidence.platform,
+          family: 'repertoire-file', consumer: 'legacy-v1 permanent WebView recovery', reads: webViewReads,
+          contentLength: pdf.length, sha256: hash(pdf),
+          boundary: 'Actual local Auth/RLS/Deno and iOS permanent WebView; declared listener/URL relay; signature-verified synthetic storage, not hosted.',
+        }, null, 2), { flag: 'wx' });
         console.log('PASS 090 real WebView baseline/refusal, one authority renewal, PDF body/hash and B oldURL403 without provider');
         }
       } else if (nativePdfRecovery) {
