@@ -7,6 +7,14 @@ English agent records, Turkish user/product copy. One writer; verify actual stat
 
 ## Active goal and next action
 
+[Latest exact old-client rehearsal](reports/2026-10-02-production-legacy-client-source-rehearsal.md)/356a348:
+node4/4 reproduces cache401/session-reuse/raw-audio fallback failures plus positive controls;
+combined standalone7/7/syntax/scoped ESLint PASS. Not a fix/full browser/provider proof.
+Local proposal now includes minimal WEB-APP client adoption/refresh, not just server adapters.
+Owner approval still missing (second consecutive applicable goal turn); independent safe
+rehearsal now checkpointed. On third consecutive identical impasse, audit and set goal blocked;
+do not restart runtime/build or repeat status records as progress. No live process wait.
+
 **090/R1 remains OPEN, live release NO-GO.** [R1 recovery/rehearsal](reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md):
 fresh protected consistent backup1,623,637B,23schemas/101counts; actual offline PG17.6 restore.
 Corrected six extension versions/owners,32 role attributes/22 memberships and seven helper/

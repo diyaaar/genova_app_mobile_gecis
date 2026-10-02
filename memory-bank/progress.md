@@ -1,5 +1,15 @@
 # İlerleme indeksi
 
+2 October — [090 production legacy-client source rehearsal](../docs/reports/2026-10-02-production-legacy-client-source-rehearsal.md),
+test356a348: exact a13f696 loader/AST-selected audio callback executed with synthetic adapters.
+Automatic401 recovery/same-user new-session cache/deniedPOST raw fallback FAIL at source-unit
+layer; manual clear/expiry positive controls PASS. No full browser/actual provider/DriveACL
+claim; reproduction tests4/4, standalone7/7/syntax/scoped ESLint/diff PASS, no product source
+change/build/runtime/new Jev call($0). Updated local proposal includes minimal compatible web-app
+client/cache/audio adoption/refresh. Owner scope choice still missing on second consecutive
+applicable goal turn; next identical real impasse requires third-turn blocked audit. Goal OPEN;
+no live write/site change. Final20985944KiB; protected evidence/original068 remain preserved.
+
 2 October — [090 actual RPC caller follow-up](../docs/reports/2026-10-02-rpc-caller-recovery-acceptance.md),
 source31483fd. Same protected fresh backup/new offline restore23schemas/101counts;32roles/
 22memberships/six extension versions/owners match. Actual service5allow/16deny,anon5/auth5

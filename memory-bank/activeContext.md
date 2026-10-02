@@ -6,6 +6,14 @@ own queue/resources. Verify dated evidence; no self-scoring or scope reduction.
 
 ## Active measurable goal
 
+[Latest legacy-client source rehearsal](../docs/reports/2026-10-02-production-legacy-client-source-rehearsal.md)/356a348:
+actual old URL loader401/same-user-session cache and deniedPOST→raw audio fallback FAIL;
+clear/expiry positive controls PASS. New4/4 and standalone7/7/syntax/ESLint PASS; no actual
+browser/provider/DriveACL claim. Proposed scope now requires minimal web-app client adoption/
+refresh, not only server adapters. Awaiting owner choice on second consecutive applicable goal
+turn; safe independent rehearsal checkpointed. Third unchanged genuine impasse requires blocked
+audit/tool status, not more unchanged builds/status commits. No pending process/runtime wait.
+
 **R1/090 OPEN; release NO-GO.** [Fresh recovery/rehearsal](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md):
 1,623,637B protected consistent logical backup,23schemas/101counts, actual offline PG17.6.
 After explicit local extension/role bootstrap, six extensions' versions/owners,32 roles/

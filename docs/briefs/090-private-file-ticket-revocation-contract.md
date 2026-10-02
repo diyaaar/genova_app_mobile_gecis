@@ -15,6 +15,36 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 2 October — source-pinned old-client recovery challenge, no production changes
+
+Entry a00b358, sole writer; unrelated CLI marker preserved. Previous goal turn PROGRESS:
+actual caller/permission-mutant evidence and source/doc commits. No response yet to new
+production SQL/Edge/Next scope request; automatic continuation is not that permission.
+Within already approved R1 compatibility rehearsal: read exact a13f696 URL-cache loader and
+repertoire audio resolver; execute those actual source units with synthetic Auth/clock/HTTP
+adapters, challenge401/cached-session and denied-POST fallback behavior, record measured
+FAIL/PASS/NOT RUN and what changes the required client transition. Allowed dedicated090
+source probe plus090 report/plan/index records ONLY; no app/lib/Edge/migration changes.
+Read handoff/active/090/controls/guide/template and exact relevant sources. No model judgment
+needed for deterministic outcomes; no Jev inference/cost. Entry20997884KiB; existing dependencies,
+in-memory transpilation, no VM/download/build/phone or private backup read. Required focus
+Node tests/syntax/ESLint and source hashes/redaction/local links/diff, no false full-browser claim.
+One outcome: decide whether old cached clients need an explicit refresh/update transition;
+safe cache clearing cannot be assumed to happen automatically after reader denial.
+
+Exit [source rehearsal](../reports/2026-10-02-production-legacy-client-source-rehearsal.md)/356a348:
+new4/4 and combined node7/7/syntax/scoped ESLint/diff PASS. Actual a13f696 loader retains rejected
+cached URLs and same-user prior-session URLs without newPOST; clear/expiry renewal positive
+controls PASS. Actual AST-extracted audio callback chooses raw Drive fallback after actual
+loader receives syntheticPOST403. Source-layer compatibility FAIL, not proven real Drive access
+or full browser/PDF/audio behavior. Current local callback differs; no bulk-release acceptance.
+Updated proposed scope includes minimal web-app client/cache/audio adoption and refresh; still
+awaiting owner approval, not authorized by automatic continuation. No app/Edge/SQL/provider/site
+changes or runtime/build/model call. Final20985944KiB. Goal turn PROGRESS; same material scope
+blocker applies on second consecutive turn, no verified process wait.
+Record checks215local links/3anchors/3source pins/7-file exact-sensitive-value scan/diff PASS;
+previous interrupted documentation checkpoint now finalized separately from356a348 tests.
+
 ### 2 October — missing actual RPC caller execution follow-up
 
 Entry e39ba60; single writer, unrelated CLI marker preserved. Read handoff/active/current
