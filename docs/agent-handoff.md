@@ -7,7 +7,21 @@ English agent records, Turkish user/product copy. One writer; verify recorded st
 
 ## Current checkpoint and next action
 
-Sourcef1d089b: [trusted-app legacy native recovery](reports/2026-10-03-native-legacy-next-recovery.md),
+Latest source d298229: [Android profile/native file SDK boundary](reports/2026-10-03-android-profile-native-file-boundary.md),
+[actual SDK/HTTP v4 PASS](reports/090/2026-10-03-android-candidate-sdk-http-v4.json).
+Immutable7cd8d46 web + current native recovery ran on API36 Android Release: challenged
+profile/access-only lease/Auth/member query, actual Expo65905B/hash/clear, one401 renewal,
+valid-ticket403 and actual A→B GET/HEAD403/renewalPOST403; provider1/0/0. Auth/REST/current
+authority/provider synthetic; inspection port NOT actual consent/share/visual. Dispatcher
+uses actual adapter/handler/HMAC, NOT production Next file routing/middleware.426 web,
+153 native/5 server+harness hashes verified. Mobile55suites453/root114files1178/Node12
+and guard-off generated manifest PASS. Initial two NOT RUN/v3 FAIL retained: missing web
+guards, CORS schema headers, asynchronous profile assertion; no production security patch.
+All owned runtime/app/reverses/emulator/builds removed; free21054604KiB; CLI marker excluded.
+Next actual Android user-assisted WebView consent/share/visual, then grouped iOS and
+remaining permanent-route API audit. Whole090/R1/beta OPEN/live NO-GO. Jev $0.
+
+Previous sourcef1d089b: [trusted-app legacy native recovery](reports/2026-10-03-native-legacy-next-recovery.md),
 [final HTTP record](reports/090/2026-10-03-native-legacy-recovery-http-v2.json).
 Native now supports exact configured-app legacy Next renewal, retaining five Edge readers:
 one fresh lease/fixed POST, strict same-alias replacement, no redirects/denial/late-cancel
@@ -25,8 +39,8 @@ candidate7cd8d460c68465055049dbf30192f7f5478bcf64/tree49c0ce80e7d7a654b4f6904571
 on codex/090-embedded-profile-candidate-20261003 still unchanged; parent browser1a014c4.
 Its actual Next/Chrome profile proof is historical, NOT new Android compatibility evidence.
 
-NEXT: fresh bounded preflight; exact7cd8d46 web + currentf1d089b native Android profile/file
-consent/hash/401/403/A→B/share/clear, then grouped sensitive iOS; remaining permanent-route API audit.
+NEXT: fresh bounded preflight; actual Android WebView consent/share/visual using exact
+web candidate and current native source, then grouped sensitive iOS; remaining permanent-route API audit.
 No arbitrary issuer or refresh-token sharing. Secret-free media logging,
 independent review/fresh hosted preflight/refresh-forward-repair/R1 precede live authority.
 090/R1/beta OPEN, live NO-GO. Previous browser-native negative preflight remains historical.

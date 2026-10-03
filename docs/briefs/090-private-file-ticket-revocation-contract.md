@@ -15,6 +15,74 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — pinned Android profile and native file boundary
+
+Two-attempt causal reassessment: initial native login PASS but web bridge timeout;
+the fixture build omitted existing NEXT_PUBLIC090 acceptance/app-origin guards. Corrected
+only fixture environment and rebuilt web, retaining the same APK. Second attempt actual
+ready/challenge/ack/access lease PASS; GET Auth user200 then REST OPTIONS204 without POST.
+Installed PostgREST source sets Content-Profile on RPC (Accept-Profile on GET); the fixture
+CORS allowlist omitted both. Next bounded action: add only those two SDK header names,
+record preflight requested header names (no credential values), preserve both NOT RUN HTTP
+attempts, restart synthetic fixture/reinstall owned unchanged APK once. No bridge/Auth
+weakening, new candidate, dependency or Android rebuild. Final acceptance must prove actual
+profile query and file sequence; another failure triggers a new cause-based reassessment.
+
+Third attempt: actual native profile bridge,65905B/hash/removal, all exact file status
+sequences/provider1/0/0/refresh1/0/1 succeeded, but final evidence FAIL. Causal reassessment:
+fixture demanded profile data GET before file phase began; React completes the authorized
+profile GET asynchronously during renewal, still exact A/actor/member (route asserts it).
+Bounded correction accepts that GET200 only during profile/renewal, never revoke/switch,
+OPTIONS/non200/unauthorized. Regression added; retain v3 FAIL and rerun unchanged APK/
+web once with corrected fixture assertion. No behavior/security/source pin weakening.
+
+Owner continues local work. Entryf7ad2a9/main; sole writer; CLI marker excluded.
+Read AGENTS/handoff/active090/controls/guide/work cycle/template, MIGRATION permanent
+profile and decisions32–33, native runtime/Auth/lease/capability, pinned candidate and
+previous HTTP/profile records. Complete TypeSafe/Supabase skills; live TypeSafe index
+and changelog checked (anonymous fallback; no new SDK/DB feature). No Jev call($0).
+One outcome: actual Android native Auth/lease/profile bridge and Expo filesystem prove
+configured-app legacy Next one-shot recovery/hash and current-authority denial using
+exact7cd8d46 web source and currentf1d089b native recovery. An explicit inspection-share
+port may observe files without opening another app: NOT actual consent/share acceptance.
+Previous integrated WebView consent/share/visual criterion stays required/NOT RUN;
+schedule user-assisted Android then grouped iOS after this minimum SDK boundary.
+Three actions: guarded existing090 legacy-next runtime/fixture and immutable materializer;
+sequential candidate build/actual Android release/local HTTP/native SDK checks and gates;
+pins/English evidence/cleanup/separate commits. Allowed: apps/mobile/src/acceptance/
+090_webview-{config.ts,runtime.tsx} and config tests; dedicated supabase/test-support/
+090_android_candidate*.mjs and tests;090 brief/reports/handoff/active. No production bridge,
+Auth rules, SQL/Edge/web candidate/package change, arbitrary origin or token sharing.
+Fresh21,278,508KiB; existing Gradle5,533,876KiB/AVD3,517,384KiB/mobile deps6,397,148KiB.
+Installed SDK36/emulator37.1.11/JDK17.0.20; no device/build/VM currently present. Earlier
+guessed SDK path absent; actual SDK /opt/homebrew/share/android-commandlinetools verified.
+Peak <=6GiB: native generated build<=3GiB, candidate/build<=0.7GiB, AVD growth<=1GiB,
+root check/coverage<=0.7GiB and small runtime/export buffers<=0.6GiB; projected >10GiB.
+One heavy process; no VM/download/install/dependency copy. Exact ignored runtime
+spike/090-runtime/android-candidate; mobile android/.expo; root.next/coverage expire
+after last dependent gates; task emulator/app/reverses/owned31090/31095/54491/18092
+stop on checkpoint. Preserve caches/AVD/dependencies/backups/user data/historical refs.
+Actual production Next profile behind an owned HTTP dispatcher; file routes dispatch
+actual pinned server adapter/Edge handler/HMAC with fixed HTTPS fixture transport.
+That dispatcher is explicit, not Next middleware/file-route or hosted RLS proof.
+Auth/REST/current-authority/provider synthetic; actual native AuthStore/SecureStore,
+RN WebView/controller and Expo filesystem/hash; no real account/password. Stop/reassess
+after two failures; next progress review after first Android runtime. Scoped local
+rollback only, no authority downgrade. No hosted/site/push/CI/real-user/hardware action.
+
+| Criterion / expected behavior | Required? / N/A reason | Status | Date / environment | Evidence / limits |
+|---|---|---|---|---|
+| Exact immutable web/native source and guarded synthetic runtime | Yes | PASS |3 Oct / local source/tests |426 web,153 native,5 server+harness pins; no browser credential seeding |
+| Actual Android challenged profile/SDK lease | Yes | PASS |3 Oct / emulator/native Release | Actual bridge/Auth/member requests; synthetic authority, NOT visual/RLS |
+| Actual Expo expired URL renewal/bytes/hash/removal | Yes | PASS |3 Oct / Android filesystem + HTTP |65905B/hash, one refresh/POST; inspection NOT share sheet |
+| Valid-ticket403 and A→B refusal before provider bytes | Yes | PASS |3 Oct / actual native requests | Provider1/0/0; valid GET/HEAD403, B renewalPOST403 |
+| Mobile/root gates and pins/docs/cleanup/separate commits | Yes | PASS |3 Oct / local |453 mobile/1178 root/12 Node; source d298229 + paired docs; cleanup verified |
+| Actual WebView file consent/share/visual and grouped iOS | Deferred required integration/release gate | NOT RUN | Next user-assisted checkpoint | Prior cards retained, no bypass claim |
+
+[Detailed acceptance and limits](../reports/2026-10-03-android-profile-native-file-boundary.md);
+[final actual SDK/HTTP evidence](../reports/090/2026-10-03-android-candidate-sdk-http-v4.json).
+This bounded goal PASS does not close090/beta or the retained consent/share/iOS/hosted gates.
+
 ### 3 October — trusted-app legacy Next native recovery
 
 Owner continues approved local implementation. Entry97eba88/main, sole writer, CLI marker

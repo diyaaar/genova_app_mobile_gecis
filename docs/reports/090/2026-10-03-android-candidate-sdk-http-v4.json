@@ -1,0 +1,905 @@
+{
+  "date": "2026-10-03T10:00:57.466Z",
+  "status": "PASS",
+  "webRef": "7cd8d460c68465055049dbf30192f7f5478bcf64",
+  "entryCommit": "f7ad2a963f8b34c6f04d627db2c7f2deeeea16f0",
+  "harnessSha256": "82a7d8d9ddc6d1e03f0c7089118ed6bf65396d43029e5786602b4e7550575924",
+  "serverSourcePins": [
+    {
+      "path": "lib/server/legacy-file-adapter.ts",
+      "sha256": "854f2888b20b066169de9a524b42ca381e6a6dde0ec08be9e9d312fb40ac7e98"
+    },
+    {
+      "path": "lib/server/drive-file-content.ts",
+      "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/handler.ts",
+      "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+    },
+    {
+      "path": "supabase/functions/legacy-file/ticket.ts",
+      "sha256": "f830697d04f8e452454171343a4f8710efcc3c1e609c59610f806125ddf1a0d7"
+    },
+    {
+      "path": "supabase/functions/legacy-file/handler.ts",
+      "sha256": "4dc491511dc475fd727ca0fb1f499605b2588a07f3cd188cd795773cf4a01194"
+    }
+  ],
+  "nativeSourcePins": [
+    {
+      "path": "apps/mobile/.env.example",
+      "sha256": "efc9a48c671ae59d3c3b08aba3d4e3d7ec55e6d8b182b63c0724baeab5c25d7b"
+    },
+    {
+      "path": "apps/mobile/.gitignore",
+      "sha256": "92e11ae5ba4ec08b067d1e28e585db5c2589bc4c285ab0cc7f0682d06a58b839"
+    },
+    {
+      "path": "apps/mobile/App.tsx",
+      "sha256": "d286a291a2d4c5b03312ca1a8d823cae6844f6ce2fa103502bb74c0b2274c8d1"
+    },
+    {
+      "path": "apps/mobile/app.json",
+      "sha256": "b0b21484f326a07d0750ed8bcc0d55eaed06a3cdde77cdae0440f68eb3703450"
+    },
+    {
+      "path": "apps/mobile/babel.config.js",
+      "sha256": "4b648d6c5174ff58abdbf9a45218b5d8bbc776a62c5530cd3946f2dbc5b80bb6"
+    },
+    {
+      "path": "apps/mobile/index.ts",
+      "sha256": "35b519e6a69f935dff521c59bb20a73749f5a1f9d37777444d895035d400746c"
+    },
+    {
+      "path": "apps/mobile/metro.config.js",
+      "sha256": "5c6b993e969e86fd0bdf433d35c2d109b5c6b88783b06a6410a72584012c6384"
+    },
+    {
+      "path": "apps/mobile/package-lock.json",
+      "sha256": "504a371695807755e8a6d045855e2a983c93d15120e54e0f28bf1adc3bbde72b"
+    },
+    {
+      "path": "apps/mobile/package.json",
+      "sha256": "bcc26d15edffc81301d9034dc846b639e7800b35a7acc27caf37f640f3beb694"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_audio-config.ts",
+      "sha256": "3ec76d913e9ac026ab8603e32446a89acdd81de4699d19420e9573cf58c76502"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_audio-runtime.tsx",
+      "sha256": "da6f344bc2d8bb62fb02d1a1299d322aa0debb5ee986f6906aad67632cdad128"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_connected-audio-config.ts",
+      "sha256": "b1032e576de6bee3970f620609e532bf5ae008787c7e7cae8aca587ce030fcc2"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_connected-audio-runtime.tsx",
+      "sha256": "10b0b53be474db337550414ae4c1208aa9f330345c16604402faf49992b59a73"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_native-pdf-config.ts",
+      "sha256": "11d33d44ea578676a8dcfab55b92c5a167590f05e121655eb0c1d46501114768"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_native-pdf-runtime.tsx",
+      "sha256": "f761b8ed2fed8a70fbe891ba51637906c3a5a5e9ccb2c89caba684e866e49b26"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_webview-config.ts",
+      "sha256": "d8e18795286b1b763abb809c5bcc7d57426687ed851f01dddf5ea8c6ffe05bb7"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_webview-runtime.tsx",
+      "sha256": "49763c3c30c8b4010c2fa9661db5aa9ac8833e4fc975cd148a00cfa2b3e2a10f"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/093_android-private-r2-config.ts",
+      "sha256": "8090ccdbc5a3b6b353245e7968e0c7930d39232b13075b01481bded2cb1148f8"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/093_android-private-r2.tsx",
+      "sha256": "70a86246fb89716cfb47ca3688d51715f58b44de0a43f1aa8247da09b5301e5d"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/090_audio-config.test.ts",
+      "sha256": "4451e319cf5f1422a3905526f3caefa7947413db30de4c99a3de3cbf2ffb80cd"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/090_connected-audio-config.test.ts",
+      "sha256": "15178757db11bcbe914c19e5aefd821aa4f329a8301ba3dc066e026a82b84816"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/090_native-pdf-config.test.ts",
+      "sha256": "2135722e5b0a5f4ddfc4ab0bdc5a4c57b84f3ba43537573fb5c841e146b6bbae"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/090_webview-config.test.ts",
+      "sha256": "8b5e6e825fd0f06055329a11cf15d3d4702a01baf00e351c2b3b6c65fa7d1c2a"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/093_android-private-r2-config.test.ts",
+      "sha256": "9fb27480731fc3903c5cac8fb64a7406b897ae9b9a71721664aae34c7888d794"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/audio-runtime-config.test.ts",
+      "sha256": "6d1851c42de06fff3e44c87ebbe806b88d528700222d0c7e109871dfbc41bd27"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/composed-webview-credential.test.ts",
+      "sha256": "2eb47aecc125e13a0acfec9db0e0c7da4e4896041662496516c6cd1423b87d98"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/composed-webview-runtime-config.test.ts",
+      "sha256": "a42cfde9c76040e023f185384113815560c4910de148f2d7c9694721faad3ecc"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/platform-capability-runtime-config.test.ts",
+      "sha256": "c5f1db5ac7e70a2a71dc0fde423ced4414687ba85026d1326c614b041868ae18"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/runtime-lifecycle-config.test.ts",
+      "sha256": "14e20b9a787b9f387696f1303bfda5062d4bff07efc9f816eec5c25693a41a9b"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/with-composed-webview-loopback.test.js",
+      "sha256": "9cfed15dc3e719075fda585ec18e1a77f293270e56978e316f33b439327746bb"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/with-local-loopback-network.test.js",
+      "sha256": "a509ecfce63ca24eb693eedf857b93090b6277646af9087667018a7e5ad7aa4f"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/__tests__/with-platform-capability-loopback.test.js",
+      "sha256": "2890a0a674ba803308efa5dd3a5028cfe78e2e898f305170e91f95016d79db87"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/audio-runtime-config.ts",
+      "sha256": "fb67374f537de4f22d473ae6b4b99e1db35ce3043341e315e85249f37a0d4c32"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/audio-runtime.tsx",
+      "sha256": "da7d5db6cdda5707042f7a100f584041788f3e08b0c11eef3a36e5e505d8881a"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/audio-server.mjs",
+      "sha256": "7333282d5cd10e34785c8c8820ca1dcc5fcae12e6928bfb08cc49b3fe6401e14"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/composed-webview-credential.ts",
+      "sha256": "07554ad26f26d69eeb7a8cbb3a47b27cfa80a080f0ea7679dd88b02eed8541d9"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/composed-webview-runtime-config.ts",
+      "sha256": "4eba7e0ac74373101ae1b3a6785ed17397ec156c48f4fd85175f0d54f73f388a"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/composed-webview-runtime.tsx",
+      "sha256": "4398ec29ca75bc68980e462895eff791ee64a1bdb05d4209648a84e74e367e5e"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/native-pdf.tsx",
+      "sha256": "becb5680417ff4d61d1f7be5906401634795447506191921ba5ea10a8e2e9450"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/platform-capability-runtime-config.ts",
+      "sha256": "bcfb565dcec19718b86418d79a5d8ad720920e175dfff0ba6eea5b23d10e07f6"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/platform-capability-runtime.tsx",
+      "sha256": "d3b10b6aea850db69503cbd80e53049b567dc957a7f190cc1ea1b0ff2ff0fd32"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/platform-capability-server.mjs",
+      "sha256": "a9ddd92270a4cf1558b29923ff7a32cb3f64c2a890bd43698386a179ae6c3a0a"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/runtime-lifecycle-config.ts",
+      "sha256": "f6f25766809bc843bceb999672c2ab32c6308718fb4cfa8665a4801c8153d9ea"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/runtime-lifecycle.tsx",
+      "sha256": "c074ad0d57c5712cc0eee670f119fd980568ee8313a9b6664e2dc7cfab974bad"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/with-composed-webview-loopback.js",
+      "sha256": "11f121912f2b0962e22dc74369c08070f1f3966369c353ce18e78ac323f108f8"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/with-local-loopback-network.js",
+      "sha256": "f7ca97c9865dfe6921b7b903d9b1683f18b4536ceb36f63d5a41cb8ee02582ff"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/with-platform-capability-loopback.js",
+      "sha256": "3db4065919551fe713a7c05a79e3efdf78553589727e20fd6ba9df5dc2f616dd"
+    },
+    {
+      "path": "apps/mobile/src/auth/AuthProvider.tsx",
+      "sha256": "89abfb971f41379e16f90d9513675528f7ede8282e0d6cdcc1df6433933ff24c"
+    },
+    {
+      "path": "apps/mobile/src/auth/__tests__/auth-store.test.ts",
+      "sha256": "3258835295380fd000bf7286c98a0dbcde7b5c6e0cf21d2b2ba2961bb403a55a"
+    },
+    {
+      "path": "apps/mobile/src/auth/__tests__/choir-preference.test.ts",
+      "sha256": "239505691383d4a435f363ceb218adcccf02b1cfdb5251f136e6b3715c8810a5"
+    },
+    {
+      "path": "apps/mobile/src/auth/__tests__/secure-storage.test.ts",
+      "sha256": "d68d6a45ad186647030ea24ebfbf808ff906be2954a76fdf398037b19e1de84d"
+    },
+    {
+      "path": "apps/mobile/src/auth/auth-store.ts",
+      "sha256": "531b17ed36b634cd7e97e7bd04ea4a9d31326039fa13b09d4e69c95929b0df0c"
+    },
+    {
+      "path": "apps/mobile/src/auth/choir-preference.ts",
+      "sha256": "43235f22564bcfcc6170cb2e967d283230c1a03d7c3ff77bd82d2278e7315e16"
+    },
+    {
+      "path": "apps/mobile/src/auth/secure-storage.ts",
+      "sha256": "53e1e68b468948a2902b4103723ed1019f8107b6823f062fcdde78bbcccba3b6"
+    },
+    {
+      "path": "apps/mobile/src/auth/supabase-client.ts",
+      "sha256": "4213224f0141004b2e37c06eb6398016a5748291e41b513a735003b6cbcada66"
+    },
+    {
+      "path": "apps/mobile/src/auth/tenant-cache.ts",
+      "sha256": "b98ed067400f64b189b6ec0ee2272630b843fc9c390f5e246111eae28e19caa5"
+    },
+    {
+      "path": "apps/mobile/src/auth/types.ts",
+      "sha256": "047818bf7cdc7244d852a89dafdb159efe82e51e553cdb45edeb102e329c86e7"
+    },
+    {
+      "path": "apps/mobile/src/bridge/__tests__/mobile-webview-bridge.test.ts",
+      "sha256": "b056b6530cefac9531c5beb94198602a6444b345a913cb4ebe4d437a6f94eb51"
+    },
+    {
+      "path": "apps/mobile/src/chat/ChatMessageActionPanel.tsx",
+      "sha256": "ab39047267f976e5c1a5ae507f7c34cd35ecd0f653c3dabe80e8cde73d5cceea"
+    },
+    {
+      "path": "apps/mobile/src/chat/ChatScreen.tsx",
+      "sha256": "ca080effefe29a12507e25b8bc19867cd3af68d0e188e625dbf516bbfcee6ff1"
+    },
+    {
+      "path": "apps/mobile/src/chat/ChatStarredMessagesPanel.tsx",
+      "sha256": "4108f62bb1786b1f8fc5b81a893da513f7c31e6914c2093717c917269089c263"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/ChatScreen.test.tsx",
+      "sha256": "e0421dda9de24be9a26084eef4aa48478c97d0e9f0a8d820130cab5a5883c301"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/ChatStarredMessagesPanel.test.tsx",
+      "sha256": "8ad44bcf363e920ae78c897cdc3d1b8c39ab7839a157977973d4ea935fb8bd9e"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/chat-message-action-gateway.test.ts",
+      "sha256": "c25a8b8c29ff00a49b434f6e4f05dff8cb18dd49f4d8730d0e186c8c9f5cb0cf"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/chat-read-contract.test.ts",
+      "sha256": "39ecf3df9046285576193250db60537cbb78285048de551a99edf8c70e3bf9f0"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/chat-read-gateway.test.ts",
+      "sha256": "2483dcf57d92ca14f26870fb1fc3e24a6371fb3b1d5cf0fc01045eebb1d0af14"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/chat-send-gateway.test.ts",
+      "sha256": "84736cabad0aa0512a8ab0a728c444b485a3773230a7114663686e9d69b44575"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/chat-star-gateway.test.ts",
+      "sha256": "4eea9afe59519acc1c28152bc1f2b68cd2ed1da734a78bf034375f7edb76a1bd"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/native-chat-send-queue.test.ts",
+      "sha256": "0a913861528561b06e0bbf9edfeddbc537688e3bf2fe7ada029aa043d47cc9d2"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/supabase-chat-message-action-transport.test.ts",
+      "sha256": "f54ef730250a17bba841ced492d98f3ddff93d36345e2f128283952596012337"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/supabase-chat-read-transport.test.ts",
+      "sha256": "61e8c7a8b1f482d6fb45d2118590fe7d4024980f2a539439235b3cc8238346d5"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/supabase-chat-send-transport.test.ts",
+      "sha256": "cf7c2f332b2b610a356fa2e0fca1cef957f04b27215ba4aa6da1030648396ba7"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/supabase-chat-star-transport.test.ts",
+      "sha256": "c3bfe3ee9cf43c46bd939a0c00ec44574f053d6b2806372dd0837ecdad6e5858"
+    },
+    {
+      "path": "apps/mobile/src/chat/__tests__/use-native-chat-stars.test.ts",
+      "sha256": "9535c6eb604ee50e2be199e1c3d34c1dad4dd4d5fa09fc75e1bc87a911c85738"
+    },
+    {
+      "path": "apps/mobile/src/chat/chat-message-action-gateway.ts",
+      "sha256": "ddc7011bd5c594ab7d8562779cf70b22949f2e9528d96d06b6e56ca65f6ebbe5"
+    },
+    {
+      "path": "apps/mobile/src/chat/chat-read-gateway.ts",
+      "sha256": "f3295006888f487794271c8c5f657b2c14c9ac469935b29e60cad5c30601b2d7"
+    },
+    {
+      "path": "apps/mobile/src/chat/chat-send-gateway.ts",
+      "sha256": "bd74caefc035728cff1b1591332d4a3983a90e47207465b8bb171003984972d1"
+    },
+    {
+      "path": "apps/mobile/src/chat/chat-star-gateway.ts",
+      "sha256": "bd665cc33222777f9990219b2333942fc5ae90ebb06d7872f83118474bdf5dde"
+    },
+    {
+      "path": "apps/mobile/src/chat/native-chat-send-queue.ts",
+      "sha256": "98023b0309c1ae7ec0381058b40b549a2293c13b974d8c0581e7648efd8509cf"
+    },
+    {
+      "path": "apps/mobile/src/chat/supabase-chat-message-action-transport.ts",
+      "sha256": "6232344965aa7f00fc53688bd061f4cbe65c0ccd95682aab111d892a329a73b9"
+    },
+    {
+      "path": "apps/mobile/src/chat/supabase-chat-read-transport.ts",
+      "sha256": "75f3bdcd54880fcb20ff09facda800d586369264993f3d984c5b7a485d573041"
+    },
+    {
+      "path": "apps/mobile/src/chat/supabase-chat-send-transport.ts",
+      "sha256": "2ca36b780847add437702fa0571d94be237034d637c0d7bf545ef411cfd0b439"
+    },
+    {
+      "path": "apps/mobile/src/chat/supabase-chat-star-transport.ts",
+      "sha256": "51d29d38550067d626cc851f7af9d938d82acede653e97cd9c865b9c3ca08148"
+    },
+    {
+      "path": "apps/mobile/src/chat/use-native-chat-stars.ts",
+      "sha256": "f452cd3ab292ae726eb11241e5eb0717759a3645dac6d330b4ca8f81e2850980"
+    },
+    {
+      "path": "apps/mobile/src/notifications/__tests__/notification-gateway.test.ts",
+      "sha256": "39d30a43eb47d34de2bbca9aa4ae2f8edebf34bcda27bb17768db8e8ec2918d8"
+    },
+    {
+      "path": "apps/mobile/src/notifications/__tests__/notification-runtime-core.test.ts",
+      "sha256": "387b3fd75ae02e827e94d4f3fc57fc78e545bfc8c12952b3d71d7f8600dbb5cd"
+    },
+    {
+      "path": "apps/mobile/src/notifications/notification-gateway.ts",
+      "sha256": "dc6ed104466b278572fa7c215c40525741414e1e70ca7b7cfae0d42fdfacbe0d"
+    },
+    {
+      "path": "apps/mobile/src/notifications/notification-runtime-core.ts",
+      "sha256": "8956c146e7c97485fed9e5ae7966aca22851c2197322890937c93be8a8ff7f4e"
+    },
+    {
+      "path": "apps/mobile/src/notifications/use-notification-runtime.ts",
+      "sha256": "0fa92d4153480319f496c7a60e897267b38465e9b2dc0e42668b1ab279173e6c"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/AnnotationOverlay.tsx",
+      "sha256": "97219be5299f32d9cc93bd70fe752a759608f7fc1e96c47acd7acffee4914a19"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/AudioPlaybackProvider.tsx",
+      "sha256": "0a7c88a843a5350508b3a8a44442b0411a01af25d20478a6bd434953ede626e9"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/AudioPlayerScreen.tsx",
+      "sha256": "0bcd6fbd46cb4f050f053c8f247eec3ed3ee35d872ed73651f67abbca3895a88"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/MiniAudioPlayer.tsx",
+      "sha256": "a7d9752fd0fd1212eef13f12b183a3816033f7c5c7d0b771b703349bffe3da1d"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/RepertoireScreen.tsx",
+      "sha256": "e1497644e75be7db4f07eabb8dd63e904e6cf0ecdb090c24e86bcb140a3f6d15"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/ScoreReaderScreen.tsx",
+      "sha256": "355e0cb87602d7abcc94bdca7a4998b3a75250b586edbefd993e5b32b5b2ce88"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__fixtures__/annotations.sample.json",
+      "sha256": "329fb458f559ba7ea61db378ba4acdada3feb4b2756bef31833fc344044fea35"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__fixtures__/score_40p.pdf",
+      "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/AudioPlayerScreen.test.tsx",
+      "sha256": "11dec6b30dfdc99f0bb101f410a3badac499005e128248197c1706ffe4735aae"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/MiniAudioPlayer.test.tsx",
+      "sha256": "2a8086e19c5e42c5b49f7119b8a6406351b860bc6444b18afdb7b7bce3d0a750"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/RepertoireScreen.test.tsx",
+      "sha256": "87d2f6aa51c6977cb1c560580556290c6d477efb35fd33191a7f58d11fdce8d7"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/ScoreReaderScreen.test.tsx",
+      "sha256": "0f68cfa6d4ac20096f405d5ac50eeb9b3fc9cd611ab53f94b79bb4a2f9ba9aac"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/annotation-source.test.ts",
+      "sha256": "6813a7948fb067c3209400c0eeb0742084ba2256adec7f44966cc7b267ecaa91"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/audio-contract.test.ts",
+      "sha256": "3fbf2691792cb26038919a2b4684e276a3aa667b85352a80a70989977305e474"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/audio-source-gateway.test.ts",
+      "sha256": "f116b3a51a8da0a83a0b8ab7adbb0649117f384d528cd7635abc9f5870774394"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/catalog-gateway.test.ts",
+      "sha256": "890b52e13ba9f296a165a46b0a548742a561f942fe59537d2891a7e86e311020"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/expo-private-file-store.test.ts",
+      "sha256": "7cb1b29200e5ad57c6297a2dca49dc8063612977a34c2fd1d7d73916bd0e630f"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/fixture-integrity.test.ts",
+      "sha256": "bfa2d51e04259e9bd492ed5cd5d3625d4c3cfa2cdeb6b25c8fee42d6f49dc8a7"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/reader-contract.test.ts",
+      "sha256": "d2f1b5c3bc8c3fcf34cba170b2ad36bd008a4ffa26bea8d97ec4a3c27deff48a"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/reader-gateway.test.ts",
+      "sha256": "6586396ecf88aaf494684190f74dcc0ba382581ff65eed69ad181ef32e64eea3"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__tests__/supabase-source.test.ts",
+      "sha256": "aca103511b02362d075d6e2b5ab4a42fa1d75dcb7e6d234fc8bb7b75d9f6e25f"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/annotation-source.ts",
+      "sha256": "d82666dce7f6ae2c3e4fa125de31592dd8fc0ef6b8e972e6ed42813db3582536"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/audio-contract.ts",
+      "sha256": "eeb24068ea623b8ca29424857ff6f6dae37c2e8ecb9670e5e384de1b3562b5f5"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/audio-source-gateway.ts",
+      "sha256": "df6d68111b6389e4912cb28814493eb52198f54f555cd540ed40162aa5454381"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/cache-registration.ts",
+      "sha256": "a7e80b7a25db05004bc95eabf5e2e1880ae3e877961f8ebf5a9cfe66790d09b5"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/catalog-gateway.ts",
+      "sha256": "66462d0e3cc818d9af609d7ad6c9453556f11f02a34a718093290ac346e18118"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/default-audio-source-gateway.ts",
+      "sha256": "66d8873fad994d1ecc4391a9a083610dd41cf0cb7944e8fa3388917213de9a93"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/default-gateway.ts",
+      "sha256": "65136bad13cbd92f4b398287b8171d7818e6d4a50683aace19dc1a495be391b1"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/default-reader-gateway.ts",
+      "sha256": "b3fd6cf63c59784d85ee5d65bd3509d654c2cc03d48e0c8dd663499af7c30378"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/expo-private-file-store.ts",
+      "sha256": "143818301ff99bd1b2fcbf1cc3efd2dd8afe598ec73e9772759fe2ce6f405e07"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/pdf-renderer.ts",
+      "sha256": "eaa4a303437c4a5cda952594c30778fd6bc43d009eb094a4cd130b7c31b81b33"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/private-file-store.ts",
+      "sha256": "e6b8e1185a010393a1efe13bb2ce3fdb5d8ec5a6005f1700ebaa0fc40efb3eb9"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/reader-contract.ts",
+      "sha256": "712374b0c374ef0c7d41dcf45caeb9c99b4f97f9558b963dabe971e70ed441e6"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/reader-gateway.ts",
+      "sha256": "d5cfab3af97add98d13d346133e91705ea68b55ffbb5571221b469fbee72142a"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/supabase-source.ts",
+      "sha256": "8c9ed23067f438ba8244ee93a87b32d1b11528752831464b86a1e6d2c4872f25"
+    },
+    {
+      "path": "apps/mobile/src/test/doubles.ts",
+      "sha256": "274c1540f6d32cc1b2263b8338a21b6a5df0ba5899716a0bf147b9e0f9751d69"
+    },
+    {
+      "path": "apps/mobile/src/test/setup.ts",
+      "sha256": "8bbddc6f17ee166a8a9efb12561e4e738b9cfd18c05652a5785216628e54b9ed"
+    },
+    {
+      "path": "apps/mobile/src/ui/AppRoot.tsx",
+      "sha256": "f3f852693300a343acfabfe2abf6e339155c6415eddb25e480722585cdef0107"
+    },
+    {
+      "path": "apps/mobile/src/ui/ChoirSelectScreen.tsx",
+      "sha256": "fbe58647e0cd0f8937b8eb325dd8f57d25d25a36df96cbfaaf0b2bf406a5e535"
+    },
+    {
+      "path": "apps/mobile/src/ui/ShellScreen.tsx",
+      "sha256": "e5e0a135011b79402fd6a3c95f39af8a512533e4260a01db302edb88dd0bc100"
+    },
+    {
+      "path": "apps/mobile/src/ui/SignInScreen.tsx",
+      "sha256": "047681349e2a3a793187bde9136e5e9c25110e3a1b2b9337d269720fd9232392"
+    },
+    {
+      "path": "apps/mobile/src/ui/StatusScreen.tsx",
+      "sha256": "8693cc2ef957f57e55b4ba6329cbff707c2fd04347eb10fb89bfae21b7039252"
+    },
+    {
+      "path": "apps/mobile/src/ui/__tests__/AppRoot.test.tsx",
+      "sha256": "53d9e8f622f38d7a31772cbbab0e6baa5107737e15d92a23a9fb2e7b28b4fd71"
+    },
+    {
+      "path": "apps/mobile/src/ui/__tests__/ProductReadFlow.acceptance.test.tsx",
+      "sha256": "7a2da84f5d16dd5e23edb9474fbd8f4dd5876576bb2b39adc625912283142bdc"
+    },
+    {
+      "path": "apps/mobile/src/ui/__tests__/ShellScreen.test.tsx",
+      "sha256": "25fb1e2b13298f2b53ca17d279a752b9136233d1c1f2a8516d090f73f1728388"
+    },
+    {
+      "path": "apps/mobile/src/ui/theme.ts",
+      "sha256": "41a5bf7cf3be864a4483b60e3306eb32f9a1286db9c17102bb8c4d2dc793ea51"
+    },
+    {
+      "path": "apps/mobile/src/webview/NativeWebViewScreen.tsx",
+      "sha256": "53dedb28fa25fcf8814c7118d861fc4fd55432a3ac6ab5a72fbcc2d470a209ac"
+    },
+    {
+      "path": "apps/mobile/src/webview/__tests__/NativeWebViewScreen.test.tsx",
+      "sha256": "05b4cc055671e5a23c2a4e7e7484df99b92f83f7a32b96fe1cc05afd0bc81f50"
+    },
+    {
+      "path": "apps/mobile/src/webview/__tests__/expo-ephemeral-file-store.test.ts",
+      "sha256": "312233904b477870cd93ba59008b154fa8df14885a81d8e4f8db8ca68ac16fd8"
+    },
+    {
+      "path": "apps/mobile/src/webview/__tests__/native-bridge-controller.test.ts",
+      "sha256": "9ad354fd7408fa9e421bb12874ceeca8eb447f45aedcd765db86b387adad0239"
+    },
+    {
+      "path": "apps/mobile/src/webview/__tests__/platform-capabilities.test.ts",
+      "sha256": "5947faa3a749ae9026dbb05a61d0c13989589cc3ec290ea36dfe803387f36fcf"
+    },
+    {
+      "path": "apps/mobile/src/webview/__tests__/private-file-ticket-recovery.test.ts",
+      "sha256": "6becb56b3e8477749574f987a2f9c1e6b7f7d005b144e49ca60e28e9c5b35bc6"
+    },
+    {
+      "path": "apps/mobile/src/webview/__tests__/runtime-config.test.ts",
+      "sha256": "dea1e4ce24168c59c9671ebc97a0ccfe72a8a99bafcac1eef41ab588296ac601"
+    },
+    {
+      "path": "apps/mobile/src/webview/__tests__/theme-preference.test.ts",
+      "sha256": "60813598b56f3796d402a8ab9ea2ea7eddf370cdb3a266a8db273623d3621124"
+    },
+    {
+      "path": "apps/mobile/src/webview/native-bridge-controller.ts",
+      "sha256": "79b9635b6571b8171a6fc7b117eff8998a79b12d5a31833b4ccd759dc15951fa"
+    },
+    {
+      "path": "apps/mobile/src/webview/platform-capabilities.ts",
+      "sha256": "21b0d0d85a896ebd4ef29e5ec85a809514a4e6f230c8d8121148a5aac017529f"
+    },
+    {
+      "path": "apps/mobile/src/webview/private-file-ticket-recovery.ts",
+      "sha256": "d2feda531fafedf43854d0e2ef2d2af72d2c77bf7932d1696bc6b86c04c90145"
+    },
+    {
+      "path": "apps/mobile/src/webview/random.ts",
+      "sha256": "d82883dfd3a0821cc47b451f06fa681f460594e333273c91c39f297d0501304d"
+    },
+    {
+      "path": "apps/mobile/src/webview/runtime-config.ts",
+      "sha256": "97082e1ce993e93760b81f72163ec7a7c74fedfa54c8d3f755b49995575dc88f"
+    },
+    {
+      "path": "apps/mobile/src/webview/theme-preference.ts",
+      "sha256": "382253917dbd8f1b0513147a4abe642718fb56668e321ce5c7abfdfadf6ee17c"
+    },
+    {
+      "path": "apps/mobile/tsconfig.json",
+      "sha256": "987a8839d0a99b11a07186d0026614ea8ecb3b5f83d0efe401de85eaed45e3c0"
+    },
+    {
+      "path": "lib/choir-context-core.ts",
+      "sha256": "38fef60354ddb5ff18e3352ba46e3c1545eddd99dae79f10f24fe9e0c25188ff"
+    },
+    {
+      "path": "lib/mobile-webview-bridge.ts",
+      "sha256": "c56bca92ea6c3789c11ad95b4d938596e7a5656eac2af398cc69c72b37d3bde2"
+    },
+    {
+      "path": "lib/repertuvar/protected-file-client.ts",
+      "sha256": "43aea8d1bbd510f0cee95fa8d9eaea99a482e95a9f35b67cc0e1a4e29410a4c1"
+    }
+  ],
+  "boundary": "Actual Android AuthStore/Supabase SDK/SecureStore/WebView/controller/Expo filesystem; exact pinned production Next profile via local dispatcher. Actual adapter/handler/HMAC file dispatch, NOT production Next file routing/middleware. Synthetic Auth/REST/current authority/provider; inspection share port, NOT actual consent/share/visual/iOS/hosted RLS proof.",
+  "nativeAssertion": {
+    "platform": "android",
+    "profileBridge": true,
+    "renewal": true,
+    "revoked": true,
+    "switched": true,
+    "cacheEmpty": true,
+    "actualShare": false,
+    "actualConsent": false
+  },
+  "requests": [
+    {
+      "phase": "profile",
+      "method": "POST",
+      "path": "/090/webview-fixture",
+      "status": 200,
+      "authorized": false
+    },
+    {
+      "phase": "profile",
+      "method": "POST",
+      "path": "/090/webview-fixture",
+      "status": 410,
+      "authorized": false
+    },
+    {
+      "phase": "profile",
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "authorized": false
+    },
+    {
+      "phase": "profile",
+      "method": "GET",
+      "path": "/090/webview-metadata",
+      "status": 200,
+      "authorized": false
+    },
+    {
+      "phase": "profile",
+      "method": "POST",
+      "path": "/rest/v1/rpc/list_my_choirs",
+      "status": 200,
+      "authorized": true
+    },
+    {
+      "phase": "profile",
+      "method": "OPTIONS",
+      "path": "/auth/v1/user",
+      "status": 204,
+      "authorized": false,
+      "requestedHeaders": "apikey,authorization,x-client-info,x-supabase-api-version"
+    },
+    {
+      "phase": "profile",
+      "method": "GET",
+      "path": "/auth/v1/user",
+      "status": 200,
+      "authorized": true
+    },
+    {
+      "phase": "profile",
+      "method": "OPTIONS",
+      "path": "/rest/v1/rpc/list_my_choirs",
+      "status": 204,
+      "authorized": false,
+      "requestedHeaders": "apikey,authorization,content-profile,content-type,x-client-info"
+    },
+    {
+      "phase": "profile",
+      "method": "POST",
+      "path": "/rest/v1/rpc/list_my_choirs",
+      "status": 200,
+      "authorized": true
+    },
+    {
+      "phase": "profile",
+      "method": "POST",
+      "path": "/rest/v1/rpc/list_my_choirs",
+      "status": 200,
+      "authorized": true
+    },
+    {
+      "phase": "renewal",
+      "method": "GET",
+      "path": "/realtime/v1/websocket",
+      "status": 401,
+      "authorized": false
+    },
+    {
+      "phase": "renewal",
+      "method": "GET",
+      "path": "/api/drive-file/09000000-0000-4000-8000-000000000006",
+      "status": 401,
+      "authorized": false
+    },
+    {
+      "phase": "renewal",
+      "method": "OPTIONS",
+      "path": "/rest/v1/choir_members",
+      "status": 204,
+      "authorized": false,
+      "requestedHeaders": "accept-profile,apikey,authorization,x-client-info"
+    },
+    {
+      "phase": "renewal",
+      "method": "GET",
+      "path": "/rest/v1/choir_members",
+      "status": 200,
+      "authorized": true
+    },
+    {
+      "phase": "renewal",
+      "method": "OPTIONS",
+      "path": "/rest/v1/choir_member_roles",
+      "status": 204,
+      "authorized": false,
+      "requestedHeaders": "accept-profile,apikey,authorization,x-client-info"
+    },
+    {
+      "phase": "renewal",
+      "method": "HEAD",
+      "path": "/api/drive-file/09000000-0000-4000-8000-000000000006",
+      "status": 401,
+      "authorized": false
+    },
+    {
+      "phase": "renewal",
+      "method": "GET",
+      "path": "/rest/v1/choir_member_roles",
+      "status": 200,
+      "authorized": true
+    },
+    {
+      "phase": "renewal",
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "authorized": false
+    },
+    {
+      "phase": "renewal",
+      "method": "POST",
+      "path": "/api/drive-file-token",
+      "status": 200,
+      "authorized": true
+    },
+    {
+      "phase": "renewal",
+      "method": "GET",
+      "path": "/api/drive-file/09000000-0000-4000-8000-000000000006",
+      "status": 200,
+      "authorized": false
+    },
+    {
+      "phase": "revoked",
+      "method": "POST",
+      "path": "/090/native-mode",
+      "status": 200,
+      "authorized": false
+    },
+    {
+      "phase": "revoked",
+      "method": "GET",
+      "path": "/api/drive-file/09000000-0000-4000-8000-000000000006",
+      "status": 403,
+      "authorized": false
+    },
+    {
+      "phase": "revoked",
+      "method": "HEAD",
+      "path": "/api/drive-file/09000000-0000-4000-8000-000000000006",
+      "status": 403,
+      "authorized": false
+    },
+    {
+      "phase": "switched",
+      "method": "POST",
+      "path": "/090/native-mode",
+      "status": 200,
+      "authorized": false
+    },
+    {
+      "phase": "switched",
+      "method": "POST",
+      "path": "/rest/v1/rpc/set_active_choir",
+      "status": 200,
+      "authorized": true
+    },
+    {
+      "phase": "switched",
+      "method": "POST",
+      "path": "/rest/v1/rpc/list_my_choirs",
+      "status": 200,
+      "authorized": true
+    },
+    {
+      "phase": "switched",
+      "method": "GET",
+      "path": "/api/drive-file/09000000-0000-4000-8000-000000000006",
+      "status": 403,
+      "authorized": false
+    },
+    {
+      "phase": "switched",
+      "method": "HEAD",
+      "path": "/api/drive-file/09000000-0000-4000-8000-000000000006",
+      "status": 403,
+      "authorized": false
+    },
+    {
+      "phase": "switched",
+      "method": "GET",
+      "path": "/api/drive-file/09000000-0000-4000-8000-000000000006",
+      "status": 401,
+      "authorized": false
+    },
+    {
+      "phase": "switched",
+      "method": "HEAD",
+      "path": "/api/drive-file/09000000-0000-4000-8000-000000000006",
+      "status": 401,
+      "authorized": false
+    },
+    {
+      "phase": "switched",
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "authorized": false
+    },
+    {
+      "phase": "switched",
+      "method": "POST",
+      "path": "/api/drive-file-token",
+      "status": 403,
+      "authorized": true
+    }
+  ],
+  "native": [],
+  "providerReads": {
+    "renewal": 1,
+    "revoked": 0,
+    "switched": 0
+  },
+  "refreshes": {
+    "profile": 0,
+    "renewal": 1,
+    "revoked": 0,
+    "switched": 1
+  },
+  "unknown": [],
+  "outside": [],
+  "failures": [],
+  "pdf": {
+    "bytes": 65905,
+    "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3"
+  },
+  "actualConsent": "NOT RUN",
+  "actualShare": "NOT RUN"
+}
