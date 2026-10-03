@@ -72,6 +72,7 @@ test('backported current audio/inline sources have no selected/raw online bypass
 });
 test('candidate generation is deterministic and rejects missing closure paths',()=>{
   assert.deepEqual([...overlays().files], [...files]);
+  assert(!files.get('hooks/useProtectedDriveFileUrl.ts').includes('\n  \n'),'No whitespace-only removed parameter');
   assert.throws(()=>moduleClosure(['imaginary.ts'],()=>{throw Error('missing');}),/missing/);
 });
 test('literal closure includes reexports/dynamic imports/require and refuses computed imports',()=>{

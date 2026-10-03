@@ -75,7 +75,7 @@ function legacyHook() {
   let source = current('hooks/useProtectedDriveFileUrl.ts');
   const ast = tree(source), fn = ast.statements.find(node => ts.isFunctionDeclaration(node) && node.name.text === 'useProtectedDriveFileUrl');
   assert.equal(fn.parameters.length, 2);
-  source = oneReplace(source, fn.parameters[1].getText(ast) + ',', '');
+  source = oneReplace(source, '  ' + fn.parameters[1].getText(ast) + ',\n', '');
   source = oneReplace(source, source.split('\n').find(line => line.startsWith('import { clearProtectedDriveFileUrlCache')),
     "import { clearProtectedDriveFileUrlCache, getOnlineAuthorizedPrivateFileUrl, getProtectedDriveFileUrl } from '@/lib/drive-file-url';");
   source = oneReplace(source, source.split('\n').find(line => line.includes('const fileKey =')),

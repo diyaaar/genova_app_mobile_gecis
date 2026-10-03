@@ -9,7 +9,9 @@ import {createRequire} from 'node:module';
 import {BASE,ROOT,CANDIDATE,overlays,moduleClosure,hash} from './090_candidate_source.mjs';
 assert.equal(process.cwd(),ROOT);
 assert.equal(process.argv.length,3);
-assert(['--verify-owned','--pin-local-owned'].includes(process.argv[2]));
+assert(['--verify-owned','--pin-local-owned','--pin-forward-owned'].includes(process.argv[2]));
+const forward=process.argv[2]==='--pin-forward-owned';
+const suffix=forward?'-v2':'';
 const git=(...args)=>execFileSync('git',args,{cwd:ROOT,encoding:'utf8',stdio:['pipe','pipe','pipe']});
 const {files,closure,slugs}=overlays();
 const state=JSON.parse(fs.readFileSync(CANDIDATE+'/candidate-source.json','utf8'));
@@ -50,11 +52,14 @@ orderedSql:orderedSql.map(file=>({path:file,sha256:hash(read(file))})),
 runtimeConfig:{path:'supabase/config.toml',sha256:hash(read('supabase/config.toml')),change:'Only six reader verify_jwt=false sections, application Auth remains enforced by handlers.'},
 locks:['package.json','pnpm-lock.yaml'].map(file=>({path:file,sha256:hash(read(file)),identicalToBaseline:true})),
 unexecuted:['hosted SQL/Edge/Next/Auth/provider','native WebView for this exact candidate','independent release review','publication/refresh procedure']};
-if(process.argv[2]==='--pin-local-owned'){
+if(process.argv[2]!=='--verify-owned'){
   const accepted=JSON.parse(fs.readFileSync(ROOT+'/docs/reports/090/2026-10-03-candidate-next.json','utf8'));assert.equal(accepted.status,'PASS');
   assert.deepEqual(accepted.candidateChanged,state.changed);
   const branch='codex/090-private-reader-candidate-20261003';
-  assert.equal(git('branch','--list',branch).trim(),'','Do not overwrite an existing candidate branch');
+  const prior=forward?JSON.parse(fs.readFileSync(ROOT+'/docs/reports/090/2026-10-03-candidate-source-manifest.json','utf8')):null;
+  if(forward){assert.equal(prior.localBranch,branch);assert.equal(prior.baseline,BASE);assert.equal(git('rev-parse',branch).trim(),prior.localCommit);
+    assert.notEqual(git('branch','--show-current').trim(),branch);result.supersedes=prior.localCommit;
+  }else assert.equal(git('branch','--list',branch).trim(),'','Do not overwrite an existing candidate branch');
   const originalIndex=git('diff','--cached','--binary');
   const temp=fs.mkdtempSync(path.join(os.tmpdir(),'genova-090-index-'));
   const env={...process.env,GIT_INDEX_FILE:path.join(temp,'index')};
@@ -63,15 +68,21 @@ if(process.argv[2]==='--pin-local-owned'){
     isolated(['read-tree',BASE]);
     for(const [file,source]of files){const blob=isolated(['hash-object','-w','--stdin'],source).trim();isolated(['update-index','--add','--cacheinfo',`100644,${blob},${file}`]);}
     result.gitTree=isolated(['write-tree']).trim();
-    const commit=isolated(['commit-tree',result.gitTree,'-p',BASE],
+    const commit=isolated(['commit-tree',result.gitTree,'-p',prior?.localCommit??BASE],
       '090: pin locally verified minimal private-reader candidate\n\nLocal synthetic acceptance only. No hosted publication approval.\n').trim();
     result.localBranch=branch;result.localCommit=commit;
-    git('branch',branch,commit);assert.equal(git('diff','--cached','--binary'),originalIndex);
     const patch=git('diff','--binary',BASE,commit);
-    fs.writeFileSync(ROOT+'/docs/reports/090/2026-10-03-candidate-source.patch',patch,{flag:'wx'});
+    // The final delivery diff is a gate too, not merely a patch storage action.
+    git('diff','--check',BASE,commit);
+    if(forward)git('update-ref','refs/heads/'+branch,commit,prior.localCommit);else git('branch',branch,commit);
+    assert.equal(git('diff','--cached','--binary'),originalIndex);
+    // Unified diff context blank lines carry spaces by design. Encode the exact
+    // patch artifact so document whitespace gates do not need a global exception.
+    result.patchEncoding='base64';result.patchPath='docs/reports/090/2026-10-03-candidate-source'+suffix+'.patch.b64';
+    fs.writeFileSync(ROOT+'/'+result.patchPath,Buffer.from(patch).toString('base64')+'\n',{flag:'wx'});
     result.patchSha256=hash(patch);
   }finally{fs.rmSync(temp,{recursive:true});}
-  fs.writeFileSync(ROOT+'/docs/reports/090/2026-10-03-candidate-source-manifest.json',JSON.stringify(result,null,2)+'\n',{flag:'wx'});
+  fs.writeFileSync(ROOT+'/docs/reports/090/2026-10-03-candidate-source-manifest'+suffix+'.json',JSON.stringify(result,null,2)+'\n',{flag:'wx'});
 }
 console.log(JSON.stringify({baseline:BASE,changed:result.changed.length,unchanged:unchanged.length,edgeModules:closure.files.length,clientModules:client.files.length,
 clientImports:client.imports.length,localCommit:result.localCommit,localBranch:result.localBranch}));
