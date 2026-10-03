@@ -15,6 +15,68 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — exact candidate native-compatibility preflight
+
+Owner says plan and continue in the same measured manner. Entry6ffc82b/main, one writer;
+preserve unrelated supabase/.temp/cli-latest. Read AGENTS, handoff/active/current090, controls,
+guide/work cycle/template, relevant MIGRATION/decisions32–33, current web/native bridge/Auth/
+recovery sources and dated candidate/Android evidence; complete TypeSafe/Supabase skills read.
+Live TypeSafe index checked; no new AI integration/inference/key reuse. No hosted DB/schema
+work. Prior Android acceptance is historical and does not certify candidate1a014c4.
+
+Initial source preflight finds candidate has no embedded bridge/runtime/protocol/auth capability.
+Its AuthProvider and file loader use browser sessions only; native owns the refresh token and
+does not persist one in WebView. Blindly starting an emulator cannot fix this architectural
+boundary. Current four-entry provider/Auth/layout/auth-capability closure contains50 modules,
+120 edges and31 changed/missing candidate paths, including unrelated chat/write/cache behavior;
+this is a comparison set, NOT the minimum patch or authorization to copy them all.
+
+One observable outcome: fail-closed, source-pinned native-candidate readiness preflight and
+actual Next/current native-controller reproduction of the missing handshake, plus actual
+legacy-Next recovery refusal with no credential/network side effect. This is a blocker
+checkpoint, not positive native platform acceptance or whole090/R1 closure. At most three
+actions: implement narrowly bounded source contract + mutation tests; run exact candidate
+Next with non-secret bootstrap/current controller and relevant root/mobile gates; record
+hashes/remaining closure, clean generated resources, commit source/docs separately.
+Allowed: dedicated supabase/test-support/090_candidate_native_preflight*.mjs and focused
+runtime driver; current090 report/brief/handoff/active; ignored spike/090-runtime/candidate
+and build/coverage outputs. No production/mobile source patch, new auth mode, token sharing,
+API/schema/dependency change, whole-main/31-path promotion, hosted/provider/push/CI/site or
+real-user/hardware action. Further bridge integration must be separately scoped/tested.
+
+Resource preflight21,287,212KiB free; no adb device or owned native build directories.
+Existing AVD3,517,384KiB/CoreSimulator10,386,008KiB are preserved, not new allocations.
+One <6MiB source candidate recreation is necessary to reproduce the new runtime criterion,
+not clean-tree cosmetics. Symlink existing dependencies, no install/download/VM/emulator.
+Candidate/root builds sequential <=1.5GiB estimated added peak, above10GiB floor. Owned
+Next18199/browser expire after this check; exact candidate/.next/root.next/coverage removed
+after final gates. No baseline copy or new APK while the handshake prerequisite is absent.
+Required: mutation tests/source hashes/closed dependency inventory; actual login redirect +
+zero bridge-ready/zero lease/zero credential export and current controller refusal; actual
+Next-URL recovery rejection/network0; root check, mobile typecheck/relevant controller/recovery
+tests, links/redaction/diff/cleanup/separate commits. Native Android/iOS remain NOT RUN and
+incompatible source remains a FAIL_REPRODUCED control, never converted to compatible/PASS.
+Progress review after the first runtime result or two failed approaches; rollback only owned
+test source/derived output, not Auth/server authority or previously pinned candidate history.
+
+Exit source39923fa: [native readiness report](../reports/2026-10-03-native-candidate-readiness-preflight.md)
+and [final runtime/source pins](../reports/090/2026-10-03-native-candidate-preflight-runtime.json).
+Bounded negative-preflight result PASS; candidate native compatibility FAIL_REPRODUCED, not
+positive Android/iOS acceptance. Actual production Next `/profil`→`/login`, bridge0/lease0/
+credential commands0; current actual controller15s deadline covers/clears. Browser transport,
+NOT actual RN callbacks/renderer (real native may deny `/login` earlier). Actual recovery refuses
+legacy Next URL before fetch/lease. Node7/7, mobileTS +4focused suites/58tests, root10:38 TRT
+114files/1178tests/lint/types/coverage/SW/build and exact candidate build PASS. Source-signals
+are rejection-oriented, not an authorization/platform certificate;50modules/120edges/31delta
+current provider comparison is NOT the minimum patch. Compiler pins5 actual native modules.
+Source/docs separate commits; no production/mobile/candidate changes, CLI excluded. Exact
+candidate473164KiB/root.next477416KiB/coverage352KiB removed, no18199 listener,
+21,348,620KiB free; docs exit gates in dated evidence. Prior branch/pins and failed controls
+preserved. Next short work card: minimum existing access-only bridge/wiring/dependency cut points,
+then trusted-origin legacy-Next recovery and exact Android/iOS flow. Raw media logs/independent
+review/hosted/R1/refresh release gates stay OPEN. No key reuse/new Jev($0), note deletion/site/
+real-user/push/deploy/provider/hardware actions. This checkpoint completes only its preflight goal.
+
 ### 3 October — measurable production-baseline local candidate goal
 
 Owner requests a further measurable goal, continued execution until its acceptance, and

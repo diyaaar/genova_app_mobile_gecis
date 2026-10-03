@@ -1,0 +1,1236 @@
+{
+  "date": "2026-10-03T07:35:14.876Z",
+  "candidate": "1a014c4e1927a03a7c67dd666a91a6006a28b6f8",
+  "candidateTree": "d901450049ee7f0aa6484062e8b1dd09824aa730",
+  "mainSource": "6ffc82bc35a8da7de3d7b1577d55ae2e7ed9cd9b",
+  "harnessSha256": "49b0dff66082bebdb76ee42b94013e032dac9cc3754593cd07bf3b7846199984",
+  "inspection": {
+    "candidate": "1a014c4e1927a03a7c67dd666a91a6006a28b6f8",
+    "sourcePreflightReady": false,
+    "blockers": [
+      {
+        "code": "missing-module",
+        "paths": [
+          "components/EmbeddedWebBridgeProvider.tsx"
+        ]
+      },
+      {
+        "code": "missing-module",
+        "paths": [
+          "lib/embedded-web-runtime.ts"
+        ]
+      },
+      {
+        "code": "missing-module",
+        "paths": [
+          "lib/mobile-webview-bridge.ts"
+        ]
+      },
+      {
+        "code": "missing-module",
+        "paths": [
+          "lib/web-auth-capability.ts"
+        ]
+      },
+      {
+        "code": "bridge-not-mounted",
+        "paths": [
+          "components/AppProviders.tsx"
+        ]
+      },
+      {
+        "code": "browser-only-auth",
+        "paths": [
+          "components/AuthProvider.tsx"
+        ]
+      },
+      {
+        "code": "browser-only-layout",
+        "paths": [
+          "app/(main)/layout.tsx"
+        ]
+      },
+      {
+        "code": "browser-only-data-client",
+        "paths": [
+          "lib/supabase.ts"
+        ]
+      },
+      {
+        "code": "browser-only-private-ticket-issuer",
+        "paths": [
+          "lib/drive-file-url.ts"
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "path": "components/AppProviders.tsx",
+        "sha256": "2476815d704fd8027aaba465a9f8a63a64c802e37d66f6d5b60b3c0dccb55c86"
+      },
+      {
+        "path": "components/AuthProvider.tsx",
+        "sha256": "64ef65ad6fe21c2500847dd9a86efbb1620c4718a45aa3fc47b965f83d9de178"
+      },
+      {
+        "path": "app/(main)/layout.tsx",
+        "sha256": "7ebcdf1a3b596a43ebd4bfdcc72e525130aa8e30cf85cb39df180455973d858a"
+      },
+      {
+        "path": "components/EmbeddedWebBridgeProvider.tsx",
+        "sha256": null
+      },
+      {
+        "path": "lib/embedded-web-runtime.ts",
+        "sha256": null
+      },
+      {
+        "path": "lib/mobile-webview-bridge.ts",
+        "sha256": null
+      },
+      {
+        "path": "lib/supabase.ts",
+        "sha256": "fca154c5140bf44b54e00c948dda3632da70165965b880db93c09b1d77ba0dfc"
+      },
+      {
+        "path": "lib/web-auth-capability.ts",
+        "sha256": null
+      },
+      {
+        "path": "lib/drive-file-url.ts",
+        "sha256": "e1e5cded6ef847d5faa9b471bdebbb6d150b53d0e23d0972cc6e14a4310c02b5"
+      }
+    ],
+    "limit": "Rejection-oriented static signals only. No positive web/native/tenant/role/refresh/platform proof; runtime acceptance remains required."
+  },
+  "providerComparison": {
+    "entries": [
+      "components/AppProviders.tsx",
+      "components/AuthProvider.tsx",
+      "app/(main)/layout.tsx",
+      "lib/web-auth-capability.ts"
+    ],
+    "files": [
+      {
+        "path": "app/(main)/layout.tsx",
+        "bytes": 7264,
+        "sha256": "e477003a88ed6456c496f85ed04293d6b461334e1fe6a2b3ecd3353df84fd247"
+      },
+      {
+        "path": "components/AppProviders.tsx",
+        "bytes": 1850,
+        "sha256": "cd0df9c2524bdd1baabafa74277df2fe7143fe4a787a0eaf5e930c9036c00461"
+      },
+      {
+        "path": "components/AuthProvider.tsx",
+        "bytes": 18265,
+        "sha256": "0a3b8d2107010c5d776726fedbe9ddab7c360ec788bf48c4bd23868aef096946"
+      },
+      {
+        "path": "components/BottomNav.tsx",
+        "bytes": 3166,
+        "sha256": "8ae9dc7670203d3716de4e1b990e8166c3af9a4bfb50f21358073306ff6e06c0"
+      },
+      {
+        "path": "components/ChoirSelectionGate.tsx",
+        "bytes": 3148,
+        "sha256": "3e5ebf7ccebe9c564e5b5e8b6cf780fe14941ff35808cd7067ef0fb85cdbb325"
+      },
+      {
+        "path": "components/ChoirSwitcher.tsx",
+        "bytes": 1304,
+        "sha256": "ddb6eed128da806b9ccf5fd32758cdfd8851a10e1f7f7bbc5bf60c8aa41c8e6f"
+      },
+      {
+        "path": "components/EmbeddedWebBridgeProvider.tsx",
+        "bytes": 30759,
+        "sha256": "9cd3a384f21a7face8a9d4b661c5f23993cd2c0499abca9b238e2255a17a6ffc"
+      },
+      {
+        "path": "components/FloatingMiniPlayer.tsx",
+        "bytes": 27719,
+        "sha256": "90b1449459c9d3596841e11f958b25286ffd5e1acd3448532cfa36583df2c87c"
+      },
+      {
+        "path": "components/LottieIcon.tsx",
+        "bytes": 2979,
+        "sha256": "d4e7092998893f26f5609df050a140682520278fd3f6121696b7e78ef9ab257b"
+      },
+      {
+        "path": "components/MainNotificationsBell.tsx",
+        "bytes": 28747,
+        "sha256": "ed67fb2ad38e46e8933b22fe225cdce0a99b43056e2867d198f5eee401fb4db1"
+      },
+      {
+        "path": "components/NotificationPrompt.tsx",
+        "bytes": 6068,
+        "sha256": "402317189e56204e64d38ef5e6b20c2d2f64bed4965a12eb88849ab6234dc3a0"
+      },
+      {
+        "path": "components/PageTransition.tsx",
+        "bytes": 2312,
+        "sha256": "e958361a4c4f37598c036bf72fdf9b5bfce19e4bf1d1748553c3096222fec61f"
+      },
+      {
+        "path": "components/ProfileChangeRequestNotifier.tsx",
+        "bytes": 3411,
+        "sha256": "eb310c1c4a046cbfca98905b2034d9b970ed93db00ddbb2982211f45e4a6d234"
+      },
+      {
+        "path": "components/ToastProvider.tsx",
+        "bytes": 4457,
+        "sha256": "4685c8e7f80fa50e6f3dcbeadc0730febcc9b8a9b7dfb91f5abb80cbd1962e87"
+      },
+      {
+        "path": "components/TopBar.tsx",
+        "bytes": 5091,
+        "sha256": "2f17c96731ccb38f72fe4e350f6d8cea72fb574b14ec621ada02e8eff9eb0eb4"
+      },
+      {
+        "path": "hooks/useTabSwipe.ts",
+        "bytes": 6957,
+        "sha256": "205ef27f98f8ac84b30da059c3a62c7e480a51d49a83aec0602ab65589febeba"
+      },
+      {
+        "path": "lib/assignment-cache.ts",
+        "bytes": 1497,
+        "sha256": "fff0ffb886fb214a00fc4eb5c5c556fbc1c854deaddbc3672c8412fdc834a691"
+      },
+      {
+        "path": "lib/assignments/upload.ts",
+        "bytes": 4121,
+        "sha256": "a1c3979a8963ce2358008bbc78def8a2f15ef62da8beb3c579482db8ed4124f1"
+      },
+      {
+        "path": "lib/chat-cache.ts",
+        "bytes": 13007,
+        "sha256": "a72e04624f0a18803c4682dde869509ddc508234ccbdae3b6a80fbb14129865d"
+      },
+      {
+        "path": "lib/chat-media.ts",
+        "bytes": 6898,
+        "sha256": "01fa00696f273b92c90aa59127600b0dbed0c02116a742a22aa23c7b5e125ae5"
+      },
+      {
+        "path": "lib/chat.ts",
+        "bytes": 50495,
+        "sha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+      },
+      {
+        "path": "lib/choir-context-core.ts",
+        "bytes": 4259,
+        "sha256": "38fef60354ddb5ff18e3352ba46e3c1545eddd99dae79f10f24fe9e0c25188ff"
+      },
+      {
+        "path": "lib/choir-context.ts",
+        "bytes": 1432,
+        "sha256": "9e7c82274b92cc46411c6f3f48bdcac1231fbee93799f56b1a40bce1b835c574"
+      },
+      {
+        "path": "lib/drive-file-url.ts",
+        "bytes": 9910,
+        "sha256": "5638930bf3f89bcb5f115cd972657f4816deff2cc64ee32c1a407caf658f1326"
+      },
+      {
+        "path": "lib/drive.ts",
+        "bytes": 13465,
+        "sha256": "f9806253caaf7447430dacf613991af8500e4617a1d82635daf873d21e955998"
+      },
+      {
+        "path": "lib/embedded-web-runtime.ts",
+        "bytes": 10364,
+        "sha256": "a8f547da5d68d1edf25d831642b27171fd84837bf43705ca2f8e4b64cc28a82e"
+      },
+      {
+        "path": "lib/invite-token-store.ts",
+        "bytes": 3875,
+        "sha256": "10118a2ab4e4df1612fdbfb17d3c12a84300a7c38db4cc242a8c90372eb67db8"
+      },
+      {
+        "path": "lib/mobile-webview-bridge.ts",
+        "bytes": 29896,
+        "sha256": "c56bca92ea6c3789c11ad95b4d938596e7a5656eac2af398cc69c72b37d3bde2"
+      },
+      {
+        "path": "lib/notification-cache.ts",
+        "bytes": 812,
+        "sha256": "b07ba75c37652be955dcc98e453ccd7992576fe05cba4549e566134b2826dabf"
+      },
+      {
+        "path": "lib/realtime.ts",
+        "bytes": 1110,
+        "sha256": "896a244f515295f2de6bce3fb54a76eccd3054085b7936ba191de76590ce0359"
+      },
+      {
+        "path": "lib/repertuvar/annotation-save-queue.ts",
+        "bytes": 11408,
+        "sha256": "3db4f273a6b90cb23cee8fb5581f10aeed3e582c56b6c0c1233b08cfd8717406"
+      },
+      {
+        "path": "lib/repertuvar/annotation-save-runtime.ts",
+        "bytes": 321,
+        "sha256": "ced3bf0625b50666727a20cbe1689ed88850c8c631718fdf4683c0db0ac8b018"
+      },
+      {
+        "path": "lib/repertuvar/annotation-tenant-transition.ts",
+        "bytes": 773,
+        "sha256": "4ff3dec86825c08060e0042620f86ecaa2987fd9ad5fb4ea44de0548d457ff8c"
+      },
+      {
+        "path": "lib/repertuvar/annotation-types.ts",
+        "bytes": 12253,
+        "sha256": "56092bd56e87e41b1f61a9be4bf5d5649b18345529cbf94e75cf3beb73848872"
+      },
+      {
+        "path": "lib/repertuvar/annotations.ts",
+        "bytes": 11512,
+        "sha256": "5ff803beaa4134dea817d6ab74a61a1249dcab009828342c67e6481a7e977393"
+      },
+      {
+        "path": "lib/repertuvar/cache.ts",
+        "bytes": 3373,
+        "sha256": "bbf841265637a282e3d666a5a4b49a1fbd07682291d7f865473e4a3f64d19b79"
+      },
+      {
+        "path": "lib/repertuvar/catalog-core.ts",
+        "bytes": 4803,
+        "sha256": "dc50a587a5ebbf0331de6fa922c6abb08ecdc442ba3ba93713c4325e07ba92e3"
+      },
+      {
+        "path": "lib/repertuvar/comment-audio.ts",
+        "bytes": 5283,
+        "sha256": "beed91a3d8270a4c50667375adb106b6e019ab98ff59f05c424b25b8bd5f8442"
+      },
+      {
+        "path": "lib/repertuvar/lifecycle.ts",
+        "bytes": 3671,
+        "sha256": "5f1ecb3b7c7704164aa6730a2d59df56ef1ff55a97798727766e82a940ac956e"
+      },
+      {
+        "path": "lib/repertuvar/offline.ts",
+        "bytes": 8800,
+        "sha256": "f2c5a841c565d22386c566d54889dcdfc49b3d9d75ed32cf0cb0132612c3e0fe"
+      },
+      {
+        "path": "lib/repertuvar/protected-file-client.ts",
+        "bytes": 2466,
+        "sha256": "43aea8d1bbd510f0cee95fa8d9eaea99a482e95a9f35b67cc0e1a4e29410a4c1"
+      },
+      {
+        "path": "lib/repertuvar/queries.ts",
+        "bytes": 4559,
+        "sha256": "658bc633a40d307228156d993201916fa1e2165537ede394c15e6b302f7e32ed"
+      },
+      {
+        "path": "lib/repertuvar/upload.ts",
+        "bytes": 3958,
+        "sha256": "bd4d6764e8746047a9559bad7f9bb9c6d91e7e6f98c9f65b1ce3635c9b2b55bb"
+      },
+      {
+        "path": "lib/role-labels.ts",
+        "bytes": 391,
+        "sha256": "f70ff7508e3b20eeafb51ba33007aded9dad210a0479b94af16fbcd9fe48c4f4"
+      },
+      {
+        "path": "lib/shared-audio.ts",
+        "bytes": 496,
+        "sha256": "f29fd98c696688904c4dbce761d47e381d7f88928e4c58c790d9362c08446fbb"
+      },
+      {
+        "path": "lib/supabase.ts",
+        "bytes": 13587,
+        "sha256": "4b0fd6e1a49163aeb7d4765f14a050a81925fbb19f753de1185f5e6012a08ab6"
+      },
+      {
+        "path": "lib/web-auth-capability.ts",
+        "bytes": 2054,
+        "sha256": "a06f6b1135ef312c28d64d7f9ce760d5793cf5316b2704127727be73bddabec2"
+      },
+      {
+        "path": "store/useChatStore.ts",
+        "bytes": 7952,
+        "sha256": "9a7b1c7467dd95e885b2601086e3680dece9c156100dfd734803540f4967a222"
+      },
+      {
+        "path": "store/useMiniAudioPlayerStore.ts",
+        "bytes": 2635,
+        "sha256": "a290ad3f1d90a951a2c66ec15c235322147b7d5fa8ce6321dd4e9e31dc605c43"
+      },
+      {
+        "path": "store/useNavigationStore.ts",
+        "bytes": 526,
+        "sha256": "af5b2d741cfb8666537806c278718e59f96905349d43d024826e81ae20a313bc"
+      }
+    ],
+    "imports": [
+      {
+        "from": "components/AppProviders.tsx",
+        "to": "components/ToastProvider.tsx",
+        "specifier": "@/components/ToastProvider"
+      },
+      {
+        "from": "components/AppProviders.tsx",
+        "to": "components/EmbeddedWebBridgeProvider.tsx",
+        "specifier": "@/components/EmbeddedWebBridgeProvider"
+      },
+      {
+        "from": "components/EmbeddedWebBridgeProvider.tsx",
+        "to": "lib/assignment-cache.ts",
+        "specifier": "@/lib/assignment-cache"
+      },
+      {
+        "from": "components/EmbeddedWebBridgeProvider.tsx",
+        "to": "lib/chat-cache.ts",
+        "specifier": "@/lib/chat-cache"
+      },
+      {
+        "from": "lib/chat-cache.ts",
+        "to": "lib/chat.ts",
+        "specifier": "@/lib/chat"
+      },
+      {
+        "from": "lib/chat.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "@/lib/supabase"
+      },
+      {
+        "from": "lib/supabase.ts",
+        "to": "lib/embedded-web-runtime.ts",
+        "specifier": "@/lib/embedded-web-runtime"
+      },
+      {
+        "from": "lib/embedded-web-runtime.ts",
+        "to": "lib/mobile-webview-bridge.ts",
+        "specifier": "./mobile-webview-bridge"
+      },
+      {
+        "from": "lib/mobile-webview-bridge.ts",
+        "to": "lib/invite-token-store.ts",
+        "specifier": "./invite-token-store"
+      },
+      {
+        "from": "lib/embedded-web-runtime.ts",
+        "to": "lib/choir-context-core.ts",
+        "specifier": "./choir-context-core"
+      },
+      {
+        "from": "lib/supabase.ts",
+        "to": "lib/choir-context-core.ts",
+        "specifier": "@/lib/choir-context-core"
+      },
+      {
+        "from": "lib/supabase.ts",
+        "to": "lib/realtime.ts",
+        "specifier": "@/lib/realtime"
+      },
+      {
+        "from": "lib/supabase.ts",
+        "to": "lib/repertuvar/catalog-core.ts",
+        "specifier": "@/lib/repertuvar/catalog-core"
+      },
+      {
+        "from": "lib/chat.ts",
+        "to": "lib/drive.ts",
+        "specifier": "@/lib/drive"
+      },
+      {
+        "from": "lib/drive.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "./supabase"
+      },
+      {
+        "from": "lib/drive.ts",
+        "to": "lib/web-auth-capability.ts",
+        "specifier": "./web-auth-capability"
+      },
+      {
+        "from": "lib/web-auth-capability.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "./supabase"
+      },
+      {
+        "from": "lib/web-auth-capability.ts",
+        "to": "lib/embedded-web-runtime.ts",
+        "specifier": "./embedded-web-runtime"
+      },
+      {
+        "from": "lib/drive.ts",
+        "to": "lib/repertuvar/upload.ts",
+        "specifier": "./repertuvar/upload"
+      },
+      {
+        "from": "lib/repertuvar/upload.ts",
+        "to": "lib/repertuvar/catalog-core.ts",
+        "specifier": "./catalog-core"
+      },
+      {
+        "from": "lib/repertuvar/upload.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "../supabase"
+      },
+      {
+        "from": "lib/repertuvar/upload.ts",
+        "to": "lib/web-auth-capability.ts",
+        "specifier": "../web-auth-capability"
+      },
+      {
+        "from": "lib/drive.ts",
+        "to": "lib/repertuvar/lifecycle.ts",
+        "specifier": "./repertuvar/lifecycle"
+      },
+      {
+        "from": "lib/repertuvar/lifecycle.ts",
+        "to": "lib/repertuvar/catalog-core.ts",
+        "specifier": "./catalog-core"
+      },
+      {
+        "from": "lib/repertuvar/lifecycle.ts",
+        "to": "lib/web-auth-capability.ts",
+        "specifier": "../web-auth-capability"
+      },
+      {
+        "from": "lib/repertuvar/lifecycle.ts",
+        "to": "lib/repertuvar/upload.ts",
+        "specifier": "./upload"
+      },
+      {
+        "from": "lib/drive.ts",
+        "to": "lib/repertuvar/comment-audio.ts",
+        "specifier": "./repertuvar/comment-audio"
+      },
+      {
+        "from": "lib/repertuvar/comment-audio.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "../supabase"
+      },
+      {
+        "from": "lib/repertuvar/comment-audio.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "../supabase"
+      },
+      {
+        "from": "lib/repertuvar/comment-audio.ts",
+        "to": "lib/web-auth-capability.ts",
+        "specifier": "../web-auth-capability"
+      },
+      {
+        "from": "lib/drive.ts",
+        "to": "lib/assignments/upload.ts",
+        "specifier": "./assignments/upload"
+      },
+      {
+        "from": "lib/assignments/upload.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "../supabase"
+      },
+      {
+        "from": "lib/assignments/upload.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "../supabase"
+      },
+      {
+        "from": "lib/assignments/upload.ts",
+        "to": "lib/web-auth-capability.ts",
+        "specifier": "../web-auth-capability"
+      },
+      {
+        "from": "lib/chat.ts",
+        "to": "lib/chat-media.ts",
+        "specifier": "@/lib/chat-media"
+      },
+      {
+        "from": "lib/chat-media.ts",
+        "to": "lib/drive.ts",
+        "specifier": "./drive"
+      },
+      {
+        "from": "lib/chat-media.ts",
+        "to": "lib/drive-file-url.ts",
+        "specifier": "./drive-file-url"
+      },
+      {
+        "from": "lib/drive-file-url.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "@/lib/supabase"
+      },
+      {
+        "from": "lib/drive-file-url.ts",
+        "to": "lib/repertuvar/protected-file-client.ts",
+        "specifier": "@/lib/repertuvar/protected-file-client"
+      },
+      {
+        "from": "lib/drive-file-url.ts",
+        "to": "lib/repertuvar/protected-file-client.ts",
+        "specifier": "@/lib/repertuvar/protected-file-client"
+      },
+      {
+        "from": "lib/drive-file-url.ts",
+        "to": "lib/web-auth-capability.ts",
+        "specifier": "@/lib/web-auth-capability"
+      },
+      {
+        "from": "lib/chat-media.ts",
+        "to": "lib/web-auth-capability.ts",
+        "specifier": "./web-auth-capability"
+      },
+      {
+        "from": "lib/chat-media.ts",
+        "to": "lib/chat.ts",
+        "specifier": "./chat"
+      },
+      {
+        "from": "lib/chat-media.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "./supabase"
+      },
+      {
+        "from": "components/EmbeddedWebBridgeProvider.tsx",
+        "to": "store/useChatStore.ts",
+        "specifier": "@/store/useChatStore"
+      },
+      {
+        "from": "store/useChatStore.ts",
+        "to": "lib/chat.ts",
+        "specifier": "@/lib/chat"
+      },
+      {
+        "from": "components/EmbeddedWebBridgeProvider.tsx",
+        "to": "lib/embedded-web-runtime.ts",
+        "specifier": "@/lib/embedded-web-runtime"
+      },
+      {
+        "from": "components/EmbeddedWebBridgeProvider.tsx",
+        "to": "lib/mobile-webview-bridge.ts",
+        "specifier": "@/lib/mobile-webview-bridge"
+      },
+      {
+        "from": "components/EmbeddedWebBridgeProvider.tsx",
+        "to": "lib/notification-cache.ts",
+        "specifier": "@/lib/notification-cache"
+      },
+      {
+        "from": "components/EmbeddedWebBridgeProvider.tsx",
+        "to": "lib/repertuvar/annotation-save-runtime.ts",
+        "specifier": "@/lib/repertuvar/annotation-save-runtime"
+      },
+      {
+        "from": "lib/repertuvar/annotation-save-runtime.ts",
+        "to": "lib/repertuvar/annotation-save-queue.ts",
+        "specifier": "@/lib/repertuvar/annotation-save-queue"
+      },
+      {
+        "from": "lib/repertuvar/annotation-save-queue.ts",
+        "to": "lib/repertuvar/annotation-types.ts",
+        "specifier": "@/lib/repertuvar/annotation-types"
+      },
+      {
+        "from": "lib/repertuvar/annotation-save-queue.ts",
+        "to": "lib/repertuvar/annotations.ts",
+        "specifier": "@/lib/repertuvar/annotations"
+      },
+      {
+        "from": "lib/repertuvar/annotations.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "@/lib/supabase"
+      },
+      {
+        "from": "lib/repertuvar/annotations.ts",
+        "to": "lib/repertuvar/annotation-types.ts",
+        "specifier": "@/lib/repertuvar/annotation-types"
+      },
+      {
+        "from": "lib/repertuvar/annotation-save-runtime.ts",
+        "to": "lib/repertuvar/annotations.ts",
+        "specifier": "@/lib/repertuvar/annotations"
+      },
+      {
+        "from": "components/EmbeddedWebBridgeProvider.tsx",
+        "to": "lib/repertuvar/cache.ts",
+        "specifier": "@/lib/repertuvar/cache"
+      },
+      {
+        "from": "lib/repertuvar/cache.ts",
+        "to": "lib/repertuvar/catalog-core.ts",
+        "specifier": "@/lib/repertuvar/catalog-core"
+      },
+      {
+        "from": "lib/repertuvar/cache.ts",
+        "to": "lib/repertuvar/catalog-core.ts",
+        "specifier": "@/lib/repertuvar/catalog-core"
+      },
+      {
+        "from": "lib/repertuvar/cache.ts",
+        "to": "lib/embedded-web-runtime.ts",
+        "specifier": "@/lib/embedded-web-runtime"
+      },
+      {
+        "from": "lib/repertuvar/cache.ts",
+        "to": "lib/repertuvar/catalog-core.ts",
+        "specifier": "@/lib/repertuvar/catalog-core"
+      },
+      {
+        "from": "components/EmbeddedWebBridgeProvider.tsx",
+        "to": "lib/repertuvar/offline.ts",
+        "specifier": "@/lib/repertuvar/offline"
+      },
+      {
+        "from": "lib/repertuvar/offline.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "@/lib/supabase"
+      },
+      {
+        "from": "lib/repertuvar/offline.ts",
+        "to": "lib/embedded-web-runtime.ts",
+        "specifier": "@/lib/embedded-web-runtime"
+      },
+      {
+        "from": "components/EmbeddedWebBridgeProvider.tsx",
+        "to": "lib/drive-file-url.ts",
+        "specifier": "@/lib/drive-file-url"
+      },
+      {
+        "from": "components/EmbeddedWebBridgeProvider.tsx",
+        "to": "lib/supabase.ts",
+        "specifier": "@/lib/supabase"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "lib/supabase.ts",
+        "specifier": "@/lib/supabase"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "lib/assignment-cache.ts",
+        "specifier": "@/lib/assignment-cache"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "lib/chat-cache.ts",
+        "specifier": "@/lib/chat-cache"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "store/useChatStore.ts",
+        "specifier": "@/store/useChatStore"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "lib/choir-context.ts",
+        "specifier": "@/lib/choir-context"
+      },
+      {
+        "from": "lib/choir-context.ts",
+        "to": "lib/choir-context-core.ts",
+        "specifier": "./choir-context-core"
+      },
+      {
+        "from": "lib/choir-context.ts",
+        "to": "lib/choir-context-core.ts",
+        "specifier": "./choir-context-core"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "lib/drive-file-url.ts",
+        "specifier": "@/lib/drive-file-url"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "lib/repertuvar/cache.ts",
+        "specifier": "@/lib/repertuvar/cache"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "lib/repertuvar/offline.ts",
+        "specifier": "@/lib/repertuvar/offline"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "lib/realtime.ts",
+        "specifier": "@/lib/realtime"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "lib/notification-cache.ts",
+        "specifier": "@/lib/notification-cache"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "lib/repertuvar/annotation-save-runtime.ts",
+        "specifier": "@/lib/repertuvar/annotation-save-runtime"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "lib/repertuvar/annotation-tenant-transition.ts",
+        "specifier": "@/lib/repertuvar/annotation-tenant-transition"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "components/ToastProvider.tsx",
+        "specifier": "@/components/ToastProvider"
+      },
+      {
+        "from": "components/AuthProvider.tsx",
+        "to": "components/EmbeddedWebBridgeProvider.tsx",
+        "specifier": "@/components/EmbeddedWebBridgeProvider"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "components/TopBar.tsx",
+        "specifier": "@/components/TopBar"
+      },
+      {
+        "from": "components/TopBar.tsx",
+        "to": "components/LottieIcon.tsx",
+        "specifier": "./LottieIcon"
+      },
+      {
+        "from": "components/TopBar.tsx",
+        "to": "components/MainNotificationsBell.tsx",
+        "specifier": "./MainNotificationsBell"
+      },
+      {
+        "from": "components/MainNotificationsBell.tsx",
+        "to": "components/AuthProvider.tsx",
+        "specifier": "@/components/AuthProvider"
+      },
+      {
+        "from": "components/MainNotificationsBell.tsx",
+        "to": "lib/notification-cache.ts",
+        "specifier": "@/lib/notification-cache"
+      },
+      {
+        "from": "components/MainNotificationsBell.tsx",
+        "to": "lib/supabase.ts",
+        "specifier": "@/lib/supabase"
+      },
+      {
+        "from": "components/TopBar.tsx",
+        "to": "components/ChoirSwitcher.tsx",
+        "specifier": "./ChoirSwitcher"
+      },
+      {
+        "from": "components/ChoirSwitcher.tsx",
+        "to": "components/AuthProvider.tsx",
+        "specifier": "@/components/AuthProvider"
+      },
+      {
+        "from": "components/ChoirSwitcher.tsx",
+        "to": "components/ToastProvider.tsx",
+        "specifier": "@/components/ToastProvider"
+      },
+      {
+        "from": "components/TopBar.tsx",
+        "to": "components/AuthProvider.tsx",
+        "specifier": "./AuthProvider"
+      },
+      {
+        "from": "components/TopBar.tsx",
+        "to": "lib/role-labels.ts",
+        "specifier": "@/lib/role-labels"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "components/BottomNav.tsx",
+        "specifier": "@/components/BottomNav"
+      },
+      {
+        "from": "components/BottomNav.tsx",
+        "to": "components/LottieIcon.tsx",
+        "specifier": "./LottieIcon"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "components/PageTransition.tsx",
+        "specifier": "@/components/PageTransition"
+      },
+      {
+        "from": "components/PageTransition.tsx",
+        "to": "store/useNavigationStore.ts",
+        "specifier": "@/store/useNavigationStore"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "components/AuthProvider.tsx",
+        "specifier": "@/components/AuthProvider"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "components/NotificationPrompt.tsx",
+        "specifier": "@/components/NotificationPrompt"
+      },
+      {
+        "from": "components/NotificationPrompt.tsx",
+        "to": "lib/web-auth-capability.ts",
+        "specifier": "@/lib/web-auth-capability"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "components/ProfileChangeRequestNotifier.tsx",
+        "specifier": "@/components/ProfileChangeRequestNotifier"
+      },
+      {
+        "from": "components/ProfileChangeRequestNotifier.tsx",
+        "to": "components/AuthProvider.tsx",
+        "specifier": "@/components/AuthProvider"
+      },
+      {
+        "from": "components/ProfileChangeRequestNotifier.tsx",
+        "to": "components/EmbeddedWebBridgeProvider.tsx",
+        "specifier": "@/components/EmbeddedWebBridgeProvider"
+      },
+      {
+        "from": "components/ProfileChangeRequestNotifier.tsx",
+        "to": "components/ToastProvider.tsx",
+        "specifier": "@/components/ToastProvider"
+      },
+      {
+        "from": "components/ProfileChangeRequestNotifier.tsx",
+        "to": "lib/supabase.ts",
+        "specifier": "@/lib/supabase"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "components/FloatingMiniPlayer.tsx",
+        "specifier": "@/components/FloatingMiniPlayer"
+      },
+      {
+        "from": "components/FloatingMiniPlayer.tsx",
+        "to": "store/useMiniAudioPlayerStore.ts",
+        "specifier": "@/store/useMiniAudioPlayerStore"
+      },
+      {
+        "from": "components/FloatingMiniPlayer.tsx",
+        "to": "lib/shared-audio.ts",
+        "specifier": "@/lib/shared-audio"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "components/ChoirSelectionGate.tsx",
+        "specifier": "@/components/ChoirSelectionGate"
+      },
+      {
+        "from": "components/ChoirSelectionGate.tsx",
+        "to": "components/AuthProvider.tsx",
+        "specifier": "@/components/AuthProvider"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "hooks/useTabSwipe.ts",
+        "specifier": "@/hooks/useTabSwipe"
+      },
+      {
+        "from": "hooks/useTabSwipe.ts",
+        "to": "store/useNavigationStore.ts",
+        "specifier": "@/store/useNavigationStore"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "lib/repertuvar/cache.ts",
+        "specifier": "@/lib/repertuvar/cache"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "lib/repertuvar/queries.ts",
+        "specifier": "@/lib/repertuvar/queries"
+      },
+      {
+        "from": "lib/repertuvar/queries.ts",
+        "to": "lib/supabase.ts",
+        "specifier": "@/lib/supabase"
+      },
+      {
+        "from": "lib/repertuvar/queries.ts",
+        "to": "lib/repertuvar/catalog-core.ts",
+        "specifier": "@/lib/repertuvar/catalog-core"
+      },
+      {
+        "from": "lib/repertuvar/queries.ts",
+        "to": "lib/repertuvar/cache.ts",
+        "specifier": "@/lib/repertuvar/cache"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "lib/supabase.ts",
+        "specifier": "@/lib/supabase"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "lib/realtime.ts",
+        "specifier": "@/lib/realtime"
+      },
+      {
+        "from": "app/(main)/layout.tsx",
+        "to": "components/EmbeddedWebBridgeProvider.tsx",
+        "specifier": "@/components/EmbeddedWebBridgeProvider"
+      }
+    ],
+    "external": [
+      "@supabase/supabase-js",
+      "@tanstack/react-query",
+      "lottie-react",
+      "lucide-react",
+      "motion/react",
+      "next-themes",
+      "next/dynamic",
+      "next/link",
+      "next/navigation",
+      "react",
+      "zustand"
+    ],
+    "differences": [
+      {
+        "path": "app/(main)/layout.tsx",
+        "bytes": 7264,
+        "sha256": "e477003a88ed6456c496f85ed04293d6b461334e1fe6a2b3ecd3353df84fd247",
+        "candidateSha256": "7ebcdf1a3b596a43ebd4bfdcc72e525130aa8e30cf85cb39df180455973d858a",
+        "state": "CHANGED"
+      },
+      {
+        "path": "components/AppProviders.tsx",
+        "bytes": 1850,
+        "sha256": "cd0df9c2524bdd1baabafa74277df2fe7143fe4a787a0eaf5e930c9036c00461",
+        "candidateSha256": "2476815d704fd8027aaba465a9f8a63a64c802e37d66f6d5b60b3c0dccb55c86",
+        "state": "CHANGED"
+      },
+      {
+        "path": "components/AuthProvider.tsx",
+        "bytes": 18265,
+        "sha256": "0a3b8d2107010c5d776726fedbe9ddab7c360ec788bf48c4bd23868aef096946",
+        "candidateSha256": "64ef65ad6fe21c2500847dd9a86efbb1620c4718a45aa3fc47b965f83d9de178",
+        "state": "CHANGED"
+      },
+      {
+        "path": "components/EmbeddedWebBridgeProvider.tsx",
+        "bytes": 30759,
+        "sha256": "9cd3a384f21a7face8a9d4b661c5f23993cd2c0499abca9b238e2255a17a6ffc",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "components/NotificationPrompt.tsx",
+        "bytes": 6068,
+        "sha256": "402317189e56204e64d38ef5e6b20c2d2f64bed4965a12eb88849ab6234dc3a0",
+        "candidateSha256": "9b0a3bae4d9f076810f1f79385b553a06f3629ec3fdb85cf8bf629b962d5ada7",
+        "state": "CHANGED"
+      },
+      {
+        "path": "components/ProfileChangeRequestNotifier.tsx",
+        "bytes": 3411,
+        "sha256": "eb310c1c4a046cbfca98905b2034d9b970ed93db00ddbb2982211f45e4a6d234",
+        "candidateSha256": "e36a88ee29f2065962ad96144d7f94f67dec244b31c56489003b3d3270b11297",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/assignments/upload.ts",
+        "bytes": 4121,
+        "sha256": "a1c3979a8963ce2358008bbc78def8a2f15ef62da8beb3c579482db8ed4124f1",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "lib/chat-cache.ts",
+        "bytes": 13007,
+        "sha256": "a72e04624f0a18803c4682dde869509ddc508234ccbdae3b6a80fbb14129865d",
+        "candidateSha256": "e5e68fe5674cef05b7373ca7d2089a8978f5d9925ccb8ab8c9094942a1cabc01",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/chat-media.ts",
+        "bytes": 6898,
+        "sha256": "01fa00696f273b92c90aa59127600b0dbed0c02116a742a22aa23c7b5e125ae5",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "lib/chat.ts",
+        "bytes": 50495,
+        "sha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf",
+        "candidateSha256": "933495e108e2e0dddea4306f5db7e4f5141be761056082250760b353e74b5690",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/choir-context-core.ts",
+        "bytes": 4259,
+        "sha256": "38fef60354ddb5ff18e3352ba46e3c1545eddd99dae79f10f24fe9e0c25188ff",
+        "candidateSha256": "6b5cc7af8f7bde7b60f71e299df93fe5988b2e3e1641811ddd4cd9e0bf47c11c",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/drive-file-url.ts",
+        "bytes": 9910,
+        "sha256": "5638930bf3f89bcb5f115cd972657f4816deff2cc64ee32c1a407caf658f1326",
+        "candidateSha256": "e1e5cded6ef847d5faa9b471bdebbb6d150b53d0e23d0972cc6e14a4310c02b5",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/drive.ts",
+        "bytes": 13465,
+        "sha256": "f9806253caaf7447430dacf613991af8500e4617a1d82635daf873d21e955998",
+        "candidateSha256": "4834fed3118db5ce09b5f7407a896bbd462fd0323a15c48a90ea43b43f3a6423",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/embedded-web-runtime.ts",
+        "bytes": 10364,
+        "sha256": "a8f547da5d68d1edf25d831642b27171fd84837bf43705ca2f8e4b64cc28a82e",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "lib/mobile-webview-bridge.ts",
+        "bytes": 29896,
+        "sha256": "c56bca92ea6c3789c11ad95b4d938596e7a5656eac2af398cc69c72b37d3bde2",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "lib/realtime.ts",
+        "bytes": 1110,
+        "sha256": "896a244f515295f2de6bce3fb54a76eccd3054085b7936ba191de76590ce0359",
+        "candidateSha256": "b6eee16df16fd72dedeb10b780ddf547345b8ce63ad35ed4096180b3059d4e7b",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/repertuvar/annotation-save-queue.ts",
+        "bytes": 11408,
+        "sha256": "3db4f273a6b90cb23cee8fb5581f10aeed3e582c56b6c0c1233b08cfd8717406",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "lib/repertuvar/annotation-save-runtime.ts",
+        "bytes": 321,
+        "sha256": "ced3bf0625b50666727a20cbe1689ed88850c8c631718fdf4683c0db0ac8b018",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "lib/repertuvar/annotation-tenant-transition.ts",
+        "bytes": 773,
+        "sha256": "4ff3dec86825c08060e0042620f86ecaa2987fd9ad5fb4ea44de0548d457ff8c",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "lib/repertuvar/annotation-types.ts",
+        "bytes": 12253,
+        "sha256": "56092bd56e87e41b1f61a9be4bf5d5649b18345529cbf94e75cf3beb73848872",
+        "candidateSha256": "bc5ee042d3f7c7f56aec4492d9f893dc38bab355247a6b3a00038bb53ecc3b6a",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/repertuvar/annotations.ts",
+        "bytes": 11512,
+        "sha256": "5ff803beaa4134dea817d6ab74a61a1249dcab009828342c67e6481a7e977393",
+        "candidateSha256": "8e21b6c0dc5f5019ede5ccb5e36ace3371abc7d98b40bb00d5771ef33cc2ee91",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/repertuvar/cache.ts",
+        "bytes": 3373,
+        "sha256": "bbf841265637a282e3d666a5a4b49a1fbd07682291d7f865473e4a3f64d19b79",
+        "candidateSha256": "f1a72dee1e430ba6a614ca54a0bd39db797f1b1f4a65c396acabf34e79340fcb",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/repertuvar/catalog-core.ts",
+        "bytes": 4803,
+        "sha256": "dc50a587a5ebbf0331de6fa922c6abb08ecdc442ba3ba93713c4325e07ba92e3",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "lib/repertuvar/comment-audio.ts",
+        "bytes": 5283,
+        "sha256": "beed91a3d8270a4c50667375adb106b6e019ab98ff59f05c424b25b8bd5f8442",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "lib/repertuvar/lifecycle.ts",
+        "bytes": 3671,
+        "sha256": "5f1ecb3b7c7704164aa6730a2d59df56ef1ff55a97798727766e82a940ac956e",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "lib/repertuvar/offline.ts",
+        "bytes": 8800,
+        "sha256": "f2c5a841c565d22386c566d54889dcdfc49b3d9d75ed32cf0cb0132612c3e0fe",
+        "candidateSha256": "0c1c5169e5744e2cf1d9eed2591996fc54c310eafe2cf6e566876721c04cf9e8",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/repertuvar/protected-file-client.ts",
+        "bytes": 2466,
+        "sha256": "43aea8d1bbd510f0cee95fa8d9eaea99a482e95a9f35b67cc0e1a4e29410a4c1",
+        "candidateSha256": "977922e03381efe7b768781764a7b38535cd091e31f892d028b6e0c417092ed6",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/repertuvar/queries.ts",
+        "bytes": 4559,
+        "sha256": "658bc633a40d307228156d993201916fa1e2165537ede394c15e6b302f7e32ed",
+        "candidateSha256": "edf6d8804e7321efbc4364d05a8d2abf5eea4c76880336f3a1f4b34c5c99a2a9",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/repertuvar/upload.ts",
+        "bytes": 3958,
+        "sha256": "bd4d6764e8746047a9559bad7f9bb9c6d91e7e6f98c9f65b1ce3635c9b2b55bb",
+        "candidateSha256": null,
+        "state": "MISSING"
+      },
+      {
+        "path": "lib/supabase.ts",
+        "bytes": 13587,
+        "sha256": "4b0fd6e1a49163aeb7d4765f14a050a81925fbb19f753de1185f5e6012a08ab6",
+        "candidateSha256": "fca154c5140bf44b54e00c948dda3632da70165965b880db93c09b1d77ba0dfc",
+        "state": "CHANGED"
+      },
+      {
+        "path": "lib/web-auth-capability.ts",
+        "bytes": 2054,
+        "sha256": "a06f6b1135ef312c28d64d7f9ce760d5793cf5316b2704127727be73bddabec2",
+        "candidateSha256": null,
+        "state": "MISSING"
+      }
+    ],
+    "limit": "Current full-module transitive comparison, NOT a minimal backport or permission to transplant unrelated chat/write/cache features. Cut points require semantic review."
+  },
+  "status": "PASS",
+  "nativeCompatible": false,
+  "boundary": "Actual production Next + actual native controller in Node, Chrome/browser message transport and non-secret bootstrap. No native Android/iOS renderer, Auth/RLS/provider or platform acceptance.",
+  "observation": {
+    "contract": "FAIL_REPRODUCED",
+    "finalPath": "/login",
+    "controller": {
+      "phase": "error",
+      "errorCode": "handshake-timeout",
+      "canGoBackWithinWeb": false,
+      "routeFamily": "profile"
+    },
+    "webBridgeMessages": 0,
+    "nativeLeaseRequests": 0,
+    "credentialCommands": 0,
+    "covered": 1,
+    "cleared": 1,
+    "persistence": {
+      "localStorageKeys": [],
+      "sessionStorageKeys": []
+    }
+  },
+  "legacyRecovery": {
+    "contract": "FAIL_REPRODUCED",
+    "reason": "Unsupported private-file issuer",
+    "networkCalls": 0,
+    "leaseCalls": 0,
+    "limit": "Direct Edge recovery still has its own tests. This proves the current Next-URL compatibility gap, not authority bypass."
+  },
+  "outsideRequests": [],
+  "browserErrors": [],
+  "cleanup": {
+    "browserClosed": true,
+    "ownedNextStopped": true
+  }
+}
