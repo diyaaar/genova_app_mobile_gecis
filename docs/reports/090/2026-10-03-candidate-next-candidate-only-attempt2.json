@@ -1,0 +1,409 @@
+{
+  "date": "2026-10-03T01:00:40.183Z",
+  "baseline": "a13f696da8c731e9af2a2bce473d4f4ae4a81587",
+  "candidateChanged": [
+    {
+      "path": "lib/drive-file-url.ts",
+      "bytes": 5730,
+      "sha256": "e1e5cded6ef847d5faa9b471bdebbb6d150b53d0e23d0972cc6e14a4310c02b5"
+    },
+    {
+      "path": "hooks/useProtectedDriveFileUrl.ts",
+      "bytes": 6864,
+      "sha256": "73fc24216187e4f68bbd8a086f8da97f46280f5f069b8bde94fa12c4173ee861"
+    },
+    {
+      "path": "components/repertuvar/RepertoireWorkspace.tsx",
+      "bytes": 114011,
+      "sha256": "af9e69a8dabe0d1c6a00430cb0d048362bef59ff3c33e2c2c6abf7b57b007267"
+    },
+    {
+      "path": "lib/repertuvar/protected-file-client.ts",
+      "bytes": 191,
+      "sha256": "977922e03381efe7b768781764a7b38535cd091e31f892d028b6e0c417092ed6"
+    },
+    {
+      "path": "hooks/useProtectedDriveFileUrl.test.tsx",
+      "bytes": 8818,
+      "sha256": "0571b6d23adfcdd27ade91dc3d026a84336c096929d6b0d25f49624d2da7d7b6"
+    },
+    {
+      "path": "lib/drive-file-url.test.ts",
+      "bytes": 4198,
+      "sha256": "3391d3da3e4ab393b2341fbd40d04aa12131824ea6d8baeac3a77c70092e672c"
+    },
+    {
+      "path": "lib/repertuvar/pdf-worker.ts",
+      "bytes": 795,
+      "sha256": "94fc9b4e717022cf819664329e805697203d1346af5e56f78bdd4a83c699bd05"
+    },
+    {
+      "path": "lib/repertuvar/pdf-worker.test.ts",
+      "bytes": 1068,
+      "sha256": "b47bc6305ae31c0d05a112fb5b38fb87285ecf396e2977475848e8c31a4d4efb"
+    },
+    {
+      "path": "supabase/functions/_shared/private-file-authority.ts",
+      "bytes": 704,
+      "sha256": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a"
+    },
+    {
+      "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+      "bytes": 4239,
+      "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+    },
+    {
+      "path": "supabase/functions/assignment-file/index.ts",
+      "bytes": 5984,
+      "sha256": "dfe67a9a3dd941c4a4d08ca8ea42300577c794907e890479680ce08e42a281ad"
+    },
+    {
+      "path": "supabase/functions/assignment-review-file/index.ts",
+      "bytes": 5112,
+      "sha256": "4e11956ed83aee5275e5bc7c9ab2b478dd09f0fedf7ccd40ee0ba5a26aacbb70"
+    },
+    {
+      "path": "supabase/functions/chat-media-file/index.ts",
+      "bytes": 5103,
+      "sha256": "c43605526cd7e27af3ce20c4570b2e7123ea452eca792bb67e4e8d132fe92c02"
+    },
+    {
+      "path": "supabase/functions/legacy-file/handler.ts",
+      "bytes": 6912,
+      "sha256": "4dc491511dc475fd727ca0fb1f499605b2588a07f3cd188cd795773cf4a01194"
+    },
+    {
+      "path": "supabase/functions/legacy-file/index.ts",
+      "bytes": 2781,
+      "sha256": "4dec990dc2667f1772972a9e86f06a3fb2e5a28cba07b27be15de39c806b4347"
+    },
+    {
+      "path": "supabase/functions/legacy-file/ticket.ts",
+      "bytes": 3353,
+      "sha256": "f830697d04f8e452454171343a4f8710efcc3c1e609c59610f806125ddf1a0d7"
+    },
+    {
+      "path": "supabase/functions/repertoire-comment-file/index.ts",
+      "bytes": 5067,
+      "sha256": "c0d42f786eef1b5a43463e43aca4255ecbc1ae8cb4b28a46f1e18e1197fa1753"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/handler.ts",
+      "bytes": 15810,
+      "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/index.ts",
+      "bytes": 6105,
+      "sha256": "e445074facb9031c2f92451813b2442ccfccf638cf60632aa25ead7b23c1711e"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/r2.ts",
+      "bytes": 2603,
+      "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/storage.ts",
+      "bytes": 2951,
+      "sha256": "3dbffa6503c9c009d5112ed2eb6d25f1f5b0b206544f82c09224dc989633eae8"
+    },
+    {
+      "path": "app/api/drive-file-token/route.ts",
+      "bytes": 145,
+      "sha256": "94538409ec739bca5cc438a6f8d4c5ae29cab6c9558742640da0f5842aafaa43"
+    },
+    {
+      "path": "app/api/drive-file/[id]/route.ts",
+      "bytes": 423,
+      "sha256": "ed26aaebc3659d9fc64296c6a0983ba291a890a86ac64f586f6bcbf8e506ffa2"
+    },
+    {
+      "path": "lib/server/legacy-file-adapter.ts",
+      "bytes": 3992,
+      "sha256": "854f2888b20b066169de9a524b42ca381e6a6dde0ec08be9e9d312fb40ac7e98"
+    },
+    {
+      "path": "app/api/drive-file-token/route.test.ts",
+      "bytes": 2960,
+      "sha256": "6d046fce4552eeee0ef923f469bbdd0454ef4fa50cb5ece8f628c238866372e6"
+    },
+    {
+      "path": "app/api/drive-file/[id]/route.test.ts",
+      "bytes": 3013,
+      "sha256": "91b32bdee2a280740209e3d76a7dffabde42697d49f567a84905485462b9980f"
+    },
+    {
+      "path": "supabase/migrations/20260928140000_active_membership_revocation_078.sql",
+      "bytes": 4327,
+      "sha256": "3637722b0aa4822c6c4ac96789554d2eedce52410c552cc94f4471948cc705bb"
+    },
+    {
+      "path": "supabase/migrations/20260930080046_private_file_ticket_authority_090.sql",
+      "bytes": 6365,
+      "sha256": "4f345d968fa6945aa746b4d00b7852c293047a984beabd79c4b7a64629c0ad86"
+    },
+    {
+      "path": "supabase/migrations/20261002154343_legacy_file_authority_090.sql",
+      "bytes": 6962,
+      "sha256": "e121f9f8eada0dd4d7b9ddee8bea19c9baf146bfee28377d11669331a5f973c3"
+    },
+    {
+      "path": "supabase/config.toml",
+      "bytes": 962,
+      "sha256": "47049e5251ff5d4c2a8d1ae2169157b9c4bf467f34010fa282d49c305fa67625"
+    }
+  ],
+  "harnessSha256": "cf33e271bdf333e45211fcb75f0d0512c39f06d7053264d97287d31fc95f3a70",
+  "scenarios": [
+    {
+      "name": "candidate-actual-Next-PDF-WAV-play-seek-Range",
+      "status": "PASS",
+      "ink": {
+        "width": 1200,
+        "height": 700,
+        "ink": 46317
+      }
+    },
+    {
+      "name": "real-SW-offline-cache-integrity",
+      "status": "PASS",
+      "cachePins": [
+        {
+          "path": "/__offline__/repertoire/files/090-score",
+          "bytes": 593,
+          "sha256": "a4bd66da35aa0458e22b86f5bf431c53d3e4d8ff1d7d9aac73c76ad1f20f349c"
+        },
+        {
+          "path": "/__offline__/repertoire/files/090-audio",
+          "bytes": 128044,
+          "sha256": "ae03b25d397a6358e1498375bb2f2391871f92f304081790acb4cfcc8d306925"
+        }
+      ]
+    },
+    {
+      "name": "candidate-multi-consumer-401-recovery-settles",
+      "status": "PASS",
+      "newPosts": 1,
+      "limit": "Multiple PDF/audio/playlist consumers and shared invalidation. Not a globally single ticket issuance claim; single-consumer check below."
+    },
+    {
+      "name": "candidate-real-offline-playback",
+      "status": "PASS"
+    }
+  ],
+  "boundary": "Actual full Next web UI and candidate Next routes, adapter, legacy handler/HMAC, SW/PDF/WAV. Synthetic Auth/REST/current authority/provider. NOT SQL/hosted/native/independent release review.",
+  "status": "FAIL",
+  "failure": {
+    "stage": "403-reconnect-stop",
+    "message": "Expected values to be strictly equal:\n\n4 !== 3\n"
+  },
+  "failureUI": {
+    "sources": {
+      "audio": [
+        {
+          "src": "/offline-drive/090-audio",
+          "paused": true,
+          "time": 0
+        }
+      ],
+      "pdf": 0
+    },
+    "text": "GERİ\nREPERTUVAR\n090 Sentetik Eser\n\nSYNTHETİC\n\n1 / 1\nHEPSİ\n%100\nBu PDF uygulama içinde açılamıyor\n\nDoğrudan indirme bağlantısı olmadığı için bu sekmede inline görüntüleme pasif. Alttaki dosya listesinden dış bağlantıyı kullanabilirsin.\n\n1 / 1\nHEPSİ\nŞEF NOTU · TÜMÜ\nHenüz yorum yok.\n0S\n\n\n\n\nSes kaydı ekleyebilirsin (max 20MB)\n\nOFFLINE KULLANIM\n\nBu şarkıyı cihaza indir\n\nSon güncelleme: 3.10.2026 04:00\n\n2 dosya offline kullanıma hazır.\n\nBİLDİRİMLER\n\nKoro duyuruları ve provalardan anında haberdar olmak ister misiniz?\n\nBİLDİRİMLERİ AÇ"
+  },
+  "counters": {
+    "posts": 4,
+    "heads": 17,
+    "gets": 11,
+    "providers": 24,
+    "outside": 0
+  },
+  "statuses": [
+    {
+      "phase": "candidate",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "GET",
+      "status": 206
+    },
+    {
+      "phase": "candidate",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 401
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "GET",
+      "status": 206
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "phase": "candidate",
+      "method": "GET",
+      "status": 206
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 403
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 403
+    },
+    {
+      "phase": "candidate",
+      "method": "HEAD",
+      "status": 403
+    },
+    {
+      "phase": "candidate",
+      "method": "POST",
+      "status": 403
+    }
+  ],
+  "restPaths": [
+    "/rest/v1/rpc/list_my_choirs",
+    "/rest/v1/choir_members",
+    "/rest/v1/choir_member_roles",
+    "/rest/v1/repertoire_cache_versions",
+    "/rest/v1/repertoire",
+    "/rest/v1/repertoire_tags",
+    "/rest/v1/song_assignments",
+    "/rest/v1/assignments",
+    "/rest/v1/repertoire_song_comments",
+    "/rest/v1/repertoire_pdf_annotations"
+  ],
+  "unknown": [],
+  "outsideRequests": [],
+  "browserErrors": [
+    "Worker was terminated",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ],
+  "cleanup": {
+    "browserClosed": true,
+    "nextStopped": true,
+    "ownedServersClosed": true
+  }
+}

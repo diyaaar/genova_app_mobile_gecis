@@ -1,19 +1,43 @@
 # Genova — agent handoff
 
-Updated 2 October 2026. [AGENTS](../AGENTS.md) → [active](../memory-bank/activeContext.md)
+Updated 3 October 2026. [AGENTS](../AGENTS.md) → [active](../memory-bank/activeContext.md)
 → [090](briefs/090-private-file-ticket-revocation-contract.md) → [controls](mobil-teslim-plani.md#bounded-execution-and-resource-controls).
 Use [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md)/[decisions](../KARARLAR.md)/[MIGRATION](../MIGRATION.md).
 English agent records, Turkish user/product copy. One writer; verify recorded state.
 
 ## Current checkpoint and next action
 
+3October source7289edb (implementation13237d4, factory follow-upbfed461): narrowed historical
+a13f696 LOCAL candidate, actual full Next PDF/audio/SW/old-open/refreshed flow. [Acceptance](reports/2026-10-03-production-baseline-local-candidate.md).
+Final candidate1a014c4e1927a03a7c67dd666a91a6006a28b6f8 on owned local
+codex/090-private-reader-candidate-20261003; [v3 manifest](reports/090/2026-10-03-candidate-source-manifest-v3.json).
+Main was not checked out/replaced by this historical-baseline branch; no bulk main push.
+Thirty delta paths/386 unchanged runtime paths; six readers15literal modules, client61modules/
+133edges, ordered SQL and package/config hashes. Local branch retains predecessor pins.
+Source tests catch independent401/coalescing and stale body callbacks; page-owned PDF worker
+survives source switches; playlist suspends sources while selected online authority is absent.
+Fresh candidate35/229, root114/1178/full gates and Node9 PASS. Actual Chrome Next12scenario
+drill PASS incl old buffered-byte FAIL_REPRODUCED control; three fresh candidate-only8/8 repeats.
+Synthetic Auth/REST/authority/media;
+not new SQL, hosted provider, native WebView or independent review proof. Exit cleanup/doc gates
+are in the dated record; do not infer whole090/R1/beta completion from this bounded goal.
+
+NEXT: exact candidate Android-first WebView/bridge/worker acceptance, grouped iOS platform
+check, independent review and minimal credential-free media logging (known remaining raw src
+logs). Then fresh hosted read-only preflight/refresh-forward-repair/recovery packet and exact
+live authority. Candidate excludes newer main embedded graph: demonstrate compatibility or
+scope the necessary minimum, never assume old native green certifies this candidate.
+090/R1 OPEN; live NO-GO. Local candidate goal was explicitly created after3Oct entry returned
+null, not a fabricated resume of the older blocked goal. Bounded local goal complete after
+source/document gates and separate commits; broader required release gates remain open.
+
+### Historical 2 October checkpoints
+
 Owner explicitly approved the previously missing LOCAL SQL/Edge/Next/minimal web-client scope.
 Server source **fe8cd19**; [acceptance](reports/2026-10-02-legacy-reader-local-implementation.md).
 Latest **15fc8c9** repairs the actual legacy hook's online-cache bypass and reconnect;
 [cache/refresh acceptance](reports/2026-10-02-legacy-client-cache-transition.md).
-The earlier BLOCKED authority audit is historical. The goal tool retains its earlier blocked
-value (no agent resume API); do not fake completion or recreate the goal. Work authorization
-is renewed; R1/090 remains OPEN and live publication NO-GO because required gates remain open.
+The earlier missing-authority BLOCKED audit is historical; later local authorization was renewed.
 
 Old POST/relative Next URL preserved; current-authority service-only SQL + sixth legacy Edge
 reader + fixed-origin Next adapters. Actor/session/current choir/resource/alias/source metadata
@@ -32,11 +56,8 @@ PDF canvas/audio play+seek/offline/401renew/403stop/session refusal PASS with sy
 Auth/access/provider. Exact old open hook bundle online-cached playback FAIL_REPRODUCED;
 explicit reload refuses denied cached file/provider0. Not whole Next UI/SQL/index/WebView proof.
 
-NEXT: narrowly scoped production-baseline refreshed client candidate + full old-cached-tab/
-WebView/PDF/audio transition acceptance. Exact old production source still fails auto401/cache/
-raw-fallback controls; small hook-browser evidence is NOT full client acceptance. Then complete six-reader/
-SQL/config/client manifest/independent review/hosted preflight/forward-repair packet BEFORE
-requesting exact live authority. No bulk-push main. [Local manifest](reports/090/2026-10-02-legacy-local-source-manifest.json)
+The3Oct checkpoint supersedes the old full-web/source-closure next action, not native/hosted
+acceptance. [Local manifest](reports/090/2026-10-02-legacy-local-source-manifest.json)
 pins eight legacy Edge modules and source evidence only, NOT a full deployment manifest.
 [Older packet](reports/2026-10-02-hosted-revocation-approval-packet.md) remains five-reader bdf34b8.
 
@@ -52,7 +73,10 @@ DB→Edge→compatible clients, recovery before writes; Git revert is not data r
 Owner withdrew tentative old-note deletion; no notes/data removed. Preserve them.
 Only unrelated supabase/.temp/cli-latest should remain after docs commit; exclude it.
 VM/container removed19:17; exact fixture cleanup/users/choirs0 and no listeners verified.
-Latest browser/18196 closed; task-created .next/coverage removed; final21,488,172KiB free.
+2October browser/18196 cleanup was21,488,172KiB free (historical).
+3October browser/18197–18199 closed/no listeners; exact owned candidate/baseline runtime copies,
+root.next/coverage and private Git indexes removed. Final cleanup21,484,080KiB free;
+exit recheck21,483,100KiB. Sources/small evidence retained; dependencies/user data untouched.
 Task image-cache cleanup history in090; Trash is not freed disk.
 Protected fresh R1 backup retained outside Git: genova-090-r1-5bfGvo,0700/files0600.
 Original068/backup/dependencies/global caches/AVD preserved. New runtime needs fresh >=10GiB

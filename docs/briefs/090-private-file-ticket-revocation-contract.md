@@ -15,6 +15,84 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — measurable production-baseline local candidate goal
+
+Owner requests a further measurable goal, continued execution until its acceptance, and
+strict project-rule compliance. Entry1ef0e24/main, sole writer; unrelated CLI marker preserved.
+Goal tool now returns no old goal; a new explicitly requested LOCAL candidate goal is active.
+One outcome: reproducible narrow a13f696 web candidate, actual Next PDF/audio/refreshed-vs-old
+client checks, and complete six-reader/SQL/config/client source pins. This is NOT whole090/R1,
+beta or live acceptance. Read current AGENTS/handoff/active090/approved plan/cache report,
+controls/guide/work-cycle/template/MIGRATION/decisions32–33 and full TypeSafe/Supabase skills.
+No probabilistic Auth decisions; no Jev inference planned (2October key authority not extended).
+Three actions: source-pinned minimal baseline overlay + negative regression; candidate full
+gates and actual loopback Next UI with synthetic identity/authority/media; reviewed dependency
+manifest, cleanup and separate source/docs commits. Exact allowed source: dedicated090
+candidate generator/tests/runtime/browser harness; generated ignored spike/090-runtime/
+candidate and existing approved route/adapter/loader/hook/repertoire source closure; dated090
+records/brief/handoff/active only. No dependency upgrade, unrelated UI/upload/billing/native
+rewrite, sibling website, push/CI/live SQL/Edge/web/provider or real-user changes.
+Resources:21,518,576KiB free; baseline501tracked files/5,302,353B. A necessary actual candidate
+copy is for release build/UI validation, not clean-tree cosmetics; dependency symlink, no
+install/download/VM. A second baseline runtime (<6MiB source) is needed to keep the real old
+Next tab open across the cutover; neither copy imports historical agent instructions.
+Baseline/candidate/root builds <1GiB each, sequential, peak<3GiB;10GiB floor/one heavy process.
+Three loopback ports18197(proxy),18198(synthetic authority/media),18199(owned Next) allow SW
+requests to cross the real HTTP boundary, not an incomplete page-route mock.
+Exact owned spike/090-runtime/candidate, spike/090-runtime/baseline and ephemeral
+browser/loopback processes expire after last gate; preserve small source/patch/manifest evidence.
+Required goal exit: unchanged baseline paths proven, candidate lint/types/unit/build PASS,
+actual Next PDF/audio/401renew/403stop/cache+explicit refresh PASS with synthetic boundaries,
+six-reader literal import/dependency and SQL/config/client pins PASS, root pnpm check for
+changed test-support source, links/redaction/diff/cleanup/scoped commits. Full native WebView,
+hosted/provider/independent release review remain required later and NOT RUN here; historical
+FAIL controls remain recorded, not weakened. Rollback only local generated candidate; never
+restore actorless-v1 access. Existing production a13 is historical R0, not a fresh hosted check.
+
+Full Next candidate drill exposed an intermittent legitimate PDF failure during concurrent
+401 recovery: global ticket eviction advances the tenant cancellation generation and rejects
+an unrelated in-flight PDF load. Necessary bounded source repair: lib/drive-file-url.ts and
+its tests, incorporated by the candidate factory. Ticket expiry evicts only that URL; tenant
+clear still advances generation and cancels all in-flight work. Same-key issuance coalesces;
+no authorization bypass, dependency change, SQL change or hosted mutation.
+Further real UI diagnostic: offline URL switching destroys a document-owned PDF worker;
+the offline script re-fetch fails, poisoning fake-worker initialization in that page. Add
+lib/repertuvar/pdf-worker.ts/test and the workspace options binding, same page-owned worker
+across document URL changes (not a private-data cache; cold offline launch remains out of scope).
+Two RED hook regressions also prove stale body callbacks can erase a newer authorized source;
+hook/test load epochs ignore them while preserving the existing one body-retry ceiling.
+Adapter composition test now expires the actually cached URL instead of substituting an
+uncached URL (supabase/functions/legacy-file/adapter-integration.test.ts); required count unchanged.
+Final artifact replay caught one whitespace-only removed-parameter line in the factory output.
+Do not close on that patch warning: repair the generator, preserve the historical pin/failed
+diff record, and rerun exact candidate gates. Fresh21,507,812KiB; reconstruct only the same
+two owned small runtimes + sequential builds (<1.1GiB), then expire them again. No install/VM.
+Forward pin uses a compare-and-swap on the owned non-active candidate branch, retaining its
+original commit and dated manifest; main index/branch and unrelated CLI marker are protected.
+Final repeat exposed a403-stop failure: playlist rebuild on a null selected URL could issue
+another POST after denial (provider0, required POST-stop FAIL). Suspend mini-player source
+URLs while selected online authority is pending/denied; retain only playback metadata,
+every-track HEAD on valid sources and explicit offline fallback. Necessary workspace/factory
+repair and fresh gates, no weakened403 assertion. Preserve failed repeat and earlier pins.
+
+Exit source7289edb (implementation13237d4, artifact follow-upbfed461); local candidate
+1a014c4e1927a03a7c67dd666a91a6006a28b6f8 on codex/090-private-reader-candidate-20261003.
+[Dated acceptance/evidence table](../reports/2026-10-03-production-baseline-local-candidate.md)
+and [final v3 closure](../reports/090/2026-10-03-candidate-source-manifest-v3.json) are authoritative
+for this bounded goal. Final root114files/1178tests, candidate35files/229tests/full gates and
+Node9/9 PASS. Full actual Next12scenario drill PASS (11PASS + expected old buffered-byte
+FAIL_REPRODUCED control), plus three fresh-context candidate-only8/8 repetitions. Synthetic
+Auth/REST/authority/media, actual browser/Next/SW/adapter/legacy-handler/HMAC; NOT new hosted
+Auth/SQL/provider/native or independent review proof. Lossless patch replay equals the exact
+candidate tree; six-reader literal closure, ordered SQL/config/dependencies/client pins verified.
+Final owned runtime copies/builds/coverage and processes removed; no listeners18197–18199,
+21,484,080KiB free at cleanup. Links/redaction/document consistency/diff checks PASS; source and
+docs committed separately, unrelated CLI marker excluded. Bounded local candidate goal complete;
+whole090/R1/beta remain OPEN / live NO-GO. Next exact candidate Android-first WebView/bridge/
+worker acceptance, grouped iOS check and independent review/credential-free logging before
+hosted preflight/refresh-forward-repair/recovery/live authorization. No notes/data deletion,
+site change, push/deploy or new Jev inference($0); no3Oct key reuse inferred.
+
 ### 2 October — legacy client cache boundary follow-up
 
 Entry8fdf3dc, sole writer; preserve unrelated supabase/.temp/cli-latest. Read handoff,

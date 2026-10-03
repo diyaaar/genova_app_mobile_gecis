@@ -1,19 +1,40 @@
 # Active context
 
-Updated 2 October 2026. [Handoff](../docs/agent-handoff.md) → [090](../docs/briefs/090-private-file-ticket-revocation-contract.md)
+Updated 3 October 2026. [Handoff](../docs/agent-handoff.md) → [090](../docs/briefs/090-private-file-ticket-revocation-contract.md)
 → [plan](../docs/mobil-teslim-plani.md)/[WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md).
 Verify actual source/state, one writer, English records/Turkish user updates.
 
 ## Current result and next measurable checkpoint
 
+3October source7289edb: production-baseline LOCAL candidate full Next PDF/audio/SW/old-tab/
+refresh acceptance; [record](../docs/reports/2026-10-03-production-baseline-local-candidate.md).
+Pinned candidate1a014c4e1927a03a7c67dd666a91a6006a28b6f8, owned local
+codex/090-private-reader-candidate-20261003; [v3 closure](../docs/reports/090/2026-10-03-candidate-source-manifest-v3.json).
+30delta/386 unchanged runtime paths,15six-reader/61client modules and133client edges; no
+dependency upgrade, bulk main promotion or live action. Root114/1178 and candidate35/229/full
+gates, Node9 PASS; actual full Next12scenario local drill PASS with old buffered-byte failure
+control retained, plus three fresh candidate-only8/8 repetitions. Independent401 renewal,
+stale body callbacks, PDF worker lifetime and denied
+playlist rebuild corrected. Synthetic Auth/REST/access/media; NOT hosted SQL/Auth/provider/native.
+
+Next: exact candidate Android-first WebView/bridge and grouped iOS worker check, independent
+review/minimal secret-free media logging, hosted preflight/client refresh/forward repair/R1
+packet before exact live authority. Main newer embedded features are deliberately absent from
+candidate; compatibility is NOT assumed. 090/R1/beta remain OPEN, live NO-GO. Goal tool returned
+null at3Oct entry; a new requested bounded local goal was created, not an invented old-goal resume.
+That local goal is complete after source/document exit gates and separate commits.
+Resource cleanup/dated document exit evidence lives in the record; do not promote local scope
+to overall release closure. No deleted notes/data or sibling-site work; new Jev$0/no3Octkey reuse.
+
+### Historical 2 October evidence
+
 Owner approved the previously blocked LOCAL legacy SQL/Edge/Next/minimal client package.
 Server **fe8cd19**; [acceptance](../docs/reports/2026-10-02-legacy-reader-local-implementation.md).
 Latest **15fc8c9** fixes actual non-versioned legacy online-cache bypass/reconnect;
 [cache/refresh evidence](../docs/reports/2026-10-02-legacy-client-cache-transition.md).
-Earlier missing-authority BLOCKED audit is historical. The old goal-tool blocked value cannot
-be resumed through agent tools; no fake completion/duplicate goal. Approved work continued.
-**090/R1 OPEN, live NO-GO:** full refreshed and old-cached browser/WebView/PDF/audio, complete
-production-baseline release closure/independent review and hosted gates remain NOT RUN.
+Earlier missing-authority BLOCKED audit is historical; approved local work continued.
+The3Oct full-web/closure record supersedes those old NOT RUN layers only; exact native,
+independent review and hosted release gates remain required and open.
 
 Implemented old POST/relative-URL compatibility with new legacy-family actor/session/current
 choir/resource/alias/source-bound tickets. Service-only current-authority SQL uses one snapshot;
@@ -35,10 +56,8 @@ Exact old-open hook bundle still plays downloaded bytes online without a new aut
 FAIL_REPRODUCED, explicit reload refuses/provider0. Not whole Next/SQL/index/WebView proof.
 First PostgreSQL regex/HTTP cleanup/type-boundary failures and last cache race repair retained.
 
-NEXT: production-baseline minimal refreshed client release candidate + old open-tab/WebView/
-PDF/audio transition evidence. No silent refresh/maintenance live action. Exact old source fails
-auto401/cache/raw-fallback; small browser harness does not prove full old tabs adopt code. Complete
-six-reader/SQL/config/client manifest and review/recovery/forward-repair before live authority.
+Old source still fails auto401/cache/raw-fallback;3Oct demonstrates explicit web refresh, not
+automatic update, native WebView or publication readiness. No silent maintenance live action.
 [Local manifest](../docs/reports/090/2026-10-02-legacy-local-source-manifest.json) pins eight legacy Edge modules/source,
 NOT deployment approval. Older bdf34b8 five-reader packet does not cover the sixth reader/client.
 
@@ -52,7 +71,9 @@ Owner withdrew tentative old-note deletion; no notes/data removed.
 DB→Edge→compatible clients, recovery before writes; no automatic v1 or078-defect rollback.
 
 Owned VM/container removed19:17 and synthetic users/choirs0 verified; no loopback listeners.
-Latest browser/18196 closed; owned .next/coverage removed, final21,488,172KiB free.
+2October browser/18196 cleanup21,488,172KiB free is historical. 3October contexts/18197–18199
+closed/no listeners; exact owned candidate/baseline copies, root.next/coverage and private Git
+indexes removed. Final cleanup21,484,080KiB free; exit recheck21,483,100KiB above10GiB floor.
 Cleanup inventory in090; recoverable Trash moves are NOT freed disk.
 Protected R1 backup remains0700/0600 outside Git; original068/backup/dependencies/global caches/
 AVD preserved. Fresh runtime requires >=10GiB measured preflight/one heavy process/bounded retries.

@@ -1,0 +1,318 @@
+{
+  "date": "2026-10-03T00:22:40.100Z",
+  "baseline": "a13f696da8c731e9af2a2bce473d4f4ae4a81587",
+  "candidateChanged": [
+    {
+      "path": "lib/drive-file-url.ts",
+      "bytes": 5047,
+      "sha256": "5fb84b615a1882f42f5ce54353c6f43480253d85c9963c8e3a2e429e9cab0fc0"
+    },
+    {
+      "path": "hooks/useProtectedDriveFileUrl.ts",
+      "bytes": 6419,
+      "sha256": "45ab64f7768c4a4c0f9166e496479736f362c6a0b4b253bedfeb2ce68f519f5f"
+    },
+    {
+      "path": "components/repertuvar/RepertoireWorkspace.tsx",
+      "bytes": 113903,
+      "sha256": "97c926f642064a33e4a46e4c83d271d3c2730d5043ecca4be29b4e6e84d782c5"
+    },
+    {
+      "path": "lib/repertuvar/protected-file-client.ts",
+      "bytes": 191,
+      "sha256": "977922e03381efe7b768781764a7b38535cd091e31f892d028b6e0c417092ed6"
+    },
+    {
+      "path": "hooks/useProtectedDriveFileUrl.test.tsx",
+      "bytes": 7209,
+      "sha256": "c3009ca6255b2c5f08e1e06e12337f2613ddc5e0345b73ccece07f2541f93f90"
+    },
+    {
+      "path": "lib/drive-file-url.test.ts",
+      "bytes": 2481,
+      "sha256": "780cd8412dd05707299962c23b8f3ecdb7a02d3a4517e3b6b234169b25b7a712"
+    },
+    {
+      "path": "supabase/functions/_shared/private-file-authority.ts",
+      "bytes": 704,
+      "sha256": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a"
+    },
+    {
+      "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+      "bytes": 4239,
+      "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+    },
+    {
+      "path": "supabase/functions/assignment-file/index.ts",
+      "bytes": 5984,
+      "sha256": "dfe67a9a3dd941c4a4d08ca8ea42300577c794907e890479680ce08e42a281ad"
+    },
+    {
+      "path": "supabase/functions/assignment-review-file/index.ts",
+      "bytes": 5112,
+      "sha256": "4e11956ed83aee5275e5bc7c9ab2b478dd09f0fedf7ccd40ee0ba5a26aacbb70"
+    },
+    {
+      "path": "supabase/functions/chat-media-file/index.ts",
+      "bytes": 5103,
+      "sha256": "c43605526cd7e27af3ce20c4570b2e7123ea452eca792bb67e4e8d132fe92c02"
+    },
+    {
+      "path": "supabase/functions/legacy-file/handler.ts",
+      "bytes": 6912,
+      "sha256": "4dc491511dc475fd727ca0fb1f499605b2588a07f3cd188cd795773cf4a01194"
+    },
+    {
+      "path": "supabase/functions/legacy-file/index.ts",
+      "bytes": 2781,
+      "sha256": "4dec990dc2667f1772972a9e86f06a3fb2e5a28cba07b27be15de39c806b4347"
+    },
+    {
+      "path": "supabase/functions/legacy-file/ticket.ts",
+      "bytes": 3353,
+      "sha256": "f830697d04f8e452454171343a4f8710efcc3c1e609c59610f806125ddf1a0d7"
+    },
+    {
+      "path": "supabase/functions/repertoire-comment-file/index.ts",
+      "bytes": 5067,
+      "sha256": "c0d42f786eef1b5a43463e43aca4255ecbc1ae8cb4b28a46f1e18e1197fa1753"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/handler.ts",
+      "bytes": 15810,
+      "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/index.ts",
+      "bytes": 6105,
+      "sha256": "e445074facb9031c2f92451813b2442ccfccf638cf60632aa25ead7b23c1711e"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/r2.ts",
+      "bytes": 2603,
+      "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/storage.ts",
+      "bytes": 2951,
+      "sha256": "3dbffa6503c9c009d5112ed2eb6d25f1f5b0b206544f82c09224dc989633eae8"
+    },
+    {
+      "path": "app/api/drive-file-token/route.ts",
+      "bytes": 145,
+      "sha256": "94538409ec739bca5cc438a6f8d4c5ae29cab6c9558742640da0f5842aafaa43"
+    },
+    {
+      "path": "app/api/drive-file/[id]/route.ts",
+      "bytes": 423,
+      "sha256": "ed26aaebc3659d9fc64296c6a0983ba291a890a86ac64f586f6bcbf8e506ffa2"
+    },
+    {
+      "path": "lib/server/legacy-file-adapter.ts",
+      "bytes": 3992,
+      "sha256": "854f2888b20b066169de9a524b42ca381e6a6dde0ec08be9e9d312fb40ac7e98"
+    },
+    {
+      "path": "app/api/drive-file-token/route.test.ts",
+      "bytes": 2960,
+      "sha256": "6d046fce4552eeee0ef923f469bbdd0454ef4fa50cb5ece8f628c238866372e6"
+    },
+    {
+      "path": "app/api/drive-file/[id]/route.test.ts",
+      "bytes": 3013,
+      "sha256": "91b32bdee2a280740209e3d76a7dffabde42697d49f567a84905485462b9980f"
+    },
+    {
+      "path": "supabase/migrations/20260928140000_active_membership_revocation_078.sql",
+      "bytes": 4327,
+      "sha256": "3637722b0aa4822c6c4ac96789554d2eedce52410c552cc94f4471948cc705bb"
+    },
+    {
+      "path": "supabase/migrations/20260930080046_private_file_ticket_authority_090.sql",
+      "bytes": 6365,
+      "sha256": "4f345d968fa6945aa746b4d00b7852c293047a984beabd79c4b7a64629c0ad86"
+    },
+    {
+      "path": "supabase/migrations/20261002154343_legacy_file_authority_090.sql",
+      "bytes": 6962,
+      "sha256": "e121f9f8eada0dd4d7b9ddee8bea19c9baf146bfee28377d11669331a5f973c3"
+    },
+    {
+      "path": "supabase/config.toml",
+      "bytes": 962,
+      "sha256": "47049e5251ff5d4c2a8d1ae2169157b9c4bf467f34010fa282d49c305fa67625"
+    }
+  ],
+  "harnessSha256": "5a1462cac172c9464674ca59efa63c880be73b00e76d7f44066babafb89c089f",
+  "scenarios": [
+    {
+      "name": "old-actual-Next-PDF-WAV-play-seek-Range",
+      "status": "PASS",
+      "ink": {
+        "width": 1200,
+        "height": 700,
+        "ink": 46317
+      }
+    },
+    {
+      "name": "real-SW-offline-cache-integrity",
+      "status": "PASS",
+      "cachePins": [
+        {
+          "path": "/__offline__/repertoire/files/090-score",
+          "bytes": 593,
+          "sha256": "a4bd66da35aa0458e22b86f5bf431c53d3e4d8ff1d7d9aac73c76ad1f20f349c"
+        },
+        {
+          "path": "/__offline__/repertoire/files/090-audio",
+          "bytes": 128044,
+          "sha256": "ae03b25d397a6358e1498375bb2f2391871f92f304081790acb4cfcc8d306925"
+        }
+      ]
+    }
+  ],
+  "boundary": "Actual full Next web UI and candidate Next routes, adapter, legacy handler/HMAC, SW/PDF/WAV. Synthetic Auth/REST/current authority/provider. NOT SQL/hosted/native/independent release review.",
+  "status": "FAIL",
+  "failure": {
+    "stage": "old-open-cutover",
+    "message": "The expression evaluated to a falsy value:\n\n  assert(sources.audio.some(a=>a.src.includes('/__offline__/')||a.src.includes('/__runtime__/')))\n"
+  },
+  "counters": {
+    "posts": 2,
+    "heads": 0,
+    "gets": 6,
+    "providers": 6,
+    "outside": 1
+  },
+  "statuses": [
+    {
+      "phase": "old",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "old",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "phase": "old",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "old",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "old",
+      "method": "GET",
+      "status": 206
+    },
+    {
+      "phase": "old",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "old",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "phase": "old",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "restPaths": [
+    "/rest/v1/rpc/list_my_choirs",
+    "/rest/v1/choir_members",
+    "/rest/v1/choir_member_roles",
+    "/rest/v1/repertoire_cache_versions",
+    "/rest/v1/repertoire",
+    "/rest/v1/repertoire_tags",
+    "/rest/v1/song_assignments",
+    "/rest/v1/assignments",
+    "/rest/v1/repertoire_song_comments",
+    "/rest/v1/repertoire_pdf_annotations"
+  ],
+  "unknown": [
+    {
+      "method": "GET",
+      "path": "/rest/v1/assignments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/repertoire_song_comments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/assignments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/repertoire_song_comments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/assignments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/repertoire_song_comments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/assignments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/repertoire_song_comments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/repertoire_song_comments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/repertoire_song_comments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/repertoire_song_comments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/repertoire_song_comments"
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/repertoire_song_comments"
+    }
+  ],
+  "browserErrors": [
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "[AUDIO_PLAYER_ERROR] Workspace player error for src: https://drive.google.com/uc?id=090-audio. Error code: 4, message: MEDIA_ELEMENT_ERROR: Format error",
+    "[AUDIO_PLAYER_ERROR] Mini player error for id: 09000000-0000-4000-8000-000000000007, src: https://drive.google.com/uc?id=090-audio. Error code: 4, message: MEDIA_ELEMENT_ERROR: Format error",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "cleanup": {
+    "browserClosed": true,
+    "nextStopped": true,
+    "ownedServersClosed": true
+  }
+}
