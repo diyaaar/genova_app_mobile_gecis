@@ -31,6 +31,11 @@ Historical records keep their original date/revision. [Guide](README.md).
   Connections suggested and owner asked to enable correct-project connector; do not
   substitute another SQL path, declare whole goal complete or request manual QA.
   Free21,395,268KiB, no owned runtime/build. Jev1call/2484input/219output/$0.000104328 estimate.
+- Continuation2 at8ff9ee2: fresh Supabase installed=false/no exposed tools; correct
+  chat-media-file Code view visibly differs from candidate (old ticket.ts versus
+  shared090 authority/v2). Exact versions/hashes still NOT RUN; ZIP handle unavailable,
+  supported status UI blocked, no workaround or download cleanup claim. Free21,375,808KiB.
+  No product change/additional Jev cost; blocker observation2, goal ACTIVE.
 
 | Plan | Execution status | Input → required output |
 |---|---|---|

@@ -39,6 +39,9 @@ with P2 fixture and raw audioURL logging require narrow follow-up convergence,
 not blind old-overlay replay (embedded cache/offline/file labels already present).
 No product/live/build/device changes. Jev2484input/219output/$0.000104328 estimate,
 two controls agree; advisory only. Fresh free21,395,268KiB; no owned runtime.
+Continuation2: connector still absent; visible chat-media-file Code imports old
+ticket.ts, directly differing from frozen shared090/v2. Exact identities still open;
+ZIP completion/path unverified, no workaround/cleanup claim. See inventory addendum.
 [Earlier guide review](reports/2026-10-03-delivery-guide-checkpoint-review.md)
 reverified610 product/157native/5server/five sidecar hashes at4e7ab14; corrected stale
 runbook pointer, no product/live action. Its planning sequence was exact served/SQL/Edge/full-route and

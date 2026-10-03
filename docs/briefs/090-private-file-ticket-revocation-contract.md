@@ -69,6 +69,31 @@ advisory, not independent review. No private data/key export, product edits/buil
 runtime/device/deploy. Current goal remains ACTIVE while exact target row is missing;
 not complete/paused, not moved to P4. Source/test inventory helper under spike only.
 
+Continuation2, entry8ff9ee2: prior turn made progress (committed inventory), blocker
+audit2. Fresh plugin search reports Supabase installed=false and no Supabase tools/
+templates exposed; pending suggestion not repeated. Correct Chrome chat-media-file
+Code view lists six source files and visibly imports old family-specific ticket.ts,
+unlike frozen shared090 authority/ticket-v2 imports. Narrow read-only source-bundle
+identity check follows, not SQL, Test, Deploy updates or Secrets. Preflight:
+21,378,744KiB free; six visible files have31,485B local equivalent; estimate one ZIP
+<=1MiB/total additional peak<=4MiB, projected21,374,648KiB above10GiB. Inspect size
+before reading entries, no extraction/install/build/runtime. Capture returned exact
+download path and SHA, preserve no raw source in Git/Jev, remove only newly owned
+ZIP after its last check. Existing spike runtime directory is not an active service
+or permission to delete its contents. Exact SQL and remaining Edge identities stay open.
+
+Continuation2 result18:56UTC: visible code tree6files/imports directly confirms
+chat-media-file source differs from candidate7file closure/shared090 authority/v2
+imports; not an exact bundle hash/version or executed authorization proof. Download
+button opened a menu (first event timeout); actual ZIP button also returned no
+download handle/path (second event timeout). Changed approach to supported download
+status UI, which was blocked by browser URL policy; no retry/circumvention/CLI or
+filesystem download search. ZIP completion/location/size unverified; no raw bundle
+retention or cleanup claimed. Final free21,375,808KiB; no owned runtime or code edits.
+Partial source difference and repeated missing connector recorded in existing report;
+no new Jev call/cost, no same-source product build/test rerun. Goal remains ACTIVE;
+this is blocker observation2, not blocked status or a redefinition of completion.
+
 Exit requires every inventory row PASS; then next P3 recovery/compatibility rehearsal
 card in this same brief. Connector/version absence yields an explicit partial
 inventory. Whole090/R1 and all remaining P3–P7 gates stay open. Self-review/Jev

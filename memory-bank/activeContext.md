@@ -39,6 +39,8 @@ Full hook still HEAD-probes before native consent unlike P2 fixture; raw audioUR
 logs require narrow convergence, existing cache/offline/file labels preserved.
 No product/live/build/runtime/device change; freshfree21,395,268KiB. Jev1call/
 2484input/219output/$0.000104328estimate,two controls agree,not independentreview.
+Continuation2 verifies deployed chat-media-file Code import drift (old ticket.ts);
+connector still absent. Exact identities/ZIP status unverified; report addendum owns evidence.
 Next: complete exact target identities → narrow full-source convergence and affected
 acceptance → fresh scoped protected backup/isolated restore/full actual old-new-mixed
 client negative rehearsal → independent package review + exact operation authority.

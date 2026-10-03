@@ -224,3 +224,34 @@ narrow full-source hook/log convergence card with real consent/probe regressions
 updated affected candidate pins; **(3)** execute scoped fresh recovery/full actual
 compatibility rehearsal, then independent review/exact P4 operation packet. Until
 mandatory target identity row passes, this goal/card stays open; no next-plan closure.
+
+## Continuation2 — fresh connection and deployed-source observation
+
+Entry8ff9ee2,18:56UTC. Prior goal turn classified **progress**: committed inventory,
+fresh tests/current metadata/source gaps, not a verified wait. Current Supabase
+plugin discovery says installed=false; no Supabase tool or resource template exposed.
+Pending suggestion not repeated; correct-project connection request remains unanswered.
+Missing connector condition repeated for goal turn2; goal ACTIVE, not complete/blocked.
+
+Fresh correct-project Chrome `chat-media-file/code` visible tree has six files:
+index.ts,../create-choir/create-choir-core.ts,../repertoire-file/handler.ts,
+../../../lib/server/drive-file-content.ts,../repertoire-file/r2.ts,ticket.ts.
+Index visibly imports createChatMediaTicket/verifyChatMediaTicket/ChatMediaTicketPayload
+from ./ticket.ts. Frozen exact entry instead imports authorizePrivateFileTicket
+from ../_shared/private-file-authority.ts and create/verifyPrivateFileTicketV2 plus
+sessionIdFromVerifiedAccessToken from ../_shared/private-file-ticket-v2.ts; its pinned
+closure has seven files and excludes the old family ticket.ts. This is **direct source
+drift evidence**, stronger than matching slug/relative age, but not whole bundle
+equivalence, numeric version or actual execution. Other deployed source bodies remain
+unverified. No editor input/Deploy updates/Test/Secrets/logs/SQL interactions occurred.
+
+Bounded source-download preflight: free21,378,744KiB, visible six-file local equivalent
+31,485B, estimated<=1MiB ZIP/<=4MiB peak, projected21,374,648KiB abovefloor. No
+extraction/build/install. First Download click opened a menu rather than a download;
+fresh state exposed Download as ZIP. That click still yielded no download handle/path;
+two timeouts caused reassessment, not repeating the request. Chrome download-status
+navigation was blocked by browser URL policy. No browser workaround/alternate transport
+or filesystem search for downloads. ZIP completion/location/size and removal cannot
+be verified; no success/cleanup claimed. Actual free21,375,808KiB, still abovefloor;
+no owned runtime. Current product/previous immutable artifacts unchanged, no new Jev
+inference or cost. Existing connector remains necessary for exact target completion.
