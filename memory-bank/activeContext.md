@@ -6,6 +6,19 @@ Verify actual source/state, sole writer, English records/Turkish user updates.
 
 ## Current result and next measurable checkpoint
 
+Current source402685b [inline PDF](../docs/reports/2026-10-03-android-inline-pdf-preview.md):
+owner-approved account-free native PDF view, explicit optional sharing, existing
+renderer/page contract, serialized close/file cleanup, parent pre-mount abort guard.
+Fresh mobile464/types/root1178/fullcheck/Node16/derived candidate build PASS. Owner
+ready for actual Android cancel0/page1→2/close/remove/B403; still NOT RUN until observed.
+New immutable inlinev4, keep historicalv3. Whole090/R1/betaOPEN, no hosted/AI spend.
+Current generated Android/candidate outputs owned; one heavy process, deps/AVD reused.
+APK76sec/API36/challenged native detail running13:36:30UTC PASS, pre-touchGET0/
+HEAD0/provider0/unknown0/failures0. Actual cancel first requested, not observed yet.
+Ready-owner runtime retained until13:55UTC/16:55Istanbul; owned server87432,
+emulator87465/5554, three reverses. See report for hashes/exact cleanup. No UI pass
+or operator event inferred from counts; immutable inlinev4 written on acceptance/stop.
+
 Current32aba65, owner-ready resumed12:27UTC: [consent/share checkpoint](../docs/reports/2026-10-03-android-candidate-consent-share.md).
 Actual7cd8d46 rendered homework anchor metadata absent; minimal passive metadata patch.
 Owner observed modal/cancel; preservedv1FAIL HEAD provider1 despite fileGET0. Corrected

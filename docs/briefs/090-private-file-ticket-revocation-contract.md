@@ -15,6 +15,48 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — approved account-free inline PDF preview
+
+Owner explicitly approved replacing PDF `view` ACTION_SEND with account-free in-app
+preview; entry172c143/main, sole writer, unrelated CLI marker preserved. Same original
+090 goal, no reduced inspection substitute. Read handoff/active/current090/controls,
+guide/workcycle, permanent WebView decisions and actual reader/capability/tests;
+complete TypeSafe skill/live index, deterministic feature/no inference. Native renderer
+already installed; reuse `nativePdfRenderer`/page-index contract, no new dependency.
+Do not fabricate repertoire/choir DB records to reuse the score gateway.
+
+One outcome: post-consent passive PDF local preview, explicit optional sharing,
+safe renderer/temp-file cleanup before return or tenant/unmount invalidation.
+Allowed `apps/mobile/src/webview/{platform-capabilities.ts,NativeWebViewScreen.tsx,
+local-pdf-preview.ts,ProtectedPdfPreview.tsx,__tests__/}`; existing native renderer read
+only;090 acceptance wrapper/config/tests and candidate harness/focused tests; docs.
+No web UI redesign, schema/Edge/ticket/tenant/Auth relaxation, install, hosted/provider/
+real-user/hardware/account/push/CI/site operation. Non-PDF/download share path preserved;
+guarded old noninteractive inspection remains explicit legacy support, not preview proof.
+Three actions: bounded local renderer lifecycle + screen/capability integration/tests;
+fresh mobile/root gates and Android synthetic actual view/close/B check; honest evidence,
+normal guard-off/owned cleanup, separate source/docs commits. Grouped sensitive iOS
+runtime required next integration milestone; exports are not actual native proof.
+Rollback source only, no migration. Required renderer/close/B/cache rows not inferred
+from unit green; historical chooser failures/unrun attempts remain immutable.
+
+Freshfree22,957,456KiB, extra peak<=6GiB/projected16,666,000KiB>10GiB; installeddeps/
+Gradle/API36AVD reused. One heavy process, no downloads. Reconstruct exact four-delta
+web candidate only for actual view check (previous copy removed); distinct HTTP attempt.
+Owned outputs android/.expo/root.next/coverage/candidate/runtime/app/reverses/emulator
+removed after last check/handoff unless immediate owner-ready short expiry recorded.
+
+| Criterion | Required? | Status | Evidence | Limits |
+|---|---|---|---|---|
+| PDF view avoids share availability/chooser; download/non-PDF preserved | yes | PASS | 402685b focused capability tests | No runtime inference |
+| Local page/zoom/error UI; bounded native images; close/abort/race cleanup | yes | PASS | 402685b renderer-port/UI tests; mobile57suites464/types PASS | No native pixels inference |
+| Consent cancel0 → actual Android65905B/hash + page1/40 → close/remove → B403 | yes | NOT RUN | new immutable synthetic attempt | Not hosted RLS/Next middleware |
+| Fresh full mobile/root gates, normal flag-off, pins/redaction/owned cleanup | yes | NOT RUN | post-change checks | Self-review, not independent review |
+| Sensitive iOS integration/runtime | later required milestone | NOT RUN | named next platform gate | Android/module/export not iOS proof |
+
+[Current source/gate checkpoint](../reports/2026-10-03-android-inline-pdf-preview.md):
+402685b, fresh mobile464/root1178/Node16 PASS; actual Android flow remains required.
+
 ### 3 October — guarded candidate Android consent/share flow (RESUMED)
 
 Owner ready at12:27UTC/15:27Istanbul, HEAD447198a. Fresh blocked audit;

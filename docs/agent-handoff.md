@@ -8,6 +8,21 @@ One writer; verify HEAD, dirty ownership, resources and actual permission.
 
 ## Current checkpoint and next action
 
+Current source402685b: [inline PDF checkpoint](reports/2026-10-03-android-inline-pdf-preview.md).
+Owner approved account-free in-app PDF view and is ready for Android. Reuse existing
+renderer/page contract; explicit optional share, serialized renderer/file close and
+parent abort even before child mount. No dependency/Auth/schema/hosted change.
+Fresh mobile57suites464/types, root1178/fullcheck, Node16 and derived candidate build
+PASS. Actual cancel0/page1→2/close/remove/B403 and guard-off cleanup NOT RUN yet;
+new immutable inline v4 report must not overwrite v3. Same090goal still incomplete.
+One heavy build; installed deps/API36AVD reused. No3October Jev spend, $0.
+Actual current APK build76sec/API36 boot/challenged detail running13:36:30UTC PASS;
+pre-touch GET0/HEAD0/provider0/unknown0/failures0. Owner requested cancel first;
+no actual cancel event yet. Immediate runtime until13:55UTC/16:55Istanbul:
+serverPID87432/emulatorPID87465/emulator5554/reverses31090/54491/18092; initial
+app absent, install owned. Hashes/retention/cleanup in current report. Do not mark
+UI complete or persist fabricated operator events. New inlinev4 writes on stop/pass.
+
 Current32aba65, owner-ready resumed12:27UTC; [Android consent/share checkpoint](reports/2026-10-03-android-candidate-consent-share.md).
 Actual rendered7cd8d46 HomeworkCard lacked passive metadata; minimal candidate patch.
 User observed modal/cancel; v1FAIL HEAD fetched provider1 despite fileGET0. Failed JSON
