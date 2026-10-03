@@ -62,14 +62,31 @@ async function run(command, args, cwd, env = buildEnv()) {
   const child = spawn(command, args, { cwd, env, stdio: 'inherit' });
   const [code] = await once(child, 'exit'); assert.equal(code, 0, 'Owned command failed');
 }
-async function serve(interactive = false) {
+export function nativeFixtureOptions(options = {}) {
+  assert(Object.keys(options).every(key => ['platform', 'attempt'].includes(key)));
+  const platform = options.platform ?? 'android', attempt = options.attempt ?? 1;
+  assert(['android', 'ios'].includes(platform));
+  assert(Number.isInteger(attempt) && attempt >= 1 && attempt <= 3);
+  assert(platform === 'ios' || attempt === 1, 'Android default historical evidence unchanged');
+  return { platform, attempt };
+}
+// Keep task-only iOS Auth and authority JSON out of NSURLCache. This is a
+// fixture policy, not evidence about a hosted provider's current headers.
+export function nativeFixtureJson(status, value, platform) {
+  assert(['android', 'ios'].includes(platform));
+  return Response.json(value, { status, ...(platform === 'ios'
+    ? { headers: { 'cache-control': 'private, no-store', pragma: 'no-cache' } } : {}) });
+}
+export async function serve(interactive = false, options = {}) {
+  const { platform, attempt } = nativeFixtureOptions(options);
   const { interactiveRows, assertInteractiveCancel, assertInlinePreviewEvent, assertCompletedInteractiveFlow } = await import('./090_android_interactive.mjs');
-  const candidate = interactive ? ROOT + '/spike/090-runtime/android-interactive-candidate' : CANDIDATE;
-  const out = ROOT + '/docs/reports/090/' + (interactive
+  const candidate = interactive || platform === 'ios' ? ROOT + '/spike/090-runtime/android-interactive-candidate' : CANDIDATE;
+  const out = ROOT + '/docs/reports/090/' + (platform === 'ios'
+    ? `2026-10-03-ios-p2-${interactive ? 'interactive' : 'authority'}-http-v${attempt}.json` : interactive
     ? '2026-10-03-android-candidate-full-share-http-v5.json' : '2026-10-03-android-candidate-sdk-http-v4.json');
   assert(!fs.existsSync(out), 'Preserve earlier attempt');
-  const candidatePins = interactive ? JSON.parse(fs.readFileSync(candidate + '/native-cache-source.json')) : null;
-  if (interactive) {
+  const candidatePins = interactive || platform === 'ios' ? JSON.parse(fs.readFileSync(candidate + '/native-cache-source.json')) : null;
+  if (candidatePins) {
     assert.equal(candidatePins.parentRef, WEB_REF); assert.equal(candidatePins.pins.length, 426);
     for (const pin of candidatePins.pins) assert.equal(hash(fs.readFileSync(candidate + '/' + pin.path)), pin.sha256);
   }
@@ -97,7 +114,7 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
   const targetMember = interactive ? uuid(9) : memberA;
   const ids = { actor, choirA, memberA, targetMember, assignmentId: uuid(10), submissionId: uuid(8), fileId };
   const metadata = { userId: actor, choirA, choirB, targetMember, fileId, pdfSha256: hash(bytes), legacyUrl: ticketUrl(expired.token) };
-  const record = { date: new Date().toISOString(), status: 'RUNNING', webRef: WEB_REF,
+  const record = { date: new Date().toISOString(), status: 'RUNNING', platform, webRef: WEB_REF,
     entryCommit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
     harnessSha256: hash(fs.readFileSync(import.meta.filename)),
     serverSourcePins: Object.keys(compiled.metafile.inputs).filter(file => file !== '<stdin>')
@@ -105,8 +122,8 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
     nativeSourcePins: execFileSync('git', ['ls-files', 'apps/mobile', 'lib/choir-context-core.ts', 'lib/mobile-webview-bridge.ts', 'lib/repertuvar/protected-file-client.ts'], { encoding: 'utf8' })
       .trim().split('\n').map(file => ({ path: file, sha256: hash(fs.readFileSync(ROOT + '/' + file)) })),
     ...(interactive ? { candidatePins, interactiveFixtureSha256: hash(fs.readFileSync(ROOT + '/supabase/test-support/090_android_interactive.mjs')) } : {}),
-    boundary: interactive ? 'Guarded pinned chorister-detail UI with actual native consent/capability/share gateway. UI observation required separately; synthetic Auth/REST/authority/provider, NOT hosted RLS/Next file routing/middleware/iOS.'
-      : 'Actual Android AuthStore/Supabase SDK/SecureStore/WebView/controller/Expo filesystem; exact pinned production Next profile via local dispatcher. Actual adapter/handler/HMAC file dispatch, NOT production Next file routing/middleware. Synthetic Auth/REST/current authority/provider; inspection share port, NOT actual consent/share/visual/iOS/hosted RLS proof.' };
+    boundary: interactive ? `Guarded pinned chorister-detail UI with actual ${platform} native consent/capability/share gateway. UI observation required separately; synthetic Auth/REST/authority/provider, NOT hosted RLS/Next file routing/middleware/physical-device proof.`
+      : `Actual ${platform} AuthStore/Supabase SDK/SecureStore/WebView/controller/Expo filesystem; exact pinned production Next profile via local dispatcher. Actual adapter/handler/HMAC file dispatch, NOT production Next file routing/middleware. Synthetic Auth/REST/current authority/provider; inspection share port, NOT actual consent/share/visual/hosted RLS proof.` };
   const handler = serverApi.createLegacyFileHandler({
     authenticate: async (_header, token) => tokens.has(token) ? { actorId: actor, sessionId: session, choirId: currentChoir } : null,
     resolve: async input => !revoked && currentChoir === choirA && input.choirId === choirA
@@ -135,7 +152,7 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
   }
   function evidence(input) {
     if (interactive) {
-      assert.deepEqual(input, { platform: 'android', switched: true, cacheEmpty: true });
+      assert.deepEqual(input, { platform, switched: true, cacheEmpty: true });
       assertCompletedInteractiveFlow(native.map(item => item.event), providerReads);
       assert(native.some(item => item.event === 'cancel-observed'));
       for (const event of ['preview-page-1', 'preview-page-2', 'preview-closed']) assert(native.some(item => item.event === event));
@@ -146,7 +163,7 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
       assert.deepEqual(unknown, []); assert.deepEqual(outside, []); assert.deepEqual(failures, []);
       record.status = 'PASS_HTTP_NATIVE'; record.nativeAssertion = input; persist(); return;
     }
-    assert.deepEqual(input, { platform: 'android', profileBridge: true, renewal: true, revoked: true, switched: true, cacheEmpty: true, actualShare: false, actualConsent: false });
+    assert.deepEqual(input, { platform, profileBridge: true, renewal: true, revoked: true, switched: true, cacheEmpty: true, actualShare: false, actualConsent: false });
     for (const [part, expected] of Object.entries({ renewal: ['GET:401', 'HEAD:401', 'POST:200', 'GET:200'],
       revoked: ['GET:403', 'HEAD:403'], switched: ['GET:403', 'HEAD:403', 'GET:401', 'HEAD:401', 'POST:403'] })) {
       assert.deepEqual(requests.filter(item => item.phase === part && item.path.startsWith('/api/drive-file')).map(item => `${item.method}:${item.status}`), expected, part);
@@ -184,7 +201,7 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
       outgoing.writeHead(response.status, headers);
       outgoing.end(incoming.method === 'HEAD' ? undefined : Buffer.from(await response.arrayBuffer()));
     };
-    const json = (status, value) => finish(Response.json(value, { status }));
+    const json = (status, value) => finish(nativeFixtureJson(status, value, platform));
     if (incoming.method === 'OPTIONS') return finish(new Response(null, { status: 204 }));
     if (origin === fixture) {
       if (url.pathname === '/090/webview-fixture' && incoming.method === 'POST') {

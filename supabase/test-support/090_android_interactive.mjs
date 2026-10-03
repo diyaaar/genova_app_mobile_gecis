@@ -33,8 +33,8 @@ export function interactiveRows(url, ids, currentChoir) {
 }
 export function assertInteractiveCancel(requests, providerReads) {
   assert.equal(providerReads.renewal, 0, 'Provider bytes before consent/cancel');
-  assert(!requests.some(item => item.path.startsWith('/api/drive-file/') && item.method === 'GET'),
-    'Native/browser body read before consent');
+  assert(!requests.some(item => item.path.startsWith('/api/drive-file/') && ['GET', 'HEAD'].includes(item.method)),
+    'Native/browser content request before consent');
 }
 
 // Ordered v4 synthetic evidence, not a substitute for owner visual acceptance.

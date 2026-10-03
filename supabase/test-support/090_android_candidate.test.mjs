@@ -1,9 +1,26 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { validatePinnedSource, buildEnv, ROOT, CORS_HEADERS, hasAuthorizedInitialProfile } from './090_android_candidate.mjs';
+import { validatePinnedSource, buildEnv, ROOT, CORS_HEADERS, hasAuthorizedInitialProfile, nativeFixtureOptions, nativeFixtureJson } from './090_android_candidate.mjs';
 
 const entries = JSON.parse(fs.readFileSync(ROOT + '/docs/reports/090/2026-10-03-embedded-profile-source-manifest.json')).pins;
+test('iOS authority and credential JSON forbids HTTP persistence; Android historical default is unchanged', async () => {
+  const response = nativeFixtureJson(200, { synthetic: true }, 'ios');
+  assert.equal(response.headers.get('cache-control'), 'private, no-store');
+  assert.equal(response.headers.get('pragma'), 'no-cache');
+  assert.deepEqual(await response.json(), { synthetic: true });
+  assert.equal(nativeFixtureJson(401, {}, 'ios').headers.get('cache-control'), 'private, no-store');
+  assert.equal(nativeFixtureJson(200, {}, 'android').headers.get('cache-control'), null);
+  assert.throws(() => nativeFixtureJson(200, {}, 'unscoped'));
+});
+test('iOS evidence has explicit bounded platform/attempt; unchanged Android defaults cannot redirect reports', () => {
+  assert.deepEqual(nativeFixtureOptions(), { platform: 'android', attempt: 1 });
+  assert.deepEqual(nativeFixtureOptions({ platform: 'ios', attempt: 2 }), { platform: 'ios', attempt: 2 });
+  for (const options of [{ platform: 'web' }, { platform: 'ios', attempt: 0 }, { platform: 'ios', attempt: 4 },
+    { platform: 'ios', attempt: 1.5 }, { platform: 'android', attempt: 2 }, { report: '../outside' }]) {
+    assert.throws(() => nativeFixtureOptions(options));
+  }
+});
 test('initial authorized profile data may finish after bridge starts renewal, not after revoke/switch', () => {
   const read = { path: '/rest/v1/choir_members', method: 'GET', status: 200, authorized: true, phase: 'renewal' };
   assert(hasAuthorizedInitialProfile([read]));

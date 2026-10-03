@@ -50,9 +50,10 @@ test('real detail dataset keeps chef and homework target separate, not all-choir
   assert.throws(() => interactiveRows(url('assignment_submissions', 'assignment_id=in.(assignment)&member_id=in.(other)'), ids, 'a'));
   assert.equal(interactiveRows(url('unknown'), ids, 'a'), null);
 });
-test('cancel allows metadata/HEAD preflight but refuses any body/provider access', () => {
+test('cancel allows ticket metadata but refuses GET, HEAD and provider access', () => {
   const head = { path: '/api/drive-file/alias', method: 'HEAD' };
-  assertInteractiveCancel([head, { path: '/api/drive-file-token', method: 'POST' }], { renewal: 0 });
+  assertInteractiveCancel([{ path: '/api/drive-file-token', method: 'POST' }], { renewal: 0 });
+  assert.throws(() => assertInteractiveCancel([head], { renewal: 0 }));
   assert.throws(() => assertInteractiveCancel([{ ...head, method: 'GET' }], { renewal: 0 }));
   assert.throws(() => assertInteractiveCancel([head], { renewal: 1 }));
 });
