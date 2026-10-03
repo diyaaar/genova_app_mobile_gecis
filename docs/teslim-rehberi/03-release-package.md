@@ -11,9 +11,12 @@ P1 manifest + accepted latest iOS/Android boundaries. Use 090/R1 and the existin
 
 Current first bounded outcome: [090 P3 version/compatibility inventory work card](../briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory),
 created by the [delivery-guide checkpoint review](../reports/2026-10-03-delivery-guide-checkpoint-review.md).
-It is BLOCKED: [executed partial inventory](../reports/2026-10-03-p3-entry-inventory.md)
-verifies served source metadata and complete entry/test mapping but exact current
-SQL/Edge identities remain NOT RUN pending the approved connector. Full-source
+The historical [3 October partial inventory](../reports/2026-10-03-p3-entry-inventory.md)
+was connection-blocked. [4 October reconciliation](../reports/2026-10-04-p3-hosted-reconciliation.md)
+recovers the existing named correct-project MCP credential and obtains current
+catalog/Edge version/source/JWT identities. All15relevant ledger SQL bodies are NULL;
+historical applied-statement checksum equality remains unavailable, not silently
+waived. P3 is IN PROGRESS, not accepted. Full-source
 hook/log convergence, recovery/rehearsal and independent review remain required.
 Do not read an old runbook packet as the current promotion scope.
 

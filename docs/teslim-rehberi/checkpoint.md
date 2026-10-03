@@ -1,12 +1,22 @@
 # Delivery checkpoint — single current execution pointer
 
-Updated 3 October 2026. P1 entry `main/3fb3a2c`; product source unchanged
+Updated 4 October 2026. P1 entry `main/3fb3a2c`; product source unchanged
 by this inventory. This is the moving execution index, not a substitute for acceptance evidence.
 Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
-- Active plan: **P3 — compatible, reviewed and recoverable release package**, BLOCKED / PARTIAL inventory after local P2 acceptance.
+- Active plan: **P3 — compatible, reviewed and recoverable release package**, IN PROGRESS / PARTIAL inventory after local P2 acceptance; connection blocker removed.
+- Latest [4 October hosted reconciliation](../reports/2026-10-04-p3-hosted-reconciliation.md):
+  existing named MCP PAT reused, correct-project read-only SQL verified; no new key/
+  grant/config/product change.68ledger rows;15of25source IDs present, all15stored SQL
+  bodiesNULL (historical checksum equivalence UNAVAILABLE, not waived/goal complete).
+  Current catalog83functions/74relations/225policies/378constraints/696columns;
+  65source bodies50match/4differ/11missing,7of38public RPCs absent. Helpers match005,
+  not078; statusRPC still anon/service executable,079ACLmissing.21Edge metadata,
+  17sources:5full match,6runtime match/type-only omitted,6real differences,3missing;
+  five readers oldfamilytickets, drive-manager-v2source/JWT mismatch. Vercel source
+  refreshed stilla13f696.10helper tests/610pins PASS; no hosted acceptance or writes.
 - Current source outcome: [GENOVA-BETA-20261003-P1](../reports/090/2026-10-03-p1-beta-candidate.md)
   and [exact manifest](../reports/090/2026-10-03-p1-beta-candidate.json).
 - Latest accepted checkpoint: [P2 current iOS](../reports/2026-10-03-ios-p2-private-file-acceptance.md).
@@ -21,7 +31,7 @@ Historical records keep their original date/revision. [Guide](README.md).
   610 pins/five iOS sidecar hashes/157native/5server reverified; runbook current pointer
   corrected without product/live change. First [P3 inventory card](../briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory)
   READY/NOT RUN; no P3 acceptance inferred. Fresh free21,415,384KiB; owned runtime absent.
-- [Executed P3 inventory](../reports/2026-10-03-p3-entry-inventory.md), entrye7424e8:
+- Historical [3 October P3 inventory](../reports/2026-10-03-p3-entry-inventory.md), entrye7424e8:
   correct Chrome production Vercel main/a13f696 verified;15of25source SQL ledger rows,
   17of20Edge slugs (21total) visible. Exact SQL/catalog/checksums and deployed Edge
   version/source/config **NOT RUN**; supabase-genesinova connector unavailable.
@@ -46,7 +56,7 @@ Historical records keep their original date/revision. [Guide](README.md).
 |---|---|---|
 | [P1](01-candidate.md) | ACCEPTED source inventory; self-review, not release acceptance | WF-016 audit → immutable source/feature/blocker manifest |
 | [P2](02-ios.md) | ACCEPTED LOCAL; required matrix PASS, self-review | manifest + Android pins → current synthetic iOS evidence, not hosted/hardware |
-| [P3](03-release-package.md) | BLOCKED inventory; exact SQL/Edge/compatibility/recovery/review NOT RUN | same candidate → reviewed compatibility/recovery package |
+| [P3](03-release-package.md) | IN PROGRESS; current catalog/Edge observed, historical SQL bodies unavailable; compatibility/recovery/review NOT RUN | same candidate → reviewed compatibility/recovery package |
 | [P4](04-storage.md) | WAITING P3 | authorized package → deployed compatible readers/writers and reconciled private storage |
 | [P5](05-android-beta.md) | WAITING P4 | active services/storage → installed signed Android beta |
 | [P6](06-full-product.md) | WAITING P5; decision preparation possible | beta evidence → full preserved commercial feature matrix |
@@ -77,10 +87,11 @@ Evidence: [Jev/source audit](../reports/2026-10-03-jev-conversation-direction-au
 
 ## Next three actions
 
-1. Enable/verify approved supabase-genesinova connector for hievmwwctjjlhmssoxsu;
-   finish exact SQL/catalog/checksum and Edge version/source/config reconciliation.
-   Visible ledger/slugs remain partial, not source equivalence. Served web metadata now verified.
-2. After exact reconciliation, create narrow full-source hook/log convergence card,
+1. Assess current catalog against missing source delta prerequisites using captured
+   exact definitions/ACL/digests. Historical SQL checksum equality remains unavailable,
+   not waived; current-state recovery must carry the limitation. Do not request a new
+   connection/key, mutate ledger, or blindly apply ten absent migration IDs.
+2. Create narrow full-source hook/log convergence card,
    actual consent/probe integration regressions and affected P1/P2 pin/acceptance update.
    Already-present embedded cache/offline/file-label guards must not be reapplied blindly.
 3. Use completed mapping for scoped fresh recovery/full actual Next/Auth/RLS old-new-

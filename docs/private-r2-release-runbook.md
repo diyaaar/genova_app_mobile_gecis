@@ -7,7 +7,19 @@ inventory/copy evidence;077 is an unexecuted next-ten approval packet.
 Owner: release operator designated by the product owner. This is the single 053–065 release index;
 individual briefs remain the acceptance authority for each local implementation.
 
-## Current revocation release boundary — 3 October 2026
+## Current revocation release boundary — 4 October 2026
+
+[Hosted reconciliation](reports/2026-10-04-p3-hosted-reconciliation.md) supersedes
+the missing-connector inference below. Existing named PAT/project read-only MCP
+works; current catalog/Edge versions/source/JWT are captured. Five readers remain
+oldticket source;090authority/legacy RPCs absent, selection helpers match005not078,
+statusRPCACL lacks079repair. No mutation or release acceptance. All15relevant
+ledger bodiesNULL: historical SQL checksums UNAVAILABLE, not invented/equivalent.
+Required original inventory criterion stays open; carry current-state provenance
+and limitation into fresh protected recovery/rehearsal/independent review.
+No new key/connector install request, ledger rewrite or bulk migration/deploy.
+
+## Historical revocation release boundary — 3 October 2026
 
 [Delivery-guide review](reports/2026-10-03-delivery-guide-checkpoint-review.md):
 P1 GENOVA-BETA-20261003-P1 source frozen and P2 current agent-operated iOS accepted

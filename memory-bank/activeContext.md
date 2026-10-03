@@ -1,6 +1,6 @@
 # Active context
 
-Updated 3 October 2026. [Handoff](../docs/agent-handoff.md) →
+Updated 4 October 2026. [Handoff](../docs/agent-handoff.md) →
 [090](../docs/briefs/090-private-file-ticket-revocation-contract.md) →
 [controls](../docs/mobil-teslim-plani.md#bounded-execution-and-resource-controls).
 English records/Turkish updates; sole writer; inspect current ownership/permissions.
@@ -16,7 +16,7 @@ API/pages/locks/config and prerequisites retained, not a deployment instruction.
 No product code/config change.051 native stars already locally accepted22a19d6.
 CLI marker is unrelated, excluded. P2 test-support03b59b5; no owned runtime/copy.
 
-[Checkpoint](../docs/teslim-rehberi/checkpoint.md): **P3 BLOCKED / PARTIAL inventory** after
+[Checkpoint](../docs/teslim-rehberi/checkpoint.md): **P3 IN PROGRESS / PARTIAL inventory** after
 [P2 local acceptance](../docs/reports/2026-10-03-ios-p2-private-file-acceptance.md).
 Current iOS26.5/Release actual cancel0/PDF1→2/share-dismiss/return/close/removal/
 activeA→B403/expiry/valid-denial/lease/disk0/normal sign-in PASS. XCTestv3 fullflow;
@@ -25,29 +25,24 @@ focused26, root1178/build fresh. Failed UI/variant/cache attempts preserved; fix
 no-store repair, not hosted-provider proof. Owned device/process/build/runtime/PNG/log/
 root outputs cleaned; free21,452,752KiB. Jev1triage/5questions/1108input/215output/
 estimated$0.000046536; self-review not independent review; no owner QA.
-Guide [review](../docs/reports/2026-10-03-delivery-guide-checkpoint-review.md) at4e7ab14:
-610pins/five sidecar hashes/157native/5server reverified; stale runbook pointer fixed,
-no product/live change or test rerun. Jev1943input/221output/$0.000081606 estimate.
-Current [P3 inventory card](../docs/briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory):
-[executed report](../docs/reports/2026-10-03-p3-entry-inventory.md), entrye7424e8,
-610pins/62focusedtests/full entry-test-recovery map PASS. Chrome correct Vercel
-production main/a13f696 observed; correct Supabase visible15of25ledgerIDs/17of20Edge
-slugs (21total), but exact SQL/current catalog/checksum/Edge version/source/config
-NOT RUN. Connector unavailable; suggestions/user correct-project connection request
-pending. Goal BLOCKED, not complete or P4. Do not use browser SQL/another connector.
-Full hook still HEAD-probes before native consent unlike P2 fixture; raw audioURL
-logs require narrow convergence, existing cache/offline/file labels preserved.
-No product/live/build/runtime/device change; freshfree21,395,268KiB. Jev1call/
-2484input/219output/$0.000104328estimate,two controls agree,not independentreview.
-Continuation2 verifies deployed chat-media-file Code import drift (old ticket.ts);
-connector still absent. Exact identities/ZIP status unverified; report addendum owns evidence.
-Continuation3/18:59UTC verifies same blocker three goal turns; no authorized independent
-inventory work or verified live job handle is available. Resume after approved connection.
-Next: complete exact target identities → narrow full-source convergence and affected
-acceptance → fresh scoped protected backup/isolated restore/full actual old-new-mixed
-client negative rehearsal → independent package review + exact operation authority.
-Actual Auth/REST/private-file
-cache headers/native persistence remain P3 check. No blind promotion or live activation.
+Current [resumed P3 card](../docs/briefs/090-private-file-ticket-revocation-contract.md#4-october--p3-inventory-resumed-with-existing-named-mcp-credential):
+[4October reconciliation](../docs/reports/2026-10-04-p3-hosted-reconciliation.md).
+Existing named local MCP PAT recovered with owner approval; documented HTTP fixed
+project/read-only/catalog+functions, no new key/grant/config change. Connection
+blocker REMOVED; don't request another install/key.68ledger rows/15of25sourceIDs,
+all15SQLstatementsNULL: historicalchecksumUNAVAILABLE, not waived/goalcomplete.
+Current catalog83functions/74relations/225policies/378constraints/696columns;
+65source bodies50match/4differ/11missing,7of38RPCs absent. Helpers005not078;
+statusRPCACLnot079.21Edge metadata/17sources:5fullmatch,6runtime/type-onlyomission,
+6real differences,3missing. Five readers oldtickets; drive-manager-v2source/JWT drift.
+Fresh Chrome Vercel stilla13f696. No hosted behavior/security acceptance.10helper
+tests/610pins/P1/P3byte verification PASS. No product/live/build/runtime/device change.
+Jev0/$0new; old dated failures/audits retained, ZIP status/path still unknown.
+Next: catalog-to-source prerequisites → narrow hook/log convergence/affectedP1P2
+acceptance → fresh current-state recovery/actual old-new-mixed rehearsal with
+historical SQL limit explicit → independent review/exact operation scope. Existing
+cache/offline/file-label guards preserved. No ledger repair/directory replay/bulk
+push/activation or owner QA. Actual Auth/REST/private-file headers/persistence required.
 
 Android [fullv5](../docs/reports/090/2026-10-03-android-candidate-full-share-http-v5.json)
 dated3October14:04UTC PASS_HTTP_NATIVE:157native/5server matched frozen source,
@@ -57,10 +52,8 @@ native chat/repertoire and four permanent WebViews; profile fixture not full bet
 Browser1a014c4/profile7cd8d46 retained intermediate/test candidates; immutable hashes.
 P3 proves minimum repair convergence + full compatibility, no bulk-main promotion.
 
-P1 Jev1call/8questions/5385input/324output/estimated$0.00022617, zero retries, two
-controls match. Typed text advice, not independent review or test proof. Full-package
-compatibility/recovery remains strongest open risk. Key only memory, no transcripts/
-private data exported. Previous17-chat audit stays dated; no primary raw-chat rescan.
+Prior Jev/17-chat audit records stay dated; no raw-chat rescan. Jev is advisory,
+not independent review/authorization. New paid inference needs current-date scope.
 
 ## Still-open product and authority gates
 

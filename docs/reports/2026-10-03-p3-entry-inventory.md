@@ -5,10 +5,17 @@ Candidate **GENOVA-BETA-20261003-P1**, frozen `c2ec9b09a44c048c7c6a0c31f0ac99566
 [Owning card](../briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory)
 → [P3](../teslim-rehberi/03-release-package.md) → existing [runbook](../private-r2-release-runbook.md).
 
-**BLOCKED / PARTIAL / NO PROMOTION.** Local dependency/test mapping and recovery/operation
+**Historical 3 October checkpoint: BLOCKED / PARTIAL / NO PROMOTION.** Local dependency/test mapping and recovery/operation
 prerequisites are complete. Current served-web metadata is verified; exact applied
 SQL and deployed Edge source/config equivalence is NOT RUN. Neither this inventory
 nor earlier P2 closes whole090, P3, storage activation, beta or stores.
+
+**4 October current update:** [existing named MCP access recovered; hosted catalog,
+Edge versions/source/JWT acquired](2026-10-04-p3-hosted-reconciliation.md).
+The connection blocker below is superseded, not a reason to request another key/
+installation. Original historical SQL-body criterion remains unverified: all15
+relevant ledger statements are NULL. Preserve this dated record/machine inventory;
+new digests/classifications are in the4October report. P3 remains IN PROGRESS.
 
 ## Start check and method
 

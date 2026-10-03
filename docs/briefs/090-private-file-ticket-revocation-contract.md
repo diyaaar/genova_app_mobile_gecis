@@ -15,6 +15,75 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 4 October — P3 inventory resumed with existing named MCP credential
+
+Owner explicitly authorizes looking for/reusing existing project/local credentials
+and the signed-in Genesinova Chrome profile, then confirms proceeding. This changes
+the credential-discovery boundary of the 3 October card, not SQL/deploy authority.
+Entry `main/24d157c`, primary sole writer; unrelated CLI marker preserved. Same
+observable outcome: close exact hosted identity/gap inventory, not whole P3.
+Read current handoff/active/090/checkpoint/P3, transition guide/work cycle/controls;
+complete OpenAI and TypeSafe skills. Official Codex/Supabase MCP docs checked.
+No Jev call: catalog comparison is deterministic; no later-day key reuse inferred.
+
+Local `.codex/config.toml` already scopes supabase-genesinova to the correct project
+and read-only mode. Existing Antigravity named MCP config supplies a PAT; existing
+app credentials also exist, but are not substituted for MCP. Credential values
+never printed/copied/persisted. Initial hosted MCP initialize HTTP200; follow-up
+without session header failed, corrected with protocol session/initialized handling.
+Discovery returns only read tools; SELECT identity proves supabase_read_only_user,
+transaction_read_only=on, Postgres17.6. The previous tools-not-exposed observation
+was true, but the inference that existing access was unavailable was incomplete.
+No new token/OAuth grant/config change/installation, browser download workaround,
+other-project access or hidden browser state extraction.
+
+Allowed paths: existing 090/P3/checkpoint/handoff/active/runbook/report updates,
+`spike/090-p3-hosted-inventory{,.test}.mjs`, digest-only report under reports/090.
+Direct documented HTTP MCP transport uses only the existing named credential,
+project_ref=hievmwwctjjlhmssoxsu/read_only=true/database+functions; catalog SELECT,
+list/get Edge only. No user rows/logs/raw hosted bodies/secrets retained, no product
+edits, DDL/DML/deploy/distribution or owner QA. One process; free21,335,984KiB,
+candidate closure595,719B; bounded fetched source16MiB/response, estimate<4MiB
+retained metadata/32MiB memory, no build/runtime/disk copy. Cleanup only owned
+derived outputs, no new source ZIP or lookup of the previously unverified download.
+
+Next: (1) exact ledger/body/catalog/Edge identity reconciliation, (2) minimum gap
+classification/test and operation prerequisites, (3) deterministic validation and
+scoped commit. Parser failure during first inventory abort produced no report:
+ordinary PostgreSQL backslash literals were wrongly treated as E escapes; fixed
+with regression. Unsupported non-SQL function bodies remain byte-hashed with an
+explicit token-comparison boundary, never forced equivalent. Existing P1/P2 and
+dated 3 October failed attempts remain immutable; final acceptance below.
+
+Result: [4 October reconciliation](../reports/2026-10-04-p3-hosted-reconciliation.md)
+and [digest record](../reports/090/2026-10-04-p3-hosted-inventory.json).
+Connection blocker REMOVED; no installation/new key required. Current target
+observed:68ledger rows,15of25source IDs present;83functions/74relations/225policies/
+378constraints/696columns;65source bodies50matching/4different/11missing;
+7of38required public RPCs absent. Three selection helpers match005,not078;
+mark_chat_message_status still anon/authenticated/service_role executable,not079ACL.
+21Edge metadata/17retrieved sources:5full closures match,6runtime matches with
+type-only omissions,6real source differences,3missing. All five readers retain old
+familytickets; drive-manager-v2 source/JWT differs. Packaging paths and type-only
+imports are not misclassified as runtime defects. Served Vercel metadata refreshed,
+stillmain/a13f696; no live HTTP exploit/authority test. No product/live writes.
+
+| Resumed inventory criterion | Required? | Status | Evidence / boundary |
+|---|---|---|---|
+| Existing named correct-project read-only access | yes | PASS | Existing PAT/protocol reused, identity proves read-only; no credential/config change |
+| Exact current catalog/Edge version/source/config acquisition | yes | PASS observations | Dated machine digests/ACL/RLS/JWT/runtime path comparison; no behavior acceptance |
+| Historical applied SQL body/checksum equivalence | yes, original card | UNAVAILABLE / NOT VERIFIED | All15relevant stored statements are NULL. Query ran; do not treat missing text as source mismatch or waive required equality; goal not complete |
+| Source/test/recovery/operation mapping | yes | PASS inventory | Prior full-route/five-family map + actual missing/old definitions; repair/recovery/review NOT RUN |
+| Focused tests/pins/links/diff/secret check/commit | yes | PASS at scoped checkpoint |7new+3existing tests,610pins/P1/P3byte equivalence, exact-value credential scan0; unrelated CLI marker excluded |
+
+Keep P3 IN PROGRESS, not connection-blocked or release accepted. Original inventory
+goal is not marked complete while required historical SQL equivalence lacks proof.
+Next bounded action: catalog-to-source dependency assessment and narrow hook/log
+convergence card; then fresh current-state recovery/actual mixed-client rehearsal
+with recorded historical checksum limitation, independent review/exact operation
+scope. No ledger “repair”, bulk migration replay, P4activation or owner manual QA.
+Jev0/$0new inference. Metadata acquired21:54:40–21:55:14UTC3October (4October local).
+
 ### 3 October — P3 first work card: exact version and compatibility inventory
 
 Status **BLOCKED / PARTIAL INVENTORY / NOT COMPLETE**. Planning entry `main/4e7ab14`; execution
