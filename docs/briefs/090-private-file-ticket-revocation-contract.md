@@ -48,11 +48,18 @@ owned app/reverses/fixture/emulator. Keep deps/AVD/user data/immutable reports.
 
 | Criterion | Required? | Status | Evidence / boundary |
 |---|---|---|---|
-| Guarded inspection cannot enable hosted WebView; strict share/order negatives | yes | NOT RUN | focused source tests, no auth relaxation |
-| Fresh mobile/root/candidate/Android build gates | yes | NOT RUN | current source, not cached-green claim |
-| Actual cancel0/local pages/system share dismiss/return/close/remove | yes | NOT RUN | ADB fresh screen + native/HTTP events |
-| B initiated from active profile/oldA403/cache/persistence | yes | NOT RUN | actual native RPC/teardown and direct browser inspection |
-| Pins/redaction/normal guard-off/owned cleanup | yes | NOT RUN | current-source hashes, no binary history |
+| Guarded inspection cannot enable hosted WebView; strict share/order negatives | yes | PASS | guarded helper negatives +24Node tests, no auth relaxation |
+| Fresh mobile/root/candidate/Android build gates | yes | PASS |57suites465/types; root1178/fullcheck;426-pin candidate build; Android79sec496tasks |
+| Actual cancel0/local pages/system share dismiss/return/close/remove | yes | PASS | agent SDK/fresh screens plus ordered native events; full-sharev5 |
+| B initiated from active profile/oldA403/cache/persistence | yes | PASS | actual AuthStore select before closure; GET403/HEAD403/provider0; direct storage0/null,target0 |
+| Pins/redaction/normal guard-off/owned cleanup | yes | PASS |157native/5server/426candidate hashes; guard-off prebuild; cleanup14:15UTC/free22739360KiB |
+
+Accepted bounded Android goal: [full-flow report](../reports/2026-10-03-android-full-share-flow.md),
+[immutablev5](../reports/090/2026-10-03-android-candidate-full-share-http-v5.json)
+PASS_HTTP_NATIVE. Self-review, synthetic emulator, NOT hosted RLS/Next file routing/
+physical-device/iOS/recipient-delivery proof. Historical failed attempts retained.
+Whole090/R1/beta OPEN. Next required grouped sensitive iOS automated integration;
+no manual owner QA. Normal mode restored; owned outputs/runtimes disposed, no Jev spend.
 
 ### 3 October — approved account-free inline PDF preview
 

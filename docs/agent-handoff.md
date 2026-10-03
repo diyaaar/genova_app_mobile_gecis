@@ -8,30 +8,30 @@ One writer; verify HEAD, dirty ownership, resources and actual permission.
 
 ## Current checkpoint and next action
 
-Current source402685b: [inline PDF checkpoint](reports/2026-10-03-android-inline-pdf-preview.md).
-Account-free in-app view uses existing renderer/page contract; explicit optional
-share, serialized renderer/file cleanup and parent pre-mount abort. No dependency/
-Auth/schema/hosted change. Fresh mobile57suites464/types/root1178/fullcheck/Node16/
-derived candidate build/Android76sec PASS. [Inlinev4](reports/090/2026-10-03-android-candidate-inline-preview-http-v4.json)
-PASS_HTTP_NATIVE,157native/426candidate pins: initial owner cancel0/page1→2; later
-agent ADB loadedpage7/zoom125/close/removal/profile swipe/nativeback/B403 PASS.
-Provider1/0/0; unknown/outside/failures0. Synthetic Auth/REST/authority/dispatcher,
-NOT hosted RLS/Next routing/middleware/physical-device proof. Self-review only.
-Explicit optional share, runtime browser-storage absence, active-surface B-triggered
-teardown and grouped sensitive iOS NOT RUN. B followed explicit native back here.
-Same090goal/whole090/R1/betaOPEN; tool blocked flag historical, not completion.
-NEXT: bounded automated persistence/active-surface/platform integration acceptance;
-permanent browser-session-only API audit/backport before promotion. No arbitrary
-issuer/refresh sharing. Independent review/fresh hosted preflight/forward repair/R1
-still required. Historical [chooser failures](reports/2026-10-03-android-candidate-consent-share.md)
-v1FAIL/v2NOT RUN/v3NOT RUN preserved; no repeating chooser/account setup.
+Current sourcec2ec9b0: [full automated Android flow](reports/2026-10-03-android-full-share-flow.md).
+Guarded loopback-only inspection/strict share evidence; account-free PDF/serialized
+cleanup retained. No dependency/Auth/schema/hosted change. Fresh mobile57suites465/
+types/root1178/fullcheck/Node24/candidate build/Android79sec496tasks PASS. [Fullv5](reports/090/2026-10-03-android-candidate-full-share-http-v5.json)
+PASS_HTTP_NATIVE,157native/5server/426candidate pins: agent cancel0/PDF1→2/actual
+share chooser dismissed with no recipient/PDF return/close/File.existsfalse PASS.
+Actual AuthStore B switch from STILL ACTIVE profile→oldA GET403/HEAD403/provider0;
+CDP localStorage=null/session0/IDB0/Cache0/SW0 before/after PDF, target0 afterB.
+Provider1/0/0; unknown/outside/failures0. Original bounded Android goal achieved,
+whole090/R1/betaOPEN. Synthetic emulator/authority/dispatcher NOT hosted RLS/Next
+routing/middleware/physical-device/iOS/recipient delivery. Self-review only.
+NEXT: required grouped sensitive iOS automated integration, no owner QA; prepare
+bounded workcard/resources/platform tools first. Permanent browser-only API audit/
+backport before promotion; no arbitrary issuer/refresh sharing. Independent review/
+fresh hosted preflight/forward repair/R1 still required. [Historical chooser](reports/2026-10-03-android-candidate-consent-share.md)
+v1FAIL/v2NOT RUN/v3NOT RUN and [inlinev4](reports/2026-10-03-android-inline-pdf-preview.md)
+retained, not rewritten as fresh acceptance.
 
 Owner3October explicitly directs agent-owned Android/iOS tests, no manual owner QA;
 ADB screenshots/touch/swipe and equivalent test tools allowed in scoped test env.
 AGENTS records durable boundary; unrelated real-account/hosted/credential/hardware/
 spending/distribution authority remains separate. No new framework required.
-At13:50UTC all owned app/reverses/servers/emulator/candidate/android/rootoutputs/PNG
-removed; actual normal acceptance-off manifest/pins/redaction PASS, free22840820KiB.
+At14:15UTC owned app/reverses/forward19390/servers/emulator/candidate/android/root
+outputs/11PNG/deviceXML removed; normal guard-off/pins/redaction PASS, free22739360KiB.
 Keep deps/AVD/iOS Simulator/user data/immutable evidence. No active owned runtime.
 No3October Jev use/spend ($0). Unrelated supabase/.temp/cli-latest preserved.
 

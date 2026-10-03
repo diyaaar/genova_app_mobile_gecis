@@ -1,18 +1,21 @@
 // One bounded, owned Android fixture inspection. No hosted target, tokens or UI mutation.
 import assert from 'node:assert/strict';
-const endpoint = 'http://127.0.0.1:9222';
+const endpoint = 'http://127.0.0.1:19390';
 const targets = await (await fetch(endpoint + '/json')).json();
 const matching = targets.filter(target => target.type === 'page'
   && target.url.startsWith('http://127.0.0.1:31090/koristler/'));
 assert.equal(matching.length, 1, 'Expected exact active synthetic chorister WebView');
 const socket = new URL(matching[0].webSocketDebuggerUrl);
 assert.equal(socket.protocol, 'ws:'); assert.equal(socket.hostname, '127.0.0.1');
-assert.equal(socket.port, '9222'); assert(socket.pathname.startsWith('/devtools/page/'));
+assert.equal(socket.port, '19390'); assert(socket.pathname.startsWith('/devtools/page/'));
 const expression = `(async () => {
   if (location.origin !== 'http://127.0.0.1:31090') throw Error('Wrong inspection origin');
   const result = {};
   for (const name of ['localStorage', 'sessionStorage']) {
-    try { result[name] = { count: window[name].length }; }
+    try {
+      const storage = window[name];
+      result[name] = storage === null ? { disabledNull: true } : { count: storage.length };
+    }
     catch (error) { result[name] = { blocked: error.name }; }
   }
   result.indexedDB = { count: (await indexedDB.databases()).length };
@@ -40,8 +43,10 @@ try {
       else resolve(data.result.result.value);
     });
   });
+  console.log(JSON.stringify({ observation: 'active synthetic browser storage counts', result }));
   for (const name of ['localStorage', 'sessionStorage']) {
-    assert(result[name].count === 0 || result[name].blocked === 'SecurityError', 'Browser key persistence');
+    assert(result[name].count === 0 || result[name].disabledNull === true
+      || result[name].blocked === 'SecurityError', 'Browser key persistence');
   }
   assert.equal(result.indexedDB.count, 0); assert.equal(result.cacheStorage.count, 0);
   assert.equal(result.cacheStorage.privateEntries, 0); assert.equal(result.serviceWorkers.count, 0);
