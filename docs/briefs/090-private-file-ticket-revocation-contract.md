@@ -15,6 +15,64 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — minimum embedded profile candidate integration
+
+Owner continues the approved local work. Entry9a14f50/main; sole writer, CLI marker
+excluded. Read AGENTS/handoff/active090/guide/work cycle/template, resource controls,
+MIGRATION permanent-profile ownership, decisions32–33, source preflight/bridge/Auth,
+and complete TypeSafe/Supabase skills. Live TypeSafe index and Supabase initialization
+docs checked; changelog web fetch unavailable, anonymous HTTP fallback attempted.
+One result: a separate reproducible candidate based on preserved browser1a014c4,
+using existing access-only bridge/Auth/proof machinery so /profil opens after challenged
+native-controller proof without browser credentials. This is NOT actual RN platform or
+legacy Next private-file renewal acceptance, hosted release, or whole090 closure.
+Three actions: minimum semantic bridge/Auth/cache cut-point factory and regressions;
+actual production Next/current native controller profile/proof/refusal/clear/browser
+checks and root/candidate gates; source pins/evidence/cleanup/separate commits.
+Allowed: dedicated supabase/test-support/090_candidate_embedded*.mjs, candidate-derived
+existing bridge/runtime/protocol/capability, Auth/provider/layout/profile/notifier and
+Supabase initialization/legacy loader only, their focused tests, dated090 records and
+brief/handoff/active. No bulk31-path/main transplant, chat/upload/annotation rewrite,
+dependency/schema/Edge/RN change, refresh-token sharing, site/live/push/CI/real-user action.
+Baseline has no queued annotation writes: omit current queue imports/calls, preserve its
+browser switch body and existing failure-before-clear signout guard; retain baseline
+chat/offline/cache modules and all types.
+Use actual current lease-vault/proof/protocol, not a parallel Auth implementation.
+Fresh21,359,816KiB free. One ignored spike/090-runtime/embedded-candidate (<7MiB source,
+existing dependency symlink), sequential candidate/root builds <1.5GiB estimated peak;
+no install/download/emulator. Owned Next31090/synthetic54491/Chrome expire after runtime;
+candidate/root.next/coverage expire after gates. Preserve historical candidate pins.
+Required source closure/mutation checks, actual challenged profile/no persistence,
+wrong choir and foreign bootstrap refused, clear hides content/no browser fallback,
+ordinary browser login preserved, candidate/root full gates, diff/links/pins/cleanup.
+Android/iOS renderer/navigation and legacy renewal explicitly deferred to next gate;
+no platform PASS inferred from Chrome transport. Review after first runtime or two failures.
+Rollback only owned candidate/factory; no downgrade of server authority. No Jev calls($0).
+
+| Criterion / expected behavior | Required? / N/A reason | Status | Date / environment | Evidence / limits |
+|---|---|---|---|---|
+| Minimum candidate closure and negative source controls | Yes | PASS | 3 October, sourcee5cc1d7; Node6/6 | 20delta,40modules/84edges;406byte-identical paths |
+| Actual Next/current controller profile and wrong-choir refusal | Yes | PASS | Final loopback production Next/current controller | Actual SDK, synthetic Auth/REST; not RLS/native renderer |
+| Foreign bootstrap, clear/no persistence, ordinary browser entry | Yes | PASS | Four fresh Chrome scenarios, foreign/no-session requests0 | Clear hides profile/new requests0; no key under any storage key |
+| Candidate and root full gates | Yes | PASS | Candidate11:36/41files406tests; root11:37/114files1178tests | lint/types/coverage/SW/build; not platform release |
+| Pins/diff/links/cleanup/scoped source and docs commits | Yes | PASS | Separate new7cd8d46 local pin; sourcee5cc1d7 | Historical1a014c4 immutable, document exit checks |
+| Android/iOS / legacy Next renewal | Deferred required release gate | NOT RUN | Next integrated checkpoint | Not this bounded goal |
+
+Exit: [minimum profile integration](../reports/2026-10-03-minimum-embedded-profile-candidate.md),
+[final runtime](../reports/090/2026-10-03-embedded-profile-runtime.json),
+[manifest](../reports/090/2026-10-03-embedded-profile-source-manifest.json).
+Sourcee5cc1d7 / candidate7cd8d460c68465055049dbf30192f7f5478bcf64, separate local
+codex/090-embedded-profile-candidate-20261003; tree49c0ce80e7d7a654b4f6904571ac3d7658ff5106.
+Bounded profile-bridge goal complete; whole090/R1/beta/full mobile compatibility OPEN/live NO-GO.
+No refresh credentials/browser seeding. Tests caught initial mock/signout, baseline lint,
+harness-invalid clear reason and generator binary-copy defects; repair/recheck evidence retained.
+Ordinary chat/upload/annotation/offline/SQL/Edge/package source retained; other permanent route
+API adapters still require audit. Self-review only. Removed candidate503364KiB/root.next503220KiB/
+coverage352KiB after pin; final21,340,272KiB free/no31090 or54491 listener. CLI marker preserved.
+No RN/hosted/source dependency/provider/site/real-user/deletion/push/CI/Jev($0) action.
+Next trusted-origin legacy-Next one-shot native renewal, exact Android flow and grouped iOS;
+independent review/secret-free logs/R1/fresh hosted preflight/refresh-forward-repair remain required.
+
 ### 3 October — exact candidate native-compatibility preflight
 
 Owner says plan and continue in the same measured manner. Entry6ffc82b/main, one writer;

@@ -6,22 +6,22 @@ Verify actual source/state, one writer, English records/Turkish user updates.
 
 ## Current result and next measurable checkpoint
 
-Source39923fa: [candidate native preflight](../docs/reports/2026-10-03-native-candidate-readiness-preflight.md)
-and [final runtime/pins](../docs/reports/090/2026-10-03-native-candidate-preflight-runtime.json).
-Bounded preflight goal PASS; native compatibility FAIL_REPRODUCED. Actual candidate Next
-/profil→/login, bridge0/lease0; current actual controller deadline covers/clears. Native
-legacy-Next recovery rejects before fetch/lease. Chrome transport, NOT Android/iOS RN callbacks/
-renderer; real native may refuse login navigation earlier. No production/mobile source change.
-Fresh Node7/7, mobileTS/4focused suites58tests, root114/1178/full gates and candidate build PASS.
-Provider comparison50modules/120edges/31delta is NOT minimum transplant scope;5 actual native
-compiler input hashes pinned. No new source branch/candidate pin or dependency change.
+Sourcee5cc1d7: [minimum embedded profile](../docs/reports/2026-10-03-minimum-embedded-profile-candidate.md),
+[runtime](../docs/reports/090/2026-10-03-embedded-profile-runtime.json)/[manifest](../docs/reports/090/2026-10-03-embedded-profile-source-manifest.json).
+New local codex/090-embedded-profile-candidate-20261003 at7cd8d460c68465055049dbf30192f7f5478bcf64;
+parent browser1a014c4 unchanged.20delta/406byte-identical paths,40modules84edges/five native pins.
+Actual Next/current controller: challenged profile visible, wrong choir/foreign refused,
+clear hides profile/no new request/no key persistence; four scenarios PASS. SDK/proof actual,
+Auth/REST synthetic, Chrome transport NOT RN renderer/navigation/RLS/platform acceptance.
+Node6/6; final candidate41files406tests/root114files1178tests/lint/types/coverage/SW/build PASS.
+Initial mock/signout/lint/driver clear-reason/binary-copy controls and repairs retained.
+No unrelated write/upload/annotation/offline/package/SQL/Edge/RN promotion. Profile-only,
+not full permanent route/mobile compatibility; previous negative preflight stays historical.
 
-Next short090 card: minimum existing access-only bridge/wiring/dependency cut points, then
-trusted-origin legacy-Next native one-shot recovery. No refresh-token sharing/bulk main or31-path
-promotion. Exact Android permanent profile/file/hash/401/403/A→B and grouped sensitive iOS
-acceptance required; minimum secret-free logging/independent review/manifest/hosted preflight/
-refresh-forward-repair/R1 packet before live scope. Whole090/R1/beta OPEN, live NO-GO.
-Bounded preflight completion is not native/product acceptance; negative controls remain failures.
+Next trusted configured-app-origin legacy-Next single-renewal support, then exact Android
+profile/file/hash/401/403/A→B and grouped sensitive iOS; audit remaining permanent-route APIs.
+No refresh-token sharing/arbitrary issuer. Logs/independent review/fresh hosted preflight/
+refresh-forward-repair/R1 still required. Whole090/R1/beta OPEN/live NO-GO; local goal only PASS.
 
 ## Preserved browser candidate and history
 
@@ -45,8 +45,8 @@ Local scoped tests/source/commits/owned cleanup allowed; unrelated CLI marker ex
 No hosted SQL/Edge/web/provider ACL/credentials/real-user/email/hardware/push/CI/distribution.
 DB→Edge→compatible clients/recovery before writes; Git revert is not data recovery;
 no automatic actorless-v1/078-defect rollback. Sole-writer self-review, not independent review.
-Latest candidate473164KiB/root.next477416KiB/coverage352KiB removed, contexts/Next closed/no18199.
-Final21,348,620KiB free; no new VM/emulator/APK. Dependencies/AVD/CoreSimulator/global caches/
+Latest embedded-candidate503364KiB/root.next503220KiB/coverage352KiB removed, contexts/Next/fixture closed/no31090/54491.
+Final21,340,272KiB free; no new VM/emulator/APK. Dependencies/AVD/CoreSimulator/global caches/
 user data/backup/original068 preserved. Fresh >=10GiB preflight/one heavy process/bounded retries.
 [R1 exclusions](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md) unchanged;
 protected0700/0600 backup outside Git, Vault/net/Storage metadata/bytes/password/settings excluded,

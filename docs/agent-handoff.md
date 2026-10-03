@@ -7,22 +7,23 @@ English agent records, Turkish user/product copy. One writer; verify recorded st
 
 ## Current checkpoint and next action
 
-Source39923fa: [exact candidate native preflight](reports/2026-10-03-native-candidate-readiness-preflight.md)
-and [runtime/source pins](reports/090/2026-10-03-native-candidate-preflight-runtime.json).
-Bounded preflight PASS; candidate native compatibility FAIL_REPRODUCED, Android/iOS NOT RUN.
-Actual production Next /profil→/login, bridge0/lease0; actual native controller covers/clears
-after missing-handshake deadline. Actual recovery rejects legacy Next URL/fetch0/lease0.
-Chrome transport is NOT RN renderer/navigation callbacks; real native may deny /login earlier.
-Node7/7, mobileTS/4focused suites58tests, root114/1178/full gates and exact candidate build PASS.
-Provider comparison50modules/120edges/31delta is NOT a minimal backport; native bundle5
-source hashes pinned. No production/mobile/candidate/source dependency upgrade or live action.
+Sourcee5cc1d7: [minimum embedded profile](reports/2026-10-03-minimum-embedded-profile-candidate.md),
+[runtime](reports/090/2026-10-03-embedded-profile-runtime.json)/[manifest](reports/090/2026-10-03-embedded-profile-source-manifest.json).
+New LOCAL codex/090-embedded-profile-candidate-20261003 at7cd8d460c68465055049dbf30192f7f5478bcf64,
+tree49c0ce80e7d7a654b4f6904571ac3d7658ff5106, parent immutable browser1a014c4.
+20delta/406byte-identical paths; profile/provider closure40modules84edges, five native compiler pins.
+Actual production Next/current native controller: challenged profile opens; wrong choir and
+foreign origin refused, clear hides profile/no new request, no credential persistence; four PASS.
+Actual SDK/web proof, synthetic Auth/REST and Chrome transport, NOT RN renderer/navigation/RLS.
+Node6/6; final candidate41files406tests/root114files1178tests/full gates PASS. Failed controls
+and binary-copy repair retained; no assertion removal/global lint disable. Scope is profile,
+NOT full permanent routes/private-file/native compatibility. No RN/source dependency/live action.
 
-NEXT: short090 work card for minimum existing access-only web bridge/wiring/dependency cut
-points, then trusted configured-app-origin legacy-Next native renewal. Never share refresh
-tokens or bulk transplant31 paths/main. Exact Android-first permanent profile/file consent/
-hash/401/403/A→B and grouped platform-sensitive iOS remain required. Secret-free media logging,
-independent review/manifest/hosted preflight/refresh-forward-repair/R1 packet precede live authority.
-090/R1/beta OPEN, live NO-GO; only bounded preflight goal complete, not native acceptance.
+NEXT: trusted configured-app-origin legacy-Next native one-shot renewal; no arbitrary issuer
+or refresh-token sharing. Then exact Android profile/file consent/hash/401/403/A→B and grouped
+sensitive iOS, including remaining permanent-route API audit. Secret-free media logging,
+independent review/fresh hosted preflight/refresh-forward-repair/R1 precede live authority.
+090/R1/beta OPEN, live NO-GO. Previous browser-native negative preflight remains historical.
 
 ## Preserved candidate and historical evidence
 
@@ -48,8 +49,8 @@ Local scoped source/tests/commits/owned cleanup allowed; no push/CI/hosted SQL/E
 ACL/password/config/real-user/email/hardware/distribution action. Git revert is not data recovery;
 DB→Edge→compatible clients/recovery before writes; no automatic078-defect or actorless-v1 rollback.
 Unrelated supabase/.temp/cli-latest excluded. Source/docs commits separate; self-review only.
-Latest candidate473164KiB/root.next477416KiB/coverage352KiB removed after final gates;
-browser/Next closed, no18199 listener;21,348,620KiB free. No emulator/VM/new APK, dependencies/
+Latest embedded-candidate503364KiB/root.next503220KiB/coverage352KiB removed after pin;
+browser/Next/fixture closed, no31090/54491 listener;21,340,272KiB free. No emulator/VM/new APK, dependencies/
 AVD/CoreSimulator/global caches/user data/backups preserved. Fresh runtime needs >=10GiB
 measured preflight, one heavy process, causal reassessment after two failed approaches.
 Protected R1 backup genova-090-r1-5bfGvo remains0700/0600 outside Git, original068 preserved.
