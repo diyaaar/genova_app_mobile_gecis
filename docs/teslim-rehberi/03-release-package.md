@@ -11,7 +11,7 @@ P1 manifest + accepted latest iOS/Android boundaries. Use 090/R1 and the existin
 
 Current first bounded outcome: [090 P3 version/compatibility inventory work card](../briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory),
 created by the [delivery-guide checkpoint review](../reports/2026-10-03-delivery-guide-checkpoint-review.md).
-It is IN PROGRESS: [executed partial inventory](../reports/2026-10-03-p3-entry-inventory.md)
+It is BLOCKED: [executed partial inventory](../reports/2026-10-03-p3-entry-inventory.md)
 verifies served source metadata and complete entry/test mapping but exact current
 SQL/Edge identities remain NOT RUN pending the approved connector. Full-source
 hook/log convergence, recovery/rehearsal and independent review remain required.

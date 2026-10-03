@@ -16,7 +16,7 @@ API/pages/locks/config and prerequisites retained, not a deployment instruction.
 No product code/config change.051 native stars already locally accepted22a19d6.
 CLI marker is unrelated, excluded. P2 test-support03b59b5; no owned runtime/copy.
 
-[Checkpoint](../docs/teslim-rehberi/checkpoint.md): **P3 IN PROGRESS / PARTIAL inventory** after
+[Checkpoint](../docs/teslim-rehberi/checkpoint.md): **P3 BLOCKED / PARTIAL inventory** after
 [P2 local acceptance](../docs/reports/2026-10-03-ios-p2-private-file-acceptance.md).
 Current iOS26.5/Release actual cancel0/PDF1→2/share-dismiss/return/close/removal/
 activeA→B403/expiry/valid-denial/lease/disk0/normal sign-in PASS. XCTestv3 fullflow;
@@ -34,13 +34,15 @@ Current [P3 inventory card](../docs/briefs/090-private-file-ticket-revocation-co
 production main/a13f696 observed; correct Supabase visible15of25ledgerIDs/17of20Edge
 slugs (21total), but exact SQL/current catalog/checksum/Edge version/source/config
 NOT RUN. Connector unavailable; suggestions/user correct-project connection request
-pending. Goal ACTIVE, not complete or P4. Do not use browser SQL/another connector.
+pending. Goal BLOCKED, not complete or P4. Do not use browser SQL/another connector.
 Full hook still HEAD-probes before native consent unlike P2 fixture; raw audioURL
 logs require narrow convergence, existing cache/offline/file labels preserved.
 No product/live/build/runtime/device change; freshfree21,395,268KiB. Jev1call/
 2484input/219output/$0.000104328estimate,two controls agree,not independentreview.
 Continuation2 verifies deployed chat-media-file Code import drift (old ticket.ts);
 connector still absent. Exact identities/ZIP status unverified; report addendum owns evidence.
+Continuation3/18:59UTC verifies same blocker three goal turns; no authorized independent
+inventory work or verified live job handle is available. Resume after approved connection.
 Next: complete exact target identities → narrow full-source convergence and affected
 acceptance → fresh scoped protected backup/isolated restore/full actual old-new-mixed
 client negative rehearsal → independent package review + exact operation authority.

@@ -17,7 +17,7 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ### 3 October — P3 first work card: exact version and compatibility inventory
 
-Status **IN PROGRESS / PARTIAL INVENTORY**. Planning entry `main/4e7ab14`; execution
+Status **BLOCKED / PARTIAL INVENTORY / NOT COMPLETE**. Planning entry `main/4e7ab14`; execution
 entry `main/e7424e8`, sole primary writer, unrelated CLI marker excluded. Owner asks
 for a measurable next goal pursued to completion. [Planning review](../reports/2026-10-03-delivery-guide-checkpoint-review.md);
 [executed inventory and gaps](../reports/2026-10-03-p3-entry-inventory.md).
@@ -66,8 +66,9 @@ fresh10GiB-floor/peak/owned-cleanup preflight; review allocated only small recor
 One actual bounded Jev review:2484input/219output,$0.000104328 estimate,5questions,
 zero retries; two controls agree. All selections/probabilities/provenance retained;
 advisory, not independent review. No private data/key export, product edits/build/
-runtime/device/deploy. Current goal remains ACTIVE while exact target row is missing;
-not complete/paused, not moved to P4. Source/test inventory helper under spike only.
+runtime/device/deploy. At the first checkpoint the goal stayed ACTIVE; continuation3
+below records the verified blocked threshold. Not complete/paused or moved to P4.
+Source/test inventory helper under spike only.
 
 Continuation2, entry8ff9ee2: prior turn made progress (committed inventory), blocker
 audit2. Fresh plugin search reports Supabase installed=false and no Supabase tools/
@@ -93,6 +94,19 @@ retention or cleanup claimed. Final free21,375,808KiB; no owned runtime or code 
 Partial source difference and repeated missing connector recorded in existing report;
 no new Jev call/cost, no same-source product build/test rerun. Goal remains ACTIVE;
 this is blocker observation2, not blocked status or a redefinition of completion.
+
+Continuation3, entry13c82c2,18:59:09UTC: previous turn classified progress (direct
+deployed-source drift evidence and scoped commit), not verified wait. Fresh tool
+inventory still exposes no Supabase connector; plugin search installed=false with
+the same pending suggestion. The same mandatory correct-project SQL/Edge identity
+blocker has now repeated in three consecutive goal turns. No verified live tool/job
+handle can deliver the missing metadata; browser-source/download alternatives have
+declared limits and cannot substitute for required SQL/catalog/config checks. All
+authorized independent mapping/prerequisite work is committed. No production repair,
+other-project/env/CLI fallback, repeated ZIP request, more Jev or owner QA permitted
+as a substitute. Goal status BLOCKED; objective unchanged and first required row
+NOT RUN. Resume only after approved supabase-genesinova connection becomes available
+for Genesinova/hievmwwctjjlhmssoxsu, then revalidate target and finish exact identities.
 
 Exit requires every inventory row PASS; then next P3 recovery/compatibility rehearsal
 card in this same brief. Connector/version absence yields an explicit partial

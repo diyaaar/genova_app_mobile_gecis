@@ -6,7 +6,7 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
-- Active plan: **P3 — compatible, reviewed and recoverable release package**, IN PROGRESS / PARTIAL inventory after local P2 acceptance.
+- Active plan: **P3 — compatible, reviewed and recoverable release package**, BLOCKED / PARTIAL inventory after local P2 acceptance.
 - Current source outcome: [GENOVA-BETA-20261003-P1](../reports/090/2026-10-03-p1-beta-candidate.md)
   and [exact manifest](../reports/090/2026-10-03-p1-beta-candidate.json).
 - Latest accepted checkpoint: [P2 current iOS](../reports/2026-10-03-ios-p2-private-file-acceptance.md).
@@ -36,12 +36,17 @@ Historical records keep their original date/revision. [Guide](README.md).
   shared090 authority/v2). Exact versions/hashes still NOT RUN; ZIP handle unavailable,
   supported status UI blocked, no workaround or download cleanup claim. Free21,375,808KiB.
   No product change/additional Jev cost; blocker observation2, goal ACTIVE.
+- Continuation3 at13c82c2/18:59UTC: same missing approved connection verified for
+  third consecutive goal turn; goal **BLOCKED**, NOT COMPLETE, scope unchanged.
+  Exact SQL/catalog/checksum/Edge version/source/config row remains NOT RUN; no
+  independently ready authorized inventory work or verified live job handle.
+  Resume at next action1 after correct-project connection, not another small task.
 
 | Plan | Execution status | Input → required output |
 |---|---|---|
 | [P1](01-candidate.md) | ACCEPTED source inventory; self-review, not release acceptance | WF-016 audit → immutable source/feature/blocker manifest |
 | [P2](02-ios.md) | ACCEPTED LOCAL; required matrix PASS, self-review | manifest + Android pins → current synthetic iOS evidence, not hosted/hardware |
-| [P3](03-release-package.md) | IN PROGRESS; partial inventory, exact SQL/Edge/compatibility/recovery/review NOT RUN | same candidate → reviewed compatibility/recovery package |
+| [P3](03-release-package.md) | BLOCKED inventory; exact SQL/Edge/compatibility/recovery/review NOT RUN | same candidate → reviewed compatibility/recovery package |
 | [P4](04-storage.md) | WAITING P3 | authorized package → deployed compatible readers/writers and reconciled private storage |
 | [P5](05-android-beta.md) | WAITING P4 | active services/storage → installed signed Android beta |
 | [P6](06-full-product.md) | WAITING P5; decision preparation possible | beta evidence → full preserved commercial feature matrix |

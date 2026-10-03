@@ -6,7 +6,7 @@ Read [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md); relevant
 [decisions](../KARARLAR.md)/[MIGRATION](../MIGRATION.md). English records/Turkish user copy.
 One writer; verify HEAD, dirty ownership, resources and exact permission on resume.
 
-## Current execution — P1 source + P2 local accepted, P3 partial inventory
+## Current execution — P1 source + P2 local accepted, P3 inventory BLOCKED
 
 [Playbook](teslim-rehberi/README.md) → moving [checkpoint](teslim-rehberi/checkpoint.md).
 Candidate **GENOVA-BETA-20261003-P1**: [source/feature/blocker record](reports/090/2026-10-03-p1-beta-candidate.md)
@@ -27,13 +27,13 @@ and build fresh. Source/test-support03b59b5 + separate P2 record commit (verify 
 One Jev triage/1108input/215output/estimated$0.000046536, advisory only.
 
 NEXT [P3 inventory card](briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory),
-IN PROGRESS / PARTIAL. [Executed inventory](reports/2026-10-03-p3-entry-inventory.md),
+BLOCKED / PARTIAL / NOT COMPLETE. [Executed inventory](reports/2026-10-03-p3-entry-inventory.md),
 entrye7424e8,610pins/62focusedtests and complete entry/test/recovery mapping PASS.
 Correct Chrome Vercel production metadata verifies served main/a13f696. Correct
 Supabase visible15of25ledgerIDs and17of20candidate Edge slugs (21total) do not verify
 actual definitions/SQL checksums/deployed versions/source/config. Approved connector
 unavailable; connection suggested and owner asked to enable Genesinova project
-hievmwwctjjlhmssoxsu. No browser SQL/alternateconnector/env fallback. Goal remains ACTIVE;
+hievmwwctjjlhmssoxsu. No browser SQL/alternateconnector/env fallback. Goal BLOCKED;
 required identity row NOT RUN. Source-confirmed full hook pre-consent HEAD mismatch
 with P2 fixture and raw audioURL logging require narrow follow-up convergence,
 not blind old-overlay replay (embedded cache/offline/file labels already present).
@@ -42,6 +42,9 @@ two controls agree; advisory only. Fresh free21,395,268KiB; no owned runtime.
 Continuation2: connector still absent; visible chat-media-file Code imports old
 ticket.ts, directly differing from frozen shared090/v2. Exact identities still open;
 ZIP completion/path unverified, no workaround/cleanup claim. See inventory addendum.
+Continuation3 verifies same missing connector for third consecutive goal turn;
+independent inventory work committed, no verified live job handle. Resume exact
+SQL/Edge identities only after correct connection; do not mark complete or start P4.
 [Earlier guide review](reports/2026-10-03-delivery-guide-checkpoint-review.md)
 reverified610 product/157native/5server/five sidecar hashes at4e7ab14; corrected stale
 runbook pointer, no product/live action. Its planning sequence was exact served/SQL/Edge/full-route and

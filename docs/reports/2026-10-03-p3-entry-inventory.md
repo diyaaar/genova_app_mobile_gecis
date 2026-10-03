@@ -5,7 +5,7 @@ Candidate **GENOVA-BETA-20261003-P1**, frozen `c2ec9b09a44c048c7c6a0c31f0ac99566
 [Owning card](../briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory)
 → [P3](../teslim-rehberi/03-release-package.md) → existing [runbook](../private-r2-release-runbook.md).
 
-**PARTIAL / NO PROMOTION.** Local dependency/test mapping and recovery/operation
+**BLOCKED / PARTIAL / NO PROMOTION.** Local dependency/test mapping and recovery/operation
 prerequisites are complete. Current served-web metadata is verified; exact applied
 SQL and deployed Edge source/config equivalence is NOT RUN. Neither this inventory
 nor earlier P2 closes whole090, P3, storage activation, beta or stores.
@@ -255,3 +255,28 @@ or filesystem search for downloads. ZIP completion/location/size and removal can
 be verified; no success/cleanup claimed. Actual free21,375,808KiB, still abovefloor;
 no owned runtime. Current product/previous immutable artifacts unchanged, no new Jev
 inference or cost. Existing connector remains necessary for exact target completion.
+
+## Continuation3 — completion and blocked audit
+
+Entry13c82c2,18:59:09UTC. Previous turn was progress: direct deployed import/closure
+drift evidence and committed addendum; no verified wait. Fresh current tool discovery
+still has no Supabase connector, and plugin search still reports installed=false
+with the original pending suggestion. Same blocker on three consecutive goal turns.
+
+Completion audit: served source metadata verified; frozen/minimum-source/complete
+entry/five-family/old-new-mixed/cache test mapping and recovery/review/per-operation
+prerequisites committed. **Exact applied SQL bodies/checksums/current catalog and
+deployed Edge numeric versions/source/config identities remain missing**. UI ledger,
+slugs, observed old import and local passes do not prove those requirements. No
+verified live process/job/tool handle supplies the missing evidence; download
+completion/path remain unverified, not an invented background wait. Remaining
+current-goal work requires the approved correct-project connection; no independently
+ready authorized task remains that would satisfy the missing identities. Product
+fixes/live operations belong to later scoped cards and are not a substitute.
+
+Goal marked **BLOCKED**, not complete/paused; original objective and release gates
+unchanged. No additional Jev spend/build/product test/hosted change. Resume after
+supabase-genesinova is available for Genesinova project hievmwwctjjlhmssoxsu: verify
+target/account, read exact SQL/catalog/Edge identities, reconcile and close only if
+all required inventory rows pass. Do not ask owner to perform manual QA or paste
+private SQL/secrets. Earlier62-test boundaries are not changed by this audit.
