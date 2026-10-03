@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-03",
+  "requestSha256": "b5e812bae8f4e679189b6618d92c1d5b1eeeb90de2e64a5f18df6ebef19117cd",
+  "model": "jev-1.13.0",
+  "answers": {
+    "good_control": {
+      "type": "choice",
+      "choice": "separate",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "conflated": 0,
+        "separate": 1
+      }
+    },
+    "source_strategy": {
+      "type": "choice",
+      "choice": "full",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "full": 1,
+        "profile": 0
+      }
+    },
+    "evidence": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 1,
+      "probabilities": {
+        "supported": 1,
+        "gap": 0,
+        "unknown": 0
+      }
+    },
+    "dependencies": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "gap": 0,
+        "supported": 1
+      }
+    },
+    "scope": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "gap": 0,
+        "supported": 1
+      }
+    },
+    "recovery": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "gap": 0,
+        "supported": 1
+      }
+    },
+    "strongest_risk": {
+      "type": "choice",
+      "choice": "unproved_package",
+      "confidence": 1,
+      "probabilities": {
+        "cancelled_final": 0,
+        "unknown": 0,
+        "unproved_package": 1,
+        "missing_source": 0,
+        "manual_qa": 0
+      }
+    },
+    "bad_control": {
+      "type": "choice",
+      "choice": "reject",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "accept": 0,
+        "reject": 1
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 5385,
+    "output_tokens": 324
+  },
+  "estimatedUsd": 0.00022617,
+  "pricing": "https://docs.typesafe.ai/models; estimate not invoice",
+  "retries": 0
+}

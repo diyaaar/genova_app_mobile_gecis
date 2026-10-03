@@ -15,6 +15,74 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — P1 source-complete beta candidate manifest
+
+Entry `main/3fb3a2c`, sole writer; unrelated `supabase/.temp/cli-latest` preserved.
+Owner explicitly requests a measurable P1 goal and persistence to acceptance.
+One result: a reconstructible candidate manifest for the declared Android beta,
+with exact web/native/shared/SQL/Edge/lockfile identities, every exposed feature,
+source dependencies, reusable dated Android evidence and assigned release blockers.
+Source freeze is separate from P2 iOS and P3–P5 runtime/release acceptance.
+
+Read current AGENTS, English handoff/active, P1/checkpoint, guide/work cycle,
+delivery controls, current 090 work cards and mandatory matrix, WF-013, relevant
+MIGRATION/decisions and candidate/Android manifests/reports. Complete TypeSafe and
+Supabase skills read; current TypeSafe index/API/citation-check and Supabase changelog
+checked (web Markdown fetch limitation; source inventory changes no Supabase API).
+No raw chat reading by the primary or whole conversation export. Existing dated
+profile-only and browser candidates remain distinct evidence inputs, not automatic
+proof of full beta routes. Current shell exposes chat and four permanent WebViews;
+their source/dependencies must be included or actual owner-authorized scope recorded.
+
+Allowed: one task-specific source inventory/verifier and bounded Jev helper under
+`spike/`; candidate manifest/report and redacted typed Jev records under
+`docs/reports/090/`; this brief, checkpoint/short handoff/active and a factual stale
+native-star status correction in MIGRATION. No product/source/schema/dependency
+patch, build, install, emulator, provider, account, recipient or live write. Read-only
+repository/remote/deployment metadata checks within task scope; unavailable served
+revision stays an explicit later environment gate, not a guessed source identity.
+Rollback owned source/docs commit only, no runtime/data mutation.
+
+Three actions: (1) verify refs/source closures and map exposed calls to exact SQL,
+Edge and client dependencies; (2) build one manifest, ask Jev narrow semantic
+questions over redacted evidence and challenge omissions/overclaims; (3) verify
+reconstruction/hashes/feature-to-blocker mapping/links/diff and commit accepted P1
+with an actionable automated P2 handoff. No extra independent roadmap.
+
+Resource preflight: available22,768,708KiB; no task runtime/copy. Added source/JSON
+and reports bounded2MiB; use Git objects and in-memory bytes, no runtime materialization
+or dependency copy. Current installed tools reused; no heavy process. Preserve
+dependencies/simulators/backups/user data and immutable older manifests.
+
+Jev: owner already authorizes useful same-day semantic assistance and cost reporting.
+At most3 narrow calls, each<=60KB request, pinned `jev-1.13.0`,45s timeout,
+zero automatic retries, advisory$0.02 total at documented$0.042/M input/free output.
+Whitelist source facts/feature summaries and two synthetic controls only. Existing
+same-provider key extracted locally into memory, never argv/output/files/state.
+Retain request/source hashes, questions, model/distributions/usage and disagreements;
+source verification owns acceptance and no AI result grants authority.
+
+| P1 criterion / expected behavior | Required? | Status | Evidence / limit |
+|---|---|---|---|
+| One candidate ID with immutable component refs/trees and reproducible source definition | yes | PASS |3October GENOVA-BETA-20261003-P1, frozen c2ec9b0/tree and product-equivalent entry3fb3a2c;610 pins replayed/working bytes matched |
+| Every exposed beta route/action and retained final feature reconciled | yes | PASS | Actual Shell/AppRoot/route policy + feature matrix;051 stale stars status corrected, final feature scope retained |
+| Literal/declarative SQL/Edge/API dependencies pinned and ordered, prerequisites distinguished | yes | PASS |842 local imports/20 Edge closures/38RPC definitions or baseline adaptation source/25 forward SQL; historical exclusions, no directory replay; hosted facts P3 |
+| Valid Android evidence reused only at matched native/server/fixture hashes | yes | PASS |157native/5server matched;426 fixture pins rebuilt in memory; complete production-web/currentiOS proof explicitly excluded |
+| Every known release blocker assigned a concrete P2/P3/P4/P5 action | yes | PASS |B1–B6 mapped, F1–F2 retained P6/P7; whole090/R1/beta/runtime gates OPEN |
+| Jev questions executed with actual costs/provenance and control checks | yes | PASS | Actual1call/8questions/5385input/324output/$0.00022617 estimated; two controls; full package risk retained, not independent review |
+| Reconstruction/links/secret/scope/diff/cleanup and scoped commit | yes | PASS | Generator replay,178 final links/anchors,610 working-source pins, secret/diff checks; source/doc-only scoped090 commit owns this record, no build/runtime/hosted mutation |
+
+P1 source inventory **ACCEPTED LOCALLY**,3October. [Record/feature/blockers](../reports/090/2026-10-03-p1-beta-candidate.md)
+and [machine manifest](../reports/090/2026-10-03-p1-beta-candidate.json).
+One deterministic source helper + one bounded Jev helper in spike; small evidence,
+no runtime copies. Node24.13.1 verification; final available22,747,728KiB, owned
+record/source set<2MiB, no task process left. Production/config/dependency/schema
+unchanged; pnpm/mobile/build/device/hosted tests N/A for this inventory, not new PASS.
+Scoped `090: freeze source-complete beta candidate and P2 handoff` commit owns source
+helpers/docs (no production patch). Preserve unrelated CLI marker. No independent
+review claimed; later required checks stay open. Checkpoint advances to P2 automated
+current iOS matrix, with installedtools/disk preflight; no owner manual QA.
+
 ### 3 October — complete original automated Android consent/share/cleanup goal
 
 Entry538c94f/main, sole writer, unrelated CLI marker preserved. Previous goal turn
