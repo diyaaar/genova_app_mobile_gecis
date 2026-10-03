@@ -69,3 +69,13 @@ Free21,280,652KiB after APK build. Runtime retained only for immediate owner-rea
 sequence until13:55UTC /16:55Istanbul; then stop/persist truthful unrun evidence and
 cleanup before another handoff unless owner actively continues the sequence.
 Required consent/page/close/B/browser persistence and iOS rows remain unaccepted.
+
+### Owner cancel checkpoint,13:39UTC /16:39Istanbul
+
+Owner reported “yaptım sıkıntı yok” after the explicit cancel-only instruction.
+Actual native file.open.request accepted; current GET0/HEAD0/provider0/unknown0/
+failures0 verified. Only then operator `cancel-observed` POST succeeded and safe
+event appears in current observation. Cancel/return + zero read PASS; whole
+page/close/B row remains NOT RUN. Next owner action: approve once, observe local
+page1/40 then Sonraki2/40; do not share/print/close/switch until read verified.
+TypeSafe inspected; this is deterministic local observation, no inference/spend.

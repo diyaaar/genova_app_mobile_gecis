@@ -18,6 +18,8 @@ HEAD0/provider0/unknown0/failures0. Actual cancel first requested, not observed 
 Ready-owner runtime retained until13:55UTC/16:55Istanbul; owned server87432,
 emulator87465/5554, three reverses. See report for hashes/exact cleanup. No UI pass
 or operator event inferred from counts; immutable inlinev4 written on acceptance/stop.
+13:39UTC owner actual cancel/return + accepted native request/GET0/HEAD0/provider0
+PASS, then cancel-observed200 recorded. Next approve/page1→2; no share/print/B yet.
 
 Current32aba65, owner-ready resumed12:27UTC: [consent/share checkpoint](../docs/reports/2026-10-03-android-candidate-consent-share.md).
 Actual7cd8d46 rendered homework anchor metadata absent; minimal passive metadata patch.

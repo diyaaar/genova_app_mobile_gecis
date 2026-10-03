@@ -22,6 +22,9 @@ no actual cancel event yet. Immediate runtime until13:55UTC/16:55Istanbul:
 serverPID87432/emulatorPID87465/emulator5554/reverses31090/54491/18092; initial
 app absent, install owned. Hashes/retention/cleanup in current report. Do not mark
 UI complete or persist fabricated operator events. New inlinev4 writes on stop/pass.
+At13:39UTC owner actual cancel/return reported, accepted file request and zeroGET/
+HEAD/provider verified; then operator cancel-observed200 recorded. Cancel PASS;
+next actual approve/page1→2, no share/print/B yet. Whole flow still unaccepted.
 
 Current32aba65, owner-ready resumed12:27UTC; [Android consent/share checkpoint](reports/2026-10-03-android-candidate-consent-share.md).
 Actual rendered7cd8d46 HomeworkCard lacked passive metadata; minimal candidate patch.
