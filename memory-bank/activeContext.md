@@ -13,14 +13,22 @@ P1 **SOURCE ACCEPTED**, candidate GENOVA-BETA-20261003-P1:
 Frozen productc2ec9b09a44c048c7c6a0c31f0ac99566c4643f0; entry3fb3a2c byte-equivalent.
 610SHA256pins/842localimports/20Edgeclosures/38RPCs/25forwardSQL exact identities;
 API/pages/locks/config and prerequisites retained, not a deployment instruction.
-No code/config change.051 native stars already locally accepted22a19d6; corrected
-stale MIGRATION status. CLI marker is unrelated, excluded. No owned runtime/copy.
+No product code/config change.051 native stars already locally accepted22a19d6.
+CLI marker is unrelated, excluded. P2 test-support03b59b5; no owned runtime/copy.
 
-[Checkpoint](../docs/teslim-rehberi/checkpoint.md): **P2 READY**, latest iOS matrix
-NOT RUN. Next: installedtools/resources/cleanup preflight → agent current iOS
-consent/PDF1→2/share-dismiss/return/close/removal/B/expiry/WebView/guard-off evidence
-→ clean and hand P3 only when required rows pass. No owner manual QA, no unnecessary
-same-source Android rerun; missing automation stays blocker rather than owner QA.
+[Checkpoint](../docs/teslim-rehberi/checkpoint.md): **P3 READY** after
+[P2 local acceptance](../docs/reports/2026-10-03-ios-p2-private-file-acceptance.md).
+Current iOS26.5/Release actual cancel0/PDF1→2/share-dismiss/return/close/removal/
+activeA→B403/expiry/valid-denial/lease/disk0/normal sign-in PASS. XCTestv3 fullflow;
+HTTPv2/authorityv2; actual SecureStore retained.610 product pins unchanged. Mobile465,
+focused26, root1178/build fresh. Failed UI/variant/cache attempts preserved; fixture-only
+no-store repair, not hosted-provider proof. Owned device/process/build/runtime/PNG/log/
+root outputs cleaned; free21,452,752KiB. Jev1triage/5questions/1108input/215output/
+estimated$0.000046536; self-review not independent review; no owner QA.
+Next: exact served/SQL/Edge/full-route and minimal convergence inventory → fresh
+scoped protected backup/isolated restore/old-new-client negative rehearsal → actually
+independent package review + exact operation authority. Actual Auth/REST/private-file
+cache headers/native persistence remain P3 check. No blind promotion or live activation.
 
 Android [fullv5](../docs/reports/090/2026-10-03-android-candidate-full-share-http-v5.json)
 dated3October14:04UTC PASS_HTTP_NATIVE:157native/5server matched frozen source,
@@ -37,7 +45,7 @@ private data exported. Previous17-chat audit stays dated; no primary raw-chat re
 
 ## Still-open product and authority gates
 
-P2latestiOS; P3servedrevision/appliedSQL/Edge/config/fullAPI/oldclients/freshrecovery/
+P2 locallyPASS only; P3servedrevision/appliedSQL/Edge/config/fullAPI/oldclients/freshrecovery/
 independentreview; P4actualR2readers/writers/mapping/flags/privateACL; P5installedsigned
 usableAndroid/invitenegatives/exposedcapability; P6fullnative/push/commercial; P7bothstores.
 Whole090/R1OPEN.25SQL source changes are not hosted applied IDs. Historical eight-digit/

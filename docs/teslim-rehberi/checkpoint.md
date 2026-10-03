@@ -6,21 +6,23 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
-- Active plan: **P2 — current iOS private-file acceptance**, READY after P1.
+- Active plan: **P3 — compatible, reviewed and recoverable release package**, READY after local P2 acceptance.
 - Current source outcome: [GENOVA-BETA-20261003-P1](../reports/090/2026-10-03-p1-beta-candidate.md)
   and [exact manifest](../reports/090/2026-10-03-p1-beta-candidate.json).
-- Next product work card: grouped iOS in existing [090](../briefs/090-private-file-ticket-revocation-contract.md).
-  Do not create a replacement that closes 090's unrun rows.
+- Latest accepted checkpoint: [P2 current iOS](../reports/2026-10-03-ios-p2-private-file-acceptance.md).
+  Next work stays in [090/R1](../briefs/090-private-file-ticket-revocation-contract.md);
+  do not create a replacement that closes its unrun hosted/release rows.
 - Single writer: primary agent. Unrelated `supabase/.temp/cli-latest` is modified;
   preserve and exclude it. Recheck actual ownership on every resume.
-- No owned runtime started by this planning task; fresh resources required before builds.
+- P2-owned simulator/processes/generated native/runtime/root outputs cleaned; free21,452,752KiB.
+  No active owned runtime. Verify fresh resources before P3; preserve existing caches/deps/user data.
 - Whole 090/R1, active storage cutover, installed beta and two-store acceptance remain OPEN.
 
 | Plan | Execution status | Input → required output |
 |---|---|---|
 | [P1](01-candidate.md) | ACCEPTED source inventory; self-review, not release acceptance | WF-016 audit → immutable source/feature/blocker manifest |
-| [P2](02-ios.md) | READY; required latest matrix NOT RUN | manifest + Android pins → current iOS evidence |
-| [P3](03-release-package.md) | WAITING P2; safe inventory preparation possible | same candidate → reviewed compatibility/recovery package |
+| [P2](02-ios.md) | ACCEPTED LOCAL; required matrix PASS, self-review | manifest + Android pins → current synthetic iOS evidence, not hosted/hardware |
+| [P3](03-release-package.md) | READY; required compatibility/recovery/review NOT RUN | same candidate → reviewed compatibility/recovery package |
 | [P4](04-storage.md) | WAITING P3 | authorized package → deployed compatible readers/writers and reconciled private storage |
 | [P5](05-android-beta.md) | WAITING P4 | active services/storage → installed signed Android beta |
 | [P6](06-full-product.md) | WAITING P5; decision preparation possible | beta evidence → full preserved commercial feature matrix |
@@ -41,7 +43,7 @@ of WF-017 does not turn any row above into PASS.
 | Last full Android file source | `c2ec9b0`; 157 native/5 server/426 candidate pins | Synthetic emulator/dispatcher, not hosted/physical/iOS |
 | DB/Edge source requirements |25 forward SQL identities,20 exact Edge entry closures/config; prerequisite/historical exclusions in manifest | Actual applied/deployed set P3; never directory replay/bulk deploy |
 | Storage snapshot | 42 objects/60,969,062 bytes copied; 49 MP3/192,361,428 bytes pending | Dated 070–076 evidence; inventory must be refreshed before writes |
-| Latest iOS file acceptance | NOT RUN | Earlier iOS evidence predates this candidate's changes |
+| Latest iOS file acceptance |3Oct current P2 local PASS, XCTestv3/HTTPv2/authorityv2/disk0/normal sign-in | Synthetic iOS26.5, not full Next/RLS/provider/hardware/beta |
 
 Evidence: [Jev/source audit](../reports/2026-10-03-jev-conversation-direction-audit.md),
 [Android full flow](../reports/2026-10-03-android-full-share-flow.md),
@@ -51,13 +53,18 @@ Evidence: [Jev/source audit](../reports/2026-10-03-jev-conversation-direction-au
 
 ## Next three actions
 
-1. In 090, verify P1 pins and inspect installed iOS simulator/automation/toolchain;
-   measure free disk, projected peak and owned cleanup targets before one heavy process.
-2. Run current agent-operated consent/PDF/page1→2/share-dismiss/close/B/expiry/
-   WebView/guard-off matrix against exact guarded native source and426-pin fixture.
-   The profile fixture is not full production-web proof. Do not repeat unchanged Android.
-3. Record required outcomes/invalidations, clean owned output, hand to P3 only after
-   P2 acceptance. Missing automation is a blocker, never owner manual QA.
+1. Read P3/R1/runbook and verify exact currently served/DB/Edge dependencies plus
+   minimum browser/profile repair convergence, including actual cache headers.
+2. Prepare scoped fresh protected backup/isolated restore and old/new-client/five-file-
+   family/tenant/role/session negative rehearsal; retain recovery exclusions honestly.
+3. Obtain actually independent package review and per-operation target/version/data/
+   cost/recovery authority. No bulk-main promotion or live activation implied by P2.
+
+P2 source/test-support03b59b5, separate `090: accept current iOS P2 and hand off release compatibility`
+record commit. All610 product pins unchanged; fresh mobile465, focused26, root1178/build.
+Jev1 bounded triage/5questions/1108input/215output/estimated$0.000046536; fresh tests,
+not probabilities, established no-cache fixture repair. Actual hosted headers remain
+P3 risk. Failed attempts retained; self-review not independent review; no owner QA.
 
 P1 verification:610 source hashes,842 local imports,20 Edge closures,38 RPC
 definitions/adaptation sources and157native/5server/426fixture reuse verified.

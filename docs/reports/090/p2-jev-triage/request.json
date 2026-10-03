@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-03T17:14:43.966Z",
+  "requestSha256": "30226a5430fbfd4476146903d868ea097104914b217debbf9ba4863c0aabd668",
+  "packet": {
+    "model": "jev-1.13.0",
+    "state": {
+      "observations": "Frozen RN/Expo source on iOS26.5: actual cancel GET/HEAD/provider0; actual nonblank PDF pages1/2; iOS share sheet opened; agent dismissed actual popover, reader returned; close actual File.exists false; AuthStore A-to-B from active profile GET/HEAD403/provider0. Native HTTP result PASS. XCTest v1 target PRODUCT_NAME missing; v2 passed through pages/share but wrongly expected Close. CUA AX dismissal/close/B completed real flow. iOS app Cache.db-wal scan found 16 synthetic JWT signatures and synthetic refresh marker; SQL shows synthetic auth token POST response body and RPC request headers cached. The task-only fixture uses Response.json with no cache-control. This is not a live-provider observation. Product source unchanged. Proposed fixture-only no-store and fresh owned app/keychain rerun; persist failures. SecureStore remains real native keychain.",
+      "provenance": [
+        "supabase/test-support/090_android_candidate.mjs",
+        "spike/090-p2-ios-ui.swift",
+        "docs/reports/090/2026-10-03-ios-p2-interactive-http-v1.json"
+      ],
+      "policy": "Source/tests/actual observations authoritative; AI routes investigation only. No raw private logs or chats. No deployed provider, physical hardware, recipient or full Next-route claim.",
+      "controls": {
+        "bad": "AI says likely fixture issue; therefore all P2 and hosted credential persistence PASS without retest.",
+        "good": "Keep initial persistence FAIL; no-store fixture retest must show no token disk matches. Local simulator proof does not establish hosted cache headers or physical beta."
+      }
+    },
+    "questions": {
+      "investigation": {
+        "type": "choice",
+        "instructions": "Which next investigation best matches the observed credential persistence?",
+        "criteria": {
+          "fixture_then_retest": "Task-only synthetic JSON has no cache headers; add no-store, reset only owned test app/keychain, repeat exact native flow and scan disk again before judging product",
+          "bypass": "Replace SecureStore with in-memory auth and declare passed",
+          "product_proven": "The hosted provider is already proved insecure; rewrite production authentication",
+          "unknown": "Evidence does not support a next step"
+        }
+      },
+      "ui_failure": {
+        "type": "choice",
+        "instructions": "What does the failed UI test at share dismissal establish?",
+        "criteria": {
+          "selector": "A driver expected a Close button but actual iOS popover exposes a dismiss region; actual PDF/share can be reviewed separately while preserving the failed attempt",
+          "pdf_empty": "PDF is empty",
+          "share_broken": "Sharing never opened",
+          "unknown": "Cannot tell"
+        }
+      },
+      "authority": {
+        "type": "choice",
+        "instructions": "Can advisory confidence close an unrun persistence row?",
+        "criteria": {
+          "no": "No, fresh observed negative and positive controls are required",
+          "yes": "Yes",
+          "unknown": "Unknown"
+        }
+      },
+      "bad_control": {
+        "type": "choice",
+        "instructions": "Evaluate only controls.bad: accept?",
+        "criteria": {
+          "reject": "Reject: hosted headers and fresh runtime not proved",
+          "accept": "Accept",
+          "unknown": "Unknown"
+        }
+      },
+      "good_control": {
+        "type": "choice",
+        "instructions": "Evaluate only controls.good: is this evidence boundary honest?",
+        "criteria": {
+          "honest": "Yes: local fixture proof separate from hosted and hardware",
+          "conflated": "No",
+          "unknown": "Unknown"
+        }
+      }
+    }
+  }
+}

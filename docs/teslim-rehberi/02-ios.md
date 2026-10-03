@@ -46,6 +46,13 @@ not physical-device/stylus/background-audio proof; remaining hardware rows stay 
 
 ## Acceptance and handoff
 
+3 October: **ACCEPTED LOCAL P2**, [current evidence](../reports/2026-10-03-ios-p2-private-file-acceptance.md).
+Required matrix passed with agent XCTest/Computer Use, current iOS26.5 signed Release,
+real SecureStore, actual native PDF/share/cleanup/AuthStore and bounded synthetic ports.
+All610 product pins unchanged; mobile465/focused26/root1178/build fresh; owned outputs
+cleaned. Test fixture caching/selector/variant failures preserved, then retested.
+This advances P3, not hosted/provider/full-web/hardware/beta or whole090/R1 acceptance.
+
 Every row is recorded in 090 with date/revision/command/environment/evidence/limit.
 New RN code: `npx tsc --noEmit && npm test` in `apps/mobile`; shared/web/build changes:
 root `pnpm check`, plus affected runtime gates. Do not add a general test framework.

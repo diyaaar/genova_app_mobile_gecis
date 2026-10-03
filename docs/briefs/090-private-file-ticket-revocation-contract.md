@@ -15,6 +15,91 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — P2 agent-operated current iOS private-file acceptance
+
+Entry `main/8673592`, single primary writer; unrelated CLI marker preserved.
+Owner requests a persistent measurable P2 goal, all mobile QA agent-owned. One
+outcome: current frozen native source + exact426-pin profile fixture on iOS prove
+cancel0/PDF65905B/hash/pages1→2/actual share-dismiss-return/close-removal/activeA→B
+oldGET+HEAD403/no provider, expiry/valid-denial and WebView/normal-mode boundaries.
+P2 does not accept the whole full-production web, hosted RLS, physical devices or beta.
+
+Read AGENTS/handoff/active, P1 manifest+record, P2/checkpoint, transition guide/work
+cycle/resource controls, relevant MIGRATION/decisions/current090, Android fullv5
+and prior iOS legacy evidence; actual native wrapper/PDF/WebView/files/Auth and
+candidate/fixture factories. Complete TypeSafe skill and live index read. No raw
+conversation input. Existing Xcode26.6/CocoaPods1.17/Node24 and iOS26.5 installed.
+First Simulator Computer Use lookup without a booted device timed out; historical
+CUA input limitation is not a product defect or permission to request owner QA.
+
+Allowed: minimal platform/report parameterization and focused tests in existing
+`supabase/test-support/090_android_candidate.mjs` without altering Android defaults/
+authority assertions; focused `090_android_interactive.mjs` cancel evidence repair
+now enforces HEAD0 as well as GET0 (old helper allowed HEAD despite both platform
+matrices requiring zero; dated Android actual record already has HEAD0). No product
+behavior or Android source pins changed. One task-specific iOS command helper and, if CUA cannot input,
+one bounded Apple XCTest UI driver/generator under `spike/`. Its task-only Metro
+variant override and redacted disk/build evidence collector are also allowed;
+one bounded Jev triage source/packet under `spike/typesafe` and reports. Existing native
+acceptance source is reused unchanged where possible. Only reproduced in-scope
+native file/WebView defects may be repaired with focused regression and revised
+P1 source identity. No dependency/schema/provider/account/recipient/live change.
+Records under `docs/reports/090/`, owning090/checkpoint/handoff/active. Product/source
+and document commits separate; source/specimens only under spike, generated native
+projects/builds/devices/screenshots removed after dependent checks.
+
+Three actions: (1) verify pins and resources; create one isolated named iOS test
+device and prove automation on a fresh screen before heavy builds; (2) build exact
+426-pin web and current native Release, run agent iOS matrix against synthetic
+loopback services; (3) fix only reproduced faults, run required affected gates,
+record evidence/limits/cleanup, commit and hand P3 only after required rows PASS.
+
+Resource preflight:22,753,644KiB available, floor10,485,760; existing mobileios absent/
+090runtime0, global DerivedData1,823,808KiB and CoreSimulator10,386,008KiB retained.
+Additional peak<=6GiB (web<=1GiB/native+Pods<=3GiB/owneddevice<=2GiB), projected
+16,462,188KiB abovefloor. One heavy process/platform. Owned targets: generated
+`apps/mobile/ios`, mobile `.expo`, exact `spike/090-runtime/android-interactive-candidate`,
+`spike/090-p2-ios-native-build`, task-only XCTest outputs/temporaryscreens under
+`spike/090-runtime/p2-*`, new named `genova090-p2-ios` device (UUID recorded at creation),
+loopback18092/54491/31090/31095 and their recorded fixture/Next children. No VM/DB
+copy, package install/SDK upgrade or cosmetic repo copy. Recheck after each phase;
+keep original source/locks/deps/caches/simulators/backups/user data.
+
+Final gate preflight: iOS runtime evidence collected; named test device shut down/
+deleted, owned generated folders being removed. Root `.next`/`coverage` absent before
+`pnpm check`; these outputs and its redacted `p2-root-check.log` are task-owned.
+At least18,675,656KiB available even during deletion; root peak<=1.5GiB leaves
+17,102,792KiB, above floor. No concurrent heavy build. Test-only iOS JSON `no-store`
+repair is authorized after actual NSURLCache token persistence observation; no
+hosted-header/product insecurity inferred. Two stale authority variants preserved;
+installed Expo57 ignores RN `--config` forwarding and CI suppresses reset. Scoped
+installed `EXPO_OVERRIDE_METRO_CONFIG` hook isolates transforms, without global purge.
+
+Jev only for useful redacted semantic triage/evidence interpretation, at most2 calls,
+45s/zero retries/<=60KB each, same-day authorized in-memory key and $0.02 advisory
+cap. Exact tests/assertions/authority never delegated to AI. No inference needed
+for known build/input operations; actual usage/cost recorded if called.
+
+| P2 required behavior | Required? | Status | Date, revision, environment, command/scenario | Evidence / boundary |
+|---|---|---|---|---|
+| Frozen source/426-fixture identity and current signed iOS Release | yes | PASS |3Oct, productc2ec9b0/entry8673592; source verify/426 materialize/Release/codesign, iOS26.5 |610 unchanged pins; [paired report](../reports/2026-10-03-ios-p2-private-file-acceptance.md), not full product web |
+| Agent cancel returns to profile; GET/HEAD/provider0 | yes | PASS |3Oct, same source, XCTestv3 actual WebView/consent | [interactivev2](../reports/090/2026-10-03-ios-p2-interactive-http-v2.json); actual cancel/counters |
+| Actual intended PDF/hash/page1→2 pixels | yes | PASS |3Oct, same source, actual renderer/counters/screenshots |65905B/exact SHA/pages1/2 visually inspected; screenshot hashes retained |
+| Actual iOS share opens/dismisses/returns, close and file absent | yes | PASS |3Oct, same source, XCTestv3 share/popover dismissal/reader close | Actual Expo callback/File.exists false; no recipient/account/Print selection |
+| Actual AuthStore B from still-active A; oldGET/HEAD403/provider0, teardown/cache | yes | PASS |3Oct, same source, actual native KoroB after closed PDF while A profile mounted |Interactivev2 native assertion/GET403/HEAD403/provider0; no prior back/unmount |
+| Expired authorization recovers once; valid denial fails closed | yes | PASS |3Oct, same source, isolated noninteractive Release authoritybatch | [authorityv2](../reports/090/2026-10-03-ios-p2-authority-http-v2.json), exact401→single renewal/403/refused B renewal; synthetic authority only |
+| WebView lease/renewal/no persistent credentials/storage and normal guard-off sign-in | yes | PASS |3Oct, same source, current bridges/read-only disk scans/normal Release launch | Diskcache0/JWT-refresh0/persistentWK0/ephemeral0; real keychain retained. Guard-off normal App entry/test markers absent/sign-in visible; no WK memory/hosted-header claim |
+| Relevant source gates, redaction, resource cleanup and scoped commits | yes | PASS |3Oct, focused26/mobile465/root1178/build; diff/links/source replay/owned cleanup | Source03b59b5 + separate P2 record commit; no hosted/physical/independent-review claim |
+
+P2 **ACCEPTED LOCAL**, source unchanged. [Full mandatory table/failures/resources](../reports/2026-10-03-ios-p2-private-file-acceptance.md).
+Preserved initial HTTPv1/authorityNOTRUN and XCTestv1/v2 failures. Fixture-only iOS
+no-store repaired observed CFNetwork caching; freshv3 UI + v2 authority/disk passed.
+No real SecureStore substitution. Jev1call/5questions/1108input/215output, estimated
+$0.000046536, advisory only. Final free21,452,752KiB; no owned listener/device/build/
+runtime copy/PNG/log/root.next/coverage retained. CLI marker excluded. Self-review,
+not independent review; whole090/R1 remainOPEN. Next [P3](../teslim-rehberi/03-release-package.md),
+including actual provider Auth/REST/private-file cache header/native persistence check.
+
 ### 3 October — P1 source-complete beta candidate manifest
 
 Entry `main/3fb3a2c`, sole writer; unrelated `supabase/.temp/cli-latest` preserved.

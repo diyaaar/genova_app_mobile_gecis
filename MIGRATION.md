@@ -4,6 +4,13 @@
 > Durum değişikliği, koddan ayrı ama birlikte devredilen belge commit'ine işlenir.
 > Güncel teslim sırası: [mobil teslim planı](docs/mobil-teslim-plani.md), karar #21.
 
+3 October current checkpoint: [P2 iOS private-file flow](docs/reports/2026-10-03-ios-p2-private-file-acceptance.md)
+locally accepted on current frozen610-pin product: agent consentcancel0/PDF1→2/
+actualshare-dismiss-return/close-removal/activechoir switch403/expiry-denial/persistence/
+guard-off sign-in. Source ownership below unchanged. This is synthetic iOS simulator
+evidence, not full hosted web/RLS/provider/physical/beta/store acceptance. Next
+[P3 compatibility/recovery](docs/teslim-rehberi/03-release-package.md); whole090/R1 OPEN.
+
 21 September checkpoint under decisions #28–31: Android-first beta is an intermediate
 release of the same product; all native/WebView ownership below remains unchanged. Supabase stays;
 private R2 storage preparation replaces production Drive dependency before operational delivery.

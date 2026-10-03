@@ -6,7 +6,7 @@ Read [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md); relevant
 [decisions](../KARARLAR.md)/[MIGRATION](../MIGRATION.md). English records/Turkish user copy.
 One writer; verify HEAD, dirty ownership, resources and exact permission on resume.
 
-## Current execution — P1 accepted, P2 READY
+## Current execution — P1 source + P2 local accepted, P3 READY
 
 [Playbook](teslim-rehberi/README.md) → moving [checkpoint](teslim-rehberi/checkpoint.md).
 Candidate **GENOVA-BETA-20261003-P1**: [source/feature/blocker record](reports/090/2026-10-03-p1-beta-candidate.md)
@@ -17,12 +17,22 @@ Source accepted, **not runtime/hosted/beta acceptance**. No production/config pa
 Scoped commit: `090: freeze source-complete beta candidate and P2 handoff` owns this
 record; verify actual SHA with Git. Unrelated supabase/.temp/cli-latest excluded.
 
-NEXT P2/090: installed iOS automation/tools + measured disk/owned cleanup preflight;
-agent-run current consent/PDF/page1→2/share-dismiss/return/close/removal/B/expiry/
-WebView/guard-off matrix; outcomes/cleanup/handoff to P3 only after required PASS.
-No owner manual QA. No routine rerun of same-source accepted Android checks.
-Use scoped existing Computer Use or approved simulator automation; blockers recorded,
-not delegated to owner. One heavy process; >=10GiB floor; two-failure reassessment.
+P2 [current iOS accepted locally](reports/2026-10-03-ios-p2-private-file-acceptance.md):
+actual consentcancel0/PDF1→2/share-dismiss-return/close/file removal/activeA→B403/
+expiry and valid denial/lease/diskcache0/guard-off normal sign-in. XCTestv3 full26.451s;
+actual iOS26.5/Release/SecureStore;157native/5server/426fixture pins,610 product unchanged.
+Initial synthetic CFNetwork credential persistence repaired by fixture-only no-store;
+no hosted-header conclusion. Failed attempts preserved. Mobile465/focused26/root1178
+and build fresh. Source/test-support03b59b5 + separate P2 record commit (verify Git).
+One Jev triage/1108input/215output/estimated$0.000046536, advisory only.
+
+NEXT P3/090/R1: exact served/SQL/Edge/full-route dependency and minimal convergence
+inventory → scoped fresh protected backup/isolated restore/old-new-client negative
+rehearsal → actually independent review and exact operation authority. Add actual
+Auth/REST/private-file cache headers/native CFNetwork persistence to package checks.
+No owner QA, unnecessary same-source Android rerun, bulk-main push or live activation.
+P2-owned device/processes/generated outputs cleaned; free21,452,752KiB. No owned
+runtime. Preserve toolchains/caches/userdata; fresh preflight, one heavy process/floor10GiB.
 
 ## Source and evidence boundaries
 
@@ -53,7 +63,7 @@ Jev work bounded/redacted/current-authority/cost-recorded; deterministic Auth st
 
 ## Open gates, authority and destination
 
-B1 P2latestiOS; B2/B3 P3servedrevision/correct-projectDBEdge/API/oldclients/fresh
+B1 P2latestiOS locallyPASS (not hosted/hardware); B2/B3 P3servedrevision/correct-projectDBEdge/API/oldclients/fresh
 recovery/independentreview; B4 P4actualR2readers/writers/mappings/flags/privateACL;
 B5/B6 P5installedsignedusableAndroid/invitenegatives/exposedcapability. Whole090/R1OPEN.
 P6preservedfullnativefeatures/push/commercial; P7bothstores. Owner#34: small existing

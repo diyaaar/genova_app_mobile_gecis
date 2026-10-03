@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-03T17:31:40.565Z",
+  "status": "PASS",
+  "candidateId": "GENOVA-BETA-20261003-P1",
+  "productPins": 610,
+  "p1ManifestSha256": "844e6001f691b2b9b02435074c347b0505d113d3e44492e175a4d99cd716f61f",
+  "root": {
+    "command": "node spike/090-p2-ios.mjs check-root -> pnpm check",
+    "status": "PASS",
+    "tests": 1178,
+    "testFiles": 114,
+    "logSha256": "97f4a3ee31197679098eac13e12f66aa0caf82b57bc909c0990e974a0d009030",
+    "lint": true,
+    "typecheck": true,
+    "coverage": true,
+    "serviceWorkerSyntax": true,
+    "nextBuild": true
+  },
+  "boundary": "Fresh local source quality/build gates; synthetic public URL/key, no 090 runtime flags. Next reports dotenv filenames; no production app served, CI/push/deploy/DB/provider write or hosted integration claim."
+}

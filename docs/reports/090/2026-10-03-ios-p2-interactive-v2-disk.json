@@ -1,0 +1,193 @@
+{
+  "date": "2026-10-03T17:16:17.897Z",
+  "stage": "interactive-v2",
+  "device": "57F560F5-1EE1-4C28-A925-2D614E7CFFDE",
+  "runtime": "iOS26.5",
+  "status": "PASS_NO_DISK_CREDENTIAL_MATCH",
+  "files": [
+    {
+      "file": ".com.apple.mobile_container_manager.metadata.plist",
+      "bytes": 522,
+      "sha256": "a70168a4c8bb60f7973559b9cc3c508144a084ffba66a79a5b9ab8fa72516627"
+    },
+    {
+      "file": "Library/Caches/com.apple.WebKit.GPU/functions.data",
+      "bytes": 294912,
+      "sha256": "e1122ecc6aaf433153d7b2fb2bfa75b276ff484e0cf406696efc28132cf3152e"
+    },
+    {
+      "file": "Library/Caches/com.apple.WebKit.GPU/functions.list",
+      "bytes": 2508,
+      "sha256": "9d4ad06b7b7a2aa1c1e84156a44c298346ef5bcf311129a83036ccc93263b6b1"
+    },
+    {
+      "file": "Library/Caches/com.apple.WebKit.GPU/libraries.data",
+      "bytes": 294912,
+      "sha256": "43bef405ecd9d493feb8c5742fd16c506c27c49e0dba0d2429941e710f4febf5"
+    },
+    {
+      "file": "Library/Caches/com.apple.WebKit.GPU/libraries.list",
+      "bytes": 1164,
+      "sha256": "9440ce35f0eb2f603781287fbf5e674acd207e95a980df8645d1f8e1b4367af6"
+    },
+    {
+      "file": "Library/Caches/com.genesinovachoir.genova/Cache.db",
+      "bytes": 49152,
+      "sha256": "be14b5cf1d70e71b06cc20a33eb8ee3fce9f8feb5ebf72122061a79c01d6cfbd"
+    },
+    {
+      "file": "Library/Caches/com.genesinovachoir.genova/Cache.db-shm",
+      "bytes": 32768,
+      "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+    },
+    {
+      "file": "Library/Caches/com.genesinovachoir.genova/Cache.db-wal",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "Library/HTTPStorages/com.genesinovachoir.genova/httpstorages.sqlite",
+      "bytes": 4096,
+      "sha256": "8996d53c6b25ba17e98b0c6ca72b4ce8d27798dba14e2ef2f857f25deedc585a"
+    },
+    {
+      "file": "Library/HTTPStorages/com.genesinovachoir.genova/httpstorages.sqlite-shm",
+      "bytes": 32768,
+      "sha256": "3248c41476643f74c47dcfd4ba85e067e09e43dcb22c581681c5433e4bbd0fd7"
+    },
+    {
+      "file": "Library/HTTPStorages/com.genesinovachoir.genova/httpstorages.sqlite-wal",
+      "bytes": 16512,
+      "sha256": "746de5452d1fabe7420ff34121d7c574a44f038d63b2971c3e6399c082ba1ff4"
+    },
+    {
+      "file": "Library/Preferences/com.genesinovachoir.genova.plist",
+      "bytes": 91,
+      "sha256": "edb496f76a9367f31f844f66a2e6ff8eef33a19a7ea0f63eb6e2e87334ff4a82"
+    },
+    {
+      "file": "Library/Saved Application State/com.genesinovachoir.genova.savedState/KnownSceneSessions/data.data",
+      "bytes": 533,
+      "sha256": "1dd2eeb06697f11179e29c818515e77a3de828bee56de18703de537e7c347896"
+    },
+    {
+      "file": "Library/SplashBoard/Snapshots/com.genesinovachoir.genova - {DEFAULT GROUP}/5A8F2D36-5092-4B1D-9711-3EADB830BD86@3x.ktx",
+      "bytes": 2688,
+      "sha256": "8eb0fed396df97925f2b60c7662b9723b15f865e0890daa2a44f889e19541994"
+    },
+    {
+      "file": "Library/SplashBoard/Snapshots/com.genesinovachoir.genova - {DEFAULT GROUP}/EA1E905D-97C4-46F1-901A-C85BE1368FC3@3x.ktx",
+      "bytes": 2655,
+      "sha256": "3024d842af2ec89b12714c9cfd2c53f6fd1a9e91062fd74f6b468ffcf750ddd4"
+    }
+  ],
+  "hits": [],
+  "cacheRows": 0,
+  "webKitPersistentFiles": [],
+  "ephemeralFiles": [],
+  "app": {
+    "executableSha256": "72f314f3068179eaa6ebe238903d1b40b992c8490f170490a5744e566c996a6d",
+    "jsSha256": "c5f55a7f95b8dd1ded2f0e2a587d6ee83fcbbd0359dbf15a4dd2200f8eda9ab8"
+  },
+  "attachments": [
+    {
+      "attempt": "v2",
+      "name": "pdf-page-2_0_3B983BE2-59EF-43B5-A188-30F8741A18EE.png",
+      "sha256": "adf62dfb50d0960948d38f40596616c74bd68483bdf1c86e2dc9debe52f4418c",
+      "bytes": 157590,
+      "timestamp": 1791047297.019
+    },
+    {
+      "attempt": "v2",
+      "name": "pdf-page-1_0_6510423C-0BAD-4B73-9284-15F529C89A58.png",
+      "sha256": "261c3219e13eeeeaeb5b6ff94577cf894d932d448d918079143180aea44db7d1",
+      "bytes": 155607,
+      "timestamp": 1791047293.41
+    },
+    {
+      "attempt": "v2",
+      "name": "consent-cancelled_0_5E5CB0D1-4B19-4C88-A032-3BDA290ADA13.png",
+      "sha256": "0b607071cad5a4b4782d7768d3a0a1258a277138cd0f6cd2c379a8f946d483b9",
+      "bytes": 217792,
+      "timestamp": 1791047290.479
+    },
+    {
+      "attempt": "v2",
+      "name": "homework-after-scroll_0_4F10D3B8-B00D-4593-B755-84CE894F55E5.png",
+      "sha256": "199f7262144e258e1627d7aceeb2c187edb1e6216caf6b28043a0e745e75b5f5",
+      "bytes": 219652,
+      "timestamp": 1791047287.379
+    },
+    {
+      "attempt": "v2",
+      "name": "profile-before-scroll_0_D794BBA6-F3B2-4A17-A782-733A3EC7980E.png",
+      "sha256": "e0179051bc46faef49d33b3b82c39ab58156bbf088fa98fac45824816bdb9f64",
+      "bytes": 348751,
+      "timestamp": 1791047282.33
+    },
+    {
+      "attempt": "v3",
+      "name": "choir-B-denial-complete_0_517A47EB-42BA-4B00-A6D2-846996F80DBF.png",
+      "sha256": "eee3b2fd602b85b9872cdf63d533f026800606fd8b9f100b007ee16f7964e0d9",
+      "bytes": 90301,
+      "timestamp": 1791047751.183
+    },
+    {
+      "attempt": "v3",
+      "name": "preview-closed-active-choir-A_0_6E25EBD4-7A53-4D71-8B09-8E3614EFBE71.png",
+      "sha256": "3e51a996a67bbafb67c724aca61540b6a44d80057e415ec1eb4626194b5a607d",
+      "bytes": 218811,
+      "timestamp": 1791047748.555
+    },
+    {
+      "attempt": "v3",
+      "name": "share-returned-to-pdf_0_AF6800F9-2935-4838-B71C-47330FFDD79C.png",
+      "sha256": "9d8eb828f97bc1a8995a172414e6d52bb2ac5446c4271bb963fe4cdf5fd5dfeb",
+      "bytes": 157488,
+      "timestamp": 1791047745.848
+    },
+    {
+      "attempt": "v3",
+      "name": "actual-ios-share-sheet_0_F085EE29-076C-4D71-9DA4-408BD2DA0BFC.png",
+      "sha256": "e36ccd177180b460e2996e3d86e9ef0ffea022b2c22ac5d19c56a5ba59882872",
+      "bytes": 588481,
+      "timestamp": 1791047743.92
+    },
+    {
+      "attempt": "v3",
+      "name": "pdf-page-2_0_96A92D3C-F90B-4145-9713-37D428B9E476.png",
+      "sha256": "9d8eb828f97bc1a8995a172414e6d52bb2ac5446c4271bb963fe4cdf5fd5dfeb",
+      "bytes": 157488,
+      "timestamp": 1791047741.23
+    },
+    {
+      "attempt": "v3",
+      "name": "pdf-page-1_0_3E7F24C9-1A0C-4C97-B91A-988BB4AB5C76.png",
+      "sha256": "0b489932b0634b7cfaf753477c3f4dd8af508c836c073fcb9df7d3bbbc58c0d7",
+      "bytes": 155503,
+      "timestamp": 1791047737.494
+    },
+    {
+      "attempt": "v3",
+      "name": "consent-cancelled_0_C6C800BB-6A97-4509-A1E5-B2723ABB188A.png",
+      "sha256": "93c628633b313c9aa08ac7bc28215f5c41aa2877b0ecc718bafc3cf2677ddbf5",
+      "bytes": 217088,
+      "timestamp": 1791047734.485
+    },
+    {
+      "attempt": "v3",
+      "name": "homework-after-scroll_0_8F46488C-C62A-423A-BC93-8912B94784B7.png",
+      "sha256": "9690bed7bf1ac862d263f4fcf23f197d9d78c8f09cbb2fad9a2f98a1051236fd",
+      "bytes": 219065,
+      "timestamp": 1791047731.223
+    },
+    {
+      "attempt": "v3",
+      "name": "profile-before-scroll_0_27F0CDE7-EBEB-461E-8673-0B33E3CD1D6E.png",
+      "sha256": "d232cde464ce6265c872d617e34e7ebefdd617ee40f0936197c7e53c687e1be3",
+      "bytes": 348614,
+      "timestamp": 1791047726.123
+    }
+  ],
+  "boundary": "Owned task-only app data, including HTTP cache files, scanned without returning credential values. Native secure-store keychain intentionally excluded; no WK memory-store or hosted-header claim. Source + functional lease/teardown evidence paired separately."
+}

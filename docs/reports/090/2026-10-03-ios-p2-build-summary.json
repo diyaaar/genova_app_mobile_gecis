@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-03T17:28:31.743Z",
+  "candidateId": "GENOVA-BETA-20261003-P1",
+  "device": "57F560F5-1EE1-4C28-A925-2D614E7CFFDE",
+  "builds": [
+    {
+      "file": "p2-xcode-build-authority-v2.log",
+      "bytes": 761033,
+      "sha256": "a6924a6a89a1822896f02332f0fd46b7cd5969bc2d2e1735280a900131ca9975",
+      "buildSucceeded": true,
+      "testSucceeded": false,
+      "failed": false,
+      "testCasePassed": false
+    },
+    {
+      "file": "p2-xcode-build-authority-v3.log",
+      "bytes": 763887,
+      "sha256": "8303ce3f494892b7679af792fec8955a56d69aa5e60e24dd1aad8166f2cccd4d",
+      "buildSucceeded": true,
+      "testSucceeded": false,
+      "failed": false,
+      "testCasePassed": false
+    },
+    {
+      "file": "p2-xcode-build-authority.log",
+      "bytes": 1992520,
+      "sha256": "b500f5c2a989769c26f485082305d0c5c18757d7140c9a29e83afbf6392f618c",
+      "buildSucceeded": true,
+      "testSucceeded": false,
+      "failed": false,
+      "testCasePassed": false
+    },
+    {
+      "file": "p2-xcode-build-ios.log",
+      "bytes": 5790411,
+      "sha256": "4b64e18056aefed531c8c3e88bcdf80cf4250341af41599a14589d144b3e968f",
+      "buildSucceeded": true,
+      "testSucceeded": false,
+      "failed": false,
+      "testCasePassed": false
+    },
+    {
+      "file": "p2-xcode-build-normal.log",
+      "bytes": 768208,
+      "sha256": "f26d38804384ef64585b4d89225e2d3202ee1234b91e820985411810d306fb26",
+      "buildSucceeded": true,
+      "testSucceeded": false,
+      "failed": false,
+      "testCasePassed": false
+    },
+    {
+      "file": "p2-xcode-test-ui-v2.log",
+      "bytes": 2098572,
+      "sha256": "484e512f899e5d15dd552bc09fd57a5996d324bf75622299483ff27f031d7e00",
+      "buildSucceeded": false,
+      "testSucceeded": false,
+      "failed": true,
+      "testCasePassed": false
+    },
+    {
+      "file": "p2-xcode-test-ui-v3.log",
+      "bytes": 813826,
+      "sha256": "412691769881eda9afee05cd4873b7864d0a3bcfa84de1237991476edad79644",
+      "buildSucceeded": false,
+      "testSucceeded": true,
+      "failed": false,
+      "testCasePassed": true
+    },
+    {
+      "file": "p2-xcode-test-ui.log",
+      "bytes": 89014,
+      "sha256": "e1676ee485231c3d9ba5373f1349359e2803ae9027f2e9af80d2f9c8ea054d54",
+      "buildSucceeded": false,
+      "testSucceeded": false,
+      "failed": true,
+      "testCasePassed": false
+    }
+  ],
+  "evidence": [
+    {
+      "file": "docs/reports/090/2026-10-03-ios-p2-interactive-http-v2.json",
+      "sha256": "3fb53c9eca916ef4b058ddf36b69e3ea0e31664fb32fccf3404908344b646865",
+      "status": "PASS_HTTP_NATIVE"
+    },
+    {
+      "file": "docs/reports/090/2026-10-03-ios-p2-authority-http-v2.json",
+      "sha256": "3f4b6c05e8efcfa6b5986926de612dd098b52bbe7690c8638ea9f2b7b255014f",
+      "status": "PASS"
+    },
+    {
+      "file": "docs/reports/090/2026-10-03-ios-p2-interactive-v2-disk.json",
+      "sha256": "0a686e688bf7e71186096bc894d67057a5b35d7e1a9e1981e1bc6555ab2b923d",
+      "status": "PASS_NO_DISK_CREDENTIAL_MATCH"
+    },
+    {
+      "file": "docs/reports/090/2026-10-03-ios-p2-authority-v2-disk.json",
+      "sha256": "e18a743814bb3b5714e452177dc65a1fe6619de0089e81af9170d9a9c10e3a06",
+      "status": "PASS_NO_DISK_CREDENTIAL_MATCH"
+    },
+    {
+      "file": "docs/reports/090/2026-10-03-ios-p2-normal-disk.json",
+      "sha256": "eaa6e81d1de1aa2aab01f071baec1ebdcca34fc5366d31629d106a590fdffb9e",
+      "status": "PASS_NO_DISK_CREDENTIAL_MATCH"
+    }
+  ],
+  "negativeControls": {
+    "initialHttpCache": {
+      "status": "FAIL",
+      "cachedResponses": 8,
+      "jwtMatchesInWal": 16,
+      "refreshMarkerInWal": true,
+      "origin": "Read-only owned app CFNetwork SQLite and byte-pattern scan; values never emitted; reset only after observation"
+    },
+    "uiV1": "FAIL: generated XCTest target lacked PRODUCT_NAME",
+    "uiV2": "FAIL: actual share popover has dismissal region, not Close button; separately agent-completed CUA return/close/B",
+    "authorityBuildsV1V2": "NOT ACCEPTED: Metro retained interactive=true; CI disables reset and export:embed ignores RN --config forwarding; current CLI override hook isolates v3 transforms"
+  },
+  "result": "PASS_P2_RUNTIME_COMPONENTS; final gates/cleanup/commits in paired English report",
+  "boundary": "Local synthetic iOS simulator only; no hosted, physical, recipient-delivery, full Next route or independent-review proof"
+}

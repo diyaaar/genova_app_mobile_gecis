@@ -39,7 +39,7 @@ connector and applicable skills. Do not inspect or change the detached sibling s
 | Application order | Expand compatible DB → compatible Edge → repaired web/readers → supported mobile → activation; any necessary intermediate version separately tested |
 | Revocation | Existing URL's next online GET/HEAD denied after authority loss, across old/new clients; already downloaded/in-flight bytes excluded honestly |
 | Review | Named independent reviewer/run, exact candidate hash, findings addressed or release-blocking; self-review retained separately |
-| Dependency/security | Exact lockfile triage, secret/config and authorization negatives; unresolved relevant risk is explicit, no blanket suppression |
+| Dependency/security | Exact lockfile triage, secret/config and authorization negatives; actual Auth/REST/private-file response cache headers and native CFNetwork persistence (P2 fixture-only no-store is not provider proof); unresolved relevant risk explicit, no blanket suppression |
 | Operation packet | Each write's target/project/account, revision, data/resource scope, cost, automatic deployment effects, check and recovery/stop command |
 
 A restore that omits object bytes cannot claim file recovery. Git revert does not
