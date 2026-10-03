@@ -15,3 +15,21 @@ verify_jwt = true
 # Resend is not a Supabase user. The handler authenticates the raw request with
 # Svix HMAC signatures and timestamp checks before reading or forwarding mail.
 verify_jwt = false
+
+[functions.repertoire-file]
+verify_jwt = false
+
+[functions.assignment-file]
+verify_jwt = false
+
+[functions.assignment-review-file]
+verify_jwt = false
+
+[functions.repertoire-comment-file]
+verify_jwt = false
+
+[functions.chat-media-file]
+verify_jwt = false
+
+[functions.legacy-file]
+verify_jwt = false

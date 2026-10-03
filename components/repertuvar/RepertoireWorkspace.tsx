@@ -29,11 +29,12 @@ import {
   ZoomOut,
 } from 'lucide-react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import { getRepertoirePdfWorker } from '@/lib/repertuvar/pdf-worker';
 
 import { AnnotationStage } from '@/components/repertuvar/AnnotationStage';
 import { ChefCommentSection } from '@/components/repertuvar/ChefCommentSection';
 import { useProtectedDriveFileUrl } from '@/hooks/useProtectedDriveFileUrl';
-import { getProtectedDriveFileUrl } from '@/lib/drive-file-url';
+import { getProtectedDriveFileUrl, getOnlineAuthorizedPrivateFileUrl } from '@/lib/drive-file-url';
 import {
   loadAnnotationsForFile,
   saveLayerSnapshot,
@@ -432,7 +433,9 @@ function getInlineFileSource(
       return offlineUrl;
     }
   }
-  return file?.drive_download_link ?? null;
+  // Provider links are metadata, not authorization. Online viewing must use the
+  // protected endpoint; only the versioned local runtime cache may be a fallback.
+  return null;
 }
 
 function formatSyncedAtLabel(timestamp: number | null) {
@@ -463,6 +466,7 @@ interface AudioPanelProps {
   setSelectedAudioId: (id: string | null) => void;
   setAudioState: (state: { isPlaying?: boolean; currentTime?: number; duration?: number }) => void;
   renderUi?: boolean;
+  onSelectedAudioBodyError: () => void;
 }
 
 function getAudioDisplayName(file: RepertoireFile): string {
@@ -502,6 +506,7 @@ function AudioPanel({
   setSelectedAudioId,
   setAudioState,
   renderUi = true,
+  onSelectedAudioBodyError,
 }: AudioPanelProps) {
   const [open, setOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -821,7 +826,7 @@ function AudioPanel({
 
     const handleError = () => {
       const err = el.error;
-      console.error(`[AUDIO_PLAYER_ERROR] Workspace player error for src: ${el.src}. Error code: ${err?.code}, message: ${err?.message}`);
+      console.error(`[AUDIO_PLAYER_ERROR] Workspace media error code: ${err?.code ?? "unknown"}`);
       
       intendedPlayState.current = false;
       const matchesSelection = isSourceMatch(el, selectedAudioSource);
@@ -832,6 +837,7 @@ function AudioPanel({
       setIsPlaying(false);
       setAudioState({ isPlaying: false });
       setMiniPlaybackState({ isPlaying: false });
+      onSelectedAudioBodyError();
     };
 
     el.addEventListener('play', handlePlay);
@@ -849,7 +855,7 @@ function AudioPanel({
       el.removeEventListener('ended', handleEnded);
       el.removeEventListener('error', handleError);
     };
-  }, [isDragging, playbackRate, selectedAudioSource, setAudioState, setMiniPlaybackState]);
+  }, [isDragging, playbackRate, selectedAudioSource, setAudioState, setMiniPlaybackState, onSelectedAudioBodyError]);
 
   useEffect(() => {
     const el = audioElementRef.current;
@@ -896,10 +902,8 @@ function AudioPanel({
     async function buildAndSetTracks() {
       const resolvedTracks = await Promise.all(
         audioFiles.map(async (file) => {
-          // For the currently selected file, prefer the already-resolved selectedAudioSource.
-          if (file.id === selectedAudio?.id && selectedAudioSource) {
-            return { id: file.id, label: getAudioDisplayName(file), source: selectedAudioSource };
-          }
+          // Online selected tracks need the same fresh decision as every other track.
+          // Already-downloaded/offline bytes remain outside server-side revocation.
           // For others: use offline route only when offline fallback is explicitly active.
           if (allowOfflineFallback) {
             const offlineUrl = getOfflineDriveFileUrl(file, buildRuntimeDriveFileVersion(file));
@@ -908,15 +912,11 @@ function AudioPanel({
             }
           }
           try {
-            const protectedUrl = await getProtectedDriveFileUrl(file);
-            const source = protectedUrl ?? file.drive_download_link;
+            const protectedUrl = await getOnlineAuthorizedPrivateFileUrl(() => getProtectedDriveFileUrl(file));
+            const source = protectedUrl;
             if (!source) return null;
             return { id: file.id, label: getAudioDisplayName(file), source };
-          } catch {
-            const fallback = file.drive_download_link;
-            if (!fallback) return null;
-            return { id: file.id, label: getAudioDisplayName(file), source: fallback };
-          }
+          } catch { return null; }
         }),
       );
 
@@ -1188,6 +1188,7 @@ export function RepertoireWorkspace({
   isSectionLeader,
 }: RepertoireWorkspaceProps) {
   const memoizedPdfOptions = useMemo(() => ({
+    worker: getRepertoirePdfWorker(),
     cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
     standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts/`,
   }), []);
@@ -1349,11 +1350,10 @@ export function RepertoireWorkspace({
   const selectedAudio =
     audioFiles.find((file) => file.id === selectedAudioId) ??
     defaultAudioFile;
-  const { url: protectedSelectedPdfSource, isStaleLocal: selectedPdfIsStaleLocal } = useProtectedDriveFileUrl(selectedPdf);
+  const { url: protectedSelectedPdfSource, isStaleLocal: selectedPdfIsStaleLocal, onBodyError: onSelectedPdfBodyError } = useProtectedDriveFileUrl(selectedPdf);
   const { url: protectedSelectedCoverSource, isStaleLocal: selectedCoverIsStaleLocal } = useProtectedDriveFileUrl(selectedCover);
-  const { url: protectedSelectedAudioSource, isStaleLocal: selectedAudioIsStaleLocal } = useProtectedDriveFileUrl(selectedAudio);
-  const hasFreshOfflineSnapshot = offlineEnabled && offlineSyncedVersion === offlineSongVersion;
-  const allowOfflineFallback = offlineEnabled && (!isOnline || hasFreshOfflineSnapshot);
+  const { url: protectedSelectedAudioSource, isStaleLocal: selectedAudioIsStaleLocal, onBodyError: onSelectedAudioBodyError } = useProtectedDriveFileUrl(selectedAudio);
+  const allowOfflineFallback = offlineEnabled && !isOnline;
   const selectedPdfSource = getInlineFileSource(selectedPdf, protectedSelectedPdfSource, allowOfflineFallback);
   const selectedCoverSource = getInlineFileSource(selectedCover, protectedSelectedCoverSource, allowOfflineFallback);
   const selectedCoverPreviewSource = selectedCoverSource;
@@ -2994,6 +2994,7 @@ export function RepertoireWorkspace({
         audioFiles={audioFiles}
         selectedAudio={selectedAudio ?? null}
         selectedAudioSource={selectedAudioSource}
+        onSelectedAudioBodyError={onSelectedAudioBodyError}
         allowOfflineFallback={allowOfflineFallback}
         audioRef={audioRef}
         setSelectedAudioId={setSelectedAudioId}
@@ -3062,6 +3063,7 @@ export function RepertoireWorkspace({
                   }
                   options={memoizedPdfOptions}
                   onLoadError={(error) => {
+                    onSelectedPdfBodyError();
                     setDocumentError(error.message);
                     setTotalPages(0);
                   }}

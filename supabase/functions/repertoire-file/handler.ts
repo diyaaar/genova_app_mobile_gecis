@@ -1,0 +1,414 @@
+import { isActiveDriveFileContent } from '../../../lib/server/drive-file-content.ts';
+import type { PrivateFileTicketV2 } from '../_shared/private-file-ticket-v2.ts';
+
+const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const DRIVE_FILE_ID_PATTERN = /^[a-zA-Z0-9_-]+$/;
+const MAX_BODY_BYTES = 1024;
+
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, apikey, content-type, range, x-client-info',
+  'Access-Control-Allow-Methods': 'POST, GET, HEAD, OPTIONS',
+  'Access-Control-Expose-Headers': 'accept-ranges, content-length, content-range, content-type, content-disposition',
+};
+
+export interface RepertoireFileRecord {
+  id: string;
+  choir_id: string;
+  drive_file_id: string;
+  drive_download_link: string | null;
+  file_name: string;
+  mime_type: string | null;
+}
+
+export interface RepertoireFileAuthorization {
+  choirId: string;
+  file: RepertoireFileRecord;
+  actorId: string;
+  sessionId: string;
+}
+
+export type RepertoireStorageMode = 'legacy' | 'mixed' | 'r2-required';
+
+export interface RepertoireFileStorageLocation {
+  repertoire_file_id: string;
+  choir_id: string;
+  provider: string;
+  bucket: string;
+  object_key: string;
+  content_length: number;
+  mime_type: string;
+  sha256_hex: string;
+  verified_at: string;
+  is_active: boolean;
+}
+
+export interface RepertoireFileHandlerDependencies {
+  authorize(input: {
+    authorization: string;
+    accessToken: string;
+    fileId: string;
+  }): Promise<RepertoireFileAuthorization | null>;
+  loadTicketFile(input: {
+    fileId: string;
+    choirId: string;
+    ticket: PrivateFileTicketV2;
+  }): Promise<RepertoireFileRecord | null>;
+  authorizeTicket(ticket: PrivateFileTicketV2): Promise<boolean>;
+  loadR2Location(input: {
+    fileId: string;
+    choirId: string;
+  }): Promise<RepertoireFileStorageLocation | null>;
+  createTicket(input: {
+    fileId: string;
+    choirId: string;
+    actorId: string;
+    sessionId: string;
+  }): Promise<{ token: string; expiresAt: number }>;
+  verifyTicket(token: string): Promise<PrivateFileTicketV2 | null>;
+  fetchDrive(driveFileId: string): Promise<Response>;
+  fetchStorage(bucket: string, path: string): Promise<Response>;
+  fetchR2(input: {
+    location: RepertoireFileStorageLocation;
+    method: 'GET' | 'HEAD';
+    range: string | null;
+  }): Promise<Response>;
+  storageMode: RepertoireStorageMode;
+}
+
+type ParsedRange = { kind: 'none' } | { kind: 'invalid' } | {
+  kind: 'range';
+  start: number;
+  end: number;
+};
+
+function responseHeaders(contentType = 'text/plain; charset=utf-8') {
+  return new Headers({
+    ...CORS_HEADERS,
+    'Cache-Control': 'private, no-store',
+    'Content-Type': contentType,
+    'Referrer-Policy': 'no-referrer',
+    'X-Content-Type-Options': 'nosniff',
+  });
+}
+
+function textResponse(message: string, status: number) {
+  return new Response(message, { status, headers: responseHeaders() });
+}
+
+function jsonResponse(value: unknown, status = 200) {
+  return new Response(JSON.stringify(value), {
+    status,
+    headers: responseHeaders('application/json; charset=utf-8'),
+  });
+}
+
+async function readBoundedJson(request: Request): Promise<unknown> {
+  const declaredSize = Number(request.headers.get('content-length'));
+  if (Number.isFinite(declaredSize) && declaredSize > MAX_BODY_BYTES) {
+    throw new Error('too-large');
+  }
+
+  const reader = request.body?.getReader();
+  if (!reader) throw new Error('invalid-json');
+  const chunks: Uint8Array[] = [];
+  let size = 0;
+  while (true) {
+    const next = await reader.read();
+    if (next.done) break;
+    size += next.value.length;
+    if (size > MAX_BODY_BYTES) {
+      await reader.cancel();
+      throw new Error('too-large');
+    }
+    chunks.push(next.value);
+  }
+  const bytes = new Uint8Array(size);
+  let offset = 0;
+  for (const chunk of chunks) {
+    bytes.set(chunk, offset);
+    offset += chunk.length;
+  }
+  try {
+    return JSON.parse(new TextDecoder().decode(bytes));
+  } catch {
+    throw new Error('invalid-json');
+  }
+}
+
+function parseTicketRequest(value: unknown): string | null {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
+  const body = value as Record<string, unknown>;
+  if (Object.keys(body).length !== 1 || typeof body.fileId !== 'string') return null;
+  return UUID_PATTERN.test(body.fileId) ? body.fileId : null;
+}
+
+export function parseRangeHeader(rangeHeader: string | null, totalSize: number): ParsedRange {
+  if (!rangeHeader) return { kind: 'none' };
+  if (!Number.isSafeInteger(totalSize) || totalSize < 1) return { kind: 'invalid' };
+  const match = /^bytes=(\d*)-(\d*)$/.exec(rangeHeader.trim());
+  if (!match || (match[1] === '' && match[2] === '')) return { kind: 'invalid' };
+
+  let start: number;
+  let end: number;
+  if (match[1] === '') {
+    const suffixLength = Number(match[2]);
+    if (!Number.isSafeInteger(suffixLength) || suffixLength <= 0) return { kind: 'invalid' };
+    start = Math.max(0, totalSize - suffixLength);
+    end = totalSize - 1;
+  } else {
+    start = Number(match[1]);
+    end = match[2] === '' ? totalSize - 1 : Number(match[2]);
+  }
+
+  if (
+    !Number.isSafeInteger(start) || !Number.isSafeInteger(end) ||
+    start < 0 || start >= totalSize || end < start
+  ) return { kind: 'invalid' };
+  return { kind: 'range', start, end: Math.min(end, totalSize - 1) };
+}
+
+export function makeContentDisposition(fileName: string) {
+  const fallbackName = fileName
+    .replace(/["\\\r\n]/g, '_')
+    .replace(/[^\x20-\x7E]/g, '_');
+  const encodedName = encodeURIComponent(fileName).replace(/['()]/g, (character) =>
+    `%${character.charCodeAt(0).toString(16).toUpperCase()}`,
+  );
+  return `inline; filename="${fallbackName}"; filename*=UTF-8''${encodedName}`;
+}
+
+function parseStorageLocation(value: string | null): { bucket: string; path: string } | null | 'invalid' {
+  if (!value?.startsWith('storage://')) return null;
+  const location = value.slice('storage://'.length);
+  const slash = location.indexOf('/');
+  if (slash <= 0 || slash === location.length - 1) return 'invalid';
+  return { bucket: location.slice(0, slash), path: location.slice(slash + 1) };
+}
+
+function isValidR2Location(
+  location: RepertoireFileStorageLocation,
+  file: RepertoireFileRecord,
+  choirId: string,
+) {
+  return location.provider === 'r2'
+    && location.repertoire_file_id === file.id
+    && location.choir_id === choirId
+    && location.is_active === true
+    && Number.isSafeInteger(location.content_length)
+    && location.content_length > 0
+    && /^[0-9a-f]{64}$/.test(location.sha256_hex)
+    && !Number.isNaN(Date.parse(location.verified_at))
+    && Date.parse(location.verified_at) <= Date.now()
+    && location.mime_type === location.mime_type.trim()
+    && location.mime_type.length > 0
+    && (!file.mime_type || file.mime_type === location.mime_type);
+}
+
+function parseExactLength(value: string | null) {
+  if (!value || !/^\d+$/.test(value)) return null;
+  const length = Number(value);
+  return Number.isSafeInteger(length) ? length : null;
+}
+
+async function serveR2File(
+  request: Request,
+  file: RepertoireFileRecord,
+  location: RepertoireFileStorageLocation,
+  dependencies: RepertoireFileHandlerDependencies,
+) {
+  const totalSize = location.content_length;
+  const range = parseRangeHeader(request.headers.get('range'), totalSize);
+  const headers = responseHeaders(location.mime_type);
+  headers.set('Accept-Ranges', 'bytes');
+  headers.set('Content-Disposition', makeContentDisposition(file.file_name));
+  if (range.kind === 'invalid') {
+    headers.set('Content-Range', `bytes */${totalSize}`);
+    return new Response(null, { status: 416, headers });
+  }
+
+  const upstreamMethod = request.method === 'HEAD' ? 'HEAD' : 'GET';
+  const upstreamRange = request.method === 'GET' && range.kind === 'range'
+    ? `bytes=${range.start}-${range.end}`
+    : null;
+  const upstream = await dependencies.fetchR2({
+    location,
+    method: upstreamMethod,
+    range: upstreamRange,
+  });
+  const expectedStatus = upstreamRange ? 206 : 200;
+  if (upstream.status !== expectedStatus) {
+    await upstream.body?.cancel().catch(() => undefined);
+    return textResponse('Dosya kaynağına ulaşılamadı.', 502);
+  }
+
+  const upstreamType = upstream.headers.get('content-type')?.split(';', 1)[0]?.trim() ?? '';
+  if (isActiveDriveFileContent({ fileName: file.file_name, mimeType: upstreamType })) {
+    await upstream.body?.cancel().catch(() => undefined);
+    return textResponse('Bu dosya türü desteklenmiyor.', 415);
+  }
+  if (upstreamType !== location.mime_type) {
+    await upstream.body?.cancel().catch(() => undefined);
+    return textResponse('Dosya kaynağı doğrulanamadı.', 502);
+  }
+
+  const expectedLength = range.kind === 'range' ? range.end - range.start + 1 : totalSize;
+  if (parseExactLength(upstream.headers.get('content-length')) !== (request.method === 'HEAD' ? totalSize : expectedLength)) {
+    await upstream.body?.cancel().catch(() => undefined);
+    return textResponse('Dosya kaynağı doğrulanamadı.', 502);
+  }
+  if (upstreamRange && upstream.headers.get('content-range') !== `bytes ${range.kind === 'range' ? `${range.start}-${range.end}` : ''}/${totalSize}`) {
+    await upstream.body?.cancel().catch(() => undefined);
+    return textResponse('Dosya kaynağı doğrulanamadı.', 502);
+  }
+
+  headers.set('Content-Length', String(expectedLength));
+  if (range.kind === 'range') {
+    headers.set('Content-Range', `bytes ${range.start}-${range.end}/${totalSize}`);
+  }
+  return new Response(request.method === 'HEAD' ? null : upstream.body, {
+    status: range.kind === 'range' ? 206 : 200,
+    headers,
+  });
+}
+
+async function issueTicket(request: Request, dependencies: RepertoireFileHandlerDependencies) {
+  const authorization = request.headers.get('authorization') ?? '';
+  const accessToken = authorization.match(/^Bearer\s+([^\s]+)$/i)?.[1];
+  if (!accessToken || accessToken.length > 8192) return textResponse('Giriş yapmalısınız.', 401);
+
+  let body: unknown;
+  try {
+    body = await readBoundedJson(request);
+  } catch (error) {
+    return textResponse(error instanceof Error && error.message === 'too-large'
+      ? 'İstek çok büyük.'
+      : 'Dosya isteği geçersiz.', error instanceof Error && error.message === 'too-large' ? 413 : 400);
+  }
+  const fileId = parseTicketRequest(body);
+  if (!fileId) return textResponse('Dosya isteği geçersiz.', 400);
+
+  try {
+    const authorized = await dependencies.authorize({ authorization, accessToken, fileId });
+    if (!authorized || authorized.file.id !== fileId || authorized.file.choir_id !== authorized.choirId) {
+      return textResponse('Bu dosyaya erişim yetkiniz yok.', 403);
+    }
+    if (isActiveDriveFileContent({
+      fileName: authorized.file.file_name,
+      mimeType: authorized.file.mime_type,
+    })) return textResponse('Bu dosya türü desteklenmiyor.', 415);
+
+    const ticket = await dependencies.createTicket({
+      fileId,
+      choirId: authorized.choirId,
+      actorId: authorized.actorId,
+      sessionId: authorized.sessionId,
+    });
+    const query = new URLSearchParams({ fileId, ticket: ticket.token });
+    // The Edge runtime sees an internal worker URL behind the gateway. Return only
+    // the query so the shared client resolves it against its configured public endpoint.
+    return jsonResponse({ url: `?${query.toString()}`, expiresAt: ticket.expiresAt });
+  } catch (error) {
+    if (error instanceof Error && error.message === 'Unauthorized') {
+      return textResponse('Oturum geçersiz.', 401);
+    }
+    return textResponse('Dosya erişimi hazırlanamadı.', 500);
+  }
+}
+
+async function serveFile(request: Request, dependencies: RepertoireFileHandlerDependencies) {
+  const requestUrl = new URL(request.url);
+  const fileId = requestUrl.searchParams.get('fileId') ?? '';
+  const token = requestUrl.searchParams.get('ticket') ?? '';
+  if (!UUID_PATTERN.test(fileId) || !token || token.length > 2048) {
+    return textResponse('Dosya bağlantısı geçersiz.', 401);
+  }
+
+  try {
+    const ticket = await dependencies.verifyTicket(token);
+    if (!ticket || ticket.version !== 2 || ticket.fileId !== fileId) {
+      return textResponse('Dosya bağlantısı geçersiz.', 401);
+    }
+    if (!await dependencies.authorizeTicket(ticket)) {
+      return textResponse('Dosya erişimi sona erdi.', 403);
+    }
+    const file = await dependencies.loadTicketFile({
+      fileId: ticket.fileId,
+      choirId: ticket.choirId,
+      ticket,
+    });
+    if (!file || file.id !== ticket.fileId || file.choir_id !== ticket.choirId) {
+      return textResponse('Dosya bulunamadı.', 404);
+    }
+    if (isActiveDriveFileContent({ fileName: file.file_name, mimeType: file.mime_type })) {
+      return textResponse('Bu dosya türü desteklenmiyor.', 415);
+    }
+
+    if (dependencies.storageMode !== 'legacy') {
+      const location = await dependencies.loadR2Location({
+        fileId: ticket.fileId,
+        choirId: ticket.choirId,
+      });
+      if (location) {
+        if (!isValidR2Location(location, file, ticket.choirId)) {
+          return textResponse('Dosya kaynağı doğrulanamadı.', 502);
+        }
+        return serveR2File(request, file, location, dependencies);
+      }
+      if (dependencies.storageMode === 'r2-required') {
+        return textResponse('Dosya kaynağı kullanılamıyor.', 502);
+      }
+    }
+
+    const storage = parseStorageLocation(file.drive_download_link);
+    if (storage === 'invalid') return textResponse('Dosya kaynağı kullanılamıyor.', 502);
+    if (!storage && !DRIVE_FILE_ID_PATTERN.test(file.drive_file_id)) {
+      return textResponse('Dosya kaynağı kullanılamıyor.', 502);
+    }
+    const upstream = storage
+      ? await dependencies.fetchStorage(storage.bucket, storage.path)
+      : await dependencies.fetchDrive(file.drive_file_id);
+    if (!upstream.ok) return textResponse('Dosya kaynağına ulaşılamadı.', 502);
+
+    const contentType = upstream.headers.get('content-type')?.split(';', 1)[0]?.trim()
+      || file.mime_type
+      || 'application/octet-stream';
+    if (isActiveDriveFileContent({ fileName: file.file_name, mimeType: contentType })) {
+      return textResponse('Bu dosya türü desteklenmiyor.', 415);
+    }
+
+    const bytes = await upstream.arrayBuffer();
+    const totalSize = bytes.byteLength;
+    const range = parseRangeHeader(request.headers.get('range'), totalSize);
+    const headers = responseHeaders(contentType);
+    headers.set('Accept-Ranges', 'bytes');
+    headers.set('Content-Disposition', makeContentDisposition(file.file_name));
+
+    if (range.kind === 'invalid') {
+      headers.set('Content-Range', `bytes */${totalSize}`);
+      return new Response(null, { status: 416, headers });
+    }
+    if (range.kind === 'range') {
+      const content = bytes.slice(range.start, range.end + 1);
+      headers.set('Content-Range', `bytes ${range.start}-${range.end}/${totalSize}`);
+      headers.set('Content-Length', String(content.byteLength));
+      return new Response(request.method === 'HEAD' ? null : content, { status: 206, headers });
+    }
+
+    headers.set('Content-Length', String(totalSize));
+    return new Response(request.method === 'HEAD' ? null : bytes, { status: 200, headers });
+  } catch {
+    return textResponse('Dosya okunamadı.', 500);
+  }
+}
+
+export function createRepertoireFileHandler(dependencies: RepertoireFileHandlerDependencies) {
+  return async (request: Request): Promise<Response> => {
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { status: 204, headers: CORS_HEADERS });
+    }
+    if (request.method === 'POST') return issueTicket(request, dependencies);
+    if (request.method === 'GET' || request.method === 'HEAD') return serveFile(request, dependencies);
+    return textResponse('Yöntem desteklenmiyor.', 405);
+  };
+}
