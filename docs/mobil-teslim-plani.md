@@ -1,5 +1,13 @@
 # Genova — long-term mobile delivery plan and execution directive
 
+3 October execution guide: [linked P1–P7 playbook](teslim-rehberi/README.md) and
+[single current checkpoint](teslim-rehberi/checkpoint.md), recorded in
+[WF-017](briefs/WF-017-linked-delivery-playbook.md). This decomposes the queue below;
+it does not replace decisions, module inventories or acceptance evidence. Current
+entry: freeze the exact candidate manifest → latest iOS → compatible recovery/release
+→ active private storage → installed Android beta → full product → both stores.
+Owner#34 selects a small existing-choir beta group, then a second independent choir.
+
 ## Current delivery priority — 23 September 2026
 
 [WF-008](briefs/WF-008-android-first-delivery-reset.md) and decisions #28–31 supersede stale

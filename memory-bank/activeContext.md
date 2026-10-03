@@ -4,6 +4,14 @@ Updated 3 October 2026. [Handoff](../docs/agent-handoff.md) → [090](../docs/br
 → [plan](../docs/mobil-teslim-plani.md)/[WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md).
 Verify actual source/state, sole writer, English records/Turkish user updates.
 
+## Current execution entry — WF-017
+
+Linked [playbook](../docs/teslim-rehberi/README.md) → moving
+[checkpoint](../docs/teslim-rehberi/checkpoint.md): P1 manifest READY, then P2 iOS.
+Plans documented, product gates unchanged; 090 remains the owner. Owner#34: small
+existing-choir beta group, then second independent choir. Jev assists semantic agent
+work with bounded redacted packets/cost records; no manual owner QA or new runtime.
+
 ## Current result and next measurable checkpoint
 
 Current sourcec2ec9b0 [full Android flow](../docs/reports/2026-10-03-android-full-share-flow.md):

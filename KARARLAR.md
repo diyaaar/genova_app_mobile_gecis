@@ -13,6 +13,12 @@ yeni karara açıkça bağla. Eski tahminler güncel doğrulama değildir.
 | 30 | **First release sells choir plans only: first five members free, additional members billable; individual sales deferred** | Owner accepted both recommendations. The free tier is member-limited, not an approved time-limited trial. Price, billing interval and billable-member lifecycle still need definition before enforcement. Optional choir feature entitlements may be added when specified; do not invent tiers or remove existing functionality. Preserve #10's manual invoicing for v1 unless a checkout is separately selected. | 20 Sep 2026 |
 | 31 | **Web onboarding and commercial administration; mobile accesses the choir service** | Owner prefers web acceptance of terms and web payments. Mobile still exposes privacy/terms and an account-deletion entry; store disclosures and review remain required. No generic external-payment exemption is claimed. Region/business-model assessment precedes purchase links or individual digital sales. | 20 Sep 2026 |
 
+## Initial beta cohort — 3 October 2026
+
+| # | Decision | Rationale / boundary | Date |
+|---|---|---|---|
+| 34 | **First Android beta: a small group from the existing choir, then a second independent choir** | Owner selected this staged cohort. Synthetic two-choir isolation remains required before first beta; real second-choir onboarding remains part of full-product acceptance. This chooses cohort order, not recipients, account mutations, invitation sending or distribution authorization. Execution: [P5](docs/teslim-rehberi/05-android-beta.md) → [P6.1](docs/teslim-rehberi/06-full-product.md). | 3 Oct 2026 |
+
 ## Private-file online revocation — 30 September 2026
 
 | # | Decision | Rationale / boundary | Date |

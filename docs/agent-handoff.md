@@ -6,6 +6,14 @@ Read [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md); relevant
 [decisions](../KARARLAR.md)/[MIGRATION](../MIGRATION.md). English records/Turkish user copy.
 One writer; verify HEAD, dirty ownership, resources and actual permission.
 
+## Execution entry — WF-017
+
+Linked [playbook](teslim-rehberi/README.md) → single moving
+[checkpoint](teslim-rehberi/checkpoint.md). P1 manifest READY, not accepted; then P2
+current iOS automation. Existing 090 owns product gates; plans are not runtime proof.
+Owner#34: small existing-choir beta group, then second independent choir. Use Jev for
+useful bounded semantic assistance; keep cost/provenance and verify its answers.
+
 ## Current checkpoint and next action
 
 Current sourcec2ec9b0: [full automated Android flow](reports/2026-10-03-android-full-share-flow.md).
@@ -39,13 +47,9 @@ Jev audit records only; no current runtime. Unrelated supabase/.temp/cli-latest 
 
 ## Preserved checkpoints and candidate identities
 
-Previous d298229: [Android SDK boundary](reports/2026-10-03-android-profile-native-file-boundary.md),
-[actual HTTP v4](reports/090/2026-10-03-android-candidate-sdk-http-v4.json) PASS: API36
-Release challenged profile/SDK lease/member query, Expo65905B/hash/removal,401 renewal,
-valid403/A→B refusal/provider1/0/0. Synthetic Auth/REST/authority/provider; inspection
-NOT consent/share/visual; dispatcher NOT Next file routing/middleware. Historical mobile
-55suites453/root1178/Node12/guard-off manifest, failed attempts preserved. Earlier
-f1d089b: [trusted native recovery](reports/2026-10-03-native-legacy-next-recovery.md).
+Earlier d298229 [SDK boundary](reports/2026-10-03-android-profile-native-file-boundary.md)
+and f1d089b [native recovery](reports/2026-10-03-native-legacy-next-recovery.md)
+retain their dated synthetic/local limits and failed attempts in the linked records.
 Immutable [embedded profile](reports/2026-10-03-minimum-embedded-profile-candidate.md)
 7cd8d460c68465055049dbf30192f7f5478bcf64/tree49c0ce80e7d7a654b4f6904571ac3d7658ff5106,
 local codex/090-embedded-profile-candidate-20261003 unchanged; parent browser
