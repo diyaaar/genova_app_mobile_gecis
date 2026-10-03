@@ -1,9 +1,10 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import path from 'node:path';
 import { createRequire } from 'node:module';
 import { interactiveRows, assertInteractiveCancel } from './090_android_interactive.mjs';
-import { withFileMetadata, DETAIL_PAGE } from './090_candidate_native_interactive.mjs';
+import { withFileMetadata, withDeferredNativeProbe, DETAIL_PAGE, FILE_HOOK } from './090_candidate_native_interactive.mjs';
 import { sourceAt } from './090_candidate_native_cache.mjs';
 import { buildEnv, ROOT, WEB_REF } from './090_android_candidate.mjs';
 const require = createRequire(import.meta.url), ts = require('typescript'), React = require('react');
@@ -63,4 +64,53 @@ test('actual pinned HomeworkCard negative control is refused; metadata-only repa
   assert.equal(accepted.mimeType, 'application/pdf'); assert.equal(accepted.fileName, '090-synthetic.pdf');
   assert.equal(patched.replace('\n                  data-genova-file-name={item.submission?.file_name}\n                  data-genova-mime-type={item.submission?.mime_type ?? undefined}', ''), source);
   assert.throws(() => withFileMetadata(patched));
+});
+test('actual pinned hook negative control probes before consent; embedded repair defers while browser keeps probe', async () => {
+  const { JSDOM } = require('jsdom');
+  const dom = new JSDOM('<!doctype html><html><body></body></html>', { url: 'http://127.0.0.1:31090' });
+  const saved = new Map(['window', 'document', 'navigator'].map(key => [key, Object.getOwnPropertyDescriptor(globalThis, key)]));
+  for (const [key, value] of Object.entries({ window: dom.window, document: dom.window.document, navigator: dom.window.navigator })) {
+    Object.defineProperty(globalThis, key, { configurable: true, value });
+  }
+  const { renderHook, waitFor, cleanup } = require('@testing-library/react');
+  const source = sourceAt(WEB_REF, FILE_HOOK).toString();
+  try {
+    for (const [patched, embedded, expected] of [[false, true, 1], [true, true, 0], [true, false, 1]]) {
+      const calls = { issue: 0, probe: 0 };
+      globalThis.__genova090HookCalls = calls;
+      const compiled = await build({ stdin: { contents: (patched ? withDeferredNativeProbe(source) : source) + '\nexport {activateEmbeddedRuntime} from "@/lib/embedded-web-runtime";', loader: 'ts', resolveDir: ROOT },
+        bundle: true, platform: 'node', format: 'esm', write: false,
+        plugins: [{ name: 'isolated-actual-hook-ports', setup(plugin) {
+          plugin.onResolve({ filter: /^react$/ }, () => ({ path: 'file://' + require.resolve('react'), external: true }));
+          plugin.onResolve({ filter: /^@\// }, args => ({ path: args.path, namespace: 'fixture' }));
+          plugin.onResolve({ filter: /^\.\//, namespace: 'fixture' }, args => ({
+            path: '@/'+ path.posix.join(path.posix.dirname(args.importer.slice(2)), args.path), namespace: 'fixture' }));
+          plugin.onLoad({ filter: /.*/, namespace: 'fixture' }, args => {
+            const modules = {
+              '@/lib/drive-file-url': `export function clearProtectedDriveFileUrlCache(){};
+export async function getProtectedDriveFileUrl(){globalThis.__genova090HookCalls.issue++;return 'http://127.0.0.1:31090/api/drive-file/alias?token=synthetic';}
+export async function getOnlineAuthorizedPrivateFileUrl(load){globalThis.__genova090HookCalls.probe++;return load();}`,
+              '@/lib/repertuvar/offline': `export const buildRuntimeDriveFileVersion=()=> 'v';export const getOfflineDriveFileUrl=()=> null;
+export const isRepertoireRuntimeCacheSupported=()=>false;export const cacheRuntimeDriveFile=async()=>{};
+export const clearProtectedDriveFileCaches=async()=>{};export const getRuntimeDriveFileCacheStatus=async()=>({cached:false});`,
+              '@/lib/embedded-web-runtime': sourceAt(WEB_REF, 'lib/embedded-web-runtime.ts').toString(),
+              '@/lib/repertuvar/protected-file-client': `export class ProtectedFileRequestError extends Error { constructor(message,status){super(message);this.status=status;} }`,
+            };
+            return { contents: modules[args.path] ?? sourceAt(WEB_REF, args.path.slice(2) + '.ts').toString(), loader: 'ts' };
+          });
+        } }] });
+      const api = await import('data:text/javascript;base64,' + Buffer.from(compiled.outputFiles[0].text).toString('base64') + '#' + patched + embedded);
+      if (embedded) api.activateEmbeddedRuntime();
+      const { result, unmount } = renderHook(() => api.useProtectedDriveFileUrl({ drive_file_id: 'alias', file_name: 'score.pdf', mime_type: 'application/pdf' }));
+      await waitFor(() => assert.equal(result.current.loading, false));
+      assert(result.current.url?.includes('/api/drive-file/alias'));
+      assert.deepEqual(calls, { issue: 1, probe: expected }); unmount(); cleanup();
+    }
+    assert.throws(() => withDeferredNativeProbe(withDeferredNativeProbe(source)));
+  } finally {
+    cleanup(); delete globalThis.__genova090HookCalls; dom.window.close();
+    for (const [key, descriptor] of saved) {
+      if (descriptor) Object.defineProperty(globalThis, key, descriptor); else delete globalThis[key];
+    }
+  }
 });

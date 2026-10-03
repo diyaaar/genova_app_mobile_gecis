@@ -66,7 +66,7 @@ async function serve(interactive = false) {
   const { interactiveRows, assertInteractiveCancel } = await import('./090_android_interactive.mjs');
   const candidate = interactive ? ROOT + '/spike/090-runtime/android-interactive-candidate' : CANDIDATE;
   const out = ROOT + '/docs/reports/090/' + (interactive
-    ? '2026-10-03-android-candidate-interactive-http-v1.json' : '2026-10-03-android-candidate-sdk-http-v4.json');
+    ? '2026-10-03-android-candidate-interactive-http-v2.json' : '2026-10-03-android-candidate-sdk-http-v4.json');
   assert(!fs.existsSync(out), 'Preserve earlier attempt');
   const candidatePins = interactive ? JSON.parse(fs.readFileSync(candidate + '/native-cache-source.json')) : null;
   if (interactive) {
@@ -104,7 +104,7 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
       .map(file => ({ path: file, sha256: hash(fs.readFileSync(ROOT + '/' + file)) })),
     nativeSourcePins: execFileSync('git', ['ls-files', 'apps/mobile', 'lib/choir-context-core.ts', 'lib/mobile-webview-bridge.ts', 'lib/repertuvar/protected-file-client.ts'], { encoding: 'utf8' })
       .trim().split('\n').map(file => ({ path: file, sha256: hash(fs.readFileSync(ROOT + '/' + file)) })),
-    ...(interactive ? { candidatePins } : {}),
+    ...(interactive ? { candidatePins, interactiveFixtureSha256: hash(fs.readFileSync(ROOT + '/supabase/test-support/090_android_interactive.mjs')) } : {}),
     boundary: interactive ? 'Guarded pinned chorister-detail UI with actual native consent/capability/share gateway. UI observation required separately; synthetic Auth/REST/authority/provider, NOT hosted RLS/Next file routing/middleware/iOS.'
       : 'Actual Android AuthStore/Supabase SDK/SecureStore/WebView/controller/Expo filesystem; exact pinned production Next profile via local dispatcher. Actual adapter/handler/HMAC file dispatch, NOT production Next file routing/middleware. Synthetic Auth/REST/current authority/provider; inspection share port, NOT actual consent/share/visual/iOS/hosted RLS proof.' };
   const handler = serverApi.createLegacyFileHandler({
@@ -186,6 +186,12 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
         if (consumed) return json(410, {}); consumed = true; return json(200, { email: user.email, password });
       }
       if (url.pathname === '/090/webview-metadata') return json(200, metadata);
+      if (interactive && url.pathname === '/090/read-observation' && incoming.method === 'GET') {
+        return json(200, { phase, inChoirA: currentChoir === choirA,
+          fileGets: requests.filter(item => item.path.startsWith('/api/drive-file/') && item.method === 'GET').length,
+          fileHeads: requests.filter(item => item.path.startsWith('/api/drive-file/') && item.method === 'HEAD').length,
+          providerReads, events: native.map(item => item.event), failures: failures.length, unknown: unknown.length });
+      }
       if (interactive && url.pathname === '/090/ui-event' && incoming.method === 'POST') {
         const input = JSON.parse(body);
         assert.deepEqual(Object.keys(input), ['event']);
