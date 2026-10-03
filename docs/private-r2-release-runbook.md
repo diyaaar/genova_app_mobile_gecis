@@ -19,6 +19,15 @@ historical signature-only reader below. This does **not** establish the served
 revision or hosted revocation. Actual Auth/REST/private-file cache headers/native
 persistence remain required; P2 synthetic no-store is not provider proof.
 
+[Executed P3 entry inventory](reports/2026-10-03-p3-entry-inventory.md) now verifies
+correct Vercel production metadata main/a13f696 (old signature-only source); actual
+live HTTP revocation is not claimed. Supabase visible15of25source ledgerIDs and
+17of20candidate slugs are partial: exact SQL/catalog/checksum/Edge versions/source/
+config remain NOT RUN pending approved correct-project connector. Full-source
+hook/log convergence differs from accepted426-file profile fixture. No product or
+hosted change; first inventory card/goal remains open. Use its exact route/test/
+recovery/operation map, not the old approval packet or blanket migration replay.
+
 No bulk-main push, migration replay, activation or sibling-site work. The old
 five-reader approval packet is historical and cannot deploy the complete new
 closure. Refresh exact target, source, recovery, scope and authority before writes.

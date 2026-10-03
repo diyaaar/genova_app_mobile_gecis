@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-03T18:41:18.281Z",
+  "requestSha256": "05b50529cdc4f352a35c85d0324a33cd54da5e343184f0c868461644c918ac02",
+  "model": "jev-1.13.0",
+  "answers": {
+    "fixture": {
+      "type": "choice",
+      "choice": "no",
+      "confidence": 1,
+      "probabilities": {
+        "yes": 0,
+        "unknown": 0,
+        "no": 1
+      }
+    },
+    "ledger": {
+      "type": "choice",
+      "choice": "metadata_gap",
+      "confidence": 1,
+      "probabilities": {
+        "equivalent": 0,
+        "unknown": 0,
+        "metadata_gap": 1,
+        "absent_definition": 0
+      }
+    },
+    "next": {
+      "type": "choice",
+      "choice": "converge_and_verify",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "converge_and_verify": 1,
+        "repeat_p2": 0,
+        "unrelated": 0,
+        "activate": 0
+      }
+    },
+    "bad_control": {
+      "type": "choice",
+      "choice": "reject",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "supported": 0,
+        "reject": 1
+      }
+    },
+    "good_control": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.98,
+      "probabilities": {
+        "unknown": 0,
+        "supported": 0.99,
+        "reject": 0.01
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 2484,
+    "output_tokens": 219
+  },
+  "estimatedUsd": 0.00010432800000000001,
+  "pricing": "https://docs.typesafe.ai/models; estimate not invoice",
+  "retries": 0
+}

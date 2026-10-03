@@ -16,7 +16,7 @@ API/pages/locks/config and prerequisites retained, not a deployment instruction.
 No product code/config change.051 native stars already locally accepted22a19d6.
 CLI marker is unrelated, excluded. P2 test-support03b59b5; no owned runtime/copy.
 
-[Checkpoint](../docs/teslim-rehberi/checkpoint.md): **P3 READY** after
+[Checkpoint](../docs/teslim-rehberi/checkpoint.md): **P3 IN PROGRESS / PARTIAL inventory** after
 [P2 local acceptance](../docs/reports/2026-10-03-ios-p2-private-file-acceptance.md).
 Current iOS26.5/Release actual cancel0/PDF1→2/share-dismiss/return/close/removal/
 activeA→B403/expiry/valid-denial/lease/disk0/normal sign-in PASS. XCTestv3 fullflow;
@@ -28,10 +28,21 @@ estimated$0.000046536; self-review not independent review; no owner QA.
 Guide [review](../docs/reports/2026-10-03-delivery-guide-checkpoint-review.md) at4e7ab14:
 610pins/five sidecar hashes/157native/5server reverified; stale runbook pointer fixed,
 no product/live change or test rerun. Jev1943input/221output/$0.000081606 estimate.
-Next READY/NOT RUN [P3 inventory card](../docs/briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory):
-exact served/SQL/Edge/full-route and minimal convergence/test inventory → fresh
-scoped protected backup/isolated restore/old-new-client negative rehearsal → actually
-independent package review + exact operation authority. Actual Auth/REST/private-file
+Current [P3 inventory card](../docs/briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory):
+[executed report](../docs/reports/2026-10-03-p3-entry-inventory.md), entrye7424e8,
+610pins/62focusedtests/full entry-test-recovery map PASS. Chrome correct Vercel
+production main/a13f696 observed; correct Supabase visible15of25ledgerIDs/17of20Edge
+slugs (21total), but exact SQL/current catalog/checksum/Edge version/source/config
+NOT RUN. Connector unavailable; suggestions/user correct-project connection request
+pending. Goal ACTIVE, not complete or P4. Do not use browser SQL/another connector.
+Full hook still HEAD-probes before native consent unlike P2 fixture; raw audioURL
+logs require narrow convergence, existing cache/offline/file labels preserved.
+No product/live/build/runtime/device change; freshfree21,395,268KiB. Jev1call/
+2484input/219output/$0.000104328estimate,two controls agree,not independentreview.
+Next: complete exact target identities → narrow full-source convergence and affected
+acceptance → fresh scoped protected backup/isolated restore/full actual old-new-mixed
+client negative rehearsal → independent package review + exact operation authority.
+Actual Auth/REST/private-file
 cache headers/native persistence remain P3 check. No blind promotion or live activation.
 
 Android [fullv5](../docs/reports/090/2026-10-03-android-candidate-full-share-http-v5.json)

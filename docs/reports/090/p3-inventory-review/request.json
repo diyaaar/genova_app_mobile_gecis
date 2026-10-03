@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-03T18:41:17.856Z",
+  "requestSha256": "05b50529cdc4f352a35c85d0324a33cd54da5e343184f0c868461644c918ac02",
+  "packet": {
+    "model": "jev-1.13.0",
+    "state": {
+      "purpose": "Review proposed evidence interpretation and next bounded work for P3 compatible release inventory. Typed advice only; cannot authorize release, grant access, verify unseen systems or replace independent review.",
+      "facts": {
+        "sources": "610 frozen product hashes still match. P2 agent iOS acceptance is exact426-file profile fixture plus157native/5server, not full source. Full candidate exposes native chat/repertoire and four permanent WebViews.",
+        "web": "Correct signed-in Vercel visible Production Deployment Ready/main/source a13f696; remote main also a13f696. Exact deployment ID retained locally. Actual HTTP/Auth flow not exercised. Fresh deterministic tests of actual a13f696 code with synthetic signature/provider responses show old GET and HEAD200, provider2, current-authority0; old loader retains denied URL and old audio falls back to direct raw URL. Five passing tests assert those failures; not production-security PASS.",
+        "db": "Correct Supabase production visible migration ledger has15 of25 candidate forward IDs;10 not visible including new actor/legacy authority and profile/privilege fixes. No SQL body/catalog/ACL/policy checked. Manual DDL could exist without ledger rows; absence is not proof of absent definitions. Mandatory correct-project Supabase connector unavailable; cannot substitute another connector or browser SQL.",
+        "edge": "Correct visible Supabase list has21slugs; candidate20. legacy-file, link-preview and account-recovery-006 not visible. Four retained extras not deleted. Relative age and Deployments1 count are NOT numeric version or source checksum. Exact deployed versions/config/source unknown.",
+        "hook": "Full current useProtectedDriveFileUrl.ts useEffect calls getOnlineAuthorizedPrivateFileUrl(loadTicketUrl) unconditionally at line143. Actual helper performs HEAD probe. P2 fixture helper withDeferredNativeProbe instead checks isEmbeddedRuntimeActive and skips probe there until native owns consent/read. Source-confirmed mismatch; not yet reproduced on full candidate device. Existing hook unit mock turns helper into load-only and cannot establish actual HEAD behavior.",
+        "presentGuards": "Current cache.ts and offline.ts already check isEmbeddedRuntimeActive;18fresh capability/embedded tests PASS. Current SubmissionFileLink already emits data-genova-file-name/mime-type, via different refactored component. Must not blindly reapply old fixture overlay.",
+        "logs": "Full player source console.error interpolates audio element el.src in MiniPlayer211 and Workspace842. Protected URL could contain capability token; no secret values exported or actual token leakage observed."
+      },
+      "proposed": "Preserve local P2 acceptance but block inference to full release. Record missing full embedded hook convergence, redact raw URL logs before promotion, retain already-present cache/offline/file-label behavior and test it. Complete exact correct-project SQL/Edge metadata then protected restore/full actual Next/Auth/RLS old-new-mixed five-family and cache-header/native persistence rehearsal. No live writes/deploy/bulk main push during inventory.",
+      "controls": {
+        "bad": "All5 old-source tests pass, so production already enforces revocation and can be activated.",
+        "good": "Visible ledger/slugs justify specific gaps and further read-only verification, not exact catalog/source equivalence."
+      },
+      "provenance": [
+        {
+          "file": "docs/reports/090/2026-10-03-p3-entry-inventory.json",
+          "sha256": "37edc0a14cbe34b45d83c159c2f8edcfb6ee9cc9fd5bac6c9bca1355a76cb487"
+        },
+        {
+          "file": "hooks/useProtectedDriveFileUrl.ts",
+          "sha256": "552fb35788ef535b98ad4dde22eb83685e6daf2392abf2c8ef885ade3b324c36"
+        },
+        {
+          "file": "lib/drive-file-url.ts",
+          "sha256": "5638930bf3f89bcb5f115cd972657f4816deff2cc64ee32c1a407caf658f1326"
+        },
+        {
+          "file": "components/assignments/SubmissionFileLink.tsx",
+          "sha256": "8d795611a74b4d33b5121567f5fcf2956fb972b98ea0b1b0453c833a0b9ed58d"
+        },
+        {
+          "file": "lib/repertuvar/cache.ts",
+          "sha256": "bbf841265637a282e3d666a5a4b49a1fbd07682291d7f865473e4a3f64d19b79"
+        },
+        {
+          "file": "lib/repertuvar/offline.ts",
+          "sha256": "f2c5a841c565d22386c566d54889dcdfc49b3d9d75ed32cf0cb0132612c3e0fe"
+        },
+        {
+          "file": "components/FloatingMiniPlayer.tsx",
+          "sha256": "90b1449459c9d3596841e11f958b25286ffd5e1acd3448532cfa36583df2c87c"
+        },
+        {
+          "file": "components/repertuvar/RepertoireWorkspace.tsx",
+          "sha256": "3e0152c55e559adbfa795e91aadd60a7574e2ed956808c4b2f375df28979df55"
+        },
+        {
+          "file": "supabase/test-support/090_candidate_native_interactive.mjs",
+          "sha256": "954a03f542d219953d5bc8eb8931ba6b04e2291b3047db789aaa17954309853a"
+        },
+        {
+          "file": "supabase/test-support/090_legacy_release_contract.test.mjs",
+          "sha256": "88e88572b41dd88b50d703d1c5482cf341780ac0d42a524d170aaf867e3d5dcc"
+        },
+        {
+          "file": "supabase/test-support/090_legacy_client_recovery.test.mjs",
+          "sha256": "484742fdb0522501b4d924c3e3c62ad0682e8111726a3d25478e6cd96a027f41"
+        }
+      ]
+    },
+    "questions": {
+      "fixture": {
+        "type": "choice",
+        "instructions": "Does the supplied P2 evidence establish full-source pre-consent HEAD0?",
+        "criteria": {
+          "no": "No: source differs; preserve scoped P2 and require full-source convergence/retest",
+          "yes": "Yes: same project is enough",
+          "unknown": "Cannot determine"
+        }
+      },
+      "ledger": {
+        "type": "choice",
+        "instructions": "What claim does visible migration-ledger absence support?",
+        "criteria": {
+          "metadata_gap": "Not in observed ledger; actual definitions and SQL checksums unverified",
+          "absent_definition": "Definitely absent from live DB",
+          "equivalent": "Candidate and live are equivalent",
+          "unknown": "Cannot determine"
+        }
+      },
+      "next": {
+        "type": "choice",
+        "instructions": "Which bounded next path best addresses supplied evidence without exceeding authority?",
+        "criteria": {
+          "converge_and_verify": "Exact current-target verification plus narrow full-source hook/log convergence before compatibility/recovery review",
+          "activate": "Activate storage now",
+          "repeat_p2": "Repeat unchanged426-file P2 fixture and accept full product",
+          "unrelated": "Start unrelated feature",
+          "unknown": "No fit/insufficient facts"
+        }
+      },
+      "bad_control": {
+        "type": "choice",
+        "instructions": "Is the assertion in state.controls.bad supported?",
+        "criteria": {
+          "reject": "Reject: tests assert unsafe old behavior, not safety",
+          "supported": "Supported",
+          "unknown": "Cannot tell"
+        }
+      },
+      "good_control": {
+        "type": "choice",
+        "instructions": "Is the assertion in state.controls.good supported?",
+        "criteria": {
+          "supported": "Supported with stated limits",
+          "reject": "Not supported",
+          "unknown": "Cannot tell"
+        }
+      }
+    }
+  }
+}

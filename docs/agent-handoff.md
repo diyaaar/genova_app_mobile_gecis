@@ -6,7 +6,7 @@ Read [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md); relevant
 [decisions](../KARARLAR.md)/[MIGRATION](../MIGRATION.md). English records/Turkish user copy.
 One writer; verify HEAD, dirty ownership, resources and exact permission on resume.
 
-## Current execution — P1 source + P2 local accepted, P3 READY
+## Current execution — P1 source + P2 local accepted, P3 partial inventory
 
 [Playbook](teslim-rehberi/README.md) → moving [checkpoint](teslim-rehberi/checkpoint.md).
 Candidate **GENOVA-BETA-20261003-P1**: [source/feature/blocker record](reports/090/2026-10-03-p1-beta-candidate.md)
@@ -27,9 +27,21 @@ and build fresh. Source/test-support03b59b5 + separate P2 record commit (verify 
 One Jev triage/1108input/215output/estimated$0.000046536, advisory only.
 
 NEXT [P3 inventory card](briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory),
-READY/NOT RUN. [Guide review](reports/2026-10-03-delivery-guide-checkpoint-review.md)
+IN PROGRESS / PARTIAL. [Executed inventory](reports/2026-10-03-p3-entry-inventory.md),
+entrye7424e8,610pins/62focusedtests and complete entry/test/recovery mapping PASS.
+Correct Chrome Vercel production metadata verifies served main/a13f696. Correct
+Supabase visible15of25ledgerIDs and17of20candidate Edge slugs (21total) do not verify
+actual definitions/SQL checksums/deployed versions/source/config. Approved connector
+unavailable; connection suggested and owner asked to enable Genesinova project
+hievmwwctjjlhmssoxsu. No browser SQL/alternateconnector/env fallback. Goal remains ACTIVE;
+required identity row NOT RUN. Source-confirmed full hook pre-consent HEAD mismatch
+with P2 fixture and raw audioURL logging require narrow follow-up convergence,
+not blind old-overlay replay (embedded cache/offline/file labels already present).
+No product/live/build/device changes. Jev2484input/219output/$0.000104328 estimate,
+two controls agree; advisory only. Fresh free21,395,268KiB; no owned runtime.
+[Earlier guide review](reports/2026-10-03-delivery-guide-checkpoint-review.md)
 reverified610 product/157native/5server/five sidecar hashes at4e7ab14; corrected stale
-runbook pointer, no product/live action. Next: exact served/SQL/Edge/full-route and
+runbook pointer, no product/live action. Its planning sequence was exact served/SQL/Edge/full-route and
 minimal convergence/test inventory → scoped fresh recovery/rehearsal → independent
 review/exact operation authority. Review Jev1943input/221output/$0.000081606 estimate.
 Actual Auth/REST/private-file cache headers/native CFNetwork persistence remain required.

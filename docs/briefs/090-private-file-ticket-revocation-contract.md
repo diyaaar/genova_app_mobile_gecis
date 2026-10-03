@@ -17,9 +17,15 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ### 3 October — P3 first work card: exact version and compatibility inventory
 
-Status **READY / NOT RUN**. Entry `main/4e7ab14`, sole primary writer, unrelated CLI
-marker excluded. Owner asked for a delivery-guide check and next step; this turn
-creates the card, does not execute code/hosted work. [Review and evidence](../reports/2026-10-03-delivery-guide-checkpoint-review.md).
+Status **IN PROGRESS / PARTIAL INVENTORY**. Planning entry `main/4e7ab14`; execution
+entry `main/e7424e8`, sole primary writer, unrelated CLI marker excluded. Owner asks
+for a measurable next goal pursued to completion. [Planning review](../reports/2026-10-03-delivery-guide-checkpoint-review.md);
+[executed inventory and gaps](../reports/2026-10-03-p3-entry-inventory.md).
+Correct signed-in Chrome production metadata: served Vercel main/a13f696;15of25
+SQL source IDs visible in ledger;17of20candidate Edge slugs present (21total).
+Exact SQL bodies/checksums/current policies and Edge version/source/config remain
+NOT RUN: mandatory correct-project connector unavailable. Connections suggested,
+owner asked to enable Genesinova scope, no alternate SQL path or hosted mutation.
 Read actual AGENTS/handoff/active/current090, guide/work cycle/resource controls,
 README/checkpoint/P3, P1 manifest, P2 report/sidecars, relevant MIGRATION and R1/
 runbook. TypeSafe skill/live index/API/models read; one bounded advisory call.
@@ -52,10 +58,16 @@ fresh10GiB-floor/peak/owned-cleanup preflight; review allocated only small recor
 
 | P3 inventory criterion | Required? | Status | Required evidence / exit boundary |
 |---|---|---|---|
-| Exact current served/applied/deployed identities reconciled to candidate | yes | NOT RUN | Correct target/account/time/source provenance; unknown current state prevents promotion |
-| Minimum convergence and all exposed-route dependency/test mapping | yes | NOT RUN | Native + four WebViews + five file families, old/new/mixed clients and actual cache-header/persistence tests; no fixture-as-full-beta claim |
-| Recovery/review/operation prerequisites and missing scope explicit | yes | NOT RUN | Per-layer exclusions, safe release/forward repair, named independent-review requirement and exact external-operation scope; no execution implied |
-| Documentation/source hash/links/diff and scoped commit | yes | NOT RUN for inventory execution | Planning review passes separately; required inventory rows cannot close from this card alone |
+| Exact current served/applied/deployed identities reconciled to candidate | yes | PARTIAL / NOT RUN exact SQL/Edge | Correct Vercel/account/project/time metadata verified; visible ledger/slugs do not prove definitions/source/config; unknown state prevents promotion |
+| Minimum convergence and all exposed-route dependency/test mapping | yes | PASS inventory only | Eight entry closures/all frozen page+API entries, four WebViews/native chat/repertoire/five families; actual full-source hook lacks P2 fixture HEAD deferral, raw audioURL logs require repair; old/new/mixed/cache test mapping explicit, repairs/integration NOT RUN |
+| Recovery/review/operation prerequisites and missing scope explicit | yes | PASS prerequisites only | Snapshot/object/config exclusions, safe release/forward repair, independent reviewer NOT RUN and exact external-operation scope; no execution implied |
+| Documentation/source hash/links/diff and scoped commit | yes | PASS at scoped checkpoint commit |610pins/generator byte-equivalence/3inventory+5old-source+18embedded+36URL-hook tests; links/diff/secret check before commit; prior accepted records untouched |
+
+One actual bounded Jev review:2484input/219output,$0.000104328 estimate,5questions,
+zero retries; two controls agree. All selections/probabilities/provenance retained;
+advisory, not independent review. No private data/key export, product edits/build/
+runtime/device/deploy. Current goal remains ACTIVE while exact target row is missing;
+not complete/paused, not moved to P4. Source/test inventory helper under spike only.
 
 Exit requires every inventory row PASS; then next P3 recovery/compatibility rehearsal
 card in this same brief. Connector/version absence yields an explicit partial

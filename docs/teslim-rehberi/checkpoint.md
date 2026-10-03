@@ -6,7 +6,7 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
-- Active plan: **P3 — compatible, reviewed and recoverable release package**, READY after local P2 acceptance.
+- Active plan: **P3 — compatible, reviewed and recoverable release package**, IN PROGRESS / PARTIAL inventory after local P2 acceptance.
 - Current source outcome: [GENOVA-BETA-20261003-P1](../reports/090/2026-10-03-p1-beta-candidate.md)
   and [exact manifest](../reports/090/2026-10-03-p1-beta-candidate.json).
 - Latest accepted checkpoint: [P2 current iOS](../reports/2026-10-03-ios-p2-private-file-acceptance.md).
@@ -21,12 +21,22 @@ Historical records keep their original date/revision. [Guide](README.md).
   610 pins/five iOS sidecar hashes/157native/5server reverified; runbook current pointer
   corrected without product/live change. First [P3 inventory card](../briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory)
   READY/NOT RUN; no P3 acceptance inferred. Fresh free21,415,384KiB; owned runtime absent.
+- [Executed P3 inventory](../reports/2026-10-03-p3-entry-inventory.md), entrye7424e8:
+  correct Chrome production Vercel main/a13f696 verified;15of25source SQL ledger rows,
+  17of20Edge slugs (21total) visible. Exact SQL/catalog/checksums and deployed Edge
+  version/source/config **NOT RUN**; supabase-genesinova connector unavailable.
+  Local graph/test/recovery/operation mapping PASS,62focusedtests/610pins PASS.
+  Full source hook still HEAD-probes before native consent, unlike P2 fixture;
+  raw audioURL error logs require minimum convergence. No product/hosted change.
+  Connections suggested and owner asked to enable correct-project connector; do not
+  substitute another SQL path, declare whole goal complete or request manual QA.
+  Free21,395,268KiB, no owned runtime/build. Jev1call/2484input/219output/$0.000104328 estimate.
 
 | Plan | Execution status | Input → required output |
 |---|---|---|
 | [P1](01-candidate.md) | ACCEPTED source inventory; self-review, not release acceptance | WF-016 audit → immutable source/feature/blocker manifest |
 | [P2](02-ios.md) | ACCEPTED LOCAL; required matrix PASS, self-review | manifest + Android pins → current synthetic iOS evidence, not hosted/hardware |
-| [P3](03-release-package.md) | READY; required compatibility/recovery/review NOT RUN | same candidate → reviewed compatibility/recovery package |
+| [P3](03-release-package.md) | IN PROGRESS; partial inventory, exact SQL/Edge/compatibility/recovery/review NOT RUN | same candidate → reviewed compatibility/recovery package |
 | [P4](04-storage.md) | WAITING P3 | authorized package → deployed compatible readers/writers and reconciled private storage |
 | [P5](05-android-beta.md) | WAITING P4 | active services/storage → installed signed Android beta |
 | [P6](06-full-product.md) | WAITING P5; decision preparation possible | beta evidence → full preserved commercial feature matrix |
@@ -57,12 +67,15 @@ Evidence: [Jev/source audit](../reports/2026-10-03-jev-conversation-direction-au
 
 ## Next three actions
 
-1. Execute the single P3 inventory card: exact candidate/current served web/applied
-   SQL/deployed Edge/config identities and gaps; unknown observations stay NOT RUN.
-2. Map minimum convergence/full exposed routes and actual Next/Auth/RLS five-family/
-   old-new-mixed clients/cache-header/native-persistence tests to sources/prerequisites.
-3. Hand exact gaps/authority to the next P3 protected fresh recovery/rehearsal and
-   independent review stages. No live activation, bulk push or data export in inventory.
+1. Enable/verify approved supabase-genesinova connector for hievmwwctjjlhmssoxsu;
+   finish exact SQL/catalog/checksum and Edge version/source/config reconciliation.
+   Visible ledger/slugs remain partial, not source equivalence. Served web metadata now verified.
+2. After exact reconciliation, create narrow full-source hook/log convergence card,
+   actual consent/probe integration regressions and affected P1/P2 pin/acceptance update.
+   Already-present embedded cache/offline/file-label guards must not be reapplied blindly.
+3. Use completed mapping for scoped fresh recovery/full actual Next/Auth/RLS old-new-
+   mixed compatibility and independent review/exact operation packet. No live activation,
+   bulk push or data export from this inventory. First required inventory row stays open.
 
 Latest planning review Jev1call/5questions/1943input/221output, estimated$0.000081606;
 sources/tests authoritative. No raw-chat rescan/product test rerun or owner QA.
