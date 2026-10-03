@@ -15,6 +15,45 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — complete original automated Android consent/share/cleanup goal
+
+Entry538c94f/main, sole writer, unrelated CLI marker preserved. Previous goal turn
+was progress (actual inline preview/cleanup/B evidence), not completion: share-sheet
+return, active-surface B teardown and runtime browser-persistence evidence missing.
+Owner grants agent ADB/simulator UI testing; no manual QA, hosted/Jev/key/account/
+recipient/Print operation. Retain original goal, exact426-pin/four-delta candidate.
+Read current handoff/active/090/controls, guide/workcycle and applicable source;
+complete TypeSafe skill read, deterministic work/no inference. Earlier iOS required
+gate remains named next grouped integration milestone, not this Android objective.
+
+One outcome: actual automated cancel0 → approved localPDF → explicit system share
+sheet opened/dismissed → localPDF return/close/removal → B from still-active profile
+→ oldA403/no provider. Inspect browser persistence directly using acceptance-only
+loopback WebView debugging; normal release keeps existing debug behavior off.
+Allowed NativeWebViewScreen/runtime-config + focused tests,090 acceptance wrapper, candidate harness/
+interactive helper/tests and brief/report/handoff/active. No dependencies, auth/tenant/
+ticket/schema/Edge/browser product behavior change. New immutable full-flowv5.
+One bounded source-only `spike/090-webview-storage-inspection.mjs` may inspect exact
+owned loopback target counts through existing Node/CDP; no general test framework.
+Three actions: strict bounded evidence/debug opt-in/negative tests; fresh gates and
+actual Android share/cancel/close/B/cache automation; inspect evidence, normal guard-off,
+owned cleanup and separate source/docs commits. Source rollback only, no migration.
+Do not promote an event or constructor setting to visual/cache runtime proof.
+
+Freshfree22,831,556KiB; owned runtimes/builds absent. Reuse existing deps/Gradle/API36
+AVD/SDK/JDK; no downloads. Additionalpeak<=6GiB leaves16,540,100KiB>10GiB. One heavy
+process/runtime. Rebuild necessary for stricter evidence/guarded inspection; output
+removed after batch: exact candidate/mobileandroid/.expo/root.next/coverage/PNG,
+owned app/reverses/fixture/emulator. Keep deps/AVD/user data/immutable reports.
+
+| Criterion | Required? | Status | Evidence / boundary |
+|---|---|---|---|
+| Guarded inspection cannot enable hosted WebView; strict share/order negatives | yes | NOT RUN | focused source tests, no auth relaxation |
+| Fresh mobile/root/candidate/Android build gates | yes | NOT RUN | current source, not cached-green claim |
+| Actual cancel0/local pages/system share dismiss/return/close/remove | yes | NOT RUN | ADB fresh screen + native/HTTP events |
+| B initiated from active profile/oldA403/cache/persistence | yes | NOT RUN | actual native RPC/teardown and direct browser inspection |
+| Pins/redaction/normal guard-off/owned cleanup | yes | NOT RUN | current-source hashes, no binary history |
+
 ### 3 October — approved account-free inline PDF preview
 
 Automation amendment at13:44UTC, HEAD8b7b022: owner explicitly approved ADB
