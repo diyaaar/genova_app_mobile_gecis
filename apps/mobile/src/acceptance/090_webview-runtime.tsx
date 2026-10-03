@@ -177,12 +177,13 @@ function Runtime({ trace }: { trace: Trace }) {
   return <View style={styles.body}>
     <Pressable accessibilityRole="button" onPress={() => void (async () => {
       if (interactive) {
-        setClosed(true); await capability.clear();
         const oldUrlResponse = await fetch(`${WEBVIEW_FIXTURE}/090/native-mode`, { method: 'POST',
           headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode: 'restore' }) });
         if (!oldUrlResponse.ok) throw new Error('Mode refused');
         const oldA = validate090WebViewMetadata({ ...metadata, legacyUrl: (await oldUrlResponse.json() as { url: string }).url }, 'legacy-next').legacyUrl;
         await auth.selectChoir(metadata.choirB);
+        // B's actual AuthStore transition initiates A teardown, not a prior back/exit action.
+        setClosed(true);
         for (const method of ['GET', 'HEAD']) {
           const response = await fetch(oldA, { method, redirect: 'error' }); await response.text();
           if (response.status !== 403) throw new Error('Old A read allowed');

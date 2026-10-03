@@ -44,3 +44,9 @@ export function assertInlinePreviewEvent(event, events, providerReads) {
   if (event === 'file-removed') assert(events.includes('preview-closed'));
   if (['preview-page-2', 'preview-closed'].includes(event)) assert(events.includes('preview-page-1'));
 }
+
+export function assertCompletedInteractiveFlow(events, providerReads) {
+  assert.deepEqual(events, ['cancel-observed', 'preview-page-1', 'preview-page-2',
+    'share-returned', 'preview-closed', 'file-removed']);
+  assert.deepEqual(providerReads, { renewal: 1, revoked: 0, switched: 0 });
+}

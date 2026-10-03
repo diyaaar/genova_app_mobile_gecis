@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
-import { interactiveRows, assertInteractiveCancel, assertInlinePreviewEvent } from './090_android_interactive.mjs';
+import { interactiveRows, assertInteractiveCancel, assertInlinePreviewEvent, assertCompletedInteractiveFlow } from './090_android_interactive.mjs';
 import { withFileMetadata, withDeferredNativeProbe, DETAIL_PAGE, FILE_HOOK } from './090_candidate_native_interactive.mjs';
 import { sourceAt } from './090_candidate_native_cache.mjs';
 import { buildEnv, ROOT, WEB_REF } from './090_android_candidate.mjs';
@@ -13,6 +13,15 @@ const { build, transformSync } = createRequire(require.resolve('@vitejs/plugin-r
 const ids = { choirA: 'a', actor: 'actor', memberA: 'chef', targetMember: 'korist',
   assignmentId: 'assignment', submissionId: 'submission', fileId: 'alias' };
 const url = (table, query = '') => new URL(`http://127.0.0.1/rest/v1/${table}?${query}`);
+test('full flow requires actual share return before preview/file cleanup and exact provider count', () => {
+  const events = ['cancel-observed', 'preview-page-1', 'preview-page-2', 'share-returned', 'preview-closed', 'file-removed'];
+  const reads = { renewal: 1, revoked: 0, switched: 0 };
+  assertCompletedInteractiveFlow(events, reads);
+  for (const event of events) assert.throws(() => assertCompletedInteractiveFlow(events.filter(item => item !== event), reads));
+  assert.throws(() => assertCompletedInteractiveFlow([...events.slice(0, 3), ...events.slice(4), 'share-returned'], reads));
+  assert.throws(() => assertCompletedInteractiveFlow(events, { ...reads, switched: 1 }));
+  assert.throws(() => assertCompletedInteractiveFlow(events, { ...reads, renewal: 2 }));
+});
 test('v4 native preview evidence preserves cancel/read1/page/close/removal ordering', () => {
   const events = ['cancel-observed'];
   for (const event of ['preview-page-1', 'preview-page-2', 'preview-closed', 'file-removed']) {

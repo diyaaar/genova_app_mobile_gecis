@@ -8,6 +8,14 @@ import {
 
 const LOOPBACK_HOSTS = new Set(['127.0.0.1', 'localhost', '[::1]']);
 
+/** Local synthetic acceptance inspection only; flags cannot enable a hosted target. */
+export function isGuardedWebViewInspectionEnabled(input: {
+  acceptance?: string; interactive?: string; appOrigin: string;
+}): boolean {
+  return input.acceptance === '1' && input.interactive === '1'
+    && input.appOrigin === 'http://127.0.0.1:31090';
+}
+
 export interface NativeWebViewRuntimeConfig {
   appOrigin: string;
   routePolicy: AppRoutePolicy;

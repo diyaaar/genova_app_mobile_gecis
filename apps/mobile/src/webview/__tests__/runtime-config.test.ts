@@ -1,7 +1,19 @@
 import { APP_WEB_ORIGIN } from '@shared/mobile-webview-bridge';
-import { createNativeWebViewRuntimeConfig, resolveNativeWebViewOrigin } from '../runtime-config';
+import { createNativeWebViewRuntimeConfig, isGuardedWebViewInspectionEnabled, resolveNativeWebViewOrigin } from '../runtime-config';
 
 describe('native WebView runtime configuration', () => {
+  it('allows inspection only for both explicit acceptance flags and exact synthetic loopback', () => {
+    const input = { acceptance: '1', interactive: '1', appOrigin: 'http://127.0.0.1:31090' };
+    expect(isGuardedWebViewInspectionEnabled(input)).toBe(true);
+    for (const value of [undefined, '', '0', 'true']) {
+      expect(isGuardedWebViewInspectionEnabled({ ...input, acceptance: value })).toBe(false);
+      expect(isGuardedWebViewInspectionEnabled({ ...input, interactive: value })).toBe(false);
+    }
+    for (const appOrigin of [APP_WEB_ORIGIN, 'https://127.0.0.1:31090', 'http://localhost:31090',
+      'http://127.0.0.1:31091', 'http://127.0.0.1:31090/path', 'http://user@127.0.0.1:31090']) {
+      expect(isGuardedWebViewInspectionEnabled({ ...input, appOrigin })).toBe(false);
+    }
+  });
   it('always selects production in release and accepts only explicit dev loopback origins', () => {
     expect(resolveNativeWebViewOrigin({
       isDevelopment: false,

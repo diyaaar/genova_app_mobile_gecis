@@ -35,7 +35,7 @@ import {
   type PreparedProtectedFileRequest,
 } from './platform-capabilities';
 import { allocateTenantEpoch, createBridgeChallenge, createBridgeCorrelationId } from './random';
-import { readNativeWebViewRuntimeConfig, type NativeWebViewRuntimeConfig } from './runtime-config';
+import { isGuardedWebViewInspectionEnabled, readNativeWebViewRuntimeConfig, type NativeWebViewRuntimeConfig } from './runtime-config';
 import { ProtectedPdfPreview, type PdfPreviewEvent } from './ProtectedPdfPreview';
 import type { NativePdfPreviewInput } from './platform-capabilities';
 import { createLocalPdfPreview } from './local-pdf-preview';
@@ -487,7 +487,11 @@ export function NativeWebViewScreen({
           allowUniversalAccessFromFileURLs={false}
           allowsBackForwardNavigationGestures={false}
           mediaCapturePermissionGrantType="deny"
-          webviewDebuggingEnabled={__DEV__}
+          webviewDebuggingEnabled={__DEV__ || isGuardedWebViewInspectionEnabled({
+            acceptance: process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE,
+            interactive: process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_INTERACTIVE,
+            appOrigin: configResult.config.appOrigin,
+          })}
           onMessage={(event: WebViewMessageEvent) => {
             const config = configResult.config;
             const sourceUrl = config && isOriginOnlySource(event.nativeEvent.url, config.appOrigin)

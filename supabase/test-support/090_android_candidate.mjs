@@ -63,10 +63,10 @@ async function run(command, args, cwd, env = buildEnv()) {
   const [code] = await once(child, 'exit'); assert.equal(code, 0, 'Owned command failed');
 }
 async function serve(interactive = false) {
-  const { interactiveRows, assertInteractiveCancel, assertInlinePreviewEvent } = await import('./090_android_interactive.mjs');
+  const { interactiveRows, assertInteractiveCancel, assertInlinePreviewEvent, assertCompletedInteractiveFlow } = await import('./090_android_interactive.mjs');
   const candidate = interactive ? ROOT + '/spike/090-runtime/android-interactive-candidate' : CANDIDATE;
   const out = ROOT + '/docs/reports/090/' + (interactive
-    ? '2026-10-03-android-candidate-inline-preview-http-v4.json' : '2026-10-03-android-candidate-sdk-http-v4.json');
+    ? '2026-10-03-android-candidate-full-share-http-v5.json' : '2026-10-03-android-candidate-sdk-http-v4.json');
   assert(!fs.existsSync(out), 'Preserve earlier attempt');
   const candidatePins = interactive ? JSON.parse(fs.readFileSync(candidate + '/native-cache-source.json')) : null;
   if (interactive) {
@@ -136,6 +136,7 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
   function evidence(input) {
     if (interactive) {
       assert.deepEqual(input, { platform: 'android', switched: true, cacheEmpty: true });
+      assertCompletedInteractiveFlow(native.map(item => item.event), providerReads);
       assert(native.some(item => item.event === 'cancel-observed'));
       for (const event of ['preview-page-1', 'preview-page-2', 'preview-closed']) assert(native.some(item => item.event === event));
       assert(native.some(item => item.event === 'file-removed'));
@@ -161,7 +162,10 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
   const servers = []; let next;
   function persist() {
     const result = { ...record, requests, native, providerReads, refreshes, unknown, outside, failures,
-      pdf: { bytes: bytes.length, sha256: hash(bytes) }, actualConsent: 'NOT RUN', actualShare: 'NOT RUN' };
+      pdf: { bytes: bytes.length, sha256: hash(bytes) },
+      actualConsent: interactive ? 'UI_REVIEW_IN_PAIRED_RECORD' : 'NOT RUN',
+      actualShare: interactive && native.some(item => item.event === 'share-returned')
+        ? 'NATIVE_RETURN_UI_REVIEW_IN_PAIRED_RECORD' : 'NOT RUN' };
     // First authoritative report only. Failed/unfinished attempts use a separate file on stop.
     fs.writeFileSync(out, JSON.stringify(result, null, 2) + '\n', { flag: 'wx' });
     console.log(JSON.stringify({ status: result.status, report: out }));
