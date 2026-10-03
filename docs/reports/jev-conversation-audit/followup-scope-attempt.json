@@ -1,0 +1,29 @@
+{
+  "time": "2026-10-03T14:33:38.080Z",
+  "requestSha256": "00f88797c0db83abb276bb2d5ac90a6a372dce4ca56fa5d964465924a8d817ab",
+  "bytes": 23714,
+  "provenance": {
+    "stage": "focused contradiction check",
+    "source": "local redacted transcript, references kept in scan inventory"
+  },
+  "questions": {
+    "cancelled": {
+      "type": "choice",
+      "instructions": "Does the USER explicitly cancel native chat, homework and home screen as final product requirements?",
+      "criteria": {
+        "yes": "Explicitly cancels these features",
+        "no": "No cancellation; only workflow/testing/UI discussion",
+        "unclear": "Cannot establish either"
+      }
+    },
+    "test_owner": {
+      "type": "choice",
+      "instructions": "Who should perform the mobile tests according to the latest user statements?",
+      "criteria": {
+        "agent": "Agent via computer use/automation",
+        "human": "User manually",
+        "unknown": "Not established"
+      }
+    }
+  }
+}

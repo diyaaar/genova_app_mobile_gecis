@@ -16,9 +16,12 @@ Direct CDP localStorage=null/session0/IDB0/Cache0/SW0 before/afterPDF, target0 a
 157native/5server/426candidate pins;65905B/hash/provider1/0/0/unknown0/outside0/failures0.
 Original bounded Android goal achieved; whole090/R1/betaOPEN/liveNO-GO. Synthetic
 emulator/dispatcher NOT hosted RLS/Next routing/physical-device/iOS/recipient proof;
-self-review. NEXT: required grouped sensitive iOS automated integration, no owner QA;
-bounded workcard/resources/platform tools before execution. Permanent browser-only
-API audit/backport before promotion. [Historical chooser attempts](../docs/reports/2026-10-03-android-candidate-consent-share.md)
+self-review. Owner-requested [Jev audit](../docs/reports/2026-10-03-jev-conversation-direction-audit.md)
+scanned17chats/2428messages;105calls/$0.05018034 estimated. Direction aligned, delivery
+gap: fresh GitHub maina13f696 is363commits/974paths behind baseline2652584.
+NEXT: freeze candidate scope→grouped iOS automation→browser API audit/independent
+review/fresh recovery→controlled compatible release/storage activation→installed beta;
+no owner QA or bulk push. [Historical chooser attempts](../docs/reports/2026-10-03-android-candidate-consent-share.md)
 v1FAIL/v2NOT RUN/v3NOT RUN and [inlinev4](../docs/reports/2026-10-03-android-inline-pdf-preview.md)
 preserved, not promoted to new-platform proof.
 
@@ -28,7 +31,7 @@ and authorized small memory note; unrelated authority remains separate. No new
 framework/dependency needed. At14:15UTC owned app/reverses/forward19390/servers/
 emulator/android/candidate/rootoutputs/11PNG/deviceXML removed; normal guard-off/
 pins/redaction PASS, free22739360KiB. Keep deps/AVD/iOS Simulator/user data; no owned runtime.
-Unrelated CLI marker kept, no hosted/AI spend. Independent review/hosted preflight/
+Unrelated CLI marker kept, no hosted operation. Independent review/hosted preflight/
 forward repair/R1 still required; no refresh sharing/arbitrary issuer.
 
 ## Preserved local evidence and identities
@@ -56,8 +59,8 @@ recovery; DB→Edge→compatible clients/recovery before writes; no actorless-v1
 Fresh >=10GiB/one heavy process/two-failure reassessment. Preserve deps/AVD/CoreSimulator/
 caches/user data/original068/[R1](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md)
 protected backup outside Git. R1 excludes Vault/net/Storage metadata/bytes/password/
-settings; later roles not original row parity. No current hosted preflight. Jev $0;
-same-key reuse authorized2October only, no3October use/key persistence.
+settings; later roles not original row parity. No current hosted preflight. Owner's
+3October audit request authorized current Jev calls; key never persisted.
 Android-first beta → full product → both stores; RN/Expo/permanent profile WebView,
 Supabase/privateR2/noRailway/prefer <=$5/month. Assisted onboarding/five free/extra-seat/
 manual billing; prices/counting/retention/deletion/last-chef choices open. WF-013 step5

@@ -1,0 +1,48 @@
+{
+  "time": "2026-10-03T14:35:00.936Z",
+  "requestSha256": "aba6075a004d855ff7d09da86553a54c20db8689db80f4609049448c32e00bbb",
+  "bytes": 7743,
+  "provenance": {
+    "stage": "focused contradiction check",
+    "source": "local redacted transcript, references kept in scan inventory"
+  },
+  "questions": {
+    "onboarding": {
+      "type": "choice",
+      "instructions": "What registration path did the user choose for first version?",
+      "criteria": {
+        "assisted": "Operator-assisted first version, self-service later",
+        "self_service": "Immediate self-service",
+        "unknown": "Not established"
+      }
+    },
+    "notes": {
+      "type": "choice",
+      "instructions": "What is the latest decision about deleting old conductor notes?",
+      "criteria": {
+        "keep": "Deletion withdrawn; keep notes and continue needed work",
+        "delete": "Delete original live notes",
+        "synthetic": "Delete synthetic only",
+        "unknown": "Not established"
+      }
+    },
+    "website": {
+      "type": "choice",
+      "instructions": "What is the latest sibling website direction?",
+      "criteria": {
+        "detached": "Do not modify it; user says it no longer uses this database",
+        "shared": "Repair website because it shares DB",
+        "unknown": "Not established"
+      }
+    },
+    "stack": {
+      "type": "choice",
+      "instructions": "Which mobile stack did the user actually choose?",
+      "criteria": {
+        "rn": "React Native/Expo retained, Flutter alternative only",
+        "flutter": "Migrate to Flutter now",
+        "unknown": "Not established"
+      }
+    }
+  }
+}

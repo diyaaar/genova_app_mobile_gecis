@@ -1,0 +1,57 @@
+{
+  "requestSha256": "aba6075a004d855ff7d09da86553a54c20db8689db80f4609049448c32e00bbb",
+  "elapsedMs": 408,
+  "model": "jev-1.13.0",
+  "answers": {
+    "onboarding": {
+      "type": "choice",
+      "choice": "assisted",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "assisted": 1,
+        "self_service": 0
+      }
+    },
+    "notes": {
+      "type": "choice",
+      "choice": "unknown",
+      "confidence": 0.27,
+      "probabilities": {
+        "unknown": 0.46,
+        "delete": 0.43,
+        "keep": 0.11,
+        "synthetic": 0
+      }
+    },
+    "website": {
+      "type": "choice",
+      "choice": "detached",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "detached": 1,
+        "shared": 0
+      }
+    },
+    "stack": {
+      "type": "choice",
+      "choice": "rn",
+      "confidence": 0.98,
+      "probabilities": {
+        "unknown": 0.01,
+        "rn": 0.99,
+        "flutter": 0
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 2990,
+    "output_tokens": 159
+  },
+  "estimatedUsd": 0.00012558,
+  "provenance": {
+    "stage": "focused contradiction check",
+    "source": "local redacted transcript, references kept in scan inventory"
+  }
+}

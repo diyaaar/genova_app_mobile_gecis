@@ -1,0 +1,40 @@
+{
+  "requestSha256": "369b6d80ac6ea010a26d0004d7a65860d411882f63d3d8c2adc2c044e1d35ed2",
+  "elapsedMs": 362,
+  "model": "jev-1.13.0",
+  "answers": {
+    "latest_notes": {
+      "type": "choice",
+      "choice": "keep",
+      "confidence": 0.31,
+      "probabilities": {
+        "keep": 0.54,
+        "delete": 0.4,
+        "ambiguous": 0.06
+      }
+    },
+    "evidence": {
+      "type": "choice",
+      "choice": "L11151",
+      "confidence": 0.92,
+      "probabilities": {
+        "L11132": 0.03,
+        "none": 0.02,
+        "L11151": 0.95
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 747,
+    "output_tokens": 93
+  },
+  "estimatedUsd": 0.000031374,
+  "provenance": {
+    "threadId": "01a0f6aa-6fb1-7e20-9aed-0a49f5a6d109",
+    "messageIds": [
+      "L11132",
+      "L11151"
+    ],
+    "stage": "source anchored correction, user answer decoded in-process"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "calls": 105,
+  "inputTokens": 1194770,
+  "outputTokens": 147705,
+  "estimatedUsd": 0.050180340000000004,
+  "model": [
+    "jev-1.13.0"
+  ],
+  "questions": 2519,
+  "providerRetries": 0
+}

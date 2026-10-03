@@ -1,0 +1,20 @@
+{
+  "time": "2026-10-03T14:33:38.495Z",
+  "requestSha256": "4b79458774aa230fb25d3320f6447425bb20989f3c007ce0d6c30f550fc7be32",
+  "bytes": 5878,
+  "provenance": {
+    "stage": "focused contradiction check",
+    "source": "local redacted transcript, references kept in scan inventory"
+  },
+  "questions": {
+    "domain": {
+      "type": "choice",
+      "instructions": "Is the requested deliverable a feature of the choir SaaS/mobile product, or a separate NFC/Google-card instruction brochure?",
+      "criteria": {
+        "choir": "Explicit choir application feature",
+        "separate": "Separate customer instruction brochure; exclude from mobile product scope",
+        "unknown": "Unclear"
+      }
+    }
+  }
+}

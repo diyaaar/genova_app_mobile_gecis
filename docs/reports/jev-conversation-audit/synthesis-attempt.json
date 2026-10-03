@@ -1,0 +1,113 @@
+{
+  "time": "2026-10-03T14:35:01.346Z",
+  "requestSha256": "c11e572d2c3e94f9f3666c6308771e2e622f8b62a8003a94ff42fdc75d363b6b",
+  "bytes": 38574,
+  "provenance": {
+    "stage": "Jev comparison and plan selection",
+    "currentRevision": "2652584",
+    "scanCalls": 100,
+    "scope": "structured Jev findings + independently checked repository facts"
+  },
+  "questions": {
+    "direction": {
+      "type": "choice",
+      "instructions": "Combining conversation findings and verified repository facts, is development direction aligned with the user?",
+      "criteria": {
+        "aligned_but_delivery_gap": "Core product/architecture direction aligned; tangible beta delivery and full-product gap remain",
+        "fully_met": "Desired usable commercial two-store product is already delivered",
+        "wrong_stack": "Stack change/rewrite is necessary",
+        "unknown": "Evidence insufficient"
+      }
+    },
+    "bottleneck": {
+      "type": "choice",
+      "instructions": "Which is the strongest CURRENT delivery bottleneck supported by facts?",
+      "criteria": {
+        "release_integration": "Convert accumulated local fixes into one compatible deployable release and real end-to-end beta",
+        "missing_tests": "Simply add many more unit tests before anything else",
+        "new_architecture": "Start new infrastructure or framework rewrite",
+        "complete": "No meaningful blocker",
+        "unknown": "Cannot choose"
+      }
+    },
+    "immediate": {
+      "type": "choice",
+      "instructions": "Best next bounded action BEFORE any new hosted operation, given current required gates?",
+      "criteria": {
+        "finish_ios_candidate": "Finish same-source iOS file integration and current candidate compatibility; then freeze one release package",
+        "new_chat_feature": "Build another small chat feature first",
+        "bulk_push": "Immediately bulk push363commits to production",
+        "rewrite": "Switch to Flutter/Railway",
+        "unknown": "Need more evidence"
+      }
+    },
+    "next_milestone": {
+      "type": "choice",
+      "instructions": "Which visible milestone should organize subsequent engineering work?",
+      "criteria": {
+        "android_beta": "Usable installed Android beta with declared features, actual compatible backend, file/data isolation and automated agent testing",
+        "brief_count": "Maximize closed brief count",
+        "all_features_first": "Finish every future feature before any usable beta",
+        "unknown": "Not established"
+      }
+    },
+    "scope": {
+      "type": "choice",
+      "instructions": "Should the narrower beta silently replace full feature preservation/two-store final destination?",
+      "criteria": {
+        "no": "No, preserve complete final roadmap and explicit remaining feature matrix",
+        "yes": "Yes, current PDF demo is the final product",
+        "unknown": "Unclear"
+      }
+    },
+    "qa": {
+      "type": "choice",
+      "instructions": "How should upcoming iOS/Android acceptance be executed?",
+      "criteria": {
+        "agent": "Agent automation; owner only needed for unavoidable account/hardware access or product choices",
+        "manual": "Ask owner to click each test step again",
+        "skip": "Skip platform runtime checks",
+        "unknown": "Unclear"
+      }
+    },
+    "safety": {
+      "type": "choice",
+      "instructions": "How should local security evidence affect deployment?",
+      "criteria": {
+        "release_gates": "Retain tenant/revocation contract; inspect exact compatibility/recovery and current hosted state before controlled release",
+        "ignore": "Ignore tenant isolation to ship faster",
+        "ai_authorizes": "Jev confidence itself authorizes deployment",
+        "unknown": "Unclear"
+      }
+    },
+    "daily": {
+      "type": "choice",
+      "instructions": "Best progress metric for this user?",
+      "criteria": {
+        "user_flow": "New complete usable user flow, tested environment, remaining beta blocker, next concrete exit",
+        "tests": "Unit test count or number of commits",
+        "activity": "Hours/tools/token usage alone",
+        "unknown": "Unclear"
+      }
+    },
+    "docs": {
+      "type": "choice",
+      "instructions": "Do repository facts support a documentation consistency problem?",
+      "criteria": {
+        "yes": "Some status pointers conflict with newer source/decisions and should be reconciled",
+        "no": "Every current status is perfectly synchronized",
+        "unknown": "Cannot establish"
+      }
+    },
+    "missing_axis": {
+      "type": "choice",
+      "instructions": "Which important planning dimension is easiest to lose if focusing only on PDF/security tests?",
+      "criteria": {
+        "whole_product": "Independent choir onboarding, member roles, actual beta usability, remaining rehearsal features and commercial operations",
+        "pdf_only": "Only another synthetic PDF size",
+        "model": "Switching AI models repeatedly",
+        "unknown": "Unclear"
+      }
+    }
+  }
+}

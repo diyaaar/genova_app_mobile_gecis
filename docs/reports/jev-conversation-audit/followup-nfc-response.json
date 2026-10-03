@@ -1,0 +1,26 @@
+{
+  "requestSha256": "4b79458774aa230fb25d3320f6447425bb20989f3c007ce0d6c30f550fc7be32",
+  "elapsedMs": 286,
+  "model": "jev-1.13.0",
+  "answers": {
+    "domain": {
+      "type": "choice",
+      "choice": "separate",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "separate": 1,
+        "choir": 0
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 2420,
+    "output_tokens": 43
+  },
+  "estimatedUsd": 0.00010164,
+  "provenance": {
+    "stage": "focused contradiction check",
+    "source": "local redacted transcript, references kept in scan inventory"
+  }
+}

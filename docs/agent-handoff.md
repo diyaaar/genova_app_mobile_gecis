@@ -19,10 +19,12 @@ CDP localStorage=null/session0/IDB0/Cache0/SW0 before/after PDF, target0 afterB.
 Provider1/0/0; unknown/outside/failures0. Original bounded Android goal achieved,
 whole090/R1/betaOPEN. Synthetic emulator/authority/dispatcher NOT hosted RLS/Next
 routing/middleware/physical-device/iOS/recipient delivery. Self-review only.
-NEXT: required grouped sensitive iOS automated integration, no owner QA; prepare
-bounded workcard/resources/platform tools first. Permanent browser-only API audit/
-backport before promotion; no arbitrary issuer/refresh sharing. Independent review/
-fresh hosted preflight/forward repair/R1 still required. [Historical chooser](reports/2026-10-03-android-candidate-consent-share.md)
+Owner-requested [Jev direction audit](reports/2026-10-03-jev-conversation-direction-audit.md)
+at2652584 scanned17chats/2428messages directly through Jev;105calls, estimated$0.05018034.
+Direction aligned, delivery gap: fresh remote maina13f696 is363commits/974paths behind.
+NEXT: freeze one candidate scope, required grouped iOS automation→browser API audit/
+independent review/fresh recovery preflight→controlled compatible release/private-storage
+activation→installed Android beta. No owner QA or bulk-main push. [Historical chooser](reports/2026-10-03-android-candidate-consent-share.md)
 v1FAIL/v2NOT RUN/v3NOT RUN and [inlinev4](reports/2026-10-03-android-inline-pdf-preview.md)
 retained, not rewritten as fresh acceptance.
 
@@ -33,7 +35,7 @@ spending/distribution authority remains separate. No new framework required.
 At14:15UTC owned app/reverses/forward19390/servers/emulator/candidate/android/root
 outputs/11PNG/deviceXML removed; normal guard-off/pins/redaction PASS, free22739360KiB.
 Keep deps/AVD/iOS Simulator/user data/immutable evidence. No active owned runtime.
-No3October Jev use/spend ($0). Unrelated supabase/.temp/cli-latest preserved.
+Jev audit records only; no current runtime. Unrelated supabase/.temp/cli-latest preserved.
 
 ## Preserved checkpoints and candidate identities
 
@@ -64,8 +66,8 @@ reassessment. Preserve deps/AVD/CoreSimulator/global caches/user data/backups; n
 copies for history. Protected R1 genova-090-r1-5bfGvo0700/0600 outside Git, original068 kept.
 [R1 limitations](reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md): logical backup
 excludes Vault/net queues/Storage metadata/objects/password/settings; later roles snapshot
-not original row parity. No fresh hosted preflight. Jev $0; exposed-key reuse authorized
-2October only, not3October; never persist/share it.
+not original row parity. No fresh hosted preflight. Owner3October explicitly requested
+direct Jev conversation audit; same-provider key used in memory, never persisted.
 
 ## Product destination
 

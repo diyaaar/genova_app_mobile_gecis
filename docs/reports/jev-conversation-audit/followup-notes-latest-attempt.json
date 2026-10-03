@@ -1,0 +1,33 @@
+{
+  "time": "2026-10-03T14:36:24.979Z",
+  "requestSha256": "369b6d80ac6ea010a26d0004d7a65860d411882f63d3d8c2adc2c044e1d35ed2",
+  "bytes": 1334,
+  "provenance": {
+    "threadId": "01a0f6aa-6fb1-7e20-9aed-0a49f5a6d109",
+    "messageIds": [
+      "L11132",
+      "L11151"
+    ],
+    "stage": "source anchored correction, user answer decoded in-process"
+  },
+  "questions": {
+    "latest_notes": {
+      "type": "choice",
+      "instructions": "What does the latest user reply mean about old conductor notes?",
+      "criteria": {
+        "keep": "User changes mind and says do NOT delete; continue necessary work.",
+        "delete": "User still requests deletion.",
+        "ambiguous": "Cannot interpret the answer."
+      }
+    },
+    "evidence": {
+      "type": "choice",
+      "instructions": "Which supplied user passage most directly establishes the latest decision?",
+      "criteria": {
+        "L11132": "Earlier passage L11132",
+        "L11151": "Later passage L11151",
+        "none": "Neither"
+      }
+    }
+  }
+}

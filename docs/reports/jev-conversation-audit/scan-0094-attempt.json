@@ -1,0 +1,353 @@
+{
+  "time": "2026-10-03T14:30:33.480Z",
+  "requestSha256": "408e48a26957f2257f521bb503b2e265f01d41b77fac7a9bc58f5db08c760cd1",
+  "bytes": 42504,
+  "provenance": {
+    "threadId": "01a06c20-e772-76e1-be6e-181a96c629d4",
+    "part": 0,
+    "messageIds": [
+      "L7:0",
+      "L12:0",
+      "L68:0",
+      "L88:0",
+      "L153:0",
+      "L231:0",
+      "L286:0",
+      "L295:0",
+      "L300:0",
+      "L350:0",
+      "L393:0",
+      "L460:0",
+      "L502:0",
+      "L560:0",
+      "L569:0",
+      "L633:0",
+      "L691:0",
+      "L751:0",
+      "L778:0",
+      "L785:0",
+      "L794:0",
+      "L861:0",
+      "L946:0",
+      "L985:0",
+      "L990:0",
+      "L1080:0",
+      "L1319:0",
+      "L1356:0",
+      "L1363:0",
+      "L1368:0",
+      "L1416:0",
+      "L1428:0",
+      "L1444:0",
+      "L1462:0",
+      "L1471:0",
+      "L1505:0",
+      "L1521:0",
+      "L1537:0",
+      "L1576:0",
+      "L1620:0",
+      "L1627:0",
+      "L1632:0",
+      "L1729:0",
+      "L1785:0",
+      "L1792:0",
+      "L1797:0",
+      "L1820:0",
+      "L1827:0",
+      "L1832:0",
+      "L1839:0",
+      "L1846:0",
+      "L1857:0",
+      "L1909:0",
+      "L1918:0",
+      "L1927:0",
+      "L1934:0"
+    ],
+    "textSha256": "d4af56e2f995bfd22943d7d009b2b0e3ef7aeff476b8a42999a05a98c8450881"
+  },
+  "questions": {
+    "commercial": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: A commercial multi-choir SaaS, independent organizations, not one choir-specific application? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "both_stores": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Complete usable mobile product published in both App Store and Google Play? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "android_first": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Prioritize usable Android beta before full two-store release? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "rn_expo": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Retain React Native/Expo; Flutter only an alternative? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "preserve_features": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Preserve existing web features during mobile migration, including appropriate permanent WebViews? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "repertoire": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Useful repertoire, protected PDFs, annotations, audio and rehearsal experience? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "annotations_sync": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Native annotation writing, stylus/tablet usability, offline use and recoverable synchronization? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "native_breadth": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Native chat, homework and home screen plus remaining feature breadth? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "tenant_security": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Choir-aware roles/memberships and strict tenant isolation; next online request revocation? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "drive_exit": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Move choir files off Drive to private storage, preserve data, maintain working file flows? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "low_cost": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Low recurring infrastructure cost, retain Supabase, avoid unnecessary rewrites? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "assisted_onboarding": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Operator-assisted first-version choir creation; self-service later? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "pricing": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Five free choir members; charge extra members, individual sales deferred? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "autonomous": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Agent makes concrete measurable goals, proceeds autonomously, asks only needed product choices? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "no_manual_qa": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Agent performs Android/iOS UI testing, owner must not perform manual test steps? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "jev_use": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Use Jev broadly for bounded analysis/debugging/search and report measured costs? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "delivery_focus": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Stop excessive tiny checkpoints/rebuilds/approvals; tangible end-to-end product progress? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "evidence": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Verify actual code/tests, distinguish local/mock/runtime/hosted/device/store proof, no invented success? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "resource_hygiene": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Control disk use, clean task-owned generated outputs, preserve user data/caches? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "sibling_detached": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Do not change sibling website; it no longer consumes the application database? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "preserve_old_notes": {
+      "type": "choice",
+      "instructions": "Based only on user statements in conversation, what is the user's stance toward: Keep old conductor notes/data; withdrawal of permission to delete them? Assistant text supplies context, not user intent. Generic approval counts only when its referent is unambiguous. In this excerpt prefer the latest explicit user correction.",
+      "criteria": {
+        "requested": "User explicitly requests or endorses this direction in the supplied messages.",
+        "rejected": "User explicitly rejects this direction or replaces it by the end of this supplied excerpt.",
+        "assistant_only": "Only assistant proposes/claims it; user has not endorsed it in this excerpt.",
+        "absent": "No relevant evidence about this direction.",
+        "ambiguous": "Conflicting or unclear evidence; cannot establish user stance."
+      }
+    },
+    "domain": {
+      "type": "choice",
+      "instructions": "Which domain does this conversation excerpt actually concern?",
+      "criteria": {
+        "product": "Choir application engineering/product delivery",
+        "unrelated": "An unrelated personal task stored in the same project",
+        "mixed": "Both product and unrelated task",
+        "unclear": "Insufficient context"
+      }
+    },
+    "progress": {
+      "type": "choice",
+      "instructions": "What delivery stage is explicitly established by the assistant reports in this excerpt? These are claims, not independent verification. Choose highest demonstrated stage with explicit evidence, not future goals.",
+      "criteria": {
+        "planning": "Planning/inventory only",
+        "local": "Local code/tests/emulator or synthetic integration",
+        "hosted": "Specific hosted deployment or live integration",
+        "beta": "Usable installed beta accepted end to end by actual users",
+        "stores": "Both store publication actually complete",
+        "unknown": "None established"
+      }
+    },
+    "friction": {
+      "type": "choice",
+      "instructions": "What is the clearest concern USER expresses here about how work is progressing?",
+      "criteria": {
+        "no_concern": "No explicit concern",
+        "delivery": "Too much incremental work, need tangible full product progress",
+        "manual_qa": "Manual testing burden or repeated approvals",
+        "uncertainty": "Unsure what works/current status/plan alignment",
+        "reliability": "Concrete bug/security/correctness problem",
+        "cost": "Cost/disk/resource pressure",
+        "other": "Another concern or unclear"
+      }
+    },
+    "anchor": {
+      "type": "choice",
+      "instructions": "Which user passage most directly states the desired end product or a substantive change of direction? Choose none if only generic continuations.",
+      "criteria": {
+        "none": "No direct user passage establishes an ultimate product goal",
+        "L7:0": "User passage L7:0",
+        "L295:0": "User passage L295:0",
+        "L785:0": "User passage L785:0",
+        "L985:0": "User passage L985:0",
+        "L1363:0": "User passage L1363:0",
+        "L1627:0": "User passage L1627:0",
+        "L1792:0": "User passage L1792:0",
+        "L1827:0": "User passage L1827:0",
+        "L1839:0": "User passage L1839:0",
+        "L1927:0": "User passage L1927:0"
+      }
+    }
+  }
+}

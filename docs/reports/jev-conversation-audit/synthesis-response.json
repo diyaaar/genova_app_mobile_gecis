@@ -1,0 +1,128 @@
+{
+  "requestSha256": "c11e572d2c3e94f9f3666c6308771e2e622f8b62a8003a94ff42fdc75d363b6b",
+  "elapsedMs": 498,
+  "model": "jev-1.13.0",
+  "answers": {
+    "direction": {
+      "type": "choice",
+      "choice": "aligned_but_delivery_gap",
+      "confidence": 1,
+      "probabilities": {
+        "wrong_stack": 0,
+        "fully_met": 0,
+        "aligned_but_delivery_gap": 1,
+        "unknown": 0
+      }
+    },
+    "bottleneck": {
+      "type": "choice",
+      "choice": "release_integration",
+      "confidence": 1,
+      "probabilities": {
+        "release_integration": 1,
+        "unknown": 0,
+        "missing_tests": 0,
+        "complete": 0,
+        "new_architecture": 0
+      }
+    },
+    "immediate": {
+      "type": "choice",
+      "choice": "finish_ios_candidate",
+      "confidence": 0.89,
+      "probabilities": {
+        "rewrite": 0,
+        "unknown": 0.09,
+        "finish_ios_candidate": 0.91,
+        "new_chat_feature": 0,
+        "bulk_push": 0
+      }
+    },
+    "next_milestone": {
+      "type": "choice",
+      "choice": "android_beta",
+      "confidence": 1,
+      "probabilities": {
+        "brief_count": 0,
+        "all_features_first": 0,
+        "unknown": 0,
+        "android_beta": 1
+      }
+    },
+    "scope": {
+      "type": "choice",
+      "choice": "no",
+      "confidence": 1,
+      "probabilities": {
+        "yes": 0,
+        "unknown": 0,
+        "no": 1
+      }
+    },
+    "qa": {
+      "type": "choice",
+      "choice": "agent",
+      "confidence": 0.99,
+      "probabilities": {
+        "manual": 0,
+        "agent": 1,
+        "unknown": 0,
+        "skip": 0
+      }
+    },
+    "safety": {
+      "type": "choice",
+      "choice": "release_gates",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "release_gates": 1,
+        "ai_authorizes": 0,
+        "ignore": 0
+      }
+    },
+    "daily": {
+      "type": "choice",
+      "choice": "user_flow",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "activity": 0,
+        "user_flow": 1,
+        "tests": 0
+      }
+    },
+    "docs": {
+      "type": "choice",
+      "choice": "yes",
+      "confidence": 1,
+      "probabilities": {
+        "yes": 1,
+        "unknown": 0,
+        "no": 0
+      }
+    },
+    "missing_axis": {
+      "type": "choice",
+      "choice": "whole_product",
+      "confidence": 1,
+      "probabilities": {
+        "unknown": 0,
+        "whole_product": 1,
+        "pdf_only": 0,
+        "model": 0
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 19634,
+    "output_tokens": 481
+  },
+  "estimatedUsd": 0.000824628,
+  "provenance": {
+    "stage": "Jev comparison and plan selection",
+    "currentRevision": "2652584",
+    "scanCalls": 100,
+    "scope": "structured Jev findings + independently checked repository facts"
+  }
+}

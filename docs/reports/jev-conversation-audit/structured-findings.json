@@ -1,0 +1,4118 @@
+{
+  "topics": {
+    "commercial": "A commercial multi-choir SaaS, independent organizations, not one choir-specific application",
+    "both_stores": "Complete usable mobile product published in both App Store and Google Play",
+    "android_first": "Prioritize usable Android beta before full two-store release",
+    "rn_expo": "Retain React Native/Expo; Flutter only an alternative",
+    "preserve_features": "Preserve existing web features during mobile migration, including appropriate permanent WebViews",
+    "repertoire": "Useful repertoire, protected PDFs, annotations, audio and rehearsal experience",
+    "annotations_sync": "Native annotation writing, stylus/tablet usability, offline use and recoverable synchronization",
+    "native_breadth": "Native chat, homework and home screen plus remaining feature breadth",
+    "tenant_security": "Choir-aware roles/memberships and strict tenant isolation; next online request revocation",
+    "drive_exit": "Move choir files off Drive to private storage, preserve data, maintain working file flows",
+    "low_cost": "Low recurring infrastructure cost, retain Supabase, avoid unnecessary rewrites",
+    "assisted_onboarding": "Operator-assisted first-version choir creation; self-service later",
+    "pricing": "Five free choir members; charge extra members, individual sales deferred",
+    "autonomous": "Agent makes concrete measurable goals, proceeds autonomously, asks only needed product choices",
+    "no_manual_qa": "Agent performs Android/iOS UI testing, owner must not perform manual test steps",
+    "jev_use": "Use Jev broadly for bounded analysis/debugging/search and report measured costs",
+    "delivery_focus": "Stop excessive tiny checkpoints/rebuilds/approvals; tangible end-to-end product progress",
+    "evidence": "Verify actual code/tests, distinguish local/mock/runtime/hosted/device/store proof, no invented success",
+    "resource_hygiene": "Control disk use, clean task-owned generated outputs, preserve user data/caches",
+    "sibling_detached": "Do not change sibling website; it no longer consumes the application database",
+    "preserve_old_notes": "Keep old conductor notes/data; withdrawal of permission to delete them"
+  },
+  "chronology": [
+    {
+      "threadId": "01a10224-b231-7e63-9f3a-19d7cb31ed17",
+      "title": "jev'e geçiş (2)",
+      "first": "2026-10-03T14:24:15.980Z",
+      "last": "2026-10-03T14:25:29.204Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "native_breadth": {
+              "answer": "rejected",
+              "p": 0.51,
+              "confidence": 0.39
+            },
+            "autonomous": {
+              "answer": "rejected",
+              "p": 0.48,
+              "confidence": 0.34
+            },
+            "jev_use": {
+              "answer": "requested",
+              "p": 0.97,
+              "confidence": 0.96
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.91,
+              "confidence": 0.89
+            },
+            "progress": {
+              "answer": "planning",
+              "p": 0.67,
+              "confidence": 0.6
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.99,
+              "confidence": 0.97
+            },
+            "anchor": {
+              "answer": "L17:0",
+              "p": 0.79,
+              "confidence": 0.72
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a0f6aa-6fb1-7e20-9aed-0a49f5a6d109",
+      "title": "jev'e geçiş",
+      "first": "2026-10-01T08:53:34.992Z",
+      "last": "2026-10-03T14:21:11.611Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "rn_expo": {
+              "answer": "requested",
+              "p": 0.97,
+              "confidence": 0.95
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.76,
+              "confidence": 0.69
+            },
+            "jev_use": {
+              "answer": "requested",
+              "p": 1,
+              "confidence": 1
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.66,
+              "confidence": 0.61
+            },
+            "anchor": {
+              "answer": "L91:0",
+              "p": 0.75,
+              "confidence": 0.72
+            }
+          }
+        },
+        {
+          "part": 1,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.61,
+              "confidence": 0.51
+            },
+            "jev_use": {
+              "answer": "requested",
+              "p": 1,
+              "confidence": 1
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "anchor": {
+              "answer": "L3739:0",
+              "p": 0.79,
+              "confidence": 0.74
+            }
+          }
+        },
+        {
+          "part": 2,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.82,
+              "confidence": 0.78
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.27,
+              "confidence": 0.14
+            },
+            "repertoire": {
+              "answer": "requested",
+              "p": 0.42,
+              "confidence": 0.28
+            },
+            "native_breadth": {
+              "answer": "requested",
+              "p": 0.6,
+              "confidence": 0.51
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.73,
+              "confidence": 0.66
+            },
+            "anchor": {
+              "answer": "L5668:0",
+              "p": 0.81,
+              "confidence": 0.78
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.97,
+              "confidence": 0.96
+            },
+            "no_manual_qa": {
+              "answer": "rejected",
+              "p": 0.53,
+              "confidence": 0.42
+            }
+          }
+        },
+        {
+          "part": 3,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.83,
+              "confidence": 0.79
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.54,
+              "confidence": 0.43
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.68,
+              "confidence": 0.63
+            },
+            "anchor": {
+              "answer": "L7225:0",
+              "p": 0.96,
+              "confidence": 0.95
+            }
+          }
+        },
+        {
+          "part": 4,
+          "findings": {
+            "no_manual_qa": {
+              "answer": "rejected",
+              "p": 0.38,
+              "confidence": 0.21
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.86,
+              "confidence": 0.83
+            },
+            "anchor": {
+              "answer": "L7322:0",
+              "p": 0.93,
+              "confidence": 0.91
+            }
+          }
+        },
+        {
+          "part": 5,
+          "findings": {
+            "tenant_security": {
+              "answer": "requested",
+              "p": 0.49,
+              "confidence": 0.36
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.98,
+              "confidence": 0.97
+            },
+            "jev_use": {
+              "answer": "requested",
+              "p": 0.91,
+              "confidence": 0.89
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.89,
+              "confidence": 0.86
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.39999999999999997,
+              "confidence": 0.26
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.81,
+              "confidence": 0.77
+            },
+            "friction": {
+              "answer": "delivery",
+              "p": 0.65,
+              "confidence": 0.58
+            },
+            "anchor": {
+              "answer": "L8841:0",
+              "p": 0.57,
+              "confidence": 0.51
+            }
+          }
+        },
+        {
+          "part": 6,
+          "findings": {
+            "tenant_security": {
+              "answer": "rejected",
+              "p": 0.65,
+              "confidence": 0.56
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.67,
+              "confidence": 0.59
+            },
+            "jev_use": {
+              "answer": "requested",
+              "p": 0.5,
+              "confidence": 0.38
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.67,
+              "confidence": 0.59
+            },
+            "sibling_detached": {
+              "answer": "requested",
+              "p": 1,
+              "confidence": 1
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.98,
+              "confidence": 0.97
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.81,
+              "confidence": 0.77
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.62,
+              "confidence": 0.56
+            },
+            "anchor": {
+              "answer": "L9512:0",
+              "p": 0.65,
+              "confidence": 0.57
+            }
+          }
+        },
+        {
+          "part": 7,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.71,
+              "confidence": 0.64
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.98,
+              "confidence": 0.97
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.79,
+              "confidence": 0.76
+            },
+            "anchor": {
+              "answer": "L10161:0",
+              "p": 0.99,
+              "confidence": 0.98
+            }
+          }
+        },
+        {
+          "part": 8,
+          "findings": {
+            "repertoire": {
+              "answer": "rejected",
+              "p": 0.37,
+              "confidence": 0.22
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.87,
+              "confidence": 0.83
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.83,
+              "confidence": 0.79
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.49,
+              "confidence": 0.36
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.36,
+              "confidence": 0.19
+            },
+            "preserve_old_notes": {
+              "answer": "rejected",
+              "p": 0.4,
+              "confidence": 0.24
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.51,
+              "confidence": 0.43
+            },
+            "anchor": {
+              "answer": "L10434:0",
+              "p": 0.6900000000000001,
+              "confidence": 0.63
+            }
+          }
+        },
+        {
+          "part": 9,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.71,
+              "confidence": 0.64
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.97,
+              "confidence": 0.97
+            },
+            "anchor": {
+              "answer": "none",
+              "p": 0.9,
+              "confidence": 0.88
+            }
+          }
+        },
+        {
+          "part": 10,
+          "findings": {
+            "drive_exit": {
+              "answer": "ambiguous",
+              "p": 0.39,
+              "confidence": 0.23
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.43,
+              "confidence": 0.3
+            },
+            "no_manual_qa": {
+              "answer": "rejected",
+              "p": 0.41,
+              "confidence": 0.27
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.83,
+              "confidence": 0.78
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "reliability",
+              "p": 0.37,
+              "confidence": 0.27
+            },
+            "anchor": {
+              "answer": "L14659:0",
+              "p": 0.97,
+              "confidence": 0.98
+            }
+          }
+        },
+        {
+          "part": 11,
+          "findings": {
+            "native_breadth": {
+              "answer": "rejected",
+              "p": 0.7,
+              "confidence": 0.63
+            },
+            "autonomous": {
+              "answer": "rejected",
+              "p": 0.78,
+              "confidence": 0.72
+            },
+            "no_manual_qa": {
+              "answer": "requested",
+              "p": 0.56,
+              "confidence": 0.46
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.38,
+              "confidence": 0.21
+            },
+            "evidence": {
+              "answer": "rejected",
+              "p": 0.39,
+              "confidence": 0.25
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "manual_qa",
+              "p": 1,
+              "confidence": 1
+            },
+            "anchor": {
+              "answer": "L14950:0",
+              "p": 0.46,
+              "confidence": 0.42
+            }
+          }
+        },
+        {
+          "part": 12,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.85,
+              "confidence": 0.82
+            },
+            "no_manual_qa": {
+              "answer": "requested",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.41,
+              "confidence": 0.27
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "manual_qa",
+              "p": 0.64,
+              "confidence": 0.58
+            },
+            "anchor": {
+              "answer": "L16122:0",
+              "p": 0.92,
+              "confidence": 0.89
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a0f12b-71d8-7fe3-bbc6-f6525dc2034c",
+      "title": "Genova Android beta — kontrollü teslim",
+      "first": "2026-09-30T07:16:21.536Z",
+      "last": "2026-10-01T08:45:46.954Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "android_first": {
+              "answer": "requested",
+              "p": 0.65,
+              "confidence": 0.57
+            },
+            "tenant_security": {
+              "answer": "requested",
+              "p": 0.94,
+              "confidence": 0.92
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.88,
+              "confidence": 0.84
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.62,
+              "confidence": 0.51
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "planning",
+              "p": 0.91,
+              "confidence": 0.89
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.75,
+              "confidence": 0.7
+            },
+            "anchor": {
+              "answer": "L193:0",
+              "p": 0.98,
+              "confidence": 0.97
+            }
+          }
+        },
+        {
+          "part": 1,
+          "findings": {
+            "android_first": {
+              "answer": "requested",
+              "p": 0.65,
+              "confidence": 0.56
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.64,
+              "confidence": 0.55
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.67,
+              "confidence": 0.58
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.91,
+              "confidence": 0.88
+            },
+            "anchor": {
+              "answer": "L723:0",
+              "p": 1,
+              "confidence": 0.99
+            }
+          }
+        },
+        {
+          "part": 2,
+          "findings": {
+            "repertoire": {
+              "answer": "requested",
+              "p": 0.42,
+              "confidence": 0.27
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.64,
+              "confidence": 0.56
+            },
+            "no_manual_qa": {
+              "answer": "requested",
+              "p": 0.36,
+              "confidence": 0.2
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.63,
+              "confidence": 0.54
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.87,
+              "confidence": 0.84
+            },
+            "anchor": {
+              "answer": "L5232:0",
+              "p": 0.39,
+              "confidence": 0.26
+            }
+          }
+        },
+        {
+          "part": 3,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "anchor": {
+              "answer": "none",
+              "p": 1,
+              "confidence": 0.99
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a0f431-b002-7c01-a726-c550479d94a4",
+      "title": "İddianı kanıtla",
+      "first": "2026-09-30T21:21:35.413Z",
+      "last": "2026-09-30T21:36:47.185Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "domain": {
+              "answer": "unrelated",
+              "p": 0.8,
+              "confidence": 0.73
+            },
+            "progress": {
+              "answer": "unknown",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.77,
+              "confidence": 0.72
+            },
+            "anchor": {
+              "answer": "L38:0",
+              "p": 0.66,
+              "confidence": 0.56
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a0f2a6-bff4-7e10-870a-4fc8f24c5ebe",
+      "title": "PDF şifresini kurtarmaya yardım et",
+      "first": "2026-09-30T14:10:56.025Z",
+      "last": "2026-09-30T14:31:18.018Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "repertoire": {
+              "answer": "requested",
+              "p": 0.48,
+              "confidence": 0.35
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.54,
+              "confidence": 0.41
+            },
+            "domain": {
+              "answer": "unrelated",
+              "p": 0.96,
+              "confidence": 0.95
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.9,
+              "confidence": 0.88
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.43,
+              "confidence": 0.33
+            },
+            "anchor": {
+              "answer": "L151:0",
+              "p": 0.71,
+              "confidence": 0.63
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a0f14b-e9f6-7d80-a9d9-7303311f291c",
+      "title": "NFC Tools için A4 broşür hazırla",
+      "first": "2026-09-30T07:52:19.031Z",
+      "last": "2026-09-30T08:21:47.431Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.42,
+              "confidence": 0.29
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.69,
+              "confidence": 0.58
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.91,
+              "confidence": 0.89
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.96,
+              "confidence": 0.96
+            },
+            "anchor": {
+              "answer": "L9:0",
+              "p": 0.67,
+              "confidence": 0.51
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a0d7b1-d6a2-7f93-9abb-fa54ec82ced7",
+      "title": "Sohbetten sonraki adımları başlat",
+      "first": "2026-09-25T08:32:47.442Z",
+      "last": "2026-09-29T20:52:26.904Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.87,
+              "confidence": 0.85
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.61,
+              "confidence": 0.53
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.88,
+              "confidence": 0.87
+            },
+            "anchor": {
+              "answer": "L645:0",
+              "p": 0.76,
+              "confidence": 0.7
+            }
+          }
+        },
+        {
+          "part": 1,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.87,
+              "confidence": 0.85
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.52,
+              "confidence": 0.41
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.66,
+              "confidence": 0.59
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.96,
+              "confidence": 0.95
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.51,
+              "confidence": 0.41
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.51,
+              "confidence": 0.44
+            },
+            "anchor": {
+              "answer": "L1945:0",
+              "p": 0.71,
+              "confidence": 0.66
+            }
+          }
+        },
+        {
+          "part": 2,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.57,
+              "confidence": 0.46
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.85,
+              "confidence": 0.81
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.55,
+              "confidence": 0.47
+            },
+            "anchor": {
+              "answer": "L1991:0",
+              "p": 0.9,
+              "confidence": 0.89
+            }
+          }
+        },
+        {
+          "part": 3,
+          "findings": {
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.87,
+              "confidence": 0.84
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.63,
+              "confidence": 0.53
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.49,
+              "confidence": 0.35
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "hosted",
+              "p": 0.81,
+              "confidence": 0.77
+            },
+            "friction": {
+              "answer": "reliability",
+              "p": 0.92,
+              "confidence": 0.9
+            },
+            "anchor": {
+              "answer": "L5207:0",
+              "p": 0.58,
+              "confidence": 0.52
+            }
+          }
+        },
+        {
+          "part": 4,
+          "findings": {
+            "repertoire": {
+              "answer": "requested",
+              "p": 0.43,
+              "confidence": 0.29
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.73,
+              "confidence": 0.65
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.76,
+              "confidence": 0.69
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.87,
+              "confidence": 0.84
+            },
+            "progress": {
+              "answer": "hosted",
+              "p": 0.56,
+              "confidence": 0.47
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "anchor": {
+              "answer": "none",
+              "p": 0.81,
+              "confidence": 0.77
+            }
+          }
+        },
+        {
+          "part": 5,
+          "findings": {
+            "commercial": {
+              "answer": "requested",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "tenant_security": {
+              "answer": "requested",
+              "p": 0.58,
+              "confidence": 0.47
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.61,
+              "confidence": 0.51
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.8,
+              "confidence": 0.75
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.87,
+              "confidence": 0.85
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.71,
+              "confidence": 0.61
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.83,
+              "confidence": 0.79
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.67,
+              "confidence": 0.61
+            },
+            "anchor": {
+              "answer": "L8887:0",
+              "p": 0.97,
+              "confidence": 0.97
+            }
+          }
+        },
+        {
+          "part": 6,
+          "findings": {
+            "tenant_security": {
+              "answer": "requested",
+              "p": 0.47,
+              "confidence": 0.34
+            },
+            "assisted_onboarding": {
+              "answer": "requested",
+              "p": 0.68,
+              "confidence": 0.6
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.81,
+              "confidence": 0.76
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "anchor": {
+              "answer": "L9518:0",
+              "p": 0.91,
+              "confidence": 0.89
+            }
+          }
+        },
+        {
+          "part": 7,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.6,
+              "confidence": 0.49
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.56,
+              "confidence": 0.47
+            },
+            "anchor": {
+              "answer": "none",
+              "p": 0.48,
+              "confidence": 0.4
+            }
+          }
+        },
+        {
+          "part": 8,
+          "findings": {
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.42,
+              "confidence": 0.27
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.64,
+              "confidence": 0.54
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.37,
+              "confidence": 0.21
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.75,
+              "confidence": 0.68
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.98,
+              "confidence": 0.97
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.55,
+              "confidence": 0.47
+            },
+            "anchor": {
+              "answer": "L14290:0",
+              "p": 0.96,
+              "confidence": 0.94
+            }
+          }
+        },
+        {
+          "part": 9,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.37,
+              "confidence": 0.21
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.93,
+              "confidence": 0.92
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "anchor": {
+              "answer": "L14573:0",
+              "p": 0.97,
+              "confidence": 0.96
+            }
+          }
+        },
+        {
+          "part": 10,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.39,
+              "confidence": 0.24
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.98,
+              "confidence": 0.97
+            },
+            "anchor": {
+              "answer": "L15351:0",
+              "p": 0.99,
+              "confidence": 0.99
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a0e970-3376-7383-8f46-f68a661f7168",
+      "title": "Fotoğrafa Zafer, Ada ve Mustafa’yı E",
+      "first": "2026-09-28T19:14:03.810Z",
+      "last": "2026-09-28T20:45:24.373Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.48,
+              "confidence": 0.36
+            },
+            "domain": {
+              "answer": "unrelated",
+              "p": 0.94,
+              "confidence": 0.92
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.7,
+              "confidence": 0.64
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.65,
+              "confidence": 0.6
+            },
+            "anchor": {
+              "answer": "L9:0",
+              "p": 0.79,
+              "confidence": 0.71
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a08299-0d2a-7571-82f0-55b5544c67bf",
+      "title": "Mobil teslim planını uygulamaya baş-",
+      "first": "2026-09-08T19:57:46.199Z",
+      "last": "2026-09-25T08:31:14.363Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "repertoire": {
+              "answer": "requested",
+              "p": 0.81,
+              "confidence": 0.76
+            },
+            "annotations_sync": {
+              "answer": "requested",
+              "p": 0.61,
+              "confidence": 0.5
+            },
+            "native_breadth": {
+              "answer": "requested",
+              "p": 0.8,
+              "confidence": 0.75
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.75,
+              "confidence": 0.7
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.48,
+              "confidence": 0.36
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.82,
+              "confidence": 0.78
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.91,
+              "confidence": 0.89
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.81,
+              "confidence": 0.78
+            },
+            "anchor": {
+              "answer": "L9:0",
+              "p": 0.99,
+              "confidence": 0.98
+            }
+          }
+        },
+        {
+          "part": 1,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.72,
+              "confidence": 0.65
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "anchor": {
+              "answer": "L300:0",
+              "p": 0.71,
+              "confidence": 0.56
+            }
+          }
+        },
+        {
+          "part": 2,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.53,
+              "confidence": 0.42
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.91,
+              "confidence": 0.88
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.86,
+              "confidence": 0.83
+            },
+            "anchor": {
+              "answer": "L2741:0",
+              "p": 0.93,
+              "confidence": 0.86
+            }
+          }
+        },
+        {
+          "part": 3,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.46,
+              "confidence": 0.33
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.83,
+              "confidence": 0.79
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.94,
+              "confidence": 0.93
+            },
+            "anchor": {
+              "answer": "L4145:0",
+              "p": 0.6799999999999999,
+              "confidence": 0.53
+            }
+          }
+        },
+        {
+          "part": 4,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.64,
+              "confidence": 0.55
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "anchor": {
+              "answer": "L5011:0",
+              "p": 0.66,
+              "confidence": 0.5
+            }
+          }
+        },
+        {
+          "part": 5,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.57,
+              "confidence": 0.47
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.94,
+              "confidence": 0.92
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.92,
+              "confidence": 0.9
+            },
+            "anchor": {
+              "answer": "L7063:0",
+              "p": 0.84,
+              "confidence": 0.76
+            }
+          }
+        },
+        {
+          "part": 6,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.73,
+              "confidence": 0.66
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "anchor": {
+              "answer": "L7515:0",
+              "p": 0.72,
+              "confidence": 0.57
+            }
+          }
+        },
+        {
+          "part": 7,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.46,
+              "confidence": 0.33
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.77,
+              "confidence": 0.72
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.97,
+              "confidence": 0.97
+            },
+            "anchor": {
+              "answer": "L9862:0",
+              "p": 0.65,
+              "confidence": 0.48
+            }
+          }
+        },
+        {
+          "part": 8,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.39,
+              "confidence": 0.24
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.77,
+              "confidence": 0.72
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.64,
+              "confidence": 0.57
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.97,
+              "confidence": 0.96
+            },
+            "anchor": {
+              "answer": "L11728:0",
+              "p": 0.98,
+              "confidence": 0.97
+            }
+          }
+        },
+        {
+          "part": 9,
+          "findings": {
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.98,
+              "confidence": 0.98
+            },
+            "anchor": {
+              "answer": "L12198:0",
+              "p": 0.79,
+              "confidence": 0.72
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.76,
+              "confidence": 0.7
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.98,
+              "confidence": 0.97
+            }
+          }
+        },
+        {
+          "part": 10,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.5,
+              "confidence": 0.38
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.89,
+              "confidence": 0.86
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.95,
+              "confidence": 0.95
+            },
+            "anchor": {
+              "answer": "L12702:0",
+              "p": 0.76,
+              "confidence": 0.64
+            }
+          }
+        },
+        {
+          "part": 11,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.47000000000000003,
+              "confidence": 0.33
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "cost",
+              "p": 0.67,
+              "confidence": 0.61
+            },
+            "anchor": {
+              "answer": "L15232:0",
+              "p": 0.75,
+              "confidence": 0.68
+            }
+          }
+        },
+        {
+          "part": 12,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.63,
+              "confidence": 0.55
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.98,
+              "confidence": 0.98
+            },
+            "anchor": {
+              "answer": "L15438:0",
+              "p": 0.76,
+              "confidence": 0.63
+            }
+          }
+        },
+        {
+          "part": 13,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.6,
+              "confidence": 0.49
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.91,
+              "confidence": 0.89
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.97,
+              "confidence": 0.96
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.92,
+              "confidence": 0.89
+            },
+            "anchor": {
+              "answer": "L17787:0",
+              "p": 0.88,
+              "confidence": 0.76
+            }
+          }
+        },
+        {
+          "part": 14,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.8,
+              "confidence": 0.74
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "anchor": {
+              "answer": "L19028:0",
+              "p": 0.74,
+              "confidence": 0.62
+            }
+          }
+        },
+        {
+          "part": 15,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.54,
+              "confidence": 0.42
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.9,
+              "confidence": 0.87
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.83,
+              "confidence": 0.81
+            },
+            "anchor": {
+              "answer": "L22025:0",
+              "p": 0.96,
+              "confidence": 0.92
+            }
+          }
+        },
+        {
+          "part": 16,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.96,
+              "confidence": 0.95
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.98,
+              "confidence": 0.98
+            },
+            "anchor": {
+              "answer": "L23193:0",
+              "p": 0.78,
+              "confidence": 0.67
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.75,
+              "confidence": 0.69
+            }
+          }
+        },
+        {
+          "part": 17,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.55,
+              "confidence": 0.43
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.95,
+              "confidence": 0.94
+            },
+            "anchor": {
+              "answer": "L26199:0",
+              "p": 0.92,
+              "confidence": 0.88
+            }
+          }
+        },
+        {
+          "part": 18,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.92,
+              "confidence": 0.9
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.97,
+              "confidence": 0.96
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "delivery",
+              "p": 0.77,
+              "confidence": 0.72
+            },
+            "anchor": {
+              "answer": "L27701:0",
+              "p": 0.88,
+              "confidence": 0.85
+            }
+          }
+        },
+        {
+          "part": 19,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 0.97,
+              "confidence": 0.97
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.94,
+              "confidence": 0.93
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.7,
+              "confidence": 0.63
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "anchor": {
+              "answer": "L27954:0",
+              "p": 0.73,
+              "confidence": 0.64
+            }
+          }
+        },
+        {
+          "part": 20,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.62,
+              "confidence": 0.52
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.43,
+              "confidence": 0.29
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.84,
+              "confidence": 0.79
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.76,
+              "confidence": 0.73
+            },
+            "anchor": {
+              "answer": "L28843:0",
+              "p": 0.98,
+              "confidence": 0.96
+            }
+          }
+        },
+        {
+          "part": 21,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.47000000000000003,
+              "confidence": 0.32
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.66,
+              "confidence": 0.57
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.49,
+              "confidence": 0.37
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.95,
+              "confidence": 0.94
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.74,
+              "confidence": 0.68
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.76,
+              "confidence": 0.72
+            },
+            "anchor": {
+              "answer": "L29922:0",
+              "p": 0.89,
+              "confidence": 0.88
+            }
+          }
+        },
+        {
+          "part": 22,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.65,
+              "confidence": 0.56
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.53,
+              "confidence": 0.41
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.96,
+              "confidence": 0.95
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.89,
+              "confidence": 0.86
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.72,
+              "confidence": 0.67
+            },
+            "anchor": {
+              "answer": "L30018:0",
+              "p": 0.9400000000000001,
+              "confidence": 0.9
+            }
+          }
+        },
+        {
+          "part": 23,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.4,
+              "confidence": 0.25
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.81,
+              "confidence": 0.77
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.6900000000000001,
+              "confidence": 0.6
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.98,
+              "confidence": 0.98
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.95,
+              "confidence": 0.94
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.9,
+              "confidence": 0.89
+            },
+            "anchor": {
+              "answer": "L30312:0",
+              "p": 0.77,
+              "confidence": 0.65
+            }
+          }
+        },
+        {
+          "part": 24,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.4,
+              "confidence": 0.25
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.39,
+              "confidence": 0.23
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.88,
+              "confidence": 0.83
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.8,
+              "confidence": 0.74
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.87,
+              "confidence": 0.85
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.83,
+              "confidence": 0.8
+            },
+            "anchor": {
+              "answer": "L31651:0",
+              "p": 0.78,
+              "confidence": 0.67
+            }
+          }
+        },
+        {
+          "part": 25,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.54,
+              "confidence": 0.43
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.9,
+              "confidence": 0.87
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.64,
+              "confidence": 0.54
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.92,
+              "confidence": 0.9
+            },
+            "anchor": {
+              "answer": "L32196:0",
+              "p": 0.83,
+              "confidence": 0.74
+            }
+          }
+        },
+        {
+          "part": 26,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.78,
+              "confidence": 0.73
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.59,
+              "confidence": 0.48
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.96,
+              "confidence": 0.95
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.92,
+              "confidence": 0.9
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.97,
+              "confidence": 0.96
+            },
+            "anchor": {
+              "answer": "L32735:0",
+              "p": 0.75,
+              "confidence": 0.67
+            }
+          }
+        },
+        {
+          "part": 27,
+          "findings": {
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.63,
+              "confidence": 0.53
+            },
+            "anchor": {
+              "answer": "L32880:0",
+              "p": 0.97,
+              "confidence": 0.96
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.85,
+              "confidence": 0.8
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.92,
+              "confidence": 0.9
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.51,
+              "confidence": 0.39
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.95,
+              "confidence": 0.93
+            }
+          }
+        },
+        {
+          "part": 28,
+          "findings": {
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.92,
+              "confidence": 0.9
+            },
+            "anchor": {
+              "answer": "L34036:0",
+              "p": 0.69,
+              "confidence": 0.54
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.52,
+              "confidence": 0.4
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.76,
+              "confidence": 0.7
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.93,
+              "confidence": 0.91
+            }
+          }
+        },
+        {
+          "part": 29,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.78,
+              "confidence": 0.72
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.38,
+              "confidence": 0.22
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.81,
+              "confidence": 0.77
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.97,
+              "confidence": 0.97
+            },
+            "anchor": {
+              "answer": "L34605:0",
+              "p": 0.7,
+              "confidence": 0.56
+            }
+          }
+        },
+        {
+          "part": 30,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.38,
+              "confidence": 0.23
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.84,
+              "confidence": 0.79
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.6,
+              "confidence": 0.5
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.96,
+              "confidence": 0.94
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.93,
+              "confidence": 0.92
+            },
+            "anchor": {
+              "answer": "L35759:0",
+              "p": 0.85,
+              "confidence": 0.77
+            }
+          }
+        },
+        {
+          "part": 31,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 0.96,
+              "confidence": 0.95
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.42,
+              "confidence": 0.27
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.96,
+              "confidence": 0.94
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.42,
+              "confidence": 0.28
+            },
+            "no_manual_qa": {
+              "answer": "requested",
+              "p": 0.38,
+              "confidence": 0.22
+            },
+            "anchor": {
+              "answer": "L36463:0",
+              "p": 0.87,
+              "confidence": 0.81
+            }
+          }
+        },
+        {
+          "part": 32,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 0.95,
+              "confidence": 0.93
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.97,
+              "confidence": 0.95
+            },
+            "anchor": {
+              "answer": "L37089:0",
+              "p": 0.95,
+              "confidence": 0.92
+            }
+          }
+        },
+        {
+          "part": 33,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.62,
+              "confidence": 0.53
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.59,
+              "confidence": 0.48
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.97,
+              "confidence": 0.96
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.91,
+              "confidence": 0.89
+            },
+            "anchor": {
+              "answer": "L38161:0",
+              "p": 0.66,
+              "confidence": 0.48
+            }
+          }
+        },
+        {
+          "part": 34,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "anchor": {
+              "answer": "none",
+              "p": 0.97,
+              "confidence": 0.93
+            }
+          }
+        },
+        {
+          "part": 35,
+          "findings": {
+            "evidence": {
+              "answer": "requested",
+              "p": 0.61,
+              "confidence": 0.52
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.45,
+              "confidence": 0.31
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "anchor": {
+              "answer": "L40594:0",
+              "p": 0.57,
+              "confidence": 0.35
+            }
+          }
+        },
+        {
+          "part": 36,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "anchor": {
+              "answer": "L41100:0",
+              "p": 0.74,
+              "confidence": 0.61
+            }
+          }
+        },
+        {
+          "part": 37,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "anchor": {
+              "answer": "none",
+              "p": 0.87,
+              "confidence": 0.75
+            }
+          }
+        },
+        {
+          "part": 38,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.97,
+              "confidence": 0.97
+            },
+            "anchor": {
+              "answer": "L44681:0",
+              "p": 0.98,
+              "confidence": 0.97
+            }
+          }
+        },
+        {
+          "part": 39,
+          "findings": {
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.64,
+              "confidence": 0.55
+            },
+            "android_first": {
+              "answer": "requested",
+              "p": 0.63,
+              "confidence": 0.53
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.91,
+              "confidence": 0.88
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.81,
+              "confidence": 0.77
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.8099999999999999,
+              "confidence": 0.77
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.87,
+              "confidence": 0.84
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.33,
+              "confidence": 0.17
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.55,
+              "confidence": 0.46
+            },
+            "friction": {
+              "answer": "delivery",
+              "p": 0.9,
+              "confidence": 0.89
+            },
+            "anchor": {
+              "answer": "L45092:0",
+              "p": 0.69,
+              "confidence": 0.62
+            }
+          }
+        },
+        {
+          "part": 40,
+          "findings": {
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.8099999999999999,
+              "confidence": 0.77
+            },
+            "android_first": {
+              "answer": "requested",
+              "p": 0.87,
+              "confidence": 0.84
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.81,
+              "confidence": 0.76
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.83,
+              "confidence": 0.79
+            },
+            "pricing": {
+              "answer": "requested",
+              "p": 0.76,
+              "confidence": 0.69
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.48,
+              "confidence": 0.36
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.48,
+              "confidence": 0.35
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.84,
+              "confidence": 0.8
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.92,
+              "confidence": 0.9
+            },
+            "anchor": {
+              "answer": "L45239:0",
+              "p": 1,
+              "confidence": 0.99
+            }
+          }
+        },
+        {
+          "part": 41,
+          "findings": {
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.79,
+              "confidence": 0.74
+            },
+            "android_first": {
+              "answer": "requested",
+              "p": 0.81,
+              "confidence": 0.76
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.72,
+              "confidence": 0.65
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.82,
+              "confidence": 0.77
+            },
+            "pricing": {
+              "answer": "requested",
+              "p": 0.73,
+              "confidence": 0.67
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.48,
+              "confidence": 0.35
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.75,
+              "confidence": 0.68
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.56,
+              "confidence": 0.45
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.95,
+              "confidence": 0.94
+            },
+            "anchor": {
+              "answer": "L45452:0",
+              "p": 1,
+              "confidence": 0.99
+            }
+          }
+        },
+        {
+          "part": 42,
+          "findings": {
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.61,
+              "confidence": 0.52
+            },
+            "android_first": {
+              "answer": "requested",
+              "p": 0.74,
+              "confidence": 0.67
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.96,
+              "confidence": 0.95
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.84,
+              "confidence": 0.81
+            },
+            "pricing": {
+              "answer": "requested",
+              "p": 0.81,
+              "confidence": 0.75
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.67,
+              "confidence": 0.6
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.56,
+              "confidence": 0.45
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.83,
+              "confidence": 0.79
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.59,
+              "confidence": 0.48
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.71,
+              "confidence": 0.66
+            },
+            "anchor": {
+              "answer": "L46248:0",
+              "p": 1,
+              "confidence": 1
+            }
+          }
+        },
+        {
+          "part": 43,
+          "findings": {
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.74,
+              "confidence": 0.68
+            },
+            "android_first": {
+              "answer": "requested",
+              "p": 0.79,
+              "confidence": 0.74
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.79,
+              "confidence": 0.73
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.75,
+              "confidence": 0.69
+            },
+            "pricing": {
+              "answer": "requested",
+              "p": 0.77,
+              "confidence": 0.72
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.74,
+              "confidence": 0.67
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.95,
+              "confidence": 0.93
+            },
+            "anchor": {
+              "answer": "L46605:0",
+              "p": 0.99,
+              "confidence": 0.98
+            }
+          }
+        },
+        {
+          "part": 44,
+          "findings": {
+            "commercial": {
+              "answer": "requested",
+              "p": 0.58,
+              "confidence": 0.48
+            },
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.88,
+              "confidence": 0.85
+            },
+            "android_first": {
+              "answer": "requested",
+              "p": 0.92,
+              "confidence": 0.89
+            },
+            "native_breadth": {
+              "answer": "requested",
+              "p": 0.51,
+              "confidence": 0.38
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.9400000000000001,
+              "confidence": 0.92
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.95,
+              "confidence": 0.93
+            },
+            "pricing": {
+              "answer": "requested",
+              "p": 0.9,
+              "confidence": 0.87
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.71,
+              "confidence": 0.64
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.7,
+              "confidence": 0.62
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.93,
+              "confidence": 0.91
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.48,
+              "confidence": 0.35
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.96,
+              "confidence": 0.95
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.64,
+              "confidence": 0.57
+            },
+            "anchor": {
+              "answer": "L48714:0",
+              "p": 1,
+              "confidence": 1
+            }
+          }
+        },
+        {
+          "part": 45,
+          "findings": {
+            "commercial": {
+              "answer": "requested",
+              "p": 0.63,
+              "confidence": 0.55
+            },
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.87,
+              "confidence": 0.83
+            },
+            "android_first": {
+              "answer": "requested",
+              "p": 0.97,
+              "confidence": 0.95
+            },
+            "preserve_features": {
+              "answer": "requested",
+              "p": 0.56,
+              "confidence": 0.44
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.93,
+              "confidence": 0.92
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.97,
+              "confidence": 0.96
+            },
+            "pricing": {
+              "answer": "requested",
+              "p": 0.93,
+              "confidence": 0.91
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.72,
+              "confidence": 0.64
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.68,
+              "confidence": 0.6
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.95,
+              "confidence": 0.93
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.47,
+              "confidence": 0.33
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.55,
+              "confidence": 0.46
+            },
+            "anchor": {
+              "answer": "L50054:0",
+              "p": 0.98,
+              "confidence": 0.97
+            }
+          }
+        },
+        {
+          "part": 46,
+          "findings": {
+            "commercial": {
+              "answer": "requested",
+              "p": 0.46,
+              "confidence": 0.33
+            },
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.74,
+              "confidence": 0.67
+            },
+            "android_first": {
+              "answer": "requested",
+              "p": 0.84,
+              "confidence": 0.8
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.77,
+              "confidence": 0.71
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.86,
+              "confidence": 0.82
+            },
+            "pricing": {
+              "answer": "requested",
+              "p": 0.81,
+              "confidence": 0.76
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.46,
+              "confidence": 0.32
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.39,
+              "confidence": 0.24
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.76,
+              "confidence": 0.69
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.43,
+              "confidence": 0.29
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.96,
+              "confidence": 0.95
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.86,
+              "confidence": 0.82
+            },
+            "anchor": {
+              "answer": "L51259:0",
+              "p": 1,
+              "confidence": 0.99
+            }
+          }
+        },
+        {
+          "part": 47,
+          "findings": {
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.61,
+              "confidence": 0.51
+            },
+            "android_first": {
+              "answer": "requested",
+              "p": 0.7,
+              "confidence": 0.62
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.45,
+              "confidence": 0.32
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.69,
+              "confidence": 0.61
+            },
+            "pricing": {
+              "answer": "requested",
+              "p": 0.63,
+              "confidence": 0.53
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.58,
+              "confidence": 0.46
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.96,
+              "confidence": 0.95
+            },
+            "anchor": {
+              "answer": "L52553:0",
+              "p": 0.99,
+              "confidence": 0.98
+            }
+          }
+        },
+        {
+          "part": 48,
+          "findings": {
+            "commercial": {
+              "answer": "requested",
+              "p": 0.45,
+              "confidence": 0.32
+            },
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.86,
+              "confidence": 0.83
+            },
+            "android_first": {
+              "answer": "requested",
+              "p": 0.9,
+              "confidence": 0.87
+            },
+            "preserve_features": {
+              "answer": "requested",
+              "p": 0.56,
+              "confidence": 0.44
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.78,
+              "confidence": 0.72
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.9400000000000001,
+              "confidence": 0.92
+            },
+            "pricing": {
+              "answer": "requested",
+              "p": 0.79,
+              "confidence": 0.74
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.63,
+              "confidence": 0.53
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.65,
+              "confidence": 0.56
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.88,
+              "confidence": 0.84
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.44,
+              "confidence": 0.29
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.98,
+              "confidence": 0.97
+            },
+            "friction": {
+              "answer": "delivery",
+              "p": 0.5,
+              "confidence": 0.43
+            },
+            "anchor": {
+              "answer": "L53692:0",
+              "p": 1,
+              "confidence": 0.99
+            }
+          }
+        },
+        {
+          "part": 49,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.9,
+              "confidence": 0.89
+            },
+            "pricing": {
+              "answer": "requested",
+              "p": 0.56,
+              "confidence": 0.46
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "anchor": {
+              "answer": "L53944:0",
+              "p": 0.99,
+              "confidence": 0.99
+            },
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.52,
+              "confidence": 0.39
+            },
+            "android_first": {
+              "answer": "requested",
+              "p": 0.57,
+              "confidence": 0.47
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.6,
+              "confidence": 0.51
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.52,
+              "confidence": 0.4
+            }
+          }
+        },
+        {
+          "part": 50,
+          "findings": {
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.44,
+              "confidence": 0.28
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.65,
+              "confidence": 0.56
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.92,
+              "confidence": 0.89
+            },
+            "resource_hygiene": {
+              "answer": "requested",
+              "p": 0.57,
+              "confidence": 0.46
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.97,
+              "confidence": 0.96
+            },
+            "anchor": {
+              "answer": "L54361:0",
+              "p": 0.97,
+              "confidence": 0.96
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a0c7f8-d2b2-7282-9a15-3bb768bc4d5f",
+      "title": "Logic Pro’da Türkçe dil desteğinibul",
+      "first": "2026-09-22T07:49:49.517Z",
+      "last": "2026-09-22T07:58:50.958Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "domain": {
+              "answer": "unrelated",
+              "p": 0.58,
+              "confidence": 0.45
+            },
+            "friction": {
+              "answer": "reliability",
+              "p": 0.71,
+              "confidence": 0.66
+            },
+            "anchor": {
+              "answer": "L9:0",
+              "p": 0.78,
+              "confidence": 0.67
+            },
+            "progress": {
+              "answer": "unknown",
+              "p": 0.84,
+              "confidence": 0.79
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a07847-d5fc-7783-8ae8-ae78360363e2",
+      "title": "astra boost",
+      "first": "2026-09-09T13:38:25.040Z",
+      "last": "2026-09-09T13:40:24.236Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 0.97,
+              "confidence": 0.96
+            },
+            "progress": {
+              "answer": "planning",
+              "p": 0.5,
+              "confidence": 0.39
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "anchor": {
+              "answer": "L8:0",
+              "p": 0.83,
+              "confidence": 0.75
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a07f90-869c-75b1-bea8-3b24eaeb7251",
+      "title": "Run 012 down-migration regression",
+      "first": "2026-09-08T05:49:37.389Z",
+      "last": "2026-09-08T18:54:28.088Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.78,
+              "confidence": 0.72
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.9299999999999999,
+              "confidence": 0.93
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.88,
+              "confidence": 0.85
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.85,
+              "confidence": 0.81
+            },
+            "friction": {
+              "answer": "delivery",
+              "p": 0.54,
+              "confidence": 0.46
+            },
+            "anchor": {
+              "answer": "L410:0",
+              "p": 0.73,
+              "confidence": 0.66
+            }
+          }
+        },
+        {
+          "part": 1,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.85,
+              "confidence": 0.8
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.52,
+              "confidence": 0.39
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.94,
+              "confidence": 0.94
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.92,
+              "confidence": 0.89
+            },
+            "anchor": {
+              "answer": "L525:0",
+              "p": 0.73,
+              "confidence": 0.46
+            }
+          }
+        },
+        {
+          "part": 2,
+          "findings": {
+            "repertoire": {
+              "answer": "requested",
+              "p": 0.52,
+              "confidence": 0.4
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.45,
+              "confidence": 0.31
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.89,
+              "confidence": 0.86
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.95,
+              "confidence": 0.95
+            },
+            "anchor": {
+              "answer": "L2354:0",
+              "p": 0.98,
+              "confidence": 0.96
+            }
+          }
+        },
+        {
+          "part": 3,
+          "findings": {
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "anchor": {
+              "answer": "none",
+              "p": 1,
+              "confidence": 1
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.77,
+              "confidence": 0.74
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a07635-b453-7a90-a627-5af4f36c1f2c",
+      "title": "6 eylül Terra ile bağlam daraltımı",
+      "first": "2026-09-06T10:18:11.025Z",
+      "last": "2026-09-06T18:13:34.075Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.71,
+              "confidence": 0.63
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.44,
+              "confidence": 0.3
+            },
+            "resource_hygiene": {
+              "answer": "rejected",
+              "p": 0.46,
+              "confidence": 0.31
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.74,
+              "confidence": 0.65
+            },
+            "progress": {
+              "answer": "hosted",
+              "p": 0.96,
+              "confidence": 0.95
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.66,
+              "confidence": 0.59
+            },
+            "anchor": {
+              "answer": "L85:0",
+              "p": 0.96,
+              "confidence": 0.94
+            }
+          }
+        },
+        {
+          "part": 1,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.79,
+              "confidence": 0.74
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.74,
+              "confidence": 0.68
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "hosted",
+              "p": 0.98,
+              "confidence": 0.97
+            },
+            "friction": {
+              "answer": "delivery",
+              "p": 0.54,
+              "confidence": 0.45
+            },
+            "anchor": {
+              "answer": "L1193:0",
+              "p": 0.95,
+              "confidence": 0.93
+            }
+          }
+        },
+        {
+          "part": 2,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 0.93,
+              "confidence": 0.91
+            },
+            "progress": {
+              "answer": "unknown",
+              "p": 0.66,
+              "confidence": 0.58
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.43,
+              "confidence": 0.33
+            },
+            "anchor": {
+              "answer": "L1326:0",
+              "p": 0.9,
+              "confidence": 0.81
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a07346-6e42-76f0-a86c-67468e6fb66c",
+      "title": "5 eylül Astraya geçtik",
+      "first": "2026-09-05T20:34:18.791Z",
+      "last": "2026-09-06T10:13:10.602Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "commercial": {
+              "answer": "requested",
+              "p": 0.58,
+              "confidence": 0.46
+            },
+            "tenant_security": {
+              "answer": "requested",
+              "p": 0.44,
+              "confidence": 0.3
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.49,
+              "confidence": 0.36
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.93,
+              "confidence": 0.92
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.72,
+              "confidence": 0.65
+            },
+            "evidence": {
+              "answer": "requested",
+              "p": 0.55,
+              "confidence": 0.43
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.8,
+              "confidence": 0.76
+            },
+            "anchor": {
+              "answer": "L35:0",
+              "p": 0.86,
+              "confidence": 0.85
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a06c20-e772-76e1-be6e-181a96c629d4",
+      "title": "4 eylül cuma, github uyarlandı, bağlam sıkıştırıldı",
+      "first": "2026-09-05T12:44:48.687Z",
+      "last": "2026-09-05T20:32:15.777Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "assisted_onboarding": {
+              "answer": "requested",
+              "p": 0.67,
+              "confidence": 0.59
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.52,
+              "confidence": 0.39
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "progress": {
+              "answer": "hosted",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.61,
+              "confidence": 0.55
+            },
+            "anchor": {
+              "answer": "L1839:0",
+              "p": 0.91,
+              "confidence": 0.89
+            }
+          }
+        },
+        {
+          "part": 1,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.5,
+              "confidence": 0.37
+            },
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "progress": {
+              "answer": "hosted",
+              "p": 1,
+              "confidence": 0.99
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.99,
+              "confidence": 0.97
+            },
+            "anchor": {
+              "answer": "none",
+              "p": 0.99,
+              "confidence": 0.99
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a0680f-5fd6-7730-8917-944d4dad01dd",
+      "title": "Mobil geçiş için ilk sohbet",
+      "first": "2026-09-03T16:18:03.176Z",
+      "last": "2026-09-04T11:09:57.346Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "domain": {
+              "answer": "product",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "delivery",
+              "p": 0.3,
+              "confidence": 0.19
+            },
+            "anchor": {
+              "answer": "L76:0",
+              "p": 0.65,
+              "confidence": 0.6
+            },
+            "both_stores": {
+              "answer": "requested",
+              "p": 0.79,
+              "confidence": 0.75
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.79,
+              "confidence": 0.73
+            },
+            "delivery_focus": {
+              "answer": "requested",
+              "p": 0.83,
+              "confidence": 0.79
+            },
+            "progress": {
+              "answer": "hosted",
+              "p": 0.8,
+              "confidence": 0.76
+            }
+          }
+        },
+        {
+          "part": 1,
+          "findings": {
+            "repertoire": {
+              "answer": "requested",
+              "p": 0.63,
+              "confidence": 0.54
+            },
+            "drive_exit": {
+              "answer": "requested",
+              "p": 0.97,
+              "confidence": 0.97
+            },
+            "low_cost": {
+              "answer": "requested",
+              "p": 0.76,
+              "confidence": 0.69
+            },
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.46,
+              "confidence": 0.32
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.91,
+              "confidence": 0.87
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.76,
+              "confidence": 0.7
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.45,
+              "confidence": 0.35
+            },
+            "anchor": {
+              "answer": "L2636:0",
+              "p": 0.62,
+              "confidence": 0.58
+            }
+          }
+        },
+        {
+          "part": 2,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.55,
+              "confidence": 0.44
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.97,
+              "confidence": 0.97
+            },
+            "progress": {
+              "answer": "local",
+              "p": 0.99,
+              "confidence": 0.98
+            },
+            "friction": {
+              "answer": "uncertainty",
+              "p": 0.83,
+              "confidence": 0.79
+            },
+            "anchor": {
+              "answer": "L2936:0",
+              "p": 0.67,
+              "confidence": 0.56
+            }
+          }
+        }
+      ]
+    },
+    {
+      "threadId": "01a06269-713c-7f00-99a0-c234358001e0",
+      "title": "Testleri araştırıp uygulamalara ekle",
+      "first": "2026-09-02T13:57:54.514Z",
+      "last": "2026-09-03T15:35:27.152Z",
+      "parts": [
+        {
+          "part": 0,
+          "findings": {
+            "autonomous": {
+              "answer": "requested",
+              "p": 0.45,
+              "confidence": 0.32
+            },
+            "domain": {
+              "answer": "product",
+              "p": 0.98,
+              "confidence": 0.98
+            },
+            "progress": {
+              "answer": "local",
+              "p": 1,
+              "confidence": 1
+            },
+            "friction": {
+              "answer": "no_concern",
+              "p": 0.96,
+              "confidence": 0.96
+            },
+            "anchor": {
+              "answer": "L9:0",
+              "p": 1,
+              "confidence": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

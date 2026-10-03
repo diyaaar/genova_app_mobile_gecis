@@ -1,0 +1,281 @@
+{
+  "cutoff": "2026-10-03T14:32:00.000Z",
+  "threads": [
+    {
+      "id": "01a10224-b231-7e63-9f3a-19d7cb31ed17",
+      "title": "jev'e geçiş (2)",
+      "counts": {
+        "user": 3,
+        "assistant": 2,
+        "infrastructure": 3,
+        "duplicate": 0,
+        "imageParts": 1
+      },
+      "chunks": 1,
+      "first": "2026-10-03T14:24:15.980Z",
+      "last": "2026-10-03T14:25:29.204Z",
+      "textSha256": "a256e39e0310c6361c64d9d6db28cc1bdf78bb217a3d9a6c11ad015ab5acbee4",
+      "redactedBytes": 2387
+    },
+    {
+      "id": "01a0f6aa-6fb1-7e20-9aed-0a49f5a6d109",
+      "title": "jev'e geçiş",
+      "counts": {
+        "user": 74,
+        "assistant": 378,
+        "infrastructure": 19,
+        "duplicate": 0,
+        "imageParts": 1
+      },
+      "chunks": 13,
+      "first": "2026-10-01T08:53:34.992Z",
+      "last": "2026-10-03T14:21:11.611Z",
+      "textSha256": "6a142c26c1c648f64590f710d4a5336ef70f4ea5b60dc708c1e818337e3fa05a",
+      "redactedBytes": 279689
+    },
+    {
+      "id": "01a0f12b-71d8-7fe3-bbc6-f6525dc2034c",
+      "title": "Genova Android beta — kontrollü teslim",
+      "counts": {
+        "user": 15,
+        "assistant": 106,
+        "infrastructure": 3,
+        "duplicate": 0,
+        "imageParts": 0
+      },
+      "chunks": 4,
+      "first": "2026-09-30T07:16:21.536Z",
+      "last": "2026-10-01T08:45:46.954Z",
+      "textSha256": "d1cf72c08ce3174ce211fd6470f03e68657eda24a9a7ba47486b64cb91b15a12",
+      "redactedBytes": 78255
+    },
+    {
+      "id": "01a0f431-b002-7c01-a726-c550479d94a4",
+      "title": "İddianı kanıtla",
+      "counts": {
+        "user": 4,
+        "assistant": 4,
+        "infrastructure": 1,
+        "duplicate": 0,
+        "imageParts": 1
+      },
+      "chunks": 1,
+      "first": "2026-09-30T21:21:35.413Z",
+      "last": "2026-09-30T21:36:47.185Z",
+      "textSha256": "2b2b2cc6b2e9cff8569cf382bf846f90b9136618e685fc5bbb0fd5178be6f1ce",
+      "redactedBytes": 7308
+    },
+    {
+      "id": "01a0f2a6-bff4-7e10-870a-4fc8f24c5ebe",
+      "title": "PDF şifresini kurtarmaya yardım et",
+      "counts": {
+        "user": 4,
+        "assistant": 15,
+        "infrastructure": 1,
+        "duplicate": 0,
+        "imageParts": 0
+      },
+      "chunks": 1,
+      "first": "2026-09-30T14:10:56.025Z",
+      "last": "2026-09-30T14:31:18.018Z",
+      "textSha256": "4f1a56438d1b578b357e05f4fc9832bebb67f3e47d1485963145116ed478bfc2",
+      "redactedBytes": 6989
+    },
+    {
+      "id": "01a0f14b-e9f6-7d80-a9d9-7303311f291c",
+      "title": "NFC Tools için A4 broşür hazırla",
+      "counts": {
+        "user": 2,
+        "assistant": 7,
+        "infrastructure": 1,
+        "duplicate": 0,
+        "imageParts": 0
+      },
+      "chunks": 1,
+      "first": "2026-09-30T07:52:19.031Z",
+      "last": "2026-09-30T08:21:47.431Z",
+      "textSha256": "8c0f8ac51b4a9693152b6799fe6777e9ab56b728cd5eb129f0758b0cdaec403b",
+      "redactedBytes": 5482
+    },
+    {
+      "id": "01a0d7b1-d6a2-7f93-9abb-fa54ec82ced7",
+      "title": "Sohbetten sonraki adımları başlat",
+      "counts": {
+        "user": 54,
+        "assistant": 322,
+        "infrastructure": 6,
+        "duplicate": 0,
+        "imageParts": 0
+      },
+      "chunks": 11,
+      "first": "2026-09-25T08:32:47.442Z",
+      "last": "2026-09-29T20:52:26.904Z",
+      "textSha256": "a399d7fa41974aff12741438be014a736e0379511adb96014f4d8880b5e5b529",
+      "redactedBytes": 237751
+    },
+    {
+      "id": "01a0e970-3376-7383-8f46-f68a661f7168",
+      "title": "Fotoğrafa Zafer, Ada ve Mustafa’yı E",
+      "counts": {
+        "user": 3,
+        "assistant": 7,
+        "infrastructure": 1,
+        "duplicate": 0,
+        "imageParts": 0
+      },
+      "chunks": 1,
+      "first": "2026-09-28T19:14:03.810Z",
+      "last": "2026-09-28T20:45:24.373Z",
+      "textSha256": "dfb09b261d6389a0d56045363bb2217932658b582b3aecdb9f744842afdc4da6",
+      "redactedBytes": 3562
+    },
+    {
+      "id": "01a08299-0d2a-7571-82f0-55b5544c67bf",
+      "title": "Mobil teslim planını uygulamaya baş-",
+      "counts": {
+        "user": 112,
+        "assistant": 952,
+        "infrastructure": 19,
+        "duplicate": 0,
+        "imageParts": 1
+      },
+      "chunks": 51,
+      "first": "2026-09-08T19:57:46.199Z",
+      "last": "2026-09-25T08:31:14.363Z",
+      "textSha256": "d7da79872298cbcc0360e1977f65c0a1eb774236f6bfed65a9a083017880747b",
+      "redactedBytes": 1078567
+    },
+    {
+      "id": "01a0c7f8-d2b2-7282-9a15-3bb768bc4d5f",
+      "title": "Logic Pro’da Türkçe dil desteğinibul",
+      "counts": {
+        "user": 2,
+        "assistant": 4,
+        "infrastructure": 0,
+        "duplicate": 0,
+        "imageParts": 1
+      },
+      "chunks": 1,
+      "first": "2026-09-22T07:49:49.517Z",
+      "last": "2026-09-22T07:58:50.958Z",
+      "textSha256": "b6e5e8d770e138d4ce7db654a8713ddf87d87a6e42655395f49c1dd6df0c1aea",
+      "redactedBytes": 5214
+    },
+    {
+      "id": "01a07847-d5fc-7783-8ae8-ae78360363e2",
+      "title": "astra boost",
+      "counts": {
+        "user": 2,
+        "assistant": 3,
+        "infrastructure": 1,
+        "duplicate": 0,
+        "imageParts": 0
+      },
+      "chunks": 1,
+      "first": "2026-09-09T13:38:25.040Z",
+      "last": "2026-09-09T13:40:24.236Z",
+      "textSha256": "bafb54ae2325ee9c76dd215b0c9665fd0eafc1c0b915e6b6c755f8aa3fa9d866",
+      "redactedBytes": 7187
+    },
+    {
+      "id": "01a07f90-869c-75b1-bea8-3b24eaeb7251",
+      "title": "Run 012 down-migration regression",
+      "counts": {
+        "user": 7,
+        "assistant": 54,
+        "infrastructure": 1,
+        "duplicate": 0,
+        "imageParts": 0
+      },
+      "chunks": 4,
+      "first": "2026-09-08T05:49:37.389Z",
+      "last": "2026-09-08T18:54:28.088Z",
+      "textSha256": "5c80aed9aa5e5811b2d89b15680dc9384fcc5b21f4cca4a8ead613915ec6e3a4",
+      "redactedBytes": 69194
+    },
+    {
+      "id": "01a07635-b453-7a90-a627-5af4f36c1f2c",
+      "title": "6 eylül Terra ile bağlam daraltımı",
+      "counts": {
+        "user": 16,
+        "assistant": 34,
+        "infrastructure": 0,
+        "duplicate": 0,
+        "imageParts": 1
+      },
+      "chunks": 3,
+      "first": "2026-09-06T10:18:11.025Z",
+      "last": "2026-09-06T18:13:34.075Z",
+      "textSha256": "cd37def59c9e6f18bc438f7ae53cfaff07a04c8a436428b302caa4b21815e597",
+      "redactedBytes": 48077
+    },
+    {
+      "id": "01a07346-6e42-76f0-a86c-67468e6fb66c",
+      "title": "5 eylül Astraya geçtik",
+      "counts": {
+        "user": 10,
+        "assistant": 27,
+        "infrastructure": 2,
+        "duplicate": 0,
+        "imageParts": 0
+      },
+      "chunks": 1,
+      "first": "2026-09-05T20:34:18.791Z",
+      "last": "2026-09-06T10:13:10.602Z",
+      "textSha256": "5a941821dd93067351b89f4fc8b54ac6cec49a921d0facb5aa3b6c104a4971a0",
+      "redactedBytes": 16266
+    },
+    {
+      "id": "01a06c20-e772-76e1-be6e-181a96c629d4",
+      "title": "4 eylül cuma, github uyarlandı, bağlam sıkıştırıldı",
+      "counts": {
+        "user": 12,
+        "assistant": 67,
+        "infrastructure": 0,
+        "duplicate": 0,
+        "imageParts": 0
+      },
+      "chunks": 2,
+      "first": "2026-09-05T12:44:48.687Z",
+      "last": "2026-09-05T20:32:15.777Z",
+      "textSha256": "24fc69db150b7f15e14ad209828e65127765c51ed68ff3f59ed5eb14fcca09cd",
+      "redactedBytes": 33011
+    },
+    {
+      "id": "01a0680f-5fd6-7730-8917-944d4dad01dd",
+      "title": "Mobil geçiş için ilk sohbet",
+      "counts": {
+        "user": 20,
+        "assistant": 79,
+        "infrastructure": 4,
+        "duplicate": 0,
+        "imageParts": 13
+      },
+      "chunks": 3,
+      "first": "2026-09-03T16:18:03.176Z",
+      "last": "2026-09-04T11:09:57.346Z",
+      "textSha256": "63052d5162943d937095dc8b22c969dcf837b230d4795cbc85e08ead180f8d45",
+      "redactedBytes": 58902
+    },
+    {
+      "id": "01a06269-713c-7f00-99a0-c234358001e0",
+      "title": "Testleri araştırıp uygulamalara ekle",
+      "counts": {
+        "user": 5,
+        "assistant": 22,
+        "infrastructure": 2,
+        "duplicate": 0,
+        "imageParts": 0
+      },
+      "chunks": 1,
+      "first": "2026-09-02T13:57:54.514Z",
+      "last": "2026-09-03T15:35:27.152Z",
+      "textSha256": "e646181011dafbdea67708f32200a654c55fa8f43a039b528c1fdc6eda4eeb47",
+      "redactedBytes": 16667
+    }
+  ],
+  "totalChunks": 100,
+  "totalMessages": 2428,
+  "keyAvailable": true,
+  "method": "All available user/assistant visible text, infrastructure and duplicate messages excluded; images/tool outputs/hidden reasoning not sent. Redacted in process, no raw body logging or persistence."
+}

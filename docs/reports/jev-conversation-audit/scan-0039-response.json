@@ -1,0 +1,343 @@
+{
+  "requestSha256": "919788eaffed537589519709fc1a5f0281dbb1c70e529f031134fd711c2d56e0",
+  "elapsedMs": 388,
+  "model": "jev-1.13.0",
+  "answers": {
+    "commercial": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.91,
+      "probabilities": {
+        "ambiguous": 0.01,
+        "absent": 0.93,
+        "requested": 0,
+        "rejected": 0,
+        "assistant_only": 0.06
+      }
+    },
+    "both_stores": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.82,
+      "probabilities": {
+        "ambiguous": 0.01,
+        "absent": 0.86,
+        "requested": 0.02,
+        "rejected": 0,
+        "assistant_only": 0.11
+      }
+    },
+    "android_first": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.96,
+      "probabilities": {
+        "absent": 0.97,
+        "rejected": 0,
+        "requested": 0,
+        "ambiguous": 0,
+        "assistant_only": 0.03
+      }
+    },
+    "rn_expo": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.94,
+      "probabilities": {
+        "absent": 0.95,
+        "rejected": 0,
+        "requested": 0,
+        "ambiguous": 0,
+        "assistant_only": 0.05
+      }
+    },
+    "preserve_features": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.89,
+      "probabilities": {
+        "ambiguous": 0,
+        "absent": 0.91,
+        "requested": 0.01,
+        "rejected": 0,
+        "assistant_only": 0.08
+      }
+    },
+    "repertoire": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.71,
+      "probabilities": {
+        "ambiguous": 0.01,
+        "absent": 0.77,
+        "requested": 0.04,
+        "rejected": 0,
+        "assistant_only": 0.18
+      }
+    },
+    "annotations_sync": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.98,
+      "probabilities": {
+        "absent": 0.99,
+        "rejected": 0,
+        "requested": 0,
+        "ambiguous": 0,
+        "assistant_only": 0.01
+      }
+    },
+    "native_breadth": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.89,
+      "probabilities": {
+        "ambiguous": 0,
+        "absent": 0.92,
+        "requested": 0.01,
+        "rejected": 0,
+        "assistant_only": 0.07
+      }
+    },
+    "tenant_security": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.47,
+      "probabilities": {
+        "absent": 0.59,
+        "rejected": 0,
+        "requested": 0.01,
+        "ambiguous": 0,
+        "assistant_only": 0.4
+      }
+    },
+    "drive_exit": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.97,
+      "probabilities": {
+        "absent": 0.98,
+        "rejected": 0,
+        "requested": 0,
+        "ambiguous": 0,
+        "assistant_only": 0.02
+      }
+    },
+    "low_cost": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.88,
+      "probabilities": {
+        "absent": 0.91,
+        "rejected": 0,
+        "requested": 0,
+        "ambiguous": 0,
+        "assistant_only": 0.09
+      }
+    },
+    "assisted_onboarding": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.98,
+      "probabilities": {
+        "absent": 0.98,
+        "rejected": 0,
+        "requested": 0,
+        "ambiguous": 0,
+        "assistant_only": 0.02
+      }
+    },
+    "pricing": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.98,
+      "probabilities": {
+        "absent": 0.99,
+        "rejected": 0,
+        "requested": 0,
+        "ambiguous": 0,
+        "assistant_only": 0.01
+      }
+    },
+    "autonomous": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.28,
+      "probabilities": {
+        "absent": 0.43,
+        "rejected": 0,
+        "requested": 0.34,
+        "ambiguous": 0.02,
+        "assistant_only": 0.21
+      }
+    },
+    "no_manual_qa": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.64,
+      "probabilities": {
+        "absent": 0.71,
+        "rejected": 0,
+        "requested": 0.01,
+        "ambiguous": 0.01,
+        "assistant_only": 0.27
+      }
+    },
+    "jev_use": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.95,
+      "probabilities": {
+        "absent": 0.97,
+        "rejected": 0,
+        "requested": 0,
+        "ambiguous": 0,
+        "assistant_only": 0.03
+      }
+    },
+    "delivery_focus": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.67,
+      "probabilities": {
+        "absent": 0.73,
+        "rejected": 0,
+        "requested": 0.05,
+        "ambiguous": 0.02,
+        "assistant_only": 0.2
+      }
+    },
+    "evidence": {
+      "type": "choice",
+      "choice": "requested",
+      "confidence": 0.66,
+      "probabilities": {
+        "rejected": 0,
+        "ambiguous": 0.01,
+        "requested": 0.73,
+        "absent": 0.14,
+        "assistant_only": 0.12
+      }
+    },
+    "resource_hygiene": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.71,
+      "probabilities": {
+        "absent": 0.76,
+        "rejected": 0,
+        "requested": 0.02,
+        "ambiguous": 0.01,
+        "assistant_only": 0.21
+      }
+    },
+    "sibling_detached": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.92,
+      "probabilities": {
+        "absent": 0.9400000000000001,
+        "rejected": 0,
+        "requested": 0,
+        "ambiguous": 0,
+        "assistant_only": 0.06
+      }
+    },
+    "preserve_old_notes": {
+      "type": "choice",
+      "choice": "absent",
+      "confidence": 0.97,
+      "probabilities": {
+        "rejected": 0,
+        "ambiguous": 0,
+        "requested": 0,
+        "absent": 0.98,
+        "assistant_only": 0.02
+      }
+    },
+    "domain": {
+      "type": "choice",
+      "choice": "product",
+      "confidence": 1,
+      "probabilities": {
+        "mixed": 0,
+        "unrelated": 0,
+        "product": 1,
+        "unclear": 0
+      }
+    },
+    "progress": {
+      "type": "choice",
+      "choice": "local",
+      "confidence": 1,
+      "probabilities": {
+        "beta": 0,
+        "local": 1,
+        "planning": 0,
+        "stores": 0,
+        "hosted": 0,
+        "unknown": 0
+      }
+    },
+    "friction": {
+      "type": "choice",
+      "choice": "no_concern",
+      "confidence": 0.98,
+      "probabilities": {
+        "no_concern": 0.99,
+        "uncertainty": 0,
+        "manual_qa": 0,
+        "reliability": 0.01,
+        "delivery": 0,
+        "other": 0,
+        "cost": 0
+      }
+    },
+    "anchor": {
+      "type": "choice",
+      "choice": "L7515:0",
+      "confidence": 0.57,
+      "probabilities": {
+        "L9102:0": 0.01,
+        "none": 0.27,
+        "L7515:0": 0.72
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 11832,
+    "output_tokens": 1451
+  },
+  "estimatedUsd": 0.000496944,
+  "provenance": {
+    "threadId": "01a08299-0d2a-7571-82f0-55b5544c67bf",
+    "part": 6,
+    "messageIds": [
+      "L7515:0",
+      "L7519:0",
+      "L7547:0",
+      "L7584:0",
+      "L7604:0",
+      "L7669:0",
+      "L7720:0",
+      "L7855:0",
+      "L7937:0",
+      "L7955:0",
+      "L8056:0",
+      "L8142:0",
+      "L8486:0",
+      "L8549:0",
+      "L8586:0",
+      "L8872:0",
+      "L9102:0",
+      "L9106:0",
+      "L9115:0",
+      "L9145:0",
+      "L9227:0",
+      "L9262:0",
+      "L9358:0",
+      "L9453:0"
+    ],
+    "textSha256": "3d21581f3e0c731fd534dc94ac594216fcb4f7ee71f7f2ecfb8f8e9bed6dcf2a"
+  }
+}
