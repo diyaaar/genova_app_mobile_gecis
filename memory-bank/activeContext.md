@@ -2,73 +2,57 @@
 
 Updated 3 October 2026. [Handoff](../docs/agent-handoff.md) → [090](../docs/briefs/090-private-file-ticket-revocation-contract.md)
 → [plan](../docs/mobil-teslim-plani.md)/[WF-009](../docs/briefs/WF-009-controlled-delivery-execution-queue.md).
-Verify actual source/state, one writer, English records/Turkish user updates.
+Verify actual source/state, sole writer, English records/Turkish user updates.
 
 ## Current result and next measurable checkpoint
 
-Latest source d298229: [Android profile/native file boundary](../docs/reports/2026-10-03-android-profile-native-file-boundary.md),
-[actual SDK/HTTP v4](../docs/reports/090/2026-10-03-android-candidate-sdk-http-v4.json) PASS.
-Exact426-file7cd8d46 web + current native recovery: actual API36 Release WebView challenged
-profile/access-only SDK lease/member read, Expo65905B/hash/removal,401→one refresh/renewal,
-valid403 and actual A→B refusal/provider1/0/0. Synthetic Auth/REST/current authority/provider;
-inspection port NOT consent/share/visual/RLS. Dispatcher NOT Next file routing/middleware.
-153 native/5 server+harness pins; mobile55suites453/root114files1178/Node12/guard-off manifest
-PASS. Initial two NOT RUN/v3 FAIL preserved; fixture-only guards/CORS/async assertion fixes.
-Owned app/reverses/emulator/services/candidate/builds removed; free21054604KiB. CLI excluded.
-Next actual Android owner-assisted consent/share/visual, grouped iOS, permanent-route API audit.
-Whole090/R1/beta OPEN/live NO-GO. Self-review only; no hosted/site/push/paid inference ($0).
+Source9d2b6bd: [candidate private-cache guard](../docs/reports/2026-10-03-embedded-candidate-private-cache-guard.md).
+Actual7cd8d46 module negative control reproduced catalog persistence/worker registration
+after embedded activation. Fixed-ref factory borrows only d298229 guards into two files;
+424 parent files byte-identical, no catalog schema/whole-graph transplant. Embedded catalog
+read/write/update and worker paths refuse before side effects; browser/cleanup retained.
+426 pins/regeneration/committed factory/tests verified. Fresh Node10, candidate41files406/
+lint/types/coverage/SW/build, root114files1178/full check PASS. Synthetic browser ports,
+NOT actual Android consent/share/native runtime. No main-production/native/SQL/Edge/
+dependency change; self-review only. Candidate/root builds removed; free21049960KiB;
+no emulator/VM/runtime/download; CLI marker excluded. Source/docs paired commits.
 
-Previous sourcef1d089b: [trusted-app legacy native recovery](../docs/reports/2026-10-03-native-legacy-next-recovery.md),
-[final HTTP record](../docs/reports/090/2026-10-03-native-legacy-recovery-http-v2.json).
-Exact configured-origin legacy Next renewal now supported alongside five Edge readers;
-fresh native lease/one fixed POST, strict same alias/expiry, no redirects/denial/late-cancel retry.
-Screen config wiring/old-capability clear tested. Seven actual HTTP/native capability/Next
-adapter/Edge handler/HMAC scenarios PASS,68B/hash/A→B POST403/revoked-ticket403/second-GET403.
-Auth/current-authority/provider/file/share ports synthetic, NOT Next middleware/RN/Expo/RLS.
-15source/test pins+harness verified; mobile types55suites452tests/root114files1178tests/full
-gates PASS, preserved Node13/13. Initial count-only record retained, exact final assertions
-authoritative. No server/SQL/dependency/browser-session/refresh sharing; self-review only.
+Next: actual Android consent/cancel/download/share/clear, visual/navigation/tenant-clear
+using guarded derived candidate, then grouped sensitive iOS. Factory9d2b6bd, NOT unpatched
+7cd8d46 as full mobile proof. Minimum-profile candidate retains browser-session-only
+mutations elsewhere; actual permanent-route API audit/backport precedes promotion.
+Independent review/fresh hosted preflight/forward repair/R1 required. Whole090/R1/beta
+OPEN/live NO-GO. Local cache goal PASS does not complete the product.
 
-Immutable [embedded-profile candidate](../docs/reports/2026-10-03-minimum-embedded-profile-candidate.md)
-7cd8d460c68465055049dbf30192f7f5478bcf64 on codex/090-embedded-profile-candidate-20261003
-and parent browser1a014c4 unchanged. Prior Chrome profile/runtime evidence stays historical.
-Next fresh bounded resource preflight, actual Android WebView consent/share/visual using
-exact web candidate/current native, grouped sensitive iOS and permanent-route API audit.
-No refresh-token sharing/arbitrary issuer. Logs/independent review/fresh hosted preflight/
-refresh-forward-repair/R1 still required. Whole090/R1/beta OPEN/live NO-GO; local goal only PASS.
+## Preserved local evidence and identities
 
-## Preserved browser candidate and history
+Previous d298229 [Android SDK/file boundary](../docs/reports/2026-10-03-android-profile-native-file-boundary.md)
+and [HTTP v4](../docs/reports/090/2026-10-03-android-candidate-sdk-http-v4.json) PASS:
+API36 challenged profile/access-only lease/member read, Expo65905B/hash/removal,401
+renewal/valid403/actual A→B/provider1/0/0. Synthetic Auth/REST/authority/provider; inspection
+NOT consent/share/visual/RLS; dispatcher NOT Next file routing/middleware. Historical
+mobile55suites453/root1178/Node12/guard-off manifest; earlier f1d089b
+[trusted native recovery](../docs/reports/2026-10-03-native-legacy-next-recovery.md).
+Immutable7cd8d460c68465055049dbf30192f7f5478bcf64 [profile](../docs/reports/2026-10-03-minimum-embedded-profile-candidate.md)
+and parent1a014c4e1927a03a7c67dd666a91a6006a28b6f8 [browser](../docs/reports/2026-10-03-production-baseline-local-candidate.md)
+refs/manifests unchanged. Historical browser/provider/PG/HTTP proofs stay dated.
+Tickets bind actor/session/current choir/resource/alias/source. Downloaded/offline bytes
+and authorized in-flight reads cannot be retroactively recalled.
 
-Unchanged candidate1a014c4e1927a03a7c67dd666a91a6006a28b6f8, local
-codex/090-private-reader-candidate-20261003, historical production a13f696 (not fresh hosted state).
-[Browser record](../docs/reports/2026-10-03-production-baseline-local-candidate.md)/[v3 closure](../docs/reports/090/2026-10-03-candidate-source-manifest-v3.json):
-30delta/386unchanged; six readers15modules/client61modules133edges; SQL/config/lock hashes;
-root1178/candidate229/Node9/full Next12 + three8/8 PASS, all dated. Old-open buffered failure
-control remains; explicit web refresh, not automatic adoption/native readiness. Source7289edb
-fixes401 race/stale callbacks/PDF worker/denied playlist. Historical branch predecessors retained.
-Serverfe8cd19/client15fc8c9 and2Oct local PG/RPC/index/SDK/HTTP evidence:
-[legacy](../docs/reports/2026-10-02-legacy-reader-local-implementation.md)/[cache](../docs/reports/2026-10-02-legacy-client-cache-transition.md).
-Current-authority tickets bind actor/session/choir/resource/alias/source; no actorless grace.
-Downloaded/offline bytes and authorized in-flight reads are not retroactively recalled.
+## Authority, resources and product destination
 
-## Authority, recovery and resources
-
-Owner#33: sibling site no longer uses DB, owner-reported; NO SITE CHANGES. Historical findings
-not current consumer proof; no retained-table deletion/RLS relaxation. Old-note deletion withdrawn.
-Local scoped tests/source/commits/owned cleanup allowed; unrelated CLI marker excluded.
+Owner#33: sibling site detached (owner-reported), NO SITE CHANGES/table deletion/RLS
+relaxation; old-note deletion withdrawn. Local source/tests/commits/owned cleanup allowed.
 No hosted SQL/Edge/web/provider ACL/credentials/real-user/email/hardware/push/CI/distribution.
-DB→Edge→compatible clients/recovery before writes; Git revert is not data recovery;
-no automatic actorless-v1/078-defect rollback. Sole-writer self-review, not independent review.
-Latest root.next477416KiB/coverage352KiB removed after all gates/pin; HTTP18196 closed/fetch-env restored.
-Final21,255,756KiB free; no new candidate copy/VM/emulator/APK. Dependencies/AVD/CoreSimulator/global caches/
-user data/backup/original068 preserved. Fresh >=10GiB preflight/one heavy process/bounded retries.
-[R1 exclusions](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md) unchanged;
-protected0700/0600 backup outside Git, Vault/net/Storage metadata/bytes/password/settings excluded,
-roles later snapshot not original row parity. No new hosted preflight or inference($0);
-same key authorized2October only, no3October reuse/no key persisted.
-
-Android-first beta → full product → both stores; RN/Expo/profile permanent WebView retained,
-Supabase/privateR2/noRailway/prefer <=$5/month. Assisted onboarding/five free/extra-seat/manual
-billing; owner prices/counting/retention/deletion/last-chef choices open. WF-013 step5 PARTIAL,
-089 local only/F12/account risks.07642copies60,969,062B;077unexecuted49MP3/192,361,428B;
-activation/Drive ACL/phone/store, native write/sync/offline/chat/C4/C5/full acceptance separate.
+Source/docs separate; unrelated supabase/.temp/cli-latest preserved. Git revert not data
+recovery; DB→Edge→compatible clients/recovery before writes; no actorless-v1/078 rollback.
+Fresh >=10GiB/one heavy process/two-failure reassessment. Preserve deps/AVD/CoreSimulator/
+caches/user data/original068/[R1](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md)
+protected backup outside Git. R1 excludes Vault/net/Storage metadata/bytes/password/
+settings; later roles not original row parity. No current hosted preflight. Jev $0;
+same-key reuse authorized2October only, no3October use/key persistence.
+Android-first beta → full product → both stores; RN/Expo/permanent profile WebView,
+Supabase/privateR2/noRailway/prefer <=$5/month. Assisted onboarding/five free/extra-seat/
+manual billing; prices/counting/retention/deletion/last-chef choices open. WF-013 step5
+PARTIAL;089 local/F12/account;07642copies60,969,062B;077unexecuted49MP3/192,361,428B;
+activation/Drive ACL/phone/stores/native writes/sync/offline/chat/C4/C5 remain separate.

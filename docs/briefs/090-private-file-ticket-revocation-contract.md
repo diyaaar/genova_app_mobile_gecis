@@ -15,6 +15,59 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — embedded candidate private-cache guard before consent
+
+Entry958d140/main, sole writer; unrelated CLI marker preserved. Read AGENTS/handoff/
+active090/guide/work cycle/template/controls, MIGRATION permanent routes/decisions32–33,
+actual candidate loader/hook/cache and current embedded cache tests. Full TypeSafe and
+Supabase skills; TypeSafe index and Supabase changelog (anonymous fallback) checked; no
+new API/dependency/DB feature or Jev call. Intended next Android consent/share gate has
+a source blocker: immutable7cd8d46 offline.ts enables ServiceWorker private caching based
+only on browser support; catalog cache persists without embedded-mode exclusion. Main
+already has guards. Existing65905B native inspection is not proof of the web hook/cache.
+One outcome: minimal candidate cache guard, original negative control and preserved
+ordinary-browser/cleanup behavior. Do not transplant current catalog schema or whole graph.
+Three actions: reproduce exact candidate cache behavior and fail-closed two-file factory;
+run fresh generated-source tests/root gate/production candidate build and pins; English
+evidence/cleanup/separate commits and next actual Android consent/share, then grouped iOS.
+Allowed: supabase/test-support/090_candidate_native_cache*.mjs/tests,090 records/brief/
+handoff/active. Generated candidate source only via factory under ignored spike/090-runtime/
+native-cache-candidate; no edits to historical7cd8d46/1a014c4 or main production modules.
+Fresh21053228KiB; no active owned emulator/service/build; existing deps/Gradle/AVD retained.
+Additional peak <=2GiB: raw candidate<0.01GiB/build<=0.7GiB/root build+coverage<=0.7GiB/
+small test buffers<=0.1GiB/contingency<=0.49GiB; projected above10GiB. One heavy process;
+no emulator/VM/download/install/dependency copy until cache blocker passes. Candidate,
+root.next/coverage expire after final gates; preserve source/lockfiles/caches/user data.
+Required: actual old-source failure, patched embedded no persistent catalog reads/writes/
+updates and no ServiceWorker registration/messages, browser normal behavior, existing
+cache cleanup retained, byte-preserved parent files, regression/fresh root/production
+build/pins/docs/cleanup/commits. No AI authorization or live/site/provider/push/CI action.
+Actual Android/iOS consent/share/visual stays required NOT RUN, not erased by this goal.
+Reassess after two failures; first review after old-source negative control. Rollback
+factory/candidate only, no runtime authorization relaxation.
+
+First negative control reproduced old-source catalog persistence/worker registration;
+patched actual modules refuse both and preserve browser/cleanup,5 focused tests PASS.
+Candidate build PASS. Candidate pnpm script runner tried an automatic dependency install
+against the owned node_modules symlink and refused non-TTY purge before any removal.
+Do not approve purge/reinstall/change global settings. Verified symlink/dependencies still
+exist; run the same lint/typecheck/coverage/SW executables directly from installed root
+dependencies, candidate cwd. This is command-launch recovery, not a source/test waiver.
+
+| Criterion / expected behavior | Required? / N/A reason | Status | Date / environment | Evidence / limits |
+|---|---|---|---|---|
+| Exact original embedded cache failure reproduced | Yes | PASS |3 Oct / actual pinned modules | Source negative control, NOT actual device availability |
+| Embedded catalog/offline blocked; browser and cleanup retained | Yes | PASS |3 Oct / actual generated modules/runtime | Side effects0; four worker paths reject; cleanup/browser retained |
+| Minimal delta/raw parent bytes/source pins | Yes | PASS |426 output hashes + committed factory | Two guard-only files,424 exact parent bytes; no schema transplant |
+| Focused/full root/candidate build and local exit gates | Yes | PASS |3 Oct / sequential local checks | New5+existing5 Node; candidate406/root1178; builds/pins/cleanup/commits |
+| Actual Android consent/share/visual and grouped iOS | Deferred required integration gate | NOT RUN | Next checkpoint | Previous required rows remain open |
+
+Exit: source9d2b6bd, [cache guard evidence](../reports/2026-10-03-embedded-candidate-private-cache-guard.md).
+Bounded goal PASS, whole090/beta/live OPEN/NO-GO. Factory derives only two guards from
+fixed refs, no main production/native/DB/Edge edit. Use guarded derived candidate in next
+actual Android consent/share gate; do not reuse unpatched7cd8d46 as full mobile evidence.
+Owned candidate/root builds/coverage removed; free21049960KiB; CLI marker excluded.
+
 ### 3 October — pinned Android profile and native file boundary
 
 Two-attempt causal reassessment: initial native login PASS but web bridge timeout;
