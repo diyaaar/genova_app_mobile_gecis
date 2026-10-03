@@ -4,6 +4,7 @@ import { createMemoryKeyValueStore, USER_ID, CHOIR_A, membership } from '../../t
 import { NativeWebViewScreen } from '../NativeWebViewScreen';
 import { ProtectedFileCapability, type EphemeralFileStore, type NativeShareGateway } from '../platform-capabilities';
 import { createNativeWebViewRuntimeConfig } from '../runtime-config';
+import * as ticketRecovery from '../private-file-ticket-recovery';
 
 interface MockWebViewProps {
   source: { uri: string };
@@ -114,6 +115,33 @@ beforeEach(() => {
 });
 
 describe('NativeWebViewScreen', () => {
+  it('wires recovery to the configured app origin and clears the old capability on origin change', async () => {
+    const factory = jest.spyOn(ticketRecovery, 'createPrivateFileTicketRecovery');
+    const clear = jest.spyOn(ProtectedFileCapability.prototype, 'clear');
+    const localConfig = (port: number) => createNativeWebViewRuntimeConfig({
+      initialPath: '/announcements', isDevelopment: true,
+      developmentOrigin: `http://127.0.0.1:${port}`,
+    });
+    const { props, view } = await renderScreen({ runtimeConfig: localConfig(18196) });
+    try {
+      expect(factory).toHaveBeenCalledTimes(1);
+      expect(factory.mock.calls[0]![0].getAppOrigin?.()).toBe('http://127.0.0.1:18196');
+      const latestLease = jest.fn(async () => ({
+        accessToken: 'new-native-lease', expiresAt: 3_000, userId: USER_ID,
+        choirId: CHOIR_A, memberId: membership().member_id,
+      }));
+      await view.rerender(<NativeWebViewScreen {...props} getLease={latestLease} runtimeConfig={localConfig(18197)} />);
+      expect(clear).toHaveBeenCalled();
+      expect(factory).toHaveBeenCalledTimes(2);
+      const replacement = factory.mock.calls[1]![0];
+      expect(replacement.getAppOrigin?.()).toBe('http://127.0.0.1:18197');
+      await replacement.getLease({ forceRefresh: true });
+      expect(latestLease).toHaveBeenCalledWith({ forceRefresh: true });
+    } finally {
+      await view.unmount(); factory.mockRestore(); clear.mockRestore();
+    }
+  });
+
   it('never mounts a rejected initial route', async () => {
     await renderScreen({ initialPath: '/login', runtimeConfig: undefined });
     expect(screen.getByTestId('webview-initial-error')).toBeTruthy();

@@ -162,10 +162,11 @@ export function NativeWebViewScreen({
     createExpoShareGateway(),
     createPrivateFileTicketRecovery({
       getIssuer: () => process.env.EXPO_PUBLIC_SUPABASE_URL,
+      getAppOrigin: () => configResult.config?.appOrigin,
       getLease: options => actionsRef.current.getLease(options),
       allowLoopback: __DEV__,
     }),
-  ), [suppliedProtectedFileCapability]);
+  ), [configResult.config?.appOrigin, suppliedProtectedFileCapability]);
   const bootstrap = useMemo(() => ({
     channel: 'genova.mobile.webview' as const,
     instanceId: attempt.instanceId,
