@@ -6,22 +6,25 @@ Verify actual source/state, sole writer, English records/Turkish user updates.
 
 ## Current result and next measurable checkpoint
 
-Sourcee8e4ca1/8aea973: [consent/share checkpoint](../docs/reports/2026-10-03-android-candidate-consent-share.md).
+Current32aba65, owner-ready resumed12:27UTC: [consent/share checkpoint](../docs/reports/2026-10-03-android-candidate-consent-share.md).
 Actual7cd8d46 rendered homework anchor metadata absent; minimal passive metadata patch.
 Owner observed modal/cancel; preservedv1FAIL HEAD provider1 despite fileGET0. Corrected
 actual hook defers embedded HEAD to native post-consent capability; browser/server policy
 unchanged. Four deltas/422raw parent files;426pins verified. Node15/candidate406/allgates/
-root1178/fullcheck PASS. Native153pins/APK unchanged, e8e4ca1 mobile454/types/build retained.
+root1178/fullcheck PASS historically. Current actual file removal wrapper/event added;
+fresh32aba65 Node15/mobile454/types/root1178/fullcheck/candidatebuild/Android88sec PASS.
 Actual API36 native Auth/SecureStore/access-only challenge bridge reached running detail;
 immutablev2 NOT RUN, pre-touch GET0/HEAD0/provider0/failures0. UI still NOT RUN. No main
 production/SQL/Edge/dependency/hosted change. Self-review; whole090/R1/betaOPEN/liveNO-GO.
 
-Next ONLY when owner ready: continuous cancel→approve/share-dismiss→B + visual session,
-new attempt filename. Same missing human touch over three goal-turn checkpoints, CUA
-Android unsupported: goalBLOCKED not complete/paused. At12:11UTC stopped/cleaned all
-owned servers/emulator/app/reverses/candidate/android/rootoutputs. Fresh guard-off
-manifest/resource PASS; no owned ports/PIDs/adb device; free21312872KiB, preserve deps/
-AVD/evidence. No binary history or automatic unchanged environment rebuild. Factory
+V3 owner modal/cancel/return and actual accepted file request + cancel-observed200 PASS,
+GET0/HEAD0/provider0/failures0. Next: actual approval/share chooser/dismiss; verify native
+hash/share-return/File.exists false BEFORE B/visual step. CUA still lacks Android, user
+touch required. Same goal not complete; goal-tool historic blocked flag, fresh resumed audit.
+Runtime server66450/PID57418/child57442, emulator28221/PID57633/emulator5554/app/reverses
+retained only until12:55UTC/15:55Istanbul for immediate sequence; cleanup then. Root
+outputs removed; free21823816KiB. Separate immutablev3 target, v1/v2 retained. Guard-off
+pending final cleanup. Preserve deps/AVD/evidence, no automatic rebuild to wait. Factory
 8aea973 not unpatched7cd8d46 as full mobile proof. Candidate retains browser-session-only
 mutations elsewhere; actual permanent-route API audit/backport precedes promotion.
 Independent review/fresh hosted preflight/forward repair/R1 required. Whole090/R1/beta

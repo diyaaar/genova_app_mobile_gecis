@@ -1,7 +1,49 @@
 # 090 — guarded candidate Android consent/share checkpoint
 
-3 October 2026. Source `e8e4ca1`; single writer. Status **OPEN**: actual
-modal/cancel/share/visual/B-switch acceptance is not yet established.
+3 October 2026. Current source `32aba65`; single writer. Status **OPEN**:
+v3 actual modal/cancel PASS; approved share/removal/B and full visual/cache acceptance pending.
+Earlier sections retain their dated source/attempt boundaries.
+
+## v3 owner-ready resumption — 12:37UTC
+
+Owner ready12:27UTC; same original goal, fresh blocked audit. Historical v1FAIL/v2NOT RUN
+unchanged. Minimal acceptance-only instrumentation in32aba65 verifies actual Expo
+File.exists false after `files.remove`, records safe file-removed event; fixture requires
+cancel then actual-share-return then removal before B evidence. Normal inspection kept.
+No product/server/Auth/schema/dependency change. TypeSafe complete skill/live index
+read; deterministic checks only, no inference. Historical Supabase skill path unavailable;
+no new Supabase API or DB operation needed. Jev0/no hosted operations.
+
+Fresh Node15/15, mobile typecheck55suites454tests, root `pnpm check`114files1178tests/
+lint/types/coverage/SW/productionbuild PASS on this source content. Derived unchanged
+426candidatepins/four deltas verified again; current production Next build PASS. Earlier
+candidate406/lint/coverage remains dated8aea973 evidence, not mislabeled fresh. Offline
+Android Release build88sec/496tasks PASS; actual signature verify/debug signer unchanged.
+New APK SHA256 `5faee695da47f5f4035562c7967d858a73b97615cbb2437a8c559ad463b18fcb`;
+Hermes bundle `2c77dcba9cde74b4e9ec4319e4e66a807f144d5a337d9dc8840ae8907cbfdd0a`.
+Fresh guard-on manifest restricts cleartext127.0.0.1/localhost only, basefalse;
+normal guard-off check still required at final cleanup.
+
+Owned server handle66450/PID57418, child57442; API36 emulator handle28221/PID57633,
+emulator5554; package initially absent before install. Reverses31090/54491/18092.
+At15:36:26Istanbul real one-use native Auth/SecureStore/access-only challenge bridge
+running chorister-detail. Pre-touch countsGET0/HEAD0/provider0/failures0/unknown0.
+CUA fresh inventory again lacks Android; no unsupported UI automation/substitute used.
+Actual accepted file.open diagnostics15:36:59/15:37:03. Owner replied “Vazgeç’e bastım,
+sayfaya döndüm”; operator then checked real counts and posted cancel-observed200:
+**fileGET0/HEAD0/provider0/failures0/unknown0**. Cancel PASS at owner+HTTP boundary,
+not independent screenshot. Step2 requested actual approval/share chooser then dismiss
+without external recipient; B withheld until share/hash/removal verification.
+
+Resource preflight23,137,464KiB, extra peak<=6GiB; live free21,823,816KiB after removing
+owned root .next477440/coverage352KiB (reproducible outputs only). Retain android783680,
+derived candidate476248KiB, installed synthetic app/runtime for immediate same-task
+checks only until **12:55UTC/15:55Istanbul**. Cleanup after final dependent check/expiry:
+owned servers/reverses/package/emulator/candidate/android, preserve deps/Gradle/AVD/user
+data. New report target `090/2026-10-03-android-candidate-interactive-http-v3.json` will
+be immutable at final assertion/stop; not yet a completed HTTP record.
+Required share/removal/B/visual-cache rows remain open. Self-review only; whole090/
+R1/beta OPEN/liveNO-GO. Existing iOS later milestone retained, no substitute proof.
 
 ## Reproduced blocker and bounded repair
 

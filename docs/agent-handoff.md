@@ -8,22 +8,28 @@ One writer; verify HEAD, dirty ownership, resources and actual permission.
 
 ## Current checkpoint and next action
 
-Sourcee8e4ca1/8aea973: [Android consent/share checkpoint](reports/2026-10-03-android-candidate-consent-share.md).
+Current32aba65, owner-ready resumed12:27UTC; [Android consent/share checkpoint](reports/2026-10-03-android-candidate-consent-share.md).
 Actual rendered7cd8d46 HomeworkCard lacked passive metadata; minimal candidate patch.
 User observed modal/cancel; v1FAIL HEAD fetched provider1 despite fileGET0. Failed JSON
 retained. Corrected actual hook skips eager HEAD only embedded; native post-consent
 GET still server-authorized, browser probe unchanged. Four deltas/422raw parent files;
 426pins verified. Node15, candidate406/lint/types/SW/build, root1178/fullcheck PASS.
-Native unchanged153hashes/APK; historical e8e4ca1 mobile454/types/build74sec retained.
+Current removal wrapper verifies File.exists false; requires safe file-removed event before B.
+Fresh32aba65 mobile454/types/root1178/fullcheck/Node15/candidatebuild/Android88sec PASS.
 Actual API36/Auth/SecureStore/challenged access-only chorister-detail bridge reached running;
 immutablev2 NOT RUN: pre-touch fileGET0/HEAD0/provider0/failures0. No v2 UI acceptance.
 No main-production/SQL/Edge/dependency/hosted change; self-review. Whole090/R1/betaOPEN.
 
-NEXT ONLY when owner ready: continuous Drive Linki→Vazgeç, assert0→approve/share-dismiss→B
-and visual session, new attempt filename. Three consecutive goal-turn checkpoints need
-same missing human touch; CUA Android unsupported, goalBLOCKED, not complete/paused.
-At12:11UTC stopped v2 server/emulator/app/reverses, removed candidate/android/rootoutputs.
-Fresh guard-off manifest/resource PASS; free21312872KiB; no owned ports/PIDs/adb device.
+V3 owner actual modal/cancel/return + native accepted file request and HTTP counts PASS:
+GET0/HEAD0/provider0/failures0; operator cancel-observed200 recorded only after owner reply.
+NEXT immediate user action: Drive Linki→Devam et→actual share chooser→dismiss without
+recipient; verify hash/share-return/removal BEFORE requesting native B/visual step.
+Fresh CUA still lacks Android; user touch needed, no adb UI substitute. Original goal
+not completed; historical goal-tool blocked flag, fresh resumed audit starts with readiness.
+Live server66450/PID57418/child57442, emulator28221/PID57633/emulator5554; package initially
+absent; three owned reverses. Retain until12:55UTC/15:55Istanbul only for this sequence,
+then stop/clean owned app/servers/reverses/emulator/candidate/android. Root outputs removed;
+free21823816KiB. New immutable HTTPv3 target, v1/v2 untouched. Guard-off pending cleanup.
 Keep deps/AVD/evidence, no binary history/unchanged rebuild. Grouped iOS remains later.
 Factory8aea973, NOT unpatched7cd8d46 as full mobile web proof. Permanent browser-session-only
 mutations need actual API audit/backport before promotion. No refresh sharing/arbitrary

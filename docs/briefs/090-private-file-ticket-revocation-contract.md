@@ -15,7 +15,21 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
-### 3 October — guarded candidate Android consent/share flow (WAITING FOR USER)
+### 3 October — guarded candidate Android consent/share flow (RESUMED)
+
+Owner ready at12:27UTC/15:27Istanbul, HEAD447198a. Fresh blocked audit;
+historical v1FAIL/v2NOT RUN remain immutable. Resume the same observable goal,
+not a new inspection-only substitute. Allowed native acceptance wrapper additionally
+checks actual per-file deletion after share returns and records a safe `file-removed`
+event; fixture requires that event before B evidence. New immutable HTTP attemptv3.
+No product capability/Auth/SDK/schema change. Supabase skill no longer available at
+its historical installation path; no new Supabase API or database operation is needed.
+Resource preflight freshfree23,137,464KiB, mobiledeps7,492,636/Gradle4,451,368/
+AVD3,633,160KiB. Additionalpeak<=6GiB, projectedfree16,846,008KiB>10GiB.
+Rebuild is necessary because owned APK/candidate were removed at prior handoff;
+reuse existing dependencies/SDK/AVD. Same cleanup targets below; one heavy process.
+Retain runtime only for this immediate user-assisted sequence with a short dated
+expiry after launch. Fresh focused/root/mobile checks required for instrumentation.
 
 Start HEAD2bccd2c; sole writer; unrelated `supabase/.temp/cli-latest` preserved.
 Read AGENTS, handoff/active, this brief, guide/work cycle/template, delivery controls,
@@ -58,11 +72,11 @@ Negative control and rendered actual component check required before APK build.
 | Criterion | Required? | Status | Environment/evidence | Limits |
 |---|---|---|---|---|
 | Interactive guard/fixture negatives; old mode retained | yes | PASS | e8e4ca1/Node14 + mobile454 | No runtime inference |
-| Real candidate chorister anchor → native modal; cancel zero provider/body reads | yes | NOT RUN | actual Android | Synthetic scope, no hosted RLS |
+| Real candidate chorister anchor → native modal; cancel zero provider/body reads | yes | PASS | 3Oct/v3/32aba65 owner observation + accepted native request + cancel-observed200; GET0/HEAD0/provider0 | Synthetic scope, no hosted RLS/independent screenshot |
 | Approved PDF65905B/hash → actual share UI returned → file removed | yes | NOT RUN | actual Android | No external recipient send |
 | Actual B switch clears A surface/files; old A GET/HEAD refused | yes | NOT RUN | actual Android | Offline/in-flight bytes excluded |
 | Visual/scroll/navigation and no private browser persistence | yes | NOT RUN | actual Android | Module evidence alone insufficient |
-| Fresh mobile types/full tests + root pnpm check | yes | PASS | e8e4ca1/mobile55suites454 + root114files1178/fullcheck; candidate406/build | Not platform proof |
+| Fresh mobile types/full tests + root pnpm check | yes | PASS | 3Oct/32aba65 mobile55suites454 + root114files1178/fullcheck; current derived candidate build | Not platform proof; candidate406 earlier unchanged8aea973 |
 | Grouped sensitive iOS | required later milestone | NOT RUN | named next platform gate | Not silently omitted |
 | Self-review, redaction/source pins, resource cleanup, links/diff | yes | PASS | 3Oct/8aea973/12:11UTC, normal guard-off manifest, owned processes/output removed, free21312872KiB | Not independent review |
 
