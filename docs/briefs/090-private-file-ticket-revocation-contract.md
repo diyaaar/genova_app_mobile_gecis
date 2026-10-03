@@ -15,7 +15,7 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
-### 3 October — guarded candidate Android consent/share flow (OPEN)
+### 3 October — guarded candidate Android consent/share flow (WAITING FOR USER)
 
 Start HEAD2bccd2c; sole writer; unrelated `supabase/.temp/cli-latest` preserved.
 Read AGENTS, handoff/active, this brief, guide/work cycle/template, delivery controls,
@@ -64,7 +64,7 @@ Negative control and rendered actual component check required before APK build.
 | Visual/scroll/navigation and no private browser persistence | yes | NOT RUN | actual Android | Module evidence alone insufficient |
 | Fresh mobile types/full tests + root pnpm check | yes | PASS | e8e4ca1/mobile55suites454 + root114files1178/fullcheck; candidate406/build | Not platform proof |
 | Grouped sensitive iOS | required later milestone | NOT RUN | named next platform gate | Not silently omitted |
-| Self-review, redaction/source pins, resource cleanup, links/diff | yes | NOT RUN | local | Not independent review |
+| Self-review, redaction/source pins, resource cleanup, links/diff | yes | PASS | 3Oct/8aea973/12:11UTC, normal guard-off manifest, owned processes/output removed, free21312872KiB | Not independent review |
 
 Checkpoint sourcee8e4ca1: [consent/share record](../reports/2026-10-03-android-candidate-consent-share.md).
 Metadata rejection reproduced/repaired with actual rendered component/native policy;
@@ -85,6 +85,15 @@ Browser probe unchanged; no server HEAD/Range/authorization relaxation. Fourth d
 422 raw parent files. Actual hook negative/browser/embedded tests required beforev2.
 Freshfree20,211,228KiB; reuse installed unchanged APK/native source; only derived web
 rebuild necessary (causal change). Additional peak<=2GiB >10GiB floor, one runtime.
+
+Final waiting checkpoint12:11UTC: source8aea973 remains tested; immutablev2 HTTP
+NOT RUN, authenticated POST200/fileGET0/HEAD0/provider0/unknown0/failures0. No actual
+v2 touch after three consecutive goal-turn checkpoints; CUA Android unsupported, user
+action required. Full goal BLOCKED, not completed/paused. Stop/clean handoff before
+maximum expiry: all owned servers/emulator/app/reverses/candidate/android removed;
+fresh guard-off manifest PASS, free21312872KiB; deps/AVD/source/evidence preserved.
+Next only when owner ready: continuous cancel→approve/share-dismiss→B + visual session
+using new attempt filename; do not overwritev1/v2 or repeat unchanged builds to wait.
 
 ### 3 October — embedded candidate private-cache guard before consent
 

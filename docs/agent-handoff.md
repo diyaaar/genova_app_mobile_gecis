@@ -15,15 +15,16 @@ retained. Corrected actual hook skips eager HEAD only embedded; native post-cons
 GET still server-authorized, browser probe unchanged. Four deltas/422raw parent files;
 426pins verified. Node15, candidate406/lint/types/SW/build, root1178/fullcheck PASS.
 Native unchanged153hashes/APK; historical e8e4ca1 mobile454/types/build74sec retained.
-Actual API36/Auth/SecureStore/challenged access-only chorister-detail bridge running;
-v2 before touch fileGET0/HEAD0/provider0/failures0. NOT consent/share/visual/B acceptance.
+Actual API36/Auth/SecureStore/challenged access-only chorister-detail bridge reached running;
+immutablev2 NOT RUN: pre-touch fileGET0/HEAD0/provider0/failures0. No v2 UI acceptance.
 No main-production/SQL/Edge/dependency/hosted change; self-review. Whole090/R1/betaOPEN.
 
-NEXT: user v2 Drive Linki→Vazgeç, verify cancel0 then approve actual share/dismiss/B.
-Originalv1 stopped/cleaned; v2 serverhandle23868/PID40339, emulator81347/PID40369,
-owned package initiallyabsent, reverses31090/54491/18092. Retain immediate same-task only
-until12:20UTC/15:20Istanbul; at expiry/handoff clean servers/emulator/app/reverses/candidate/
-android outputs. Free20123908KiB; root outputs removed. Grouped sensitive iOS follows.
+NEXT ONLY when owner ready: continuous Drive Linki→Vazgeç, assert0→approve/share-dismiss→B
+and visual session, new attempt filename. Three consecutive goal-turn checkpoints need
+same missing human touch; CUA Android unsupported, goalBLOCKED, not complete/paused.
+At12:11UTC stopped v2 server/emulator/app/reverses, removed candidate/android/rootoutputs.
+Fresh guard-off manifest/resource PASS; free21312872KiB; no owned ports/PIDs/adb device.
+Keep deps/AVD/evidence, no binary history/unchanged rebuild. Grouped iOS remains later.
 Factory8aea973, NOT unpatched7cd8d46 as full mobile web proof. Permanent browser-session-only
 mutations need actual API audit/backport before promotion. No refresh sharing/arbitrary
 issuer. Independent review/fresh hosted preflight/forward repair/R1 precede live authority.

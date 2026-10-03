@@ -124,3 +124,37 @@ handle81347/PID40369 for this causal correction only; reused exact APK, no nativ
 Package again confirmed absent before install. New expiry12:20UTC/15:20Istanbul,
 same-task modal/cancel first, then share/B only after zero-body check. User touch requested.
 Free20,123,908KiB after root-generated cleanup; no environment kept merely for history.
+
+## Final waiting checkpoint / owned cleanup — 12:11UTC
+
+Three consecutive goal-turn endings require the same missing actual Android touch:
+v2 preparation/fix checkpoint; verified-live continuation; current revalidation.
+Original server23868 and actual emulator still live until deliberate stop; no observed
+timeout was treated as termination. Current read-only counts fileGET0/HEAD0/provider0,
+events empty/failures0/unknown0. Native bridge running, but no actual v2 file request.
+Fresh CUA inventory still lacks Android and previous qemu binding was refused. No safe
+in-scope alternative can supply the missing human consent/share/visual evidence.
+
+Goal **BLOCKED awaiting owner-assisted UI**, not complete or owner-paused. Preserve the
+entire original goal; ready/read0 is not its replacement. Next: owner says ready for
+one continuous cancel→approve/share-dismiss→B session, then fresh bounded runtime
+with separate attempt filename (v2 immutable). Do not rebuild/open another environment
+merely because an automatic continuation repeats this missing action.
+
+[V2 HTTP record](090/2026-10-03-android-candidate-interactive-http-v2.json) **NOT RUN**:
+authenticated ticket POST200, no body/HEAD/provider access, failures/unknown/outside0;
+full426candidate/153native source pins retained. These prove pre-touch behavior only.
+UI cancel/share/B/visual rows remain NOT RUN; v1 failure remains unchanged.
+
+At12:11UTC closed owned fixture/Next processes40339/40366, force-stopped/uninstalled
+initially-absent synthetic package, removed three owned reverses, stopped emulator40369.
+Normal flag-off Expo prebuild/no-install with whitelisted public synthetic environment
+PASS: no loopback network-security manifest reference/resource. Generated output only,
+not normal product/device acceptance. Removed exact verified interactive candidate and
+generated mobile android; earlier root .next/coverage removed. APK/bundle hashes retained,
+not binary copies. No remaining owned ports/PIDs/adb device. `.expo` absent/runtime0.
+Free **21,312,872KiB**. Retained existing dependencies/Gradle/AVD/toolchain/user data and
+small redacted source/test/runtime evidence; no global cache purge. Generated outputs
+are reproducible, not recovered user data. Unrelated CLI marker preserved. Self-review,
+links/redaction/diff check; documents-only checkpoint needs no unchanged product rebuild.
+Jev0; no hosted/provider/real-user/site/push/CI operation.
