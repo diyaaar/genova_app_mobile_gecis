@@ -36,6 +36,10 @@ import {
 } from './platform-capabilities';
 import { allocateTenantEpoch, createBridgeChallenge, createBridgeCorrelationId } from './random';
 import { readNativeWebViewRuntimeConfig, type NativeWebViewRuntimeConfig } from './runtime-config';
+import { ProtectedPdfPreview, type PdfPreviewEvent } from './ProtectedPdfPreview';
+import type { NativePdfPreviewInput } from './platform-capabilities';
+import { createLocalPdfPreview } from './local-pdf-preview';
+import { nativePdfRenderer } from '../repertoire/pdf-renderer';
 import {
   createNativeThemePreferenceStore,
   currentNativeTheme,
@@ -112,6 +116,8 @@ export interface NativeWebViewScreenProps {
   writeClipboard?: (text: string) => Promise<boolean>;
   protectedFileCapability?: ProtectedFileCapability;
   onBridgeSnapshot?: (snapshot: NativeBridgeSnapshot) => void;
+  /** Local renderer lifecycle evidence only; no file URL, token or private bytes. */
+  onPdfPreviewEvent?: (event: PdfPreviewEvent) => void;
 }
 
 export function NativeWebViewScreen({
@@ -128,6 +134,7 @@ export function NativeWebViewScreen({
   writeClipboard = createExpoClipboardWriter(),
   protectedFileCapability: suppliedProtectedFileCapability,
   onBridgeSnapshot,
+  onPdfPreviewEvent,
 }: NativeWebViewScreenProps) {
   const actionsRef = useRef({ getLease, onNativeRoute, onExit, onSignOut, onDiagnostic, changePassword, writeClipboard, onBridgeSnapshot });
   actionsRef.current = { getLease, onNativeRoute, onExit, onSignOut, onDiagnostic, changePassword, writeClipboard, onBridgeSnapshot };
@@ -150,6 +157,9 @@ export function NativeWebViewScreen({
   const [passwordError, setPasswordError] = useState<string | null>(null);
   const [pendingFile, setPendingFile] = useState<PreparedProtectedFileRequest | null>(null);
   const [fileBusy, setFileBusy] = useState(false);
+  const [pdfPreview, setPdfPreview] = useState<(NativePdfPreviewInput & {
+    session: ReturnType<typeof createLocalPdfPreview>; settle: (error?: Error) => void;
+  }) | null>(null);
   const [themeState, setThemeState] = useState<NativeThemeState>(() => currentNativeTheme('system'));
   const webViewRef = useRef<WebView>(null);
   const trustedWebSourceRef = useRef(configResult.config?.initialUrl ?? '');
@@ -379,8 +389,32 @@ export function NativeWebViewScreen({
     const request = pendingFileRef.current;
     if (!request || fileBusy) return;
     setFileBusy(true);
-    const opened = await protectedFileCapability.run(request);
-    controllerRef.current?.resolveProtectedFile(request.requestId, opened ? 'opened' : 'failed');
+    const controller = controllerRef.current;
+    let opened = false;
+    try {
+      opened = await protectedFileCapability.run(request, input => new Promise<void>((resolve, reject) => {
+        const session = createLocalPdfPreview(input.uri, input.signal, nativePdfRenderer);
+        let settled = false;
+        const settle = (error?: Error) => {
+          if (settled) return;
+          settled = true;
+          input.signal.removeEventListener('abort', abort);
+          setPdfPreview(current => current?.signal === input.signal ? null : current);
+          if (error) reject(error); else resolve();
+        };
+        // Own abort even if React never mounts the preview child. File cleanup must
+        // not wait indefinitely on a presentation callback from an unmounted screen.
+        const abort = () => {
+          void session.close().then(() => settle(new Error('PDF oturumu kapandı.')),
+            () => settle(new Error('PDF güvenle kapatılamadı.')));
+        };
+        input.signal.addEventListener('abort', abort, { once: true });
+        if (input.signal.aborted) abort();
+        else setPdfPreview({ ...input, session, settle });
+      }));
+    } catch { /* Cleanup failure is a failed action, never a stuck confirmation or fallback share. */ }
+    if (controllerRef.current !== controller || pendingFileRef.current !== request) return;
+    controller?.resolveProtectedFile(request.requestId, opened ? 'opened' : 'failed');
     setFileBusy(false);
     pendingFileRef.current = null;
     setPendingFile(null);
@@ -645,7 +679,7 @@ export function NativeWebViewScreen({
       </Modal>
 
       <Modal
-        visible={Boolean(pendingFile)}
+        visible={Boolean(pendingFile) && !pdfPreview}
         transparent
         animationType="none"
         onRequestClose={cancelFile}
@@ -682,6 +716,7 @@ export function NativeWebViewScreen({
           </View>
         </View>
       </Modal>
+      {pdfPreview ? <ProtectedPdfPreview input={pdfPreview} session={pdfPreview.session} onClosed={pdfPreview.settle} onEvent={onPdfPreviewEvent} /> : null}
     </SafeAreaView>
   );
 }

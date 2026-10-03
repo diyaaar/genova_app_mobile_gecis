@@ -38,6 +38,8 @@ function Runtime({ trace }: { trace: Trace }) {
   const started = useRef(false);
   const selected = useRef(false);
   const inspected = useRef(false);
+  const previewEvidence = useRef(Promise.resolve());
+  const previewEvents = useRef(new Set<string>());
   const [metadata, setMetadata] = useState<WebViewMetadata | null>(null);
   const [closed, setClosed] = useState(false);
   useEffect(() => {
@@ -94,6 +96,7 @@ function Runtime({ trace }: { trace: Trace }) {
         if (new File(uri).exists) throw new Error('Temporary PDF retained');
         trace('ephemeral file removal PASS');
         if (interactive) {
+          await previewEvidence.current;
           const response = await fetch(`${WEBVIEW_FIXTURE}/090/ui-event`, { method: 'POST',
             headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event: 'file-removed' }) });
           if (!response.ok) throw new Error('Removal evidence refused');
@@ -204,6 +207,20 @@ function Runtime({ trace }: { trace: Trace }) {
       onBridgeSnapshot={snapshot => {
         trace(`bridge ${snapshot.phase}:${snapshot.routeFamily}`);
         if (snapshot.phase === 'running' && snapshot.routeFamily === 'profile') void inspectLegacy();
+      }}
+      onPdfPreviewEvent={value => {
+        if (!interactive) return;
+        trace(`actual PDF preview ${value.event} ${value.page}/${value.pageCount}`);
+        if (value.pageCount !== 40) { trace('preview page count FAIL'); return; }
+        const event = value.event === 'closed' ? 'preview-closed' : `preview-page-${value.page}`;
+        if (!['preview-closed', 'preview-page-1', 'preview-page-2'].includes(event) || previewEvents.current.has(event)) return;
+        previewEvents.current.add(event);
+        previewEvidence.current = previewEvidence.current.then(async () => {
+          const response = await fetch(`${WEBVIEW_FIXTURE}/090/ui-event`, { method: 'POST',
+            headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event }) });
+          if (!response.ok) throw new Error('Preview evidence refused');
+          trace(`preview evidence ${event} PASS`);
+        }).catch(() => { trace('preview evidence FAIL'); throw new Error('Preview evidence refused'); });
       }}
       onDiagnostic={value => trace(`diagnostic ${value.type}:${value.outcome}:${value.reasonCode ?? ''}`)} />}
   </View>;

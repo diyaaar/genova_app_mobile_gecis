@@ -36,3 +36,11 @@ export function assertInteractiveCancel(requests, providerReads) {
   assert(!requests.some(item => item.path.startsWith('/api/drive-file/') && item.method === 'GET'),
     'Native/browser body read before consent');
 }
+
+// Ordered v4 synthetic evidence, not a substitute for owner visual acceptance.
+export function assertInlinePreviewEvent(event, events, providerReads) {
+  assert(['share-returned', 'preview-page-1', 'preview-page-2', 'preview-closed', 'file-removed'].includes(event));
+  assert(events.includes('cancel-observed')); assert.equal(providerReads.renewal, 1);
+  if (event === 'file-removed') assert(events.includes('preview-closed'));
+  if (['preview-page-2', 'preview-closed'].includes(event)) assert(events.includes('preview-page-1'));
+}

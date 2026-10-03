@@ -63,10 +63,10 @@ async function run(command, args, cwd, env = buildEnv()) {
   const [code] = await once(child, 'exit'); assert.equal(code, 0, 'Owned command failed');
 }
 async function serve(interactive = false) {
-  const { interactiveRows, assertInteractiveCancel } = await import('./090_android_interactive.mjs');
+  const { interactiveRows, assertInteractiveCancel, assertInlinePreviewEvent } = await import('./090_android_interactive.mjs');
   const candidate = interactive ? ROOT + '/spike/090-runtime/android-interactive-candidate' : CANDIDATE;
   const out = ROOT + '/docs/reports/090/' + (interactive
-    ? '2026-10-03-android-candidate-interactive-http-v3.json' : '2026-10-03-android-candidate-sdk-http-v4.json');
+    ? '2026-10-03-android-candidate-inline-preview-http-v4.json' : '2026-10-03-android-candidate-sdk-http-v4.json');
   assert(!fs.existsSync(out), 'Preserve earlier attempt');
   const candidatePins = interactive ? JSON.parse(fs.readFileSync(candidate + '/native-cache-source.json')) : null;
   if (interactive) {
@@ -137,7 +137,7 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
     if (interactive) {
       assert.deepEqual(input, { platform: 'android', switched: true, cacheEmpty: true });
       assert(native.some(item => item.event === 'cancel-observed'));
-      assert(native.some(item => item.event === 'share-returned'));
+      for (const event of ['preview-page-1', 'preview-page-2', 'preview-closed']) assert(native.some(item => item.event === event));
       assert(native.some(item => item.event === 'file-removed'));
       assert.equal(providerReads.renewal, 1); assert.equal(providerReads.revoked, 0); assert.equal(providerReads.switched, 0);
       assert.deepEqual(requests.filter(item => item.phase === 'switched' && item.path.startsWith('/api/drive-file/'))
@@ -196,15 +196,13 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
       if (interactive && url.pathname === '/090/ui-event' && incoming.method === 'POST') {
         const input = JSON.parse(body);
         assert.deepEqual(Object.keys(input), ['event']);
-        assert(['cancel-observed', 'share-returned', 'file-removed'].includes(input.event));
+        assert(['cancel-observed', 'share-returned', 'preview-page-1', 'preview-page-2', 'preview-closed', 'file-removed'].includes(input.event));
         assert(!native.some(item => item.event === input.event), 'Duplicate UI event');
         if (input.event === 'cancel-observed') assertInteractiveCancel(requests, providerReads);
-        else {
-          assert(native.some(item => item.event === 'cancel-observed')); assert.equal(providerReads.renewal, 1);
-          if (input.event === 'file-removed') assert(native.some(item => item.event === 'share-returned'));
-        }
+        else assertInlinePreviewEvent(input.event, native.map(item => item.event), providerReads);
         native.push({ event: input.event, origin: input.event === 'cancel-observed' ? 'operator observation'
-          : input.event === 'file-removed' ? 'actual Expo File.exists false after removal' : 'actual native share promise returned' });
+          : input.event === 'file-removed' ? 'actual Expo File.exists false after removal'
+            : input.event.startsWith('preview-') ? 'actual native Image.onLoad or renderer close callback' : 'actual native share promise returned' });
         return json(200, {});
       }
       if (url.pathname === '/090/native-mode' && incoming.method === 'POST') {

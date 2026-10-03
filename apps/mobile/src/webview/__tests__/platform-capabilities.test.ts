@@ -9,6 +9,7 @@ import {
   prepareProtectedFileRequest,
   type EphemeralFileStore,
   type NativeShareGateway,
+  type NativePdfPreviewInput,
 } from '../platform-capabilities';
 
 function request(overrides: Partial<Parameters<typeof prepareProtectedFileRequest>[0]> = {}) {
@@ -85,6 +86,46 @@ describe('WebView platform capability policy', () => {
 });
 
 describe('ephemeral protected file operation', () => {
+  it('inline PDF view does not depend on share availability or leave bytes after close', async () => {
+    const r = createRuntime(); (r.sharing.isAvailable as jest.Mock).mockResolvedValue(false);
+    const preview = jest.fn(async (input: NativePdfPreviewInput) => {
+      expect(input.uri).toBe('file:///cache/tenor.pdf');
+      expect(input).not.toHaveProperty('canonicalUrl');
+      expect(r.files.remove).not.toHaveBeenCalled();
+    });
+    await expect(r.capability.run(prepareProtectedFileRequest(request(), { appOrigin: APP_WEB_ORIGIN })!, preview)).resolves.toBe(true);
+    expect(r.sharing.isAvailable).not.toHaveBeenCalled(); expect(r.sharing.share).not.toHaveBeenCalled();
+    expect(preview).toHaveBeenCalledTimes(1); expect(r.files.remove).toHaveBeenCalledTimes(1);
+  });
+  it('sharing from the preview is explicit and cannot outlive the same file session', async () => {
+    const r = createRuntime(); let input!: NativePdfPreviewInput;
+    const preview = jest.fn(async (next: NativePdfPreviewInput) => { input = next; await input.share(); });
+    await expect(r.capability.run(prepareProtectedFileRequest(request(), { appOrigin: APP_WEB_ORIGIN })!, preview)).resolves.toBe(true);
+    expect(r.sharing.share).toHaveBeenCalledWith(input.uri, { mimeType: 'application/pdf', dialogTitle: 'Tenor.pdf dosyasını paylaş' });
+    await expect(input.share()).rejects.toThrow(); expect(r.sharing.share).toHaveBeenCalledTimes(1);
+  });
+  it('abort waits for renderer closure before deleting PDF; preview failure never falls back to share', async () => {
+    const r = createRuntime(); let finish!: () => void; let entered!: () => void;
+    const started = new Promise<void>(resolve => { entered = resolve; });
+    const preview = (input: NativePdfPreviewInput) => new Promise<void>(resolve => {
+      entered(); input.signal.addEventListener('abort', () => { finish = resolve; }, { once: true });
+    });
+    const run = r.capability.run(prepareProtectedFileRequest(request(), { appOrigin: APP_WEB_ORIGIN })!, preview);
+    await started; const cleared = r.capability.clear();
+    expect(r.files.remove).not.toHaveBeenCalled(); expect(r.files.clear).not.toHaveBeenCalled();
+    finish(); await cleared; await expect(run).resolves.toBe(false);
+    expect(r.files.remove).toHaveBeenCalledTimes(1); expect(r.files.clear).toHaveBeenCalledTimes(1);
+    const fail = createRuntime();
+    await expect(fail.capability.run(prepareProtectedFileRequest(request(), { appOrigin: APP_WEB_ORIGIN })!, async () => { throw Error('bad renderer'); })).resolves.toBe(false);
+    expect(fail.sharing.share).not.toHaveBeenCalled(); expect(fail.files.remove).toHaveBeenCalledTimes(1);
+  });
+  it('PDF download and non-PDF view retain explicit system sharing instead of using the PDF presenter', async () => {
+    for (const override of [{ disposition: 'download' as const }, { mimeType: 'text/plain', fileName: 'test.txt' }]) {
+      const r = createRuntime(); const preview = jest.fn(async () => {});
+      await expect(r.capability.run(prepareProtectedFileRequest(request(override), { appOrigin: APP_WEB_ORIGIN })!, preview)).resolves.toBe(true);
+      expect(preview).not.toHaveBeenCalled(); expect(r.sharing.share).toHaveBeenCalledTimes(1);
+    }
+  });
   it('renews after one opaque download failure, shares once and removes the recovered file', async () => {
     const r = createRuntime();
     (r.files.download as jest.Mock).mockRejectedValueOnce(new Error('HTTP unavailable'));

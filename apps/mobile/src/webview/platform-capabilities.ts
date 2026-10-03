@@ -159,6 +159,15 @@ export interface NativeShareGateway {
   share(uri: string, options: { mimeType: string; dialogTitle: string }): Promise<void>;
 }
 
+export interface NativePdfPreviewInput {
+  uri: string;
+  fileName: string;
+  signal: AbortSignal;
+  /** Explicit native user action only, while the same capability/file is alive. */
+  share(): Promise<void>;
+}
+export type NativePdfPresenter = (input: NativePdfPreviewInput) => Promise<void>;
+
 export class ProtectedFileValidationError extends Error {}
 
 function fileSuffix(fileName: string): string {
@@ -290,6 +299,7 @@ export function createExpoShareGateway(): NativeShareGateway {
 export class ProtectedFileCapability {
   private abortController: AbortController | null = null;
   private activeUri: string | null = null;
+  private preview: Promise<void> | null = null;
 
   constructor(
     private readonly files: EphemeralFileStore,
@@ -297,12 +307,21 @@ export class ProtectedFileCapability {
     private readonly recoverAfterFailure?: (input: { url: string; signal: AbortSignal }) => Promise<string>,
   ) {}
 
-  async run(request: PreparedProtectedFileRequest): Promise<boolean> {
+  /** Confirmation is owned by the caller. The production screen supplies a local PDF
+   * presenter; legacy non-UI inspection ports without it keep their historical behavior.
+   * A presenter failure never falls back to another app. Temporary bytes live until
+   * renderer close settles, then are removed even on cancellation/error.
+   */
+  async run(request: PreparedProtectedFileRequest, presentPdf?: NativePdfPresenter): Promise<boolean> {
     if (this.abortController) return false;
     const controller = new AbortController();
     this.abortController = controller;
+    const inlinePdf = request.disposition === 'view'
+      && inferredContentClass(request.mimeType, request.fileName) === 'application/pdf' && presentPdf;
+    let ownedUri: string | null = null;
+    let ownedPreview: Promise<void> | null = null;
     try {
-      if (!await this.sharing.isAvailable()) return false;
+      if (!inlinePdf && !await this.sharing.isAvailable()) return false;
       if (controller.signal.aborted) return false;
       const download = (url: string) => this.files.download({
         url,
@@ -320,24 +339,48 @@ export class ProtectedFileCapability {
         downloaded = await download(recovered); // Deliberately no second recovery.
       }
       this.activeUri = downloaded.uri;
+      ownedUri = downloaded.uri;
       if (controller.signal.aborted || downloaded.size < 1 || downloaded.size > MAX_PROTECTED_FILE_BYTES) return false;
-      await this.sharing.share(downloaded.uri, {
-        mimeType: request.mimeType,
-        dialogTitle: request.disposition === 'view' ? `${request.fileName} dosyasını aç` : `${request.fileName} dosyasını kaydet`,
-      });
+      let sharing = false;
+      const share = async () => {
+        if (sharing) throw new Error('Paylaşım zaten açık.');
+        if (controller.signal.aborted || this.activeUri !== downloaded.uri) throw new Error('Dosya oturumu kapandı.');
+        sharing = true;
+        try {
+          if (!await this.sharing.isAvailable()) throw new Error('Paylaşım bu cihazda kullanılamıyor.');
+          if (controller.signal.aborted) throw new Error('Dosya oturumu kapandı.');
+          await this.sharing.share(downloaded.uri, { mimeType: request.mimeType,
+            dialogTitle: request.disposition === 'view' ? `${request.fileName} dosyasını paylaş` : `${request.fileName} dosyasını kaydet` });
+        } finally { sharing = false; }
+      };
+      if (inlinePdf) {
+        ownedPreview = inlinePdf({ uri: downloaded.uri, fileName: request.fileName, signal: controller.signal, share });
+        this.preview = ownedPreview;
+        await ownedPreview;
+      } else {
+        await this.sharing.share(downloaded.uri, { mimeType: request.mimeType,
+          dialogTitle: request.disposition === 'view' ? `${request.fileName} dosyasını aç` : `${request.fileName} dosyasını kaydet` });
+      }
       return !controller.signal.aborted;
     } catch {
       return false;
     } finally {
-      const uri = this.activeUri;
-      this.activeUri = null;
-      this.abortController = null;
-      if (uri) await this.files.remove(uri);
+      if (this.preview === ownedPreview) this.preview = null;
+      try {
+        if (ownedUri && this.activeUri === ownedUri) {
+          this.activeUri = null;
+          await this.files.remove(ownedUri);
+        }
+      } finally {
+        if (this.abortController === controller) this.abortController = null;
+      }
     }
   }
 
   async clear(): Promise<void> {
     this.abortController?.abort();
+    // The presenter responds to abort/unmount by closing its native renderer first.
+    await this.preview?.catch(() => undefined);
     const uri = this.activeUri;
     this.activeUri = null;
     if (uri) await this.files.remove(uri);

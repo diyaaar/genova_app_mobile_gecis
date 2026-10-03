@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
-import { interactiveRows, assertInteractiveCancel } from './090_android_interactive.mjs';
+import { interactiveRows, assertInteractiveCancel, assertInlinePreviewEvent } from './090_android_interactive.mjs';
 import { withFileMetadata, withDeferredNativeProbe, DETAIL_PAGE, FILE_HOOK } from './090_candidate_native_interactive.mjs';
 import { sourceAt } from './090_candidate_native_cache.mjs';
 import { buildEnv, ROOT, WEB_REF } from './090_android_candidate.mjs';
@@ -13,6 +13,17 @@ const { build, transformSync } = createRequire(require.resolve('@vitejs/plugin-r
 const ids = { choirA: 'a', actor: 'actor', memberA: 'chef', targetMember: 'korist',
   assignmentId: 'assignment', submissionId: 'submission', fileId: 'alias' };
 const url = (table, query = '') => new URL(`http://127.0.0.1/rest/v1/${table}?${query}`);
+test('v4 native preview evidence preserves cancel/read1/page/close/removal ordering', () => {
+  const events = ['cancel-observed'];
+  for (const event of ['preview-page-1', 'preview-page-2', 'preview-closed', 'file-removed']) {
+    assertInlinePreviewEvent(event, events, { renewal: 1 }); events.push(event);
+  }
+  assert.throws(() => assertInlinePreviewEvent('preview-page-1', [], { renewal: 1 }));
+  assert.throws(() => assertInlinePreviewEvent('preview-page-1', events, { renewal: 2 }));
+  for (const event of ['preview-page-2', 'preview-closed', 'file-removed']) {
+    assert.throws(() => assertInlinePreviewEvent(event, ['cancel-observed'], { renewal: 1 }));
+  }
+});
 test('interactive environment opt-in is absent from unchanged inspection environment', () => {
   assert.equal(buildEnv().EXPO_PUBLIC_GENOVA_090_WEBVIEW_INTERACTIVE, undefined);
   assert.equal(buildEnv(true).EXPO_PUBLIC_GENOVA_090_WEBVIEW_INTERACTIVE, '1');

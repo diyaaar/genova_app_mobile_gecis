@@ -5,6 +5,7 @@ import { NativeWebViewScreen } from '../NativeWebViewScreen';
 import { ProtectedFileCapability, type EphemeralFileStore, type NativeShareGateway } from '../platform-capabilities';
 import { createNativeWebViewRuntimeConfig } from '../runtime-config';
 import * as ticketRecovery from '../private-file-ticket-recovery';
+import { PdfPageImage } from '@dariyd/react-native-pdf-page-image';
 
 interface MockWebViewProps {
   source: { uri: string };
@@ -371,7 +372,10 @@ describe('NativeWebViewScreen', () => {
     await waitFor(() => expect(screen.queryByTestId('password-sheet')).toBeNull());
   });
 
-  it('confirms a protected file without showing its URL and removes the temporary copy', async () => {
+  it('confirms a protected PDF, previews locally without sharing, closes handles then removes the copy', async () => {
+    (PdfPageImage.open as jest.Mock).mockResolvedValue({ pageCount: 40 });
+    (PdfPageImage.generate as jest.Mock).mockResolvedValue({ uri: 'file:///cache/page.jpg', width: 595, height: 842 });
+    (PdfPageImage.close as jest.Mock).mockResolvedValue(undefined);
     const files: EphemeralFileStore = {
       download: jest.fn(async () => ({ uri: 'file:///cache/voice.pdf', size: 128 })),
       remove: jest.fn(async () => {}),
@@ -399,14 +403,27 @@ describe('NativeWebViewScreen', () => {
     });
     expect(screen.getByTestId('protected-file-confirmation')).toHaveTextContent(/Tenor\.pdf/u);
     expect(screen.getByTestId('protected-file-confirmation')).not.toHaveTextContent('must-stay-hidden');
+    expect(files.download).not.toHaveBeenCalled();
+    await fireEvent.press(screen.getByTestId('protected-file-cancel'));
+    expect(files.download).not.toHaveBeenCalled();
+    await act(async () => props.onMessage({ nativeEvent: {
+      data: incoming(props, 'file.open.request', { url: '/api/drive-file/file_1?token=must-stay-hidden',
+        disposition: 'view', fileName: 'Tenor.pdf', mimeType: 'application/pdf' }), url: SOURCE,
+    } }));
     await act(async () => {
       fireEvent.press(screen.getByTestId('protected-file-open'));
       await Promise.resolve();
     });
+    expect(await screen.findByTestId('protected-pdf-counter')).toHaveTextContent('1 / 40');
+    await screen.findByTestId('protected-pdf-page');
+    await fireEvent(screen.getByTestId('protected-pdf-page'), 'load', {});
+    expect(sharing.share).not.toHaveBeenCalled();
+    expect(sharing.isAvailable).not.toHaveBeenCalled();
+    expect(files.remove).not.toHaveBeenCalled();
+    expect(screen.getByTestId('protected-pdf-preview')).not.toHaveTextContent('must-stay-hidden');
+    await fireEvent.press(screen.getByTestId('protected-pdf-close'));
     await waitFor(() => expect(files.remove).toHaveBeenCalledWith('file:///cache/voice.pdf'));
-    expect(sharing.share).toHaveBeenCalledWith('file:///cache/voice.pdf', expect.objectContaining({
-      mimeType: 'application/pdf',
-    }));
+    expect(PdfPageImage.close).toHaveBeenCalledWith('file:///cache/voice.pdf');
     expect(outgoing().at(-1)).toMatchObject({
       type: 'command.result', payload: { ok: true, code: 'file-action-complete' },
     });
