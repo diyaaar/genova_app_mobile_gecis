@@ -97,6 +97,12 @@ function legacyHook() {
 function workspace() {
   let source = oldSource('components/repertuvar/RepertoireWorkspace.tsx');
   const latest = current('components/repertuvar/RepertoireWorkspace.tsx');
+  source=oneReplace(source,'// ─── AudioPanel ──────────────────────────────────────────────────────────────',
+    '// ─── AudioPanel ──────────────────────────────────────────────────────────────\n'+named(latest,'suspendMiniAudioSources'));
+  const latestAst=tree(latest),guards=[];
+  function findGuard(node){if(ts.isIfStatement(node)&&node.expression.getText(latestAst)==='!allowOfflineFallback && !selectedAudioSource')guards.push(node.getText(latestAst));ts.forEachChild(node,findGuard);}
+  findGuard(latestAst);assert.equal(guards.length,1);
+  source=oneReplace(source,'async function buildAndSetTracks() {','async function buildAndSetTracks() {\n      '+guards[0]);
   source=oneReplace(source,"import { Document, Page, pdfjs } from 'react-pdf';",
     "import { Document, Page, pdfjs } from 'react-pdf';\nimport { getRepertoirePdfWorker } from '@/lib/repertuvar/pdf-worker';");
   source=oneReplace(source,'const memoizedPdfOptions = useMemo(() => ({',

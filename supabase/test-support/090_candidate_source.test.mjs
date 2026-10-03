@@ -69,11 +69,25 @@ test('backported current audio/inline sources have no selected/raw online bypass
   function visit(node){if(ts.isArrowFunction(node)&&ts.isCallExpression(node.parent)&&node.parent.expression.getText(ast)==='audioFiles.map'&&node.getText(ast).includes('getProtectedDriveFileUrl'))maps.push(node.getText(ast));ts.forEachChild(node,visit);}visit(ast);
   assert.equal(maps.length,1);assert(maps[0].includes('getOnlineAuthorizedPrivateFileUrl'));assert(!maps[0].includes('drive_download_link'));assert(!maps[0].includes('selectedAudioSource'));
   assert(workspace.includes('onSelectedAudioBodyError();'));assert(workspace.includes('onSelectedPdfBodyError();'));
+  assert(workspace.includes('if (!allowOfflineFallback && !selectedAudioSource)'));
+  assert(workspace.includes('suspendMiniAudioSources();'));
 });
 test('candidate generation is deterministic and rejects missing closure paths',()=>{
   assert.deepEqual([...overlays().files], [...files]);
   assert(!files.get('hooks/useProtectedDriveFileUrl.ts').includes('\n  \n'),'No whitespace-only removed parameter');
   assert.throws(()=>moduleClosure(['imaginary.ts'],()=>{throw Error('missing');}),/missing/);
+});
+test('actual suspended playlist removes sources without discarding playback metadata',()=>{
+  const workspace=files.get('components/repertuvar/RepertoireWorkspace.tsx');
+  const ast=ts.createSourceFile('workspace.tsx',workspace,ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);
+  const helper=ast.statements.find(n=>ts.isFunctionDeclaration(n)&&n.name?.text==='suspendMiniAudioSources');
+  let payload;
+  const state={songId:'synthetic-song',songTitle:'Synthetic',coverSource:null,currentTime:12,duration:90,playbackRate:1.25,
+    tracks:[{source:'private-ticket'}],currentTrackId:'track',isPlaying:true,setSession:p=>{payload=p;}};
+  const api=load(helper.getText(ast)+'\nexports.suspend=suspendMiniAudioSources;',{},
+    {useMiniAudioPlayerStore:{getState:()=>state}});api.suspend();
+  assert.equal(payload.tracks.length,0);assert.equal(payload.currentTrackId,null);assert.equal(payload.isPlaying,false);
+  assert.equal(payload.currentTime,12);assert.equal(payload.duration,90);assert.equal(payload.playbackRate,1.25);
 });
 test('literal closure includes reexports/dynamic imports/require and refuses computed imports',()=>{
   const sources=new Map([['entry.ts',"export {x} from './a'; import('./b.ts'); require('./c');"],
