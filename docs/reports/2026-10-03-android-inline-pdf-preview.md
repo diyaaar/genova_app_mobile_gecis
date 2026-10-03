@@ -79,3 +79,12 @@ event appears in current observation. Cancel/return + zero read PASS; whole
 page/close/B row remains NOT RUN. Next owner action: approve once, observe local
 page1/40 then Sonraki2/40; do not share/print/close/switch until read verified.
 TypeSafe inspected; this is deterministic local observation, no inference/spend.
+
+### Owner local-page checkpoint,13:40UTC /16:40Istanbul
+
+Owner confirmed1→2 “geçiyo sıkıntı yok”. Actual native65905B/hash PASS, Image
+onLoad page1/40 and2/40 + corresponding fixture events200 verified; later actual
+page3→6 logs observed, not required extra fixture events. GET1/HEAD0/provider1,
+unknown0/failures0; no external share-return event. Local preview/page navigation
+PASS within synthetic emulator scope, not real-device/hosted or independent visual
+review. Next close/return, verify native close and per-file removal before B.
