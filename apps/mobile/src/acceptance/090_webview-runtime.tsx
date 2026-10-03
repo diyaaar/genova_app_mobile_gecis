@@ -89,6 +89,16 @@ function Runtime({ trace }: { trace: Trace }) {
         const root = new Directory(Paths.cache, 'genova-webview-files');
         trace(root.exists ? 'ephemeral clear FAIL' : 'ephemeral clear PASS');
       },
+      async remove(uri) {
+        await files.remove(uri);
+        if (new File(uri).exists) throw new Error('Temporary PDF retained');
+        trace('ephemeral file removal PASS');
+        if (interactive) {
+          const response = await fetch(`${WEBVIEW_FIXTURE}/090/ui-event`, { method: 'POST',
+            headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event: 'file-removed' }) });
+          if (!response.ok) throw new Error('Removal evidence refused');
+        }
+      },
     }, { ...sharing, async share(uri, options) {
       if (family === 'legacy-next' && !interactive) {
         if (!new File(uri).exists) throw new Error('Inspection file unavailable');
