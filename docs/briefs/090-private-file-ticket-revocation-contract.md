@@ -15,6 +15,77 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — guarded candidate Android consent/share flow (OPEN)
+
+Start HEAD2bccd2c; sole writer; unrelated `supabase/.temp/cli-latest` preserved.
+Read AGENTS, handoff/active, this brief, guide/work cycle/template, delivery controls,
+MIGRATION permanent WebView rows, decisions32/33, actual candidate/native sources;
+TypeSafe skill/live index and Supabase skill/changelog/Auth docs. No AI feature/inference.
+Benefit: actual chorister homework anchor must enter native consent, cancel without
+provider bytes, download only after approval, open/dismiss actual share UI, remove
+temporary bytes and refuse old A URLs after native B selection. Historical inspection
+does not prove this. Exact7cd8d46 +9d2b6bd guard factory, no browser refresh-token seeding.
+
+Allowed: `supabase/test-support/090_android_candidate.mjs` and focused helper/tests;
+`apps/mobile/src/acceptance/090_webview-runtime.tsx`, config/tests only; brief/report/
+handoff/active. Product NativeWebViewScreen/capability unchanged unless a reproduced
+in-scope defect requires a recorded amendment. Existing inspection mode remains intact.
+No SQL/Edge/production route mutation, dependency install, hosted/provider/real-user/
+email/hardware/push/CI/site changes. Synthetic local Auth/REST/current authority only,
+NOT hosted RLS; actual adapter dispatch NOT Next middleware/file-route proof.
+
+Three actions: (1) add explicit guarded interactive fixture/mode and negative tests;
+(2) fresh build and actual Android interaction via supported computer-use/user touch;
+(3) required gates, truthful evidence, cleanup, separate source/docs checkpoints.
+Rollback: source revert only; no data migration. Required UI NOT RUN keeps this OPEN.
+
+Resource preflight: free21,060,756KiB; mobile deps7,493,468, Gradle4,451,280,
+existing AVD3,632,136KiB; runtime0. Additional peak bounded6GiB (native build/candidate/
+AVD growth/root check), projectedfree14,769,300KiB >10GiB floor. One heavy process.
+Reuse installed SDK/JDK/AVD/deps, no downloads/copies. Owned cleanup: new candidate,
+mobile android/.expo, root .next/coverage, test app only if initially absent, reverses/
+servers/emulator; preserve AVD/Gradle/deps/user data. Runtime retained only for immediate
+same-task interaction; stop/clean at handoff, no indefinite user wait.
+
+Pre-build causal amendment: actual7cd8d46 `HomeworkCard` protected anchor has no
+filename/MIME dataset. Actual native passive-file policy rejects absent MIME plus
+extensionless fallback (not an Auth issue). Preserve9d2b6bd cache factory unchanged;
+interactive factory may add ONLY the two passive metadata attributes already used by
+current `SubmissionFileLink`, into exact pinned detail page. Three deltas/423 raw parent
+files retained. No native safety-filter relaxation or modern assignment-graph transplant.
+Negative control and rendered actual component check required before APK build.
+
+| Criterion | Required? | Status | Environment/evidence | Limits |
+|---|---|---|---|---|
+| Interactive guard/fixture negatives; old mode retained | yes | PASS | e8e4ca1/Node14 + mobile454 | No runtime inference |
+| Real candidate chorister anchor → native modal; cancel zero provider/body reads | yes | NOT RUN | actual Android | Synthetic scope, no hosted RLS |
+| Approved PDF65905B/hash → actual share UI returned → file removed | yes | NOT RUN | actual Android | No external recipient send |
+| Actual B switch clears A surface/files; old A GET/HEAD refused | yes | NOT RUN | actual Android | Offline/in-flight bytes excluded |
+| Visual/scroll/navigation and no private browser persistence | yes | NOT RUN | actual Android | Module evidence alone insufficient |
+| Fresh mobile types/full tests + root pnpm check | yes | PASS | e8e4ca1/mobile55suites454 + root114files1178/fullcheck; candidate406/build | Not platform proof |
+| Grouped sensitive iOS | required later milestone | NOT RUN | named next platform gate | Not silently omitted |
+| Self-review, redaction/source pins, resource cleanup, links/diff | yes | NOT RUN | local | Not independent review |
+
+Checkpoint sourcee8e4ca1: [consent/share record](../reports/2026-10-03-android-candidate-consent-share.md).
+Metadata rejection reproduced/repaired with actual rendered component/native policy;
+derived426pins/423unchanged; candidate/root/mobile gates and APK PASS. Actual native
+one-use Auth/challenged access-only bridge running chorister-detail. CUA qemu unsupported;
+user touch requested, UI rows NOT RUN. Original handles confirmed live after interrupted
+turn, no rebuild/restart. Short immediate retention expires12:05UTC/15:05Istanbul;
+cleanup at expiry/handoff. Jev0, no hosted operation. Goal remains active, not completed.
+
+Actualv1 user observed modal/cancel, native accepted two file requests. Server assertion
+FAIL: POST200 +HEAD200 before consent; provider1, fileGET0. Actual legacy handler fetches
+and buffers provider body on HEAD. Preserve [failedv1](../reports/090/2026-10-03-android-candidate-interactive-http-v1.json).
+Stopped original owned servers/emulator and uninstalled initially-absent test app/reverses.
+Changed bounded approach: interactive factory may additionally guard only candidate
+`hooks/useProtectedDriveFileUrl.ts`: embedded path issues authenticated ticket but
+defers body/HEAD authority probe to the already-guarded native capability AFTER consent.
+Browser probe unchanged; no server HEAD/Range/authorization relaxation. Fourth delta,
+422 raw parent files. Actual hook negative/browser/embedded tests required beforev2.
+Freshfree20,211,228KiB; reuse installed unchanged APK/native source; only derived web
+rebuild necessary (causal change). Additional peak<=2GiB >10GiB floor, one runtime.
+
 ### 3 October — embedded candidate private-cache guard before consent
 
 Entry958d140/main, sole writer; unrelated CLI marker preserved. Read AGENTS/handoff/

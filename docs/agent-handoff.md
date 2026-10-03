@@ -8,20 +8,23 @@ One writer; verify HEAD, dirty ownership, resources and actual permission.
 
 ## Current checkpoint and next action
 
-Source9d2b6bd: [embedded candidate private-cache guard](reports/2026-10-03-embedded-candidate-private-cache-guard.md).
-Exact7cd8d46 source negative control reproduced catalog persistence/worker registration
-after embedded activation. Fixed-ref factory backports only accepted guards from d298229
-into cache/offline: embedded reads/writes/update/worker paths refused; browser/cleanup
-retained. Two changed files,424 raw parent files preserved.426 pins/regeneration/committed
-factory/tests verified. Fresh Node10, candidate41files406tests/lint/types/coverage/SW/build,
-root114files1178tests/full check PASS. No main-production/native/SQL/Edge/dependency change.
-Synthetic browser ports, not consent/share/platform proof. Owned candidate/root builds
-removed; free21049960KiB. No emulator/runtime/VM/download/inference; CLI marker excluded.
-Self-review only. Source/docs paired commits; whole090/R1/beta OPEN, live NO-GO.
+Sourcee8e4ca1/8aea973: [Android consent/share checkpoint](reports/2026-10-03-android-candidate-consent-share.md).
+Actual rendered7cd8d46 HomeworkCard lacked passive metadata; minimal candidate patch.
+User observed modal/cancel; v1FAIL HEAD fetched provider1 despite fileGET0. Failed JSON
+retained. Corrected actual hook skips eager HEAD only embedded; native post-consent
+GET still server-authorized, browser probe unchanged. Four deltas/422raw parent files;
+426pins verified. Node15, candidate406/lint/types/SW/build, root1178/fullcheck PASS.
+Native unchanged153hashes/APK; historical e8e4ca1 mobile454/types/build74sec retained.
+Actual API36/Auth/SecureStore/challenged access-only chorister-detail bridge running;
+v2 before touch fileGET0/HEAD0/provider0/failures0. NOT consent/share/visual/B acceptance.
+No main-production/SQL/Edge/dependency/hosted change; self-review. Whole090/R1/betaOPEN.
 
-NEXT: actual Android WebView consent/cancel/download/share/clear + visual/navigation/
-tenant-clear with guarded derived candidate, then grouped sensitive iOS. Factory9d2b6bd,
-NOT unpatched7cd8d46 as full mobile web proof. Other permanent-page browser-session-only
+NEXT: user v2 Drive Linki→Vazgeç, verify cancel0 then approve actual share/dismiss/B.
+Originalv1 stopped/cleaned; v2 serverhandle23868/PID40339, emulator81347/PID40369,
+owned package initiallyabsent, reverses31090/54491/18092. Retain immediate same-task only
+until12:20UTC/15:20Istanbul; at expiry/handoff clean servers/emulator/app/reverses/candidate/
+android outputs. Free20123908KiB; root outputs removed. Grouped sensitive iOS follows.
+Factory8aea973, NOT unpatched7cd8d46 as full mobile web proof. Permanent browser-session-only
 mutations need actual API audit/backport before promotion. No refresh sharing/arbitrary
 issuer. Independent review/fresh hosted preflight/forward repair/R1 precede live authority.
 
