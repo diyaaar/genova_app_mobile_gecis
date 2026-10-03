@@ -19,7 +19,6 @@ type DriveFileUrlInput = Pick<RepertoireFile, 'drive_file_id'> &
 
 export function useProtectedDriveFileUrl(
   file: DriveFileUrlInput | null | undefined,
-  
 ) {
   const [url, setUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
