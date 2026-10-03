@@ -454,6 +454,14 @@ function formatSyncedAtLabel(timestamp: number | null) {
 }
 
 // ─── AudioPanel ──────────────────────────────────────────────────────────────
+function suspendMiniAudioSources() {
+  const state = useMiniAudioPlayerStore.getState();
+  state.setSession({
+    songId: state.songId, songTitle: state.songTitle, coverSource: state.coverSource,
+    tracks: [], currentTrackId: null, currentTime: state.currentTime,
+    duration: state.duration, isPlaying: false, playbackRate: state.playbackRate,
+  });
+}
 interface AudioPanelProps {
   songId: string;
   songTitle: string;
@@ -900,6 +908,10 @@ function AudioPanel({
     // Fetch protected URLs for ALL audio files in parallel so every partition appears in the list.
     let cancelled = false;
     async function buildAndSetTracks() {
+      if (!allowOfflineFallback && !selectedAudioSource) {
+        suspendMiniAudioSources();
+        return;
+      }
       const resolvedTracks = await Promise.all(
         audioFiles.map(async (file) => {
           // Online selected tracks need the same fresh decision as every other track.
