@@ -1,0 +1,393 @@
+{
+  "date": "2026-10-03T09:09:30.058Z",
+  "status": "PASS",
+  "entryCommit": "97eba88d8f8277fe61baf18214f4f96b667cc722",
+  "harnessSha256": "3375ae493372561939234534fb4fd54b9cf3e17d76a1616d92c0cc94f71bcc6a",
+  "scenarios": [
+    {
+      "name": "expired-HMAC-renewal-bytes-hash",
+      "status": "PASS",
+      "result": true,
+      "choir": "00000000-0000-4000-8000-000000000003",
+      "revoked": false,
+      "posts": 1,
+      "leases": 1,
+      "downloads": 2,
+      "shares": 1,
+      "removals": 1,
+      "clears": 0,
+      "providerReads": 1,
+      "authentications": 1,
+      "resolves": 2,
+      "unknown": 0,
+      "http": [
+        {
+          "method": "GET",
+          "path": "/functions/v1/legacy-file",
+          "status": 401
+        },
+        {
+          "method": "GET",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 401
+        },
+        {
+          "method": "HEAD",
+          "path": "/functions/v1/legacy-file",
+          "status": 401
+        },
+        {
+          "method": "HEAD",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 401
+        },
+        {
+          "method": "POST",
+          "path": "/functions/v1/legacy-file",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/drive-file-token",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/functions/v1/legacy-file",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 200
+        }
+      ],
+      "hashes": [
+        "773d5ebaa2f6b84406e526e42a1199ac0336e5fbed47d920c9ca7cad5652467c"
+      ]
+    },
+    {
+      "name": "valid-ticket-current-authority-revoked",
+      "status": "PASS",
+      "result": false,
+      "choir": "00000000-0000-4000-8000-000000000003",
+      "revoked": true,
+      "posts": 0,
+      "leases": 0,
+      "downloads": 1,
+      "shares": 0,
+      "removals": 0,
+      "clears": 0,
+      "providerReads": 0,
+      "authentications": 0,
+      "resolves": 2,
+      "unknown": 0,
+      "http": [
+        {
+          "method": "GET",
+          "path": "/functions/v1/legacy-file",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 403
+        },
+        {
+          "method": "HEAD",
+          "path": "/functions/v1/legacy-file",
+          "status": 403
+        },
+        {
+          "method": "HEAD",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 403
+        }
+      ],
+      "hashes": [],
+      "validOld": true
+    },
+    {
+      "name": "expired-A-ticket-current-B-lease",
+      "status": "PASS",
+      "result": false,
+      "choir": "00000000-0000-4000-8000-000000000004",
+      "revoked": false,
+      "posts": 1,
+      "leases": 1,
+      "downloads": 1,
+      "shares": 0,
+      "removals": 0,
+      "clears": 0,
+      "providerReads": 0,
+      "authentications": 1,
+      "resolves": 1,
+      "unknown": 0,
+      "http": [
+        {
+          "method": "GET",
+          "path": "/functions/v1/legacy-file",
+          "status": 401
+        },
+        {
+          "method": "GET",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 401
+        },
+        {
+          "method": "HEAD",
+          "path": "/functions/v1/legacy-file",
+          "status": 401
+        },
+        {
+          "method": "HEAD",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 401
+        },
+        {
+          "method": "POST",
+          "path": "/functions/v1/legacy-file",
+          "status": 403
+        },
+        {
+          "method": "POST",
+          "path": "/api/drive-file-token",
+          "status": 403
+        }
+      ],
+      "hashes": [],
+      "switchDuringLease": true
+    },
+    {
+      "name": "revoke-after-renewal-before-second-GET",
+      "status": "PASS",
+      "result": false,
+      "choir": "00000000-0000-4000-8000-000000000003",
+      "revoked": true,
+      "posts": 1,
+      "leases": 1,
+      "downloads": 2,
+      "shares": 0,
+      "removals": 0,
+      "clears": 0,
+      "providerReads": 0,
+      "authentications": 1,
+      "resolves": 2,
+      "unknown": 0,
+      "http": [
+        {
+          "method": "GET",
+          "path": "/functions/v1/legacy-file",
+          "status": 401
+        },
+        {
+          "method": "GET",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 401
+        },
+        {
+          "method": "HEAD",
+          "path": "/functions/v1/legacy-file",
+          "status": 401
+        },
+        {
+          "method": "HEAD",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 401
+        },
+        {
+          "method": "POST",
+          "path": "/functions/v1/legacy-file",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/drive-file-token",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/functions/v1/legacy-file",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 403
+        }
+      ],
+      "hashes": [],
+      "revokeAfterIssue": true
+    },
+    {
+      "name": "tenant-clear-during-fresh-lease",
+      "status": "PASS",
+      "result": false,
+      "choir": "00000000-0000-4000-8000-000000000003",
+      "revoked": false,
+      "posts": 0,
+      "leases": 1,
+      "downloads": 1,
+      "shares": 0,
+      "removals": 0,
+      "clears": 1,
+      "providerReads": 0,
+      "authentications": 0,
+      "resolves": 0,
+      "unknown": 0,
+      "http": [
+        {
+          "method": "GET",
+          "path": "/functions/v1/legacy-file",
+          "status": 401
+        },
+        {
+          "method": "GET",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 401
+        },
+        {
+          "method": "HEAD",
+          "path": "/functions/v1/legacy-file",
+          "status": 401
+        },
+        {
+          "method": "HEAD",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 401
+        }
+      ],
+      "hashes": [],
+      "clearDuringLease": true
+    },
+    {
+      "name": "POST-redirect-not-followed",
+      "status": "PASS",
+      "result": false,
+      "choir": "00000000-0000-4000-8000-000000000003",
+      "revoked": false,
+      "posts": 1,
+      "leases": 1,
+      "downloads": 1,
+      "shares": 0,
+      "removals": 0,
+      "clears": 0,
+      "providerReads": 0,
+      "authentications": 0,
+      "resolves": 0,
+      "unknown": 0,
+      "http": [
+        {
+          "method": "GET",
+          "path": "/functions/v1/legacy-file",
+          "status": 401
+        },
+        {
+          "method": "GET",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 401
+        },
+        {
+          "method": "HEAD",
+          "path": "/functions/v1/legacy-file",
+          "status": 401
+        },
+        {
+          "method": "HEAD",
+          "path": "/api/drive-file/090_synthetic_score",
+          "status": 401
+        },
+        {
+          "method": "POST",
+          "path": "/api/drive-file-token",
+          "status": 307
+        }
+      ],
+      "hashes": [],
+      "redirect": true
+    },
+    {
+      "name": "foreign-origin-no-side-effect",
+      "status": "PASS",
+      "networkCalls": 0,
+      "leaseCalls": 0
+    }
+  ],
+  "boundary": "Actual compiled native capability/recovery, Next adapter functions and Edge handler/HMAC over real loopback HTTP. Not Next routing/middleware, RN renderer or Expo filesystem/share; Auth/current-authority/provider and in-memory file/share ports synthetic. No hosted RLS/provider/device acceptance.",
+  "sourcePins": [
+    {
+      "path": "apps/mobile/src/webview/platform-capabilities.ts",
+      "sha256": "21b0d0d85a896ebd4ef29e5ec85a809514a4e6f230c8d8121148a5aac017529f"
+    },
+    {
+      "path": "apps/mobile/src/webview/private-file-ticket-recovery.ts",
+      "sha256": "d2feda531fafedf43854d0e2ef2d2af72d2c77bf7932d1696bc6b86c04c90145"
+    },
+    {
+      "path": "apps/mobile/src/webview/random.ts",
+      "sha256": "d82883dfd3a0821cc47b451f06fa681f460594e333273c91c39f297d0501304d"
+    },
+    {
+      "path": "lib/invite-token-store.ts",
+      "sha256": "10118a2ab4e4df1612fdbfb17d3c12a84300a7c38db4cc242a8c90372eb67db8"
+    },
+    {
+      "path": "lib/mobile-webview-bridge.ts",
+      "sha256": "c56bca92ea6c3789c11ad95b4d938596e7a5656eac2af398cc69c72b37d3bde2"
+    },
+    {
+      "path": "lib/repertuvar/protected-file-client.ts",
+      "sha256": "43aea8d1bbd510f0cee95fa8d9eaea99a482e95a9f35b67cc0e1a4e29410a4c1"
+    },
+    {
+      "path": "lib/server/drive-file-content.ts",
+      "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+    },
+    {
+      "path": "lib/server/legacy-file-adapter.ts",
+      "sha256": "854f2888b20b066169de9a524b42ca381e6a6dde0ec08be9e9d312fb40ac7e98"
+    },
+    {
+      "path": "supabase/functions/legacy-file/handler.ts",
+      "sha256": "4dc491511dc475fd727ca0fb1f499605b2588a07f3cd188cd795773cf4a01194"
+    },
+    {
+      "path": "supabase/functions/legacy-file/ticket.ts",
+      "sha256": "f830697d04f8e452454171343a4f8710efcc3c1e609c59610f806125ddf1a0d7"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/handler.ts",
+      "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+    }
+  ],
+  "wiringAndTestPins": [
+    {
+      "path": "apps/mobile/src/webview/NativeWebViewScreen.tsx",
+      "sha256": "53dedb28fa25fcf8814c7118d861fc4fd55432a3ac6ab5a72fbcc2d470a209ac"
+    },
+    {
+      "path": "apps/mobile/src/webview/__tests__/private-file-ticket-recovery.test.ts",
+      "sha256": "6becb56b3e8477749574f987a2f9c1e6b7f7d005b144e49ca60e28e9c5b35bc6"
+    },
+    {
+      "path": "apps/mobile/src/webview/__tests__/NativeWebViewScreen.test.tsx",
+      "sha256": "d4ba6dea06078afb45606ef1c9c253951e4916b4de6f1c8c3010356faf7feca0"
+    },
+    {
+      "path": "apps/mobile/src/webview/__tests__/platform-capabilities.test.ts",
+      "sha256": "5947faa3a749ae9026dbb05a61d0c13989589cc3ec290ea36dfe803387f36fcf"
+    }
+  ],
+  "pdf": {
+    "bytes": 68,
+    "sha256": "773d5ebaa2f6b84406e526e42a1199ac0336e5fbed47d920c9ca7cad5652467c",
+    "synthetic": true
+  },
+  "outsideRequests": [],
+  "serverErrors": [],
+  "cleanup": {
+    "ownedListenerStopped": true,
+    "globalFetchAndEnvRestored": true,
+    "diskFilesCreated": 0
+  }
+}

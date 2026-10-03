@@ -15,6 +15,58 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — trusted-app legacy Next native recovery
+
+Owner continues approved local implementation. Entry97eba88/main, sole writer, CLI marker
+excluded. Read AGENTS/guide/current handoff/active090/controls/MIGRATION permanent WebView/
+decisions32–33 and current recovery/screen/capability/legacy adapter/handler/tests. Work-cycle
+and template from the preceding integrated checkpoint remain applicable. Complete TypeSafe/
+Supabase skills and current docs/index/changelog checked (anonymous HTTP fallback for index).
+One outcome: existing native file capability can recover one expired legacy Next URL through
+the exact configured app origin, with fresh native authority, strict same-alias response
+validation, no bearer redirects and no recovery after denial or tenant clear. No new Auth
+framework, browser session seeding or server route. Keep five existing Edge reader recoveries.
+Three actions: scoped native parser/recovery + screen wiring and negative unit regressions;
+actual HTTP/native capability/adapter/handler/HMAC integration and mobile/root gates; source
+pins/evidence/scoped code+docs commits and cleanup. Allowed paths: apps/mobile/src/webview/
+private-file-ticket-recovery.ts, NativeWebViewScreen.tsx and focused __tests__; dedicated
+supabase/test-support/090_native_legacy_recovery*.mjs;090 records/brief/handoff/active only.
+Retain web candidates1a014c4/7cd8d46 unchanged; no SQL/Edge/web/dependency/source migration.
+Fresh21,338,192KiB free. No candidate recreation/install/emulator for this logic checkpoint:
+use actual native recovery/capability with actual Next adapter + Edge handler over one
+owned loopback HTTP service, SDK/file-store/share transports explicitly synthetic where
+stated; no allocated files outside tiny evidence. Root build/coverage <0.7GiB estimated
+peak, sequential. Service18196 expires after HTTP gate; root.next/coverage expire after
+final gates; existing AVD/CoreSimulator/dependencies/backups/user data preserved.
+Required: legacy401→one fresh lease/POST→same alias, malformed/foreign/redirect/stale/denial
+refusal, cancel-before/during renewal, one second-download ceiling; actual HTTP bytes/hash,
+403/A→B stops provider/no POST on final denial; mobile types/full tests, root check, pins/
+links/diff/redaction/cleanup. Android/iOS consent/download/share/renderer acceptance remains
+required in the next integrated candidate-platform gate, NOT replaced by this Node HTTP
+checkpoint. No changed native dependency/API; no platform PASS inferred. Review after first
+integration result/two failures. Rollback only scoped local client patch; no server-authority
+downgrade. No hosted/provider/push/CI/site/real-user/hardware/credential/Jev($0) action.
+
+| Criterion / expected behavior | Required? / N/A reason | Status | Date / environment | Evidence / limits |
+|---|---|---|---|---|
+| Trusted-origin legacy renewal and five-reader compatibility | Yes | PASS | 3 October, sourcef1d089b | Exact parser + fresh authority; existing five paths retained |
+| Foreign/malformed/redirect/denial/cancel/one retry controls | Yes | PASS | Focused3suites95tests | No bearer export to URL-selected issuer; screen config/clear regression |
+| Actual HTTP recovery/bytes/hash/403/A→B | Yes | PASS | Seven local native capability/adapter/handler scenarios | Synthetic Auth/authority/provider and file/share ports; exact status sequences |
+| Mobile types/full tests and root full gate | Yes | PASS | Mobile55suites452tests/root114files1178tests/full build | Not platform or hosted proof; Node13 regressions separate |
+| Source pins/diff/links/redaction/cleanup/separate commits | Yes | PASS | 15source/test pins+harness; sourcef1d089b | Immutable1a014c4/7cd8d46; document exit checks |
+| Exact Android and grouped iOS file/profile flow | Deferred required release gate | NOT RUN | Next integrated checkpoint | Actual native renderer/consent/download/share |
+
+Exit: [trusted-app legacy native recovery](../reports/2026-10-03-native-legacy-next-recovery.md),
+[final actual HTTP record](../reports/090/2026-10-03-native-legacy-recovery-http-v2.json).
+Bounded goal PASS/sourcef1d089b, whole090/R1/beta OPEN/live NO-GO. No Next route/Edge/SQL/
+dependency change, refresh sharing or historical candidate promotion. Only native recovery/
+screen/tests and owned harness changed. Initial count/result record retained; final assertions
+also require precise401/403/307/200 sequences. Self-review, not independent review.
+Root.next477416KiB/coverage352KiB removed after pin; final21,255,756KiB free, no18196 listener.
+No emulator/candidate copy/hosted/provider/site/real-user/push/CI/Jev($0) action; CLI marker
+preserved. Next exact7cd8d46 web + current native Android integration, grouped sensitive iOS;
+remaining permanent APIs/logs/independent review/hosted preflight/forward recovery/R1 stay required.
+
 ### 3 October — minimum embedded profile candidate integration
 
 Owner continues the approved local work. Entry9a14f50/main; sole writer, CLI marker

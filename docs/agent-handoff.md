@@ -7,21 +7,27 @@ English agent records, Turkish user/product copy. One writer; verify recorded st
 
 ## Current checkpoint and next action
 
-Sourcee5cc1d7: [minimum embedded profile](reports/2026-10-03-minimum-embedded-profile-candidate.md),
-[runtime](reports/090/2026-10-03-embedded-profile-runtime.json)/[manifest](reports/090/2026-10-03-embedded-profile-source-manifest.json).
-New LOCAL codex/090-embedded-profile-candidate-20261003 at7cd8d460c68465055049dbf30192f7f5478bcf64,
-tree49c0ce80e7d7a654b4f6904571ac3d7658ff5106, parent immutable browser1a014c4.
-20delta/406byte-identical paths; profile/provider closure40modules84edges, five native compiler pins.
-Actual production Next/current native controller: challenged profile opens; wrong choir and
-foreign origin refused, clear hides profile/no new request, no credential persistence; four PASS.
-Actual SDK/web proof, synthetic Auth/REST and Chrome transport, NOT RN renderer/navigation/RLS.
-Node6/6; final candidate41files406tests/root114files1178tests/full gates PASS. Failed controls
-and binary-copy repair retained; no assertion removal/global lint disable. Scope is profile,
-NOT full permanent routes/private-file/native compatibility. No RN/source dependency/live action.
+Sourcef1d089b: [trusted-app legacy native recovery](reports/2026-10-03-native-legacy-next-recovery.md),
+[final HTTP record](reports/090/2026-10-03-native-legacy-recovery-http-v2.json).
+Native now supports exact configured-app legacy Next renewal, retaining five Edge readers:
+one fresh lease/fixed POST, strict same-alias replacement, no redirects/denial/late-cancel
+retry. Screen derives origin from native configuration and clears old capability on change.
+Seven actual loopback HTTP/native capability/Next adapter/Edge handler/HMAC scenarios PASS,
+including68B/hash, A→B POST403, valid-ticket403, revoke-before-second-GET and redirect307.
+Auth/current-authority/provider/in-memory file/share ports synthetic; NOT Next middleware,
+RN renderer/Expo SDK/RLS/device acceptance.15input/test pins+harness; source commit verified.
+Mobile types55suites452tests/root114files1178tests/full gates PASS; preserved Node13/13.
+Initial count-only HTTP record retained; final exact status assertions/wiring pins authoritative.
+No server/schema/dependency/refresh-token/browser-session change. Self-review only.
 
-NEXT: trusted configured-app-origin legacy-Next native one-shot renewal; no arbitrary issuer
-or refresh-token sharing. Then exact Android profile/file consent/hash/401/403/A→B and grouped
-sensitive iOS, including remaining permanent-route API audit. Secret-free media logging,
+Immutable [embedded profile](reports/2026-10-03-minimum-embedded-profile-candidate.md)
+candidate7cd8d460c68465055049dbf30192f7f5478bcf64/tree49c0ce80e7d7a654b4f6904571ac3d7658ff5106
+on codex/090-embedded-profile-candidate-20261003 still unchanged; parent browser1a014c4.
+Its actual Next/Chrome profile proof is historical, NOT new Android compatibility evidence.
+
+NEXT: fresh bounded preflight; exact7cd8d46 web + currentf1d089b native Android profile/file
+consent/hash/401/403/A→B/share/clear, then grouped sensitive iOS; remaining permanent-route API audit.
+No arbitrary issuer or refresh-token sharing. Secret-free media logging,
 independent review/fresh hosted preflight/refresh-forward-repair/R1 precede live authority.
 090/R1/beta OPEN, live NO-GO. Previous browser-native negative preflight remains historical.
 
@@ -49,8 +55,8 @@ Local scoped source/tests/commits/owned cleanup allowed; no push/CI/hosted SQL/E
 ACL/password/config/real-user/email/hardware/distribution action. Git revert is not data recovery;
 DB→Edge→compatible clients/recovery before writes; no automatic078-defect or actorless-v1 rollback.
 Unrelated supabase/.temp/cli-latest excluded. Source/docs commits separate; self-review only.
-Latest embedded-candidate503364KiB/root.next503220KiB/coverage352KiB removed after pin;
-browser/Next/fixture closed, no31090/54491 listener;21,340,272KiB free. No emulator/VM/new APK, dependencies/
+Latest root.next477416KiB/coverage352KiB removed after all gates/pin; HTTP18196 closed,
+fetch/env restored;21,255,756KiB free. No new candidate copy/emulator/VM/APK, dependencies/
 AVD/CoreSimulator/global caches/user data/backups preserved. Fresh runtime needs >=10GiB
 measured preflight, one heavy process, causal reassessment after two failed approaches.
 Protected R1 backup genova-090-r1-5bfGvo remains0700/0600 outside Git, original068 preserved.

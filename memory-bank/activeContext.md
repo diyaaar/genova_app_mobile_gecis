@@ -6,20 +6,22 @@ Verify actual source/state, one writer, English records/Turkish user updates.
 
 ## Current result and next measurable checkpoint
 
-Sourcee5cc1d7: [minimum embedded profile](../docs/reports/2026-10-03-minimum-embedded-profile-candidate.md),
-[runtime](../docs/reports/090/2026-10-03-embedded-profile-runtime.json)/[manifest](../docs/reports/090/2026-10-03-embedded-profile-source-manifest.json).
-New local codex/090-embedded-profile-candidate-20261003 at7cd8d460c68465055049dbf30192f7f5478bcf64;
-parent browser1a014c4 unchanged.20delta/406byte-identical paths,40modules84edges/five native pins.
-Actual Next/current controller: challenged profile visible, wrong choir/foreign refused,
-clear hides profile/no new request/no key persistence; four scenarios PASS. SDK/proof actual,
-Auth/REST synthetic, Chrome transport NOT RN renderer/navigation/RLS/platform acceptance.
-Node6/6; final candidate41files406tests/root114files1178tests/lint/types/coverage/SW/build PASS.
-Initial mock/signout/lint/driver clear-reason/binary-copy controls and repairs retained.
-No unrelated write/upload/annotation/offline/package/SQL/Edge/RN promotion. Profile-only,
-not full permanent route/mobile compatibility; previous negative preflight stays historical.
+Sourcef1d089b: [trusted-app legacy native recovery](../docs/reports/2026-10-03-native-legacy-next-recovery.md),
+[final HTTP record](../docs/reports/090/2026-10-03-native-legacy-recovery-http-v2.json).
+Exact configured-origin legacy Next renewal now supported alongside five Edge readers;
+fresh native lease/one fixed POST, strict same alias/expiry, no redirects/denial/late-cancel retry.
+Screen config wiring/old-capability clear tested. Seven actual HTTP/native capability/Next
+adapter/Edge handler/HMAC scenarios PASS,68B/hash/A→B POST403/revoked-ticket403/second-GET403.
+Auth/current-authority/provider/file/share ports synthetic, NOT Next middleware/RN/Expo/RLS.
+15source/test pins+harness verified; mobile types55suites452tests/root114files1178tests/full
+gates PASS, preserved Node13/13. Initial count-only record retained, exact final assertions
+authoritative. No server/SQL/dependency/browser-session/refresh sharing; self-review only.
 
-Next trusted configured-app-origin legacy-Next single-renewal support, then exact Android
-profile/file/hash/401/403/A→B and grouped sensitive iOS; audit remaining permanent-route APIs.
+Immutable [embedded-profile candidate](../docs/reports/2026-10-03-minimum-embedded-profile-candidate.md)
+7cd8d460c68465055049dbf30192f7f5478bcf64 on codex/090-embedded-profile-candidate-20261003
+and parent browser1a014c4 unchanged. Prior Chrome profile/runtime evidence stays historical.
+Next fresh bounded resource preflight, exact7cd8d46 web + currentf1d089b native Android
+profile/file consent/hash/401/403/A→B/share/clear, grouped sensitive iOS and permanent-route API audit.
 No refresh-token sharing/arbitrary issuer. Logs/independent review/fresh hosted preflight/
 refresh-forward-repair/R1 still required. Whole090/R1/beta OPEN/live NO-GO; local goal only PASS.
 
@@ -45,8 +47,8 @@ Local scoped tests/source/commits/owned cleanup allowed; unrelated CLI marker ex
 No hosted SQL/Edge/web/provider ACL/credentials/real-user/email/hardware/push/CI/distribution.
 DB→Edge→compatible clients/recovery before writes; Git revert is not data recovery;
 no automatic actorless-v1/078-defect rollback. Sole-writer self-review, not independent review.
-Latest embedded-candidate503364KiB/root.next503220KiB/coverage352KiB removed, contexts/Next/fixture closed/no31090/54491.
-Final21,340,272KiB free; no new VM/emulator/APK. Dependencies/AVD/CoreSimulator/global caches/
+Latest root.next477416KiB/coverage352KiB removed after all gates/pin; HTTP18196 closed/fetch-env restored.
+Final21,255,756KiB free; no new candidate copy/VM/emulator/APK. Dependencies/AVD/CoreSimulator/global caches/
 user data/backup/original068 preserved. Fresh >=10GiB preflight/one heavy process/bounded retries.
 [R1 exclusions](../docs/reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md) unchanged;
 protected0700/0600 backup outside Git, Vault/net/Storage metadata/bytes/password/settings excluded,
