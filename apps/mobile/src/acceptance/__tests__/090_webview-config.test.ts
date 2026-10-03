@@ -20,6 +20,18 @@ describe('090 actual WebView local guard', () => {
     expect(() => validate090WebViewMetadata(assignment)).toThrow();
     expect(() => validate090WebViewMetadata(metadata, 'assignment-file')).toThrow();
   });
+  it('admits legacy Next metadata only with explicit family and exact configured app URL', () => {
+    expect(() => require090WebViewConfig({ ...env, EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: 'legacy-next' })).not.toThrow();
+    const legacy = { ...metadata, legacyUrl: `http://127.0.0.1:31090/api/drive-file/${metadata.fileId}?token=old.signature` };
+    expect(validate090WebViewMetadata(legacy, 'legacy-next')).toEqual(legacy);
+    expect(() => validate090WebViewMetadata(legacy)).toThrow();
+    for (const url of [legacy.legacyUrl.replace('31090', '18092'), legacy.legacyUrl + '&extra=1',
+      legacy.legacyUrl + '&token=duplicate.signature', legacy.legacyUrl + '#hash',
+      legacy.legacyUrl.replace('old.signature', 'a.b.c'), legacy.legacyUrl.replace(metadata.fileId, 'different'),
+      legacy.legacyUrl.replace('127.0.0.1', 'remote.invalid')]) {
+      expect(() => validate090WebViewMetadata({ ...legacy, legacyUrl: url }, 'legacy-next')).toThrow();
+    }
+  });
   it.each([
     { EXPO_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE: '0' },
     { EXPO_PUBLIC_SUPABASE_URL: 'https://example.com' },

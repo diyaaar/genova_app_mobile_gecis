@@ -6,7 +6,7 @@ import { AuthProvider, useAuth } from '../auth/AuthProvider';
 import { getGenovaClient } from '../auth/supabase-client';
 import { NativeWebViewScreen } from '../webview/NativeWebViewScreen';
 import { createNativeWebViewRuntimeConfig } from '../webview/runtime-config';
-import { createExpoEphemeralFileStore, createExpoShareGateway, ProtectedFileCapability } from '../webview/platform-capabilities';
+import { createExpoEphemeralFileStore, createExpoShareGateway, prepareProtectedFileRequest, ProtectedFileCapability } from '../webview/platform-capabilities';
 import { createPrivateFileTicketRecovery } from '../webview/private-file-ticket-recovery';
 import { require090WebViewConfig, validate090WebViewMetadata, WEBVIEW_APP, WEBVIEW_FIXTURE,
   WEBVIEW_POLICY, type WebViewMetadata } from './090_webview-config';
@@ -22,7 +22,8 @@ require090WebViewConfig({
   EXPO_PUBLIC_GENOVA_090_CONNECTED_AUDIO: process.env.EXPO_PUBLIC_GENOVA_090_CONNECTED_AUDIO,
   EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY,
 });
-const family = process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY === 'assignment-file' ? 'assignment-file' : 'repertoire-file';
+const family = process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY === 'legacy-next' ? 'legacy-next'
+  : process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY === 'assignment-file' ? 'assignment-file' : 'repertoire-file';
 const protectedFileOrigins = family === 'assignment-file'
   ? [...WEBVIEW_POLICY.protectedFileOrigins, 'http://127.0.0.1:54491'] : WEBVIEW_POLICY.protectedFileOrigins;
 const client = getGenovaClient();
@@ -34,6 +35,7 @@ function Runtime({ trace }: { trace: Trace }) {
   authRef.current = auth;
   const started = useRef(false);
   const selected = useRef(false);
+  const inspected = useRef(false);
   const [metadata, setMetadata] = useState<WebViewMetadata | null>(null);
   const [closed, setClosed] = useState(false);
   useEffect(() => {
@@ -86,15 +88,21 @@ function Runtime({ trace }: { trace: Trace }) {
         trace(root.exists ? 'ephemeral clear FAIL' : 'ephemeral clear PASS');
       },
     }, { ...sharing, async share(uri, options) {
+      if (family === 'legacy-next') {
+        if (!new File(uri).exists) throw new Error('Inspection file unavailable');
+        trace('inspection share port observed NOT actual sheet');
+        return;
+      }
       trace('actual share sheet RUNNING');
       await sharing.share(uri, options);
       trace('actual share sheet returned');
     } }, createPrivateFileTicketRecovery({ getIssuer: () => WEBVIEW_FIXTURE,
+      getAppOrigin: () => WEBVIEW_APP,
       getLease: options => authRef.current.getWebViewLease(options), allowLoopback: true }));
   }, [metadata, trace]);
 
   const isB = auth.activeChoir?.choir_id === metadata?.choirB;
-  const path = isB ? '/profil' : `/koristler/${metadata?.targetMember ?? ''}`;
+  const path = isB || family === 'legacy-next' ? '/profil' : `/koristler/${metadata?.targetMember ?? ''}`;
   const config = useMemo(() => metadata ? createNativeWebViewRuntimeConfig({ initialPath: path,
     isDevelopment: true, developmentOrigin: WEBVIEW_APP,
     protectedFileOrigins }) : null, [metadata, path]);
@@ -102,6 +110,50 @@ function Runtime({ trace }: { trace: Trace }) {
     return <Text style={styles.text}>Yerel oturum hazırlanıyor: {auth.phase}</Text>;
   }
   if (auth.user?.id !== metadata.userId) return <Text style={styles.text}>FAIL wrong synthetic identity</Text>;
+  const inspectLegacy = async () => {
+    if (inspected.current || family !== 'legacy-next') return;
+    inspected.current = true;
+    const prepare = (url: string) => {
+      const request = prepareProtectedFileRequest({ requestId: '090_legacy_inspection', url,
+        disposition: 'view', fileName: '090-synthetic.pdf', mimeType: 'application/pdf' }, config.routePolicy);
+      if (!request) throw new Error('Inspection URL refused');
+      return request;
+    };
+    const mode = async (value: string) => {
+      const response = await fetch(`${WEBVIEW_FIXTURE}/090/native-mode`, { method: 'POST',
+        headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode: value }) });
+      if (!response.ok) throw new Error('Inspection mode refused');
+      const input = { ...metadata, legacyUrl: (await response.json() as { url: string }).url };
+      return validate090WebViewMetadata(input, 'legacy-next').legacyUrl;
+    };
+    try {
+      const renewed = await capability.run(prepare(metadata.legacyUrl));
+      await capability.clear();
+      if (!renewed || new Directory(Paths.cache, 'genova-webview-files').exists) throw new Error('Renewal inspection failed');
+      trace('legacy Android renewal/hash/removal PASS');
+      const denied = await capability.run(prepare(await mode('revoke')));
+      await capability.clear();
+      if (denied) throw new Error('Revoked inspection shared');
+      trace('legacy Android current denial PASS');
+      const oldA = await mode('restore');
+      // Unmount and clear before actual native choir selection; never retain an A surface.
+      setClosed(true); await capability.clear();
+      await authRef.current.selectChoir(metadata.choirB);
+      for (const method of ['GET', 'HEAD']) {
+        const response = await fetch(oldA, { method, redirect: 'error' });
+        await response.text();
+        if (response.status !== 403) throw new Error('A-to-B read was not denied');
+      }
+      if (await capability.run(prepare(metadata.legacyUrl))) throw new Error('B renewed an A file');
+      await capability.clear();
+      if (new Directory(Paths.cache, 'genova-webview-files').exists) throw new Error('Inspection cache retained');
+      const finish = await fetch(`${WEBVIEW_FIXTURE}/090/native-evidence`, { method: 'POST',
+        headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ platform: Platform.OS,
+          profileBridge: true, renewal: true, revoked: true, switched: true, cacheEmpty: true,
+          actualShare: false, actualConsent: false }) });
+      trace(finish.ok ? 'Android profile/native file boundary PASS' : 'Android boundary evidence FAIL');
+    } catch { trace('Android legacy inspection FAIL'); }
+  };
   return <View style={styles.body}>
     <Pressable accessibilityRole="button" onPress={() => void (async () => {
       await auth.selectChoir(metadata.choirB);
@@ -115,7 +167,10 @@ function Runtime({ trace }: { trace: Trace }) {
       getLease={options => authRef.current.getWebViewLease(options)}
       protectedFileCapability={capability} onNativeRoute={() => trace('unexpected native route')}
       onExit={() => setClosed(true)} onSignOut={auth.signOut} changePassword={auth.changePassword}
-      onBridgeSnapshot={snapshot => trace(`bridge ${snapshot.phase}:${snapshot.routeFamily}`)}
+      onBridgeSnapshot={snapshot => {
+        trace(`bridge ${snapshot.phase}:${snapshot.routeFamily}`);
+        if (snapshot.phase === 'running' && snapshot.routeFamily === 'profile') void inspectLegacy();
+      }}
       onDiagnostic={value => trace(`diagnostic ${value.type}:${value.outcome}:${value.reasonCode ?? ''}`)} />}
   </View>;
 }
