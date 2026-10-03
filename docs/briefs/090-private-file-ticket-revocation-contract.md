@@ -73,12 +73,21 @@ Negative control and rendered actual component check required before APK build.
 |---|---|---|---|---|
 | Interactive guard/fixture negatives; old mode retained | yes | PASS | e8e4ca1/Node14 + mobile454 | No runtime inference |
 | Real candidate chorister anchor → native modal; cancel zero provider/body reads | yes | PASS | 3Oct/v3/32aba65 owner observation + accepted native request + cancel-observed200; GET0/HEAD0/provider0 | Synthetic scope, no hosted RLS/independent screenshot |
-| Approved PDF65905B/hash → actual share UI returned → file removed | yes | NOT RUN | actual Android | No external recipient send |
+| Approved PDF65905B/hash → actual share UI returned → file removed | yes | NOT RUN | v3 two real65905B/hash PASS; owner restart/Print; no share-return/removal event; stopped13:06UTC | Single-read sequence interrupted; no account/send; full row unaccepted |
 | Actual B switch clears A surface/files; old A GET/HEAD refused | yes | NOT RUN | actual Android | Offline/in-flight bytes excluded |
 | Visual/scroll/navigation and no private browser persistence | yes | NOT RUN | actual Android | Module evidence alone insufficient |
 | Fresh mobile types/full tests + root pnpm check | yes | PASS | 3Oct/32aba65 mobile55suites454 + root114files1178/fullcheck; current derived candidate build | Not platform proof; candidate406 earlier unchanged8aea973 |
 | Grouped sensitive iOS | required later milestone | NOT RUN | named next platform gate | Not silently omitted |
-| Self-review, redaction/source pins, resource cleanup, links/diff | yes | PASS | 3Oct/8aea973/12:11UTC, normal guard-off manifest, owned processes/output removed, free21312872KiB | Not independent review |
+| Self-review, redaction/source pins, resource cleanup, links/diff | yes | PASS | v3 cleanup13:06UTC/normal guard-off PASS/free22973504KiB/immutable pins/links/diff | Not independent review |
+
+Finalv3 checkpoint13:06UTC: cancel PASS, actual two downloads/hash PASS, chooser
+return/removal/B/visual-cache unaccepted. Owner entered Google device-account setup,
+then restarted app and chose Print; faint40-page coordinate fixture confirmed locally,
+not actual Android Print render. No account connection. All owned runtime/generated
+outputs removed; [record](../reports/2026-10-03-android-candidate-consent-share.md),
+immutablev3NOT RUN. Do not rebuild same chooser to wait. Next: owner-aligned bounded
+`view` UX design/amendment (current actual ACTION_SEND is not direct PDF preview),
+then fresh preserved acceptance. No product-code repair or goal completion this pass.
 
 Checkpoint sourcee8e4ca1: [consent/share record](../reports/2026-10-03-android-candidate-consent-share.md).
 Metadata rejection reproduced/repaired with actual rendered component/native policy;

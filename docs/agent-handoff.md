@@ -22,18 +22,21 @@ No main-production/SQL/Edge/dependency/hosted change; self-review. Whole090/R1/b
 
 V3 owner actual modal/cancel/return + native accepted file request and HTTP counts PASS:
 GET0/HEAD0/provider0/failures0; operator cancel-observed200 recorded only after owner reply.
-NEXT immediate user action: Drive Linki→Devam et→actual share chooser→dismiss without
-recipient; verify hash/share-return/removal BEFORE requesting native B/visual step.
-Fresh CUA still lacks Android; user touch needed, no adb UI substitute. Original goal
-not completed; historical goal-tool blocked flag, fresh resumed audit starts with readiness.
-Live server66450/PID57418/child57442, emulator28221/PID57633/emulator5554; package initially
-absent; three owned reverses. Retain until12:55UTC/15:55Istanbul only for this sequence,
-then stop/clean owned app/servers/reverses/emulator/candidate/android. Root outputs removed;
-free21823816KiB. New immutable HTTPv3 target, v1/v2 untouched. Guard-off pending cleanup.
-Keep deps/AVD/evidence, no binary history/unchanged rebuild. Grouped iOS remains later.
-Factory8aea973, NOT unpatched7cd8d46 as full mobile web proof. Permanent browser-session-only
-mutations need actual API audit/backport before promotion. No refresh sharing/arbitrary
-issuer. Independent review/fresh hosted preflight/forward repair/R1 precede live authority.
+V3 two actual65905B/hash downloads PASS; screenshot Google device-account setup,
+owner restarted app then chose Print/reports40 blank pages. Local source fixture is
+faint40-page coordinate grid, not blank; actual Android Print render NOT RUN.
+Actual ExpoSharing ACTION_SEND is not direct PDF preview. Share-return/removal/B/
+visual-cache remain unaccepted; [v3 HTTP](reports/090/2026-10-03-android-candidate-interactive-http-v3.json)
+NOT RUN/provider2/unknown0/outside0/failures0; no account/send. Do not relax single-read
+protocol or repeat chooser unchanged. NEXT: owner-aligned bounded view-UX design/brief
+amendment using existing native PDF architecture, then fresh preserved acceptance.
+CUA lacks Android, no adb UI substitute; goal NOT completed, historic blocked flag.
+At13:06UTC stopped/uninstalled all owned app/reverses/servers/emulator; actual normal
+guard-off manifest PASS; android/candidate/rootoutputs/PNG removed, free22973504KiB.
+Keep deps/AVD/evidence; grouped iOS later. Factory8aea973, not unpatched7cd8d46 as full
+mobile proof. Permanent browser-session-only APIs need audit/backport before promotion.
+No refresh sharing/arbitrary issuer; independent review/hosted preflight/forward repair/R1
+precede live authority.
 
 ## Preserved checkpoints and candidate identities
 

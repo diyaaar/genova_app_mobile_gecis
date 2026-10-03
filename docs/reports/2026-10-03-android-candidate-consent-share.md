@@ -45,6 +45,80 @@ be immutable at final assertion/stop; not yet a completed HTTP record.
 Required share/removal/B/visual-cache rows remain open. Self-review only; whole090/
 R1/beta OPEN/liveNO-GO. Existing iOS later milestone retained, no substitute proof.
 
+### Actual approval / Drive-account setup report — 13:00UTC
+
+Owner reports “setup drive account” and cannot proceed. Existing exact server/emulator
+still alive, no rebuild. Actual accepted request15:57:39 and native65905B/hash PASS
+15:57:40Istanbul; actual share RUNNING, no share-return/file-removed yet. HTTPfileGET1/
+HEAD0/provider1/failures0/unknown0. This proves post-consent native local download,
+not chooser return/cleanup or external upload. No application Drive fetch occurred.
+Installed actual ExpoSharing Kotlin source calls ACTION_SEND via Intent.createChooser;
+share promise resolves on matching ActivityResult. Owner's reported account setup may
+be the Drive receiving activity; no screenshot/current foreground UI proof, so this is
+an inference, not an asserted observed selection. CUA Android remains unsupported.
+Requested owner Back out of setup/chooser to chorister page, no account connection,
+recipient selection or another download/B until actual return/removal verified.
+
+The original15:55 retention point passed while no agent turn ran; this does not mean
+processes self-expired. At13:00UTC original handles/PIDs verified live and capture
+retained small redacted observations. One bounded extension only until13:06UTC/
+16:06Istanbul for the already-open chooser to return and final dependent check;
+then owned cleanup even if incomplete. Free21,710,576KiB>floor, no new allocation.
+No code/provider/credential change; Jev0. Do not mark the aggregate share/removal or
+visual/browser-cache rows PASS from the download trace or third-party setup text.
+
+Owner subsequently reports Back cannot return. Screenshot requested; no screenshot
+received yet, no assumed current foreground/selection. Share promise still pending,
+provider unchanged1/failures0. Installed actual ExpoSharing is ACTION_SEND even for
+the product `view` disposition (only dialogTitle differs); direct in-app PDF preview
+is not this capability's current behavior. This is a concrete UX gap, not evidence
+of failed Storage authorization or a requirement to connect Drive. Do not install a
+receiver, add an account, change defaults, weaken guards or implement a new viewer
+merely to obtain acceptance. `emulator -help-keys` is unsupported in installed37.1.11;
+no guessed key shortcut or alternate UI-control tool used. Required screen return/
+file-removal and B rows remain unaccepted; final cleanup at bounded deadline remains.
+
+Owner screenshot now received: Google Sign in page explicitly states account added to
+device/other Google apps; email empty/validation message, bottom gesture bar. This
+confirms device Google-account setup, not Genova login; prior Drive receiving-activity
+selection remains unproven. Requested actual Android left-edge-to-center Back gesture
+(not bottom Home gesture), no credentials. Screenshot is owner supplied, no alternate
+screen capture/UI-control tool. Return/removal still pending until logs/assertions.
+
+### Owner restart / Print preview / bounded cleanup — 13:06UTC
+
+Owner closed/reopened app and approved a second file request, selected Print instead
+of Drive, reports40 blank pages. Real native new process5417 at16:03:55 performed
+ephemeral clear PASS and actual challenged bridge again;16:04:00 second65905B/hash
+PASS/actual share RUNNING. HTTP GET2/provider2/HEAD0/unknown0/outside0/failures0;
+only cancel-observed event. Do not relax the single-read protocol to make this pass:
+restart/second receiver is outside the original single-download sequence, not a
+server authorization failure. Share-return/per-file-finally removal/B are NOT RUN.
+
+PDF skill used read-only. System pdfinfo confirms retained fixture40 A4 pages/65905B;
+pdftotext pages1–2 contains coordinate labels/page numbers. Actual first-page render
+visually contains faint grid, SAYFA1 and coordinate-test footer, not blank or real
+choir score. Android Print render itself not captured, so “looks blank because faint
+grid/thumbnail” remains inference; do not assert print rendering PASS or a diagnosed
+platform rendering defect. Temporary one-page PNG removed after visual check;
+original source PDF preserved, no edit/re-export/installation.
+
+At13:06UTC stopped/removed initially-absent synthetic app, owned three reverses,
+original server/Next/emulator. Immutable [v3 HTTP](090/2026-10-03-android-candidate-interactive-http-v3.json)
+**NOT RUN**,426candidate/153native pins retained; native accepted/download traces and
+owner observations above are partial boundaries. Actual normal flag-off prebuild/
+no-install manifest/resource PASS; generated android/candidate/root outputs/PNG removed.
+No owned adb device; final free22,973,504KiB. Existingdeps/Gradle/AVD/lockfiles/user
+data and small redacted evidence preserved. Generated files reproducible; no global
+cache purge or user data removal. Source unchanged32aba65; documents/HTTP record only.
+
+Next engineering judgment: do not repeat this unchanged chooser test or connect
+Drive. Product `view` using ACTION_SEND rather than direct passive-PDF preview is
+the concrete UX gap to resolve with the owner/existing native PDF architecture;
+bounded design/brief amendment before implementation. Preserve cancel proof and
+require fresh view/return/removal/B/cache acceptance afterward. No goal/090/R1/beta
+completion; self-review only, hosted/store/iOS gates unchanged. Jev0.
+
 ## Reproduced blocker and bounded repair
 
 Exact `7cd8d46` HomeworkCard anchor lacks filename/MIME attributes. Rendered actual
