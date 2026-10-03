@@ -9,6 +9,16 @@ const metadata = { userId: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
   pdfSha256: 'a'.repeat(64), legacyUrl: 'http://127.0.0.1:18092/functions/v1/repertoire-file?fileId=eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee&ticket=synthetic_ticket' };
 
 describe('090 actual WebView local guard', () => {
+  it('interactive mode needs explicit legacy family and still refuses hosted credentials', () => {
+    const interactive = { ...env, EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: 'legacy-next', EXPO_PUBLIC_GENOVA_090_WEBVIEW_INTERACTIVE: '1' };
+    expect(() => require090WebViewConfig(interactive)).not.toThrow();
+    for (const patch of [{ EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: undefined },
+      { EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: 'assignment-file' },
+      { EXPO_PUBLIC_GENOVA_090_WEBVIEW_INTERACTIVE: 'true' },
+      { EXPO_PUBLIC_SUPABASE_URL: 'https://hosted.invalid' }, { EXPO_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE: undefined }]) {
+      expect(() => require090WebViewConfig({ ...interactive, ...patch })).toThrow();
+    }
+  });
   it('accepts only synthetic local Auth and credential-free metadata', () => {
     expect(() => require090WebViewConfig(env)).not.toThrow();
     expect(validate090WebViewMetadata(metadata)).toEqual(metadata);

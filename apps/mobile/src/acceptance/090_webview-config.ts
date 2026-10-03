@@ -13,6 +13,10 @@ export function require090WebViewConfig(env: Record<string, string | undefined>)
       env.EXPO_PUBLIC_SUPABASE_URL !== 'http://127.0.0.1:54491' ||
       conflicts.some(key => env[key] === '1') ||
       ![undefined, 'repertoire-file', 'assignment-file', 'legacy-next'].includes(env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY)) throw new Error('090 WebView local configuration refused');
+  if (![undefined, '1'].includes(env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_INTERACTIVE) ||
+      (env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_INTERACTIVE === '1' && env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY !== 'legacy-next')) {
+    throw new Error('090 interactive legacy configuration refused');
+  }
   const key = env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '';
   const claims = JSON.parse(atob(key.split('.')[1] ?? '')) as { iss?: string; role?: string };
   if (claims.iss !== 'supabase-demo' || claims.role !== 'anon') throw new Error('090 WebView local anon key required');

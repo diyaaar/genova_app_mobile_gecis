@@ -46,7 +46,7 @@ export function materialize() {
   fs.symlinkSync(ROOT + '/node_modules', CANDIDATE + '/node_modules', 'dir');
   return { webRef: WEB_REF, files: bytes.length, bytes: bytes.reduce((total, entry) => total + entry.body.length, 0) };
 }
-export function buildEnv() {
+export function buildEnv(interactive = false) {
   // Public synthetic anon only; never forward the user's dotenv/credential environment.
   return { PATH: process.env.PATH, HOME: process.env.HOME, LANG: process.env.LANG,
     JAVA_HOME: jdk, ANDROID_HOME: sdk, ANDROID_SDK_ROOT: sdk, EXPO_NO_DOTENV: '1',
@@ -55,15 +55,24 @@ export function buildEnv() {
     NEXT_PUBLIC_GENOVA_090_WEBVIEW_ACCEPTANCE: '1', NEXT_PUBLIC_GENOVA_090_APP_ORIGIN: app,
     EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: 'legacy-next', EXPO_PUBLIC_SUPABASE_URL: authOrigin,
     EXPO_PUBLIC_SUPABASE_ANON_KEY: anon, NEXT_PUBLIC_SUPABASE_URL: authOrigin,
-    NEXT_PUBLIC_SUPABASE_ANON_KEY: anon };
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: anon,
+    ...(interactive ? { EXPO_PUBLIC_GENOVA_090_WEBVIEW_INTERACTIVE: '1' } : {}) };
 }
 async function run(command, args, cwd, env = buildEnv()) {
   const child = spawn(command, args, { cwd, env, stdio: 'inherit' });
   const [code] = await once(child, 'exit'); assert.equal(code, 0, 'Owned command failed');
 }
-async function serve() {
-  const out = ROOT + '/docs/reports/090/2026-10-03-android-candidate-sdk-http-v4.json';
+async function serve(interactive = false) {
+  const { interactiveRows, assertInteractiveCancel } = await import('./090_android_interactive.mjs');
+  const candidate = interactive ? ROOT + '/spike/090-runtime/android-interactive-candidate' : CANDIDATE;
+  const out = ROOT + '/docs/reports/090/' + (interactive
+    ? '2026-10-03-android-candidate-interactive-http-v1.json' : '2026-10-03-android-candidate-sdk-http-v4.json');
   assert(!fs.existsSync(out), 'Preserve earlier attempt');
+  const candidatePins = interactive ? JSON.parse(fs.readFileSync(candidate + '/native-cache-source.json')) : null;
+  if (interactive) {
+    assert.equal(candidatePins.parentRef, WEB_REF); assert.equal(candidatePins.pins.length, 426);
+    for (const pin of candidatePins.pins) assert.equal(hash(fs.readFileSync(candidate + '/' + pin.path)), pin.sha256);
+  }
   const { build } = createRequire(require.resolve('@vitejs/plugin-react'))('esbuild');
   const compiled = await build({ stdin: { contents: `export {issueLegacyFileUrl,readLegacyFile} from './lib/server/legacy-file-adapter.ts';
 export {createLegacyFileHandler} from './supabase/functions/legacy-file/handler.ts';
@@ -85,7 +94,9 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
     alias: fileId, sourceDigest: await serverApi.legacySourceDigest(file) };
   const expired = await serverApi.createLegacyTicket(claims, secret, Date.now() - 7_200_000);
   const ticketUrl = token => `${app}/api/drive-file/${fileId}?token=${token}`;
-  const metadata = { userId: actor, choirA, choirB, targetMember: memberA, fileId, pdfSha256: hash(bytes), legacyUrl: ticketUrl(expired.token) };
+  const targetMember = interactive ? uuid(9) : memberA;
+  const ids = { actor, choirA, memberA, targetMember, assignmentId: uuid(10), submissionId: uuid(8), fileId };
+  const metadata = { userId: actor, choirA, choirB, targetMember, fileId, pdfSha256: hash(bytes), legacyUrl: ticketUrl(expired.token) };
   const record = { date: new Date().toISOString(), status: 'RUNNING', webRef: WEB_REF,
     entryCommit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
     harnessSha256: hash(fs.readFileSync(import.meta.filename)),
@@ -93,7 +104,9 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
       .map(file => ({ path: file, sha256: hash(fs.readFileSync(ROOT + '/' + file)) })),
     nativeSourcePins: execFileSync('git', ['ls-files', 'apps/mobile', 'lib/choir-context-core.ts', 'lib/mobile-webview-bridge.ts', 'lib/repertuvar/protected-file-client.ts'], { encoding: 'utf8' })
       .trim().split('\n').map(file => ({ path: file, sha256: hash(fs.readFileSync(ROOT + '/' + file)) })),
-    boundary: 'Actual Android AuthStore/Supabase SDK/SecureStore/WebView/controller/Expo filesystem; exact pinned production Next profile via local dispatcher. Actual adapter/handler/HMAC file dispatch, NOT production Next file routing/middleware. Synthetic Auth/REST/current authority/provider; inspection share port, NOT actual consent/share/visual/iOS/hosted RLS proof.' };
+    ...(interactive ? { candidatePins } : {}),
+    boundary: interactive ? 'Guarded pinned chorister-detail UI with actual native consent/capability/share gateway. UI observation required separately; synthetic Auth/REST/authority/provider, NOT hosted RLS/Next file routing/middleware/iOS.'
+      : 'Actual Android AuthStore/Supabase SDK/SecureStore/WebView/controller/Expo filesystem; exact pinned production Next profile via local dispatcher. Actual adapter/handler/HMAC file dispatch, NOT production Next file routing/middleware. Synthetic Auth/REST/current authority/provider; inspection share port, NOT actual consent/share/visual/iOS/hosted RLS proof.' };
   const handler = serverApi.createLegacyFileHandler({
     authenticate: async (_header, token) => tokens.has(token) ? { actorId: actor, sessionId: session, choirId: currentChoir } : null,
     resolve: async input => !revoked && currentChoir === choirA && input.choirId === choirA
@@ -121,6 +134,16 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
     tokens.add(token); return { access_token: token, refresh_token: '090-synthetic-native-refresh', token_type: 'bearer', expires_in: 7200, expires_at: exp, user };
   }
   function evidence(input) {
+    if (interactive) {
+      assert.deepEqual(input, { platform: 'android', switched: true, cacheEmpty: true });
+      assert(native.some(item => item.event === 'cancel-observed'));
+      assert(native.some(item => item.event === 'share-returned'));
+      assert.equal(providerReads.renewal, 1); assert.equal(providerReads.revoked, 0); assert.equal(providerReads.switched, 0);
+      assert.deepEqual(requests.filter(item => item.phase === 'switched' && item.path.startsWith('/api/drive-file/'))
+        .map(item => `${item.method}:${item.status}`), ['GET:403', 'HEAD:403']);
+      assert.deepEqual(unknown, []); assert.deepEqual(outside, []); assert.deepEqual(failures, []);
+      record.status = 'PASS_HTTP_NATIVE'; record.nativeAssertion = input; persist(); return;
+    }
     assert.deepEqual(input, { platform: 'android', profileBridge: true, renewal: true, revoked: true, switched: true, cacheEmpty: true, actualShare: false, actualConsent: false });
     for (const [part, expected] of Object.entries({ renewal: ['GET:401', 'HEAD:401', 'POST:200', 'GET:200'],
       revoked: ['GET:403', 'HEAD:403'], switched: ['GET:403', 'HEAD:403', 'GET:401', 'HEAD:401', 'POST:403'] })) {
@@ -163,6 +186,16 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
         if (consumed) return json(410, {}); consumed = true; return json(200, { email: user.email, password });
       }
       if (url.pathname === '/090/webview-metadata') return json(200, metadata);
+      if (interactive && url.pathname === '/090/ui-event' && incoming.method === 'POST') {
+        const input = JSON.parse(body);
+        assert.deepEqual(Object.keys(input), ['event']);
+        assert(['cancel-observed', 'share-returned'].includes(input.event));
+        assert(!native.some(item => item.event === input.event), 'Duplicate UI event');
+        if (input.event === 'cancel-observed') assertInteractiveCancel(requests, providerReads);
+        else { assert(native.some(item => item.event === 'cancel-observed')); assert.equal(providerReads.renewal, 1); }
+        native.push({ event: input.event, origin: input.event === 'cancel-observed' ? 'operator observation' : 'actual native share promise returned' });
+        return json(200, {});
+      }
       if (url.pathname === '/090/native-mode' && incoming.method === 'POST') {
         const input = JSON.parse(body); assert(['revoke', 'restore'].includes(input.mode));
         assert.equal(currentChoir, choirA); revoked = input.mode === 'revoke'; phase = revoked ? 'revoked' : 'switched';
@@ -186,12 +219,18 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
         const input = JSON.parse(body); assert([choirA, choirB].includes(input.p_choir_id)); currentChoir = input.p_choir_id; return json(200, currentChoir);
       }
       if (url.pathname === '/rest/v1/choir_members') {
+        if (interactive && !url.searchParams.has('id')) return json(200, interactiveRows(url, ids, currentChoir));
         const member = currentChoir === choirA ? memberA : memberB;
         assert.equal(url.searchParams.get('id'), 'eq.' + member); assert.equal(url.searchParams.get('choir_id'), 'eq.' + currentChoir);
         assert.equal(url.searchParams.get('auth_user_id'), 'eq.' + actor);
         return json(200, { id: member, choir_id: currentChoir, auth_user_id: actor, first_name: 'Synthetic', last_name: 'Profile', voice_group: 'Soprano', email: user.email, is_active: true });
       }
-      if (url.pathname === '/rest/v1/choir_member_roles') return json(200, [{ roles: { name: 'Korist' } }]);
+      if (url.pathname === '/rest/v1/choir_member_roles' && !url.searchParams.get('member_id')?.startsWith('in.')) {
+        return json(200, [{ roles: { name: interactive && currentChoir === choirA ? 'Şef' : 'Korist' } }]);
+      }
+      if (interactive && incoming.method === 'GET') {
+        const rows = interactiveRows(url, ids, currentChoir); if (rows !== null) return json(200, rows);
+      }
     }
     if (origin === app) {
       const isRead = url.pathname === '/api/drive-file/' + fileId && ['GET', 'HEAD'].includes(incoming.method);
@@ -200,7 +239,8 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
         const request = new Request(url, { method: incoming.method, headers: incoming.headers,
           ...(incoming.method === 'POST' ? { body } : {}) });
         if (isRead) { assert.equal(authorization, ''); return finish(await serverApi.readLegacyFile(request, fileId, incoming.method)); }
-        assert.equal(incoming.method, 'POST'); assert.deepEqual(JSON.parse(body), { driveFileId: fileId });
+        assert.equal(incoming.method, 'POST');
+        assert.deepEqual(JSON.parse(body), interactive ? { driveFileId: fileId, fileName: file.fileName, mimeType: file.mimeType } : { driveFileId: fileId });
         return finish(await serverApi.issueLegacyFileUrl(request));
       }
       assert(['GET', 'HEAD'].includes(incoming.method), 'Unexpected product mutation');
@@ -231,7 +271,7 @@ export {createLegacyTicket,verifyLegacyTicket,legacySourceDigest} from './supaba
       await new Promise((resolve, reject) => { server.once('error', reject); server.listen(Number(new URL(origin).port), '127.0.0.1', resolve); });
     }
     next = spawn(process.execPath, [ROOT + '/node_modules/next/dist/bin/next', 'start', '-H', '127.0.0.1', '-p', '31095'],
-      { cwd: CANDIDATE, env: buildEnv(), stdio: ['ignore', 'ignore', 'ignore'] });
+      { cwd: candidate, env: buildEnv(interactive), stdio: ['ignore', 'ignore', 'ignore'] });
     console.log(JSON.stringify({ listening: [app, authOrigin, fixture], webRef: WEB_REF, authority: 'synthetic only' }));
     await new Promise(resolve => { process.once('SIGTERM', resolve); process.once('SIGINT', resolve); });
   } finally { await close(); }
@@ -240,7 +280,7 @@ if (process.argv[1] === import.meta.filename) {
   assert.equal(process.cwd(), ROOT); const args = process.argv.slice(2); assert.equal(args.length, 1);
   if (args[0] === '--materialize-owned') console.log(JSON.stringify(materialize()));
   else if (args[0] === '--build-web') await run(process.execPath, [ROOT + '/node_modules/next/dist/bin/next', 'build'], CANDIDATE);
-  else if (args[0] === '--prebuild-mobile') await run(process.execPath, [ROOT + '/apps/mobile/node_modules/expo/bin/cli', 'prebuild', '--platform', 'android', '--no-install'], ROOT + '/apps/mobile');
-  else if (args[0] === '--build-mobile') await run('./gradlew', ['assembleRelease', '--offline', '--no-daemon', '--max-workers=2', '-PreactNativeArchitectures=arm64-v8a'], ROOT + '/apps/mobile/android');
-  else { assert.equal(args[0], '--serve-owned'); await serve(); }
+  else if (['--prebuild-mobile', '--prebuild-interactive-mobile'].includes(args[0])) await run(process.execPath, [ROOT + '/apps/mobile/node_modules/expo/bin/cli', 'prebuild', '--platform', 'android', '--no-install'], ROOT + '/apps/mobile', buildEnv(args[0].includes('interactive')));
+  else if (['--build-mobile', '--build-interactive-mobile'].includes(args[0])) await run('./gradlew', ['assembleRelease', '--offline', '--no-daemon', '--max-workers=2', '-PreactNativeArchitectures=arm64-v8a'], ROOT + '/apps/mobile/android', buildEnv(args[0].includes('interactive')));
+  else { assert(['--serve-owned', '--serve-interactive-owned'].includes(args[0])); await serve(args[0].includes('interactive')); }
 }

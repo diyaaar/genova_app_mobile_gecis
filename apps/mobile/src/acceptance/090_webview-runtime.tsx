@@ -21,7 +21,9 @@ require090WebViewConfig({
   EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE: process.env.EXPO_PUBLIC_GENOVA_090_PDF_ACCEPTANCE,
   EXPO_PUBLIC_GENOVA_090_CONNECTED_AUDIO: process.env.EXPO_PUBLIC_GENOVA_090_CONNECTED_AUDIO,
   EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY: process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY,
+  EXPO_PUBLIC_GENOVA_090_WEBVIEW_INTERACTIVE: process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_INTERACTIVE,
 });
+const interactive = process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_INTERACTIVE === '1';
 const family = process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY === 'legacy-next' ? 'legacy-next'
   : process.env.EXPO_PUBLIC_GENOVA_090_WEBVIEW_FAMILY === 'assignment-file' ? 'assignment-file' : 'repertoire-file';
 const protectedFileOrigins = family === 'assignment-file'
@@ -88,7 +90,7 @@ function Runtime({ trace }: { trace: Trace }) {
         trace(root.exists ? 'ephemeral clear FAIL' : 'ephemeral clear PASS');
       },
     }, { ...sharing, async share(uri, options) {
-      if (family === 'legacy-next') {
+      if (family === 'legacy-next' && !interactive) {
         if (!new File(uri).exists) throw new Error('Inspection file unavailable');
         trace('inspection share port observed NOT actual sheet');
         return;
@@ -96,13 +98,18 @@ function Runtime({ trace }: { trace: Trace }) {
       trace('actual share sheet RUNNING');
       await sharing.share(uri, options);
       trace('actual share sheet returned');
+      if (interactive) {
+        const response = await fetch(`${WEBVIEW_FIXTURE}/090/ui-event`, { method: 'POST',
+          headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event: 'share-returned' }) });
+        if (!response.ok) throw new Error('Share evidence refused');
+      }
     } }, createPrivateFileTicketRecovery({ getIssuer: () => WEBVIEW_FIXTURE,
       getAppOrigin: () => WEBVIEW_APP,
       getLease: options => authRef.current.getWebViewLease(options), allowLoopback: true }));
   }, [metadata, trace]);
 
   const isB = auth.activeChoir?.choir_id === metadata?.choirB;
-  const path = isB || family === 'legacy-next' ? '/profil' : `/koristler/${metadata?.targetMember ?? ''}`;
+  const path = isB || (family === 'legacy-next' && !interactive) ? '/profil' : `/koristler/${metadata?.targetMember ?? ''}`;
   const config = useMemo(() => metadata ? createNativeWebViewRuntimeConfig({ initialPath: path,
     isDevelopment: true, developmentOrigin: WEBVIEW_APP,
     protectedFileOrigins }) : null, [metadata, path]);
@@ -111,7 +118,7 @@ function Runtime({ trace }: { trace: Trace }) {
   }
   if (auth.user?.id !== metadata.userId) return <Text style={styles.text}>FAIL wrong synthetic identity</Text>;
   const inspectLegacy = async () => {
-    if (inspected.current || family !== 'legacy-next') return;
+    if (inspected.current || family !== 'legacy-next' || interactive) return;
     inspected.current = true;
     const prepare = (url: string) => {
       const request = prepareProtectedFileRequest({ requestId: '090_legacy_inspection', url,
@@ -156,6 +163,23 @@ function Runtime({ trace }: { trace: Trace }) {
   };
   return <View style={styles.body}>
     <Pressable accessibilityRole="button" onPress={() => void (async () => {
+      if (interactive) {
+        setClosed(true); await capability.clear();
+        const oldUrlResponse = await fetch(`${WEBVIEW_FIXTURE}/090/native-mode`, { method: 'POST',
+          headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode: 'restore' }) });
+        if (!oldUrlResponse.ok) throw new Error('Mode refused');
+        const oldA = validate090WebViewMetadata({ ...metadata, legacyUrl: (await oldUrlResponse.json() as { url: string }).url }, 'legacy-next').legacyUrl;
+        await auth.selectChoir(metadata.choirB);
+        for (const method of ['GET', 'HEAD']) {
+          const response = await fetch(oldA, { method, redirect: 'error' }); await response.text();
+          if (response.status !== 403) throw new Error('Old A read allowed');
+        }
+        await capability.clear();
+        if (new Directory(Paths.cache, 'genova-webview-files').exists) throw new Error('A cache retained');
+        const result = await fetch(`${WEBVIEW_FIXTURE}/090/native-evidence`, { method: 'POST',
+          headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ platform: Platform.OS, switched: true, cacheEmpty: true }) });
+        trace(result.ok ? 'Interactive B refusal/clear PASS' : 'Interactive evidence FAIL'); return;
+      }
       await auth.selectChoir(metadata.choirB);
       const result = await fetch(`${WEBVIEW_FIXTURE}/090/webview-evidence`, { method: 'POST' });
       trace(result.ok ? `B old A URL PASS 403/no provider ${family}` : 'B old A URL FAIL');
