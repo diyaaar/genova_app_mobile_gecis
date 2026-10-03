@@ -116,6 +116,34 @@ describe('private file hook authority versus offline cache', () => {
     expect(mocks.authorizeOnline).toHaveBeenCalledTimes(2);
   });
 
+  it('ignores a late body error from the offline source after reconnect succeeds', async () => {
+    Object.defineProperty(navigator, 'onLine', { configurable: true, value: false });
+    const { result } = renderHook(() => useProtectedDriveFileUrl(file));
+    await waitFor(() => expect(result.current.url).toBe('/offline/score.pdf'));
+    const oldBodyError = result.current.onBodyError;
+    act(() => {
+      Object.defineProperty(navigator, 'onLine', { configurable: true, value: true });
+      window.dispatchEvent(new Event('online'));
+    });
+    await waitFor(() => expect(result.current.url).toBe('https://example.test/fresh-v2'));
+    act(() => oldBodyError());
+    expect(result.current.url).toBe('https://example.test/fresh-v2');
+    expect(mocks.authorizeOnline).toHaveBeenCalledTimes(1);
+    expect(mocks.clearUrls).not.toHaveBeenCalled();
+  });
+
+  it('ignores a late body callback from a previous file even when URLs are identical', async () => {
+    const { result, rerender } = renderHook(({ descriptor }) => useProtectedDriveFileUrl(descriptor), { initialProps: { descriptor: file } });
+    await waitFor(() => expect(result.current.url).toBe('https://example.test/fresh-v2'));
+    const oldBodyError = result.current.onBodyError;
+    rerender({ descriptor: { ...file, drive_file_id: 'other-file' } });
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    act(() => oldBodyError());
+    expect(result.current.url).toBe('https://example.test/fresh-v2');
+    expect(mocks.authorizeOnline).toHaveBeenCalledTimes(2);
+    expect(mocks.clearUrls).not.toHaveBeenCalled();
+  });
+
   it('purges private local bytes and refuses fallback after confirmed online denial', async () => {
     mocks.authorizeOnline.mockRejectedValue(new ProtectedFileRequestError('Denied', 403));
     const { result } = renderHook(() => useProtectedDriveFileUrl(file, { repertoireFile: true }));

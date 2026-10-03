@@ -29,6 +29,7 @@ import {
   ZoomOut,
 } from 'lucide-react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import { getRepertoirePdfWorker } from '@/lib/repertuvar/pdf-worker';
 
 import { AnnotationStage } from '@/components/repertuvar/AnnotationStage';
 import { ChefCommentSection } from '@/components/repertuvar/ChefCommentSection';
@@ -1193,6 +1194,7 @@ export function RepertoireWorkspace({
 }: RepertoireWorkspaceProps) {
   const toast = useToast();
   const memoizedPdfOptions = useMemo(() => ({
+    worker: getRepertoirePdfWorker(),
     cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
     standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts/`,
   }), []);

@@ -100,6 +100,34 @@ describe('protected Drive URL cache', () => {
     expect(fetchMock.mock.calls[1][1].headers.get('Authorization')).toBe('Bearer session-b');
   });
 
+  it('coalesces same-session same-file issuance without bypassing the session check', async () => {
+    mocks.getSession.mockResolvedValue(session('user-a', 'session-a'));
+    let finish!: (response: Response) => void;
+    fetchMock.mockImplementationOnce(() => new Promise((resolve) => { finish = resolve; }));
+    const first = getProtectedDriveFileUrl(file);
+    const second = getProtectedDriveFileUrl(file);
+    await vi.waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1));
+    expect(mocks.getSession).toHaveBeenCalledTimes(2);
+    finish(Response.json({ url: 'coalesced', expiresAt: Date.now() + 60_000 }));
+    expect(await Promise.all([first, second])).toEqual(['coalesced', 'coalesced']);
+  });
+
+  it('renews a 401 URL without cancelling another file in flight', async () => {
+    mocks.getSession.mockResolvedValue(session('user-a', 'session-a'));
+    await getProtectedDriveFileUrl(file);
+    let finish!: (response: Response) => void;
+    fetchMock.mockImplementationOnce(() => new Promise((resolve) => { finish = resolve; }));
+    const other = getProtectedDriveFileUrl({ ...file, drive_file_id: 'drive-file-other' });
+    await vi.waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(2));
+    const probe = vi.fn().mockResolvedValueOnce(new Response(null, { status: 401 }))
+      .mockResolvedValueOnce(new Response(null, { status: 200 }));
+    await getOnlineAuthorizedPrivateFileUrl(() => getProtectedDriveFileUrl(file), probe);
+    finish(Response.json({ url: 'other-file', expiresAt: Date.now() + 60_000 }));
+    await expect(other).resolves.toBe('other-file');
+    expect(fetchMock).toHaveBeenCalledTimes(3);
+    expect(probe).toHaveBeenCalledTimes(2);
+  });
+
   it('invalidates an older in-flight result when a same-user new session is observed', async () => {
     mocks.getSession.mockResolvedValueOnce(session('user-a', 'session-a'))
       .mockResolvedValueOnce(session('user-a', 'session-b'));

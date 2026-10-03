@@ -9,6 +9,7 @@ interface CachedDriveUrl {
 }
 
 const driveUrlCache = new Map<string, CachedDriveUrl>();
+const driveUrlLoads = new Map<string, { generation: number; promise: Promise<string> }>();
 let cacheGeneration = 0;
 let cacheIdentity: string | null = null;
 let sessionRequestSequence = 0;
@@ -23,11 +24,27 @@ async function resolveCachedUrl(
   const cached = driveUrlCache.get(cacheKey);
   if (cached && cached.expiresAt - Date.now() > 30_000) return cached.url;
 
-  const payload = await load();
-  // Clearing the tenant must also invalidate requests that were already in flight.
-  if (generation !== cacheGeneration) throw new Error('Koro oturumu değişti. Dosyayı yeniden açın.');
-  driveUrlCache.set(cacheKey, payload);
-  return payload.url;
+  const existing = driveUrlLoads.get(cacheKey);
+  if (existing?.generation === generation) return existing.promise;
+  const promise = load().then((payload) => {
+    // Tenant changes cancel all loads, including coalesced waiters. Ticket expiry
+    // alone must not cancel another file's legitimate in-flight request.
+    if (generation !== cacheGeneration) throw new Error('Koro oturumu değişti. Dosyayı yeniden açın.');
+    driveUrlCache.set(cacheKey, payload);
+    return payload.url;
+  });
+  driveUrlLoads.set(cacheKey, { generation, promise });
+  try {
+    return await promise;
+  } finally {
+    if (driveUrlLoads.get(cacheKey)?.promise === promise) driveUrlLoads.delete(cacheKey);
+  }
+}
+
+function invalidateProtectedFileUrl(url: string) {
+  for (const [key, cached] of driveUrlCache) {
+    if (cached.url === url) driveUrlCache.delete(key);
+  }
 }
 
 function getCacheKey(
@@ -72,6 +89,7 @@ function getChatMediaEndpoint() {
 export function clearProtectedDriveFileUrlCache() {
   cacheGeneration += 1;
   driveUrlCache.clear();
+  driveUrlLoads.clear();
   cacheIdentity = null;
 }
 
@@ -93,16 +111,16 @@ export async function getOnlineAuthorizedPrivateFileUrl(
         throw new ProtectedFileRequestError('Dosya erişim yetkisi sona erdi.', 403);
       }
       if (response.status === 401 && attempt === 0) {
-        clearProtectedDriveFileUrlCache();
+        invalidateProtectedFileUrl(url);
         continue;
       }
-      clearProtectedDriveFileUrlCache();
+      invalidateProtectedFileUrl(url);
       throw new ProtectedFileRequestError('Dosya bağlantısı kullanılamıyor.', response.status);
     } catch (error) {
       if (error instanceof ProtectedFileRequestError ||
         (error instanceof Error && error.name === 'AbortError')) throw error;
       if (attempt === 0) {
-        clearProtectedDriveFileUrlCache();
+        invalidateProtectedFileUrl(url);
         continue;
       }
       throw error;

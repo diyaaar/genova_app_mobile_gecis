@@ -23,10 +23,12 @@ const secret = 'synthetic-legacy-integration-secret';
 
 describe('actual client → Next adapter → Edge handler composition (synthetic Auth/SQL/provider)', () => {
   let current: LegacyFileRecord | null;
+  let rejectCachedTokenOnce: string | null;
   const provider = vi.fn();
   const posts = vi.fn();
   beforeEach(() => {
-    current = { ...initial }; auth.token = 'session-a'; clearProtectedDriveFileUrlCache();
+    current = { ...initial }; rejectCachedTokenOnce = null;
+    auth.token = 'session-a'; clearProtectedDriveFileUrlCache();
     vi.stubEnv('NEXT_PUBLIC_SUPABASE_URL', 'https://project.supabase.co');
     vi.stubEnv('SUPABASE_SERVICE_ROLE_KEY', secret);
     provider.mockReset().mockImplementation(async () => new Response('abcdef', { headers: { 'Content-Type': 'application/pdf' } }));
@@ -34,7 +36,10 @@ describe('actual client → Next adapter → Edge handler composition (synthetic
     const handler = createLegacyFileHandler({
       authenticate: async () => identity, resolve: async () => current,
       createTicket: (input) => createLegacyTicket(input, secret),
-      verifyTicket: (token) => verifyLegacyTicket(token, secret), fetchDrive: provider, fetchStorage: provider,
+      verifyTicket: (token) => {
+        if (token === rejectCachedTokenOnce) { rejectCachedTokenOnce = null; return Promise.resolve(null); }
+        return verifyLegacyTicket(token, secret);
+      }, fetchDrive: provider, fetchStorage: provider,
     });
     vi.stubGlobal('fetch', async (input: RequestInfo | URL, init?: RequestInit) => {
       const request = new Request(new URL(String(input), 'https://web.test'), { ...init, duplex: 'half' } as RequestInit);
@@ -71,11 +76,12 @@ describe('actual client → Next adapter → Edge handler composition (synthetic
   });
   it('renews an expired cached URL once using the real adapter/handler, then stops on denial', async () => {
     const first = await getProtectedDriveFileUrl(file);
-    const deniedToken = createDriveFileToken({ driveFileId: 'file_1', kind: 'repertoire', fileName: 'score.pdf', mimeType: 'application/pdf' }).token;
+    // Expire the URL actually held in the cache, not a substituted uncached URL.
+    rejectCachedTokenOnce = new URL(first!, 'https://web.test').searchParams.get('token');
     let attempts = 0;
     const url = await getOnlineAuthorizedPrivateFileUrl(async () => {
       attempts++;
-      return attempts === 1 ? `/api/drive-file/file_1?token=${deniedToken}` : getProtectedDriveFileUrl(file);
+      return getProtectedDriveFileUrl(file);
     });
     expect(attempts).toBe(2); expect(posts).toHaveBeenCalledTimes(2);
     expect(url).not.toBeNull(); expect(first).toContain('/api/drive-file/');

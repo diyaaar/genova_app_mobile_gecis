@@ -28,6 +28,8 @@ export function useProtectedDriveFileUrl(
   const [isStaleLocal, setIsStaleLocal] = useState(false);
   const [online, setOnline] = useState(() => typeof navigator === 'undefined' || navigator.onLine);
   const [bodyRetry, setBodyRetry] = useState(0);
+  const [loadEpoch, setLoadEpoch] = useState(0);
+  const loadEpochRef = useRef(0);
   const bodyRetryRef = useRef<{ key: string; used: boolean }>({ key: '', used: false });
   const driveFileId = file?.drive_file_id;
   const repositoryFileId = file?.id;
@@ -49,6 +51,8 @@ export function useProtectedDriveFileUrl(
 
   useEffect(() => {
     let cancelled = false;
+    const epoch = ++loadEpochRef.current;
+    setLoadEpoch(epoch);
 
     async function loadUrl() {
       if (!driveFileId) {
@@ -184,10 +188,14 @@ export function useProtectedDriveFileUrl(
 
     return () => {
       cancelled = true;
+      if (loadEpochRef.current === epoch) loadEpochRef.current += 1;
     };
   }, [driveFileId, fileName, mimeType, options.assignmentFileVersionId, options.assignmentReviewFileVersionId, options.repertoireCommentFileVersionId, options.repertoireFile, repositoryFileId, updatedAt, fileSizeBytes, bodyRetry, online]);
 
   const onBodyError = useCallback(() => {
+    // An old PDF/audio task can fail after reconnect or selection changes. Its
+    // callback must not erase the URL of a newer authorized resolution.
+    if (!url || loadEpoch !== loadEpochRef.current) return;
     if (!driveFileId || (typeof navigator !== 'undefined' && !navigator.onLine)) return;
     if (bodyRetryRef.current.key !== fileKey) bodyRetryRef.current = { key: fileKey, used: false };
     setUrl(null);
@@ -196,7 +204,7 @@ export function useProtectedDriveFileUrl(
       clearProtectedDriveFileUrlCache();
       setBodyRetry((value) => value + 1);
     }
-  }, [driveFileId, fileKey]);
+  }, [driveFileId, fileKey, url, loadEpoch]);
 
   // Reconnect renders before the next effect; never expose the old offline source
   // during that render while its fresh online authority decision is still pending.
