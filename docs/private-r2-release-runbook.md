@@ -7,7 +7,29 @@ inventory/copy evidence;077 is an unexecuted next-ten approval packet.
 Owner: release operator designated by the product owner. This is the single 053–065 release index;
 individual briefs remain the acceptance authority for each local implementation.
 
+## Current revocation release boundary — 3 October 2026
+
+[Delivery-guide review](reports/2026-10-03-delivery-guide-checkpoint-review.md):
+P1 GENOVA-BETA-20261003-P1 source frozen and P2 current agent-operated iOS accepted
+**locally only**. [Current checkpoint](teslim-rehberi/checkpoint.md) enters
+[P3](teslim-rehberi/03-release-package.md), exact served/SQL/Edge and minimum repair
+convergence inventory before fresh scoped recovery/rehearsal/independent review.
+Current local Next issuance/GET/HEAD routes use `legacy-file-adapter`, not the
+historical signature-only reader below. This does **not** establish the served
+revision or hosted revocation. Actual Auth/REST/private-file cache headers/native
+persistence remain required; P2 synthetic no-store is not provider proof.
+
+No bulk-main push, migration replay, activation or sibling-site work. The old
+five-reader approval packet is historical and cannot deploy the complete new
+closure. Refresh exact target, source, recovery, scope and authority before writes.
+The42 copies/49 remaining MP3 figures below remain dated, not a fresh inventory.
+
 ## Current revocation release boundary — 2 October 2026
+
+**Historical R1 checkpoint, superseded as an execution pointer by3October above.**
+Its failed source/recovery observations and old packet are retained, not a statement
+that current local code still has that reader or an instruction to repeat R1 or
+inspect the detached sibling site. That website is excluded from the current release.
 
 [R1 fresh recovery](reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md) now proves
 consistent23-schema/101-count restore, owner/ACL/role fidelity and exact078→090 SQL negatives.

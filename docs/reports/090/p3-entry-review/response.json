@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-03T18:19:16.133Z",
+  "requestSha256": "198e2328536e01a7031cb20f7996589349b3e91ef0e6e4465ad14ce196a7e74c",
+  "model": "jev-1.13.0",
+  "answers": {
+    "next": {
+      "type": "choice",
+      "choice": "p3_inventory",
+      "confidence": 1,
+      "probabilities": {
+        "beta_now": 0,
+        "new_feature": 0,
+        "p3_inventory": 1,
+        "unknown": 0
+      }
+    },
+    "readiness": {
+      "type": "choice",
+      "choice": "local_only",
+      "confidence": 0.94,
+      "probabilities": {
+        "local_only": 0.96,
+        "unknown": 0,
+        "invalid_p2": 0.04,
+        "release_ready": 0
+      }
+    },
+    "runbook": {
+      "type": "choice",
+      "choice": "refresh_pointer",
+      "confidence": 1,
+      "probabilities": {
+        "refresh_pointer": 1,
+        "deploy": 0,
+        "unknown": 0,
+        "erase_failure": 0
+      }
+    },
+    "bad_control": {
+      "type": "choice",
+      "choice": "reject",
+      "confidence": 1,
+      "probabilities": {
+        "reject": 1,
+        "accept": 0,
+        "unknown": 0
+      }
+    },
+    "good_control": {
+      "type": "choice",
+      "choice": "honest",
+      "confidence": 1,
+      "probabilities": {
+        "honest": 1,
+        "unknown": 0,
+        "conflated": 0
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 1943,
+    "output_tokens": 221
+  },
+  "estimatedUsd": 0.000081606,
+  "pricing": "https://docs.typesafe.ai/models; estimate not invoice",
+  "retries": 0
+}

@@ -25,7 +25,11 @@ focused26, root1178/build fresh. Failed UI/variant/cache attempts preserved; fix
 no-store repair, not hosted-provider proof. Owned device/process/build/runtime/PNG/log/
 root outputs cleaned; free21,452,752KiB. Jev1triage/5questions/1108input/215output/
 estimated$0.000046536; self-review not independent review; no owner QA.
-Next: exact served/SQL/Edge/full-route and minimal convergence inventory → fresh
+Guide [review](../docs/reports/2026-10-03-delivery-guide-checkpoint-review.md) at4e7ab14:
+610pins/five sidecar hashes/157native/5server reverified; stale runbook pointer fixed,
+no product/live change or test rerun. Jev1943input/221output/$0.000081606 estimate.
+Next READY/NOT RUN [P3 inventory card](../docs/briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory):
+exact served/SQL/Edge/full-route and minimal convergence/test inventory → fresh
 scoped protected backup/isolated restore/old-new-client negative rehearsal → actually
 independent package review + exact operation authority. Actual Auth/REST/private-file
 cache headers/native persistence remain P3 check. No blind promotion or live activation.

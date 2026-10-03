@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-03T18:19:15.740Z",
+  "requestSha256": "198e2328536e01a7031cb20f7996589349b3e91ef0e6e4465ad14ce196a7e74c",
+  "packet": {
+    "model": "jev-1.13.0",
+    "state": {
+      "direction": "Owner asks to check completed progress against the existing linked delivery guide, then create the next logical step if sound. This turn is review/planning, not implementation or deployment.",
+      "guide": "P1 exact source candidate -> P2 agent iOS local acceptance -> P3 compatible reviewed recoverable release packet -> P4 private storage activation -> P5 installed signed usable Android beta -> P6 preserved full commercial product -> P7 both stores. No new roadmap. Keep RN/Expo, Supabase, assisted first onboarding, permanent WebViews, five free seats, small existing-choir cohort then independent choir. No owner manual QA; no sibling website changes or old-note deletion.",
+      "verified": "Current product matches all610 frozen SHA256 pins. P1 manifest rebuild byte-equivalent. P2 recorded current local simulator acceptance: actual consent cancel zero GET/HEAD/provider, PDF pages1/2 and exact65905B/hash, native share-dismiss/return/close/file removal, actual active choir A->B denies next GET/HEAD, authority expiry renewal and valid denials, disk scans zero credential matches. Five evidence file hashes replayed;157 native/5 server pins match. Product unchanged; earlier mobile465/focused26/root1178/build records retained, not rerun now. Owned runtimes removed. Independent review not performed.",
+      "gaps": "Served web revision, applied SQL, deployed Edge/config, full actual Next/Auth/RLS five-family old/new-client compatibility, fresh restore/object recovery and independent package review remain open. P2 no-store repaired a synthetic fixture only; actual provider cache headers/persistence unverified. Profile fixture is not complete beta. No beta/store claim.",
+      "discrepancy": "Runbook heading Current revocation release boundary -- 2 October says current local Next legacy route is signature-only and directs approval of R1/both-site rehearsal. Current Next routes delegate to repaired legacy adapter; local candidate reports exist. R1 backup/rehearsal already dated complete only for its declared layer. Detached sibling website excluded by owner. Preserve historical failure, update current runbook pointer; do not claim deployed repair.",
+      "proposed": "P3 first bounded work card in existing090: reconcile frozen candidate plus minimal browser/profile repair with exact served web/applied SQL/deployed Edge/config observations and required old/new-client/five-family/cache-header test mapping. Unknown targets stay NOT RUN and block promotion. At most3 actions: exact gap inventory; minimum convergence/test map; scoped recovery/review/operation packet. No bulk push, live writes, installs, rebuilds or fresh data export during this planning check.",
+      "controls": {
+        "bad": "P2 simulator PASS means production revocation is fixed and P4 activation may start without current target/restore/review.",
+        "good": "P1/P2 local acceptance supports entering P3 inventory only; old and new clients plus actual target/recovery/review still require evidence."
+      },
+      "provenance": [
+        {
+          "file": "docs/teslim-rehberi/README.md",
+          "sha256": "ab22a860ab15465d27b9aace3259f2f389291b59216153628703c151056e44d5"
+        },
+        {
+          "file": "docs/teslim-rehberi/checkpoint.md",
+          "sha256": "0458ba7126e3aa8fe33ae2b40b66cd6750e7a8c7b380268a0e8f477b4b9d67ea"
+        },
+        {
+          "file": "docs/teslim-rehberi/03-release-package.md",
+          "sha256": "7f10556f02b7573327b3d28a570245b6fe394ceb7c3ccd7f2f81bfbb681b8073"
+        },
+        {
+          "file": "docs/reports/2026-10-03-ios-p2-private-file-acceptance.md",
+          "sha256": "8c77abd0718d2f979fa91f71997d090d8fbb4331d5c22459ea53eec460337321"
+        },
+        {
+          "file": "docs/reports/090/2026-10-03-p1-beta-candidate.json",
+          "sha256": "844e6001f691b2b9b02435074c347b0505d113d3e44492e175a4d99cd716f61f"
+        },
+        {
+          "file": "docs/private-r2-release-runbook.md",
+          "sha256": "afba5b5b233a8cd05cd9eea5ea6cd544fec41351b717764bea9a2bf93bed3533"
+        }
+      ]
+    },
+    "questions": {
+      "next": {
+        "type": "choice",
+        "instructions": "Which proposed next step follows this guide and known evidence?",
+        "criteria": {
+          "p3_inventory": "Bounded P3 exact version and compatibility-gap inventory before recovery/review/activation",
+          "beta_now": "Distribute beta now",
+          "new_feature": "Add unrelated feature",
+          "unknown": "Insufficient evidence"
+        }
+      },
+      "readiness": {
+        "type": "choice",
+        "instructions": "What readiness statement is supported?",
+        "criteria": {
+          "local_only": "P1 source and P2 local acceptance sound, release/product gates open",
+          "release_ready": "Ready for production",
+          "invalid_p2": "Missing hosted tests invalidates bounded local P2",
+          "unknown": "Cannot tell"
+        }
+      },
+      "runbook": {
+        "type": "choice",
+        "instructions": "How should the runbook discrepancy be handled?",
+        "criteria": {
+          "refresh_pointer": "Update current pointer while keeping dated signature-only failure and old packet historical; do not claim hosted repair",
+          "erase_failure": "Delete historical failed evidence",
+          "deploy": "Deploy Edge immediately",
+          "unknown": "Cannot tell"
+        }
+      },
+      "bad_control": {
+        "type": "choice",
+        "instructions": "Evaluate state.controls.bad only: is its evidence boundary acceptable?",
+        "criteria": {
+          "reject": "Reject: simulator cannot establish provider/recovery/review",
+          "accept": "Accept",
+          "unknown": "Unknown"
+        }
+      },
+      "good_control": {
+        "type": "choice",
+        "instructions": "Evaluate state.controls.good only: is its boundary honest?",
+        "criteria": {
+          "honest": "Local evidence separate from release gates",
+          "conflated": "Not separate",
+          "unknown": "Unknown"
+        }
+      }
+    }
+  }
+}

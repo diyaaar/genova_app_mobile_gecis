@@ -15,6 +15,53 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 3 October — P3 first work card: exact version and compatibility inventory
+
+Status **READY / NOT RUN**. Entry `main/4e7ab14`, sole primary writer, unrelated CLI
+marker excluded. Owner asked for a delivery-guide check and next step; this turn
+creates the card, does not execute code/hosted work. [Review and evidence](../reports/2026-10-03-delivery-guide-checkpoint-review.md).
+Read actual AGENTS/handoff/active/current090, guide/work cycle/resource controls,
+README/checkpoint/P3, P1 manifest, P2 report/sidecars, relevant MIGRATION and R1/
+runbook. TypeSafe skill/live index/API/models read; one bounded advisory call.
+610 product pins/157native/5server/five P2 sidecar hashes reverified; no product
+change. Preserve P1/P2 acceptance boundaries and dated failed attempts.
+
+One outcome: exact version/gap/test matrix for GENOVA-BETA-20261003-P1, establishing
+minimum compatible promotion stages and prerequisites for P3 recovery/review.
+No second roadmap/runner. Inventory all exposed native chat/repertoire and four
+permanent WebViews, not just the426-file profile fixture.
+
+At most three next actions:
+1. Reconcile frozen/current/minimum browser/profile source with correctly scoped
+   read-only served web, applied SQL/checksums and deployed Edge/config observations.
+2. Map minimum convergent repair and actual Next/Auth/RLS five-family old/new-client,
+   mixed-version, staleURL/session/role/member/tenant and cache-header/persistence
+   integration checks to exact sources/commands/prerequisites.
+3. Produce the recovery/review/operation handoff: protected backup/isolated restore
+   and object/config exclusions, ordered compatible release/forward repair/stop,
+   independent-review scope and per-operation missing authority.
+
+Allowed during subsequent scoped inventory execution: read-only local source/tests/
+Git and approved correct-project metadata tools; redacted reports/current090/
+checkpoint/handoff/active/runbook. No private row/log export to Jev. No product/
+dependency/schema change, bulk push, hosted write/deploy, backup data export, provider
+copy/activation, sibling site, credentials or distribution authorized by this card.
+Use existing approved connector; inaccessible current target stays NOT RUN, not
+another project's connector or guessed local env. Any later restore/build needs
+fresh10GiB-floor/peak/owned-cleanup preflight; review allocated only small records.
+
+| P3 inventory criterion | Required? | Status | Required evidence / exit boundary |
+|---|---|---|---|
+| Exact current served/applied/deployed identities reconciled to candidate | yes | NOT RUN | Correct target/account/time/source provenance; unknown current state prevents promotion |
+| Minimum convergence and all exposed-route dependency/test mapping | yes | NOT RUN | Native + four WebViews + five file families, old/new/mixed clients and actual cache-header/persistence tests; no fixture-as-full-beta claim |
+| Recovery/review/operation prerequisites and missing scope explicit | yes | NOT RUN | Per-layer exclusions, safe release/forward repair, named independent-review requirement and exact external-operation scope; no execution implied |
+| Documentation/source hash/links/diff and scoped commit | yes | NOT RUN for inventory execution | Planning review passes separately; required inventory rows cannot close from this card alone |
+
+Exit requires every inventory row PASS; then next P3 recovery/compatibility rehearsal
+card in this same brief. Connector/version absence yields an explicit partial
+inventory. Whole090/R1 and all remaining P3–P7 gates stay open. Self-review/Jev
+cannot satisfy independent review. No owner manual QA.
+
 ### 3 October — P2 agent-operated current iOS private-file acceptance
 
 Entry `main/8673592`, single primary writer; unrelated CLI marker preserved.

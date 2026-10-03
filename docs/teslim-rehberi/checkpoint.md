@@ -17,6 +17,10 @@ Historical records keep their original date/revision. [Guide](README.md).
 - P2-owned simulator/processes/generated native/runtime/root outputs cleaned; free21,452,752KiB.
   No active owned runtime. Verify fresh resources before P3; preserve existing caches/deps/user data.
 - Whole 090/R1, active storage cutover, installed beta and two-store acceptance remain OPEN.
+- [3Oct guide check](../reports/2026-10-03-delivery-guide-checkpoint-review.md): entry4e7ab14,
+  610 pins/five iOS sidecar hashes/157native/5server reverified; runbook current pointer
+  corrected without product/live change. First [P3 inventory card](../briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory)
+  READY/NOT RUN; no P3 acceptance inferred. Fresh free21,415,384KiB; owned runtime absent.
 
 | Plan | Execution status | Input → required output |
 |---|---|---|
@@ -53,12 +57,15 @@ Evidence: [Jev/source audit](../reports/2026-10-03-jev-conversation-direction-au
 
 ## Next three actions
 
-1. Read P3/R1/runbook and verify exact currently served/DB/Edge dependencies plus
-   minimum browser/profile repair convergence, including actual cache headers.
-2. Prepare scoped fresh protected backup/isolated restore and old/new-client/five-file-
-   family/tenant/role/session negative rehearsal; retain recovery exclusions honestly.
-3. Obtain actually independent package review and per-operation target/version/data/
-   cost/recovery authority. No bulk-main promotion or live activation implied by P2.
+1. Execute the single P3 inventory card: exact candidate/current served web/applied
+   SQL/deployed Edge/config identities and gaps; unknown observations stay NOT RUN.
+2. Map minimum convergence/full exposed routes and actual Next/Auth/RLS five-family/
+   old-new-mixed clients/cache-header/native-persistence tests to sources/prerequisites.
+3. Hand exact gaps/authority to the next P3 protected fresh recovery/rehearsal and
+   independent review stages. No live activation, bulk push or data export in inventory.
+
+Latest planning review Jev1call/5questions/1943input/221output, estimated$0.000081606;
+sources/tests authoritative. No raw-chat rescan/product test rerun or owner QA.
 
 P2 source/test-support03b59b5, separate `090: accept current iOS P2 and hand off release compatibility`
 record commit. All610 product pins unchanged; fresh mobile465, focused26, root1178/build.

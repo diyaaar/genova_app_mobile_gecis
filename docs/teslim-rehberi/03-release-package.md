@@ -9,6 +9,11 @@ compatibility and demonstrated recovery, before any candidate promotion. Entry:
 P1 manifest + accepted latest iOS/Android boundaries. Use 090/R1 and the existing
 [R2 release runbook](../private-r2-release-runbook.md), not a second deployment system.
 
+Current first bounded outcome: [090 P3 version/compatibility inventory work card](../briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory),
+created by the [delivery-guide checkpoint review](../reports/2026-10-03-delivery-guide-checkpoint-review.md).
+It is READY, not executed; later recovery/rehearsal and independent review remain
+required. Do not read an old runbook packet as the current promotion scope.
+
 Read [R1's failed compatibility boundary and backup limits](../reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md),
 the candidate browser/profile reports, [WF-013](../briefs/WF-013-multi-tenant-remediation-plan.md)
 and the current runbook. DB/Edge inspection uses the correct project's approved
