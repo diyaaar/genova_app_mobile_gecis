@@ -130,6 +130,13 @@
   `.expo/`, `canvaskit.wasm` gibi üretilmiş dosyalar `.gitignore`'da.
 
 ## Kapılar — geçmeden görev bitmiş sayılmaz
+- **Owner direction, 3 October 2026:** Run mobile tests yourself; do not ask the owner
+  to perform manual Android or iOS test steps. Explicit approval covers ADB screen
+  capture/touch/swipe and equivalent simulator/device test automation for scoped
+  test environments when Computer Use cannot reach them. Prefer supported tools,
+  fresh screen evidence and existing installed toolchains. Record an automation
+  blocker instead of converting it into owner QA. This is not blanket authority
+  for real-account/credential, hosted-data, spending, distribution or hardware changes.
 - **Salt belge:** yerel bağlantı, karar/durum tutarlılığı ve `git diff --check`.
 - **Web / ortak kod / bağımlılık / build ayarı:** `pnpm check`
 - **Mobil (RN):** Ürün çalışma alanı kurulduktan sonra orada `npx tsc --noEmit && npm test`;

@@ -17,6 +17,21 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ### 3 October — approved account-free inline PDF preview
 
+Automation amendment at13:44UTC, HEAD8b7b022: owner explicitly approved ADB
+screen capture/touch/swipe and Android/iOS test automation and asked not to do
+manual QA again. Existing Computer Use rejects qemu and inventory has no Android.
+Use existing adb on owned emulator5554; no dependency/framework installation,
+real account/hardware/hosted change or silent iOS acceptance. Allowed additionally
+AGENTS/handoff/active/report and one small explicit global-memory preference note
+(owner requested remembering); temporary synthetic PNG/XML only under ignored
+spike/090-runtime, removed after inspection. Freshfree21,096,572KiB, additional
+peak<=10MiB for capture, no new runtime/build. Same active inlinev4, retain until
+the immediate automated sequence completes, then owned cleanup; no user wait.
+Three actions: fresh screenshot + close/cleanup; actual B switch/refusal + visual
+return/cache inspection within safe fixture; truthful evidence/pins/redaction/
+normal guard-off/owned cleanup. New UI automation is explicit, not operator evidence
+manufactured from HTTP. iOS remains named next grouped sensitive milestone.
+
 Owner explicitly approved replacing PDF `view` ACTION_SEND with account-free in-app
 preview; entry172c143/main, sole writer, unrelated CLI marker preserved. Same original
 090 goal, no reduced inspection substitute. Read handoff/active/current090/controls,
@@ -50,12 +65,15 @@ removed after last check/handoff unless immediate owner-ready short expiry recor
 |---|---|---|---|---|
 | PDF view avoids share availability/chooser; download/non-PDF preserved | yes | PASS | 402685b focused capability tests | No runtime inference |
 | Local page/zoom/error UI; bounded native images; close/abort/race cleanup | yes | PASS | 402685b renderer-port/UI tests; mobile57suites464/types PASS | No native pixels inference |
-| Consent cancel0 → actual Android65905B/hash + page1/40 → close/remove → B403 | yes | NOT RUN | new immutable synthetic attempt | Not hosted RLS/Next middleware |
-| Fresh full mobile/root gates, normal flag-off, pins/redaction/owned cleanup | yes | NOT RUN | post-change checks | Self-review, not independent review |
+| Consent cancel0 → actual Android65905B/hash + page1/40 → close/remove → B403 | yes | PASS | inlinev4 PASS_HTTP_NATIVE + owner initial steps/agent ADB loadedpage7/zoom125/close/B | Synthetic; B after explicit native back, not active-surface B teardown proof |
+| Fresh full mobile/root gates, normal flag-off, pins/redaction/owned cleanup | yes | PASS | 402685b mobile464/root1178/Node16,13:50UTC guard-off/157pins/redaction/cleanup/free22840820KiB | Self-review, not independent review |
 | Sensitive iOS integration/runtime | later required milestone | NOT RUN | named next platform gate | Android/module/export not iOS proof |
 
 [Current source/gate checkpoint](../reports/2026-10-03-android-inline-pdf-preview.md):
-402685b, fresh mobile464/root1178/Node16 PASS; actual Android flow remains required.
+402685b, fresh mobile464/root1178/Node16 PASS; inlinev4 bounded Android flow PASS.
+Owner3October directs agent-owned Android/iOS tests, no manual QA requests. Explicit
+optional share/runtime browser-persistence/active-surface B teardown/grouped iOS
+remain NOT RUN required broader integration gates; whole090/R1/beta stays OPEN.
 
 ### 3 October — guarded candidate Android consent/share flow (RESUMED)
 

@@ -7,47 +7,28 @@ Verify actual source/state, sole writer, English records/Turkish user updates.
 ## Current result and next measurable checkpoint
 
 Current source402685b [inline PDF](../docs/reports/2026-10-03-android-inline-pdf-preview.md):
-owner-approved account-free native PDF view, explicit optional sharing, existing
-renderer/page contract, serialized close/file cleanup, parent pre-mount abort guard.
-Fresh mobile464/types/root1178/fullcheck/Node16/derived candidate build PASS. Owner
-ready for actual Android cancel0/page1→2/close/remove/B403; still NOT RUN until observed.
-New immutable inlinev4, keep historicalv3. Whole090/R1/betaOPEN, no hosted/AI spend.
-Current generated Android/candidate outputs owned; one heavy process, deps/AVD reused.
-APK76sec/API36/challenged native detail running13:36:30UTC PASS, pre-touchGET0/
-HEAD0/provider0/unknown0/failures0. Actual cancel first requested, not observed yet.
-Ready-owner runtime retained until13:55UTC/16:55Istanbul; owned server87432,
-emulator87465/5554, three reverses. See report for hashes/exact cleanup. No UI pass
-or operator event inferred from counts; immutable inlinev4 written on acceptance/stop.
-13:39UTC owner actual cancel/return + accepted native request/GET0/HEAD0/provider0
-PASS, then cancel-observed200 recorded. Next approve/page1→2; no share/print/B yet.
+account-free native PDF, explicit optional share, existing renderer/page contract,
+serialized close/file cleanup and parent pre-mount abort. Fresh mobile464/types/
+root1178/fullcheck/Node16/candidate build/Android76sec PASS. [Inlinev4 HTTP](../docs/reports/090/2026-10-03-android-candidate-inline-preview-http-v4.json)
+PASS_HTTP_NATIVE: initial owner cancel0/pages1→2; agent ADB loadedpage7/zoom125/
+close/removal/profile swipe/nativeback/B403 PASS.157native/426candidate pins,
+65905B/hash,provider1/0/0/unknown0/outside0/failures0. Synthetic emulator/dispatcher,
+NOT hosted RLS/Next routing/physical-device proof; self-review. Optionalshare,
+runtime browser-storage absence, active-surface B teardown and sensitive iOS NOT RUN;
+B followed native back here. Whole090/R1/betaOPEN/liveNO-GO/goal incomplete.
+NEXT: bounded automated persistence/active-surface/platform integration acceptance;
+permanent browser-session-only API audit/backport before promotion. Historical
+[chooser attempts](../docs/reports/2026-10-03-android-candidate-consent-share.md)
+v1FAIL/v2NOT RUN/v3NOT RUN preserved, no repeated account setup/chooser.
 
-Current32aba65, owner-ready resumed12:27UTC: [consent/share checkpoint](../docs/reports/2026-10-03-android-candidate-consent-share.md).
-Actual7cd8d46 rendered homework anchor metadata absent; minimal passive metadata patch.
-Owner observed modal/cancel; preservedv1FAIL HEAD provider1 despite fileGET0. Corrected
-actual hook defers embedded HEAD to native post-consent capability; browser/server policy
-unchanged. Four deltas/422raw parent files;426pins verified. Node15/candidate406/allgates/
-root1178/fullcheck PASS historically. Current actual file removal wrapper/event added;
-fresh32aba65 Node15/mobile454/types/root1178/fullcheck/candidatebuild/Android88sec PASS.
-Actual API36 native Auth/SecureStore/access-only challenge bridge reached running detail;
-immutablev2 NOT RUN, pre-touch GET0/HEAD0/provider0/failures0. UI still NOT RUN. No main
-production/SQL/Edge/dependency/hosted change. Self-review; whole090/R1/betaOPEN/liveNO-GO.
-
-V3 owner modal/cancel/return and actual accepted file request + cancel-observed200 PASS,
-GET0/HEAD0/provider0/failures0. Two actual65905B/hash downloads PASS; screenshot Google
-device-account setup, owner restarted app/chose Print/reports40 blank pages. Local
-fixture faint40-page coordinate grid, not blank; Android Print render NOT RUN.
-Actual ACTION_SEND is not direct PDF preview. Share-return/removal/B/visual-cache
-unaccepted; [v3 HTTP](../docs/reports/090/2026-10-03-android-candidate-interactive-http-v3.json)
-NOT RUN/provider2/unknown0/outside0/failures0. No account/send; preserve single-read
-protocol. Next owner-aligned bounded view-UX design/brief amendment, existing native
-PDF architecture, fresh acceptance; no repeat chooser unchanged. CUA lacks Android.
-Goal incomplete, historic tool blocked flag. At13:06UTC stopped/removed all owned
-app/reverses/servers/emulator/android/candidate/rootoutputs/PNG; actual normal guard-off
-manifest PASS/free22973504KiB. Preserve deps/AVD/evidence; v1/v2 intact. Factory
-8aea973 not unpatched7cd8d46 as full mobile proof. Candidate retains browser-session-only
-mutations elsewhere; actual permanent-route API audit/backport precedes promotion.
-Independent review/fresh hosted preflight/forward repair/R1 required. Whole090/R1/beta
-OPEN/live NO-GO. Local cache goal PASS does not complete the product.
+Owner3October directs agent-owned Android/iOS tests; no manual owner QA. Explicit
+ADB capture/input and equivalent scoped test tools approval recorded in AGENTS
+and authorized small memory note; unrelated authority remains separate. No new
+framework/dependency needed. At13:50UTC owned app/reverses/servers/emulator/android/
+candidate/rootoutputs/7PNG removed; normal guard-off/pins/redaction PASS,
+free22840820KiB. Preserve deps/AVD/iOS Simulator/user data; no owned runtime active.
+Unrelated CLI marker kept, no hosted/AI spend. Independent review/hosted preflight/
+forward repair/R1 still required; no refresh sharing/arbitrary issuer.
 
 ## Preserved local evidence and identities
 

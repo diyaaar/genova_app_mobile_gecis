@@ -28,8 +28,8 @@ unmount and tenant invalidation share idempotent cleanup. No AI authorization.
 | Harness event ordering/negative cases | yes | PASS | focused Node16/16 | No owner actions fabricated |
 | Exact four-delta pinned web candidate | yes | PASS |426pins materialized,422raw parent files; current production candidate build exit0 | Synthetic Auth/REST/dispatcher, not hosted RLS/Next file middleware |
 | Android release build / challenged native profile boot | yes | PASS | Gradle76sec496tasks; API36 boot + one-use native Auth/access-only challenged chorister-detail bridge running at13:36:30UTC | Debug-signed local release, no actual PDF touch yet |
-| Actual Android cancel0 → local page1/40 and2/40 → renderer/file cleanup → B403 | yes | NOT RUN | new immutable v4 attempt to follow | Owner-assisted touch needed; source/mocks do not prove it |
-| Normal guard-off/resource cleanup | yes | NOT RUN | after runtime attempt | Current generated candidate/Android build are owned temporary outputs |
+| Actual Android cancel0 → local page1/40 and2/40 → renderer/file cleanup → B403 | yes | PASS | owner initial cancel/pages + agent ADB close/B, immutable v4 PASS_HTTP_NATIVE | Synthetic emulator; B follows explicit native back, not proof of active-surface B teardown |
+| Normal guard-off/resource cleanup | yes | PASS |13:50UTC normal prebuild manifest, owned app/reverses/servers/emulator/output removed | Existing deps/AVD/user data retained |
 | Sensitive iOS native integration | later required milestone | NOT RUN | next grouped integration gate | Android or export evidence cannot substitute |
 
 Historical [v3 chooser attempt](2026-10-03-android-candidate-consent-share.md) and
@@ -88,3 +88,67 @@ page3→6 logs observed, not required extra fixture events. GET1/HEAD0/provider1
 unknown0/failures0; no external share-return event. Local preview/page navigation
 PASS within synthetic emulator scope, not real-device/hosted or independent visual
 review. Next close/return, verify native close and per-file removal before B.
+
+## Agent-owned Android automation,13:44–13:50UTC /16:44–16:50Istanbul
+
+Owner explicitly approved ADB capture/input and Android/iOS test automation and
+asked not to perform manual QA again. Preference recorded in AGENTS and a small
+authorized global-memory note; it does not grant unrelated real-account/hosted/
+credential/hardware/publication authority. Complete TypeSafe skill/live index read;
+deterministic native/HTTP checks, no inference. Existing installed adb only, no
+new test framework/dependency/runtime/build. Freshfree21,096,572KiB, capture peak
+bounded10MiB; no floor risk. Computer Use direct qemu binding invalid; explicit
+owner approval permits the ADB alternative rather than silently bypassing it.
+
+Fresh actual1080×2400 screenshot showed SAYFA6/6of40, local grid and native toolbar.
+ADB next6→7, wait for actual Image.onLoad, inspect fresh screenshot SAYFA7/7of40
+PASS. Zoom100→125% visibly enlarged the page PASS. Initial immediate capture before
+image load showed the transition, not a rendering failure; loaded pixels inspected.
+ADB close returned to the same scrolled chorister homework card. Actual renderer
+closed7/40, Expo File.existsfalse after removal and ordered fixture events PASS.
+ADB swipe visibly moved profile from homework to calendar/summary; native Geri
+cleared and closed the WebView. ADB KoroB then actual AuthStore selection and valid
+oldA GET403/HEAD403 PASS; provider switched0, cache-directory absent assertion PASS.
+No Drive account, Print, external chooser, recipient or send action was used.
+
+[Immutable inlinev4 HTTP/native report](090/2026-10-03-android-candidate-inline-preview-http-v4.json)
+PASS_HTTP_NATIVE: source402685b,157native pins freshly rehashed,426candidate pins,
+65905bytes/SHA256 `39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3`,
+provider1/0/0; unknown/outside/failures0. Synthetic Auth/REST/current authority plus
+actual adapter/HMAC dispatcher, not hosted RLS/Next file routing/middleware.
+Report's legacy `actualConsent`/`actualShare` NOT RUN fields are not an aggregate
+UI verdict: consent/cancel/page evidence is above; explicit optional share was NOT
+RUN and remains unaccepted. Earlier failures/JSON remain immutable.
+
+Actual PDF visuals/page/zoom/close/profile scroll/back PASS, self-review. Persistent
+WebView browser storage absence was NOT inspected in the release app sandbox;
+incognito/cache-disabled source alone is not runtime proof. Because native back
+closed A before B, active-surface B-triggered teardown is NOT RUN in this attempt.
+These prior broader gates and sensitive iOS remain OPEN, not waived by automation.
+No whole090/R1/beta/goal completion claim. Next bounded gate is automated current
+platform integration/persistence and grouped iOS acceptance, no owner QA request.
+
+### Small screenshot evidence and cleanup
+
+Synthetic screenshots visually inspected, hash recorded, then removed; no binary
+history copies retained. Full SHA256 values for last dependent checks:
+
+| View | SHA256 |
+|---|---|
+| page6 |027a5e3ccb3677a599551c9b2670a8fa690e4e1ad3881182c05bf8254cbd5b60|
+| loadedpage7 |ad35fbb7b7678a1e185485236a33eadad8b1c7ec157ae92c2e8802471c8e21a2|
+| zoom125 |7d05c93fc54a45a073c64ceebb5948a59ff594eae5af978e0b4cb13143b9c425|
+| PDFclose/profile |faacb3d024a8113848d6e155d61be7496fb16a916bf85300390fdb0686efb0b2|
+| profile swipe |ee76dedf8e5e98d5450ba8daee2b7d29d4bf9480cfe1907e86049d87f543d9de|
+| nativeback/closed |91d77bde8e4b515ab9d4bfe66b9c9bf667300324b173b60a06ae2eb5913dcd74|
+| B/refusal/closed |4476d9ccd5ace1e8f0361cb070e3e5dbd76b7daf7537f4266629a2e876d2f4cf|
+
+At13:50UTC stopped/uninstalled owned app (initially absent), removed3reverses,
+stopped server87432/ownedNext/emulator87465/5554. Actual acceptance-off prebuild
+manifest PASS (no networkSecurityConfig/loopback XML); no package changes. Removed
+owned generated apps/mobile/android, exact candidate, root.next/coverage and7PNG.
+Before normal-prebuild cleanup: android783,928KiB/candidate476,252/root.next477,404/
+coverage352; .expo absent. Ports/processes/adb verified absent. Free22,840,820KiB
+after cleanup. Preserved installed deps/SDK/JDK/AVD/iOS Simulator/user data/unrelated
+CLI marker/sources/lockfiles/immutable small JSON. Reproducible outputs only removed.
+Fresh source pins/redaction scan PASS; document-only changes do not rerun builds.
