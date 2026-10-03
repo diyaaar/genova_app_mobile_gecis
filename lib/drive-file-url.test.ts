@@ -5,7 +5,10 @@ const mocks = vi.hoisted(() => ({
 }));
 
 vi.mock('@/lib/supabase', () => ({
-  supabase: {
+  getEmbeddedLeaseSnapshot: () => ({ mode: 'browser', phase: 'browser' }),
+  notifyEmbeddedUnauthorized: vi.fn(),
+  requireEmbeddedAccess: vi.fn(),
+  browserSupabase: {
     auth: {
       getSession: mocks.getSession,
     },

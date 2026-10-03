@@ -70,7 +70,7 @@ function parseMembershipOption(value: unknown): ChoirMembershipOption | null {
   };
 }
 
-/** Lists only memberships returned by the authenticated, narrow database RPC. */
+/** Validates every RPC row, then exposes only active memberships as usable choices. */
 export async function loadMyChoirs(client: ChoirContextClient): Promise<ChoirMembershipOption[]> {
   const { data, error } = await client.rpc('list_my_choirs');
   if (error) throw new Error(error.message);
@@ -80,7 +80,7 @@ export async function loadMyChoirs(client: ChoirContextClient): Promise<ChoirMem
   if (memberships.some((membership) => membership === null)) {
     throw new Error('Koro üyelik listesi beklenen sözleşmeyle eşleşmiyor.');
   }
-  return memberships as ChoirMembershipOption[];
+  return (memberships as ChoirMembershipOption[]).filter((membership) => membership.member_is_active);
 }
 
 /**
@@ -95,11 +95,11 @@ export async function activateChoir(client: ChoirContextClient, choirId: string)
 }
 
 export function findCurrentChoir(memberships: ChoirMembershipOption[]) {
-  const current = memberships.filter((membership) => membership.is_current);
+  const current = memberships.filter((membership) => membership.is_current && membership.member_is_active);
   return current.length === 1 ? current[0] : null;
 }
 
 export function findPreferredMembership(memberships: ChoirMembershipOption[], preferredChoirId: string | null) {
   if (!preferredChoirId) return null;
-  return memberships.find((membership) => membership.choir_id === preferredChoirId) ?? null;
+  return memberships.find((membership) => membership.choir_id === preferredChoirId && membership.member_is_active) ?? null;
 }

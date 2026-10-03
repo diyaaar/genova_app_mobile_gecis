@@ -1,14 +1,6 @@
-import {supabase, type RepertoireFile} from '@/lib/supabase';
-import {ProtectedFileRequestError} from '@/lib/repertuvar/protected-file-client';
-async function requireCurrentWebAccess() {
-  const {data,error}=await supabase.auth.getSession();
-  if(error || !data.session?.access_token || !data.session.user?.id) throw new Error('Oturum bulunamadı.');
-  return {accessToken:data.session.access_token,userId:data.session.user.id};
-}
-async function authenticatedWebFetch(input:RequestInfo | URL,init:RequestInit,access:{accessToken:string;userId:string}) {
-  const headers=new Headers(init.headers);headers.set('Authorization','Bearer '+access.accessToken);
-  return fetch(input,{...init,headers});
-}
+import type { RepertoireFile } from '@/lib/supabase';
+import { ProtectedFileRequestError } from '@/lib/repertuvar/protected-file-client';
+import { requireCurrentWebAccess, authenticatedWebFetch } from '@/lib/web-auth-capability';
 interface CachedDriveUrl {
   url: string;
   expiresAt: number;
