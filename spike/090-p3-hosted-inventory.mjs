@@ -33,6 +33,55 @@ export const QUERIES = {
   columns: `select table_schema,table_name,column_name,ordinal_position,is_nullable,data_type,udt_name,column_default
     from information_schema.columns where table_schema='public' or table_schema ~ '^genova_[0-9]{3}$'
     order by table_schema,table_name,ordinal_position`,
+  deltaDependencies: `select json_build_object(
+    'namespaces',(select json_agg(json_build_object('name',v.name,'exists',n.oid is not null,
+      'owner',pg_get_userbyid(n.nspowner),'acl',n.nspacl::text) order by v.name)
+      from (values ('genova_024'),('genova_043'),('genova_046'),('genova_048'),('genova_005'),
+        ('genova_078'),('genova_079'),('genova_087'),('genova_090'),('realtime')) v(name)
+      left join pg_namespace n on n.nspname=v.name),
+    'relations',(select json_agg(json_build_object('name',v.name,'exists',c.oid is not null,
+      'kind',c.relkind,'rls',c.relrowsecurity,'owner',pg_get_userbyid(c.relowner)) order by v.name)
+      from (values ('auth.sessions'),('genova_005.active_choir_sessions'),('public.repertoire_pdf_annotations'),
+        ('public.repertoire_files'),('public.chat_rooms'),('public.chat_room_members'),('public.chat_messages'),
+        ('public.chat_reactions'),('public.chat_message_status'),('realtime.messages'),('public.song_assignments'),
+        ('public.profile_change_requests'),('public.assignment_submission_file_versions'),
+        ('public.assignment_review_audio_versions'),('public.repertoire_comment_audio_versions'),
+        ('public.idx_chat_messages_room_created_id_048')) v(name)
+      left join pg_class c on c.oid=to_regclass(v.name)),
+    'procedures',(select json_agg(json_build_object('name',v.name,'exists',p.oid is not null,
+      'owner',pg_get_userbyid(p.proowner),'acl',p.proacl::text) order by v.name)
+      from (values ('genova_005.current_session_id()'),('public.current_choir_id()'),
+        ('public.current_choir_member_id()'),('public.current_chat_member_id()'),('public.set_active_choir(uuid)'),
+        ('public.current_member_has_role(text)'),('realtime.topic()'),('public.mark_chat_message_status(uuid,text)'),
+        ('public.mark_chat_room_read(uuid)'),('public.can_read_chat_media_060(uuid,uuid,uuid)'),
+        ('public.save_repertoire_pdf_annotation_snapshot(uuid,integer,text,text,integer,jsonb,bigint)'),
+        ('public.replace_repertoire_assignments(uuid,text,uuid[],uuid[])'),
+        ('public.submit_profile_change_request(uuid,jsonb,text)'),('genova_087.normalize_changes(jsonb)'),
+        ('public.review_profile_change_request(uuid,text,text)'),
+        ('public.private_file_ticket_authorized_090(uuid,uuid,uuid,text,uuid)'),
+        ('public.resolve_legacy_file_090(uuid,uuid,uuid,text,text,uuid)')) v(name)
+      left join pg_proc p on p.oid=to_regprocedure(v.name)),
+    'realtimePolicies',(select json_agg(json_build_object('name',policyname,'roles',roles,'command',cmd,
+      'permissive',permissive,'qual',qual,'withCheck',with_check) order by policyname)
+      from pg_policies where schemaname='realtime' and tablename='messages'),
+    'publication',(select json_agg(json_build_object('name',pubname,'allTables',puballtables,
+      'owner',pg_get_userbyid(pubowner)) order by pubname) from pg_publication where pubname='supabase_realtime'),
+    'publishedChatTables',(select json_agg(tablename order by tablename) from pg_publication_tables
+      where pubname='supabase_realtime' and schemaname='public'
+        and tablename in ('chat_messages','chat_reactions','chat_message_status')),
+    'annotationTriggers',(select json_agg(json_build_object('name',t.tgname,'enabled',t.tgenabled,
+      'procedure',t.tgfoid::regprocedure::text,'definition',pg_get_triggerdef(t.oid)) order by t.tgname)
+      from pg_trigger t where t.tgrelid=to_regclass('public.repertoire_pdf_annotations') and not t.tgisinternal),
+    'annotationUpdaterCount',(select count(*) from pg_proc p join pg_namespace n on n.oid=p.pronamespace
+      where n.nspname='public' and p.proname='set_repertoire_pdf_annotations_updated_fields'),
+    'annotationRevision',(select json_agg(json_build_object('name',a.attname,'type',format_type(a.atttypid,a.atttypmod),'notNull',a.attnotnull))
+      from pg_attribute a where a.attrelid=to_regclass('public.repertoire_pdf_annotations') and a.attname='revision' and not a.attisdropped),
+    'authSessionNotAfter',(select count(*)=1 from pg_attribute a where a.attrelid=to_regclass('auth.sessions') and a.attname='not_after' and not a.attisdropped),
+    'statusAclProvenanceValid',(select p.proacl is not null and not exists(
+      select 1 from aclexplode(p.proacl) a where a.grantor<>p.proowner or
+        a.grantee not in (0,p.proowner,'anon'::regrole::oid,'authenticated'::regrole::oid,'service_role'::regrole::oid))
+      from pg_proc p where p.oid=to_regprocedure('public.mark_chat_message_status(uuid,text)'))
+    ) as inventory`,
 };
 // Conservative SQL token comparison, not a PostgreSQL parser or semantic proof.
 // Dollar-quoted bodies are kept byte-exact; comments/spacing outside literals are

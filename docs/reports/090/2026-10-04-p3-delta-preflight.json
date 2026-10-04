@@ -1,0 +1,525 @@
+{
+  "candidate": "GENOVA-BETA-20261003-P1",
+  "project": "hievmwwctjjlhmssoxsu",
+  "observedAt": "2026-10-04T10:01:13.042Z",
+  "identity": {
+    "database": "postgres",
+    "role": "supabase_read_only_user",
+    "transaction_read_only": "on",
+    "server_version": "17.6"
+  },
+  "manifestSha256": "844e6001f691b2b9b02435074c347b0505d113d3e44492e175a4d99cd716f61f",
+  "priorHostedSha256": "f6e2c0c0416c1171a76209649a37b3387a7bc42335dcde35f6713253d916c1b6",
+  "helperSha256": "8b840f544e9ad805def68f542a2798d937bd93c9875f87b79fa02a4a0d79139f",
+  "connectionHelperSha256": "34f7cf07e572a58e9e272ce76f93c7f45b9350d8a70bf434842fbcc66b9447e2",
+  "querySha256": "2377b9df830237d0920a965803e3c1d6bd14586a98a1c3d86516640d9f272d04",
+  "catalog": {
+    "namespaces": [
+      {
+        "name": "genova_005",
+        "exists": true,
+        "owner": "postgres",
+        "acl": "{postgres=UC/postgres}"
+      },
+      {
+        "name": "genova_024",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "genova_043",
+        "exists": true,
+        "owner": "postgres",
+        "acl": "{postgres=UC/postgres}"
+      },
+      {
+        "name": "genova_046",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "genova_048",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "genova_078",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "genova_079",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "genova_087",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "genova_090",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "realtime",
+        "exists": true,
+        "owner": "supabase_admin",
+        "acl": "{supabase_admin=UC/supabase_admin,postgres=U*/supabase_admin,anon=U/supabase_admin,authenticated=U/supabase_admin,service_role=U/supabase_admin,supabase_realtime_admin=UC/supabase_admin}"
+      }
+    ],
+    "relations": [
+      {
+        "name": "auth.sessions",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "supabase_auth_admin"
+      },
+      {
+        "name": "genova_005.active_choir_sessions",
+        "exists": true,
+        "kind": "r",
+        "rls": false,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.assignment_review_audio_versions",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.assignment_submission_file_versions",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.chat_message_status",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.chat_messages",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.chat_reactions",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.chat_room_members",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.chat_rooms",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.idx_chat_messages_room_created_id_048",
+        "exists": false,
+        "kind": null,
+        "rls": null,
+        "owner": null
+      },
+      {
+        "name": "public.profile_change_requests",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.repertoire_comment_audio_versions",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.repertoire_files",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.repertoire_pdf_annotations",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "public.song_assignments",
+        "exists": true,
+        "kind": "r",
+        "rls": true,
+        "owner": "postgres"
+      },
+      {
+        "name": "realtime.messages",
+        "exists": true,
+        "kind": "p",
+        "rls": true,
+        "owner": "supabase_realtime_admin"
+      }
+    ],
+    "procedures": [
+      {
+        "name": "genova_005.current_session_id()",
+        "exists": true,
+        "owner": "postgres",
+        "acl": "{postgres=X/postgres}"
+      },
+      {
+        "name": "genova_087.normalize_changes(jsonb)",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "public.can_read_chat_media_060(uuid,uuid,uuid)",
+        "exists": true,
+        "owner": "postgres",
+        "acl": "{postgres=X/postgres,service_role=X/postgres}"
+      },
+      {
+        "name": "public.current_chat_member_id()",
+        "exists": true,
+        "owner": "postgres",
+        "acl": "{=X/postgres,postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+      },
+      {
+        "name": "public.current_choir_id()",
+        "exists": true,
+        "owner": "postgres",
+        "acl": "{postgres=X/postgres,authenticated=X/postgres,service_role=X/postgres,anon=X/postgres}"
+      },
+      {
+        "name": "public.current_choir_member_id()",
+        "exists": true,
+        "owner": "postgres",
+        "acl": "{=X/postgres,postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+      },
+      {
+        "name": "public.current_member_has_role(text)",
+        "exists": true,
+        "owner": "postgres",
+        "acl": "{=X/postgres,postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+      },
+      {
+        "name": "public.mark_chat_message_status(uuid,text)",
+        "exists": true,
+        "owner": "postgres",
+        "acl": "{postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,service_role=X/postgres}"
+      },
+      {
+        "name": "public.mark_chat_room_read(uuid)",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "public.private_file_ticket_authorized_090(uuid,uuid,uuid,text,uuid)",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "public.replace_repertoire_assignments(uuid,text,uuid[],uuid[])",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "public.resolve_legacy_file_090(uuid,uuid,uuid,text,text,uuid)",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "public.review_profile_change_request(uuid,text,text)",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "public.save_repertoire_pdf_annotation_snapshot(uuid,integer,text,text,integer,jsonb,bigint)",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "public.set_active_choir(uuid)",
+        "exists": true,
+        "owner": "postgres",
+        "acl": "{postgres=X/postgres,authenticated=X/postgres}"
+      },
+      {
+        "name": "public.submit_profile_change_request(uuid,jsonb,text)",
+        "exists": false,
+        "owner": null,
+        "acl": null
+      },
+      {
+        "name": "realtime.topic()",
+        "exists": true,
+        "owner": "supabase_realtime_admin",
+        "acl": "{=X/supabase_realtime_admin,supabase_realtime_admin=X/supabase_realtime_admin,postgres=X/supabase_realtime_admin,dashboard_user=X/supabase_realtime_admin}"
+      }
+    ],
+    "realtimePolicies": null,
+    "publication": [
+      {
+        "name": "supabase_realtime",
+        "allTables": false,
+        "owner": "postgres"
+      }
+    ],
+    "publishedChatTables": [
+      "chat_message_status",
+      "chat_messages",
+      "chat_reactions"
+    ],
+    "annotationTriggers": [
+      {
+        "name": "repertoire_pdf_annotations_set_updated_fields",
+        "enabled": "O",
+        "procedure": "set_repertoire_pdf_annotations_updated_fields()",
+        "definitionSha256": "84d77c818b64d2de45aef170bcc851dad24b73bbbdf377b4631ce3ff83c674e6"
+      },
+      {
+        "name": "tenant_links_003",
+        "enabled": "O",
+        "procedure": "genova_003.enforce_tenant_links()",
+        "definitionSha256": "2cc6db55e0e4797a12d51cd1ac6585458e72328c877f88db50a755ab7dadfc1e"
+      }
+    ],
+    "annotationUpdaterCount": 1,
+    "annotationRevision": null,
+    "authSessionNotAfter": true,
+    "statusAclProvenanceValid": true
+  },
+  "assessment": [
+    {
+      "id": "024",
+      "catalogReady": true,
+      "dependsOn": [],
+      "unrun": [
+        "row song/file/choir consistency",
+        "actual RLS layer mutation/old-new client conflicts",
+        "lock duration/rewrite cost"
+      ],
+      "boundary": "Catalog-only preliminary checks; source preflight reads application rows and still MUST run on the authorized clone.",
+      "status": "CATALOG_GUARDS_OBSERVED; NOT EXECUTION_ACCEPTED"
+    },
+    {
+      "id": "046",
+      "catalogReady": true,
+      "dependsOn": [],
+      "unrun": [
+        "actual authenticated private Broadcast/Presence authorization",
+        "public permissive-policy interactions",
+        "Realtime provider settings"
+      ],
+      "boundary": "No policy/publication mutation; source guards preserved.",
+      "status": "CATALOG_GUARDS_OBSERVED; NOT EXECUTION_ACCEPTED"
+    },
+    {
+      "id": "048",
+      "catalogReady": false,
+      "dependsOn": [
+        "046"
+      ],
+      "unrun": [
+        "ordered pagination/index creation lock impact",
+        "actual room read tenant negatives"
+      ],
+      "boundary": "Current preflight fails because046is missing; future success is not claimed.",
+      "status": "ORDERED_PREREQUISITE_MISSING_OR_COLLISION; NOT READY"
+    },
+    {
+      "id": "078",
+      "catalogReady": true,
+      "dependsOn": [],
+      "unrun": [
+        "active/inactive/multi-membership and stale session selection",
+        "concurrency and retained web consumers"
+      ],
+      "boundary": "Existing005bodies/ACL provenance retained; no mutation here.",
+      "status": "CATALOG_GUARDS_OBSERVED; NOT EXECUTION_ACCEPTED"
+    },
+    {
+      "id": "079",
+      "catalogReady": true,
+      "dependsOn": [],
+      "unrun": [
+        "actual anon/authenticated/service role invocation negatives",
+        "lock/ACL recovery stop"
+      ],
+      "boundary": "Catalog provenance validated, not execute-role behavior.",
+      "status": "CATALOG_GUARDS_OBSERVED; NOT EXECUTION_ACCEPTED"
+    },
+    {
+      "id": "082",
+      "catalogReady": false,
+      "dependsOn": [
+        "078"
+      ],
+      "unrun": [
+        "invoker RLS/concurrent expected-set changes",
+        "chef/section-leader/no lost update/tenant mismatch"
+      ],
+      "boundary": "Current preflight fails because078is missing.",
+      "status": "ORDERED_PREREQUISITE_MISSING_OR_COLLISION; NOT READY"
+    },
+    {
+      "id": "087",
+      "catalogReady": false,
+      "dependsOn": [
+        "078"
+      ],
+      "unrun": [
+        "same-user sessions/atomic merge and profile tenant negatives",
+        "recovery rollback of unexpected data"
+      ],
+      "boundary": "Current preflight fails because078is missing.",
+      "status": "ORDERED_PREREQUISITE_MISSING_OR_COLLISION; NOT READY"
+    },
+    {
+      "id": "088",
+      "catalogReady": false,
+      "dependsOn": [
+        "078",
+        "087"
+      ],
+      "unrun": [
+        "role loss/changed request/concurrent review atomicity",
+        "full profile schema dependencies"
+      ],
+      "boundary": "Current preflight fails because078and087are missing.",
+      "status": "ORDERED_PREREQUISITE_MISSING_OR_COLLISION; NOT READY"
+    },
+    {
+      "id": "090-actor",
+      "catalogReady": true,
+      "dependsOn": [],
+      "releaseAfter": [
+        "078"
+      ],
+      "unrun": [
+        "actual five-family Auth/RLS existing-ticket next-request negatives",
+        "session not_after expiration source gap",
+        "legacy client compatibility"
+      ],
+      "boundary": "Formal source preflight observed only.078is package security sequencing, not an explicit source SQL prerequisite.",
+      "status": "CATALOG_GUARDS_OBSERVED; NOT EXECUTION_ACCEPTED"
+    },
+    {
+      "id": "090-legacy",
+      "catalogReady": false,
+      "dependsOn": [
+        "090-actor"
+      ],
+      "releaseAfter": [
+        "078"
+      ],
+      "unrun": [
+        "legacy alias collision/resource/version/Auth/RLS negatives",
+        "storage and old Next relay compatibility"
+      ],
+      "boundary": "Source has no preflight DO. Schema090is an actual CREATE FUNCTION prerequisite; other function-body dependencies require clone acceptance.",
+      "status": "ORDERED_PREREQUISITE_MISSING_OR_COLLISION; NOT READY"
+    }
+  ],
+  "missingSourcePins": [
+    {
+      "path": "supabase/migrations/20260909232000_repertoire_pdf_annotation_safe_save_024.sql",
+      "sha256": "b0cf68b02b0e32132df9e569f84ebc9300b57b25375a573315d8adbee0b47573",
+      "bytes": 11940,
+      "id": "20260909232000"
+    },
+    {
+      "path": "supabase/migrations/20260919221500_private_chat_realtime_046.sql",
+      "sha256": "7e2528b5f1bbb1df5094bb65bfa9ff3dab51baa25419456e8bb5489569c52ea3",
+      "bytes": 4421,
+      "id": "20260919221500"
+    },
+    {
+      "path": "supabase/migrations/20260920090000_chat_read_order_048.sql",
+      "sha256": "dfec253c0838bebb7f6759b1da2333e8a1cc38d9936e5d4addab0277a5062c74",
+      "bytes": 2093,
+      "id": "20260920090000"
+    },
+    {
+      "path": "supabase/migrations/20260928140000_active_membership_revocation_078.sql",
+      "sha256": "3637722b0aa4822c6c4ac96789554d2eedce52410c552cc94f4471948cc705bb",
+      "bytes": 4327,
+      "id": "20260928140000"
+    },
+    {
+      "path": "supabase/migrations/20260928150000_message_status_rpc_privileges_079.sql",
+      "sha256": "278947640ea19a3a312ae1872d68ca213e86aab26412f5f7c35b2d6605804e5f",
+      "bytes": 1718,
+      "id": "20260928150000"
+    },
+    {
+      "path": "supabase/migrations/20260928175950_atomic_repertoire_assignments_082.sql",
+      "sha256": "29143efcd85582f35e972b2cf8e422423f183b655f5b1ddab2d4a446b2e9ef02",
+      "bytes": 5250,
+      "id": "20260928175950"
+    },
+    {
+      "path": "supabase/migrations/20260929010000_atomic_profile_submit_087.sql",
+      "sha256": "25c3dac2a5a8df94f9c7b371d53549cffa245d933ecef1fc0dd2988f87876985",
+      "bytes": 7681,
+      "id": "20260929010000"
+    },
+    {
+      "path": "supabase/migrations/20260929020000_atomic_profile_review_088.sql",
+      "sha256": "68753d37988d7131966bf240517185ee55e2b4101d656180b9d4b0d01116f472",
+      "bytes": 9100,
+      "id": "20260929020000"
+    },
+    {
+      "path": "supabase/migrations/20260930080046_private_file_ticket_authority_090.sql",
+      "sha256": "4f345d968fa6945aa746b4d00b7852c293047a984beabd79c4b7a64629c0ad86",
+      "bytes": 6365,
+      "id": "20260930080046"
+    },
+    {
+      "path": "supabase/migrations/20261002154343_legacy_file_authority_090.sql",
+      "sha256": "e121f9f8eada0dd4d7b9ddee8bea19c9baf146bfee28377d11669331a5f973c3",
+      "bytes": 6962,
+      "id": "20261002154343"
+    }
+  ],
+  "historicalStatementEquality": "UNAVAILABLE / NOT VERIFIED;15 relevant prior ledger statements are NULL. Required original criterion remains open.",
+  "limits": "Catalog-only observation. Original source preflights/row checks not executed. No writes/data/log/backup/restore/build/runtime/AI calls. No deployment readiness claim."
+}

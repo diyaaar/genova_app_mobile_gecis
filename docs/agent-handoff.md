@@ -13,9 +13,7 @@ Candidate **GENOVA-BETA-20261003-P1**: [source/feature/blocker record](reports/0
 + [machine manifest](reports/090/2026-10-03-p1-beta-candidate.json).
 Frozen productc2ec9b09a44c048c7c6a0c31f0ac99566c4643f0, entry3fb3a2c product-equivalent;
 610pins/842importedges/20Edgeclosures/38RPCs/25forwardSQL, exact locks/config/assets.
-Source accepted, **not runtime/hosted/beta acceptance**. No production/config patch.
-Scoped commit: `090: freeze source-complete beta candidate and P2 handoff` owns this
-record; verify actual SHA with Git. Unrelated supabase/.temp/cli-latest excluded.
+Source accepted, **not runtime/hosted/beta acceptance**. CLI marker excluded.
 
 P2 [current iOS accepted locally](reports/2026-10-03-ios-p2-private-file-acceptance.md):
 actual consentcancel0/PDF1→2/share-dismiss-return/close/file removal/activeA→B403/
@@ -23,8 +21,8 @@ expiry/validdenial/lease/diskcache0/normal-sign-in. iOS26.5/Release/SecureStore;
 157native/5server/426fixture pins. Fixture-only CFNetwork no-store repair does not
 prove hosted headers; tests/cost/failures remain dated in P2. Source support03b59b5.
 
-NEXT [resumed P3 card](briefs/090-private-file-ticket-revocation-contract.md#4-october--p3-inventory-resumed-with-existing-named-mcp-credential),
-[current reconciliation](reports/2026-10-04-p3-hosted-reconciliation.md).
+NEXT [delta card](briefs/090-private-file-ticket-revocation-contract.md#4-october-continuation--missing-sql-delta-dependency-inventory),
+[delta report](reports/2026-10-04-p3-delta-dependency-inventory.md) + [hosted identities](reports/2026-10-04-p3-hosted-reconciliation.md).
 Existing named local MCP PAT works through documented HTTP, fixed correct project
 and read-only/catalog+functions. No key/config/grant change; no app-key/psql fallback.
 Connection blocker REMOVED; do not ask for another install/key. Catalog83functions/
@@ -35,15 +33,15 @@ equality UNAVAILABLE, not waived; original goal NOT COMPLETE. P3 IN PROGRESS.
 21Edge metadata/17sources:5full match,6runtime matches/type-only omitted,6real
 differences,3missing. Five readers oldtickets; drive-manager-v2source/JWT drift.
 Fresh Chrome Vercel production stillmain/a13f696. No hosted behavior acceptance.
-10helper tests/610pins/P1/P3byte verification PASS, no product/build/runtime/device
-change; Jev0/$0new. Prior dated inventory/failures remain in3Oct report; previous
-ZIP location/status unknown, no workaround/cleanup claim. CLI marker excluded.
-Next current-catalog delta prerequisite assessment → narrow hook/log convergence
-and affected acceptance → fresh current-state protected recovery/actual mixed-client
-rehearsal → independent review/exact operation scope. Historical SQL limitation
-must remain explicit. No blind ledger repair, directory replay, bulk push or P4activation.
-Actual Auth/REST/private-file headers/native persistence required. No owner QA.
-No owned runtime; fresh>=10GiB/one heavy process before any future build/restore.
+Ten-delta catalog order observed, not apply accepted:048←046,082/087←078,
+088←078+087,090legacy←090actor; accepted078before090is package security order.
+New actor090not_after predicate/test gap; legacy checks it. No live exploit claim.
+16helper tests/610pins/P1/P3byte verification PASS; no product/runtime/live change.
+Next explicit historical-evidence method choice → narrow hook/log/Auth lifetime
+convergence → fresh recovery/full mixed-client rehearsal → independent review/
+operation scope. No ledger repair, directory replay, bulk push or P4activation.
+Jev0/$0new; CLI marker excluded; old ZIP status unknown/no workaround or cleanup.
+No owner QA/runtime; >=10GiB/one heavy process before future build/restore.
 
 ## Source and evidence boundaries
 
@@ -73,8 +71,8 @@ RN/Expo/Supabase/privateR2/permanentWebViews; noFlutter/Railway rewrite; prefer<
 Assistedv1onboarding/fivefree/extraseats/manualbilling; remaining policy choices staged.
 
 No runtime/copy/build/install/hosted write/push/CI/deploy/provider/account/distribution
-in P1. Keep exact earlier approvals; external step must match target/version/data/cost/
-recovery. Sibling site detached#33: NO SITE CHANGES/table deletion/RLS relaxation;
+in this inventory. Keep earlier approvals; external scope must match target/version/
+data/cost/recovery. Sibling site detached#33: NO SITE CHANGES/table deletion/RLS relaxation;
 old-note deletion withdrawn. Agent-owned scoped Android/iOS automation approved.
 Fresh backup/restore before schema, DB→Edge→repairedweb→native→activation;
 Git revert not recovery; no actorlessv1/078defect rollback. Original068/R1protected

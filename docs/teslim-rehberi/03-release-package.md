@@ -18,6 +18,11 @@ catalog/Edge version/source/JWT identities. All15relevant ledger SQL bodies are 
 historical applied-statement checksum equality remains unavailable, not silently
 waived. P3 is IN PROGRESS, not accepted. Full-source
 hook/log convergence, recovery/rehearsal and independent review remain required.
+[Delta inventory](../reports/2026-10-04-p3-delta-dependency-inventory.md) now verifies
+selected catalog prerequisites for ten absent SQL IDs and exact order. New actor090
+Auth lifetime predicate/test gap joins minimum convergence; no product fix here.
+Original historical equality still requires an explicit evidence-method decision;
+current-state hashes/metadata tests do not silently replace it or approve apply.
 Do not read an old runbook packet as the current promotion scope.
 
 Read [R1's failed compatibility boundary and backup limits](../reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md),

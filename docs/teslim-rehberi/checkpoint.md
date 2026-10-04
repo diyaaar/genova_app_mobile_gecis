@@ -7,6 +7,14 @@ Historical records keep their original date/revision. [Guide](README.md).
 ## Current position
 
 - Active plan: **P3 — compatible, reviewed and recoverable release package**, IN PROGRESS / PARTIAL inventory after local P2 acceptance; connection blocker removed.
+- Latest [delta dependency inventory](../reports/2026-10-04-p3-delta-dependency-inventory.md):
+  ten absent SQL IDs checked against actual catalog; five preliminary starts/five
+  ordered prerequisites, not apply acceptance.048←046;082/087←078;088←078+087;
+  090legacy←090actor. Chat publication already present, private Realtime policies
+  absent. New actor090Auth not_after predicate/test gap, not live exploit proof;
+  include in minimum convergence.16focused tests/610pins PASS; product/live unchanged.
+  Historical checksum row remains required/unavailable: explicit evidence-method
+  choice needed, not another key. P3/goal NOT COMPLETE; no owner QA.
 - Latest [4 October hosted reconciliation](../reports/2026-10-04-p3-hosted-reconciliation.md):
   existing named MCP PAT reused, correct-project read-only SQL verified; no new key/
   grant/config/product change.68ledger rows;15of25source IDs present, all15stored SQL
@@ -87,11 +95,12 @@ Evidence: [Jev/source audit](../reports/2026-10-03-jev-conversation-direction-au
 
 ## Next three actions
 
-1. Assess current catalog against missing source delta prerequisites using captured
-   exact definitions/ACL/digests. Historical SQL checksum equality remains unavailable,
-   not waived; current-state recovery must carry the limitation. Do not request a new
-   connection/key, mutate ledger, or blindly apply ten absent migration IDs.
-2. Create narrow full-source hook/log convergence card,
+1. Resolve historical-evidence method explicitly: actual prior apply-source archive
+   if one exists, or owner-approved current-state restore/catalog+ACL equality and
+   pinned future-delta provenance substitute. Required original checksum criterion
+   remains unavailable, not silently waived. Do not request another connection/key,
+   mutate ledger or blindly apply absent IDs. Catalog dependency inventory is done.
+2. Create narrow full-source hook/log/Auth lifetime convergence card,
    actual consent/probe integration regressions and affected P1/P2 pin/acceptance update.
    Already-present embedded cache/offline/file-label guards must not be reapplied blindly.
 3. Use completed mapping for scoped fresh recovery/full actual Next/Auth/RLS old-new-

@@ -15,6 +15,70 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 4 October continuation — missing SQL delta dependency inventory
+
+Entry `main/ee7be6f`, primary sole writer, unrelated CLI marker preserved. Previous
+goal turn is PROGRESS: named MCP access/current hosted catalog/Edge identities
+recovered, source drift and missing RPCs verified and committed. Goal resumed
+ACTIVE; no completion claim. Same full P3 entry-inventory objective, no narrower
+replacement. Read current AGENTS/handoff/active/090/checkpoint/P3/resource controls,
+transition guide/work cycle and missing-delta source preflights; TypeSafe full skill
+and live index read. Deterministic source/catalog checks need no paid Jev inference.
+
+One intermediate result: actual current catalog collision/prerequisite evidence
+for each of ten absent migration IDs, dependency order and exact remaining data/
+restore/review/operation gates. Historical SQL checksum criterion remains required
+and unverified; this work cannot infer missing historical statements or waive it.
+Allowed: existing hosted collector's exact metadata SELECT allowlist, one bounded
+delta-preflight source/test helper under spike, digest/boolean-only reports/090,
+brief/checkpoint/handoff/active/runbook updates. No product/schema/dependency change,
+user-row/log export, new credential, backup/restore runtime, hosted writes/deploy,
+distribution or owner QA. New query reads pg catalog/namespace/publication/policy/
+ACL/trigger/index/column metadata only, not mutation preflight DO/advisory locks.
+
+Next three actions: (1) verify current exact catalog prerequisites/absences for
+024046048078079082087088090actor090legacy, (2) record ordered future deltas with
+original guards and unrun row-integrity/old-new-client tests, (3) validate source
+pins/helper regressions/links/secrets/diff and scoped commit. Existing dated
+artifacts preserved; delta observation alone is not migration/restore acceptance.
+Before bounded acquisition free21,270,084KiB, <256KiBretained metadata estimate,
+one process/no source bundles, no new runtime or cleanup of prior unknown ZIP.
+
+Result: [delta prerequisite/source gap inventory](../reports/2026-10-04-p3-delta-dependency-inventory.md)
+and [read-only catalog record](../reports/090/2026-10-04-p3-delta-preflight.json),
+observed10:01:13UTC4October. Five preliminary starts024046078079090actor; five
+missing ordered prerequisites048←046,082/087←078,088←078+087,090legacy←090actor.
+Catalog guards only, not full source/data/apply acceptance. Chat tables already
+published, realtime.messages policies absent. Formal090actor guards do not require
+078; accepted078is package security sequencing, not an invented SQL precondition.
+New IMPORTANT release-negative: actor090does not check Auth sessions.not_after,
+legacy090does; actor tests omit retained expired-session case. No live exploit
+claim/current Auth setting inspection/fix. Minimum convergence card must include
+synthetic expiry negatives alongside existing full hook/log mismatch.
+
+| Delta continuation criterion | Required? | Status | Evidence / boundary |
+|---|---|---|---|
+| Actual ten-delta catalog prerequisites/order | yes | PASS observations | Fixed metadata SELECT/identity,15,989B digest record; application row/lock preflight NOT RUN |
+| Minimum repair/recovery/review/operation mapping | yes | PASS inventory | Existing full route/family matrix plus exact missing schema sequence/new Auth lifetime source gap |
+| Focused tests/frozen pins/links/secrets/diff/commit | yes | PASS at scoped checkpoint |6new+10existing=16tests;610pins/P1/P3byte verification; actual scan below |
+| Historical applied SQL body/checksum equality | yes, original goal | UNAVAILABLE / NOT VERIFIED |15stored bodiesNULL; not waived, no goal completion |
+| Actual clone/data/Auth/RLS/provider/full mixed-client acceptance, recovery and independent review | required P3 | NOT RUN | No runtime/live/product change; self-review not independent |
+
+This goal turn is PROGRESS, not repeated no-progress connection blockage. Source
+and exact-current-state gaps now mapped; original historical-equality row cannot
+be proved from the present ledger. Required evidence-method choice must be explicit:
+recover a genuine existing historical apply-source archive, or approve substituting
+fresh current-state snapshot/isolated restore/catalog+ACL equality plus pinned future
+delta provenance for unrecoverable historical statement equality. No silent waiver
+or lower security acceptance; that choice is not backup/export/apply authority.
+Next: settle that evidence boundary, prepare narrow convergence card, then scoped
+fresh recovery/actual mixed-client package. Jev0/$0new; no owner QA.
+Final checks:16focused tests PASS;610pins/P1+P3byte-equivalence PASS;173local
+links/0missing;11owned artifacts exact credential/pattern scan0;diff check PASS.
+Final free21,254,280KiB; no owned runtime/large disposable artifact. Only owned
+spike/docs staged for090checkpoint; unrelated CLI marker preserved/excluded.
+Evidence-method question sent with explicit alternatives; no answer inferred.
+
 ### 4 October — P3 inventory resumed with existing named MCP credential
 
 Owner explicitly authorizes looking for/reusing existing project/local credentials

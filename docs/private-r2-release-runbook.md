@@ -18,6 +18,13 @@ ledger bodiesNULL: historical SQL checksums UNAVAILABLE, not invented/equivalent
 Required original inventory criterion stays open; carry current-state provenance
 and limitation into fresh protected recovery/rehearsal/independent review.
 No new key/connector install request, ledger rewrite or bulk migration/deploy.
+[Delta prerequisites](reports/2026-10-04-p3-delta-dependency-inventory.md) observed:
+048after046;082/087after078;088after078+087;090legacyafter090actor.078before090
+is package security order, not formal actor SQL guard. Five preliminary catalog
+starts are not apply acceptance. New actor Auth not_after negative/predicate gap
+must enter source convergence and actual five-family GET/HEAD/provider-zero tests.
+Historical statement equality remains required/unavailable pending explicit method
+choice; fresh recovery/full compatibility/independent review remain NOT RUN.
 
 ## Historical revocation release boundary — 3 October 2026
 
