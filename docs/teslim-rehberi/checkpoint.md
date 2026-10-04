@@ -7,6 +7,13 @@ Historical records keep their original date/revision. [Guide](README.md).
 ## Current position
 
 - Active plan: **P3 — compatible, reviewed and recoverable release package**, IN PROGRESS / PARTIAL inventory after local P2 acceptance; connection blocker removed.
+- Latest [source convergence contract / full-goal audit](../reports/2026-10-04-p3-convergence-contract-audit.md):
+  actual eight source pins verified; exact future hook/log/Auth lifetime tests,
+  preserved browser/native behavior and affected acceptance defined, NOT IMPLEMENTED.
+  Historical overlap runner strips owner/grants and adds test privileges: cannot
+  serve as current-state recovery proof. All inventory requirements audited;
+  historical SQL equality still unavailable, evidence-method answer not received.
+  No product/runtime/live changes or unchanged product-test inflation.
 - Latest [delta dependency inventory](../reports/2026-10-04-p3-delta-dependency-inventory.md):
   ten absent SQL IDs checked against actual catalog; five preliminary starts/five
   ordered prerequisites, not apply acceptance.048←046;082/087←078;088←078+087;
@@ -100,7 +107,7 @@ Evidence: [Jev/source audit](../reports/2026-10-03-jev-conversation-direction-au
    pinned future-delta provenance substitute. Required original checksum criterion
    remains unavailable, not silently waived. Do not request another connection/key,
    mutate ledger or blindly apply absent IDs. Catalog dependency inventory is done.
-2. Create narrow full-source hook/log/Auth lifetime convergence card,
+2. Use the prepared narrow full-source hook/log/Auth lifetime convergence contract,
    actual consent/probe integration regressions and affected P1/P2 pin/acceptance update.
    Already-present embedded cache/offline/file-label guards must not be reapplied blindly.
 3. Use completed mapping for scoped fresh recovery/full actual Next/Auth/RLS old-new-

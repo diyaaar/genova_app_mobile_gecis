@@ -21,8 +21,8 @@ expiry/validdenial/lease/diskcache0/normal-sign-in. iOS26.5/Release/SecureStore;
 157native/5server/426fixture pins. Fixture-only CFNetwork no-store repair does not
 prove hosted headers; tests/cost/failures remain dated in P2. Source support03b59b5.
 
-NEXT [delta card](briefs/090-private-file-ticket-revocation-contract.md#4-october-continuation--missing-sql-delta-dependency-inventory),
-[delta report](reports/2026-10-04-p3-delta-dependency-inventory.md) + [hosted identities](reports/2026-10-04-p3-hosted-reconciliation.md).
+NEXT [contract/audit card](briefs/090-private-file-ticket-revocation-contract.md#4-october-continuation--exact-convergence-contract-and-completion-audit),
+[contract/audit](reports/2026-10-04-p3-convergence-contract-audit.md), [delta](reports/2026-10-04-p3-delta-dependency-inventory.md), [hosted](reports/2026-10-04-p3-hosted-reconciliation.md).
 Existing named local MCP PAT works through documented HTTP, fixed correct project
 and read-only/catalog+functions. No key/config/grant change; no app-key/psql fallback.
 Connection blocker REMOVED; do not ask for another install/key. Catalog83functions/
@@ -38,8 +38,9 @@ Ten-delta catalog order observed, not apply accepted:048←046,082/087←078,
 New actor090not_after predicate/test gap; legacy checks it. No live exploit claim.
 16helper tests/610pins/P1/P3byte verification PASS; no product/runtime/live change.
 Next explicit historical-evidence method choice → narrow hook/log/Auth lifetime
-convergence → fresh recovery/full mixed-client rehearsal → independent review/
-operation scope. No ledger repair, directory replay, bulk push or P4activation.
+convergence (contract prepared; NOT IMPLEMENTED) → fresh recovery/full mixed-client
+rehearsal → independent review/operation scope. Old overlap runner strips owners/
+grants, NOT current recovery proof. No ledger replay/bulk push/P4activation.
 Jev0/$0new; CLI marker excluded; old ZIP status unknown/no workaround or cleanup.
 No owner QA/runtime; >=10GiB/one heavy process before future build/restore.
 

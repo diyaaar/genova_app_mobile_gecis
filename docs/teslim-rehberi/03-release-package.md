@@ -23,6 +23,11 @@ selected catalog prerequisites for ten absent SQL IDs and exact order. New actor
 Auth lifetime predicate/test gap joins minimum convergence; no product fix here.
 Original historical equality still requires an explicit evidence-method decision;
 current-state hashes/metadata tests do not silently replace it or approve apply.
+[Exact convergence contract and goal audit](../reports/2026-10-04-p3-convergence-contract-audit.md)
+pins actual hook/helper/native/log/SQL sources and future real-helper/log-sink/Auth
+negatives; no fix implemented. Historical schema-only no-owner/no-grants test runner
+is explicitly excluded as current recovery proof. Pending method decision is not
+answered by automatic continuation; full original inventory goal still open.
 Do not read an old runbook packet as the current promotion scope.
 
 Read [R1's failed compatibility boundary and backup limits](../reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md),

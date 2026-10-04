@@ -25,8 +25,8 @@ focused26, root1178/build fresh. Failed UI/variant/cache attempts preserved; fix
 no-store repair, not hosted-provider proof. Owned device/process/build/runtime/PNG/log/
 root outputs cleaned; free21,452,752KiB. Jev1triage/5questions/1108input/215output/
 estimated$0.000046536; self-review not independent review; no owner QA.
-Current [delta P3 card](../docs/briefs/090-private-file-ticket-revocation-contract.md#4-october-continuation--missing-sql-delta-dependency-inventory):
-[delta inventory](../docs/reports/2026-10-04-p3-delta-dependency-inventory.md) + [hosted identities](../docs/reports/2026-10-04-p3-hosted-reconciliation.md).
+Current [contract/audit card](../docs/briefs/090-private-file-ticket-revocation-contract.md#4-october-continuation--exact-convergence-contract-and-completion-audit):
+[contract/audit](../docs/reports/2026-10-04-p3-convergence-contract-audit.md), [delta](../docs/reports/2026-10-04-p3-delta-dependency-inventory.md), [hosted](../docs/reports/2026-10-04-p3-hosted-reconciliation.md).
 Existing named local MCP PAT recovered with owner approval; documented HTTP fixed
 project/read-only/catalog+functions, no new key/grant/config change. Connection
 blocker REMOVED; don't request another install/key.68ledger rows/15of25sourceIDs,
@@ -42,9 +42,10 @@ Ten-delta catalog dependency inventory done, not apply accepted:048←046,
 082/087←078,088←078+087,090legacy←090actor;078before090package security order.
 New actor090not_after predicate/test gap, unlike legacy; no live exploit claim.
 Next explicit historical-evidence method choice → narrow hook/log/Auth lifetime
-convergence/affectedP1P2 → fresh recovery/full mixed-client rehearsal → independent
-review/operation scope. Existing cache/offline guards preserved; no ledger repair,
-bulk push/activation or owner QA. Actual Auth/REST/provider/persistence required.
+convergence (contract prepared, NOT IMPLEMENTED)/affectedP1P2 → fresh recovery/
+mixed-client rehearsal → independent review/operation scope. Old no-owner/grants
+overlap runner NOT recovery proof. No ledger replay/bulk push/activation/owner QA;
+actual Auth/REST/provider/persistence required, existing cache/offline guards kept.
 
 Android [fullv5](../docs/reports/090/2026-10-03-android-candidate-full-share-http-v5.json)
 dated3October14:04UTC PASS_HTTP_NATIVE:157native/5server matched frozen source,

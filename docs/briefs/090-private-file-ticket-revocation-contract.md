@@ -15,6 +15,54 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 4 October continuation — exact convergence contract and completion audit
+
+Entry `main/95b089d`; sole primary writer, unrelated CLI marker preserved. Previous
+turn PROGRESS: actual ten-delta catalog prerequisites/source lifetime gap recorded
+and committed. Current goal ACTIVE; historical evidence-method question unanswered,
+not inferred from automatic continuation. Read actual AGENTS/handoff/active/current
+090/P3/entry report, guide/work cycle/controls; complete TypeSafe skill/live index.
+No paid semantic judgment required; no owner QA or product/live mutation.
+
+One intermediate outcome: executable narrow source convergence contract and
+requirement-by-requirement audit of the original full inventory goal. This is not a
+substitute goal or new rollout system. Allowed current edits: this card, linked
+dated report, checkpoint/handoff/active/P3 pointers only. Inspect source/pinned
+metadata/test contracts; do not run restore/build/device or implement future fixes.
+Next three actions: (1) verify exact hook→probe/native consent/log/session test gaps
+and preserved guards, (2) identify exact future file/test/acceptance invalidations
+and remaining decision/scope, (3) local links/pins/diff/redaction and scoped commit.
+Free21,253,920KiB; <128KiBsmall source/document evidence, no runtime or copy.
+Original full goal's historical equality stays UNAVAILABLE/NOT VERIFIED; this
+continuation is meaningful independent preparation, not a verified wait or closure.
+
+Result: [precise convergence contract and full requirement audit](../reports/2026-10-04-p3-convergence-contract-audit.md).
+Eight actual hook/helper/log/native/SQL SHA256pins match frozen source. Exact real-
+helper consent/browser/401/403 tests, both real diagnostic sinks including error
+messages, Auth retained not_after negatives and affected P1/P2 reacceptance are
+specified; no future fix implemented. Old overlap runner's no-owner/no-privileges
+schema copy/test grants explicitly excluded from current protected recovery proof.
+
+| Contract/audit criterion | Required? | Status | Evidence / boundary |
+|---|---|---|---|
+| Exact source/test/preserved behavior/reacceptance contract | yes | PASS preparation | Actual8pins/source excerpts/test mocks/native byte ownership inspected; future SQL source choice/implementation not fabricated |
+| Original full objective completion audit | yes | PASS audit, NOT achieved | All source/served/current SQL/Edge/route/family/recovery/review/operation requirements inspected and mapped; historical equality still unavailable |
+| Current blocking predicate revalidated | yes | PASS observation | Named MCP read-only ledger10:23:06.583UTC4October:68rows,15present/10absent,15NULLstatements/0available; no user rows/bodies retained |
+| Local pin/links/redaction/diff/scoped commit | yes | PASS at checkpoint |610pins/P1byte equivalence;163local links/0missing;6owned docs exact secret/pattern scan0;diff check PASS |
+| Historical SQL equality and source repairs/full P3 acceptance | yes / later package | UNAVAILABLE / NOT RUN | No archive/method answer, no product/runtime/backup/restore/hosted writes or owner QA |
+
+Three consecutive goal turns now observe the same original historical-equality
+dependency:ee7be6f,95b089d,this audit. Earlier progress was real; independent authorized
+inventory preparation is now recorded. No live wait handle and no method answer/
+genuine historical archive; remaining implementation/restore/operations cannot be
+substituted for this inventory's scope or recover missing history. After successful
+scoped commit, mark full goal BLOCKED (not complete/paused); P3 remains IN PROGRESS.
+Resume same objective after explicit method choice/archive evidence, not another
+tiny task or new key request. No repeated owner question, tests or live calls here.
+Final free21,253,976KiB; no owned runtime/large output; CLI marker excluded.
+This continuation is PROGRESS and new blocking audit meets threshold at exit;
+Jev0/$0new. Existing16helper/product/device passes remain dated, not rerun as new.
+
 ### 4 October continuation — missing SQL delta dependency inventory
 
 Entry `main/ee7be6f`, primary sole writer, unrelated CLI marker preserved. Previous
