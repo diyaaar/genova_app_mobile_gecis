@@ -1,0 +1,120 @@
+{
+  "recordedAt": "2026-10-07T20:53:55.697Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "status": "BACKUP_PASS_RESTORE_NOT_RUN_RESOURCE_BLOCKER",
+  "backup": {
+    "completedAt": "2026-10-07T20:16:25.725Z",
+    "cutoff": "2026-10-07T20:14:20.369414+00:00",
+    "plaintextBytes": 1693495,
+    "encryptedBytes": 1693531,
+    "plaintextSha256": "dc8ccf814115b4f4022a8e25c2c9a8683c52b5c6e93ff110eab6cc7f152fd914",
+    "encryptedSha256": "3ca7ef1b2f7c9761b1fc98c9ec198a03edf077113e4ce49109ef657db9b40650",
+    "schemas": 24,
+    "dataTables": 101,
+    "rows": 2879,
+    "roles": 17,
+    "memberships": 22,
+    "catalogCounts": {
+      "roles": 17,
+      "columns": 1132,
+      "indexes": 329,
+      "schemas": 24,
+      "policies": 225,
+      "triggers": 62,
+      "functions": 162,
+      "relations": 118,
+      "extensions": 6,
+      "constraints": 510,
+      "defaultAcls": 15,
+      "memberships": 22,
+      "publications": 2,
+      "publicationTables": 15
+    },
+    "readOnly": "on",
+    "encryption": "AES-256-GCM",
+    "directoryMode": "0700",
+    "fileMode": "0600",
+    "roundtripVerified": true,
+    "keyCustody": "same permission-restricted local directory, not independent/offsite",
+    "excluded": [
+      "Vault values",
+      "Realtime payloads",
+      "net queues/results",
+      "Storage metadata/object bytes",
+      "Drive/R2 objects",
+      "role passwords and external config/secrets"
+    ]
+  },
+  "runtime": {
+    "image": "supabase/postgres@sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00",
+    "physicalVolumeCapMiB": 2458,
+    "attempts": [
+      {
+        "action": "start",
+        "recordedAt": "2026-10-07T20:30:42.992Z",
+        "exitCode": 1,
+        "resourceStop": false,
+        "hostFreeKiB": 13695020
+      },
+      {
+        "action": "provision-repair",
+        "recordedAt": "2026-10-07T20:34:09.757Z",
+        "exitCode": 1,
+        "resourceStop": false,
+        "hostFreeKiB": 13469516
+      },
+      {
+        "action": "provision-resume",
+        "recordedAt": "2026-10-07T20:35:11.574Z",
+        "exitCode": 1,
+        "resourceStop": false,
+        "hostFreeKiB": 13351668
+      },
+      {
+        "action": "pull",
+        "recordedAt": "2026-10-07T20:37:33.072Z",
+        "exitCode": 1,
+        "resourceStop": false,
+        "hostFreeKiB": 11577688
+      },
+      {
+        "action": "start-classic",
+        "recordedAt": "2026-10-07T20:43:56.553Z",
+        "exitCode": 0,
+        "resourceStop": false,
+        "hostFreeKiB": 13937532
+      },
+      {
+        "action": "provision-clean",
+        "recordedAt": "2026-10-07T20:44:33.734Z",
+        "exitCode": 0,
+        "resourceStop": false,
+        "hostFreeKiB": 13659824
+      },
+      {
+        "action": "pull-classic",
+        "recordedAt": "2026-10-07T20:46:14.085Z",
+        "exitCode": 1,
+        "resourceStop": false,
+        "hostFreeKiB": 11806236
+      }
+    ],
+    "actualRestore": "NOT RUN",
+    "privateDataEnteredRuntime": false,
+    "failure": "two storage layouts reached capped volume pressure/read-only filesystem while extracting the same full image",
+    "finalCleanupAt": "2026-10-07T20:51:42.377Z",
+    "ownedVmVolumeCacheRemoved": true,
+    "failedKeyOnlyDirectoriesRemoved": [
+      "genova-090-p3-lkgvfQ",
+      "genova-090-p3-tHnlDq"
+    ]
+  },
+  "hostFreeKiB": 14113780,
+  "hostDiskFloorKiB": 10485760,
+  "defaultLimaInstances": 0,
+  "newJevCalls": 0,
+  "newInferenceCostUSD": 0,
+  "hostedWrites": false,
+  "ownerManualQA": false,
+  "limits": "Protected consistent logical export and authenticated-decryption verification are not restore fidelity. Sequence state is non-MVCC; external storage bytes/config/passwords are excluded. No full managed-platform, client, hosted revocation or independent-review acceptance."
+}

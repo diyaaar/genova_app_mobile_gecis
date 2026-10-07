@@ -1,85 +1,68 @@
 # Active context
 
-Updated 7 October 2026. [Handoff](../docs/agent-handoff.md) →
+Updated8October2026 (7OctoberUTC execution). [Handoff](../docs/agent-handoff.md) →
 [090](../docs/briefs/090-private-file-ticket-revocation-contract.md) →
 [controls](../docs/mobil-teslim-plani.md#bounded-execution-and-resource-controls).
-English records/Turkish updates; sole writer; inspect current ownership/permissions.
+English records/Turkish updates; sole writer; verify ownership/permissions/HEAD.
 
-## Current outcome and next measurable checkpoint
+## Current outcome and one next action
 
-Full goal BLOCKED, NOT COMPLETE: exact private export/offline-operation question
-unanswered for3resumed turns; method#35accepted. No live wait handle/owner QA.
+Full inventory goal **ACTIVE / INCOMPLETE**, P3 IN PROGRESS. Owner approved method#35
+and exact private Auth/application export/offline restore; old approval blocker
+resolved. Do not ask again for scope/key/connector. This turn made actual progress,
+not a three-turn blocked audit. [Execution](../docs/reports/2026-10-07-p3-protected-recovery-execution.md)
+and [generated evidence](../docs/reports/090/2026-10-07-p3-protected-recovery.json):
+held consistent cutoff7Oct20:14:20UTC,24schemas/101tables/2879rows/17roles/22memberships;
+AES-GCM backup roundtrip PASS, **actual restore/schema+ACL+RLS+role+data fidelity NOT RUN**.
+Protected artifacts0700/0600 at
+/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-RAJEJt;
+key same private directory, not offsite custody. Never print/export private contents.
+Coverage/exclusions/non-MVCC sequence limits recorded; backup alone does not close P3.
 
-P1 **SOURCE ACCEPTED**, candidate GENOVA-BETA-20261003-P1:
-[record](../docs/reports/090/2026-10-03-p1-beta-candidate.md)/
-[manifest](../docs/reports/090/2026-10-03-p1-beta-candidate.json).
-Frozen productc2ec9b09a44c048c7c6a0c31f0ac99566c4643f0; entry3fb3a2c byte-equivalent.
-610SHA256pins/842localimports/20Edgeclosures/38RPCs/25forwardSQL exact identities;
-API/pages/locks/config and prerequisites retained, not a deployment instruction.
-No product code/config change.051 native stars already locally accepted22a19d6.
-CLI marker is unrelated, excluded. P2 test-support03b59b5; no owned runtime/copy.
+Next: **bounded offline capacity**. Two full-image layouts failed on2458MiBphysical
+cap/read-onlyFS; no PG container/private data inVM. No unchanged third rebuild or
+weakened extensions/owners/grants. Own VM/volume/newISOcache/failed-key-only dirs
+removed; successful encrypted snapshot/logs retained. Free14,113,780KiB/defaultLima0,
+no active owned process/mount/runtime. Proposed next6GiBcap+reserves requires≥18GiB
+measured hostfree and fresh monitoring; peak unknown, not guarantee. No user-data
+cleanup authorized. Different protected disk/destination needs exact custody scope.
+Then actual network-none compatible restore/equality → narrow convergence/full
+mixed clients/review/exact operation packet. No owner QA/hosted write/deploy/distribute.
 
-[Checkpoint](../docs/teslim-rehberi/checkpoint.md): **P3 IN PROGRESS / PARTIAL inventory** after
-[P2 local acceptance](../docs/reports/2026-10-03-ios-p2-private-file-acceptance.md).
-Current iOS26.5/Release actual cancel0/PDF1→2/share-dismiss/return/close/removal/
-activeA→B403/expiry/valid-denial/lease/disk0/normal sign-in PASS. XCTestv3 fullflow;
-HTTPv2/authorityv2; actual SecureStore retained.610 product pins unchanged. Mobile465,
-focused26, root1178/build fresh. Failed UI/variant/cache attempts preserved; fixture-only
-no-store repair, not hosted-provider proof. Owned device/process/build/runtime/PNG/log/
-root outputs cleaned; free21,452,752KiB. Jev1triage/5questions/1108input/215output/
-estimated$0.000046536; self-review not independent review; no owner QA.
-Current [7October card](../docs/briefs/090-private-file-ticket-revocation-contract.md#7-october--owner-approved-current-state-evidence-method):
-[method/preflight](../docs/reports/2026-10-07-p3-current-state-evidence-method.md); [contract](../docs/reports/2026-10-04-p3-convergence-contract-audit.md), [hosted](../docs/reports/2026-10-04-p3-hosted-reconciliation.md).
-Existing named local MCP PAT recovered with owner approval; documented HTTP fixed
-project/read-only/catalog+functions, no new key/grant/config change. Connection
-blocker REMOVED; don't request another install/key.68ledger rows/15of25sourceIDs,
-all15SQLstatementsNULL: historicalchecksumUNAVAILABLE. Owner#35accepts current-state
-backup/restore+future-delta provenance substitute; replacement NOT RUN/goalnotcomplete.
-Current catalog83functions/74relations/225policies/378constraints/696columns;
-65source bodies50match/4differ/11missing,7of38RPCs absent. Helpers005not078;
-statusRPCACLnot079.21Edge metadata/17sources:5fullmatch,6runtime/type-onlyomission,
-6real differences,3missing. Five readers oldtickets; drive-manager-v2source/JWT drift.
-4October Vercel a13f696, not7OctoberHTTPproof.19helper tests/610pins PASS.
-No product/private-export/live/build/runtime/device change.
-Local Lima0instances, native pg_net/Vault controls absent; historical arm64image
-digest verified, compressed1,010,225,613B, unpacked/VM peak UNKNOWN. No runtime.
-Jev0/$0new; old dated failures/audits retained, ZIP status/path still unknown.
-Ten-delta catalog dependency inventory done, not apply accepted:048←046,
-082/087←078,088←078+087,090legacy←090actor;078before090package security order.
-New actor090not_after predicate/test gap, unlike legacy; no live exploit claim.
-7October selected catalog/ledger/guards/21Edge metadata MATCH4October, not row/
-snapshot/source proof. Next exact protected export/offline-restore scope → fidelity
-→ prepared hook/log/Auth lifetime convergence (NOT IMPLEMENTED) → mixed-client
-rehearsal/review/operations. Old overlap runner NOT recovery proof; no bulk push/
-activation/owner QA; actual Auth/REST/provider/persistence still required.
+## Candidate and drift boundaries
 
-Android [fullv5](../docs/reports/090/2026-10-03-android-candidate-full-share-http-v5.json)
-dated3October14:04UTC PASS_HTTP_NATIVE:157native/5server matched frozen source,
-426fixture reconstructed. Synthetic emulator/Auth/dispatcher, **not complete Next/
-hostedRLS/iOS/physical/recipient-delivery proof**. Complete frozen product also exposes
-native chat/repertoire and four permanent WebViews; profile fixture not full beta.
-Browser1a014c4/profile7cd8d46 retained intermediate/test candidates; immutable hashes.
-P3 proves minimum repair convergence + full compatibility, no bulk-main promotion.
+[Checkpoint](../docs/teslim-rehberi/checkpoint.md). P1SOURCEACCEPTED:
+GENOVA-BETA-20261003-P1, frozen c2ec9b09a44c048c7c6a0c31f0ac99566c4643f0,
+610pins/842imports/20Edge/38RPC/25SQL, [manifest](../docs/reports/090/2026-10-03-p1-beta-candidate.json).
+Product source unchanged; CLI marker unrelated/excluded. New recovery spike helpers,
+26focused tests/source pins/regeneration PASS, not recovery runtime. Prior P2
+[iOS](../docs/reports/2026-10-03-ios-p2-private-file-acceptance.md)/
+[Android](../docs/reports/2026-10-03-android-full-share-flow.md) accepted locally only;
+not full Next/Auth/hostedRLS/provider/hardware/signed beta. Prior failures stay dated.
 
-Prior Jev/17-chat audit records stay dated; no raw-chat rescan. Jev is advisory,
-not independent review/authorization. New paid inference needs current-date scope.
+Fresh7Oct correct-profile Chrome Vercel Ready productionApCrcavKPpHSdBzdpv8JvESEiKc5,
+main/a13f696da8c731e9af2a2bce473d4f4ae4a81587 aliasapp.genesinovachoir.com;
+metadata, not HTTP acceptance. Existing named correct-project MCP works.15of25source
+ledger IDs present/all15SQLNULL: historical text UNAVAILABLE; accepted current-state
+substitute requires actual recovery/future-delta provenance. Selected7Octcatalog/
+ledger/guards/21Edge metadata match4Oct, no later-state equality inferred.
+[Method](../docs/reports/2026-10-07-p3-current-state-evidence-method.md),
+[hosted](../docs/reports/2026-10-04-p3-hosted-reconciliation.md),
+[delta](../docs/reports/2026-10-04-p3-delta-dependency-inventory.md),
+[contract](../docs/reports/2026-10-04-p3-convergence-contract-audit.md).
+Helpers005not078/079ACLmissing/7RPCabsent/oldreader tickets/EdgeJWT+source drift;
+ten ordered deltas not apply accepted. Actor090not_after gap, full hook HEAD-before-
+consent/raw capability logs convergence NOT IMPLEMENTED. Actual full route/five-
+family old/new/mixed/cache map prepared; old schema-only runner NOT fidelity proof.
 
-## Still-open product and authority gates
+## Open destination gates and authority
 
-P2 locallyPASS only; P3servedrevision/appliedSQL/Edge/config/fullAPI/oldclients/freshrecovery/
-independentreview; P4actualR2readers/writers/mapping/flags/privateACL; P5installedsigned
-usableAndroid/invitenegatives/exposedcapability; P6fullnative/push/commercial; P7bothstores.
-Whole090/R1OPEN.25SQL source changes are not hosted applied IDs. Historical eight-digit/
-undated SQL not replayed; bulk-song-delete script PROHIBITED. Existing restored DB is
-prerequisite, not empty bootstrap. R1exclusions/old storage inventories remain dated.
-
-Owner#34 small existing choir group first, then second independent choir; exact
-recipients/channel open. RN/Expo/permanentWebViews/Supabase/privateR2/noRailway;
-prefer<= $5/month; assistedv1/fivefree/extraseats/manualbilling. Policies staged, not
-silently defaulted. Detached sibling site NO CHANGES, retained tables/old notes kept.
-Scoped agent Android/iOS automation approved; no owner QA. Preserve granted authority;
-match exact target/version/data/cost/recovery before external writes/distribution.
-P1 no push/CI/deploy/DB/provider/account/build/install/device action. One heavy process,
-fresh>=10GiB, two-failure reassessment, owned cleanup only; preserve toolchains/userdata.
-Scoped `090: freeze source-complete beta candidate and P2 handoff` commit owns this
-record; verify actual SHA/status on resume. Git revert is not data recovery.
+Whole090/R1OPEN; P3recovery/compatibility/independent review → P4actualprivate storage
+→ P5installedsignedAndroid → P6fullnative/push/commercial → P7bothstores.
+RN/Expo/permanentWebViews/Supabase/privateR2/noFlutterorRailwayrewrite/prefer<= $5/month.
+Assistedv1/fivefree/extraseats/manualbilling; owner#34small current choir group then
+second independent choir, exact recipients/channel open. Sibling site NO CHANGES/
+retained tables/old notes kept. Agent Android/iOS automation approved, no owner QA.
+Fresh backup/restore before schema, DB→Edge→web→native→activation; no bulk replay/
+mainpush/ledger edit. Git revert not recovery. Preserve global caches/toolchains/data.
+Jev0/$0new; old key approval does not infer current-day paid inference authority.

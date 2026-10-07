@@ -1,0 +1,22 @@
+minimumLimaVersion: 2.0.0
+vmType: vz
+arch: aarch64
+cpus: 1
+memory: 512MiB
+disk: 4GiB
+images:
+- location: https://github.com/lima-vm/alpine-lima/releases/download/v0.2.49/alpine-lima-std-3.23.0-aarch64.iso
+  arch: aarch64
+  digest: sha512:7ef845a28cd8d77da8317a2d748456f0861d86d23dc2c51739927f16c634fec21ec90d58edd71202bdd708f81629bcffc4c9c682689bcc34f37668803757d463
+mounts: []
+containerd:
+  system: false
+  user: false
+ssh:
+  loadDotSSHPubKeys: false
+portForwards:
+- guestIP: 0.0.0.0
+  guestPortRange: [1, 65535]
+  ignore: true
+# Docker provisioning is an explicit guarded host action after essential boot.
+# The ISO root is RAM-backed; package bytes must move to the task data disk first.

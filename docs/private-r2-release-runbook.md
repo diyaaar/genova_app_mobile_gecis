@@ -7,17 +7,22 @@ inventory/copy evidence;077 is an unexecuted next-ten approval packet.
 Owner: release operator designated by the product owner. This is the single 053–065 release index;
 individual briefs remain the acceptance authority for each local implementation.
 
-## Current revocation release boundary — 7 October 2026
+## Current revocation release boundary — 8 October 2026 (7 October UTC execution)
 
 [Owner decision35 and fresh preflight](reports/2026-10-07-p3-current-state-evidence-method.md)
 accepts protected current-state snapshot/isolated-restore equality and exact future
 delta provenance instead of unrecoverable historical SQL text equality. Historical
-text remains unavailable; old method-choice blocker resolved. Actual replacement
-backup/restore/full compatibility/review NOT RUN, not waived. Selected current
-catalog/ledger/dependency guards and Edge metadata MATCH4October; no row data,
-source retrieval or served-web acceptance refreshed. No hosted changes/export/runtime.
-Use exact next private destination/data/clone/resource/cleanup packet before export;
-old R1 fixed targets and schema-only overlap runner are not new recovery proof.
+text remains unavailable; method and exact private operation are now approved.
+[Actual protected export](reports/2026-10-07-p3-protected-recovery-execution.md):
+consistent7October snapshot24schemas/101tables/2879rows/AES-GCM roundtrip PASS,
+actual isolated restore/fidelity NOT RUN. Two full-image layouts hit2458MiBbacking
+cap; no PG container/private bytes inVM. Derived runtime/cache removed; encrypted
+backup retained. Next bounded offline capacity/actual equality; no unchanged rebuild
+or owner-data purge. Full compatibility/review NOT RUN, P3release NO-GO. Fresh
+correct-profile Vercel Ready production stilla13f696; metadata, not HTTP proof.
+Selected catalog/ledger/dependency guards/Edge metadata MATCH4October is dated
+preflight, not full restore. No hosted write/deploy/storage activation. Old R1 fixed
+targets and schema-only overlap runner are not this replacement recovery proof.
 
 ## Historical revocation release boundary — 4 October 2026
 

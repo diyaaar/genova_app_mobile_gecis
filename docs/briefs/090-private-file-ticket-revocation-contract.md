@@ -15,6 +15,143 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 7 October — approved protected export and bounded isolated restore execution
+
+Owner now explicitly approves the exact private Auth/application export and offline
+restore operation presented in the7October question. Previous audit NO PROGRESS/
+BLOCKED correctly stopped unauthorized export; this approval resolves that boundary,
+resumes same full goal, fresh blocked audit if another genuine condition persists.
+Entry `main/50a09d5`, primary sole writer, unrelated CLI marker preserved.
+Read actual AGENTS/handoff/active/090/method packet, controls/guide/work cycle,
+prior R1 exporter/restore limitations; complete Supabase/Postgres/TypeSafe skills,
+least-privilege/short-transaction/idle-timeout references and live changelog/docs.
+
+One outcome: actual consistent protected snapshot + faithful isolated recovery,
+not hosted promotion. New bounded source/test helpers under spike090 and small
+redacted docs/reports090; private artifacts only new exclusive directory under
+/Users/alidiyarduran/Documents/Codex/2026-10-07. Exact linked project/native export
+exception as approved R1; named MCP remains catalog identity path, no other project.
+No hosted DDL/DML/logout/invite, provider/cloud restore/secrets, push/deploy, private
+AI export, distribution, product fixes or owner QA. Future-delta/independent-review/
+runtime gaps remain open. Preserve old backups/prior accepted manifests/CLI marker.
+
+Next3actions:1safe guarded consistent export including needed Realtime definitions/
+roles/catalog+data fingerprints and streaming size cap,2bounded compatible offline
+baseline restore/fidelity before synthetic writer,3focused source checks/redacted
+evidence/cleanup/owned commits. Current free14,597,556KiB, export peak≤640MiB,
+128MiBstream cap, no raw bytes/logs/stdout. Private files0700directory/0600files;
+optionally authenticated encryption with local task key (never credentials/console).
+No Docker socket/previous VM exists; runtime peak still UNKNOWN so no image/VM
+allocation before bounded base+virtual-disk+artifact cap proves10GiBfloor. One heavy
+process,90sec snapshot read/5min transaction cap; failures logged privately, no retries.
+
+Export attempts1/2 stopped before metadata/dump artifact creation, empty protected
+SQL logs. No backup PASS. Local parser reproduced partial-line issue; newline-only
+repair then revealed multiline composite-json framing gap. After2approaches paused
+and reassessed before any next export: snapshot outer JSONB canonicalizes composite
+whitespace, complete-document scanner accepts multiline/escaped strings and refuses
+partial data; offline regression expanded. Failure stage names now recorded privately
+without SQL/row/error echo. Next bounded export only after focused tests on both
+framing failures; not automatic repetition. Failed32Bkey-only directories retained
+until small redacted failure record then owned cleanup, old backups untouched.
+
+Export succeeded20:16:25.725UTC7October, held cutoff20:14:20.369414UTC:
+24schemas/101data tables/17roles/22memberships;1,693,495plaintext bytes encrypted
+AES256GCM→1,693,531B, encrypted SHA3ca7ef1b2f7c9761b1fc98c9ec198a03edf077113e4ce49109ef657db9b40650.
+Private directorygenova-090-p3-RAJEJt under approved7Octoberparent;0600files/key,
+0700directory, same-snapshot catalog/security/data fingerprints. No raw contents/
+per-table hashes in Git/chat/Jev. Source readonly/roles, encryption roundtrip PASS;
+restore NOT RUN. Actual source extensions6match prior managed image seed; source
+metadata162functions/118relations/510constraints/329indexes/62triggers/15defaultACL,
+2publications/15publicationtables. Existing old snapshot never overwritten.
+
+Runtime resource reassessment: no host Docker socket/QEMU. Qcow2VZconversion caches
+have unknown peak; do not allocate blindly. Installed pinned Alpine-LimaISO v0.2.49
+ARM64SHA5127ef845a28cd8d77da8317a2d748456f0861d86d23dc2c51739927f16c634fec21ec90d58edd71202bdd708f81629bcffc4c9c682689bcc34f37668803757d463
+official HEAD108,181,504B. New URLcache entry absent before operation; bounded
+220MiBcache reserve. Actual full managed PostgreSQL image retains exact c54digest.
+Task runtime files inside new exclusive2.4GiBcapacity sparse filesystem image under
+privatebackupdir, mount only/Volumes/g090p3, no existing mounts/volume overwritten;
+LIMA_HOME onlychild env in that volume, no global config or HOME reset. Guest512MiB,
+virtualroot4GiBsparse but physical cap2.4GiB, cache220MiB+hostswap512MiB+metadata64MiB
+reserve; current free rechecked before create, projected must exceed10GiB. No new
+global dependency install. Failures at volume/guest capacity remain actual FAIL,
+not a license to strip extensions/roles/rows. Monitor live floor; stop owned services
+and delete only newly owned disposable image/cache after final checks. Private dump
+retained. Container networkNONE/no mounts/ports before any private bytes enter.
+
+Runtime first boot timed out optional Docker probe, not a missing/terminal VM.
+Verified same instance Running. Guest diagnostics show ISO root tmpfs237,816KiB,
+Docker CLI extraction ENOSPC; host free13,693,912KiB and capped volume only178MiB
+allocated. Actual /dev/vda1 already ext4-mounted on /mnt/data and var/lib; no disk
+format required/performed. Changed bounded approach: same VM's public /usr copy
+onto existing owned data disk, bind mount, remove only just-renamed RAM duplicate,
+repair public package installation before private restore. Source YAML now defers
+Docker provisioning explicitly; no generated VM config manually rewritten and no
+whole environment restarted. Failed start log retained; no secret/data entered VM.
+Second scoped provision attempt stopped at ordinary /usr/local unmount busy (live
+guest agent), before rename/removal/private data. Reassessed after2approaches:
+disk copy present/whole VM stillRunning; BusyBox documented lazy unmount preserves
+open handles. Resume only hash-matching existing dockerd public copy, lazy-detach
+owned nested mount, then planned bind/cleanup. Separate provision-resume log, no
+same command blind retry/old evidence overwrite; no formatting or host data deletion.
+Provision-resume completed bind/package repair and rc-service started Docker, but
+immediate info probe raced first socket creation. Fresh same-daemon logs/status
+show API initialized; do not restart VM/daemon or rerun destructive relocation.
+Future source probe bounded30sec; current action is read-only readiness check then
+guarded exact image pull. RAM root now22MiB/238MiB used, public /usr on capped disk;
+only renamed duplicate public RAM files removed, recoverable from ISO/disk copy.
+First exact PG image pull failed while extracting nix source layer; capped host
+volume2,313,180KiB, guest data FS became read-only on capacity pressure; host still
+11,587,792KiB >10GiB. No private dump in VM/no container created. Do not fsck or
+reuse damaged derived FS. Changed bounded alternative: stop/delete only owned VM/
+cappedimage, retain encrypted snapshot/failure logs, recreate once with canonical
+postboot /usr-on-disk provisioning and minimal Docker packages/classic snapshotter
+(no retained compressed containerd content). Same exact full c54PG image/extension/
+role/data scope; no slimmer/fake recovery substitute, no global dependencies.
+Source config/new phase log names preserve attempts. If this second full-image
+layout also cannot fit, stop new allocation and record actual resource prerequisite.
+
+Second exact image/classic-store pull also failed20:46:14.085UTC: cappedimage
+2,306,836KiBallocated, guestdf still1,742,564KiBavailable but physical backing cap
+reached/read-onlyFS; hostfree11,806,236KiB>floor. No PG container/private bytes inVM.
+STOP full-image allocation under unchanged cap; no weaker extensions/owners/grants.
+Actual restore/schema+ACL+RLS+role/data equality NOT RUN, goal/P3 NOT COMPLETE.
+New resource blocker first progress turn, not a three-turn blocked audit; same
+full goal ACTIVE. Owner operation approval preserved, no duplicate scope request.
+
+[Actual execution and acceptance](../reports/2026-10-07-p3-protected-recovery-execution.md)
+and [generated redacted result](../reports/090/2026-10-07-p3-protected-recovery.json).
+Finalizer authenticates encrypted dump and same-cutoff metadata a second time;
+total2879rows, not count-based fidelity. Exact failed-key-only directories removed
+after failure record; successful backup retained. Final cleanup20:51:42.377UTC
+stopped/deleted ownedVM/image/newISOcache only; defaultLima0/no mount/cache/image,
+free14,113,780KiB. No user/globalcache/toolchain/oldbackup removal. No live handle
+to wait on; no owner QA. Fresh correct-profile Vercel production Ready
+ApCrcavKPpHSdBzdpv8JvESEiKc5/main/a13f696da8c731e9af2a2bce473d4f4ae4a81587,
+app.genesinovachoir.com; metadata only, no HTTP/revocation acceptance.
+
+Next one action: bounded offline capacity. Proposed6GiBphysical runtime plus
+220MiBcache/512MiBswap/64MiBmetadata, at least18GiBmeasured hostfree; this is a
+budgeted next cap, NOT known peak/guarantee. Current13.46GiBcannot support that cap
+while retaining10GiBfloor. No user-data purge/different private destination without
+exact scope. Then actual compatible network-none restore/selected equality before
+synthetic writers/convergence/mixed clients/review. Snapshot freshness rechecked
+before schema work. Recovery/source-helper tests alone cannot close required row.
+
+Focused local checks26PASS (new parser/stream/encryption/restore comparison7 plus
+existing current projection/delta/hosted/entry19); exact P1/P3regeneration/610pins
+PASS. No production source/config/dependencies changed, no unchanged root/mobile
+build/platform tests rerun. Syntax/local links/secrets/diff final gate below.
+Jev0/$0new inference, no new paid service; provider/compute totalcost unmeasured.
+Exit19owned files/172local links/0missing/0key-JWT-private-key patterns;9MJSsyntax/
+2JSONparse/shsyntax PASS, scoped diff PASS. Link diagnostic initially overescaped
+and returned0matches; rejected/corrected before real172-target check. Read-only
+space inspection:.nextabsent/spike804KiB, root/mobiledeps1,621,064/7,480,568KiB kept;
+no external physicaldisklisted/no known disposable output sufficient. Finalfresh
+hostfree13,947,784KiB>floor, no new heavy process. Different allocation/destination
+prerequisite unresolved; actual restore still NOT RUN, original goal not narrowed.
+
 ### 7 October — resumed goal blocked audit, operational scope unanswered
 
 Entry `main/f61f11c`, sole writer; unrelated CLI marker preserved. Previous goal

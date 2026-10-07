@@ -1,29 +1,38 @@
 # Delivery checkpoint — single current execution pointer
 
-Updated 7 October 2026. P1 entry `main/3fb3a2c`; product source unchanged
+Updated 8 October 2026 (7 October UTC recovery execution). P1 entry `main/3fb3a2c`; product source unchanged
 by this inventory. This is the moving execution index, not a substitute for acceptance evidence.
 Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
 - Active plan: **P3 — compatible, reviewed and recoverable release package**, IN PROGRESS / PARTIAL inventory after local P2 acceptance; connection blocker removed.
-- Goal **BLOCKED, NOT COMPLETE** after three consecutive resumed turns with exact
-  private Auth/application export/offline runtime scope unanswered. Method#35already
-  accepted; no repeat method/key request. Independent authorized inventory/preparation
-  checkpointed; replacement fidelity NOT RUN, no live handle/verified wait. Resume
-  same goal on existing operation question answer, then bounded recovery preflight.
+- Goal **ACTIVE / INCOMPLETE**. Owner approved method#35 AND exact protected private
+  Auth/application export/local restore; old unanswered-operation blocker resolved.
+  [Actual execution](../reports/2026-10-07-p3-protected-recovery-execution.md)/
+  [generated record](../reports/090/2026-10-07-p3-protected-recovery.json): consistent
+  snapshot7Oct20:14UTC/24schemas/101tables/2879rows/17roles/22memberships, AES-GCM
+  roundtrip PASS. Actual restore/fidelity NOT RUN: two exact full-image layouts hit
+  2458MiBphysical backing cap/read-onlyFS. No PG container/private bytes inVM.
+  Own runtime/newISOcache/failed-key-only dirs removed, successful encrypted backup/
+  small logs kept; defaultLima0/free14,113,780KiB. No unchanged rebuild or weaker
+  security restore. Next bounded capacity: proposed6GiBcap+reserves/≥18GiBmeasured
+  hostfree, fresh preflight, peak unknown/not guarantee; no user-data purge allowed.
+  26helper tests/610pins/regeneration PASS. Fresh correct-profile Vercel Ready still
+  a13f696/ApCrcavKPpHSdBzdpv8JvESEiKc5; metadata only, no hosted write/owner QA.
+  This is progress, not a third-turn resource-blocked audit or goal/P3 completion.
 - Current [7October method and preflight](../reports/2026-10-07-p3-current-state-evidence-method.md):
   owner accepts current-state backup/isolated restore + future-delta provenance;
   method-choice blocker resolved, historical SQL text still unavailable. Replacement
   evidence NOT RUN, no full goal/P3 completion. Fresh selected catalog/ledger/ten-
   delta guards/21Edge metadata projections MATCH4October; not row/backup equality.
-  19helper tests/610pins PASS; no product/private export/runtime/live write. Next
-  exact protected data-export/offline-restore scope, then faithful recovery and
-  prepared convergence/compatibility/review. No repeated method/key question.
-  Same-day local readiness: Lima2.2.0/0instances, old backend/socket absent; native
+  Dated preflight19helper tests/610pins PASS; no product/private export/runtime/live
+  write at that observation. Subsequent approved actual export/runtime attempt is
+  recorded above; no repeated scope/method/key question. Earlier local readiness:
+  Lima2.2.0/0instances, old backend/socket absent; native
   PG lacks pg_net/Vault control files. Official historical arm64 image digest verified,
   54compressed layers1,010,225,613B; unpacked/VM peak UNKNOWN, runtime NOT READY.
-  Private-data/offline-runtime question unanswered; no export/download/runtime.
+  The then-unanswered private operation question is now approved, superseded above.
 - Latest [source convergence contract / full-goal audit](../reports/2026-10-04-p3-convergence-contract-audit.md):
   actual eight source pins verified; exact future hook/log/Auth lifetime tests,
   preserved browser/native behavior and affected acceptance defined, NOT IMPLEMENTED.
@@ -58,7 +67,8 @@ Historical records keep their original date/revision. [Guide](README.md).
 - Single writer: primary agent. Unrelated `supabase/.temp/cli-latest` is modified;
   preserve and exclude it. Recheck actual ownership on every resume.
 - P2-owned simulator/processes/generated native/runtime/root outputs cleaned; free21,452,752KiB.
-  No active owned runtime. Verify fresh resources before P3; preserve existing caches/deps/user data.
+  That P2 cleanup/free figure is historical. Latest P3 cleanup/resources above;
+  no active owned runtime. Verify fresh resources; preserve caches/deps/user data.
 - Whole 090/R1, active storage cutover, installed beta and two-store acceptance remain OPEN.
 - [3Oct guide check](../reports/2026-10-03-delivery-guide-checkpoint-review.md): entry4e7ab14,
   610 pins/five iOS sidecar hashes/157native/5server reverified; runbook current pointer
@@ -120,16 +130,18 @@ Evidence: [Jev/source audit](../reports/2026-10-03-jev-conversation-direction-au
 
 ## Next three actions
 
-1. Execute the7October protected current-state snapshot/isolated-restore replacement
-   after exact private-data/runtime scope and fresh resource/image preflight. Method
-   already accepted; do not ask it again. Require schema/ACL/role/data equality, not
-   counts alone. No live restore, connection/key request, ledger edit or bulk replay.
+1. Resolve bounded offline capacity, then restore the approved7October encrypted
+   snapshot in exact compatible network-none target. Method AND operation already
+   accepted; no duplicate approval/key request. Require schema/ACL/RLS/role/full-row
+   equality, not counts/decryption alone. Proposed6GiBphysical cap/≥18GiBhostfree,
+   fresh monitoring; no unscoped user-data deletion or private destination change.
+   No live restore, ledger edit or bulk replay; no unchanged capped rebuild.
 2. Use the prepared narrow full-source hook/log/Auth lifetime convergence contract,
    actual consent/probe integration regressions and affected P1/P2 pin/acceptance update.
    Already-present embedded cache/offline/file-label guards must not be reapplied blindly.
 3. Use completed mapping for scoped fresh recovery/full actual Next/Auth/RLS old-new-
    mixed compatibility and independent review/exact operation packet. No live activation,
-   bulk push or data export from this inventory. First required inventory row stays open.
+   bulk push or data export outside approved exact scope. Recovery row stays open.
 
 Latest planning review Jev1call/5questions/1943input/221output, estimated$0.000081606;
 sources/tests authoritative. No raw-chat rescan/product test rerun or owner QA.
