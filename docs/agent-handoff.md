@@ -9,7 +9,7 @@ One writer; verify HEAD, dirty ownership, resources and exact permission on resu
 
 ## Current execution — P1 source + P2 local accepted, P3 IN PROGRESS
 
-Full inventory goal **ACTIVE / INCOMPLETE**, not complete or third-turn blocked.
+Full inventory goal **BLOCKED / NOT COMPLETE**, after3consecutive capacity turns.
 Owner approved method#35 AND exact protected Auth/application export/local restore.
 Old unanswered-operation blocker resolved; do not ask the same question/key again.
 New [actual execution](reports/2026-10-07-p3-protected-recovery-execution.md)/
@@ -25,13 +25,13 @@ bytes entered VM. STOP unchanged rebuilds; no stripped extension/owner/grant rec
 Own VM/volume/newISOcache/failed-key-only dirs removed; encrypted backup/logs kept.
 [8Oct audit](reports/2026-10-08-p3-offline-resource-audit.md): same-image dated R1
 VM allocation6,358,328KiB changes next budget to7.5GiBphysical/8GiBguest/≥20GiBhostfree
-+reserves, not guaranteed fit. Latest13,629,828KiB/defaultLima0; P2ownedUUID/builds
++reserves, not guaranteed fit. Latest13,635,072KiB/defaultLima0; P2ownedUUID/builds
 absent, emptyruntime0KiB; existing22simulators/AVD3,730,184KiB preserved. No external
-physicaldisklisted. Resource blocker2consecutive turns; old choice unanswered,
-new budget evidence only. No source/private/runtime change or unchanged tests rerun.
+physicaldisklisted. Resource blocker3consecutive turns; old choice unanswered,
+current audit no new fidelity proof/live handle. Stop autonomous dependent work.
 Different protected destination needs exact custody scope; no user-data cleanup.
 
-NEXT: resolve bounded offline capacity → same protected snapshot actual compatible
+RESUME: resolve bounded offline capacity → same protected snapshot actual compatible
 network-none restore + exact roles/extensions/catalog/row equality → prepared minimum
 hook/log/Auth lifetime repair + full mixed-client/review/operation package. No narrower
 goal/owner QA/hosted write/push/deploy/distribution. Inventory stays open until fidelity.

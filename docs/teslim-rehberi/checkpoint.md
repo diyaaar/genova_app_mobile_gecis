@@ -7,14 +7,23 @@ Historical records keep their original date/revision. [Guide](README.md).
 ## Current position
 
 - Active plan: **P3 — compatible, reviewed and recoverable release package**, IN PROGRESS / PARTIAL inventory after local P2 acceptance; connection blocker removed.
+- Same full inventory goal **BLOCKED, NOT COMPLETE** after3consecutive offline-
+  capacity turns (9db0f0bactual snapshot/failed pulls →4a49de2budget audit →current
+  recheck). Currentfree13,635,072KiB/defaultLima0/no ownedmount+image/no external
+  disk or scope answer; protected backup0700/0600 retained, no restore result/live
+  handle. Decision35actual fidelity NOT RUN. No independent missing inventory
+  action ready without resource/custody change; stop autonomous dependent work,
+  no weaker restore/unchanged export-test-catalog repeats/owner QA. Resume existing
+  capacity choice then fresh bounded preflight/actual fidelity, not another key ask.
 - Latest [8Oct resource audit](../reports/2026-10-08-p3-offline-resource-audit.md):
   prior exact c54image R1 actualVM6,358,328KiB changes next proposed physical cap
   6→7.5GiB/guest8GiB and measured hostfree target18→20GiB; reserve8,679,424KiB,
   not guaranteed fit/current peak proof. Latestfree13,629,828KiB/defaultLima0;
   old P2ownedUUID/builds absent, emptyruntime0KiB; existing22simulators/AVD kept,
   externalphysicaldisk0. No sufficient disposable owned output/destination authority.
-  No deletion/runtime/private/source/test/hosted change. Resource boundary2turns,
-  goal ACTIVE/INCOMPLETE, fidelity NOT RUN; original choice unanswered, no repeat ask.
+  No deletion/runtime/private/source/test/hosted change at that dated audit; then
+  resource boundary2turns/goalACTIVE. Superseded goal status above, fidelity still
+  NOT RUN; original choice unanswered, no repeat ask.
 - Goal **ACTIVE / INCOMPLETE**. Owner approved method#35 AND exact protected private
   Auth/application export/local restore; old unanswered-operation blocker resolved.
   [Actual execution](../reports/2026-10-07-p3-protected-recovery-execution.md)/

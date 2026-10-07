@@ -15,6 +15,46 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 8 October — third consecutive offline-capacity blocker audit
+
+Entry main/4a49de2; primary sole writer; unrelated CLI marker preserved/excluded.
+Previous goal turn PROGRESS: exact-image dated allocation refined next budget and
+confirmed no disposable owned output. Current continuation NO PROGRESS toward
+recovery acceptance, not a verified wait. Revalidated current handoff/active/card/
+controls/decision35, complete Supabase/TypeSafe skills; no schema/API/AI integration.
+Allowed this card/current pointers and small read-only resource/backup-mode checks;
+no private file body/log/key reads, export, runtime/install, hosted query/write,
+deletion, new custody destination, paid inference, owner QA or release action.
+
+Same actual offline-capacity condition now persists3consecutive goal turns:
+9db0f0bapproved export but two capped full-image pulls failed;4a49de2source-backed
+budget/preserved-output audit; this recheck. Currenthostfree13,635,072KiB (~13GiB),
+below proposed20GiBhostfree for7.5GiBphysical/8GiBguest+8,679,424KiBreserve while
+retaining10GiBfloor. No externalphysicaldisklisted, no resource/custody choice
+received; automatic continuation is not that answer. DefaultLima0/ownedmount+image
+absent, no current restore-summary/job/session to wait on. Protected dump1,693,531B,
+metadata856,871B/key32B remain0600/nosymlink in0700directory; contents not read.
+
+Decision35 requires actual isolated schema/owner/grant/RLS/role/trigger/publication/
+full-row equality, not authenticated decryption/counts/source tests. It remains NOT
+RUN, prevents original full inventory goal closure. Source/current metadata/route/
+five-family old-new-security-cache mapping/delta/recovery/review/operation preparation
+is committed; no independent missing inventory action is ready without that
+resource change. Cannot replace full-image/fidelity with stripped extensions/grants,
+another tiny feature, unchanged green checks/catalog/export/image repeats or owner
+manual QA. Prior method AND operation approval preserved; no key/connector request.
+
+After document links/redaction/diff and scoped090commit, blocked audit threshold
+passes: update same full goal BLOCKED, NOT COMPLETE/PAUSED, and stop autonomous
+dependent execution. P3/090R1 remain IN PROGRESS/OPEN. Resume after bounded capacity
+or exact protected destination/custody is available; freshness/preflight/phase names
+and actual fidelity still required, followed by prepared convergence/mixed clients/
+independent review/exact operations. This is not a new recovery/product PASS.
+Only4moving documentation paths; no new artifact/runtime/product tests or inference,
+Jev0/$0new. Detailed actual execution and resource audit remain dated/unchanged.
+Exit4owned documents/145local links/0missing/0key-JWT-private-key patterns;
+scoped diff PASS. No product/helper/platform tests rerun; CLI marker excluded.
+
 ### 8 October — source-backed offline capacity and preserved-output audit
 
 Entry main/9db0f0b; primary sole writer; CLI marker unrelated/excluded. Previous
