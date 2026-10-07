@@ -15,6 +15,10 @@ Historical records keep their original date/revision. [Guide](README.md).
   19helper tests/610pins PASS; no product/private export/runtime/live write. Next
   exact protected data-export/offline-restore scope, then faithful recovery and
   prepared convergence/compatibility/review. No repeated method/key question.
+  Same-day local readiness: Lima2.2.0/0instances, old backend/socket absent; native
+  PG lacks pg_net/Vault control files. Official historical arm64 image digest verified,
+  54compressed layers1,010,225,613B; unpacked/VM peak UNKNOWN, runtime NOT READY.
+  Private-data/offline-runtime question unanswered; no export/download/runtime.
 - Latest [source convergence contract / full-goal audit](../reports/2026-10-04-p3-convergence-contract-audit.md):
   actual eight source pins verified; exact future hook/log/Auth lifetime tests,
   preserved browser/native behavior and affected acceptance defined, NOT IMPLEMENTED.

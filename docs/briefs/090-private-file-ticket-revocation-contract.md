@@ -15,6 +15,52 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 7 October continuation — local recovery readiness, no data export
+
+Entry `main/29c1d27`, sole writer, unrelated CLI marker preserved. Previous turn
+PROGRESS: method decision35/current metadata acquired and committed. Method
+approval received; specific private-data export/offline runtime question unanswered.
+Automatic goal continuation is not that answer. Read current handoff/active/090/
+controls, installed Supabase+TypeSafe full skills/live backup docs/index. No new
+schema/Auth work or paid inference. Same full original goal/replacement evidence.
+
+One independent preparation result: actual installed tool/removed runtime/public
+pinned image size observation changes the next recovery action. Allowed local
+read-only version/help/Lima inventory and small official public registry manifest,
+this card/existing7October report/checkpoint/handoff/active only. No private data/
+credential/backup body access, image-layer download, install/runtime/copy/hosted
+query/write/device/deploy or owner QA. Next3actions:1verify actual tools/runtime/
+public image metadata,2record measured versus unknown allocation and refusal of
+old fixed restore target,3links/diff/redaction/scoped090commit. Preflight15,974,244KiB
+free, registry metadata≤256KiB/response and≤1MiBtotal estimate, no layer bytes.
+Unknown restore peak does not pass the disk gate; no runtime started.
+
+Result: actual Lima2.2.0 inventory0instances, old directory/socket absent. Native
+pg_dump17.11 help checked; pgcrypto/uuid-ossp/pg_stat_statements controls exist,
+pg_net/Vault controls absent. Native restore without managed extensions cannot be
+declared faithful. Official public historical image/config SHA256verified at
+02:33:54/02:34:18UTC7October,linux/arm64,54layers1,010,225,613compressed bytes;
+public metadata only10,520+23,984B, no layer/cache/runtime/user bytes exported.
+Available headroom5,488,484KiB at preflight; VM/base/unpacked peak unknown so NOT
+READY allocation gate, not a guessed PASS. Exact observations/exclusions appended
+to7October method report; independently ready local preparation now checkpointed.
+
+| Local readiness criterion | Required? | Status | Evidence / boundary |
+|---|---|---|---|
+| Tools/real old-runtime state | yes, preparation | PASS observations | Version/help/Lima JSON and directory/socket checks, no create/start |
+| Pinned public image identity/platform/compressed size | yes, estimate input | PASS observations | Manifest/config SHA256exact; no layer bytes/extension/backend execution |
+| Full allocated restore peak/disk gate | required before allocation | UNKNOWN / NOT READY | Compressed size is not unpacked VM/image/data peak; no environment allocated |
+| Local links/diff/redaction/scoped commit | yes | PASS at checkpoint |147links/0missing,5owned docs exact secret/pattern scan0,diff check;CLI marker excluded |
+| Private export/actual faithful restore/full goal | yes, replacement | NOT RUN | Specific operational approval not received; method decision alone/automatic turn not that answer |
+
+This continuation PROGRESS changes next action: old runtime cannot be reused and
+native missing extensions must not be stripped. Not a verified wait; no live job
+handle exists. No repeated method/operational question, hosted queries, builds or
+product tests. Original full goal stays incomplete; no new blocking-status claim
+before fresh threshold. Next is already presented exact export/offline scope answer,
+then bounded peak estimate and actual faithful recovery, not another tiny feature.
+Final free15,948,712KiB, no owned disposable runtime/download/artifact. Jev0/$0new.
+
 ### 7 October — owner-approved current-state evidence method
 
 Owner explicitly accepts the current-backup method and asks to resume. This resolves

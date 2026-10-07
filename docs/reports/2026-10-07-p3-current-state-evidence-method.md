@@ -126,3 +126,46 @@ protected destination and a bounded offline clone, not re-approval of method, ke
 live writes or owner testing. Actual current-state fidelity criterion stays NOT RUN
 until executed. At this checkpoint no backup exported, runtime recreated or product
 fix implemented; the full original goal is not marked complete.
+
+## Same-day local recovery readiness continuation
+
+Entry `main/29c1d27`; private-data/offline-runtime question remains unanswered.
+Previous turn PROGRESS, this continuation gathers new causal resource evidence,
+not a verified wait or a replay of prior hosted queries. No data export is inferred
+from automatic goal continuation; no another method/key/manual-QA question sent.
+
+Fresh read-only local observations:
+
+- Installed Lima **2.2.0** reports **zero instances**. Previous genova090r1 directory
+  and Docker socket both absent. Old fixed restore helpers have no live backend;
+  do not treat a path/old report as a process handle or start it automatically.
+- Native pg_dump17.11 help confirms snapshot/schema selectors and ordinary owner/
+  grant-preserving output; explicit --no-owner/--no-privileges flags must not be
+  used to get a passing recovery. Help is not a restore test.
+- Installed native extension controls exist for pgcrypto,uuid-ossp,pg_stat_statements
+  but **not pg_net or supabase_vault**. A plain native PG restore cannot be claimed
+  faithful to the prior managed-extension seed without resolving these dependencies;
+  do not drop/strip extension objects or replace them with fake success stubs.
+- Public official registry at02:33:54.552UTC7October returns the exact historical
+  pinned image sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00.
+  Manifest10,520bytes,54layers,compressed layer sum **1,010,225,613bytes**.
+  At02:34:18.105UTC config23,984bytes verifies **linux/arm64**, config digest
+  sha256:40868dfbce8c3a901448991069b7bcabbe14e8f8105ef609af22afce79b2dc44.
+  Both image manifest/config bytes match requested SHA256. Only public JSON
+  metadata fetched; no image layer downloaded or cached, no image run/extension
+  behavior/backend version tested, no latest tag substituted.
+
+Resource preflight free **15,974,244KiB**; incremental headroom above10GiB floor
+**5,488,484KiB**. Compressed image is about963.4MiB, but **not** total allocated
+peak: extraction/cache/image layers, VM base/disk and restore data/temporary copy
+all count. No current owned VM to reuse. Unpacked/base allocation is still UNKNOWN;
+therefore runtime/download gate is **NOT READY**, not a guessed3GiB PASS. No old
+image/runtime recreated merely because compressed bytes appear to fit. After
+actual operation authorization, first obtain bounded base/image allocation estimate
+and enforce the floor before any layer/VM allocation. Stop safely if peak unknown.
+
+Scope of this continuation is only public metadata/local readiness and documentation.
+Supabase/TypeSafe skills keep restore/tenant/security proof separate from resource
+observations; no paid inference. Private snapshot/row equality/current full runtime
+and independent review remain NOT RUN. At exit local links/diff/secret checks and
+scoped commit recorded in the owning card; no product tests rerun without a change.

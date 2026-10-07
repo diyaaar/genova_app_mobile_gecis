@@ -38,6 +38,8 @@ statusRPCACLnot079.21Edge metadata/17sources:5fullmatch,6runtime/type-onlyomissi
 6real differences,3missing. Five readers oldtickets; drive-manager-v2source/JWT drift.
 4October Vercel a13f696, not7OctoberHTTPproof.19helper tests/610pins PASS.
 No product/private-export/live/build/runtime/device change.
+Local Lima0instances, native pg_net/Vault controls absent; historical arm64image
+digest verified, compressed1,010,225,613B, unpacked/VM peak UNKNOWN. No runtime.
 Jev0/$0new; old dated failures/audits retained, ZIP status/path still unknown.
 Ten-delta catalog dependency inventory done, not apply accepted:048←046,
 082/087←078,088←078+087,090legacy←090actor;078before090package security order.

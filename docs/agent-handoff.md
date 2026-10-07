@@ -44,6 +44,8 @@ hook/log/Auth lifetime convergence (NOT IMPLEMENTED)/mixed clients → independe
 review/operations. Old overlap runner NOT recovery proof; no bulk push/P4activation.
 Jev0/$0new; CLI marker excluded; old ZIP status unknown/no workaround or cleanup.
 No owner QA/runtime; >=10GiB/one heavy process before future build/restore.
+Local readiness: Lima0instances/old socket absent; native pg_net/Vault controls absent.
+Pinned arm64image compressed1,010,225,613B, unpacked/VM peak UNKNOWN: no runtime yet.
 
 ## Source and evidence boundaries
 
