@@ -19,6 +19,12 @@ yeni karara açıkça bağla. Eski tahminler güncel doğrulama değildir.
 |---|---|---|---|
 | 34 | **First Android beta: a small group from the existing choir, then a second independent choir** | Owner selected this staged cohort. Synthetic two-choir isolation remains required before first beta; real second-choir onboarding remains part of full-product acceptance. This chooses cohort order, not recipients, account mutations, invitation sending or distribution authorization. Execution: [P5](docs/teslim-rehberi/05-android-beta.md) → [P6.1](docs/teslim-rehberi/06-full-product.md). | 3 Oct 2026 |
 
+## P3 current-state evidence method — 7 October 2026
+
+| # | Decision | Rationale | Date |
+|---|---|---|---|
+| 35 | **Use a protected fresh current-state snapshot and isolated restore rather than unavailable historical applied SQL text equality** | Owner explicitly accepts the current-backup method and asks to resume. The15NULLhistorical statements stay UNAVAILABLE; never manufacture them or edit the ledger. Replacement evidence remains required: snapshot provenance/consistent cutoff, actual isolated restore schema/owner/grant/RLS/role/trigger/publication and data equality, and exact future-delta source/application records. Approval of method is not proof of execution or live restore/migration/deploy/distribution authority. Security negatives and independent review remain mandatory. [7October record](docs/reports/2026-10-07-p3-current-state-evidence-method.md). | 7 Oct 2026 |
+
 ## Private-file online revocation — 30 September 2026
 
 | # | Decision | Rationale / boundary | Date |

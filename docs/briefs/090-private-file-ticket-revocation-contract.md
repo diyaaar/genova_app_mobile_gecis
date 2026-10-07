@@ -15,6 +15,62 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 7 October — owner-approved current-state evidence method
+
+Owner explicitly accepts the current-backup method and asks to resume. This resolves
+the missing method choice, not historical statement availability. Preserve4October
+observations and original blockers as dated history. Entry `main/3569836`, sole
+writer, unrelated CLI marker preserved. Read actual AGENTS/handoff/active/090/P3,
+guide/work cycle/controls and prior R1 recovery/export/restore helpers. Complete
+Supabase and TypeSafe skills/live changelog+backup docs/index used; no paid inference.
+
+Same full inventory goal; resumed audit begins afresh, no completion claim. Required
+replacement evidence: protected consistent current-state snapshot + isolated restore
+of schema/owners/grants/RLS/roles/triggers/publications + exact future-delta provenance.
+Method approval is not actual recovery PASS or permission for live SQL/deployment.
+Current source-only/read-only paths: this card, decision/checkpoint/handoff/active/
+P3/runbook and dated report; thin metadata drift helper/test and digest record under
+spike/reports090. No user-row export, new credentials, product changes or runtime.
+
+One outcome: accepted evidence method reflected in current records and fresh
+correct-project catalog drift observation with exact protected recovery scope.
+Next3actions:1verify selected current catalog/Edge metadata against4October,
+2record replacement gates and concrete next export/restore operation boundary,
+3focused helper/pins/links/diff/secret checks and scoped090commit. No raw chats/Jev/
+sibling changes; no owner QA. Preflight15,000,784KiB free, <256KiBretained digest
+estimate, one lightweight process, no build/copy/download/runtime. Restore image/
+extension/version suitability must be freshly checked; old fixed targets not reused.
+
+Result: [accepted method/current-state packet](../reports/2026-10-07-p3-current-state-evidence-method.md),
+[decision35](../../KARARLAR.md#p3-current-state-evidence-method--7-october-2026) and
+[fresh metadata digests](../reports/090/2026-10-07-p3-current-state-preflight.json).
+At02:27:55.209UTC7October all8selected projections MATCH4October:83functions,
+74relations,225policies,378constraints,696columns,68ledger rows,ten-delta guard
+metadata and21Edge metadata. Server17.6/read-only. No rows exported, held snapshot,
+new Edge code retrieval or fresh served-web identity. Historical15NULLstatements
+still unavailable, but owner resolves method-choice blockage; replacement fidelity
+remains NOT RUN. Prior approved R1 export/rehearsal retained as dated exact scope.
+New exact private destination/data/clone packet presented; operational data-export
+confirmation requested separately, not repeated method approval or owner QA.
+
+| 7October criterion | Required? | Status | Evidence / boundary |
+|---|---|---|---|
+| Owner method acceptance recorded without historical false PASS | yes | PASS decision | Direct7October approval/decision35, dated history retained |
+| Current correct-project selected drift observation | yes | PASS observation |8,624B machine record/all8projection hashes MATCH; separate queries, NOT a consistent data snapshot |
+| Helper/frozen source/document validation | yes | PASS |3new+16existing=19focused tests,610pins/P1byte equivalence,193local links/0missing,11owned artifacts secret/pattern scan0,diff check |
+| Current-state protected backup/isolated restore fidelity | yes, replacement | NOT RUN | Exact data/runtime operation confirmation and new measured image/peak preflight; no exported backup/clone created |
+| Source convergence/full mixed-client/security/cache/independent review/live release | required P3/later | NOT RUN | Existing dated acceptance not inflated; no product/hosted write/device action |
+
+Previous goal turn PROGRESS; user resumes with the needed method decision. Old
+blocked audit no longer applies unchanged; do not mark goal complete or repeat
+historical-text query. New replacement gate is real and unrun; fresh blocked audit
+would start anew only if the operational boundary persists with no independent
+ready work. This turn progresses method/current-state provenance and packet.
+Final free15,980,056KiB; no runtime/large artifact/copy/download. New8,624B digest
+retained as essential evidence; scope onlyspike/docs/decision,CLI marker excluded.
+Jev0/$0new; Supabase skill required changelog/backup scope and extension/restore
+version caution; TypeSafe kept deterministic authority outside semantic inference.
+
 ### 4 October continuation — exact convergence contract and completion audit
 
 Entry `main/95b089d`; sole primary writer, unrelated CLI marker preserved. Previous

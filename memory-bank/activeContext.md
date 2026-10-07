@@ -1,6 +1,6 @@
 # Active context
 
-Updated 4 October 2026. [Handoff](../docs/agent-handoff.md) →
+Updated 7 October 2026. [Handoff](../docs/agent-handoff.md) →
 [090](../docs/briefs/090-private-file-ticket-revocation-contract.md) →
 [controls](../docs/mobil-teslim-plani.md#bounded-execution-and-resource-controls).
 English records/Turkish updates; sole writer; inspect current ownership/permissions.
@@ -25,27 +25,28 @@ focused26, root1178/build fresh. Failed UI/variant/cache attempts preserved; fix
 no-store repair, not hosted-provider proof. Owned device/process/build/runtime/PNG/log/
 root outputs cleaned; free21,452,752KiB. Jev1triage/5questions/1108input/215output/
 estimated$0.000046536; self-review not independent review; no owner QA.
-Current [contract/audit card](../docs/briefs/090-private-file-ticket-revocation-contract.md#4-october-continuation--exact-convergence-contract-and-completion-audit):
-[contract/audit](../docs/reports/2026-10-04-p3-convergence-contract-audit.md), [delta](../docs/reports/2026-10-04-p3-delta-dependency-inventory.md), [hosted](../docs/reports/2026-10-04-p3-hosted-reconciliation.md).
+Current [7October card](../docs/briefs/090-private-file-ticket-revocation-contract.md#7-october--owner-approved-current-state-evidence-method):
+[method/preflight](../docs/reports/2026-10-07-p3-current-state-evidence-method.md); [contract](../docs/reports/2026-10-04-p3-convergence-contract-audit.md), [hosted](../docs/reports/2026-10-04-p3-hosted-reconciliation.md).
 Existing named local MCP PAT recovered with owner approval; documented HTTP fixed
 project/read-only/catalog+functions, no new key/grant/config change. Connection
 blocker REMOVED; don't request another install/key.68ledger rows/15of25sourceIDs,
-all15SQLstatementsNULL: historicalchecksumUNAVAILABLE, not waived/goalcomplete.
+all15SQLstatementsNULL: historicalchecksumUNAVAILABLE. Owner#35accepts current-state
+backup/restore+future-delta provenance substitute; replacement NOT RUN/goalnotcomplete.
 Current catalog83functions/74relations/225policies/378constraints/696columns;
 65source bodies50match/4differ/11missing,7of38RPCs absent. Helpers005not078;
 statusRPCACLnot079.21Edge metadata/17sources:5fullmatch,6runtime/type-onlyomission,
 6real differences,3missing. Five readers oldtickets; drive-manager-v2source/JWT drift.
-Fresh Chrome Vercel stilla13f696. No hosted behavior/security acceptance.16helper
-tests/610pins/P1/P3byte verification PASS. No product/live/build/runtime/device change.
+4October Vercel a13f696, not7OctoberHTTPproof.19helper tests/610pins PASS.
+No product/private-export/live/build/runtime/device change.
 Jev0/$0new; old dated failures/audits retained, ZIP status/path still unknown.
 Ten-delta catalog dependency inventory done, not apply accepted:048←046,
 082/087←078,088←078+087,090legacy←090actor;078before090package security order.
 New actor090not_after predicate/test gap, unlike legacy; no live exploit claim.
-Next explicit historical-evidence method choice → narrow hook/log/Auth lifetime
-convergence (contract prepared, NOT IMPLEMENTED)/affectedP1P2 → fresh recovery/
-mixed-client rehearsal → independent review/operation scope. Old no-owner/grants
-overlap runner NOT recovery proof. No ledger replay/bulk push/activation/owner QA;
-actual Auth/REST/provider/persistence required, existing cache/offline guards kept.
+7October selected catalog/ledger/guards/21Edge metadata MATCH4October, not row/
+snapshot/source proof. Next exact protected export/offline-restore scope → fidelity
+→ prepared hook/log/Auth lifetime convergence (NOT IMPLEMENTED) → mixed-client
+rehearsal/review/operations. Old overlap runner NOT recovery proof; no bulk push/
+activation/owner QA; actual Auth/REST/provider/persistence still required.
 
 Android [fullv5](../docs/reports/090/2026-10-03-android-candidate-full-share-http-v5.json)
 dated3October14:04UTC PASS_HTTP_NATIVE:157native/5server matched frozen source,

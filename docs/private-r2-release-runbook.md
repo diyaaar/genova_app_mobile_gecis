@@ -7,7 +7,19 @@ inventory/copy evidence;077 is an unexecuted next-ten approval packet.
 Owner: release operator designated by the product owner. This is the single 053–065 release index;
 individual briefs remain the acceptance authority for each local implementation.
 
-## Current revocation release boundary — 4 October 2026
+## Current revocation release boundary — 7 October 2026
+
+[Owner decision35 and fresh preflight](reports/2026-10-07-p3-current-state-evidence-method.md)
+accepts protected current-state snapshot/isolated-restore equality and exact future
+delta provenance instead of unrecoverable historical SQL text equality. Historical
+text remains unavailable; old method-choice blocker resolved. Actual replacement
+backup/restore/full compatibility/review NOT RUN, not waived. Selected current
+catalog/ledger/dependency guards and Edge metadata MATCH4October; no row data,
+source retrieval or served-web acceptance refreshed. No hosted changes/export/runtime.
+Use exact next private destination/data/clone/resource/cleanup packet before export;
+old R1 fixed targets and schema-only overlap runner are not new recovery proof.
+
+## Historical revocation release boundary — 4 October 2026
 
 [Hosted reconciliation](reports/2026-10-04-p3-hosted-reconciliation.md) supersedes
 the missing-connector inference below. Existing named PAT/project read-only MCP

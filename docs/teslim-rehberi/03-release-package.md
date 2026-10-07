@@ -21,13 +21,17 @@ hook/log convergence, recovery/rehearsal and independent review remain required.
 [Delta inventory](../reports/2026-10-04-p3-delta-dependency-inventory.md) now verifies
 selected catalog prerequisites for ten absent SQL IDs and exact order. New actor090
 Auth lifetime predicate/test gap joins minimum convergence; no product fix here.
-Original historical equality still requires an explicit evidence-method decision;
-current-state hashes/metadata tests do not silently replace it or approve apply.
+[7October owner decision35](../reports/2026-10-07-p3-current-state-evidence-method.md)
+accepts current-state snapshot/isolated restore + exact future-delta provenance in
+place of unavailable historical SQL equality. Replacement acceptance NOT RUN;
+metadata hashes are not backup/restore proof and approve no live apply.
 [Exact convergence contract and goal audit](../reports/2026-10-04-p3-convergence-contract-audit.md)
 pins actual hook/helper/native/log/SQL sources and future real-helper/log-sink/Auth
 negatives; no fix implemented. Historical schema-only no-owner/no-grants test runner
-is explicitly excluded as current recovery proof. Pending method decision is not
-answered by automatic continuation; full original inventory goal still open.
+is explicitly excluded as current recovery proof. Earlier method-choice blockage is
+resolved by the owner's7October message, not by automatic continuation. Full original
+inventory goal stays open until replacement evidence succeeds. Fresh selected
+catalog/ledger/Edge metadata matches4October; web/source/row/backup proof stays dated.
 Do not read an old runbook packet as the current promotion scope.
 
 Read [R1's failed compatibility boundary and backup limits](../reports/2026-10-02-hosted-revocation-r1-recovery-rehearsal.md),

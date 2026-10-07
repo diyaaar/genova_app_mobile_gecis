@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 4 October 2026. [AGENTS](../AGENTS.md) → [active](../memory-bank/activeContext.md)
+Updated 7 October 2026. [AGENTS](../AGENTS.md) → [active](../memory-bank/activeContext.md)
 → [090](briefs/090-private-file-ticket-revocation-contract.md) → [controls](mobil-teslim-plani.md#bounded-execution-and-resource-controls).
 Read [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md); relevant
 [decisions](../KARARLAR.md)/[MIGRATION](../MIGRATION.md). English records/Turkish user copy.
@@ -21,26 +21,27 @@ expiry/validdenial/lease/diskcache0/normal-sign-in. iOS26.5/Release/SecureStore;
 157native/5server/426fixture pins. Fixture-only CFNetwork no-store repair does not
 prove hosted headers; tests/cost/failures remain dated in P2. Source support03b59b5.
 
-NEXT [contract/audit card](briefs/090-private-file-ticket-revocation-contract.md#4-october-continuation--exact-convergence-contract-and-completion-audit),
-[contract/audit](reports/2026-10-04-p3-convergence-contract-audit.md), [delta](reports/2026-10-04-p3-delta-dependency-inventory.md), [hosted](reports/2026-10-04-p3-hosted-reconciliation.md).
+NEXT [7October card](briefs/090-private-file-ticket-revocation-contract.md#7-october--owner-approved-current-state-evidence-method),
+[method/preflight](reports/2026-10-07-p3-current-state-evidence-method.md); [convergence](reports/2026-10-04-p3-convergence-contract-audit.md), [delta](reports/2026-10-04-p3-delta-dependency-inventory.md), [hosted](reports/2026-10-04-p3-hosted-reconciliation.md).
 Existing named local MCP PAT works through documented HTTP, fixed correct project
 and read-only/catalog+functions. No key/config/grant change; no app-key/psql fallback.
 Connection blocker REMOVED; do not ask for another install/key. Catalog83functions/
 74relations/225policies/378constraints/696columns;65source bodies50match/4differ/
 11missing;7of38RPCs absent. Selection helpers match005not078; statusRPCACL not079.
-68ledger rows,15of25source IDs present; all15storedSQLNULL: historical checksum
-equality UNAVAILABLE, not waived; original goal NOT COMPLETE. P3 IN PROGRESS.
+68ledger rows,15of25source IDs present; all15storedSQLNULL. Owner#35accepts
+current-state backup/restore + future-delta provenance replacement; historical text
+UNAVAILABLE, replacement acceptance NOT RUN, goal/P3 NOT COMPLETE.
 21Edge metadata/17sources:5full match,6runtime matches/type-only omitted,6real
 differences,3missing. Five readers oldtickets; drive-manager-v2source/JWT drift.
-Fresh Chrome Vercel production stillmain/a13f696. No hosted behavior acceptance.
+Dated4October Chrome Vercel production main/a13f696. No hosted behavior acceptance.
 Ten-delta catalog order observed, not apply accepted:048←046,082/087←078,
 088←078+087,090legacy←090actor; accepted078before090is package security order.
 New actor090not_after predicate/test gap; legacy checks it. No live exploit claim.
-16helper tests/610pins/P1/P3byte verification PASS; no product/runtime/live change.
-Next explicit historical-evidence method choice → narrow hook/log/Auth lifetime
-convergence (contract prepared; NOT IMPLEMENTED) → fresh recovery/full mixed-client
-rehearsal → independent review/operation scope. Old overlap runner strips owners/
-grants, NOT current recovery proof. No ledger replay/bulk push/P4activation.
+7October selected catalog/ledger/guards/21Edge metadata MATCH4October, not row/
+snapshot/source proof;19helper tests/610pins PASS. No product/export/runtime/live change.
+Next exact protected export/offline-restore scope → current-state fidelity → narrow
+hook/log/Auth lifetime convergence (NOT IMPLEMENTED)/mixed clients → independent
+review/operations. Old overlap runner NOT recovery proof; no bulk push/P4activation.
 Jev0/$0new; CLI marker excluded; old ZIP status unknown/no workaround or cleanup.
 No owner QA/runtime; >=10GiB/one heavy process before future build/restore.
 

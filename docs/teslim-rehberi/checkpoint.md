@@ -1,18 +1,27 @@
 # Delivery checkpoint — single current execution pointer
 
-Updated 4 October 2026. P1 entry `main/3fb3a2c`; product source unchanged
+Updated 7 October 2026. P1 entry `main/3fb3a2c`; product source unchanged
 by this inventory. This is the moving execution index, not a substitute for acceptance evidence.
 Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
 - Active plan: **P3 — compatible, reviewed and recoverable release package**, IN PROGRESS / PARTIAL inventory after local P2 acceptance; connection blocker removed.
+- Current [7October method and preflight](../reports/2026-10-07-p3-current-state-evidence-method.md):
+  owner accepts current-state backup/isolated restore + future-delta provenance;
+  method-choice blocker resolved, historical SQL text still unavailable. Replacement
+  evidence NOT RUN, no full goal/P3 completion. Fresh selected catalog/ledger/ten-
+  delta guards/21Edge metadata projections MATCH4October; not row/backup equality.
+  19helper tests/610pins PASS; no product/private export/runtime/live write. Next
+  exact protected data-export/offline-restore scope, then faithful recovery and
+  prepared convergence/compatibility/review. No repeated method/key question.
 - Latest [source convergence contract / full-goal audit](../reports/2026-10-04-p3-convergence-contract-audit.md):
   actual eight source pins verified; exact future hook/log/Auth lifetime tests,
   preserved browser/native behavior and affected acceptance defined, NOT IMPLEMENTED.
   Historical overlap runner strips owner/grants and adds test privileges: cannot
   serve as current-state recovery proof. All inventory requirements audited;
-  historical SQL equality still unavailable, evidence-method answer not received.
+  historical SQL equality still unavailable; method answer was then not received,
+  superseded by7October owner choice above.
   No product/runtime/live changes or unchanged product-test inflation.
 - Latest [delta dependency inventory](../reports/2026-10-04-p3-delta-dependency-inventory.md):
   ten absent SQL IDs checked against actual catalog; five preliminary starts/five
@@ -20,8 +29,8 @@ Historical records keep their original date/revision. [Guide](README.md).
   090legacy←090actor. Chat publication already present, private Realtime policies
   absent. New actor090Auth not_after predicate/test gap, not live exploit proof;
   include in minimum convergence.16focused tests/610pins PASS; product/live unchanged.
-  Historical checksum row remains required/unavailable: explicit evidence-method
-  choice needed, not another key. P3/goal NOT COMPLETE; no owner QA.
+  Historical checksum row was then required/unavailable;7October replaces the
+  evidence method, not historical availability. P3/goal NOT COMPLETE; no owner QA.
 - Latest [4 October hosted reconciliation](../reports/2026-10-04-p3-hosted-reconciliation.md):
   existing named MCP PAT reused, correct-project read-only SQL verified; no new key/
   grant/config/product change.68ledger rows;15of25source IDs present, all15stored SQL
@@ -102,11 +111,10 @@ Evidence: [Jev/source audit](../reports/2026-10-03-jev-conversation-direction-au
 
 ## Next three actions
 
-1. Resolve historical-evidence method explicitly: actual prior apply-source archive
-   if one exists, or owner-approved current-state restore/catalog+ACL equality and
-   pinned future-delta provenance substitute. Required original checksum criterion
-   remains unavailable, not silently waived. Do not request another connection/key,
-   mutate ledger or blindly apply absent IDs. Catalog dependency inventory is done.
+1. Execute the7October protected current-state snapshot/isolated-restore replacement
+   after exact private-data/runtime scope and fresh resource/image preflight. Method
+   already accepted; do not ask it again. Require schema/ACL/role/data equality, not
+   counts alone. No live restore, connection/key request, ledger edit or bulk replay.
 2. Use the prepared narrow full-source hook/log/Auth lifetime convergence contract,
    actual consent/probe integration regressions and affected P1/P2 pin/acceptance update.
    Already-present embedded cache/offline/file-label guards must not be reapplied blindly.
