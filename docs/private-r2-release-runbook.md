@@ -18,7 +18,11 @@ consistent7October snapshot24schemas/101tables/2879rows/AES-GCM roundtrip PASS,
 actual isolated restore/fidelity NOT RUN. Two full-image layouts hit2458MiBbacking
 cap; no PG container/private bytes inVM. Derived runtime/cache removed; encrypted
 backup retained. Next bounded offline capacity/actual equality; no unchanged rebuild
-or owner-data purge. Full compatibility/review NOT RUN, P3release NO-GO. Fresh
+or owner-data purge. [8Oct resource audit](reports/2026-10-08-p3-offline-resource-audit.md)
+supersedes provisional6GiBcap/18GiBhostfree with7.5GiBcap/8GiBguest/≥20GiBfree;
+dated exact-image actual allocation supports budget, not current peak/fit/restore.
+Existing simulators/AVD/deps preserved, no known disposable output or external disk;
+exact resource/custody choice pending. Full compatibility/review NOT RUN, P3NO-GO. Fresh
 correct-profile Vercel Ready production stilla13f696; metadata, not HTTP proof.
 Selected catalog/ledger/dependency guards/Edge metadata MATCH4October is dated
 preflight, not full restore. No hosted write/deploy/storage activation. Old R1 fixed

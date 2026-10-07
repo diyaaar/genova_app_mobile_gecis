@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated8October2026 (7OctoberUTC execution). [AGENTS](../AGENTS.md) → [active](../memory-bank/activeContext.md)
+Updated8October2026, recovery/capacity audit. [AGENTS](../AGENTS.md) → [active](../memory-bank/activeContext.md)
 → [090](briefs/090-private-file-ticket-revocation-contract.md) →
 [controls](mobil-teslim-plani.md#bounded-execution-and-resource-controls).
 Read [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md); relevant
@@ -23,10 +23,13 @@ SQL/rows/key/per-table digests. Exclusions/non-MVCC limits stay in execution rec
 Two exact full-image pulls hit2458MiBbacking cap/read-onlyFS; no PG container/private
 bytes entered VM. STOP unchanged rebuilds; no stripped extension/owner/grant recovery.
 Own VM/volume/newISOcache/failed-key-only dirs removed; encrypted backup/logs kept.
-Free14,113,780KiB/defaultLima0; no owned process/mount/runtime. Preserve global caches,
-user data/toolchains/old backups. New capacity prerequisite: proposed6GiBphysical
-runtime+reserves, at least18GiBhostfree, fresh preflight; peak unknown, not guarantee.
-Different protected destination requires exact custody scope; no user-data cleanup.
+[8Oct audit](reports/2026-10-08-p3-offline-resource-audit.md): same-image dated R1
+VM allocation6,358,328KiB changes next budget to7.5GiBphysical/8GiBguest/≥20GiBhostfree
++reserves, not guaranteed fit. Latest13,629,828KiB/defaultLima0; P2ownedUUID/builds
+absent, emptyruntime0KiB; existing22simulators/AVD3,730,184KiB preserved. No external
+physicaldisklisted. Resource blocker2consecutive turns; old choice unanswered,
+new budget evidence only. No source/private/runtime change or unchanged tests rerun.
+Different protected destination needs exact custody scope; no user-data cleanup.
 
 NEXT: resolve bounded offline capacity → same protected snapshot actual compatible
 network-none restore + exact roles/extensions/catalog/row equality → prepared minimum
@@ -40,7 +43,7 @@ Candidate **GENOVA-BETA-20261003-P1**:
 [manifest](reports/090/2026-10-03-p1-beta-candidate.json), frozen
 c2ec9b09a44c048c7c6a0c31f0ac99566c4643f0;610pins/842imports/20Edge/38RPC/25SQL.
 All pins/regeneration unchanged; production source not edited. New recovery spike
-helpers26focused tests PASS, not runtime. Unrelated CLI marker preserved/excluded.
+helpers26focused tests7Oct PASS, not runtime. Unrelated CLI marker preserved/excluded.
 P2 [iOS](reports/2026-10-03-ios-p2-private-file-acceptance.md) and
 [Android](reports/2026-10-03-android-full-share-flow.md) locally accepted synthetic
 file flow; not full Next/hostedRLS/provider/hardware/beta. Existing failures stay dated.

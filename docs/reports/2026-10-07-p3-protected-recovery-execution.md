@@ -5,6 +5,12 @@ goal remains ACTIVE / INCOMPLETE; this is progress, not a third-turn blocked aud
 not P3 acceptance. Entry `main/50a09d5`, primary sole writer. Unrelated
 `supabase/.temp/cli-latest` preserved and excluded. No production source changed.
 
+8October continuation: [source-backed resource audit](2026-10-08-p3-offline-resource-audit.md)
+supersedes only the provisional6GiBcap/18GiBfree recommendation below with
+7.5GiBphysical/8GiBguest/≥20GiBmeasured hostfree. Dated source allocation is not a
+fresh successful peak. Original operation/failures/snapshot/test evidence remains
+unchanged; actual restore/fidelity still NOT RUN, no deletion/private destination change.
+
 Owner explicitly answered the private Auth/application export and isolated local
 restore question with approval. [Decision35 method](2026-10-07-p3-current-state-evidence-method.md)
 and the operation are now both authorized. Do not ask for the same method, key or

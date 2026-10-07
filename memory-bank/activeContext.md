@@ -1,6 +1,6 @@
 # Active context
 
-Updated8October2026 (7OctoberUTC execution). [Handoff](../docs/agent-handoff.md) →
+Updated8October2026, recovery/capacity audit. [Handoff](../docs/agent-handoff.md) →
 [090](../docs/briefs/090-private-file-ticket-revocation-contract.md) →
 [controls](../docs/mobil-teslim-plani.md#bounded-execution-and-resource-controls).
 English records/Turkish updates; sole writer; verify ownership/permissions/HEAD.
@@ -9,8 +9,8 @@ English records/Turkish updates; sole writer; verify ownership/permissions/HEAD.
 
 Full inventory goal **ACTIVE / INCOMPLETE**, P3 IN PROGRESS. Owner approved method#35
 and exact private Auth/application export/offline restore; old approval blocker
-resolved. Do not ask again for scope/key/connector. This turn made actual progress,
-not a three-turn blocked audit. [Execution](../docs/reports/2026-10-07-p3-protected-recovery-execution.md)
+resolved. Do not ask again for scope/key/connector. Approved operation turn made
+actual progress. [Execution](../docs/reports/2026-10-07-p3-protected-recovery-execution.md)
 and [generated evidence](../docs/reports/090/2026-10-07-p3-protected-recovery.json):
 held consistent cutoff7Oct20:14:20UTC,24schemas/101tables/2879rows/17roles/22memberships;
 AES-GCM backup roundtrip PASS, **actual restore/schema+ACL+RLS+role+data fidelity NOT RUN**.
@@ -22,10 +22,13 @@ Coverage/exclusions/non-MVCC sequence limits recorded; backup alone does not clo
 Next: **bounded offline capacity**. Two full-image layouts failed on2458MiBphysical
 cap/read-onlyFS; no PG container/private data inVM. No unchanged third rebuild or
 weakened extensions/owners/grants. Own VM/volume/newISOcache/failed-key-only dirs
-removed; successful encrypted snapshot/logs retained. Free14,113,780KiB/defaultLima0,
-no active owned process/mount/runtime. Proposed next6GiBcap+reserves requires≥18GiB
-measured hostfree and fresh monitoring; peak unknown, not guarantee. No user-data
-cleanup authorized. Different protected disk/destination needs exact custody scope.
+removed; successful encrypted snapshot/logs retained. [8Oct resource audit](../docs/reports/2026-10-08-p3-offline-resource-audit.md)
+finds same-image dated R1 actualVM6,358,328KiB; supersedes6GiBcap/18GiBproposal with
+7.5GiBphysical/8GiBguest/≥20GiBhostfree+reserves, not guaranteed fit. Currentfree
+13,629,828KiB/defaultLima0; P2ownedUUID/builds absent, emptyruntime0KiB; existing
+22simulators/AVD3,730,184KiB preserved, externalphysicaldisk0. Resource blocker2turns,
+choice unanswered; new budget evidence, no source/private/runtime/test change.
+No user-data cleanup authorized. Different protected destination needs custody scope.
 Then actual network-none compatible restore/equality → narrow convergence/full
 mixed clients/review/exact operation packet. No owner QA/hosted write/deploy/distribute.
 
@@ -35,7 +38,7 @@ mixed clients/review/exact operation packet. No owner QA/hosted write/deploy/dis
 GENOVA-BETA-20261003-P1, frozen c2ec9b09a44c048c7c6a0c31f0ac99566c4643f0,
 610pins/842imports/20Edge/38RPC/25SQL, [manifest](../docs/reports/090/2026-10-03-p1-beta-candidate.json).
 Product source unchanged; CLI marker unrelated/excluded. New recovery spike helpers,
-26focused tests/source pins/regeneration PASS, not recovery runtime. Prior P2
+7Oct26focused tests/source pins/regeneration PASS, not recovery runtime. Prior P2
 [iOS](../docs/reports/2026-10-03-ios-p2-private-file-acceptance.md)/
 [Android](../docs/reports/2026-10-03-android-full-share-flow.md) accepted locally only;
 not full Next/Auth/hostedRLS/provider/hardware/signed beta. Prior failures stay dated.

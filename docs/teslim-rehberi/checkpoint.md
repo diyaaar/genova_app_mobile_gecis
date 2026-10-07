@@ -7,6 +7,14 @@ Historical records keep their original date/revision. [Guide](README.md).
 ## Current position
 
 - Active plan: **P3 — compatible, reviewed and recoverable release package**, IN PROGRESS / PARTIAL inventory after local P2 acceptance; connection blocker removed.
+- Latest [8Oct resource audit](../reports/2026-10-08-p3-offline-resource-audit.md):
+  prior exact c54image R1 actualVM6,358,328KiB changes next proposed physical cap
+  6→7.5GiB/guest8GiB and measured hostfree target18→20GiB; reserve8,679,424KiB,
+  not guaranteed fit/current peak proof. Latestfree13,629,828KiB/defaultLima0;
+  old P2ownedUUID/builds absent, emptyruntime0KiB; existing22simulators/AVD kept,
+  externalphysicaldisk0. No sufficient disposable owned output/destination authority.
+  No deletion/runtime/private/source/test/hosted change. Resource boundary2turns,
+  goal ACTIVE/INCOMPLETE, fidelity NOT RUN; original choice unanswered, no repeat ask.
 - Goal **ACTIVE / INCOMPLETE**. Owner approved method#35 AND exact protected private
   Auth/application export/local restore; old unanswered-operation blocker resolved.
   [Actual execution](../reports/2026-10-07-p3-protected-recovery-execution.md)/
@@ -15,9 +23,9 @@ Historical records keep their original date/revision. [Guide](README.md).
   roundtrip PASS. Actual restore/fidelity NOT RUN: two exact full-image layouts hit
   2458MiBphysical backing cap/read-onlyFS. No PG container/private bytes inVM.
   Own runtime/newISOcache/failed-key-only dirs removed, successful encrypted backup/
-  small logs kept; defaultLima0/free14,113,780KiB. No unchanged rebuild or weaker
-  security restore. Next bounded capacity: proposed6GiBcap+reserves/≥18GiBmeasured
-  hostfree, fresh preflight, peak unknown/not guarantee; no user-data purge allowed.
+  small logs kept; then defaultLima0/free14,113,780KiB. No unchanged rebuild or weaker
+  security restore. Then6GiBcap/18GiBproposal superseded by8Oct audit above; fresh
+  preflight/monitoring still required, no user-data purge allowed.
   26helper tests/610pins/regeneration PASS. Fresh correct-profile Vercel Ready still
   a13f696/ApCrcavKPpHSdBzdpv8JvESEiKc5; metadata only, no hosted write/owner QA.
   This is progress, not a third-turn resource-blocked audit or goal/P3 completion.
@@ -133,7 +141,7 @@ Evidence: [Jev/source audit](../reports/2026-10-03-jev-conversation-direction-au
 1. Resolve bounded offline capacity, then restore the approved7October encrypted
    snapshot in exact compatible network-none target. Method AND operation already
    accepted; no duplicate approval/key request. Require schema/ACL/RLS/role/full-row
-   equality, not counts/decryption alone. Proposed6GiBphysical cap/≥18GiBhostfree,
+   equality, not counts/decryption alone. Proposed7.5GiBphysical cap/≥20GiBhostfree,
    fresh monitoring; no unscoped user-data deletion or private destination change.
    No live restore, ledger edit or bulk replay; no unchanged capped rebuild.
 2. Use the prepared narrow full-source hook/log/Auth lifetime convergence contract,

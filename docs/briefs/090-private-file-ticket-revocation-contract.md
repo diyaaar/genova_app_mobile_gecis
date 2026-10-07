@@ -15,6 +15,48 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 8 October — source-backed offline capacity and preserved-output audit
+
+Entry main/9db0f0b; primary sole writer; CLI marker unrelated/excluded. Previous
+goal turn PROGRESS (actual protected snapshot/metadata/cleanup), not a verified
+wait. No resource/destination answer received; automatic continuation is not new
+cleanup/private-custody approval. Original operation/method approval preserved.
+Read actual AGENTS/handoff/active/current090/controls/guide/workcycle, Supabase+
+TypeSafe full skills/live index; no schema/Auth/AI integration or paid inference.
+
+One outcome: refine bounded next recovery allocation using prior exact-image
+actual allocation and confirm no disposable owned output can supply it. Allowed
+read-only project/known VM/simulator/AVD path metadata and prior R1/P2 source records;
+this card/new8October resource report/current pointers only. No raw backup/logs,
+Jev export, deletion/runtime/install/hosted query/write/new destination/deploy.
+Next3actions:1source+resource inspection,2concrete revised budget/scope boundary,
+3scoped document checks/commit; required actual fidelity stays NOT RUN.
+
+[Resource audit](../reports/2026-10-08-p3-offline-resource-audit.md): same c54image
+historical R1 expandedtar3,249,138,688B, actualVM6,358,328KiB; old6GiBrootFAIL/
+8GiBrootPASS. Dated different-VM measurements, not P3/runtime/fidelity acceptance.
+Change next proposed6GiBcap/18GiBhostfree to7.5GiBphysicalcap/8GiBguest/≥20GiBfree;
+cache220MiB+swap512MiB+metadata64MiB →8,679,424KiBreserve, exactfloor10,485,760.
+Unknown new successful peak, not guaranteed fit; future source/phase/ownership names
+must preserve old logs/config/evidence. No unchanged third2.4GiBfull-image rebuild.
+Currentfree14,192,272KiB insufficient; defaultLima0/12KiB, current protectedbackup
+2,980KiB retained, P3mount/image and P2ownedUUID/builds absent, emptyruntime0KiB.
+Existing22simulators allShutdown and AVD3,730,184KiB are explicitly preserved;
+no externalphysicaldisklisted. Assumed emulator executable absent, no reinstall.
+Supabase changelog reader/64KiBboundedfetch unavailable; no API change inferred.
+
+No files removed/source/backup/test/runtime/private destination changed. Current
+resource boundary persists2consecutive goal turns; meaningful new budget evidence,
+same full goal ACTIVE/INCOMPLETE, not BLOCKED threshold or completed. No further
+independent authorized missing inventory action/live handle; don't busy-wait/repeat
+catalog/export/test/image checks. Existing resource choice pending, no repeat ask.
+Jev0/$0new inference. Document-only links/redaction/diff required; no unchanged
+product/helper/platform tests rerun, earlier26helper/610pins results stay dated.
+Exit7owned documents/183local links/0missing/0key-JWT-private-key patterns; scoped
+diff/source-resource consistency PASS. Reserve8,679,424KiB leaves12,292,096KiB at
+20GiBhostfree>10GiBfloor, not measured runtime peak. Finalfresh13,629,828KiB,
+insufficient; no user data removed. Scoped090doc commit excludes CLI marker.
+
 ### 7 October — approved protected export and bounded isolated restore execution
 
 Owner now explicitly approves the exact private Auth/application export and offline
