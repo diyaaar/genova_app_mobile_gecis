@@ -8,6 +8,9 @@ One writer; verify HEAD, dirty ownership, resources and exact permission on resu
 
 ## Current execution — P1 source + P2 local accepted, P3 IN PROGRESS
 
+Full inventory goal BLOCKED, NOT COMPLETE: private export/offline-operation question
+unanswered for3resumed turns; method#35accepted. No live wait handle/owner QA.
+
 [Playbook](teslim-rehberi/README.md) → moving [checkpoint](teslim-rehberi/checkpoint.md).
 Candidate **GENOVA-BETA-20261003-P1**: [source/feature/blocker record](reports/090/2026-10-03-p1-beta-candidate.md)
 + [machine manifest](reports/090/2026-10-03-p1-beta-candidate.json).

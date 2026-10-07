@@ -7,6 +7,11 @@ Historical records keep their original date/revision. [Guide](README.md).
 ## Current position
 
 - Active plan: **P3 — compatible, reviewed and recoverable release package**, IN PROGRESS / PARTIAL inventory after local P2 acceptance; connection blocker removed.
+- Goal **BLOCKED, NOT COMPLETE** after three consecutive resumed turns with exact
+  private Auth/application export/offline runtime scope unanswered. Method#35already
+  accepted; no repeat method/key request. Independent authorized inventory/preparation
+  checkpointed; replacement fidelity NOT RUN, no live handle/verified wait. Resume
+  same goal on existing operation question answer, then bounded recovery preflight.
 - Current [7October method and preflight](../reports/2026-10-07-p3-current-state-evidence-method.md):
   owner accepts current-state backup/isolated restore + future-delta provenance;
   method-choice blocker resolved, historical SQL text still unavailable. Replacement

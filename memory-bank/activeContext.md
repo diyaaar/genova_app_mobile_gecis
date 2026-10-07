@@ -7,6 +7,9 @@ English records/Turkish updates; sole writer; inspect current ownership/permissi
 
 ## Current outcome and next measurable checkpoint
 
+Full goal BLOCKED, NOT COMPLETE: exact private export/offline-operation question
+unanswered for3resumed turns; method#35accepted. No live wait handle/owner QA.
+
 P1 **SOURCE ACCEPTED**, candidate GENOVA-BETA-20261003-P1:
 [record](../docs/reports/090/2026-10-03-p1-beta-candidate.md)/
 [manifest](../docs/reports/090/2026-10-03-p1-beta-candidate.json).
