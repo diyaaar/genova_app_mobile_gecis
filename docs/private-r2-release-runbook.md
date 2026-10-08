@@ -7,7 +7,17 @@ inventory/copy evidence;077 is an unexecuted next-ten approval packet.
 Owner: release operator designated by the product owner. This is the single 053–065 release index;
 individual briefs remain the acceptance authority for each local implementation.
 
-## Current revocation release boundary — 8 October 2026 (7 October UTC execution)
+## Current revocation release boundary — 9 October 2026
+
+[Actual recovery continuation](reports/2026-10-09-p3-real-restore-progress.md): owner
+waived10GiB for this isolated operation; full image loaded and7Octsnapshot101tables/
+2879rows/all data digests/roles/extensions restored. Full schema/ACL/publication
+fidelity FAIL, not accepted; no fresh9Octrow backup because nativeTCPtimed out.
+Correct-project9Octmetadata/current servedVercel identity unchanged; no live writes.
+Derived runtime cleaned, protected backup retained; parity repair/compatibility/
+review still required. P3release NO-GO, no storage activation or distribution.
+
+## Historical recovery boundary — 8 October 2026 (7 October UTC execution)
 
 [Owner decision35 and fresh preflight](reports/2026-10-07-p3-current-state-evidence-method.md)
 accepts protected current-state snapshot/isolated-restore equality and exact future

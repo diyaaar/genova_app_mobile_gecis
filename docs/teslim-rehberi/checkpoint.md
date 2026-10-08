@@ -6,8 +6,20 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
+- **9Oct owner waiver / actual restore:** original goal ACTIVE/INCOMPLETE, old
+  10GiBcapacity blocker superseded. [Execution](../reports/2026-10-09-p3-real-restore-progress.md)/
+  [proof](../reports/090/2026-10-09-p3-restoration-progress.json): full c54image
+  loaded under6.5GiBcap/512MiBemergencyfloor/640MiBstop; owned networkNONE backend
+  restored7Octsnapshot101tables/2879rows/all table digests,17roles/22memberships/
+  6extensions MATCH. Full fidelity FAIL: ACLs/constraint/ordinals/publications,
+  not accepted or goal complete. Fresh9Octnative export timed out before capture;
+  7Octdata not relabeled9Oct. Correct-source9Oct8metadata projectionsMATCH/current
+  VercelReady a13f696 verified. No hosted writes or owner QA. Own VM/image/newISOcache
+  removed02:33:59Turkey/defaultLima0/free10,338,612KiB; backup+small failures kept.
+  Next supported parity remediation with strict negatives, not another feature/
+  unchanged rebuild; default10GiB outside scoped ongoing recovery exception.
 - Active plan: **P3 — compatible, reviewed and recoverable release package**, IN PROGRESS / PARTIAL inventory after local P2 acceptance; connection blocker removed.
-- Same full inventory goal **BLOCKED, NOT COMPLETE** after3consecutive offline-
+- Historical8Oct full inventory goal **BLOCKED, NOT COMPLETE** after3consecutive offline-
   capacity turns (9db0f0bactual snapshot/failed pulls →4a49de2budget audit →current
   recheck). Currentfree13,635,072KiB/defaultLima0/no ownedmount+image/no external
   disk or scope answer; protected backup0700/0600 retained, no restore result/live

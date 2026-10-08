@@ -1,3 +1,4 @@
 {
-  "features": { "containerd-snapshotter": false }
+  "features": { "containerd-snapshotter": false },
+  "max-concurrent-downloads": 1
 }

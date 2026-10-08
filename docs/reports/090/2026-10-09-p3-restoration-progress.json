@@ -1,0 +1,210 @@
+{
+  "recordedAt": "2026-10-08T23:33:55.345Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "status": "RESTORED_DATA_PASS_FULL_FIDELITY_FAIL_NOT_ACCEPTED",
+  "backup": {
+    "cutoff": "2026-10-07T20:14:20.369414+00:00",
+    "completedAt": "2026-10-07T20:16:25.725Z",
+    "plaintextSha256": "dc8ccf814115b4f4022a8e25c2c9a8683c52b5c6e93ff110eab6cc7f152fd914",
+    "encryptedSha256": "3ca7ef1b2f7c9761b1fc98c9ec198a03edf077113e4ce49109ef657db9b40650",
+    "dataTables": 101
+  },
+  "actualRestore": {
+    "completedAt": "2026-10-08T21:29:38.617Z",
+    "database": "genova_090_p3_restore",
+    "network": "none",
+    "mounts": 0,
+    "publishedPorts": 0,
+    "dataTables": 101,
+    "restoredRows": 2879,
+    "allCanonicalTableDataDigestsMatch": true,
+    "catalogCounts": {
+      "functions": {
+        "source": 162,
+        "restored": 162
+      },
+      "schemas": {
+        "source": 24,
+        "restored": 24
+      },
+      "relations": {
+        "source": 118,
+        "restored": 118
+      },
+      "policies": {
+        "source": 225,
+        "restored": 225
+      },
+      "constraints": {
+        "source": 510,
+        "restored": 510
+      },
+      "columns": {
+        "source": 1132,
+        "restored": 1132
+      },
+      "indexes": {
+        "source": 329,
+        "restored": 329
+      },
+      "triggers": {
+        "source": 62,
+        "restored": 62
+      },
+      "defaultAcls": {
+        "source": 15,
+        "restored": 15
+      },
+      "roles": {
+        "source": 17,
+        "restored": 17
+      },
+      "memberships": {
+        "source": 22,
+        "restored": 22
+      },
+      "extensions": {
+        "source": 6,
+        "restored": 6
+      },
+      "publications": {
+        "source": 2,
+        "restored": 0
+      },
+      "publicationTables": {
+        "source": 15,
+        "restored": 0
+      }
+    },
+    "strictDifferenceGroups": [
+      "functions",
+      "schemas",
+      "relations",
+      "policies",
+      "constraints",
+      "columns",
+      "indexes",
+      "publications",
+      "publicationTables"
+    ],
+    "status": "FIDELITY_FAIL_NOT_ACCEPTED"
+  },
+  "diagnostic": {
+    "readOnlyComparisonContext": "public, extensions (explicit read-only comparison context)",
+    "groups": {
+      "functions": {
+        "changed": 49,
+        "fields": {
+          "acl": 49
+        },
+        "sourceCount": 162,
+        "actualCount": 162
+      },
+      "schemas": {
+        "changed": 19,
+        "fields": {
+          "acl": 19
+        },
+        "sourceCount": 24,
+        "actualCount": 24
+      },
+      "relations": {
+        "changed": 30,
+        "fields": {
+          "acl": 30
+        },
+        "sourceCount": 118,
+        "actualCount": 118
+      },
+      "policies": {
+        "changed": 0,
+        "fields": {},
+        "sourceCount": 225,
+        "actualCount": 225
+      },
+      "constraints": {
+        "changed": 1,
+        "fields": {
+          "definition": 1
+        },
+        "sourceCount": 510,
+        "actualCount": 510
+      },
+      "columns": {
+        "changed": 46,
+        "fields": {
+          "ordinal_position": 46
+        },
+        "sourceCount": 1132,
+        "actualCount": 1132
+      },
+      "indexes": {
+        "changed": 0,
+        "fields": {},
+        "sourceCount": 329,
+        "actualCount": 329
+      },
+      "triggers": {
+        "changed": 0,
+        "fields": {},
+        "sourceCount": 62,
+        "actualCount": 62
+      },
+      "defaultAcls": {
+        "changed": 0,
+        "fields": {},
+        "sourceCount": 15,
+        "actualCount": 15
+      },
+      "roles": {
+        "changed": 0,
+        "fields": {},
+        "sourceCount": 17,
+        "actualCount": 17
+      },
+      "memberships": {
+        "changed": 0,
+        "fields": {},
+        "sourceCount": 22,
+        "actualCount": 22
+      },
+      "extensions": {
+        "changed": 0,
+        "fields": {},
+        "sourceCount": 6,
+        "actualCount": 6
+      },
+      "publications": {
+        "changed": 0,
+        "fields": {},
+        "sourceCount": 2,
+        "actualCount": 0
+      },
+      "publicationTables": {
+        "changed": 0,
+        "fields": {},
+        "sourceCount": 15,
+        "actualCount": 0
+      }
+    },
+    "changesNoDataOrPrivileges": true,
+    "limits": "Canonical search path resolves formatting differences, not ACL/physical column slot/publication differences. Original strict failure remains authoritative."
+  },
+  "helperSha256": {
+    "spike/090-p3-offline-restore.mjs": "116ed2ce4076ebe6f580db50593dc3bfbaa27b33e86f45e913cfea8d242a6b0b",
+    "spike/090-p3-recovery-queries.mjs": "35549a81e8314f61628628287eb77168e0373554f18e23c19efa5542e8da6112",
+    "spike/090-p3-fidelity-diagnostics.mjs": "4639d90bb8a621901d4ee60f4e48db35053a7aad127a7cabec7b02cf1a34c75e",
+    "spike/090-p3-resource-policy.mjs": "da21dacbc9351595d8aeb34081b92713cd6af50be357a09ea80b3abce857acfa"
+  },
+  "freshExport": {
+    "status": "FAILED_CONNECT_TIMEOUT_NO_BACKUP_CREATED",
+    "sameApprovedParent": true,
+    "failedDirectory": "genova-090-p3-kroZk3",
+    "noCredentialResetOrNetworkRestrictionChange": true
+  },
+  "limits": "Actual7October logical snapshot restored9October, not a fresh9October row backup or full fidelity/release PASS. New direct SQL TCP export unavailable; managed settings/storage/Vault values/Realtime payloads/sequence consistency/client/runtime/independent review remain separate.",
+  "hostedWrites": 0,
+  "newJevCalls": 0,
+  "newInferenceCostUSD": 0,
+  "ownerManualQA": false
+}

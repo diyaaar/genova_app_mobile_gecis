@@ -21,6 +21,11 @@ yeni karara açıkça bağla. Eski tahminler güncel doğrulama değildir.
 
 ## P3 current-state evidence method — 7 October 2026
 
+9 October owner direction: the normal10GiBfree-space floor may be violated to
+continue this isolated P3 recovery. Preserve method35/security/data-custody/live-
+operation boundaries.090records engineering emergency limits and actual allocation;
+this is a scoped execution exception, not fresh restore proof or global cleanup permission.
+
 | # | Decision | Rationale | Date |
 |---|---|---|---|
 | 35 | **Use a protected fresh current-state snapshot and isolated restore rather than unavailable historical applied SQL text equality** | Owner explicitly accepts the current-backup method and asks to resume. The15NULLhistorical statements stay UNAVAILABLE; never manufacture them or edit the ledger. Replacement evidence remains required: snapshot provenance/consistent cutoff, actual isolated restore schema/owner/grant/RLS/role/trigger/publication and data equality, and exact future-delta source/application records. Approval of method is not proof of execution or live restore/migration/deploy/distribution authority. Security negatives and independent review remain mandatory. [7October record](docs/reports/2026-10-07-p3-current-state-evidence-method.md). | 7 Oct 2026 |

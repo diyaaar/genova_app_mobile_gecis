@@ -1,77 +1,76 @@
 # Genova — agent handoff
 
-Updated8October2026, recovery/capacity audit. [AGENTS](../AGENTS.md) → [active](../memory-bank/activeContext.md)
+Updated9October2026. [AGENTS](../AGENTS.md) → [active](../memory-bank/activeContext.md)
 → [090](briefs/090-private-file-ticket-revocation-contract.md) →
 [controls](mobil-teslim-plani.md#bounded-execution-and-resource-controls).
-Read [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md); relevant
-[decisions](../KARARLAR.md)/[MIGRATION](../MIGRATION.md). English records/Turkish copy.
-One writer; verify HEAD, dirty ownership, resources and exact permission on resume.
+Read [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md); relevant decisions/
+MIGRATION. English records/Turkish copy; one writer, verify HEAD/ownership/resources.
 
-## Current execution — P1 source + P2 local accepted, P3 IN PROGRESS
+## Current outcome — P3 actual restore progressed, full goal ACTIVE / INCOMPLETE
 
-Full inventory goal **BLOCKED / NOT COMPLETE**, after3consecutive capacity turns.
-Owner approved method#35 AND exact protected Auth/application export/local restore.
-Old unanswered-operation blocker resolved; do not ask the same question/key again.
-New [actual execution](reports/2026-10-07-p3-protected-recovery-execution.md)/
-[generated record](reports/090/2026-10-07-p3-protected-recovery.json):
-consistent snapshot7Oct20:14:20UTC,24schemas/101tables/2879rows/17roles/22memberships,
-AES-GCM authenticated roundtrip PASS. **Actual restore/fidelity NOT RUN**.
-Private backup at /Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-RAJEJt,
-0700/files0600; key same directory, no independent/offsite custody. Never upload/print
-SQL/rows/key/per-table digests. Exclusions/non-MVCC limits stay in execution record.
+Owner waived10GiBfloor9Oct for this isolated recovery, not hosted writes/custody/
+global cleanup. Method35 and private export/restore approval preserved. No duplicate
+key/scope request. [Actual9Oct progress](reports/2026-10-09-p3-real-restore-progress.md)/
+[generated proof](reports/090/2026-10-09-p3-restoration-progress.json):
+full c54image now loaded, networkNONE/mount0/port0 backend actually restored the
+approved7Octsnapshot.101tables/2879rows/all canonical table data digests MATCH;
+17roles/22Postgres memberships/6extension versions+owners/triggers/defaultACLs MATCH.
+**Full fidelity FAIL, NOT ACCEPTED**: ACL/oneconstraint/46physical column positions,
+2publications/15memberships missing. Read-only canonical context resolves policy/
+signature/index formatting, not all discrepancies. Never drop strict failures,
+assume NULL/defaultACL equivalence, patch catalogs, broaden grants or score a PASS.
+First session SET failed SIGHUP; only proven-empty baseline reset; local ALTER SYSTEM/
+reload fixed installer override, no production settings/roles changed.
 
-Two exact full-image pulls hit2458MiBbacking cap/read-onlyFS; no PG container/private
-bytes entered VM. STOP unchanged rebuilds; no stripped extension/owner/grant recovery.
-Own VM/volume/newISOcache/failed-key-only dirs removed; encrypted backup/logs kept.
-[8Oct audit](reports/2026-10-08-p3-offline-resource-audit.md): same-image dated R1
-VM allocation6,358,328KiB changes next budget to7.5GiBphysical/8GiBguest/≥20GiBhostfree
-+reserves, not guaranteed fit. Latest13,635,072KiB/defaultLima0; P2ownedUUID/builds
-absent, emptyruntime0KiB; existing22simulators/AVD3,730,184KiB preserved. No external
-physicaldisklisted. Resource blocker3consecutive turns; old choice unanswered,
-current audit no new fidelity proof/live handle. Stop autonomous dependent work.
-Different protected destination needs exact custody scope; no user-data cleanup.
+Fresh9Octnative export failed TCP connection before metadata/data. DashboardHealthy/
+correct endpoint; pooler+primary public TCP probes timed out. No password diagnosis,
+rotation, network weakening, paid add-on or alternate export fallback. Old7Octbackup
+remains dated, not9Octcurrent-row proof. Private source:
+ /Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-RAJEJt
+0700/files0600/key same dir, not offsite custody. Small private failures/diagnostics
+retained; never upload/print SQL/rows/key. Original snapshot exclusions/non-MVCC limits.
 
-RESUME: resolve bounded offline capacity → same protected snapshot actual compatible
-network-none restore + exact roles/extensions/catalog/row equality → prepared minimum
-hook/log/Auth lifetime repair + full mixed-client/review/operation package. No narrower
-goal/owner QA/hosted write/push/deploy/distribution. Inventory stays open until fidelity.
+Own9OctVM/container/cappedimage/newISOcache removed02:33:59Turkey, protected backup
+kept; defaultLima0, final10,338,612KiB. No user files/caches/AVD/simulators/deps removed.
+Scoped6.5GiBcap/8GiBguest/512MiBemergencyfloor/640MiBstop remains only ongoing P3
+exception; default10GiB outside it. Helpers enforce explicit flags/attempt20261009;
+rebuild requires changed cause, fresh resource preflight and new exclusive phase
+names; existing failed/accepted artifacts never overwrite.
+
+NEXT one outcome: supported recovery parity: owner/grantee/privilege/grantoption/
+grantor verification, exact constraint cause/logical column order and publication
+root/column/filter/owner capture/reconstruction. Preserve raw strict failure, add
+negative tests, then one bounded repaired restore. Native freshness connectivity
+separate, no hosted security changes or owner manual QA. Goal not narrowed or closed.
 [Checkpoint](teslim-rehberi/checkpoint.md), [release index](private-r2-release-runbook.md).
 
-## Frozen sources and verified current boundaries
+## Source and observed hosted boundaries
 
-Candidate **GENOVA-BETA-20261003-P1**:
-[manifest](reports/090/2026-10-03-p1-beta-candidate.json), frozen
-c2ec9b09a44c048c7c6a0c31f0ac99566c4643f0;610pins/842imports/20Edge/38RPC/25SQL.
-All pins/regeneration unchanged; production source not edited. New recovery spike
-helpers26focused tests7Oct PASS, not runtime. Unrelated CLI marker preserved/excluded.
-P2 [iOS](reports/2026-10-03-ios-p2-private-file-acceptance.md) and
-[Android](reports/2026-10-03-android-full-share-flow.md) locally accepted synthetic
-file flow; not full Next/hostedRLS/provider/hardware/beta. Existing failures stay dated.
+P1 GENOVA-BETA-20261003-P1, frozen c2ec9b09a44c048c7c6a0c31f0ac99566c4643f0,
+[manifest](reports/090/2026-10-03-p1-beta-candidate.json):610pins/842imports/20Edge/
+38RPC/25SQL reverified unchanged.27focused helper tests PASS, not recovery/release.
+Production source untouched; unrelated CLI marker preserved/excluded. P2
+[iOS](reports/2026-10-03-ios-p2-private-file-acceptance.md)/
+[Android](reports/2026-10-03-android-full-share-flow.md) accepted synthetic file flow
+locally, not full Next/hostedRLS/provider/hardware/beta. Prior failures stay dated.
 
-Fresh7OctChrome correct-profile Vercel Ready productionApCrcavKPpHSdBzdpv8JvESEiKc5,
-main/a13f696da8c731e9af2a2bce473d4f4ae4a81587, aliasapp.genesinovachoir.com;
-metadata only, no HTTP behavior proof. Existing named correct-project MCP works;
-no new key/install/grant request. [7Oct preflight](reports/2026-10-07-p3-current-state-evidence-method.md)
-selected catalog/ledger/guards/21Edge metadata MATCH4Oct; not historical SQL equality.
-15of25ledger IDs present, all15SQLNULL; historical text UNAVAILABLE. Method#35
-substitute requires actual fresh recovery/future-delta provenance, not just export.
+[9Octread-only metadata](reports/090/2026-10-09-p3-current-state-preflight.json):
+8projections MATCH4Oct/21Edge,68ledger/15presentNULL/10absent source IDs; no held
+snapshot/full9Octschema/row proof. Current correct Genesi NovaChrome4/account Vercel
+ReadyApCrcavKPpHSdBzdpv8JvESEiKc5/main a13f696da8c731e9af2a2bce473d4f4ae4a81587;
+aliasapp.genesinovachoir.com, metadata not HTTP proof. MCP works, no new key/install.
 [Hosted](reports/2026-10-04-p3-hosted-reconciliation.md)/
 [delta](reports/2026-10-04-p3-delta-dependency-inventory.md)/
-[contract](reports/2026-10-04-p3-convergence-contract-audit.md): helpers005not078,
-079ACLmissing/7RPCabsent/5oldreader tickets/EdgeJWT/source drift; ten ordered deltas
-are not applied. New actor090not_after predicate/negative gap; full hook HEAD-before-
-consent and raw capability logs need narrow convergence, NOT IMPLEMENTED.
-Full route/eight groups/five families/old-new-cache map prepared, not runtime proof.
+[contract](reports/2026-10-04-p3-convergence-contract-audit.md):005not078/079ACLmissing/
+7RPCabsent/oldreaders/EdgeJWT+source drift. Full hook HEAD-before-consent/raw diagnostics/
+actor090not_after convergence NOT IMPLEMENTED; full route/five-family old-new/cache/
+review/operation map prepared. Ten ordered deltas not applied, historical SQL unavailable.
 
-## Destination and retained authority
+## Destination
 
-Whole090/R1OPEN. P3compatibility/recovery/independent review → P4private storage →
-P5signed installed usableAndroid → P6full features/commercial → P7both stores.
-RN/Expo/Supabase/permanentWebViews/privateR2; noFlutter/Railway rewrite; prefer<= $5/month.
-Assistedv1onboarding/fivefree/extraseats/manualbilling; owner#34small current choir
-first, second independent choir next; exact recipients/channel still need scope.
-Sibling site detached#33: NO SITE CHANGES/table deletion/RLS relaxation; old-note
-deletion withdrawn. Scoped agent Android/iOS automation approved; no owner manual QA.
-No automatic ledger/migration replay/bulk-song-delete/activation. DB→Edge→repairedweb→
-native→activation after fresh recovery/review. Git revert is not data recovery.
-Jev0/$0new this execution; current-day paid inference scope not inferred from old key.
+P3recovery/compatibility/independent review → P4private storage → P5signed installed
+Android → P6full commercial feature matrix → P7bothstores. Whole090/R1OPEN.
+RN/Expo/Supabase/permanentWebViews/privateR2/noFlutterorRailwayrewrite/prefer<= $5/month.
+Assistedv1/fivefree/extraseats/manualbilling; small current choir then independent choir.
+Sibling site NO CHANGES, retained tables/old notes kept. No bulk replay/push/deploy/
+distribution/real-user operations. Jev0/$0new, no private AI export/owner manual QA.

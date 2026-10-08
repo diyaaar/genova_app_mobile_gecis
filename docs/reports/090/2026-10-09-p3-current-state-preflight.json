@@ -1,0 +1,223 @@
+{
+  "candidate": "GENOVA-BETA-20261003-P1",
+  "project": "hievmwwctjjlhmssoxsu",
+  "observedAt": "2026-10-08T21:12:58.426Z",
+  "identity": {
+    "database": "postgres",
+    "role": "supabase_read_only_user",
+    "transaction_read_only": "on",
+    "server_version": "17.6"
+  },
+  "helperSha256": "b5a3f95aa96609c08211ca104daa941edb0ff4fe267192a0bdba6860f4e789c3",
+  "connectionHelperSha256": "34f7cf07e572a58e9e272ce76f93c7f45b9350d8a70bf434842fbcc66b9447e2",
+  "priorHostedSha256": "f6e2c0c0416c1171a76209649a37b3387a7bc42335dcde35f6713253d916c1b6",
+  "priorDeltaSha256": "080b9a0abf0b96ee2494b8882f0db564d223dba72a4be6242d1bf3480a806032",
+  "querySha256": {
+    "identity": "7627b39956d23ff999cac03ce4c7ea8f56957cf02fd04382a03c8a7830345bd0",
+    "functions": "0eab9477af2df270942e5618342925984b9a599d68b88d343ffc2c764dcabb13",
+    "relations": "3241b8c8f1ebf12dd33ad8db355993c26eea5a92d23f491978fb83f917f303e2",
+    "policies": "205dc75de0833729937d03016c8d82d2885b56f6c2e05aa6fc9385204490dedb",
+    "constraints": "2a441b7c7ad6786fdf9f35ebfc60caae213e1d0b4461989b5defe8a1b2b35a9e",
+    "columns": "6248f867cd5aa0cf0b6af301e2a5488650024f7791b98067a28a513061c09994",
+    "migrations": "3f63679ba759a74eccdc18add2ff796df31b178793a51f3e7fe3772cf95bf1fb",
+    "deltaDependencies": "2377b9df830237d0920a965803e3c1d6bd14586a98a1c3d86516640d9f272d04"
+  },
+  "comparisons": {
+    "functions": {
+      "currentCount": 83,
+      "priorCount": 83,
+      "currentSha256": "fed159904deba7e3d452ba9b979174d97cbb67c9890cea69e815a4c08695abd1",
+      "priorSha256": "fed159904deba7e3d452ba9b979174d97cbb67c9890cea69e815a4c08695abd1",
+      "exactCapturedProjectionEqual": true
+    },
+    "relations": {
+      "currentCount": 74,
+      "priorCount": 74,
+      "currentSha256": "dd79be593ec95c79bd9e1b3e2076a5bbcbb08d869a76bd6cfbc090015516742e",
+      "priorSha256": "dd79be593ec95c79bd9e1b3e2076a5bbcbb08d869a76bd6cfbc090015516742e",
+      "exactCapturedProjectionEqual": true
+    },
+    "policies": {
+      "currentCount": 225,
+      "priorCount": 225,
+      "currentSha256": "8ec1b007cb4fe1e70503667e53abde59793d36155a56707dedfe71012fd07962",
+      "priorSha256": "8ec1b007cb4fe1e70503667e53abde59793d36155a56707dedfe71012fd07962",
+      "exactCapturedProjectionEqual": true
+    },
+    "constraints": {
+      "currentCount": 378,
+      "priorCount": 378,
+      "currentSha256": "de102277ba7080efddee130e9afaf35f3f717ec6ca00bd0e1489129fb109e019",
+      "priorSha256": "de102277ba7080efddee130e9afaf35f3f717ec6ca00bd0e1489129fb109e019",
+      "exactCapturedProjectionEqual": true
+    },
+    "columns": {
+      "currentCount": 696,
+      "priorCount": 696,
+      "currentSha256": "66635333a8893b46a3abe1d527580b74c36a3918f66a1b2938a7df61d8823d8f",
+      "priorSha256": "66635333a8893b46a3abe1d527580b74c36a3918f66a1b2938a7df61d8823d8f",
+      "exactCapturedProjectionEqual": true
+    },
+    "ledger": {
+      "currentCount": 68,
+      "priorCount": 68,
+      "currentSha256": "43f34e7af53cbb2db7ac0f3ca42ee9cbd67fb5c8cf82ef43556f0adb3da547f4",
+      "priorSha256": "43f34e7af53cbb2db7ac0f3ca42ee9cbd67fb5c8cf82ef43556f0adb3da547f4",
+      "exactCapturedProjectionEqual": true
+    },
+    "delta": {
+      "currentCount": 1,
+      "priorCount": 1,
+      "currentSha256": "6ed054b6264984fe253482036944857df6d353eb8d83fe10b869a28bdbf36c5d",
+      "priorSha256": "6ed054b6264984fe253482036944857df6d353eb8d83fe10b869a28bdbf36c5d",
+      "exactCapturedProjectionEqual": true
+    },
+    "edgeMetadata": {
+      "currentCount": 21,
+      "priorCount": 21,
+      "currentSha256": "cecbef0f5ee9884027696e3c6d548aa2537fca079bb9bbb8e5cf90b104c30eb2",
+      "priorSha256": "cecbef0f5ee9884027696e3c6d548aa2537fca079bb9bbb8e5cf90b104c30eb2",
+      "exactCapturedProjectionEqual": true
+    }
+  },
+  "assessment": [
+    {
+      "id": "024",
+      "catalogReady": true,
+      "dependsOn": [],
+      "unrun": [
+        "row song/file/choir consistency",
+        "actual RLS layer mutation/old-new client conflicts",
+        "lock duration/rewrite cost"
+      ],
+      "boundary": "Catalog-only preliminary checks; source preflight reads application rows and still MUST run on the authorized clone.",
+      "status": "CATALOG_GUARDS_OBSERVED; NOT EXECUTION_ACCEPTED"
+    },
+    {
+      "id": "046",
+      "catalogReady": true,
+      "dependsOn": [],
+      "unrun": [
+        "actual authenticated private Broadcast/Presence authorization",
+        "public permissive-policy interactions",
+        "Realtime provider settings"
+      ],
+      "boundary": "No policy/publication mutation; source guards preserved.",
+      "status": "CATALOG_GUARDS_OBSERVED; NOT EXECUTION_ACCEPTED"
+    },
+    {
+      "id": "048",
+      "catalogReady": false,
+      "dependsOn": [
+        "046"
+      ],
+      "unrun": [
+        "ordered pagination/index creation lock impact",
+        "actual room read tenant negatives"
+      ],
+      "boundary": "Current preflight fails because046is missing; future success is not claimed.",
+      "status": "ORDERED_PREREQUISITE_MISSING_OR_COLLISION; NOT READY"
+    },
+    {
+      "id": "078",
+      "catalogReady": true,
+      "dependsOn": [],
+      "unrun": [
+        "active/inactive/multi-membership and stale session selection",
+        "concurrency and retained web consumers"
+      ],
+      "boundary": "Existing005bodies/ACL provenance retained; no mutation here.",
+      "status": "CATALOG_GUARDS_OBSERVED; NOT EXECUTION_ACCEPTED"
+    },
+    {
+      "id": "079",
+      "catalogReady": true,
+      "dependsOn": [],
+      "unrun": [
+        "actual anon/authenticated/service role invocation negatives",
+        "lock/ACL recovery stop"
+      ],
+      "boundary": "Catalog provenance validated, not execute-role behavior.",
+      "status": "CATALOG_GUARDS_OBSERVED; NOT EXECUTION_ACCEPTED"
+    },
+    {
+      "id": "082",
+      "catalogReady": false,
+      "dependsOn": [
+        "078"
+      ],
+      "unrun": [
+        "invoker RLS/concurrent expected-set changes",
+        "chef/section-leader/no lost update/tenant mismatch"
+      ],
+      "boundary": "Current preflight fails because078is missing.",
+      "status": "ORDERED_PREREQUISITE_MISSING_OR_COLLISION; NOT READY"
+    },
+    {
+      "id": "087",
+      "catalogReady": false,
+      "dependsOn": [
+        "078"
+      ],
+      "unrun": [
+        "same-user sessions/atomic merge and profile tenant negatives",
+        "recovery rollback of unexpected data"
+      ],
+      "boundary": "Current preflight fails because078is missing.",
+      "status": "ORDERED_PREREQUISITE_MISSING_OR_COLLISION; NOT READY"
+    },
+    {
+      "id": "088",
+      "catalogReady": false,
+      "dependsOn": [
+        "078",
+        "087"
+      ],
+      "unrun": [
+        "role loss/changed request/concurrent review atomicity",
+        "full profile schema dependencies"
+      ],
+      "boundary": "Current preflight fails because078and087are missing.",
+      "status": "ORDERED_PREREQUISITE_MISSING_OR_COLLISION; NOT READY"
+    },
+    {
+      "id": "090-actor",
+      "catalogReady": true,
+      "dependsOn": [],
+      "releaseAfter": [
+        "078"
+      ],
+      "unrun": [
+        "actual five-family Auth/RLS existing-ticket next-request negatives",
+        "session not_after expiration source gap",
+        "legacy client compatibility"
+      ],
+      "boundary": "Formal source preflight observed only.078is package security sequencing, not an explicit source SQL prerequisite.",
+      "status": "CATALOG_GUARDS_OBSERVED; NOT EXECUTION_ACCEPTED"
+    },
+    {
+      "id": "090-legacy",
+      "catalogReady": false,
+      "dependsOn": [
+        "090-actor"
+      ],
+      "releaseAfter": [
+        "078"
+      ],
+      "unrun": [
+        "legacy alias collision/resource/version/Auth/RLS negatives",
+        "storage and old Next relay compatibility"
+      ],
+      "boundary": "Source has no preflight DO. Schema090is an actual CREATE FUNCTION prerequisite; other function-body dependencies require clone acceptance.",
+      "status": "ORDERED_PREREQUISITE_MISSING_OR_COLLISION; NOT READY"
+    }
+  ],
+  "ledger": {
+    "totalRows": 68,
+    "candidatePresent": 15,
+    "candidateAbsent": 10,
+    "nullRelevantStatements": 15
+  },
+  "evidenceMethod": "Owner approved current-state snapshot/isolated restore plus exact future delta provenance on7October. Actual protected snapshot7October captured;9October resumed isolated restore tracked separately. This metadata query is not restore proof.",
+  "limits": "Selected digest drift observation only, queries are separate transactions NOT one held snapshot. No full schema or Auth/provider/backup/data/restore/source equality proof. Edge source and served web remain dated4October. No rows/logs/secrets/raw bodies retained or writes/runtime/AI calls."
+}

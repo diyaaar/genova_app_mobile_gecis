@@ -15,6 +15,64 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 9 October — owner-approved lower disk floor, resume actual isolated restore
+
+Owner explicitly permits violating the usual10GiBfloor and asks to continue.
+Resume original full inventory goal; old capacity blocker revoked, fresh blocked
+audit if a new genuine condition persists. Entry main/1959ede, sole primary writer,
+unrelated CLI marker preserved. Current handoff/active/card/controls and complete
+Supabase/Postgres/TypeSafe skills/live docs checked; deterministic fidelity, no AI.
+No hosted writes/deploy/private destination change/owner QA/user-data deletion.
+
+One outcome: actual faithful isolated restore of approved7October protected snapshot,
+dated cutoff retained (not9October current-row proof). Scope spike090recovery helpers,
+this card/decision/controls/current pointers/redacted reports; successful private
+backup retained, generated runtime only inside existing protected directory.
+Actualfree8,416,988KiB; unchanged c54fullPGimage, AlpineISO/digest, guest8GiB/512MiB,
+oneCPU, classic store/serialized downloads. New capped physical volume6656MiB
+(6.5GiB), cache220MiB+swap512MiB+metadata64MiB →7,630,848KiBreserve, projected786,140KiB.
+Engineering emergencyfloor512MiB/stop640MiB, not promised stable OS headroom.
+User waived10GiB, not every safety/authority rule. Monitor/stop exact owned VM;
+no globalcache/toolchain cleanup. New attempt20261009image/log/ownership names
+preserve both prior failures; cache removal only if absent before this attempt.
+
+Next3actions:1bounded compatible runtime/verify networkNONE/mount0/ports0,2actual
+protected restore and exact catalog/role/full-row equality with private failures,
+3source tests/redacted evidence/owned cleanup/scoped090commits. New8focused tests
+PASS; diskfloor policy has negative allocation test. Original actual fidelity and
+full-goal acceptance still open until runtime evidence; no source/release repair.
+9October selected catalog/ledger/ten-delta guards/21Edge metadata MATCH prior8
+projections, recorded separately, no row equality inferred. Refresh actual snapshot
+under the SAME approved protected7Octoberparent/exclusive directory before restore;
+old backup kept. Lower-floor export flag preserves default10GiB for other runs.
+Restore accepts only validated0700/0600newbackup under exact same parent and exact
+owned20261009runtime; SQL/key/body/error detail stays private, stage labels only.
+
+[Actual progress/strict acceptance](../reports/2026-10-09-p3-real-restore-progress.md)
+and [generated proof](../reports/090/2026-10-09-p3-restoration-progress.json): full
+image pull/isolated PG readiness PASS. Fresh native export failed snapshot-read TCP
+connect timeout, no metadata/dump created; public pooler+primary TCP also time out,
+dashboardHealthy/advertised endpointunchanged, no reset/tunnel/network security change.
+Use approved7Octsnapshot for actual recovery proof, not fresh9Octrow proof.
+First restore transaction failed sessionSET of SIGHUP installer override; preserve
+error/reset only proven-empty own DB. OfflineALTERSYSTEM/reload verified fixes
+extension installer; temporary postgresSuper reverts before data, no live settings.
+Second actual restore completed101tables/2879rows/every full canonical table SHA
+MATCH;17roles/22memberships/6extensions/triggers/defaultACLsMATCH. Full fidelityFAIL:
+ACL/constraint/column ordinal/publication gaps. Canonicalread-onlycontext resolves
+policy/signature/indexformatter differences; no silent acceptance/ignored failures.
+Next parity remediation/negatives before repaired restore, sourcefreshnessconnection
+separate; original full goal ACTIVE/INCOMPLETE, P3/090R1OPEN, not new blocked audit.
+Afterlastcheck ownVM/container/image/newISOcache removed02:33:59Turkey9Oct,
+defaultLima0/free10,338,612KiB, successfulencryptedbackup/small failures kept. No
+userdata/globalcache/toolchain/AVD/simulator/oldbackup deletion. No owner manualQA.
+Current27focused tests/P1P3regeneration/610pinsPASS; productsourceunchanged, no root/
+mobile/platform tests rerun. Jev0/$0new inference, no new paid service. Exitchecksbelow.
+Exit23owned files/330local link targets/0missing/0key-JWT-private-key patterns;
+11MJSsyntax/3JSONparse/scoped diff PASS. StrictFAIL/pubmissing preserved in generated
+proof, ownedmount+image absent and defaultLima0. Scoped090source/docs checkpoint
+excludes CLI marker; same full goal remainsACTIVE, no completion/release claim.
+
 ### 8 October — third consecutive offline-capacity blocker audit
 
 Entry main/4a49de2; primary sole writer; unrelated CLI marker preserved/excluded.

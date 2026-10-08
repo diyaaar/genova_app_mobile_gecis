@@ -10,6 +10,7 @@ import { Transform } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import { snapshotQuery, canonicalSettings } from './090-p3-recovery-queries.mjs';
 import { connect, QUERIES, REF } from './090-p3-hosted-inventory.mjs';
+import { MIN_FREE_KIB } from './090-p3-resource-policy.mjs';
 const require=createRequire(import.meta.url);
 const ROOT='/Users/alidiyarduran/Antigravity/genovakorist';
 const PARENT='/Users/alidiyarduran/Documents/Codex/2026-10-07';
@@ -65,8 +66,9 @@ export function completedSnapshotLine(text){
 }
 export function freeKiB(){return Number(execFileSync('df',['-k','.'],{encoding:'utf8'}).trim().split('\n')[1].trim().split(/\s+/)[3]);}
 async function main(){
+  const diskFloor=process.argv[2]==='--export-approved-below-10g'?MIN_FREE_KIB:10485760;
   if(process.cwd()!==ROOT||fs.readFileSync('supabase/.temp/project-ref','utf8').trim()!==REF||fs.readFileSync('supabase/.temp/pooler-url','utf8').trim()!==URL)throw Error('Exact linked project/root refused');
-  if(freeKiB()-655360<10485760)throw Error('Export disk reserve refused');
+  if(freeKiB()-655360<diskFloor)throw Error('Export disk reserve refused');
   if(fs.lstatSync('.env.local').isSymbolicLink()||(fs.statSync('.env.local').mode&0o777)!==0o600)throw Error('Private credential file refused');
   const client=await connect(),identity=await client.call('execute_sql',{query:QUERIES.identity});
   if(identity.length!==1||identity[0].role!=='supabase_read_only_user'||identity[0].transaction_read_only!=='on')throw Error('Named MCP identity refused');
@@ -101,7 +103,7 @@ async function main(){
     stage='dump-stream';dump=spawn(PG+'pg_dump',dumpArgs(snapshot),{env,stdio:['ignore','pipe',log]});
     const exited=new Promise((resolve,reject)=>{dump.on('error',()=>reject(Error('Dump spawn refused')));dump.on('exit',resolve);});
     deadline=setTimeout(()=>dump.kill('SIGTERM'),120000);
-    monitor=setInterval(()=>{if(freeKiB()<10485760||holder.exitCode!==null)dump.kill('SIGTERM');},1000);
+    monitor=setInterval(()=>{if(freeKiB()<diskFloor||holder.exitCode!==null)dump.kill('SIGTERM');},1000);
     await pipeline(dump.stdout,guard,cipher,fs.createWriteStream(file,{flags:'a',mode:0o600}));
     const code=await exited;if(code!==0||holder.exitCode!==null||guard.bytes<1000||!guard.tail.includes(Buffer.from('PostgreSQL database dump complete')))throw Error('Dump/held snapshot completion refused');
     fs.appendFileSync(file,cipher.getAuthTag());
@@ -131,6 +133,6 @@ async function main(){
   }
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
-  if(process.argv.length!==3||process.argv[2]!=='--export-approved')throw Error('Explicit approved export flag required');
+  if(process.argv.length!==3||!['--export-approved','--export-approved-below-10g'].includes(process.argv[2]))throw Error('Explicit approved export flag required');
   main().catch(()=>{console.error('Protected recovery export failed; details withheld/private log retained; no automatic retry.');process.exitCode=1;});
 }

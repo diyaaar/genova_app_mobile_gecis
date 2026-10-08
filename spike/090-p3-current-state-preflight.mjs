@@ -6,7 +6,7 @@ import { redact, assess } from './090-p3-delta-preflight.mjs';
 const PRIOR='docs/reports/090/2026-10-04-p3-hosted-inventory.json';
 const DELTA='docs/reports/090/2026-10-04-p3-delta-preflight.json';
 const MANIFEST='docs/reports/090/2026-10-03-p1-beta-candidate.json';
-const OUTPUT='docs/reports/090/2026-10-07-p3-current-state-preflight.json';
+const OUTPUT='docs/reports/090/2026-10-09-p3-current-state-preflight.json';
 
 export function digestRows(records) {
   return records.map(row=>{
@@ -64,7 +64,7 @@ async function main(){
     comparisons,assessment:assess(rawDelta[0].inventory),
     ledger:{totalRows:rows.length,candidatePresent:relevant.filter(Boolean).length,candidateAbsent:relevant.filter(r=>!r).length,
       nullRelevantStatements:relevant.filter(r=>r?.statements===null).length},
-    evidenceMethod:'Owner approved current-state snapshot/isolated restore plus exact future delta provenance on7October; actual backup/restore NOT RUN.',
+    evidenceMethod:'Owner approved current-state snapshot/isolated restore plus exact future delta provenance on7October. Actual protected snapshot7October captured;9October resumed isolated restore tracked separately. This metadata query is not restore proof.',
     limits:'Selected digest drift observation only, queries are separate transactions NOT one held snapshot. No full schema or Auth/provider/backup/data/restore/source equality proof. Edge source and served web remain dated4October. No rows/logs/secrets/raw bodies retained or writes/runtime/AI calls.'};
   fs.writeFileSync(OUTPUT,JSON.stringify(result,null,2)+'\n',{flag:'wx',mode:0o600});
   console.log(JSON.stringify({output:OUTPUT,bytes:fs.statSync(OUTPUT).size,observedAt:result.observedAt,ledger:result.ledger,comparisons}));

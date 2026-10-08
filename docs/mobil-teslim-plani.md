@@ -469,6 +469,11 @@ project workflow rules, not model-capacity claims or permission to change the se
   or checkpoint; it does not justify another identical build or environment rebuild.
 - **Disk floor:** the owner requested roughly 10 GB free. Use a conservative **10 GiB available**
   filesystem floor (10,485,760 KiB reported by `df -k`), not advertised/purgeable capacity.
+  **9 October scoped exception:** owner explicitly waived this floor for the current
+  P3 isolated recovery continuation.090's20261009work card owns its bounded allocation,
+  512MiBemergencyfloor/640MiBstop, monitoring and exact cleanup. All other data,
+  privacy/hosted-operation/ownership rules remain; default10GiB resumes outside
+  this operation. This is not authority for global cache/user-data deletion.
   Before downloads, installs, exports, builds or runtime setup, record current free space,
   existing owned usage, estimated additional peak allocation and cleanup targets. Proceed only
   if projected free space remains above the floor. If peak is unknown, first obtain a size

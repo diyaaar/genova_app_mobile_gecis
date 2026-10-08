@@ -7,18 +7,22 @@ import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import { decryptBuffer, freeKiB } from './090-p3-consistent-backup.mjs';
 import { catalogQueries, dataDigestQuery, canonicalSettings } from './090-p3-recovery-queries.mjs';
-const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-RAJEJt';
+import { ATTEMPT, LIVE_STOP_KIB } from './090-p3-resource-policy.mjs';
+const RUNTIME_DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-RAJEJt';
+const DIR=process.env.GENOVA_RECOVERY_BACKUP_DIR||RUNTIME_DIR;
+let stage='scope';
 const LIMA='/opt/homebrew/bin/limactl',VM='g090p3',CONTAINER='genova090p3-db',DB='genova_090_p3_restore';
 const IMAGE='supabase/postgres@sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00';
 const env={...process.env,LIMA_HOME:'/Volumes/g090p3/lima',LIMA_SHELLENV_BLOCK:'*'};
 const sha=value=>crypto.createHash('sha256').update(value).digest('hex');
 export function ident(name){if(!/^[a-z_][a-z_0-9]*$/.test(name))throw Error('Identifier scope refused');return '"'+name+'"';}
-function privateRead(name){
-  const file=path.join(DIR,name),stat=fs.lstatSync(file);
+function privateRead(name,dir=DIR){
+  const file=path.join(dir,name),stat=fs.lstatSync(file);
   if(!stat.isFile()||stat.isSymbolicLink()||(stat.mode&511)!==384)throw Error('Private file ownership refused');
   return fs.readFileSync(file);
 }
 function command(args,input){
+  if(freeKiB()<LIVE_STOP_KIB)throw Error('Private restore live floor refused');
   const result=spawnSync(LIMA,['shell',VM,'sudo','docker',...args],{env,input,encoding:'utf8',timeout:120000,maxBuffer:16*1024*1024});
   if(result.status!==0){fs.writeFileSync(path.join(DIR,'restore-failure.log'),(result.stderr||'')+(result.stdout||''),{flag:'wx',mode:0o600});throw Error('Private offline command failed');}
   return result.stdout.trim();
@@ -31,10 +35,11 @@ export function normalize(value){
   return Object.fromEntries(Object.entries(value).sort(([a],[b])=>a.localeCompare(b)).map(([key,v])=>[key,key==='acl'&&typeof v==='string'?v.slice(1,-1).split(',').sort():normalize(v)]));
 }
 function main(){
+  if(!/^\/Users\/alidiyarduran\/Documents\/Codex\/2026-10-07\/genova-090-p3-[A-Za-z0-9]+$/.test(DIR))throw Error('Approved private parent refused');
   if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv.length!==3||process.argv[2]!=='--restore-approved'||fs.existsSync(path.join(DIR,'restore-summary.json'))||fs.existsSync(path.join(DIR,'restore-failure.log')))throw Error('Root/action/overwrite refused');
   if(fs.lstatSync(DIR).isSymbolicLink()||(fs.statSync(DIR).mode&511)!==448)throw Error('Private directory refused');
-  const owner=JSON.parse(privateRead('runtime-ownership.json'));
-  if(owner.limaHome!==env.LIMA_HOME||owner.owner!=='090-P3-only'||freeKiB()<10485760+131072)throw Error('Runtime ownership/floor refused');
+  const owner=JSON.parse(privateRead('runtime-ownership.json',RUNTIME_DIR));
+  if(owner.attempt!==ATTEMPT||owner.limaHome!==env.LIMA_HOME||owner.owner!=='090-P3-only'||freeKiB()<LIVE_STOP_KIB)throw Error('Runtime ownership/floor refused');
   const target=JSON.parse(command(['inspect',CONTAINER]))[0];
   if(target.Config.Image!==IMAGE||target.HostConfig.NetworkMode!=='none'||target.Mounts.length||Object.keys(target.HostConfig.PortBindings||{}).length)throw Error('Private isolation refused');
   const summary=JSON.parse(privateRead('summary.json'));
@@ -46,7 +51,14 @@ function main(){
   key.fill(0);metadata.fill(0);
   if(sha(dump)!==summary.plaintextSha256||source.readOnly!=='on')throw Error('Backup plaintext/snapshot refused');
   if(sql(`select exists(select 1 from pg_database where datname='${DB}');`,'postgres')!=='f')throw Error('Existing database refused');
+  // This installer setting is SIGHUP, not session-settable. Only the owned offline
+  // backend is changed; fresh connections verify reload before canonical owners.
+  stage='extension-config';
+  sql("alter system set supautils.privileged_extensions = '';",'postgres');
+  sql('select pg_reload_conf(); select pg_sleep(0.1);','postgres');
+  if(sql("select current_setting('supautils.privileged_extensions')='';",'postgres')!=='t')throw Error('Offline extension installer reload refused');
   // All role/password changes are inside this network-none container only.
+  stage='roles';
   for(const role of source.catalog.roles){
     const name=ident(role.name);if(!Number.isInteger(role.connlimit))throw Error('Role scope refused');
     const flags=['super','inherit','createrole','createdb','login','replication','bypassrls'].map(k=>(role[k]?'':'no')+(k==='super'?'superuser':k));
@@ -54,12 +66,14 @@ function main(){
       alter role ${name} with ${flags.join(' ')} connection limit ${role.connlimit};`,'postgres');
   }
   // Restore exact membership grantors/options, admin-option foundations first.
+  stage='memberships';
   for(const m of [...source.catalog.memberships].sort((a,b)=>Number(b.admin_option)-Number(a.admin_option))){
     for(const [option,key] of [['admin','admin_option'],['inherit','inherit_option'],['set','set_option']]){
       if(typeof m[key]!=='boolean')throw Error('Membership flag refused');
       sql(`grant ${ident(m.role)} to ${ident(m.member)} with ${option} ${m[key]?'true':'false'} granted by ${ident(m.grantor)};`,'postgres');
     }
   }
+  stage='create-baseline';
   sql(`create database ${DB} owner postgres template template0;`,'postgres');
   sql('drop schema public cascade;');
   // Exact source extension dependency seed; original encrypted dump is unchanged.
@@ -67,7 +81,6 @@ function main(){
     pg_stat_statements:['1.11','postgres','extensions'],pg_net:['0.19.5','supabase_admin','public'],supabase_vault:['0.3.1','supabase_admin','vault'],plpgsql:['1.0','supabase_admin','pg_catalog']};
   if(source.catalog.extensions.length!==6||source.catalog.extensions.some(e=>JSON.stringify(expected[e.name])!==JSON.stringify([e.version,e.owner,e.schema])))throw Error('Extension seed/source mismatch');
   const seed=`
-set supautils.privileged_extensions='';
 alter role postgres superuser;
 set role postgres;
 create extension pgcrypto with schema extensions version '1.3';
@@ -81,7 +94,9 @@ create extension supabase_vault with schema vault version '0.3.1';
   const original=dump.toString();dump.fill(0);
   if(original.split('CREATE SCHEMA vault;').length!==2)throw Error('Extension boundary mismatch');
   const restored=original.replace('CREATE SCHEMA vault;','CREATE SCHEMA vault;\n'+seed);
+  stage='restore-dump';
   sql('begin;\n'+restored+'\ncommit;');
+  stage='fidelity';
   const differences={},counts={};
   for(const [name,query] of Object.entries(catalogQueries)){
     const actual=json(query),expected=source.catalog[name];counts[name]={source:expected.length,restored:actual.length};
@@ -99,5 +114,5 @@ create extension supabase_vault with schema vault version '0.3.1';
   if(Object.keys(differences).length)process.exitCode=1;
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
-  try{main();}catch{console.error('Offline restore failed; details private, no recovery PASS or automatic retry.');process.exitCode=1;}
+  try{main();}catch{console.error('Offline restore failed at '+stage+'; details private, no recovery PASS or automatic retry.');process.exitCode=1;}
 }
