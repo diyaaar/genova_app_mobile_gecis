@@ -6,6 +6,12 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
+- **9Oct046clone-test source preparation PASS:** [Record](../reports/2026-10-09-p3-realtime-clone-test-preparation.md),
+  6newtests/exact prior+complete table-membership negatives; original046authority
+  tests/SQL/11packet614parents unchanged. Purebuilder only; no actualclone/SQL/
+  capture/build started.6.5GiBresource approval stillPENDING/free~9.48GiB. Required
+  goal remainsINCOMPLETE; next exclusivefaithfulclone→11SQL, not anotherfixture.
+
 - **9Oct legacy source preparation PASS / required SQL rehearsal NOT RUN:**
   [Record](../reports/2026-10-09-p3-legacy-compatibility-preparation.md), sourceaa58bf8,
   [exact11packet](../reports/090/2026-10-09-p3-compatibility-packet.json).14source+3packet

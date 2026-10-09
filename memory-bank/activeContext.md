@@ -17,6 +17,12 @@ restore before11SQL; preserve046exact publication sets, check syntheticcollision
 original-rowdigests/exclusive090peerDB. ManagedAuth/REST/fullbrowser/mixedcache/
 Android+iOS/independentreview laterrequired. No ownerQA/hostedwrite/privateAIexport.
 
+[046exact-set adapter](../docs/reports/2026-10-09-p3-realtime-clone-test-preparation.md)
+6newsource testsPASS; same-count/extra/missing/unrelated-loss refused, oldauthority
+tests preserved. Purebuilder only, originalSQL/packet614unchanged. Actualclone/
+capture/11SQLNOTRUN;6.5GiBapproval stillabsent/free~9.48GiB/no runtime. GoalACTIVE,
+INCOMPLETE; previous/currentturnPROGRESS, not verifiedwait. No source-onlyclosure.
+
 ## Previous server checkpoint
 
 [Server expiry checkpoint](../docs/reports/2026-10-09-p3-server-session-expiry.md)

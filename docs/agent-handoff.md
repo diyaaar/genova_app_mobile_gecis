@@ -22,6 +22,12 @@ Do not broaden testgrants/RLS or overwrite oldsuccessfulprivate receipts. Then
 managedAuth/REST/browserbuild/mixedclients/cache/agentAndroid+iOS/independentreview.
 No ownerQA/livewrite/push/deploy/Jevspend/privateexport. CLI marker preserved.
 
+[046adapter preparation](reports/2026-10-09-p3-realtime-clone-test-preparation.md):
+6newNode testsPASS/exactprior+full table-membership sets/negative substitutions;
+alloriginal046SQL/authority tests/packet614parents unchanged. Purebuilder only,
+actualcapture/SQLNOTRUN/resource approval still absent; free~9.48GiB. NEXT same
+exclusivefaithfulclone/11SQL, not another synthetic acceptance or livewait.
+
 ## Previous outcome — local server checkpoint PASS
 
 [Server expiry](reports/2026-10-09-p3-server-session-expiry.md), sourcebbc301c:

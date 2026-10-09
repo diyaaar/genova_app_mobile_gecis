@@ -75,6 +75,29 @@ Finalfree9,958,120KiB(~9.50GiB), still below10GiBfloor;6.5GiBscope approval PEND
 no VM/download/restore/build/native/hosted action. Goal INCOMPLETE / P3NO-GO,
 not source-only closure. No ownerQA/privateAIexport; Jev0/$0new.
 
+Source-only continuation entrymain/ec88f02: previous turn PROGRESS (actual repaired
+factory/source packet/scoped commits), not a live wait. Resource permission still
+absent, all runtime-dependent gates remain NOT RUN. One independently ready action:
+prepare a strict046clone test adapter in spike/090-realtime-clone-test.mjs/.test.mjs.
+Read current handoff/active/card/controls/guide/workcycle/046migration+test, complete
+TypeSafe/Supabase/Postgres skills and current docs. Preserve original migration/test/
+packet/P1/P2/614bytes. Adapter consumes captured-before publication metadata only
+AFTER future actual faithful-copy validation, replaces only old fixture-count clause
+with exact bidirectional prior/current sets, retains every original authority test.
+Pure Node/mutation/lint/source/link gates now; actual SQL/clone still required and
+NOT RUN. No installation/download/runtime/private data/live access/Jev inference.
+Small source/evidence only, currentfree9,955,156KiB below default10GiBfloor. No new
+framework or repeated unchanged runtime/source acceptance. Artifact/report/current
+pointers allowed; scoped record commit only after focused verification.
+
+[Strict046adapter preparation](../reports/2026-10-09-p3-realtime-clone-test-preparation.md)
+now6source testsPASS: exact prior/all-membership checks, same-count substitution,
+missing/extra/unrelated-loss/injection negatives; original authority tests/SQL/
+packet614parents unchanged. Purebuilder only; actualinputprovenance/faithfulclone/
+SQL/RLS still NOT RUN. No runtime/resource authorization response received; final
+free9,944,836KiB(~9.48GiB), no ownprocess/image/build/privateexport. GoalINCOMPLETE,
+not complete/paused/verifiedwait; required restore/11SQL await explicit6.5GiBscope.
+
 ### 9 October retained-session expiry — guarded forward server delta
 
 Entry main/02a03d8, primary sole writer; unrelatedCLI marker preserved/excluded.
