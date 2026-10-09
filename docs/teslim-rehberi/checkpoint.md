@@ -1,11 +1,21 @@
 # Delivery checkpoint — single current execution pointer
 
-Updated 9 October 2026 (Europe/Istanbul). P1 entry `main/3fb3a2c`; product source unchanged
-by this inventory. This is the moving execution index, not a substitute for acceptance evidence.
+Updated 9 October 2026 (Europe/Istanbul). Current product `main/071465f`; immutable
+P1 entry remains3fb3a2c. This is the moving execution index, not acceptance evidence.
 Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
+- **9Oct local client-source convergence PASS / P3 remains OPEN:** [Evidence](../reports/2026-10-09-p3-client-source-convergence.md),
+  source071465f, [613pin child](../reports/090/2026-10-09-p3-client-convergence-source.json).
+  Embedded hook ticket-only/no automatic HEAD/body/cache, browser authority retained;
+  late HEAD cache-invalidation race fixed, safe actual mini/workspace diagnostics.
+  40new regressions/88focused/root1218tests+build, mobileTS/108consent-control tests PASS.
+  Native/SQL/20Edge/46routes unchanged; no current Android/iOS/runtime/hosted acceptance.
+  P1/P2 immutable, child NOT RELEASE READY. NEXT part2 exact retained Auth not_after
+  forwarddelta/all-five SQL+HTTP, then part3 mixed current/old clients/cache/Android+iOS
+  reacceptance/independent review. No ownerQA/push/deploy/live change/Jev spend.
+  Following source-unchanged/NEXT-hook/log bullets are dated historical checkpoints.
 - **9Oct original P3 entry-inventory COMPLETE / whole P3 IN PROGRESS:** [Actual
   full recovery and original-goal audit](../reports/2026-10-09-p3-full-recovery-and-inventory-audit.md).
   All17captured metadata groups/all101complete row fingerprints/2880rows MATCH;

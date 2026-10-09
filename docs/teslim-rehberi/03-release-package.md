@@ -19,6 +19,13 @@ publications and all101table full fingerprints/2880rows equal. Historical15SQLte
 remain unavailable. This does NOT close whole P3: source convergence/mixed-client/
 cache/security/rehearsal/independent review and exact operation authority stay open.
 Next uses the already pinned4Octconvergence contract, not another inventory reset.
+**9October subsequent client checkpoint:** [Actual source/regressions](../reports/2026-10-09-p3-client-source-convergence.md)
+now repair embedded consent hook/real diagnostic sinks/late HEAD invalidation at
+071465f. [613pin child](../reports/090/2026-10-09-p3-client-convergence-source.json)
+is a local client-source checkpoint, NOT RELEASE READY. Server retained Auth
+not_after repair and all-five HTTP, current-source mixed-client/cache/old-web and
+Android+iOS reacceptance/independent review stay required. P1/P2 remain immutable.
+Statements below about unimplemented hook/log changes refer to earlier observations.
 Earlier stage observations below remain dated; their NOT RUN replacement status
 is superseded by this actual recovery evidence, not by weakening a criterion.
 The historical [3 October partial inventory](../reports/2026-10-03-p3-entry-inventory.md)

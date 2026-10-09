@@ -7,6 +7,20 @@ English records/Turkish updates; sole writer; verify current ownership/permissio
 
 ## Current measurable outcome
 
+[Local client-source checkpoint](../docs/reports/2026-10-09-p3-client-source-convergence.md)
+PASS/source071465f: embedded ticket-only hook/no automatic byte probe/cache,
+normal browser authority retained, late HEAD invalidation race fixed, safe static
+audio-event diagnostics.40new tests/88focused; root117files/1218tests/build PASS;
+mobileTS+4unchanged consent/recovery/controller suites108tests PASS (not platforms).
+[613pin child](../docs/reports/090/2026-10-09-p3-client-convergence-source.json)
+606unchanged/4changed/3tests/imports842→843/20Edge+46routes unchanged. P1/P2historical/
+immutable, childNOTRELEASEREADY. NEXT exact retained Auth not_after forwarddelta/
+all-five SQL+HTTP positives/negatives; then current mixed clients/cache/old-web and
+agent-owned Android/iOS acceptance + independentreview. Whole090/P3OPEN/NO-GO.
+No livewrite/deploy/push/ownerQA/Jevspend/private export; CLI marker preserved.
+
+## Previous recovery/inventory checkpoint
+
 [Original inventory audit / actual recovery](../docs/reports/2026-10-09-p3-full-recovery-and-inventory-audit.md)
 ENTRY INVENTORY COMPLETE after scoped commits/goal tool confirmation; whole090/R1/
 P3release IN PROGRESS/NO-GO. Owner35replacement proved, not narrowed objective:
@@ -22,8 +36,8 @@ OwnVM/container/image/newISO removed03:52:08Turkey, nativeclusterabsent/defaultL
 thenfree12,592,016KiB. No user files/caches/deps/AVD/simulators/otherPGdeleted.
 No unchanged export/rebuild. Default10GiB outside9Octrecovery waiver; permissions
 not blanket live-operation/custody/cleanup authority. No hosted change/ownerQA.
-NEXT existing4Octsource-convergence contract: native-consent hook→real helper,
-both capability-log sinks, retained Auth not_after server authority, exact new
+Then-next4Octsource contract is partially implemented above; retained Auth
+not_after server authority and final exact new
 manifest/affected P1P2reacceptance then mixed clients/cache/security/rehearsal/review.
 [Checkpoint](../docs/teslim-rehberi/checkpoint.md).
 
@@ -32,7 +46,7 @@ manifest/affected P1P2reacceptance then mixed clients/cache/security/rehearsal/r
 P1 GENOVA-BETA-20261003-P1/frozen c2ec9b09a44c048c7c6a0c31f0ac99566c4643f0:
 [manifest](../docs/reports/090/2026-10-03-p1-beta-candidate.json),610pins/842imports/
 20Edge/38RPC/25SQL exact regeneration unchanged.47focused helper tests PASS, not
-full recovery/runtime/release. Product source unchanged; CLI marker unrelated/excluded.
+full recovery/runtime/release. Product now071465f; CLI marker unrelated/excluded.
 P2[iOS](../docs/reports/2026-10-03-ios-p2-private-file-acceptance.md)/
 [Android](../docs/reports/2026-10-03-android-full-share-flow.md) synthetic local file
 flow only; not full Next/Auth/hostedRLS/provider/hardware/signed beta.
@@ -45,8 +59,8 @@ app.genesinovachoir.com; metadata not HTTP proof. Named MCPworks, no new key/ins
 [Hosted](../docs/reports/2026-10-04-p3-hosted-reconciliation.md)/
 [delta](../docs/reports/2026-10-04-p3-delta-dependency-inventory.md)/
 [contract](../docs/reports/2026-10-04-p3-convergence-contract-audit.md):
-005not078/079ACLmissing/7RPCabsent/oldreaders/EdgeJWT+source drift; hook/log/
-actor090not_after convergence NOT IMPLEMENTED. Eight route groups/five-family
+005not078/079ACLmissing/7RPCabsent/oldreaders/EdgeJWT+source drift;
+actor090not_after NOT IMPLEMENTED; hook/log checkpoint nowPASS. Eight route groups/five-family
 old-new-cache/review/operation map prepared; historical SQL unavailable/ten deltas
 not applied. Whole090/R1OPEN/P3NO-GO → P4storage → P5signedAndroid → P6full → P7stores.
 RN/Expo/Supabase/permanentWebViews/privateR2/noFlutterorRailwayrewrite/prefer<= $5/month;

@@ -15,6 +15,75 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 9 October client-source convergence — consent and diagnostic boundary
+
+Entry main/578feee519f8ab3e98148735463791f4d2118551, primary sole writer;
+supabase/.temp/cli-latest is unrelated/preserved/excluded. Instructions read:
+AGENTS, handoff, activeContext, this card, delivery execution controls, transition
+guide/work cycle/template, relevant MIGRATION ownership/decisions32/33/35 and
+4October convergence contract; complete installed TypeSafe skill/live docs index.
+One checkpoint: embedded protected-file resolution performs no HEAD/body/cache
+before native confirmation; browser authority remains intact and both real audio
+error handlers emit only bounded safe diagnostics. This is part1 of the existing
+source contract, NOT closure of whole090/P3 or a release-ready converged candidate.
+Next part2: retained Auth not_after SQL/HTTP repair; part3: new exact package and
+agent-owned Android/iOS integration reacceptance, then independent release review.
+These required full-contract checks remain open, not silently removed.
+
+Allowed: hooks/useProtectedDriveFileUrl.ts and focused hook tests;
+lib/drive-file-url.ts only for reproduced in-flight authority race plus its tests;
+components/FloatingMiniPlayer.tsx, components/repertuvar/RepertoireWorkspace.tsx
+and actual error-event tests; spike/090-client-convergence-source.mjs for child
+pin evidence; this card/current handoff/active/checkpoint and dated report/JSON.
+Preserve shared annotation TS, permanent WebViews, browser HEAD401renew<=1/
+403final, native confirmation/download ownership, tenant/logout invalidation,
+offline browser policy, all features and immutable P1/P2/source fixture evidence.
+Do not patch historical fixture factories: they read immutable Git parents, not
+current source. New evidence reads current unmodified product source/no overlays.
+No SQL/Edge/provider/native production changes, private snapshot reads/export,
+live users, website edits, AI inference/spend, deploy/push/distribution or ownerQA.
+Rollback is the exact scoped code commit revert, not a data rollback.
+
+At most3actions:1real helper/fetch and component-event negative reproductions;
+2minimal fixes/race checks;3focused/full web gate, immutable child source evidence,
+self-review, owned cleanup and separate source/docs commits. Current free
+11,873,752KiB; no .next/coverage/native-build output, spike090runtime0KiB.
+Historical root output477,820KiB; reserve additional768MiB for root build/coverage,
+projected11,087,320KiB > default10,485,760KiB floor. One heavy process; no installs,
+copy/runtime/native build. Monitor during build, stop allocation if floor threatened.
+Owned .next/coverage/tsconfig.tsbuildinfo removed after last gate; preserve deps,
+global caches, AVDs/simulators and unrelated CLI marker. Integration/platform
+acceptance is explicitly scheduled at part3, not claimed from this DOM/network
+checkpoint; no RN source changed. Progress after focused reproduction/final gate.
+
+| Criterion | Required for this checkpoint? | Status | Evidence / boundary |
+|---|---|---|---|
+| Embedded active/locked/expired hook→real helper: no automatic HEAD/GET/cache, issuance auth retained | yes | PASS |18actual hook/helper tests, synthetic Auth/lease/fetch seam; no hosted claim |
+| Browser real HEAD,401<=1renew,403final/no cache fallback | yes | PASS | Real helper integration + existing helper/hook/link regressions |
+| Reconnect/file/context/unmount races cannot publish old URL | yes | PASS | Current code, late ticket/HEAD/file/unmount negatives and fresh same-user session control |
+| Both actual component error handlers: no URL/message/token/unexpected-ID sink output | yes | PASS |22actual error-event cases, all error/warn/log/info/debug arguments |
+| pnpm check; exact new child pins/unchanged parent proofs; diff/docs/cleanup/scoped commits | yes | PASS at final exit |117files/1218tests/build,613pin child; source071465f and separate evidence commit; self-review only |
+| Retained Auth not_after / all-five HTTP / integrated Android+iOS / independent review | full source/release contract, subsequent parts2/3 | NOT RUN | Not this local client checkpoint; whole090/P3 stays OPEN/NO-GO |
+
+[Actual checkpoint](../reports/2026-10-09-p3-client-source-convergence.md): code
+071465f,4production files/3tests only. Baseline true negatives reproduced AFTER
+correcting malformed fixture response;18real helper+22actual log cases new,
+6focused files88tests and root117files1218tests/coverage/build PASS. Extra reproduced
+late browser HEAD invalidation fixed; initial new same-user identity not falsely
+rejected. MobileTS/4unchanged consent/recovery/controller suites108tests PASS,
+not a platform run or full RN suite. Child606unchanged parent/4changed/3tests,
+imports842→843/20Edge+46routes unchanged; sourceSQL/native/sharedannotation kept.
+Historical overlays still operate on frozenGit, not reapplied to current child.
+Old-web current-node backport must be re-pinned at part3. Default disk floor kept;
+owned470,952KiB.next/352KiBcoverage/332KiBtsbuildinfo verified non-symlink and
+removed after last gate, all three absent/free11,714,040KiB. UnrelatedCLI preserved,
+no service/device started or live change; no other files/backup keys removed.
+Exit6ownedMD/currentcard100local links0missing/8record-helper0secretpatterns,
+diff/syntax/613childbyte replay/610parent reconstruction PASS; product diff from
+071465f empty. Source/evidence commits separate; self-review only.
+Jev0/$0new, no private export; whole090/P3OPEN. Next part2 exact retained-session
+not_after server repair/all-five HTTP, then current-source package/platform/review.
+
 ### 9 October faithful recovery seed — fresh source, exact comparisons retained
 
 Entry main/c22c6af, sole primary writer; CLI marker unrelated/preserved. Previous
