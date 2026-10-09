@@ -192,6 +192,24 @@ begin
   end if;
   update public.assignment_submissions set is_reviewer_note_hidden=false
     where id='61000000-0000-4000-8000-000000000090';
+  -- Retained Auth rows are not proof of a live session. Invoke the actual RPC
+  -- as service_role for each null/future/equality/past control, across all families.
+  for expiry_case in 1..4 loop
+    update auth.sessions set not_after=case expiry_case
+      when 1 then null when 2 then statement_timestamp()+interval '1 hour'
+      when 3 then statement_timestamp() else statement_timestamp()-interval '1 minute' end
+      where id=session_a;
+    set local role service_role;
+    for i in 1..5 loop
+      if public.private_file_ticket_authorized_090(actor,session_a,choir_a,families[i],files[i])
+        is distinct from (expiry_case<=2) then
+        raise exception '090 retained-session expiry case% family% failed',expiry_case,families[i];
+      end if;
+    end loop;
+    execute format('set local role %I',original_role);
+  end loop;
+  update auth.sessions set not_after=null where id=session_a;
+  raise notice '090 retained Auth expiry PASS: null/future allowed; equality/past denied for five service RPCs';
   delete from auth.sessions where id=target_session;
   for i in 1..5 loop
     if public.private_file_ticket_authorized_090(target_actor,target_session,choir_a,families[i],files[i]) then

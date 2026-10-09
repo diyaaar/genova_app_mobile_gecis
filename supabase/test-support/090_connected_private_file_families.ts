@@ -231,6 +231,15 @@ async function main() {
         assert.equal(head.status, 206, `${family} HEAD`);
         assert.equal(head.headers.get('content-length'), '4');
         assert.equal((await head.arrayBuffer()).byteLength, 0);
+        // The actual Auth row may remain after expiry; old signed URLs must not.
+        const sessionId = JSON.parse(Buffer.from(accessA.split('.')[1], 'base64url').toString()).session_id;
+        assert.match(sessionId, /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i);
+        sql(`update auth.sessions set not_after=statement_timestamp()-interval '1 minute' where id='${sessionId}'`);
+        const beforeExpiry = providerHits;
+        assert.equal((await fetch(url, { method: 'HEAD' })).status, 403, `${family} retained-expired HEAD`);
+        assert.equal((await fetch(url)).status, 403, `${family} retained-expired GET`);
+        assert.equal(providerHits, beforeExpiry, `${family} retained-expired read contacted provider`);
+        sql(`update auth.sessions set not_after=null where id='${sessionId}'`);
         const beforeForeign = providerHits;
         assert.equal((await ticket(item.fileId, accessB)).result.status, 403, `${family} foreign POST`);
         assert.equal(providerHits, beforeForeign, `${family} foreign POST contacted provider`);
