@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import { isEmbeddedRuntimeActive } from '@/lib/embedded-web-runtime';
 import { clearProtectedDriveFileUrlCache, getOnlineAuthorizedPrivateFileUrl, getProtectedAssignmentFileUrl, getProtectedAssignmentReviewFileUrl, getProtectedDriveFileUrl, getProtectedRepertoireCommentFileUrl, getProtectedRepertoireFileUrl } from '@/lib/drive-file-url';
 import { ProtectedFileRequestError } from '@/lib/repertuvar/protected-file-client';
 import {
@@ -75,7 +76,7 @@ export function useProtectedDriveFileUrl(
       const localUrl = getOfflineDriveFileUrl(fileDescriptor, runtimeVersion);
       // Review visibility can be revoked by a chef. Never let a previously visible
       // review bypass the live authorization check through the offline cache.
-      const runtimeSupported = isRepertoireRuntimeCacheSupported() && !options.assignmentReviewFileVersionId && !options.repertoireCommentFileVersionId;
+      const runtimeSupported = !isEmbeddedRuntimeActive() && isRepertoireRuntimeCacheSupported() && !options.assignmentReviewFileVersionId && !options.repertoireCommentFileVersionId;
 
       try {
         setLoading(true);
@@ -140,7 +141,11 @@ export function useProtectedDriveFileUrl(
             file_name: fileName ?? '',
             mime_type: mimeType ?? null,
           });
-        const nextUrl = await getOnlineAuthorizedPrivateFileUrl(loadTicketUrl);
+        // Embedded resolution may issue a scoped ticket, never read bytes. Native
+        // confirmation owns the first download/probe and its server authorization.
+        // Ordinary browsers must retain the fresh HEAD decision.
+        const nextUrl = isEmbeddedRuntimeActive()
+          ? await loadTicketUrl() : await getOnlineAuthorizedPrivateFileUrl(loadTicketUrl);
 
         if (cancelled) {
           return;
@@ -150,7 +155,7 @@ export function useProtectedDriveFileUrl(
         setIsLocal(false);
         setIsStaleLocal(false);
 
-        if (runtimeSupported && nextUrl && runtimeVersion) {
+        if (runtimeSupported && !isEmbeddedRuntimeActive() && nextUrl && runtimeVersion) {
           void cacheRuntimeDriveFile({
             driveFileId,
             url: nextUrl,

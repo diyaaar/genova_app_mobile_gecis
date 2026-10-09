@@ -207,8 +207,11 @@ export function FloatingMiniPlayer({ hasBottomNav }: FloatingMiniPlayerProps) {
     };
     const handleEnded = () => setPlaybackState({ isPlaying: false });
     const handleError = () => {
-      const err = el.error;
-      console.error(`[AUDIO_PLAYER_ERROR] Mini player error for id: ${currentTrackId}, src: ${el.src}. Error code: ${err?.code}, message: ${err?.message}`);
+      const code = el.error?.code;
+      // Media messages, sources and even malformed IDs can contain capabilities.
+      console.error('[AUDIO_PLAYER_ERROR]', {
+        player: 'mini', code: code === 1 || code === 2 || code === 3 || code === 4 ? code : null,
+      });
       isSwitchingRef.current = false;
       setPlaybackState({ isPlaying: false });
     };

@@ -838,8 +838,11 @@ function AudioPanel({
     };
 
     const handleError = () => {
-      const err = el.error;
-      console.error(`[AUDIO_PLAYER_ERROR] Workspace player error for src: ${el.src}. Error code: ${err?.code}, message: ${err?.message}`);
+      const code = el.error?.code;
+      // A platform's free-form media message may repeat the signed source URL.
+      console.error('[AUDIO_PLAYER_ERROR]', {
+        player: 'workspace', code: code === 1 || code === 2 || code === 3 || code === 4 ? code : null,
+      });
       
       intendedPlayState.current = false;
       const matchesSelection = isSourceMatch(el, selectedAudioSource);

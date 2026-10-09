@@ -100,11 +100,22 @@ export async function getOnlineAuthorizedPrivateFileUrl(
   loadUrl: () => Promise<string | null>,
   probe: typeof fetch = fetch,
 ): Promise<string | null> {
+  // The issuer validates its own in-flight generation and may legitimately
+  // rotate the cache when resolving a new session. Pin the probe context only
+  // after that first issuance; subsequent probe/renewal work must not outlive it.
+  let generation: number | undefined;
+  const assertCurrentContext = () => {
+    if (generation !== undefined && generation !== cacheGeneration) throw new Error('Koro oturumu değişti. Dosyayı yeniden açın.');
+  };
   for (let attempt = 0; attempt < 2; attempt += 1) {
+    assertCurrentContext();
     const url = await loadUrl();
+    generation ??= cacheGeneration;
+    assertCurrentContext();
     if (!url) return null;
     try {
       const response = await probe(url, { method: 'HEAD', cache: 'no-store' });
+      assertCurrentContext();
       if (response.ok) return url;
       if (response.status === 403) {
         clearProtectedDriveFileUrlCache();
@@ -119,6 +130,9 @@ export async function getOnlineAuthorizedPrivateFileUrl(
     } catch (error) {
       if (error instanceof ProtectedFileRequestError ||
         (error instanceof Error && error.name === 'AbortError')) throw error;
+      // Context invalidation is not a recoverable transport error. Never renew a
+      // previous choir's request or publish its late successful HEAD response.
+      assertCurrentContext();
       if (attempt === 0) {
         invalidateProtectedFileUrl(url);
         continue;
