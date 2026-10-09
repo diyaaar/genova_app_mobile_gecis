@@ -6,6 +6,13 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
+- **9Oct goal BLOCKED / INCOMPLETE after three-turn resource audit:** explicit new
+  6.5GiBclone resource approval stillabsent. Independent source/packet/046preparation
+  complete; actualfaithfulclone/11SQL stillNOTRUN. ActualLima0/mountabsent/emptyowned
+  runtimefolder/no livehandle; freshfree~9.81GiB below10GiBfloor. NEXT owner resource
+  answer→freshpreflight→exclusivefaithfulclone→11SQL. Fullscope retained/P3NO-GO;
+  no narrower acceptance/automaticauthorization/ownerQA/hostedwrite/newAIspend.
+
 - **9Oct046clone-test source preparation PASS:** [Record](../reports/2026-10-09-p3-realtime-clone-test-preparation.md),
   6newtests/exact prior+complete table-membership negatives; original046authority
   tests/SQL/11packet614parents unchanged. Purebuilder only; no actualclone/SQL/
