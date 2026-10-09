@@ -21,13 +21,14 @@ not all mismatches. Do not waive failures or patch system catalogs/broaden privi
 SIGHUP installer setting fixed only with offline ALTER SYSTEM/reload after proven
 empty failed baseline reset; original error kept, no live settings/roles changed.
 
-Fresh9Octnative export TCP timed out before metadata/data. Pooler+primary TCP probes
-failed; correct project dashboardHealthy/current advertised endpoint unchanged.
-MCPread-only metadata works. No wrong-password inference/rotation/network weakening/
-paid add-on/alternate export fallback. Actual restore remains7Octcutoff, not9Octrows.
-Private source /Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-RAJEJt,
-0700/files0600/key same dir, not offsite custody; small diagnostics/error records kept.
-Never print/upload SQL/rows/key; original exclusions/non-MVCC sequence limits retained.
+[Fresh9Octsource](../docs/reports/2026-10-09-p3-fresh-source-recovery-entry.md)PASS:
+public transport changed, no settings reset; authenticated120sown deadlinefail →
+measured180srun125,768ms/exit0.03:11:01Turkeyheldcutoff/101tables/2880rows/24schemas/
+17roles/22memberships/2pubs/9roots/14expanded/0schemas/8slots/canonicalcontext,
+AES-GCM/source-onlypreflightPASS. NEW actual full restoreNOT RUN/old7OctFAILkept.
+Nextprivate source /Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m,
+0700/files0600/keysame dir/not offsite; originalRAJEJtkept. Failedpartial/unusedkeys
+removed, small error records kept; no private output/AI/alternate export transport.
 
 After last dependent check own VM/container/image/newISOcache removed02:33:59Turkey;
 backup retained, defaultLima0/finalfree10,338,612KiB. Preserve user data/caches/AVD/
@@ -41,8 +42,8 @@ not executed. Synthetic nativePG17/5objects/21GRANTs exactACL PASS, TCPdisabled/
 cluster removed;35testsPASS. Old source lacks same-snapshot roots/schema/dropped-
 slot/context metadata, new guard rejects BEFORE runtime. CurrentMCPquery/future
 collector validated, no historical supplement. Full recoveryFAIL, not weakened.
-NEXT non-mutating native transport/route diagnosis → complete fresh held source →
-supported publication/slot/constraint/ACL remedies → one bounded full restore.
+NEXT supported publication/slot/constraint/ACL reconstruction with complete5OnU1m
+source → one bounded full restore. Partitioned slot root needs proper DDL parsing.
 No unchanged runtime/export loop, alternate real-row transport or owner manual QA.
 [Checkpoint](../docs/teslim-rehberi/checkpoint.md).
 

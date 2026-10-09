@@ -19,16 +19,16 @@ approved7Octsnapshot.101tables/2879rows/all canonical table data digests MATCH;
 2publications/15memberships missing. Read-only canonical context resolves policy/
 signature/index formatting, not all discrepancies. Never drop strict failures,
 assume NULL/defaultACL equivalence, patch catalogs, broaden grants or score a PASS.
-First session SET failed SIGHUP; only proven-empty baseline reset; local ALTER SYSTEM/
-reload fixed installer override, no production settings/roles changed.
 
-Fresh9Octnative export failed TCP connection before metadata/data. DashboardHealthy/
-correct endpoint; pooler+primary public TCP probes timed out. No password diagnosis,
-rotation, network weakening, paid add-on or alternate export fallback. Old7Octbackup
-remains dated, not9Octcurrent-row proof. Private source:
- /Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-RAJEJt
-0700/files0600/key same dir, not offsite custody. Small private failures/diagnostics
-retained; never upload/print SQL/rows/key. Original snapshot exclusions/non-MVCC limits.
+[Fresh source](reports/2026-10-09-p3-fresh-source-recovery-entry.md) nowPASS:
+pre-auth transport actually recovers without settings change; authenticated120sdump
+failed at own deadline, bounded180srun completes125,768ms/exit0.9Oct03:11:01Turkey
+held snapshot24schemas/101tables/2880rows/17roles/22memberships/2pubs/9direct roots/
+14expanded/0schema memberships/8dropped slots/canonical context. Actual AES-GCM/
+source-only preflightPASS, NEW FULL RESTORE NOT RUN. Exact next protected source:
+ /Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m
+0700/files0600/key same dir, not offsite; originalRAJEJtbackup kept. Failed partials/
+unusedkeys removed, small errors kept. No private SQL/rows/key output/AI export.
 
 Own9OctVM/container/cappedimage/newISOcache removed02:33:59Turkey, protected backup
 kept; defaultLima0, final10,338,612KiB. No user files/caches/AVD/simulators/deps removed.
@@ -42,17 +42,17 @@ split46defaults/52permission-option objects;177scoped GRANTs private/not execute
 NativePG17 synthetic5objects/21GRANTs exactACL PASS, TCPdisabled/cluster removed;
 35helper testsPASS. Old source lacks same-snapshot publication roots/schema/dropped-slots/context;
 new preflight rejects BEFORE runtime, no current supplement. Future collector/currentMCPquery
-validated. Full recovery stillFAIL.
-NEXT non-mutating native transport/route cause → complete fresh held source →
-supported publication/slot/constraint/ACL remedies → one bounded full restore.
+validated; historical full restoreFAIL. Fresh-source42checksPASS, not recovery acceptance.
+NEXT supported root/slot/constraint/ACL remedies using exact complete5OnU1msource →
+one bounded full restore. Partitioned dropped-slot root needs proper DDL parsing.
 No unchanged image/export loop/hosted security change/alternate private-row transport/owner QA; original goal not narrowed/closed, exact new authority if needed.
 [Checkpoint](teslim-rehberi/checkpoint.md), [release index](private-r2-release-runbook.md).
 
 ## Source and observed hosted boundaries
 
 P1 GENOVA-BETA-20261003-P1, frozen c2ec9b09a44c048c7c6a0c31f0ac99566c4643f0,
-[manifest](reports/090/2026-10-03-p1-beta-candidate.json):610pins/842imports/20Edge/
-38RPC/25SQL reverified unchanged.27focused helper tests PASS, not recovery/release.
+[manifest](reports/090/2026-10-03-p1-beta-candidate.json):610pins/842imports/20Edge/38RPC/25SQL
+unchanged. Earlier27focused helper tests PASS, not recovery/release.
 Production source untouched; unrelated CLI marker preserved/excluded. P2
 [iOS](reports/2026-10-03-ios-p2-private-file-acceptance.md)/
 [Android](reports/2026-10-03-android-full-share-flow.md) accepted synthetic file flow

@@ -15,6 +15,71 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 9 October transport follow-up — fresh complete source prerequisite
+
+Entry main/a5843af, sole primary writer, CLI marker unrelated/preserved. Previous
+turn PROGRESS: exact ACL diagnosis/actual synthetic protocol and source guard committed.
+Read current handoff/active/card/controls/decision35, full Supabase/Postgres/TypeSafe
+skills and current official connection/network docs. One observable result: determine
+the native connection failure stage and authorized next action; no speculative reset.
+Scope spike090bounded transport/export/source-evidence/drift helpers/tests, this card/current pointers/redacted
+evidence. No hosted settings/writes, credentials sent in probe, application-row export
+fallback, new private destination or owner QA. No new paid inference/dependency/runtime.
+Currentfree10,135,788KiB, no owned VM/native cluster, <1MiBsource/evidence allocation.
+At most3actions:1read-only DNS/routes/proxy/VPN/pre-auth transport discrimination,
+2correct-profile dashboard network-restriction read if needed (never change settings),
+3new native export ONLY if actual changed connection evidence justifies it, otherwise
+record exact remaining prerequisite and scoped independent ready work. Original full
+fidelity and source-freshness criteria remain; source guard is not recovery acceptance.
+Initial observed facts: system proxy modesOFF/no proxy env; defaultIPv4en0, macOS
+configuredVPNconnected0; pooler3IPv4route-tool observations/no reject/blackhole.
+DirectprimaryIPv6-only; route-tool output lacked an interface, not conclusive absence
+of an IPv6 route. Old errorTCPtimeout, no password/SSL/FATAL signal.
+These do not explain all pooler failures or authorize switching network/security.
+
+Changed causal evidence03:05Turkey: all3pooler IPv4s at5432and primaryIPv6actually
+connect and return PG SSLRequest'S' without credentials/SQL. Diagnostic6543also
+responds, never chosen as exportreplacement. PublicHTTPS401. Thus route-tool negative
+is not reachability proof. CorrectGenesiNovaChrome4projectHealthy; no settings read/
+change needed. Exact original sessionpooler/native export remains chosen. One fresh
+export under SAME approved0700parent/newexclusivebackup, existingpasswordchildenv,
+640MiBreserve/128MiBstreamingcap/8MiBmetadata/heldsnapshot/canonicalcapture and original
+exclusions. No full runtime until complete fresh protectedsource passes new guard.
+Source/client/review/fidelity goal unchanged; no automatic retry after failure.
+
+First fresh source authenticated/captured complete same-snapshot metadata, but helper
+120sown dumpdeadline terminated stream at1,245,204B/127sfrom cutoff; private log28B
+signal-only/no permission/password/statement-timeout indicators. Job terminal1,
+not observationtimeout/live restart. Partial dump has no accepted summary/tag,
+never a backupPASS. New causal budget: dump180s, ready90s+30ssafety≤holder300sidle;
+same128MiB/8MiB/640MiBlimits. Add stop-reason/elapsed/code/signal/bytes telemetry.
+One additional native held export justified by measured local deadline, no unchanged
+TCP retry/newtransport/provider/runtime/private destination. Preserve7Octbackup and
+small failure proof; remove failed partial artifacts after their last dependent check.
+
+[Actual fresh source](../reports/2026-10-09-p3-fresh-source-recovery-entry.md): changed
+transport justified authentication/held source, not a settings reset.180sbounded
+dump completed125,768ms/exit0; cutoff03:11:01Turkey9Oct,1,701,957Bplaintext/101tables/
+2880rows/24schemas/17roles/22memberships, AES-GCM roundtrip and actual source-only
+preflightPASS. Protected newsourcegenova-090-p3-5OnU1m under SAME approved parent,
+0700/files0600; full dump/row fingerprints/keys stay private, original7Octkept.
+Source now includes2publications/9direct roots/14expanded memberships/0schemas/
+8dropped slots/canonical context. No accepted new restore/fullfidelity yet.
+Held7Octvs9Oct14groups: no public/genova metadata additions/removals/changes;
+nonapplication schema changes/4changed data fingerprints/rows+1 recorded, not
+stale-source equality or runtime authorization proof. Partial1,245,204Bdump/
+864,550Bmetadata/failed keys removed only AFTER new acceptedsource/preflight;
+small private errors/stage records retained, no backup/user/globalcache deletion.
+Thenfree12,924,064KiB, no owned VM/native cluster or job; other apps influence disk.
+42focused checks/source/docs exit below. NEXT supported exact publication roots/
+drop-slot/ACL/constraint reconstruction on this complete source, then one bounded
+full pinned-image restore; no repeated export without a changed cause. GoalACTIVE/
+INCOMPLETE/P3NO-GO, old strictFAIL retained, no ownerQA or hostedwrite/deploy.
+Exit42focused tests/16owned files/183local links/0missing/0secret-patterns/7MJSsyntax/
+3JSONparse/helperpins+610frozenpins/scoped diffPASS; old strictFAIL/newsource-onlyPASS
+preserved. No VM/nativecluster; successfulkeys kept/failedpartials absent, thenfree
+12,871,640KiB; CLI markerexcluded. No root/mobile/platform rerun, self-review only.
+
 ### 9 October follow-up — exact parity diagnosis, no unchanged full-image rebuild
 
 Entry main/5e55e04, primary sole writer; CLI marker preserved. Read handoff/active/

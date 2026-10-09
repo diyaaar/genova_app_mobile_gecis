@@ -1,0 +1,109 @@
+{
+  "recordedAt": "2026-10-09T00:15:01.307Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "status": "COMPLETE_FRESH_PROTECTED_SOURCE_PASS_RESTORE_NOT_RUN",
+  "backup": {
+    "directory": "/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m",
+    "cutoff": "2026-10-09T00:11:01.300196+00:00",
+    "completedAt": "2026-10-09T00:13:10.922Z",
+    "plaintextBytes": 1701957,
+    "encryptedBytes": 1701993,
+    "plaintextSha256": "422ccf87eb8977c4cff1529c57878bee779c955f10a438f3543361b80a7c58d6",
+    "encryptedSha256": "c9ed4dfc9da9bf7e4317bb751f98e87b71bd4e06ef93daba9f0f1a5ccfb4dd2e",
+    "schemas": 24,
+    "dataTables": 101,
+    "rows": 2880,
+    "roles": 17,
+    "memberships": 22,
+    "catalogCounts": {
+      "roles": 17,
+      "columns": 1122,
+      "indexes": 327,
+      "schemas": 24,
+      "policies": 225,
+      "triggers": 62,
+      "functions": 165,
+      "relations": 117,
+      "extensions": 6,
+      "constraints": 508,
+      "defaultAcls": 15,
+      "memberships": 22,
+      "publications": 2,
+      "droppedColumns": 8,
+      "publicationTables": 14,
+      "publicationSchemas": 0,
+      "publicationRelations": 9
+    },
+    "comparisonContext": {
+      "searchPath": "public, extensions"
+    },
+    "readOnly": "on",
+    "execution": {
+      "dumpElapsedMs": 125768,
+      "dumpLimitMs": 180000,
+      "snapshotIdleLimitMs": 300000,
+      "exitCode": 0,
+      "signal": null,
+      "stopReason": null
+    },
+    "authenticatedRoundtripVerified": true,
+    "sourceOnlyPreflight": "PASS_ACTUALLY_EXECUTED",
+    "directoryMode": "0700",
+    "fileMode": "0600",
+    "custody": "same approved local parent/private task directory; key same directory, not independent/offsite",
+    "excluded": [
+      "Vault values",
+      "Realtime payloads",
+      "net queues/results",
+      "Storage metadata/object bytes",
+      "Drive/R2 objects",
+      "role passwords and external config/secrets"
+    ]
+  },
+  "failedGeneratedCleanup": [
+    {
+      "directory": "genova-090-p3-KKw9BH",
+      "stage": "dump-stream",
+      "failedAt": "2026-10-09T00:09:03.856Z",
+      "privateLogBytes": 28,
+      "signalTermination": true,
+      "connectTimeout": false,
+      "removedGeneratedFiles": {
+        "database.sql.gcm": 1245204,
+        "snapshot.json.gcm": 864550,
+        "artifact-key.bin": 32
+      },
+      "rawFailureRecordsRetained": true,
+      "notAnAcceptedBackup": true
+    },
+    {
+      "directory": "genova-090-p3-kroZk3",
+      "stage": "snapshot-read",
+      "failedAt": "2026-10-08T21:20:33.842Z",
+      "privateLogBytes": 373,
+      "signalTermination": false,
+      "connectTimeout": true,
+      "removedGeneratedFiles": {
+        "artifact-key.bin": 32
+      },
+      "rawFailureRecordsRetained": true,
+      "notAnAcceptedBackup": true
+    }
+  ],
+  "original7OctoberSourceKept": true,
+  "hostFreeKiB": 12924064,
+  "fullVmMountAbsent": true,
+  "newRuntimeRebuilds": 0,
+  "actualNewRestore": "NOT RUN",
+  "helperSha256": {
+    "spike/090-p3-fresh-source-evidence.mjs": "8c9ad7f3cea68c74c2fa4f7daa9ea9b21e36758927b997b6e819ebd0979d79c9",
+    "spike/090-p3-consistent-backup.mjs": "4ac9e3b2a774f7af602847a316940b9f630414bf28f078fba50a31e51ca646f9",
+    "spike/090-p3-recovery-queries.mjs": "0d8a0f13e84052e1c084b92fa6a9d1b52b025f0e310091356601ceb8bdec2475",
+    "spike/090-p3-offline-restore.mjs": "3c01ecc5080af58566adce1c0e105faec242232a6f317bf866ff0cc8bb75f821"
+  },
+  "limits": "Complete held current snapshot/native logical dump plus authenticated bytes/source guard only. Not actual restore/schema/grant/RLS/publication/full-row equality, managed platform/provider/client/review/release proof. Sequence non-MVCC and original exclusions remain.",
+  "hostedWrites": 0,
+  "newJevCalls": 0,
+  "newInferenceCostUSD": 0,
+  "ownerManualQA": false
+}

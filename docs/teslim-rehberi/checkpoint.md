@@ -6,6 +6,17 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
+- **9Oct complete fresh source:** [Actual source / diagnosis](../reports/2026-10-09-p3-fresh-source-recovery-entry.md)
+  /[generated proof](../reports/090/2026-10-09-p3-fresh-protected-source.json).
+  Transport actually changed; no settings/password reset.120sown deadline killed
+  authenticated stream; justified180srun finished125,768ms/exit0.03:11:01Turkey9Oct
+  heldcutoff/101tables/2880rows/complete direct roots+dropped slots+canonicalcontext,
+  AES-GCM/source-onlygatePASS. New private5OnU1m under same approved parent0700/0600;
+  originalRAJEJtkept, failedpartial+unusedkeys removed/small errors kept.42testsPASS;
+  no full VM rebuild or new actual recovery acceptance.14held-catalog groups show
+  no application metadata drift,4data fingerprints changed/rows+1. NEXT supported
+  publication/slot/constraint/ACL remedies (partitioned root: no naive regex), then
+  one bounded full pinned-image restore. Full goalACTIVE/P3NO-GO, no ownerQA/livewrite.
 - **9Oct parity follow-up:** [Diagnosis / actual synthetic proof](../reports/2026-10-09-p3-parity-remediation.md).
   98ACL differences split46default representations/52permission-option objects;
   177exact GRANTs prepared privately, not executed on real data.5synthetic objects/

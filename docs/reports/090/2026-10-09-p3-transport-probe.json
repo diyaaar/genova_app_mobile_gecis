@@ -1,0 +1,137 @@
+{
+  "recordedAt": "2026-10-09T00:05:06.686Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "scope": "Public pre-auth transport only; no SQL/credential/export/runtime or settings change",
+  "local": {
+    "systemProxy": {
+      "http": false,
+      "https": false,
+      "socks": false,
+      "pac": false,
+      "autoDiscovery": false
+    },
+    "proxyEnvKeys": [],
+    "defaultInterface": "en0",
+    "vpnConnected": 0,
+    "limits": "Configuration flags only; not an audit of every network extension/filter/router. Proxy values, device IP/MAC, gateways and VPN labels withheld."
+  },
+  "endpoints": [
+    {
+      "host": "aws-1-ap-northeast-1.pooler.supabase.com",
+      "dnsAddresses": 3,
+      "observations": [
+        {
+          "family": 4,
+          "routeExists": true,
+          "interface": "en0",
+          "reject": false,
+          "blackhole": false,
+          "primary": {
+            "port": 5432,
+            "family": 4,
+            "connected": true,
+            "classification": "PRE_AUTH_PG_SSL_AVAILABLE",
+            "error": null,
+            "elapsedMs": 797,
+            "credentialBytesSent": 0,
+            "queryBytesSent": 0
+          },
+          "diagnosticTransactionPort": {
+            "port": 6543,
+            "family": 4,
+            "connected": true,
+            "classification": "PRE_AUTH_PG_SSL_AVAILABLE",
+            "error": null,
+            "elapsedMs": 830,
+            "credentialBytesSent": 0,
+            "queryBytesSent": 0
+          }
+        },
+        {
+          "family": 4,
+          "routeExists": true,
+          "interface": "en0",
+          "reject": false,
+          "blackhole": false,
+          "primary": {
+            "port": 5432,
+            "family": 4,
+            "connected": true,
+            "classification": "PRE_AUTH_PG_SSL_AVAILABLE",
+            "error": null,
+            "elapsedMs": 805,
+            "credentialBytesSent": 0,
+            "queryBytesSent": 0
+          },
+          "diagnosticTransactionPort": {
+            "port": 6543,
+            "family": 4,
+            "connected": true,
+            "classification": "PRE_AUTH_PG_SSL_AVAILABLE",
+            "error": null,
+            "elapsedMs": 816,
+            "credentialBytesSent": 0,
+            "queryBytesSent": 0
+          }
+        },
+        {
+          "family": 4,
+          "routeExists": true,
+          "interface": "en0",
+          "reject": false,
+          "blackhole": false,
+          "primary": {
+            "port": 5432,
+            "family": 4,
+            "connected": true,
+            "classification": "PRE_AUTH_PG_SSL_AVAILABLE",
+            "error": null,
+            "elapsedMs": 795,
+            "credentialBytesSent": 0,
+            "queryBytesSent": 0
+          },
+          "diagnosticTransactionPort": {
+            "port": 6543,
+            "family": 4,
+            "connected": true,
+            "classification": "PRE_AUTH_PG_SSL_AVAILABLE",
+            "error": null,
+            "elapsedMs": 820,
+            "credentialBytesSent": 0,
+            "queryBytesSent": 0
+          }
+        }
+      ]
+    },
+    {
+      "host": "db.hievmwwctjjlhmssoxsu.supabase.co",
+      "dnsAddresses": 1,
+      "observations": [
+        {
+          "family": 6,
+          "routeExists": false,
+          "interface": null,
+          "reject": false,
+          "blackhole": false,
+          "primary": {
+            "port": 5432,
+            "family": 6,
+            "connected": true,
+            "classification": "PRE_AUTH_PG_SSL_AVAILABLE",
+            "error": null,
+            "elapsedMs": 1768,
+            "credentialBytesSent": 0,
+            "queryBytesSent": 0
+          }
+        }
+      ]
+    }
+  ],
+  "publicHttpsControl": {
+    "status": 401,
+    "reachable": true,
+    "credentialsSent": false
+  },
+  "helperSha256": "a6ac90e31ddc94aacfb91e363b18416f6ef683dcdab1758c95b68d03a301aaf4",
+  "limits": "A connected public transaction port is NOT an approved held-snapshot export replacement. Transport failure does not diagnose credentials, RLS, exact filter location, project health or recovery."
+}

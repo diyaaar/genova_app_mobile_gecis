@@ -9,6 +9,14 @@ individual briefs remain the acceptance authority for each local implementation.
 
 ## Current revocation release boundary — 9 October 2026
 
+[Fresh complete protected source](reports/2026-10-09-p3-fresh-source-recovery-entry.md)
+now accepted source-only: actual transport recovers, no settings/key reset;180sbounded
+run completes125,768ms/AES-GCM/source guardPASS at03:11:01Turkey9Octcutoff. Same private
+custody/new5OnU1m/101tables2880rows/direct roots+dropped slots/context; original7Octkept,
+failedpartials removed. No new actual full restore accepted; old fullfidelityFAIL
+retained. Exact root/slot/constraint/ACL reconstruction and bounded full recovery next,
+then compatibility/review/operation gates. GoalACTIVE/P3NO-GO, no activation/distribution.
+
 [Parity follow-up](reports/2026-10-09-p3-parity-remediation.md): exact source-derived
 ACL additions prepared, actual synthetic PG17 protocolPASS/cluster removed. Future
 same-snapshot collector now captures direct publication roots/schema/dropped slots/

@@ -1,0 +1,200 @@
+{
+  "recordedAt": "2026-10-09T00:19:03.791Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "status": "HELD_SOURCE_METADATA_DRIFT_OBSERVATION_ONLY",
+  "before": {
+    "cutoff": "2026-10-07T20:14:20.369414+00:00",
+    "backupSha256": "dc8ccf814115b4f4022a8e25c2c9a8683c52b5c6e93ff110eab6cc7f152fd914"
+  },
+  "after": {
+    "cutoff": "2026-10-09T00:11:01.300196+00:00",
+    "backupSha256": "422ccf87eb8977c4cff1529c57878bee779c955f10a438f3543361b80a7c58d6"
+  },
+  "groups": {
+    "functions": {
+      "before": 162,
+      "after": 165,
+      "added": 3,
+      "removed": 0,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "schemas": {
+      "before": 24,
+      "after": 24,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "relations": {
+      "before": 118,
+      "after": 117,
+      "added": 5,
+      "removed": 6,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "policies": {
+      "before": 225,
+      "after": 225,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "constraints": {
+      "before": 510,
+      "after": 508,
+      "added": 10,
+      "removed": 12,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "columns": {
+      "before": 1132,
+      "after": 1122,
+      "added": 50,
+      "removed": 60,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "indexes": {
+      "before": 329,
+      "after": 327,
+      "added": 10,
+      "removed": 12,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "triggers": {
+      "before": 62,
+      "after": 62,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "defaultAcls": {
+      "before": 15,
+      "after": 15,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "roles": {
+      "before": 17,
+      "after": 17,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "memberships": {
+      "before": 22,
+      "after": 22,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "extensions": {
+      "before": 6,
+      "after": 6,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "publications": {
+      "before": 2,
+      "after": 2,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    },
+    "publicationTables": {
+      "before": 15,
+      "after": 14,
+      "added": 5,
+      "removed": 6,
+      "changed": 0,
+      "changedFields": {},
+      "applicationAdded": 0,
+      "applicationRemoved": 0,
+      "applicationChanged": 0
+    }
+  },
+  "data": {
+    "tablesBefore": 101,
+    "tablesAfter": 101,
+    "tablesAdded": 0,
+    "tablesRemoved": 0,
+    "tablesWithChangedCapturedRowsOrFingerprint": 4,
+    "rowsBefore": 2879,
+    "rowsAfter": 2880
+  },
+  "newlyCapturedGroups": [
+    {
+      "name": "publicationRelations",
+      "count": 9,
+      "before": "NOT_CAPTURED"
+    },
+    {
+      "name": "publicationSchemas",
+      "count": 0,
+      "before": "NOT_CAPTURED"
+    },
+    {
+      "name": "droppedColumns",
+      "count": 8,
+      "before": "NOT_CAPTURED"
+    }
+  ],
+  "helperSha256": "433fda55405409759dbe99b9191dad093ad091cf051931df9cbd1ed913b6b485",
+  "limits": "Held7Octvs9Octsource observation, not source-to-restore equality. Application means public/genova schemas; no inference about full web/Edge/HTTP/client/Auth/tenant behavior or cause of managed-schema changes. No raw private content or table-level row fingerprints published.",
+  "hostedWrites": 0,
+  "newJevCalls": 0,
+  "newInferenceCostUSD": 0
+}
