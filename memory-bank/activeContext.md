@@ -35,10 +35,15 @@ simulators/deps/old backups. Scope6.5GiBphysical/8GiBguest/512MiBemergency/640Mi
 default10GiB outside this continuing recovery. New phase names and fresh preflight
 before rebuild; no unchanged environment loops or failed artifact overwrite.
 
-NEXT one outcome: actual supported recovery parity — owner/grantee/privilege/option/
-grantor, exact constraint/logical column order and publication root/column/filter/owner
-metadata reconstruction; keep strict failures/add negatives before repaired restore.
-Fresh native snapshot connectivity separate. No owner manual QA or release changes.
+[Parity follow-up](../docs/reports/2026-10-09-p3-parity-remediation.md):98ACL differences
+split46default representations/52rights-option objects;177exact additions private/
+not executed. Synthetic nativePG17/5objects/21GRANTs exactACL PASS, TCPdisabled/
+cluster removed;35testsPASS. Old source lacks same-snapshot roots/schema/dropped-
+slot/context metadata, new guard rejects BEFORE runtime. CurrentMCPquery/future
+collector validated, no historical supplement. Full recoveryFAIL, not weakened.
+NEXT non-mutating native transport/route diagnosis → complete fresh held source →
+supported publication/slot/constraint/ACL remedies → one bounded full restore.
+No unchanged runtime/export loop, alternate real-row transport or owner manual QA.
 [Checkpoint](../docs/teslim-rehberi/checkpoint.md).
 
 ## Source and release boundary

@@ -37,11 +37,15 @@ exception; default10GiB outside it. Helpers enforce explicit flags/attempt202610
 rebuild requires changed cause, fresh resource preflight and new exclusive phase
 names; existing failed/accepted artifacts never overwrite.
 
-NEXT one outcome: supported recovery parity: owner/grantee/privilege/grantoption/
-grantor verification, exact constraint cause/logical column order and publication
-root/column/filter/owner capture/reconstruction. Preserve raw strict failure, add
-negative tests, then one bounded repaired restore. Native freshness connectivity
-separate, no hosted security changes or owner manual QA. Goal not narrowed or closed.
+[Parity follow-up](reports/2026-10-09-p3-parity-remediation.md):98ACL discrepancies
+split46defaults/52permission-option objects;177scoped GRANTs private/not executed.
+NativePG17 synthetic5objects/21GRANTs exactACL PASS, TCPdisabled/cluster removed;
+35helper testsPASS. Old source lacks same-snapshot publication roots/schema/dropped-slots/context;
+new preflight rejects BEFORE runtime, no current supplement. Future collector/currentMCPquery
+validated. Full recovery stillFAIL.
+NEXT non-mutating native transport/route cause → complete fresh held source →
+supported publication/slot/constraint/ACL remedies → one bounded full restore.
+No unchanged image/export loop/hosted security change/alternate private-row transport/owner QA; original goal not narrowed/closed, exact new authority if needed.
 [Checkpoint](teslim-rehberi/checkpoint.md), [release index](private-r2-release-runbook.md).
 
 ## Source and observed hosted boundaries

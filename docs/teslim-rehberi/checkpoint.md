@@ -1,11 +1,21 @@
 # Delivery checkpoint — single current execution pointer
 
-Updated 8 October 2026 (7 October UTC recovery execution). P1 entry `main/3fb3a2c`; product source unchanged
+Updated 9 October 2026 (Europe/Istanbul). P1 entry `main/3fb3a2c`; product source unchanged
 by this inventory. This is the moving execution index, not a substitute for acceptance evidence.
 Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
+- **9Oct parity follow-up:** [Diagnosis / actual synthetic proof](../reports/2026-10-09-p3-parity-remediation.md).
+  98ACL differences split46default representations/52permission-option objects;
+  177exact GRANTs prepared privately, not executed on real data.5synthetic objects/
+  21GRANTs pass actual nativePG17.11, TCPdisabled;42,320KiBcluster removed.35focused
+  tests PASS. Old source lacks same-snapshot direct publication roots/schema/dropped-
+  slot/context metadata; new guard rejects it BEFORE runtime, no retrospective fill
+  from today's read-only query. Future collector/current query tested, full fidelity
+  stillFAIL. NEXT non-mutating native transport/route diagnosis → causally justified
+  complete fresh held source → supported parity remedies → one full restore. No
+  unchanged image/export loop or alternate private-row export; full goalACTIVE.
 - **9Oct owner waiver / actual restore:** original goal ACTIVE/INCOMPLETE, old
   10GiBcapacity blocker superseded. [Execution](../reports/2026-10-09-p3-real-restore-progress.md)/
   [proof](../reports/090/2026-10-09-p3-restoration-progress.json): full c54image

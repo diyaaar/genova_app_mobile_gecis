@@ -1,0 +1,97 @@
+{
+  "recordedAt": "2026-10-08T23:54:42.158Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "status": "DIAGNOSIS_AND_REPAIR_PLAN_ONLY_FULL_FIDELITY_FAIL",
+  "backupCutoff": "2026-10-07T20:14:20.369414+00:00",
+  "backupSha256": "dc8ccf814115b4f4022a8e25c2c9a8683c52b5c6e93ff110eab6cc7f152fd914",
+  "originalRestoreStatus": "FIDELITY_FAIL_NOT_ACCEPTED",
+  "acl": {
+    "changedObjects": 98,
+    "defaultRepresentationOnly": 46,
+    "permissionDifferences": 52,
+    "grantStatements": 177,
+    "groups": {
+      "functions": {
+        "changedObjects": 49,
+        "defaultRepresentationOnly": 0,
+        "permissionDifferences": 49,
+        "grantStatements": 98
+      },
+      "schemas": {
+        "changedObjects": 19,
+        "defaultRepresentationOnly": 18,
+        "permissionDifferences": 1,
+        "grantStatements": 19
+      },
+      "relations": {
+        "changedObjects": 30,
+        "defaultRepresentationOnly": 28,
+        "permissionDifferences": 2,
+        "grantStatements": 60
+      }
+    },
+    "sqlStatus": "PREPARED_ONLY_NOT_EXECUTED",
+    "privateSqlSha256": "48101204c1bfd8db71201d8b83e1eb5eb976f71c0a636add5e7d7f0ffe6d50ad",
+    "rules": "Exact captured additive privileges/options only; preserve grantor/owner. Refuse extra rights, delegated grants, identity/body changes and unsupported SQL. Not executed or accepted."
+  },
+  "columns": {
+    "ordinalDifferences": 46,
+    "tablesWithGaps": 5,
+    "internalGaps": 8,
+    "survivingOrderMatches": true,
+    "otherCapturedColumnFieldsMatch": true,
+    "physicalEquality": "FAIL",
+    "droppedSlotCause": "NOT_PROVEN_WITHOUT_SAME_SNAPSHOT_PG_ATTRIBUTE"
+  },
+  "constraints": {
+    "definitionDifferences": 1,
+    "parenthesesOnlyDifferences": 1,
+    "logicalEquivalence": "NOT_PROVEN; token observation does not establish AST equivalence"
+  },
+  "sourceMetadata": {
+    "sameSnapshotMetadataComplete": false,
+    "missingGroups": [
+      "publicationRelations",
+      "publicationSchemas",
+      "droppedColumns"
+    ],
+    "canonicalContextCaptured": false,
+    "historicalSupplement": "REFUSED; current metadata is not the7October held snapshot"
+  },
+  "currentReadOnlyQuery": {
+    "observedAt": "2026-10-08T23:54:42.158Z",
+    "identity": {
+      "database": "postgres",
+      "role": "supabase_read_only_user",
+      "transaction_read_only": "on",
+      "server_version": "17.6"
+    },
+    "querySha256": "dd92ade6982b303d7475b572065ef28e80338b4c01a6b3578da3f19c8880aec4",
+    "counts": {
+      "publicationRelations": 9,
+      "publicationSchemas": 0,
+      "droppedColumns": 8
+    },
+    "postgresAclDefaultsMatch": {
+      "functions": true,
+      "schemas": true,
+      "relations": true,
+      "sequences": true
+    },
+    "projectionSha256": "667ef09a92e86177f94e8b3e7bd927fc7aa8907fa281df84e0584de3e9c60ff2",
+    "limits": "Query syntax/default ACL models verified against current correct-project PG17. No application rows, current backup, historical membership/root equality or restore execution inferred."
+  },
+  "helperSha256": {
+    "spike/090-p3-parity-analysis.mjs": "64fc5254f9a7af5ca97ef2b5588866e93adc1fca7a891b7a2070b350bfd447dd",
+    "spike/090-p3-parity-checkpoint.mjs": "79c1240e170a3508dc30a0b3c86adaa637bd7973c150c73cb03f296d72bb1d19",
+    "spike/090-p3-recovery-queries.mjs": "0d8a0f13e84052e1c084b92fa6a9d1b52b025f0e310091356601ceb8bdec2475",
+    "spike/090-p3-consistent-backup.mjs": "cdfdc155107f451873e948113241738ee44bbe61cce37eb9e5070115e9900334",
+    "spike/090-p3-offline-restore.mjs": "3c01ecc5080af58566adce1c0e105faec242232a6f317bf866ff0cc8bb75f821",
+    "spike/090-p3-hosted-inventory.mjs": "415855ada5a6e1cb6ca44ffca6b8f8111b2025b468312c5651440e81c42dde0f"
+  },
+  "hostedWrites": 0,
+  "runtimeRebuilds": 0,
+  "newJevCalls": 0,
+  "newInferenceCostUSD": 0,
+  "ownerManualQA": false
+}

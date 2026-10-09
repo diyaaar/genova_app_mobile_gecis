@@ -15,6 +15,48 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 9 October follow-up — exact parity diagnosis, no unchanged full-image rebuild
+
+Entry main/5e55e04, primary sole writer; CLI marker preserved. Read handoff/active/
+this card/controls/transition guide/work cycle/decision35 and current evidence;
+complete TypeSafe/Supabase/Postgres skills and relevant live PG17/changelog docs.
+One observable result: source-anchored parity diagnosis plus a supported additive
+ACL repair plan verified with synthetic native PG17; full recovery remains FAIL.
+Scope spike090recovery/query/planner/tests and current redacted evidence/pointers;
+no production changes, real rows/logs/SQL/key export, hosted writes or owner QA.
+Current free10,206,244KiB, no owned full VM/image. Native installed PG17 test only:
+exclusive0700acl-pg-* under approved privateRAJEJt directory, 256MiBpeak reserve,
+TCP disabled/private Unix socket; synthetic roles/tables only, never restore real
+data or claim an extension-compatible recovery. Stop/delete owned cluster after
+one dependent check; keep small redacted evidence.512MiBfloor/640MiBstop exception
+unchanged. No download/install/global cache purge or private custodian change.
+Three actions:1derive identity-joined ACL/column/constraint causes from saved actual
+catalogs;2capture canonical same-snapshot roots/dropped slots for FUTURE exports and
+test exact scoped GRANT behavior;3record strict FAIL/source gaps, test and commit.
+Historical source lacks direct publication roots/schema memberships/dropped-slot/
+comparison-context metadata. New guard rejects it BEFORE runtime allocation/use;
+today's read-only metadata is not a historical snapshot supplement.9current roots/
+0schema memberships/8dropped slots and four built-in ACL defaults verified via
+correct-project named READ-ONLY MCP. No extra real-row export or native TCP retry.
+Next progress review after synthetic ACL result; full source/network prerequisites
+stay open, no source-only/diagnostic/self-review score replaces actual fidelity.
+
+[Actual follow-up](../reports/2026-10-09-p3-parity-remediation.md):98ACL differences
+split46default representations/52privilege-option objects;177exact additive GRANTs
+prepared privately, NOT executed. NamedMCPactual newmetadata/default queriesPASS;
+source-onlypreflight correctly rejects old missing same-snapshot metadata. Synthetic
+installedPG17.11/5objects/21GRANTs exact owner/grantee/right/option/grantor PASS;
+TCPdisabled/privateUnixsocket/no real backup read. Actual42,320KiB/256MiBreserve,
+owncluster removed/finalfree10,199,752KiB.35focused testsPASS. Full recoveryFAIL,
+original35method criteria retained, no weakened comparison or reduced runtimeclaim.
+NEXT non-mutating native transport/route diagnosis and causally justified fresh
+complete held source; no identical TCP/export/image loop or alternate real-row export.
+Then publication/slot/constraint remedies and bounded full restore, not anotherfeature.
+Detailed required PASS/FAIL/NOT RUN table in report; source/doc exit below.
+Exit17owned files/177local targets/0missing/0secret-patterns/9MJSsyntax/2JSONparse,
+helperpins+610productpins unchanged; old strictFAIL/data-match preserved. Own native
+cluster/fullVMmount absent; private SQL/metadata0600; scoped diffPASS/CLIexcluded.
+
 ### 9 October — owner-approved lower disk floor, resume actual isolated restore
 
 Owner explicitly permits violating the usual10GiBfloor and asks to continue.

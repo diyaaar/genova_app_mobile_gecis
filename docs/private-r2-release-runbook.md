@@ -9,6 +9,14 @@ individual briefs remain the acceptance authority for each local implementation.
 
 ## Current revocation release boundary — 9 October 2026
 
+[Parity follow-up](reports/2026-10-09-p3-parity-remediation.md): exact source-derived
+ACL additions prepared, actual synthetic PG17 protocolPASS/cluster removed. Future
+same-snapshot collector now captures direct publication roots/schema/dropped slots/
+canonical context; old source fails preflight, cannot be filled from current metadata.
+Full recovery remainsFAIL/new successful fresh export and repaired full restore
+NOT RUN. Native transport cause/fresh complete source next; no unchanged image loop,
+alternate private-row export or live activation. Full goalACTIVE/INCOMPLETE.
+
 [Actual recovery continuation](reports/2026-10-09-p3-real-restore-progress.md): owner
 waived10GiB for this isolated operation; full image loaded and7Octsnapshot101tables/
 2879rows/all data digests/roles/extensions restored. Full schema/ACL/publication

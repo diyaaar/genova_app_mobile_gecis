@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-10-08T23:57:48.216Z",
+  "status": "SYNTHETIC_ADDITIVE_ACL_PROTOCOL_PASS_ONLY",
+  "version": "17.11 (Homebrew)",
+  "network": {
+    "listenAddresses": "",
+    "privateUnixSocket": true,
+    "hostedConnections": 0
+  },
+  "realDataRead": false,
+  "objects": 5,
+  "planner": {
+    "changedObjects": 5,
+    "defaultRepresentationOnly": 2,
+    "permissionDifferences": 3,
+    "grantStatements": 21
+  },
+  "exactOwnerGranteePrivilegeOptionGrantorMatch": true,
+  "initialFreeKiB": 10200040,
+  "allocatedKiB": 42320,
+  "reserveKiB": 262144,
+  "limits": "Native PG17 synthetic GRANT semantics only. No full Supabase extensions, historical/current source restore, tenant/Auth/client/release or actual177-statement plan execution acceptance.",
+  "cleanup": {
+    "ownedClusterRemoved": true,
+    "finalFreeKiB": 10199752
+  },
+  "helperSha256": {
+    "spike/090-p3-acl-synthetic.mjs": "5b34828bf666f3a4695bcc20d7f4f8e096e84e9e7c69b2be64eefb8d1fabce24",
+    "spike/090-p3-parity-analysis.mjs": "64fc5254f9a7af5ca97ef2b5588866e93adc1fca7a891b7a2070b350bfd447dd"
+  }
+}
