@@ -1,0 +1,48 @@
+{
+  "recordedAt": "2026-10-09T00:35:11.916Z",
+  "status": "SYNTHETIC_EXACT_RECOVERY_SEED_PASS_ONLY",
+  "version": "17.11 (Homebrew)",
+  "realBackupDataRead": false,
+  "network": {
+    "listenAddresses": "",
+    "privateUnixSocket": true,
+    "hostedConnections": 0
+  },
+  "rawDumpNegative": {
+    "constraintDefinitionDiffers": true,
+    "droppedSlotsMissing": true
+  },
+  "supported": {
+    "slotTables": 2,
+    "droppedSlots": 3,
+    "betweenForms": 1,
+    "publications": 1,
+    "directRoots": 2
+  },
+  "comparisons": {
+    "columns": true,
+    "droppedColumns": true,
+    "relations": true,
+    "constraints": true,
+    "publications": true,
+    "publicationRelations": true,
+    "publicationSchemas": true,
+    "publicationTables": true
+  },
+  "futurePartitionCovered": true,
+  "directRootCountUnchanged": true,
+  "initialFreeKiB": 12698608,
+  "allocatedKiB": 63816,
+  "reserveKiB": 262144,
+  "limits": "Actual nativePG17 synthetic table/constraint/publication catalog proof only; not full Supabase/private source restore/data/client/hosted/release acceptance. Exact comparator unchanged.",
+  "cleanup": {
+    "ownedClusterRemoved": true,
+    "finalFreeKiB": 12698552
+  },
+  "helperSha256": {
+    "spike/090-p3-seed-synthetic.mjs": "0043ca56822df7f534206c289fffc3b4366961150d239ac07c09246cb4420534",
+    "spike/090-p3-recovery-seed.mjs": "946f0bdf0b8dd0d036192e836faa9803312fdb32b149a9aed7b8d5383724a36a",
+    "spike/090-p3-recovery-queries.mjs": "0d8a0f13e84052e1c084b92fa6a9d1b52b025f0e310091356601ceb8bdec2475",
+    "spike/090-p3-offline-restore.mjs": "3c01ecc5080af58566adce1c0e105faec242232a6f317bf866ff0cc8bb75f821"
+  }
+}

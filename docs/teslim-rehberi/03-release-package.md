@@ -11,6 +11,16 @@ P1 manifest + accepted latest iOS/Android boundaries. Use 090/R1 and the existin
 
 Current first bounded outcome: [090 P3 version/compatibility inventory work card](../briefs/090-private-file-ticket-revocation-contract.md#3-october--p3-first-work-card-exact-version-and-compatibility-inventory),
 created by the [delivery-guide checkpoint review](../reports/2026-10-03-delivery-guide-checkpoint-review.md).
+**9October current exit:** [original entry-inventory completion audit and actual
+selected full recovery](../reports/2026-10-09-p3-full-recovery-and-inventory-audit.md)
+complete this first bounded objective. Decision35replacement now actually passes:
+same held9Octsource, full pinned image/roles/ACL/RLS/columns/constraints/direct
+publications and all101table full fingerprints/2880rows equal. Historical15SQLtexts
+remain unavailable. This does NOT close whole P3: source convergence/mixed-client/
+cache/security/rehearsal/independent review and exact operation authority stay open.
+Next uses the already pinned4Octconvergence contract, not another inventory reset.
+Earlier stage observations below remain dated; their NOT RUN replacement status
+is superseded by this actual recovery evidence, not by weakening a criterion.
 The historical [3 October partial inventory](../reports/2026-10-03-p3-entry-inventory.md)
 was connection-blocked. [4 October reconciliation](../reports/2026-10-04-p3-hosted-reconciliation.md)
 recovers the existing named correct-project MCP credential and obtains current
@@ -23,14 +33,14 @@ selected catalog prerequisites for ten absent SQL IDs and exact order. New actor
 Auth lifetime predicate/test gap joins minimum convergence; no product fix here.
 [7October owner decision35](../reports/2026-10-07-p3-current-state-evidence-method.md)
 accepts current-state snapshot/isolated restore + exact future-delta provenance in
-place of unavailable historical SQL equality. Replacement acceptance NOT RUN;
+place of unavailable historical SQL equality. Replacement acceptance was then NOT RUN;
 metadata hashes are not backup/restore proof and approve no live apply.
 [Exact convergence contract and goal audit](../reports/2026-10-04-p3-convergence-contract-audit.md)
 pins actual hook/helper/native/log/SQL sources and future real-helper/log-sink/Auth
 negatives; no fix implemented. Historical schema-only no-owner/no-grants test runner
 is explicitly excluded as current recovery proof. Earlier method-choice blockage is
 resolved by the owner's7October message, not by automatic continuation. Full original
-inventory goal stays open until replacement evidence succeeds. Fresh selected
+inventory goal stayed open until replacement evidence succeeded9October. Fresh selected
 catalog/ledger/Edge metadata matches4October; web/source/row/backup proof stays dated.
 Do not read an old runbook packet as the current promotion scope.
 

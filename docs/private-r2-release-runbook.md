@@ -9,6 +9,18 @@ individual briefs remain the acceptance authority for each local implementation.
 
 ## Current revocation release boundary — 9 October 2026
 
+[Actual selected full recovery / inventory exit](reports/2026-10-09-p3-full-recovery-and-inventory-audit.md)
+nowPASS: fresh held9Octsource/all17captured groups/all101row fingerprints2880rows/
+owners/grants/RLS/roles/constraints/columns/direct publications equal in the same
+full pinned networkNONE/mount0/port0 runtime. Supported source reconstruction, exact
+comparator unchanged, original byte identity retained; own VM/image/newISOremoved.
+Original entry-inventory goal COMPLETE after scoped commits, method35fulfilled;
+historical15SQLtexts still absent. Whole090/R1release/P3NO-GO: actual repaired
+source/mixed clients/cache/security/rehearsal/provider recovery/independent review/
+matched operation authority remain required. No activation or distribution follows.
+Earlier9Octsource-only/failure observations below are historical, superseded only
+for the selected actual recovery criterion, not their unrun release gates.
+
 [Fresh complete protected source](reports/2026-10-09-p3-fresh-source-recovery-entry.md)
 now accepted source-only: actual transport recovers, no settings/key reset;180sbounded
 run completes125,768ms/AES-GCM/source guardPASS at03:11:01Turkey9Octcutoff. Same private

@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-10-09T00:56:08.858Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "identity": {
+    "database": "postgres",
+    "role": "supabase_read_only_user",
+    "transaction_read_only": "on",
+    "server_version": "17.6"
+  },
+  "edges": 21,
+  "exactMetadataEqualToCapturedSource": true,
+  "currentSha256": "cecbef0f5ee9884027696e3c6d548aa2537fca079bb9bbb8e5cf90b104c30eb2",
+  "priorSha256": "cecbef0f5ee9884027696e3c6d548aa2537fca079bb9bbb8e5cf90b104c30eb2",
+  "limits": "Numeric version/JWT/bundle hash/date/import-map equality supports prior captured Edge identity; no runtime/secret/HTTP proof or hosted writes."
+}

@@ -15,6 +15,58 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 9 October faithful recovery seed — fresh source, exact comparisons retained
+
+Entry main/c22c6af, sole primary writer; CLI marker unrelated/preserved. Previous
+turn PROGRESS: actual complete held9Octsource5OnU1m and byte/source preflightPASS.
+Read current handoff/active/card/controls/decision35/guide and source053 BETWEEN;
+complete TypeSafe/Supabase/Postgres skills and relevant live PG17DDL/comparison docs.
+One outcome: actual same-source isolated catalog/owner/ACL/roles/RLS/publication/
+column/constraint/full-row parity. No normalized-away requirement, source mutation,
+catalog UPDATE, broad grants/RLS relaxation, hosted change or owner QA.
+Scope spike090seed/parser/synthetic/restore/runtime support and current records.
+Three actions:1supported column-slot/BETWEEN/root-publication reconstruction and
+synthetic exact PG17proof,2one full pinned-image restore with exact ACL supplement,
+3strict fidelity/negative gates, redacted evidence and owned cleanup/scoped commits.
+Resources: initialfree12,831,016KiB, no own VM/nativecluster. Synthetic first uses
+installedPG17/exclusive0700seed-pg-* under protected5OnU1m,256MiBreserve/noTCP/private
+Unixsocket, removed after check; no real data/native reduced-recovery claim. Full
+runtime only after changed supported seed/preflight: same c54fullimage/6.5GiBphysical/
+8GiBguest/512MiBRAM/oneCPU/reserve7,630,848KiB/512MiBemergency/640MiBstop; new exclusive
+attempt20261009-fidelity paths/logs under freshsource5OnU1m preserve old evidence.
+No root cache/user data/toolchain/otherPG removal; newISOcache only if absent atstart.
+BETWEEN source in053explains nested AND decompilation; reproduce through supported
+DDL and verify exact pg_get_constraintdef, never strip parentheses to score a PASS.
+Source dropped slots include a partitioned root; balanced quoted/comment/dollar-aware
+DDL parser required, not regex tofirst`);`. Direct roots9/2pubs/14expanded from SAME
+snapshot; no guessed historical child/root substitution. Snapshot exclusions/non-MVCC/
+private custody and full-goal/client/review/operation gates unchanged. No new export.
+
+[Actual full recovery / original objective audit](../reports/2026-10-09-p3-full-recovery-and-inventory-audit.md)
+and [machine proof](../reports/090/2026-10-09-p3-full-fidelity.json): all17captured
+catalog groups and all101full row fingerprints/2880rows MATCH, exact comparator
+unchanged/original ciphertext retained.5tables8slots/6BETWEEN/2pubs9roots14expanded,
+98ACLobjects177exact additions, no broad grants/catalog hacks. Synthetic seed8groups/
+future child behavior PASS, not used as actual recovery substitute. One real dump-
+construction failure (JS`$'`replacement suffix) reproduced; callback/exact-growth
+regression fixed. Only proven-empty0relation failedDBreset/error preserved, same
+owned runtime reused; actual second restorePASS03:49:44Turkey, no source key/data leak.
+Own VM/container/image/newISOcache removed03:52:08Turkey; sourcebacks/logs retained.
+DefaultLima0/mount+image/nativeclusterabsent/free12,592,016KiB.47focused tests/P1P3/
+610frozen/8minimum baselinepinsPASS. Fresh correct-profile VercelReadyLatestProduction/
+maina13f696/alias and actual21Edgeidentity/68ledger15NULL/10absentrevalidated.
+Original eight-requirement ENTRY INVENTORY is nowcomplete after final scoped commits/
+goal completion; no scope narrowed.15historical textsUNAVAILABLE; method35actual
+replacement accepted, not recovered history. Whole090/R1release/P3NO-GO remains:
+sourcehook/log/not_after convergence, real mixed-client/cache/security/provider
+rehearsal and independentreview NOT RUN. Next current-pointer is narrow existing
+4Octsource contract, not repeatedbackup/imagework, genericlive approval or ownerQA.
+Exit47focused tests/P1P3/610frozen+8baselinepins/21owned files/209local links/0missing/
+0secretpatterns/10MJSsyntax/4JSONparse/actual proof pins/scoped diffPASS. Strictactual
+groups empty/full101fingerprints equal, sourcecipherunchanged/keys kept/VM+image+
+native seed absent/defaultLima0. Dated synthetic pre-fix pins not rewritten. Source/
+record commits separate, CLIexcluded. Then update same original goalCOMPLETE.
+
 ### 9 October transport follow-up — fresh complete source prerequisite
 
 Entry main/a5843af, sole primary writer, CLI marker unrelated/preserved. Previous

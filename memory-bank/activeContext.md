@@ -7,61 +7,41 @@ English records/Turkish updates; sole writer; verify current ownership/permissio
 
 ## Current measurable outcome
 
-Full goal ACTIVE / INCOMPLETE, P3 IN PROGRESS. Owner9Octwaived10GiBfloor for ongoing
-isolated recovery; method35/private export+restore approval unchanged, no hosted
-write/new custody/global cleanup/owner QA. Capacity blocker resolved, not goal complete.
-[9Octexecution](../docs/reports/2026-10-09-p3-real-restore-progress.md)/
-[generated proof](../docs/reports/090/2026-10-09-p3-restoration-progress.json):
-same full c54image actually loaded; networkNONE/mount0/port0 container restored7Oct
-protected snapshot.101tables/2879rows/all canonical table digests MATCH;17roles/
-22Postgres memberships/6extension versions+owners/triggers/defaultACLs MATCH.
-Full fidelity FAIL: ACLs/oneconstraint/46column ordinal positions;2publications/
-15memberships missing. Canonical read-only context resolves formatter differences,
-not all mismatches. Do not waive failures or patch system catalogs/broaden privileges.
-SIGHUP installer setting fixed only with offline ALTER SYSTEM/reload after proven
-empty failed baseline reset; original error kept, no live settings/roles changed.
-
-[Fresh9Octsource](../docs/reports/2026-10-09-p3-fresh-source-recovery-entry.md)PASS:
-public transport changed, no settings reset; authenticated120sown deadlinefail →
-measured180srun125,768ms/exit0.03:11:01Turkeyheldcutoff/101tables/2880rows/24schemas/
-17roles/22memberships/2pubs/9roots/14expanded/0schemas/8slots/canonicalcontext,
-AES-GCM/source-onlypreflightPASS. NEW actual full restoreNOT RUN/old7OctFAILkept.
-Nextprivate source /Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m,
-0700/files0600/keysame dir/not offsite; originalRAJEJtkept. Failedpartial/unusedkeys
-removed, small error records kept; no private output/AI/alternate export transport.
-
-After last dependent check own VM/container/image/newISOcache removed02:33:59Turkey;
-backup retained, defaultLima0/finalfree10,338,612KiB. Preserve user data/caches/AVD/
-simulators/deps/old backups. Scope6.5GiBphysical/8GiBguest/512MiBemergency/640MiBstop;
-default10GiB outside this continuing recovery. New phase names and fresh preflight
-before rebuild; no unchanged environment loops or failed artifact overwrite.
-
-[Parity follow-up](../docs/reports/2026-10-09-p3-parity-remediation.md):98ACL differences
-split46default representations/52rights-option objects;177exact additions private/
-not executed. Synthetic nativePG17/5objects/21GRANTs exactACL PASS, TCPdisabled/
-cluster removed;35testsPASS. Old source lacks same-snapshot roots/schema/dropped-
-slot/context metadata, new guard rejects BEFORE runtime. CurrentMCPquery/future
-collector validated, no historical supplement. Full recoveryFAIL, not weakened.
-NEXT supported publication/slot/constraint/ACL reconstruction with complete5OnU1m
-source → one bounded full restore. Partitioned slot root needs proper DDL parsing.
-No unchanged runtime/export loop, alternate real-row transport or owner manual QA.
+[Original inventory audit / actual recovery](../docs/reports/2026-10-09-p3-full-recovery-and-inventory-audit.md)
+ENTRY INVENTORY COMPLETE after scoped commits/goal tool confirmation; whole090/R1/
+P3release IN PROGRESS/NO-GO. Owner35replacement proved, not narrowed objective:
+full pinned c54image/none0/0 restores9Oct03:11:01Turkeyheldsource; all17captured
+catalog groups/all101full row fingerprints2880rows MATCH, comparator unchanged.
+Supported5tables8slots/6BETWEEN/2pubs9roots14expanded/98ACLobjects177exact additions;
+JSdollar rewrite failed/reproduced/fixed, proven-emptyDBonlyreset/error retained.
+[Machine proof](../docs/reports/090/2026-10-09-p3-full-fidelity.json).
+Current protected /Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m
+0700/files0600/key same dir/not offsite; original7OctRAJEJtkept, original bytehash
+unchanged/exclusions+non-MVCC limits retained. Private rows/SQL/keys never AI/Git/chat.
+OwnVM/container/image/newISO removed03:52:08Turkey, nativeclusterabsent/defaultLima0,
+thenfree12,592,016KiB. No user files/caches/deps/AVD/simulators/otherPGdeleted.
+No unchanged export/rebuild. Default10GiB outside9Octrecovery waiver; permissions
+not blanket live-operation/custody/cleanup authority. No hosted change/ownerQA.
+NEXT existing4Octsource-convergence contract: native-consent hook→real helper,
+both capability-log sinks, retained Auth not_after server authority, exact new
+manifest/affected P1P2reacceptance then mixed clients/cache/security/rehearsal/review.
 [Checkpoint](../docs/teslim-rehberi/checkpoint.md).
 
 ## Source and release boundary
 
 P1 GENOVA-BETA-20261003-P1/frozen c2ec9b09a44c048c7c6a0c31f0ac99566c4643f0:
 [manifest](../docs/reports/090/2026-10-03-p1-beta-candidate.json),610pins/842imports/
-20Edge/38RPC/25SQL exact regeneration unchanged.27focused helper tests PASS, not
+20Edge/38RPC/25SQL exact regeneration unchanged.47focused helper tests PASS, not
 full recovery/runtime/release. Product source unchanged; CLI marker unrelated/excluded.
 P2[iOS](../docs/reports/2026-10-03-ios-p2-private-file-acceptance.md)/
 [Android](../docs/reports/2026-10-03-android-full-share-flow.md) synthetic local file
 flow only; not full Next/Auth/hostedRLS/provider/hardware/signed beta.
 
-[9Octmetadata](../docs/reports/090/2026-10-09-p3-current-state-preflight.json):
-8projections MATCH4Oct/21Edge/68ledger/15NULLpresent/10absent candidate SQL; not
-held full schema/row proof. Fresh correct-profile Vercel Ready production still
-ApCrcavKPpHSdBzdpv8JvESEiKc5/main a13f696da8c731e9af2a2bce473d4f4ae4a81587,
-app.genesinovachoir.com; metadata not HTTP proof. Named MCPworks, no key/install ask.
+[Fresh ledger](../docs/reports/090/2026-10-09-p3-completion-ledger-identity.json)/
+[21Edge](../docs/reports/090/2026-10-09-p3-completion-edge-identity.json) MATCH4Oct,
+68ledger/15NULLpresent/10absent; historicalsourceUNAVAILABLE. Fresh correct-profile
+VercelReadyLatestProductionApCrcavKPpHSdBzdpv8JvESEiKc5/maina13f696da8c731e9af2a2bce473d4f4ae4a81587,
+app.genesinovachoir.com; metadata not HTTP proof. Named MCPworks, no new key/install.
 [Hosted](../docs/reports/2026-10-04-p3-hosted-reconciliation.md)/
 [delta](../docs/reports/2026-10-04-p3-delta-dependency-inventory.md)/
 [contract](../docs/reports/2026-10-04-p3-convergence-contract-audit.md):

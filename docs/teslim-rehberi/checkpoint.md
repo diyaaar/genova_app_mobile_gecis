@@ -6,6 +6,21 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
+- **9Oct original P3 entry-inventory COMPLETE / whole P3 IN PROGRESS:** [Actual
+  full recovery and original-goal audit](../reports/2026-10-09-p3-full-recovery-and-inventory-audit.md).
+  All17captured metadata groups/all101complete row fingerprints/2880rows MATCH;
+  exact comparator retained, original ciphertext unchanged. Same full pinned image/
+  networkNONE/mount0/port0, supported8slots/BETWEEN/direct roots/exact ACLadditions;
+  no fake source/synthetic-only acceptance. Owner method35fulfilled, historical
+  15texts remainUNAVAILABLE.47tests/610pins/8minimum baselinepins/P1P3regenerationPASS.
+  Fresh webReadyLatestProductiona13f696/alias,21Edge/68ledger identities revalidated.
+  OwnedVM/image/newISO/nativeclusterremoved; privatebackups kept/defaultLima0.
+  Original inventory goal closes after scoped commits; NO full090/P3/storage/beta
+  promotion. NEXT existing4Octnarrow sourceconvergence: native-consent hook, real
+  capability-log sinks, retained Auth not_after authority; then actual mixed clients/
+  cache/security/rehearsal/independent review and matched operation packet.
+  Following dated bullets are historical observations BEFORE this exit, even when
+  dated9Oct; their ACTIVE/FAIL/NOT RUN text is not the latest goal/recovery status.
 - **9Oct complete fresh source:** [Actual source / diagnosis](../reports/2026-10-09-p3-fresh-source-recovery-entry.md)
   /[generated proof](../reports/090/2026-10-09-p3-fresh-protected-source.json).
   Transport actually changed; no settings/password reset.120sown deadline killed

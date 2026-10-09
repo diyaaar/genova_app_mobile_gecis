@@ -1,0 +1,131 @@
+{
+  "recordedAt": "2026-10-09T00:52:05.708Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "status": "ACTUAL_SELECTED_FULL_CATALOG_AND_DATA_FIDELITY_PASS",
+  "source": {
+    "cutoff": "2026-10-09T00:11:01.300196+00:00",
+    "completedAt": "2026-10-09T00:13:10.922Z",
+    "plaintextBytes": 1701957,
+    "plaintextSha256": "422ccf87eb8977c4cff1529c57878bee779c955f10a438f3543361b80a7c58d6",
+    "encryptedSha256": "c9ed4dfc9da9bf7e4317bb751f98e87b71bd4e06ef93daba9f0f1a5ccfb4dd2e"
+  },
+  "actualRestore": {
+    "completedAt": "2026-10-09T00:49:44.155Z",
+    "image": "supabase/postgres@sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00",
+    "database": "genova_090_p3_restore",
+    "network": "none",
+    "mounts": 0,
+    "publishedPorts": 0,
+    "dataTables": 101,
+    "restoredRows": 2880,
+    "allCapturedTableFullRowFingerprintsMatch": true,
+    "catalogCounts": {
+      "functions": {
+        "source": 165,
+        "restored": 165
+      },
+      "schemas": {
+        "source": 24,
+        "restored": 24
+      },
+      "relations": {
+        "source": 117,
+        "restored": 117
+      },
+      "policies": {
+        "source": 225,
+        "restored": 225
+      },
+      "constraints": {
+        "source": 508,
+        "restored": 508
+      },
+      "columns": {
+        "source": 1122,
+        "restored": 1122
+      },
+      "indexes": {
+        "source": 327,
+        "restored": 327
+      },
+      "triggers": {
+        "source": 62,
+        "restored": 62
+      },
+      "defaultAcls": {
+        "source": 15,
+        "restored": 15
+      },
+      "roles": {
+        "source": 17,
+        "restored": 17
+      },
+      "memberships": {
+        "source": 22,
+        "restored": 22
+      },
+      "extensions": {
+        "source": 6,
+        "restored": 6
+      },
+      "publications": {
+        "source": 2,
+        "restored": 2
+      },
+      "publicationTables": {
+        "source": 14,
+        "restored": 14
+      },
+      "publicationRelations": {
+        "source": 9,
+        "restored": 9
+      },
+      "publicationSchemas": {
+        "source": 0,
+        "restored": 0
+      },
+      "droppedColumns": {
+        "source": 8,
+        "restored": 8
+      }
+    },
+    "strictDifferenceGroups": [],
+    "supportedSeed": {
+      "slotTables": 5,
+      "droppedSlots": 8,
+      "betweenForms": 6,
+      "publications": 2,
+      "directRoots": 9
+    },
+    "aclSupplement": {
+      "changedObjects": 98,
+      "defaultRepresentationOnly": 46,
+      "permissionDifferences": 52,
+      "grantStatements": 177
+    },
+    "exactComparatorUnchanged": true,
+    "originalBackupUnmodified": true,
+    "status": "CURRENT_STATE_SELECTED_FIDELITY_PASS"
+  },
+  "helperSha256": {
+    "spike/090-p3-full-recovery-evidence.mjs": "bf3b7650dfe5dd3f9d10d259be8a557238b1b82e5dd5e4b7aed43a7799aab3a6",
+    "spike/090-p3-offline-restore.mjs": "f1f369e8c7e3e96436f1780d39f83c7f8fd92afb80c7d2fc44825253002a22de",
+    "spike/090-p3-recovery-seed.mjs": "131d6b0bbee0175b0aa85258c06b2be9ad26b1ea437ad7be52f2e510dbb7e5b7",
+    "spike/090-p3-parity-analysis.mjs": "64fc5254f9a7af5ca97ef2b5588866e93adc1fca7a891b7a2070b350bfd447dd",
+    "spike/090-p3-recovery-queries.mjs": "0d8a0f13e84052e1c084b92fa6a9d1b52b025f0e310091356601ceb8bdec2475",
+    "spike/090-p3-resource-policy.mjs": "9362c0250ef56b32d2e1a5b4f9b31d79210794ad6d74d6e3db1c4840d1677c1e"
+  },
+  "exclusions": [
+    "Vault values",
+    "Realtime payloads",
+    "net queues/results",
+    "Storage metadata/object bytes",
+    "Drive/R2 objects",
+    "role passwords and external config/secrets"
+  ],
+  "limits": "Actual isolated logical recovery of the selected9October held source only. Sequence/non-MVCC, omitted provider/Storage/Vault/Realtime/config/password data and full managed platform/live Auth/RLS/HTTP/client/cache/security/review/deployment remain distinct gates. Not release/product/goal completion.",
+  "hostedWrites": 0,
+  "newJevCalls": 0,
+  "newInferenceCostUSD": 0,
+  "ownerManualQA": false
+}

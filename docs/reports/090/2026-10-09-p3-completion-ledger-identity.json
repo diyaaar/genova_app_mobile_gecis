@@ -1,0 +1,19 @@
+{
+  "recordedAt": "2026-10-09T01:00:18.792Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "identity": {
+    "database": "postgres",
+    "role": "supabase_read_only_user",
+    "transaction_read_only": "on",
+    "server_version": "17.6"
+  },
+  "ledgerRows": 68,
+  "candidatePresent": 15,
+  "candidateAbsent": 10,
+  "candidateNullStatements": 15,
+  "exactCapturedLedgerProjectionEqual": true,
+  "currentSha256": "43f34e7af53cbb2db7ac0f3ca42ee9cbd67fb5c8cf82ef43556f0adb3da547f4",
+  "priorSha256": "43f34e7af53cbb2db7ac0f3ca42ee9cbd67fb5c8cf82ef43556f0adb3da547f4",
+  "historicalAppliedSourceText": "UNAVAILABLE_NOT_MANUFACTURED",
+  "limits": "Ledger digest/current read-only observation only; accepted method35 replacement is the separately proven fresh-source isolated full fidelity. No historical source equality or hosted writes inferred."
+}
