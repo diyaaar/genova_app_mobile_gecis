@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import path from 'node:path';
 import { createRequire } from 'node:module';
+import { catalogQueries } from './090-p3-recovery-queries.mjs';
 
 export const REF = 'hievmwwctjjlhmssoxsu';
 const ENDPOINT = `https://mcp.supabase.com/mcp?project_ref=${REF}&read_only=true&features=database,functions`;
@@ -12,6 +13,13 @@ const CONFIG = '/Users/alidiyarduran/.gemini/antigravity/mcp_config.json';
 export const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 export const QUERIES = {
   identity: "select current_database() as database, current_user as role, current_setting('transaction_read_only') as transaction_read_only, current_setting('server_version') as server_version",
+  recoveryMetadataProjection:`select jsonb_build_object(
+    'publicationRelations',(select coalesce(jsonb_agg(q),'[]'::jsonb) from (${catalogQueries.publicationRelations}) q),
+    'publicationSchemas',(select coalesce(jsonb_agg(q),'[]'::jsonb) from (${catalogQueries.publicationSchemas}) q),
+    'droppedColumns',(select coalesce(jsonb_agg(q),'[]'::jsonb) from (${catalogQueries.droppedColumns}) q),
+    'defaults',jsonb_build_object('functions',acldefault('f','postgres'::regrole::oid)::text,
+      'schemas',acldefault('n','postgres'::regrole::oid)::text,'relations',acldefault('r','postgres'::regrole::oid)::text,
+      'sequences',acldefault('s','postgres'::regrole::oid)::text)) as projection`,
   migrations: 'select version, name, statements from supabase_migrations.schema_migrations order by version',
   functions: `select n.nspname as schema, p.oid::regprocedure::text as signature, p.proname as name,
     pg_get_userbyid(p.proowner) as owner, p.prosecdef as security_definer, p.proconfig as config,

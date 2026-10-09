@@ -41,6 +41,19 @@ export const catalogQueries={
   publications:`select pubname as name,pg_get_userbyid(pubowner) as owner,puballtables as all_tables,
     pubinsert,pubupdate,pubdelete,pubtruncate,pubviaroot from pg_publication order by pubname`,
   publicationTables:`select pubname,schemaname,tablename,attnames,rowfilter from pg_publication_tables order by pubname,schemaname,tablename`,
+  // Direct membership is different from the expanded pg_publication_tables view.
+  publicationRelations:`select p.pubname as publication,n.nspname as schema,c.relname as table_name,
+    case when r.prattrs is null then null else array(select a.attname from unnest(r.prattrs::smallint[]) with ordinality u(attnum,position)
+      join pg_attribute a on a.attrelid=r.prrelid and a.attnum=u.attnum order by u.position) end as columns,
+    pg_get_expr(r.prqual,r.prrelid) as row_filter from pg_publication_rel r
+    join pg_publication p on p.oid=r.prpubid join pg_class c on c.oid=r.prrelid
+    join pg_namespace n on n.oid=c.relnamespace order by p.pubname,n.nspname,c.relname`,
+  publicationSchemas:`select p.pubname as publication,n.nspname as schema from pg_publication_namespace pn
+    join pg_publication p on p.oid=pn.pnpubid join pg_namespace n on n.oid=pn.pnnspid order by p.pubname,n.nspname`,
+  droppedColumns:`select n.nspname as schema,c.relname as table_name,a.attnum as position from pg_attribute a
+    join pg_class c on c.oid=a.attrelid join pg_namespace n on n.oid=c.relnamespace
+    where (${schemaPredicate}) and c.relkind in ('r','p') and a.attnum>0 and a.attisdropped
+    order by n.nspname,c.relname,a.attnum`,
 };
 export const dataDigestQuery=`select t.table_schema as schema,t.table_name as table_name,
   (xpath('/row/cnt/text()',query_to_xml(format('select count(*) as cnt from %I.%I',t.table_schema,t.table_name),false,true,'')))[1]::text::bigint as rows,
@@ -54,7 +67,16 @@ export const snapshotQuery=`select jsonb_build_object(
   'database',current_database(),'user',current_user,'version',current_setting('server_version'),
   'readOnly',current_setting('transaction_read_only'),'recovery',pg_is_in_recovery(),
   'snapshot',pg_export_snapshot(),'cutoff',transaction_timestamp(),
+  'comparisonContext',jsonb_build_object('searchPath',current_setting('search_path')),
   'schemas',(select json_agg(nspname order by nspname) from pg_namespace n where ${schemaPredicate}),
   'data',${aggregate(dataDigestQuery)},
   'catalog',json_build_object(${Object.entries(catalogQueries).map(([key,query])=>`'${key}',${aggregate(query)}`).join(',')}))`;
-export const canonicalSettings="set time zone 'UTC'; set datestyle='ISO, YMD'; set intervalstyle='postgres'; set extra_float_digits=3; set bytea_output='hex';";
+export const canonicalSettings="set time zone 'UTC'; set datestyle='ISO, YMD'; set intervalstyle='postgres'; set extra_float_digits=3; set bytea_output='hex'; set search_path=public,extensions;";
+
+// Fail before allocating a restore target; a current supplemental catalog query
+// cannot fill a historical same-snapshot gap.
+export function requireRecoveryMetadata(source){
+  for(const group of ['publicationRelations','publicationSchemas','droppedColumns'])if(!Array.isArray(source.catalog?.[group]))throw Error('Incomplete same-snapshot recovery metadata');
+  if(source.comparisonContext?.searchPath!=='public, extensions')throw Error('Missing canonical snapshot context');
+  return true;
+}

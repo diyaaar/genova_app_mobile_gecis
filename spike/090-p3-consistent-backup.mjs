@@ -8,7 +8,7 @@ import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import { Transform } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
-import { snapshotQuery, canonicalSettings } from './090-p3-recovery-queries.mjs';
+import { snapshotQuery, canonicalSettings, requireRecoveryMetadata } from './090-p3-recovery-queries.mjs';
 import { connect, QUERIES, REF } from './090-p3-hosted-inventory.mjs';
 import { MIN_FREE_KIB } from './090-p3-resource-policy.mjs';
 const require=createRequire(import.meta.url);
@@ -24,6 +24,7 @@ export function verifySnapshot(value){
     !/^[0-9A-F-]+$/.test(value.snapshot)||!Array.isArray(value.schemas)||!value.schemas.every(allowedSchema)||
     !['auth','public','realtime','supabase_migrations'].every(s=>value.schemas.includes(s))||!Array.isArray(value.data)||
     !value.data.every(t=>Number.isSafeInteger(t.rows)&&t.rows>=0&&/^[a-f0-9]{64}$/.test(t.sha256))||!value.catalog?.roles?.length)throw Error('Snapshot scope refused');
+  requireRecoveryMetadata(value);
 }
 export function dumpArgs(snapshot){
   verifySnapshot(snapshot);

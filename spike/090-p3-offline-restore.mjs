@@ -6,7 +6,7 @@ import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import { decryptBuffer, freeKiB } from './090-p3-consistent-backup.mjs';
-import { catalogQueries, dataDigestQuery, canonicalSettings } from './090-p3-recovery-queries.mjs';
+import { catalogQueries, dataDigestQuery, canonicalSettings, requireRecoveryMetadata } from './090-p3-recovery-queries.mjs';
 import { ATTEMPT, LIVE_STOP_KIB } from './090-p3-resource-policy.mjs';
 const RUNTIME_DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-RAJEJt';
 const DIR=process.env.GENOVA_RECOVERY_BACKUP_DIR||RUNTIME_DIR;
@@ -35,13 +35,11 @@ export function normalize(value){
   return Object.fromEntries(Object.entries(value).sort(([a],[b])=>a.localeCompare(b)).map(([key,v])=>[key,key==='acl'&&typeof v==='string'?v.slice(1,-1).split(',').sort():normalize(v)]));
 }
 function main(){
+  const sourceOnly=process.argv[2]==='--verify-source-only';
   if(!/^\/Users\/alidiyarduran\/Documents\/Codex\/2026-10-07\/genova-090-p3-[A-Za-z0-9]+$/.test(DIR))throw Error('Approved private parent refused');
-  if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv.length!==3||process.argv[2]!=='--restore-approved'||fs.existsSync(path.join(DIR,'restore-summary.json'))||fs.existsSync(path.join(DIR,'restore-failure.log')))throw Error('Root/action/overwrite refused');
+  if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv.length!==3||(!sourceOnly&&process.argv[2]!=='--restore-approved')||(!sourceOnly&&(fs.existsSync(path.join(DIR,'restore-summary.json'))||fs.existsSync(path.join(DIR,'restore-failure.log')))))throw Error('Root/action/overwrite refused');
   if(fs.lstatSync(DIR).isSymbolicLink()||(fs.statSync(DIR).mode&511)!==448)throw Error('Private directory refused');
-  const owner=JSON.parse(privateRead('runtime-ownership.json',RUNTIME_DIR));
-  if(owner.attempt!==ATTEMPT||owner.limaHome!==env.LIMA_HOME||owner.owner!=='090-P3-only'||freeKiB()<LIVE_STOP_KIB)throw Error('Runtime ownership/floor refused');
-  const target=JSON.parse(command(['inspect',CONTAINER]))[0];
-  if(target.Config.Image!==IMAGE||target.HostConfig.NetworkMode!=='none'||target.Mounts.length||Object.keys(target.HostConfig.PortBindings||{}).length)throw Error('Private isolation refused');
+  stage='source-metadata';
   const summary=JSON.parse(privateRead('summary.json'));
   if(summary.project!=='hievmwwctjjlhmssoxsu')throw Error('Backup project refused');
   const key=privateRead('artifact-key.bin');
@@ -50,6 +48,13 @@ function main(){
   const dump=decryptBuffer(encrypted,key),metadata=decryptBuffer(privateRead('snapshot.json.gcm'),key),source=JSON.parse(metadata);
   key.fill(0);metadata.fill(0);
   if(sha(dump)!==summary.plaintextSha256||source.readOnly!=='on')throw Error('Backup plaintext/snapshot refused');
+  requireRecoveryMetadata(source);
+  if(sourceOnly){dump.fill(0);console.log(JSON.stringify({status:'SOURCE_METADATA_COMPLETE_ONLY_RUNTIME_NOT_RUN',cutoff:summary.cutoff}));return;}
+  stage='runtime-scope';
+  const owner=JSON.parse(privateRead('runtime-ownership.json',RUNTIME_DIR));
+  if(owner.attempt!==ATTEMPT||owner.limaHome!==env.LIMA_HOME||owner.owner!=='090-P3-only'||freeKiB()<LIVE_STOP_KIB)throw Error('Runtime ownership/floor refused');
+  const target=JSON.parse(command(['inspect',CONTAINER]))[0];
+  if(target.Config.Image!==IMAGE||target.HostConfig.NetworkMode!=='none'||target.Mounts.length||Object.keys(target.HostConfig.PortBindings||{}).length)throw Error('Private isolation refused');
   if(sql(`select exists(select 1 from pg_database where datname='${DB}');`,'postgres')!=='f')throw Error('Existing database refused');
   // This installer setting is SIGHUP, not session-settable. Only the owned offline
   // backend is changed; fresh connections verify reload before canonical owners.
