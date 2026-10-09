@@ -15,6 +15,66 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 9 October compatibility continuation — legacy source and exact recovered-state SQL
+
+Entry main/2b21c36, primary sole writer; CLI marker unrelated/preserved. Read current
+handoff/active/card/controls/guide/work cycle from context, relevant decisions32/33/35/
+MIGRATION,4Octdelta+convergence and current614server/recovery records; installed
+TypeSafe/Supabase/Postgres skills and live index/changelog. One checkpoint: exact
+browser-only old-web source preparation and eleven-delta actual recovered-state SQL
+prerequisite, not full mixed-client/Auth/platform/release acceptance. Source614/P1/P2
+remain immutable; no product/native/shared annotation rewrite.
+
+Reproduced fresh:090_candidate_source nine testsPASS but generated legacy hook
+still imports/calls isEmbeddedRuntimeActive; resolving against actual a13f696
+parent+declared overlays refuses missing embedded-web-runtime. Existing tests check
+the loader, not this hook closure. Fix the browser-only generator/test boundary,
+safe old-player error sinks and include the exact new expiry delta; never reapply
+native overlays to current product. At most3actions:1real failing closure/log/
+dependency regressions and narrow source generator repair;2eleven exact SQL/test
+order and exclusive faithful restore only AFTER resource approval;3actual SQL gates,
+source/pins/record self-review/cleanup/separate commits. Source-only checks cannot
+close the required clone/SQL rows, nor full old-browser build/Auth/RLS/HTTP tests.
+
+Allowed: supabase/test-support/090_candidate_source.mjs/.test.mjs, spike090scoped
+runtime/restore/rehearsal/source helpers and this card/detailed report/current pointers.
+Do not change existing migration bytes/readers/web/native/roles for a green fixture.
+Retained source: approved0700parentgenova-090-p3-5OnU1m, AES-GCM/sourcecutoff9Oct
+03:11:01Turkey; source private SQL/rows/key never output/Git/AI or moved to new
+custody. Preserve prior restore/logs/current614manifests with exclusive new attempt
+names; no overwrite, glob SQL, schema-only/noowner test clone or broad test grants.
+No new export/hostedwrite/provider/website/real-user/paidAI/distribution/ownerQA.
+
+Currentfree9,558,824KiB below defaultfloor/no ownruntime. Asked explicit new scope:
+same pinned fullPGimage/exclusive6.5GiBphysical VM/oneCPU512MiBRAM/none0mount0port,
+11SQL ONLY in restored copy; projected~2GiBfree/emergencystop640MiB, cleanupafterlast
+check. Resource approval PENDING: no image/download/mount/restore start yet.
+Prior256MiBSQLexception does not authorize this larger operation or web/native build.
+Current pure AST/Node source tests/document work allocate<1MiB/no runtime. No user
+file/globalcache/AVD/simulator/dependency/otherPGcleanup. Browser candidate fullbuild/
+pnpmcheck and actualAuth/mixedclients/platform acceptance remain named later gates
+with separate measured resources; do not inflate the nine current source tests.
+
+| Criterion | Required this checkpoint? | Status | Limit |
+|---|---|---|---|
+| Legacy hook browser-only literal closure + safe actual generated audio handlers | yes | PASS |14Node tests/20media code cases/30module closure; not browser runtime |
+| Exact11SQL hashes/dependency/test/caller order + current614immutable parents | yes | PASS |3packet tests/full614+auxiliary source checks; no automatic apply |
+| Approved exclusive full clone/strict selected schema+all data fidelity before deltas | yes | NOT RUN | No reduced/synthetic recovery substitute |
+| Eleven exact deltas + actual SQL/RPC/tenant/role/expiry/legacy controls | yes | NOT RUN | No broad grants/disabled RLS/schema stripping |
+| Artifact/source gates, private redaction, ownedcleanup/scopedcommits | yes | PASS |Focused lint/pins/packet/diff/links; sourceaa58bf8, pairedrecords; self-review only |
+| Browser build/current-old Auth/PostgREST/mixedclient/cache/Android+iOS/independentreview | fullP3, later gate | NOT RUN | Not claimed by source/SQL-only checkpoint |
+
+[Actual preparation](../reports/2026-10-09-p3-legacy-compatibility-preparation.md)
+and [exact packet](../reports/090/2026-10-09-p3-compatibility-packet.json):14source
+tests/3packettests/full614pins+aux unchanged; codeaa58bf8. Original9tests falsely
+missed real hookclosure; three new regressions reproducedFAIL before repair.
+046test's one-prior-publication assumption differs from captured source's three;
+review exact-set clone adaptation, synthetic fixture collisions/original-row
+invariants and hardcoded090peerDB before execution. No permissive testgrants.
+Finalfree9,958,120KiB(~9.50GiB), still below10GiBfloor;6.5GiBscope approval PENDING,
+no VM/download/restore/build/native/hosted action. Goal INCOMPLETE / P3NO-GO,
+not source-only closure. No ownerQA/privateAIexport; Jev0/$0new.
+
 ### 9 October retained-session expiry — guarded forward server delta
 
 Entry main/02a03d8, primary sole writer; unrelatedCLI marker preserved/excluded.

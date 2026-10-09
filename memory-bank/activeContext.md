@@ -7,6 +7,18 @@ English records/Turkish updates; sole writer; verify current ownership/permissio
 
 ## Current measurable outcome
 
+[Legacy source preparation](../docs/reports/2026-10-09-p3-legacy-compatibility-preparation.md)
+PASS/sourceaa58bf8: actual browser-only closure/safe oldplayers/exact expiry overlay;
+14source+3packettests. [Exact11packet](../docs/reports/090/2026-10-09-p3-compatibility-packet.json),
+614serverpins unchanged; no build/runtime/SQLacceptance. GoalINCOMPLETE/P3NO-GO.
+New6.5GiBclone resource request PENDING, old256MiBscope not transferable; finalfree
+~9.50GiB/default10GiBfloor/no ownVM/image. NEXT exclusive faithful current-source
+restore before11SQL; preserve046exact publication sets, check syntheticcollisions/
+original-rowdigests/exclusive090peerDB. ManagedAuth/REST/fullbrowser/mixedcache/
+Android+iOS/independentreview laterrequired. No ownerQA/hostedwrite/privateAIexport.
+
+## Previous server checkpoint
+
 [Server expiry checkpoint](../docs/reports/2026-10-09-p3-server-session-expiry.md)
 PASS/codebbc301c: guarded forward20261009190611/c191SHA adds only not_after at
 statement time; original090SQL unchanged. ActualPG17synthetic expanded/legacySQL/

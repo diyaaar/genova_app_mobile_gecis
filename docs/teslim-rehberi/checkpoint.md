@@ -6,6 +6,16 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
+- **9Oct legacy source preparation PASS / required SQL rehearsal NOT RUN:**
+  [Record](../reports/2026-10-09-p3-legacy-compatibility-preparation.md), sourceaa58bf8,
+  [exact11packet](../reports/090/2026-10-09-p3-compatibility-packet.json).14source+3packet
+  tests/full614pins unchanged;30module browserclosure/safe oldplayers/exactexpiry.
+  No build/runtime/clone/SQLstarted. New6.5GiBresource request PENDING; finalfree~9.50GiB,
+  below default10GiBfloor; prior256MiBscope not largeruntimeauthority. GoalINCOMPLETE/
+  P3NO-GO. NEXT exclusivefaithful clone BEFORE11deltas, exact046publication adaptation,
+  synthetic-ID/original-row invariants/exclusive090concurrency target; then managedAuth/
+  browser/mixedcache/platforms/review. No ownerQA/livewrite/push/Jevspend/privateexport.
+
 - **9Oct local server expiry PASS / P3 remains OPEN:** [Record](../reports/2026-10-09-p3-server-session-expiry.md),
   codebbc301c, [614pin current child](../reports/090/2026-10-09-p3-server-convergence-source.json).
   Exact forward20261009190611/c191hash/onlynot_afterpredicate; baseline expired5allow

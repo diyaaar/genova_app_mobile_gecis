@@ -6,7 +6,23 @@ Updated9October2026. [AGENTS](../AGENTS.md) → [active](../memory-bank/activeCo
 Read [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md); relevant decisions/
 MIGRATION. English records/Turkish copy; one writer, verify HEAD/ownership/resources.
 
-## Current outcome — local server checkpoint PASS, whole P3 OPEN
+## Current outcome — legacy source preparation PASS, required clone rehearsal OPEN
+
+[Preparation](reports/2026-10-09-p3-legacy-compatibility-preparation.md), sourceaa58bf8:
+browser-only legacy hookclosure/safe old-player sinks/exact expiry inclusion repaired;
+14source tests+3packettests PASS. [Packet](reports/090/2026-10-09-p3-compatibility-packet.json):
+exact11SQL/dependencies/10tests/3fixtures/selectedcallers, all614serverpins unchanged.
+No runtime/materialization/build. New6.5GiBcopy resource exception requested but
+PENDING; previous256MiBscope is not largeclone/build authority. Finalfree~9.50GiB,
+below10GiBfloor; no owned VM/image/start. GoalINCOMPLETE/full090/P3NO-GO.
+NEXT after explicit approval: exclusive faithful full-image clone/all metadata+101
+fingerprints BEFORE11deltas;046publication exact-set adaptation, fixture collision/
+original-row invariants and exclusive090peerDB checks beforeactualSQL acceptance.
+Do not broaden testgrants/RLS or overwrite oldsuccessfulprivate receipts. Then
+managedAuth/REST/browserbuild/mixedclients/cache/agentAndroid+iOS/independentreview.
+No ownerQA/livewrite/push/deploy/Jevspend/privateexport. CLI marker preserved.
+
+## Previous outcome — local server checkpoint PASS
 
 [Server expiry](reports/2026-10-09-p3-server-session-expiry.md), sourcebbc301c:
 exact forward20261009190611/c191hash keeps old090SQL, adds only statement-time
