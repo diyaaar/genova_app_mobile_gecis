@@ -4,7 +4,7 @@ import path from 'node:path';
 import { spawn, execFileSync } from 'node:child_process';
 import { freeKiB } from './090-p3-consistent-backup.mjs';
 import { ATTEMPT, LIVE_STOP_KIB } from './090-p3-resource-policy.mjs';
-const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-RAJEJt';
+const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m';
 const VM='g090p3',LIMA='/opt/homebrew/bin/limactl';
 const IMAGE='supabase/postgres@sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00';
 const action=process.argv[2];

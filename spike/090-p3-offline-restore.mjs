@@ -8,7 +8,9 @@ import { pathToFileURL } from 'node:url';
 import { decryptBuffer, freeKiB } from './090-p3-consistent-backup.mjs';
 import { catalogQueries, dataDigestQuery, canonicalSettings, requireRecoveryMetadata } from './090-p3-recovery-queries.mjs';
 import { ATTEMPT, LIVE_STOP_KIB } from './090-p3-resource-policy.mjs';
-const RUNTIME_DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-RAJEJt';
+import {restoreDroppedSlots,restoreBetweenForm,publicationSeed} from './090-p3-recovery-seed.mjs';
+import {planAclAdditions} from './090-p3-parity-analysis.mjs';
+const RUNTIME_DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m';
 const DIR=process.env.GENOVA_RECOVERY_BACKUP_DIR||RUNTIME_DIR;
 let stage='scope';
 const LIMA='/opt/homebrew/bin/limactl',VM='g090p3',CONTAINER='genova090p3-db',DB='genova_090_p3_restore';
@@ -49,7 +51,11 @@ function main(){
   key.fill(0);metadata.fill(0);
   if(sha(dump)!==summary.plaintextSha256||source.readOnly!=='on')throw Error('Backup plaintext/snapshot refused');
   requireRecoveryMetadata(source);
-  if(sourceOnly){dump.fill(0);console.log(JSON.stringify({status:'SOURCE_METADATA_COMPLETE_ONLY_RUNTIME_NOT_RUN',cutoff:summary.cutoff}));return;}
+  stage='supported-seed-preflight';
+  const original=dump.toString();dump.fill(0);
+  const slots=restoreDroppedSlots(original,source.catalog),between=restoreBetweenForm(slots.sql,source.catalog),publications=publicationSeed(source.catalog);
+  const seedCounts={slotTables:slots.tables,droppedSlots:slots.slots,betweenForms:between.count,publications:publications.publications,directRoots:publications.roots};
+  if(sourceOnly){console.log(JSON.stringify({status:'SOURCE_METADATA_COMPLETE_ONLY_RUNTIME_NOT_RUN',cutoff:summary.cutoff,supportedSeed:seedCounts}));return;}
   stage='runtime-scope';
   const owner=JSON.parse(privateRead('runtime-ownership.json',RUNTIME_DIR));
   if(owner.attempt!==ATTEMPT||owner.limaHome!==env.LIMA_HOME||owner.owner!=='090-P3-only'||freeKiB()<LIVE_STOP_KIB)throw Error('Runtime ownership/floor refused');
@@ -96,11 +102,17 @@ alter role postgres nosuperuser;
 create extension pg_net with schema public version '0.19.5';
 create extension supabase_vault with schema vault version '0.3.1';
 `;
-  const original=dump.toString();dump.fill(0);
-  if(original.split('CREATE SCHEMA vault;').length!==2)throw Error('Extension boundary mismatch');
-  const restored=original.replace('CREATE SCHEMA vault;','CREATE SCHEMA vault;\n'+seed);
+  if(between.sql.split('CREATE SCHEMA vault;').length!==2)throw Error('Extension boundary mismatch');
+  const restored=between.sql.replace('CREATE SCHEMA vault;','CREATE SCHEMA vault;\n'+seed);
   stage='restore-dump';
   sql('begin;\n'+restored+'\ncommit;');
+  stage='publication-seed';
+  if(json('select pubname from pg_publication').length)throw Error('Unexpected preexisting publication refused');
+  sql('begin;'+publications.sql+'commit;');
+  stage='exact-acl-supplement';
+  const actualAcls=Object.fromEntries(['functions','schemas','relations'].map(g=>[g,json(catalogQueries[g])]));
+  const aclPlan=planAclAdditions(source.catalog,actualAcls);
+  if(aclPlan.sql)sql('begin;'+canonicalSettings+aclPlan.sql+'commit;');
   stage='fidelity';
   const differences={},counts={};
   for(const [name,query] of Object.entries(catalogQueries)){
@@ -111,7 +123,8 @@ create extension supabase_vault with schema vault version '0.3.1';
   if(JSON.stringify(normalize(data))!==JSON.stringify(normalize(source.data)))differences.data={sourceTables:source.data.length,restoredTables:data.length};
   const result={recordedAt:new Date().toISOString(),project:summary.project,backupSha256:summary.plaintextSha256,
     database:DB,network:'none',mounts:0,publishedPorts:0,catalogCounts:counts,dataTables:data.length,
-    restoredRows:data.reduce((n,t)=>n+t.rows,0),differences,status:Object.keys(differences).length?'FIDELITY_FAIL_NOT_ACCEPTED':'CURRENT_STATE_SELECTED_FIDELITY_PASS',
+    restoredRows:data.reduce((n,t)=>n+t.rows,0),supportedSeed:seedCounts,aclSupplement:aclPlan.totals,
+    originalBackupUnmodified:true,exactComparatorUnchanged:true,differences,status:Object.keys(differences).length?'FIDELITY_FAIL_NOT_ACCEPTED':'CURRENT_STATE_SELECTED_FIDELITY_PASS',
     limits:'Actual isolated logical restore and selected same-snapshot catalog/data equality only. Sequence/non-MVCC/provider/Storage/Vault/config and full Next/Auth/RLS/client/review gates remain separate; no hosted mutation or source fix.'};
   fs.writeFileSync(path.join(DIR,'restore-summary.json'),JSON.stringify(result,null,2)+'\n',{flag:'wx',mode:0o600});
   // Detailed comparisons/digests remain protected; stdout only counts/category names.

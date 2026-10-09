@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { ATTEMPT } from './090-p3-resource-policy.mjs';
-const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-RAJEJt';
+const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m';
 const owner=JSON.parse(fs.readFileSync(path.join(DIR,'runtime-ownership.json')));
 const final=process.argv[2]==='--cleanup-approved-current';
 const phase=ATTEMPT;
