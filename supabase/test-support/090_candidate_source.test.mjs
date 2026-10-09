@@ -24,6 +24,42 @@ test('backport adds no embedded/native/current feature graph or dependency upgra
   assert.equal(files.get('supabase/config.toml').split('verify_jwt = false').length-oldSource('supabase/config.toml').split('verify_jwt = false').length,6);
   assert.deepEqual(moduleClosure(slugs.map(slug=>`supabase/functions/${slug}/index.ts`)).files,closure.files);
 });
+test('actual legacy hook closure resolves against only the declared overlays and served parent',()=>{
+  const hook=files.get('hooks/useProtectedDriveFileUrl.ts');
+  assert(!hook.includes('isEmbeddedRuntimeActive'),'Legacy browser hook must not import native mode');
+  const resolved=moduleClosure(['hooks/useProtectedDriveFileUrl.ts'],file=>files.get(file)??oldSource(file));
+  assert(!resolved.files.some(file=>file.path.includes('embedded-')||file.path.includes('mobile-webview')));
+  assert(hook.includes('const nextUrl = await getOnlineAuthorizedPrivateFileUrl(loadTicketUrl);'));
+});
+test('legacy package includes the exact guarded forward expiry source',()=>{
+  const path='supabase/migrations/20261009190611_private_file_session_expiry_090.sql';
+  assert(files.has(path));
+  assert(files.get(path).includes('s.not_after > statement_timestamp()'));
+  assert(files.get(path).includes('090 expiry refused extra authority grants'));
+});
+test('both actual generated media error handlers refuse capability-bearing diagnostics',()=>{
+  for(const path of ['components/FloatingMiniPlayer.tsx','components/repertuvar/RepertoireWorkspace.tsx']){
+    const source=files.get(path);assert(source,'Missing actual player backport');
+    const ast=ts.createSourceFile(path,source,ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);let handler;
+    function visit(node){if(ts.isVariableDeclaration(node)&&node.name.getText(ast)==='handleError'){
+      assert(!handler,'Ambiguous media handler');handler=node.initializer.getText(ast);}ts.forEachChild(node,visit);}visit(ast);assert(handler);
+    for(const code of [1,2,3,4,3.5,Infinity,NaN,'synthetic-ticket-in-code',{token:'synthetic-ticket-in-code'},null]){
+      const marker='synthetic-private-capability',calls=[];let stopped=0;
+      const state=()=>{stopped++;};
+      const api=load('exports.fail='+handler+';',{}, {el:{src:'https://synthetic.invalid/?ticket='+marker,error:{code,message:marker}},
+        currentTrackId:marker,isSwitchingRef:{current:true},intendedPlayState:{current:true},
+        setPlaybackState:state,setIsPlaying:state,setAudioState:state,setMiniPlaybackState:state,
+        onSelectedAudioBodyError:state,selectedAudioSource:'synthetic-source',isSourceMatch:()=>true,
+        console:Object.fromEntries(['error','warn','log','info','debug'].map(name=>[name,(...args)=>calls.push({name,args})]))});
+      api.fail();assert(stopped>0);
+      assert.equal(calls.length,1);assert.equal(calls[0].name,'error');
+      assert.equal(calls[0].args[0],'[AUDIO_PLAYER_ERROR]');
+      assert.deepEqual(JSON.parse(JSON.stringify(calls[0].args[1])),{
+        player:path.includes('FloatingMini')?'mini':'workspace',code:[1,2,3,4].includes(code)?code:null});
+      const out=JSON.stringify(calls);assert(!out.includes(marker)&&!out.includes('ticket=')&&!out.includes('https://'));
+    }
+  }
+});
 test('backported same-user session refresh invalidates cache and rejects late old lookup',async()=>{
   const h=harness();const first=await h.api.getProtectedDriveFileUrl(file);h.setToken('session-b');
   assert.notEqual(await h.api.getProtectedDriveFileUrl(file),first);assert.equal(new Headers(h.posts[1].headers).get('Authorization'),'Bearer session-b');
@@ -38,6 +74,21 @@ test('backported 401 recovery is exactly one renewal and 403 does not retry',asy
   assert.equal(heads,2);assert.equal(h.posts.length,2);
   await assert.rejects(h.api.getOnlineAuthorizedPrivateFileUrl(()=>h.api.getProtectedDriveFileUrl(file),async()=>new Response(null,{status:403})),e=>e.status===403);
   assert.equal(h.posts.length,2);
+});
+test('actual backported browser loader rejects a successful HEAD arriving after choir invalidation',async()=>{
+  const h=harness();let entered,finish;
+  const started=new Promise(resolve=>{entered=resolve;});
+  const pending=h.api.getOnlineAuthorizedPrivateFileUrl(()=>h.api.getProtectedDriveFileUrl(file),
+    async(_url,init)=>{assert.equal(init.method,'HEAD');assert.equal(init.cache,'no-store');
+      entered();return new Promise(resolve=>{finish=resolve;});});
+  await started;h.api.clearProtectedDriveFileUrlCache();finish(new Response(null,{status:200}));
+  await assert.rejects(pending,/Koro oturumu değişti/);assert.equal(h.posts.length,1);
+});
+test('actual backported browser loader permits initial same-user bearer rotation before HEAD',async()=>{
+  const h=harness();const old=await h.api.getProtectedDriveFileUrl(file);h.setToken('session-b');let heads=0;
+  const fresh=await h.api.getOnlineAuthorizedPrivateFileUrl(()=>h.api.getProtectedDriveFileUrl(file),
+    async()=>{heads++;return new Response(null,{status:200});});
+  assert.notEqual(fresh,old);assert.equal(heads,1);assert.equal(h.posts.length,2);
 });
 async function concurrentRenewal(h){
   await h.api.getProtectedDriveFileUrl(file);let finish,entered;

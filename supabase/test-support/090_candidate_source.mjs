@@ -73,6 +73,16 @@ async function authenticatedWebFetch(input:RequestInfo | URL,init:RequestInit,ac
 }
 function legacyHook() {
   let source = current('hooks/useProtectedDriveFileUrl.ts');
+  source = oneReplace(source, "import { isEmbeddedRuntimeActive } from '@/lib/embedded-web-runtime';\n", '');
+  source = oneReplace(source, `        // Embedded resolution may issue a scoped ticket, never read bytes. Native
+        // confirmation owns the first download/probe and its server authorization.
+        // Ordinary browsers must retain the fresh HEAD decision.
+        const nextUrl = isEmbeddedRuntimeActive()
+          ? await loadTicketUrl() : await getOnlineAuthorizedPrivateFileUrl(loadTicketUrl);`,
+    `        // This backport serves ordinary browsers only; retain the fresh HEAD decision.
+        const nextUrl = await getOnlineAuthorizedPrivateFileUrl(loadTicketUrl);`);
+  source = oneReplace(source, 'runtimeSupported && !isEmbeddedRuntimeActive() && nextUrl && runtimeVersion',
+    'runtimeSupported && nextUrl && runtimeVersion');
   const ast = tree(source), fn = ast.statements.find(node => ts.isFunctionDeclaration(node) && node.name.text === 'useProtectedDriveFileUrl');
   assert.equal(fn.parameters.length, 2);
   source = oneReplace(source, '  ' + fn.parameters[1].getText(ast) + ',\n', '');
@@ -92,7 +102,24 @@ function legacyHook() {
   source = oneReplace(source, ticketDeclaration.getText(nextTree), 'const loadTicketUrl = async () => getProtectedDriveFileUrl(fileDescriptor);');
   source = source.replace(/options\.\w+,\s*/gu, '');
   assert(!source.includes('options.'));
+  assert(!source.includes('isEmbeddedRuntimeActive'), 'No native-mode dependency in an old-browser backport');
   return source;
+}
+function mediaErrorPrefix(source) {
+  const ast = tree(source), nodes = [];
+  function visit(node) {
+    if (ts.isVariableDeclaration(node) && node.name.getText(ast) === 'handleError') nodes.push(node.initializer);
+    ts.forEachChild(node, visit);
+  }
+  visit(ast); assert.equal(nodes.length, 1, 'Ambiguous media error handler');
+  const statements = nodes[0].body.statements;
+  assert(ts.isVariableStatement(statements[0]) && ts.isExpressionStatement(statements[1]));
+  assert(statements[1].getText(ast).startsWith('console.error('));
+  return source.slice(statements[0].getStart(ast), statements[1].end);
+}
+function miniPlayer() {
+  const source = oldSource('components/FloatingMiniPlayer.tsx');
+  return oneReplace(source, mediaErrorPrefix(source), mediaErrorPrefix(current('components/FloatingMiniPlayer.tsx')));
 }
 function workspace() {
   let source = oldSource('components/repertuvar/RepertoireWorkspace.tsx');
@@ -128,8 +155,7 @@ function workspace() {
     '        selectedAudioSource={selectedAudioSource}\n        onSelectedAudioBodyError={onSelectedAudioBodyError}');
   source=oneReplace(source,'                  onLoadError={(error) => {',
     '                  onLoadError={(error) => {\n                    onSelectedPdfBodyError();');
-  source=oneReplace(source,'console.error(`[AUDIO_PLAYER_ERROR] Workspace player error for src: ${el.src}. Error code: ${err?.code}, message: ${err?.message}`);',
-    'console.error(`[AUDIO_PLAYER_ERROR] Workspace media error code: ${err?.code ?? "unknown"}`);');
+  source=oneReplace(source,mediaErrorPrefix(source),mediaErrorPrefix(latest));
   return source;
 }
 export function moduleClosure(entries, read = current) {
@@ -164,6 +190,7 @@ export function moduleClosure(entries, read = current) {
 }
 export function overlays() {
   const files = new Map([
+    ['components/FloatingMiniPlayer.tsx', miniPlayer()],
     ['lib/drive-file-url.ts', legacyLoader()],
     ['hooks/useProtectedDriveFileUrl.ts', legacyHook()],
     ['components/repertuvar/RepertoireWorkspace.tsx', workspace()],
@@ -181,7 +208,8 @@ export function overlays() {
     'app/api/drive-file/[id]/route.test.ts',
     'supabase/migrations/20260928140000_active_membership_revocation_078.sql',
     'supabase/migrations/20260930080046_private_file_ticket_authority_090.sql',
-    'supabase/migrations/20261002154343_legacy_file_authority_090.sql']) files.set(file, current(file));
+    'supabase/migrations/20261002154343_legacy_file_authority_090.sql',
+    'supabase/migrations/20261009190611_private_file_session_expiry_090.sql']) files.set(file, current(file));
   let config = oldSource('supabase/config.toml');
   for (const slug of slugs) {
     assert(!config.includes(`[functions.${slug}]`));
