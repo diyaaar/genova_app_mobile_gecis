@@ -26,6 +26,15 @@ is a local client-source checkpoint, NOT RELEASE READY. Server retained Auth
 not_after repair and all-five HTTP, current-source mixed-client/cache/old-web and
 Android+iOS reacceptance/independent review stay required. P1/P2 remain immutable.
 Statements below about unimplemented hook/log changes refer to earlier observations.
+**9October subsequent local server checkpoint:** [Actual expiry evidence](../reports/2026-10-09-p3-server-session-expiry.md),
+bbc301c, exact guarded20261009190611/c191hash. [614pin child](../reports/090/2026-10-09-p3-server-convergence-source.json)
+keeps all613clientpins/old090SQL; actual syntheticSQL/85GETHEADreads45denialsprovider0,
+6guardnegatives/concurrentCOMMIT/time PASS. Local source convergence is prepared;
+NOT full managedAuth/RLS/restored-state/mixed-client/platform/independent review.
+Connected Auth helper updated but actual full-stack run remains required. No live
+apply/activation/ownerQA; next is current exact package rehearsal/resources, not
+another inventory or an unreviewed bulk SQL/Edge rollout. Below server-gap prose
+is historical; current614pin source and this latest report are authoritative.
 Earlier stage observations below remain dated; their NOT RUN replacement status
 is superseded by this actual recovery evidence, not by weakening a criterion.
 The historical [3 October partial inventory](../reports/2026-10-03-p3-entry-inventory.md)

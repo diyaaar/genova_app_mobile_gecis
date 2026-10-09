@@ -1,11 +1,22 @@
 # Delivery checkpoint — single current execution pointer
 
-Updated 9 October 2026 (Europe/Istanbul). Current product `main/071465f`; immutable
+Updated 9 October 2026 (Europe/Istanbul). Current product `main/bbc301c`; immutable
 P1 entry remains3fb3a2c. This is the moving execution index, not acceptance evidence.
 Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
+- **9Oct local server expiry PASS / P3 remains OPEN:** [Record](../reports/2026-10-09-p3-server-session-expiry.md),
+  codebbc301c, [614pin current child](../reports/090/2026-10-09-p3-server-convergence-source.json).
+  Exact forward20261009190611/c191hash/onlynot_afterpredicate; baseline expired5allow
+  reproduced. Actual expanded+legacySQL/6guards/85HTTPreads45denialsprovider0/
+  peerCOMMIT+longtransaction PASS on syntheticPG17/current readers, not fullmanaged
+  Auth/RLS/restored-state.43,216KiBown runtime removed under approved256MiBscope;
+  613clientpins/native/20Edge/46routes unchanged; no liveSQL/deploy/platform acceptance.
+  NEXT exact ordered managed recovered-state/mixed-client/cache/old-web rehearsal,
+  measured currentAndroid+iOS and independent review. No ownerQA/push/provider
+  activation/distribution; full090/P3NO-GO. Older unimplemented-local-expiry prose
+  below is historical, not current. Default resources outside this scope unchanged.
 - **9Oct local client-source convergence PASS / P3 remains OPEN:** [Evidence](../reports/2026-10-09-p3-client-source-convergence.md),
   source071465f, [613pin child](../reports/090/2026-10-09-p3-client-convergence-source.json).
   Embedded hook ticket-only/no automatic HEAD/body/cache, browser authority retained;

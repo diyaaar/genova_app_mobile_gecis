@@ -15,6 +15,92 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 9 October retained-session expiry — guarded forward server delta
+
+Entry main/02a03d8, primary sole writer; unrelatedCLI marker preserved/excluded.
+Read current handoff/active/card/4Octcontract, controls/guide/work cycle and decisions
+32/33/35 from current context, relevant MIGRATION ownership; complete TypeSafe,
+Supabase and Postgres skills/security-privileges/lock-short-transactions, live
+TypeSafe index/Supabase changelog+sessions/PG17 date-time docs. One local outcome:
+retained expired Auth row cannot authorize already-issued five-family GET/HEAD.
+Native/client checkpoint071465f remains unchanged; no historical manifest/SQL edit.
+SupabaseCLI2.107help created exact forward
+supabase/migrations/20261009190611_private_file_session_expiry_090.sql; baseline
+090actor bodyMD5=8bcd05928d70787965dfebe0b38b543d/sourceSHA from frozenP1 unchanged.
+Forward shape/hash recorded before rehearsal; do not glob migrations. Choose
+Initial forwardSHA256=3df91cc3710a2910def8fd8881ae46c03c854fcb2aaabb6039fcf8715231a48e.
+Firstactual native SQL/85HTTP proof PASS at19:13UTC,43,216KiBowned/removed; kept
+as datedv1. Self-review then tightens expected public-wrapper body/exact grants,
+adds6actual guard negatives and per-family/scenario HTTP labels. Final pre-rehearsal
+forwardSHA256=c191738462dc500e0be524155fb6e5ca3002e7445ba6a70d77f451d7a52bc36c;
+newv2proof required, v1not rewritten. No unchanged runtime retry or guard relaxation.
+CREATE OR REPLACE of exact private authority body, not a second bypassable helper.
+Only add null/future not_after predicate at statement time, preserve all family
+logic/owner/ACL/stable/search_path and public service-only invoker wrapper.
+Current9Octread-only ledger/captured actual recovery remains provenance, not fresh
+hosted apply authority.090actor absent on hosted snapshot, local historical consumers
+exist; hence a new guarded delta rather than editing30Sepaccepted migration.
+
+Allowed: exact new SQL; supabase/tests/090_private_file_ticket_authority.sql expiry
+controls; supabase/test-support/090_session_expiry_{fixture.sql,runner.mjs} and
+supabase/test-support/090_http_session_expiry.ts
+for installedPG17 synthetic schema/current real reader HTTP; connected four-family
+helper only expiry assertions; spike090source evidence helper and dated records/
+this card/current pointers. Do not alter actual reader implementations/native/web,
+legacy controls, shared annotation TS, website, retained notes/tables/provider flags.
+At most3actions:1baseline defect reproduction/forward source and exact consumer
+identity;2actual SQL/RPC+GETHEAD/provider0/concurrentCOMMIT/time controls;3focused
+type/source/ACL/manifest/record review, cleanup and separate source/docs commits.
+No paid AI/private SQL/row/key export/real data/hostedwrite/deploy/push/ownerQA.
+
+Resources: initialfree9,628,636KiB below defaultfloor. Owner explicitly approves
+THIS SQL/HTTP test exception <=256MiB added, no download/image/install, cleanup
+after last dependent check. InstalledPG17 only/private Unixsocket/TCPoff and two
+exclusive loopback HTTP ports; synthetic rows/schema, not a faithful source restore
+or managed Auth/RLS/POST/PostgREST acceptance. One cluster under exclusive
+spike/090-runtime/session-expiry-*0700; budget262,144KiB, stop if own usage approaches
+cap or available falls below8GiB; no unrelated cleanup. Cached-only Deno, no root/
+native build. Last check then stop server/ownedchildren/remove owned directory,
+keep small redacted JSON. Default10GiB outside this exception. Full restored-state/
+managed Auth/mixed clients/Android+iOS/review remain part3, not weakened by this proof.
+No web/shared product changes: rootbuild N/A for this SQL/backend-test-only stage.
+Rollback local unapplied delta via scoped revert; after any future release use
+reviewed forward repair, not silent return to insecure baseline authority.
+
+| Criterion | Required here? | Status | Boundary |
+|---|---|---|---|
+| Retained expired row baseline reproduces, guarded exact forward fixes5families | yes | PASS | Actual core SQL on synthetic schema, not full recovered state |
+| Null/future/equality/past/owner/ACL/emptysearch_path + service/anon/auth execution | yes | PASS |20expiry controls,10actual anonymous/authenticated RPC rejects,6forward guard negatives; exact owner/ACL retained |
+| Signed current readers GET/HEAD denied/provider0, expired ticket distinct | yes | PASS |85reads/17perfamily/45denials/provider0/40signedobjecthits/failures0; explicit transport seams |
+| Peer uncommitted vsCOMMIT/held next request and long transaction time | yes | PASS | Two connections/ack barriers/no sleep; started streams not recalled |
+| Existing role/tenant/visibility/inactive/deleted controls and legacy control kept | yes | PASS | Actual expanded090SQL, original legacySQL before+after; no test removed |
+| Deno/source/child pins/diff/records/cleanup/scoped commits | yes | PASS at exit | Cached-only Deno/Node/ESLint/roottype,614pins,43,216KiBown cluster removed, sourcebbc301c/separate records; self-review only |
+| Managed Auth/RLS/restored-state mixed-client/Android+iOS/independent release review | part3/fullP3 | NOT RUN | No hosted/platform/release acceptance |
+
+[Actual server checkpoint](../reports/2026-10-09-p3-server-session-expiry.md),
+[currentv3proof](../reports/090/2026-10-09-p3-session-expiry-v3.json) and
+[614pin child](../reports/090/2026-10-09-p3-server-convergence-source.json):
+22:19:38Turkey final actual proof, sourcebbc301c. Firstv1/v2receipt retained as
+earlier-source observations; final entry renamed to existing090_http_*build
+boundary (no tsconfig relaxation), changed-sourcev3pins all verified. Existing
+client071465f/613pins unchanged; sole new production SQL body predicate verified.
+Readonly correct-project probe22:08Turkey actor/private/legacy090 absent,83filtered
+functions; no raw function/secret/row export. Accepted9Oct03:11heldfullrecovery
+remains dated prerequisite, no fresh export/fullVM rebuilt for synthetic tests.
+Forward c191hash recorded BEFORE final rehearsal; six bad bodies/owners/config/
+ACL states reject. Exactownerpostgres/private definer/publicinvoker/searchpathempty/
+stable/grants retained.43,216KiBpeak<=262,144owner-approvedcap/TCPoff/privateUnix/
+all ownedclusters stopped+removed/HTTPports closed; v3initialfree9,393,364KiB/
+final9,391,816KiB; root304KiBtypecheckoutput removed at finalexit. Other apps affect
+space; defaultfloor/largebuild authority unchanged. Connected4-family Auth helper
+now has expiry negatives but full managed stack NOT RUN/part3. No currentplatform/
+fullRLS/restored-state/independentreview/livewrite claim. Next exact current
+package/ordered rehearsal + measured agent-owned Android/iOS reacceptance/review.
+Exit614pins/9auxiliary/currentv3sevenpins/threeimmutableparents replayPASS,
+6ownedMD/currentcard118links0missing/11records0secretpatterns/syntax/diffPASS.
+304KiBownedtypecheckoutput removed, emptyruntime/HTTPclosed/free9,578,096KiB;
+product sourcebbc301c committed, evidence commit separate, CLIexcluded.
+
 ### 9 October client-source convergence — consent and diagnostic boundary
 
 Entry main/578feee519f8ab3e98148735463791f4d2118551, primary sole writer;

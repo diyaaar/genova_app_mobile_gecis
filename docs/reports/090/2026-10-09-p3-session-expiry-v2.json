@@ -1,0 +1,870 @@
+{
+  "recordedAt": "2026-10-09T19:17:29.108Z",
+  "status": "LOCAL_SYNTHETIC_SERVER_EXPIRY_PASS_NOT_RELEASE",
+  "identity": {
+    "version": "17.11 (Homebrew)",
+    "listen": "",
+    "unixOnly": true
+  },
+  "baselineRetainedExpiredAllowed": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "forwardSha256": "c191738462dc500e0be524155fb6e5ca3002e7445ba6a70d77f451d7a52bc36c",
+  "authorityMetadataUnchanged": [
+    {
+      "name": "genova_090.can_read_private_file",
+      "owner": "postgres",
+      "definer": true,
+      "volatility": "s",
+      "config": [
+        "search_path=\"\""
+      ],
+      "acl": "{postgres=X/postgres,service_role=X/postgres}"
+    },
+    {
+      "name": "public.private_file_ticket_authorized_090",
+      "owner": "postgres",
+      "definer": false,
+      "volatility": "s",
+      "config": [
+        "search_path=\"\""
+      ],
+      "acl": "{postgres=X/postgres,service_role=X/postgres}"
+    }
+  ],
+  "forwardGuardNegatives": [
+    "wrapper-body",
+    "private-owner",
+    "private-search-path",
+    "private-volatility",
+    "public-execute",
+    "extra-grantee"
+  ],
+  "expandedActualSqlPass": true,
+  "unchangedLegacyControlPass": true,
+  "http": {
+    "passed": true,
+    "families": 5,
+    "reads": 85,
+    "providerZeroOnDenial": true,
+    "nullFutureFullHeadRange": true,
+    "retainedExpiredValidTicket": true,
+    "ticketExpiryDistinct401": true,
+    "actualPeerCommitBoundary": true,
+    "heldNextRequestDenied": true,
+    "longTransactionStatementTime": true,
+    "foreignIdentityDenied": true,
+    "providerHits": 40,
+    "providerFailures": 0,
+    "observations": [
+      {
+        "family": "repertoire-file",
+        "scenario": "null-expiry",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 47
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "null-expiry",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "null-expiry",
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "future-expiry",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 47
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "future-expiry",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "future-expiry",
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "retained-expired-valid-ticket",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "retained-expired-valid-ticket",
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "expired-ticket-live-session",
+        "method": "GET",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 30
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "expired-ticket-live-session",
+        "method": "HEAD",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "peer-expiry-uncommitted",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 47
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "peer-expiry-uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "peer-expiry-committed",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "peer-expiry-committed",
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "request-held-until-after-commit",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "foreign-actor",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "foreign-choir",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "null-expiry",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "null-expiry",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "null-expiry",
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "future-expiry",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "future-expiry",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "future-expiry",
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "retained-expired-valid-ticket",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "retained-expired-valid-ticket",
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "expired-ticket-live-session",
+        "method": "GET",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 30
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "expired-ticket-live-session",
+        "method": "HEAD",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "peer-expiry-uncommitted",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "peer-expiry-uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "peer-expiry-committed",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "peer-expiry-committed",
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "request-held-until-after-commit",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "foreign-actor",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "foreign-choir",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "null-expiry",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "null-expiry",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "null-expiry",
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "future-expiry",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "future-expiry",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "future-expiry",
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "retained-expired-valid-ticket",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "retained-expired-valid-ticket",
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "expired-ticket-live-session",
+        "method": "GET",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 30
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "expired-ticket-live-session",
+        "method": "HEAD",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "peer-expiry-uncommitted",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "peer-expiry-uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "peer-expiry-committed",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "peer-expiry-committed",
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "request-held-until-after-commit",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "foreign-actor",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "foreign-choir",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "null-expiry",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "null-expiry",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "null-expiry",
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "future-expiry",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "future-expiry",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "future-expiry",
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "retained-expired-valid-ticket",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "retained-expired-valid-ticket",
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "expired-ticket-live-session",
+        "method": "GET",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 30
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "expired-ticket-live-session",
+        "method": "HEAD",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "peer-expiry-uncommitted",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "peer-expiry-uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "peer-expiry-committed",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "peer-expiry-committed",
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "request-held-until-after-commit",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "foreign-actor",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "foreign-choir",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "null-expiry",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 70
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "null-expiry",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "null-expiry",
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "future-expiry",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 70
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "future-expiry",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "future-expiry",
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "retained-expired-valid-ticket",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "retained-expired-valid-ticket",
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "expired-ticket-live-session",
+        "method": "GET",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 30
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "expired-ticket-live-session",
+        "method": "HEAD",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "peer-expiry-uncommitted",
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 70
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "peer-expiry-uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "peer-expiry-committed",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "peer-expiry-committed",
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "request-held-until-after-commit",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "foreign-actor",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "foreign-choir",
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      }
+    ],
+    "boundary": "Current actual reader handlers/indices and SQL service RPC, synthetic schema/Auth+PostgREST seam/signed loopback objects; no hosted or platform proof."
+  },
+  "initialFreeKiB": 9603164,
+  "boundary": "Actual090/003/060SQL and current readers on synthetic schema/private nativePG17. No managedAuth/POST/PostgREST/RLS/recovered-state/hosted/platform/provider release proof.",
+  "resources": {
+    "peakKiB": 43216,
+    "capKiB": 262144,
+    "ownedRuntimeRemoved": true,
+    "finalFreeKiB": 9602612
+  },
+  "pins": [
+    {
+      "path": "supabase/migrations/20260930080046_private_file_ticket_authority_090.sql",
+      "sha256": "4f345d968fa6945aa746b4d00b7852c293047a984beabd79c4b7a64629c0ad86"
+    },
+    {
+      "path": "supabase/migrations/20261009190611_private_file_session_expiry_090.sql",
+      "sha256": "c191738462dc500e0be524155fb6e5ca3002e7445ba6a70d77f451d7a52bc36c"
+    },
+    {
+      "path": "supabase/tests/090_private_file_ticket_authority.sql",
+      "sha256": "fa2cc4d044416f1811dbd4d1d8b90938d93f3cf5a08afe0cb51d187e41123789"
+    },
+    {
+      "path": "supabase/tests/090_legacy_file_authority.sql",
+      "sha256": "0920d95fea1875103c157e9c24fc68330ec5cc7dc2012d753bbdbaf993bd7c0b"
+    },
+    {
+      "path": "supabase/test-support/090_session_expiry_fixture.sql",
+      "sha256": "42bf9421879ac0f9fcbbaf41741e1965a8be358d9edcb4f333029bf5d03838a8"
+    },
+    {
+      "path": "supabase/test-support/090_session_expiry_http.ts",
+      "sha256": "a84bfeecf2c688872d26a0c5b3374af272b173f04ff2ff1eb34365962e900449"
+    },
+    {
+      "path": "supabase/test-support/090_session_expiry_runner.mjs",
+      "sha256": "5598948926206ea3d419ebb14b212aa3667783f13682c4c86eee002e670e3865"
+    }
+  ]
+}

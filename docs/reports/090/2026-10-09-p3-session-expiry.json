@@ -1,0 +1,692 @@
+{
+  "recordedAt": "2026-10-09T19:13:42.229Z",
+  "status": "LOCAL_SYNTHETIC_SERVER_EXPIRY_PASS_NOT_RELEASE",
+  "identity": {
+    "version": "17.11 (Homebrew)",
+    "listen": "",
+    "unixOnly": true
+  },
+  "baselineRetainedExpiredAllowed": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "forwardSha256": "3df91cc3710a2910def8fd8881ae46c03c854fcb2aaabb6039fcf8715231a48e",
+  "authorityMetadataUnchanged": [
+    {
+      "name": "genova_090.can_read_private_file",
+      "owner": "postgres",
+      "definer": true,
+      "volatility": "s",
+      "config": [
+        "search_path=\"\""
+      ],
+      "acl": "{postgres=X/postgres,service_role=X/postgres}"
+    },
+    {
+      "name": "public.private_file_ticket_authorized_090",
+      "owner": "postgres",
+      "definer": false,
+      "volatility": "s",
+      "config": [
+        "search_path=\"\""
+      ],
+      "acl": "{postgres=X/postgres,service_role=X/postgres}"
+    }
+  ],
+  "expandedActualSqlPass": true,
+  "unchangedLegacyControlPass": true,
+  "http": {
+    "passed": true,
+    "families": 5,
+    "reads": 85,
+    "providerZeroOnDenial": true,
+    "nullFutureFullHeadRange": true,
+    "retainedExpiredValidTicket": true,
+    "ticketExpiryDistinct401": true,
+    "actualPeerCommitBoundary": true,
+    "heldNextRequestDenied": true,
+    "longTransactionStatementTime": true,
+    "foreignIdentityDenied": true,
+    "providerHits": 40,
+    "providerFailures": 0,
+    "observations": [
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 47
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 47
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 30
+      },
+      {
+        "method": "HEAD",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 47
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 30
+      },
+      {
+        "method": "HEAD",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 30
+      },
+      {
+        "method": "HEAD",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 30
+      },
+      {
+        "method": "HEAD",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 48
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 70
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 70
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 206,
+        "range": true,
+        "providerDelta": 1,
+        "bytes": 4
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 30
+      },
+      {
+        "method": "HEAD",
+        "status": 401,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 70
+      },
+      {
+        "method": "HEAD",
+        "status": 200,
+        "range": false,
+        "providerDelta": 1,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "HEAD",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 0
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      },
+      {
+        "method": "GET",
+        "status": 403,
+        "range": false,
+        "providerDelta": 0,
+        "bytes": 25
+      }
+    ],
+    "boundary": "Current actual reader handlers/indices and SQL service RPC, synthetic schema/Auth+PostgREST seam/signed loopback objects; no hosted or platform proof."
+  },
+  "initialFreeKiB": 9608940,
+  "boundary": "Actual090/003/060SQL and current readers on synthetic schema/private nativePG17. No managedAuth/POST/PostgREST/RLS/recovered-state/hosted/platform/provider release proof.",
+  "resources": {
+    "peakKiB": 43216,
+    "capKiB": 262144,
+    "ownedRuntimeRemoved": true,
+    "finalFreeKiB": 9606680
+  },
+  "pins": [
+    {
+      "path": "supabase/migrations/20260930080046_private_file_ticket_authority_090.sql",
+      "sha256": "4f345d968fa6945aa746b4d00b7852c293047a984beabd79c4b7a64629c0ad86"
+    },
+    {
+      "path": "supabase/migrations/20261009190611_private_file_session_expiry_090.sql",
+      "sha256": "3df91cc3710a2910def8fd8881ae46c03c854fcb2aaabb6039fcf8715231a48e"
+    },
+    {
+      "path": "supabase/tests/090_private_file_ticket_authority.sql",
+      "sha256": "fa2cc4d044416f1811dbd4d1d8b90938d93f3cf5a08afe0cb51d187e41123789"
+    },
+    {
+      "path": "supabase/tests/090_legacy_file_authority.sql",
+      "sha256": "0920d95fea1875103c157e9c24fc68330ec5cc7dc2012d753bbdbaf993bd7c0b"
+    },
+    {
+      "path": "supabase/test-support/090_session_expiry_fixture.sql",
+      "sha256": "42bf9421879ac0f9fcbbaf41741e1965a8be358d9edcb4f333029bf5d03838a8"
+    },
+    {
+      "path": "supabase/test-support/090_session_expiry_http.ts",
+      "sha256": "b81b00a35c8cfa9067b7ea5eb9226e68811267266d30ad6d0ab4032791791769"
+    },
+    {
+      "path": "supabase/test-support/090_session_expiry_runner.mjs",
+      "sha256": "ca74f033edbb94fa39670851bbf6cc12563ddd30556a18b474226299cc3cfa20"
+    }
+  ]
+}

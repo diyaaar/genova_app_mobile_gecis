@@ -7,17 +7,25 @@ English records/Turkish updates; sole writer; verify current ownership/permissio
 
 ## Current measurable outcome
 
+[Server expiry checkpoint](../docs/reports/2026-10-09-p3-server-session-expiry.md)
+PASS/codebbc301c: guarded forward20261009190611/c191SHA adds only not_after at
+statement time; original090SQL unchanged. ActualPG17synthetic expanded/legacySQL/
+6guardnegatives/85currentHTTPreads45denialsprovider0/peerCOMMIT+longtransaction PASS;
+Deno/ESLint/roottype, not fullmanagedAuth/RLS/platforms. [Currentv3proof](../docs/reports/090/2026-10-09-p3-session-expiry-v3.json),
+[614pin child](../docs/reports/090/2026-10-09-p3-server-convergence-source.json):
+613clientpins+20Edge+46routes/native unchanged, oneSQLdelta.43,216KiBownedcluster
+<=256MiBapprovedscope stopped/removed/HTTPclosed; no install/build/private export.
+NEXT exact ordered recovered-state/managedAuth/RLS/PostgREST/mixed-client/cache/
+old-web rehearsal, measured agent-owned Android+iOS, independentreview. Current
+256MiBexception not largebuild authority; whole090/P3OPEN/NO-GO/no liveapply/ownerQA.
+
+## Previous client checkpoint
+
 [Local client-source checkpoint](../docs/reports/2026-10-09-p3-client-source-convergence.md)
-PASS/source071465f: embedded ticket-only hook/no automatic byte probe/cache,
-normal browser authority retained, late HEAD invalidation race fixed, safe static
-audio-event diagnostics.40new tests/88focused; root117files/1218tests/build PASS;
-mobileTS+4unchanged consent/recovery/controller suites108tests PASS (not platforms).
+PASS/source071465f: embedded ticket-only/browser authority/late HEAD/safe diagnostics,
+40new/88focused/root1218+build/mobileTS108unit controls PASS, not platforms.
 [613pin child](../docs/reports/090/2026-10-09-p3-client-convergence-source.json)
-606unchanged/4changed/3tests/imports842→843/20Edge+46routes unchanged. P1/P2historical/
-immutable, childNOTRELEASEREADY. NEXT exact retained Auth not_after forwarddelta/
-all-five SQL+HTTP positives/negatives; then current mixed clients/cache/old-web and
-agent-owned Android/iOS acceptance + independentreview. Whole090/P3OPEN/NO-GO.
-No livewrite/deploy/push/ownerQA/Jevspend/private export; CLI marker preserved.
+unchanged in new614child. No liveapply/P1P2promotion/ownerQA/Jevspend/private export.
 
 ## Previous recovery/inventory checkpoint
 
@@ -37,7 +45,7 @@ thenfree12,592,016KiB. No user files/caches/deps/AVD/simulators/otherPGdeleted.
 No unchanged export/rebuild. Default10GiB outside9Octrecovery waiver; permissions
 not blanket live-operation/custody/cleanup authority. No hosted change/ownerQA.
 Then-next4Octsource contract is partially implemented above; retained Auth
-not_after server authority and final exact new
+not_after local authority now repaired above; final exact new
 manifest/affected P1P2reacceptance then mixed clients/cache/security/rehearsal/review.
 [Checkpoint](../docs/teslim-rehberi/checkpoint.md).
 
@@ -46,7 +54,7 @@ manifest/affected P1P2reacceptance then mixed clients/cache/security/rehearsal/r
 P1 GENOVA-BETA-20261003-P1/frozen c2ec9b09a44c048c7c6a0c31f0ac99566c4643f0:
 [manifest](../docs/reports/090/2026-10-03-p1-beta-candidate.json),610pins/842imports/
 20Edge/38RPC/25SQL exact regeneration unchanged.47focused helper tests PASS, not
-full recovery/runtime/release. Product now071465f; CLI marker unrelated/excluded.
+full recovery/runtime/release. Product nowbbc301c; CLI marker unrelated/excluded.
 P2[iOS](../docs/reports/2026-10-03-ios-p2-private-file-acceptance.md)/
 [Android](../docs/reports/2026-10-03-android-full-share-flow.md) synthetic local file
 flow only; not full Next/Auth/hostedRLS/provider/hardware/signed beta.
@@ -60,7 +68,7 @@ app.genesinovachoir.com; metadata not HTTP proof. Named MCPworks, no new key/ins
 [delta](../docs/reports/2026-10-04-p3-delta-dependency-inventory.md)/
 [contract](../docs/reports/2026-10-04-p3-convergence-contract-audit.md):
 005not078/079ACLmissing/7RPCabsent/oldreaders/EdgeJWT+source drift;
-actor090not_after NOT IMPLEMENTED; hook/log checkpoint nowPASS. Eight route groups/five-family
+local actor expiry/hook/log checkpoint nowPASS; none live. Eight route groups/five-family
 old-new-cache/review/operation map prepared; historical SQL unavailable/ten deltas
 not applied. Whole090/R1OPEN/P3NO-GO → P4storage → P5signedAndroid → P6full → P7stores.
 RN/Expo/Supabase/permanentWebViews/privateR2/noFlutterorRailwayrewrite/prefer<= $5/month;
