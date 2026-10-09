@@ -7,16 +7,19 @@ import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import { decryptBuffer, freeKiB } from './090-p3-consistent-backup.mjs';
 import { catalogQueries, dataDigestQuery, canonicalSettings, requireRecoveryMetadata } from './090-p3-recovery-queries.mjs';
-import { ATTEMPT, LIVE_STOP_KIB } from './090-p3-resource-policy.mjs';
+import { ATTEMPT, LIVE_STOP_KIB, restoreReceiptNames } from './090-p3-resource-policy.mjs';
 import {restoreDroppedSlots,restoreBetweenForm,publicationSeed} from './090-p3-recovery-seed.mjs';
 import {planAclAdditions} from './090-p3-parity-analysis.mjs';
+import {measureRuntime} from './090-p3-runtime-resources.mjs';
 const RUNTIME_DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m';
 const DIR=process.env.GENOVA_RECOVERY_BACKUP_DIR||RUNTIME_DIR;
 let stage='scope';
+let runtimeOwner;
 const LIMA='/opt/homebrew/bin/limactl',VM='g090p3',CONTAINER='genova090p3-db',DB='genova_090_p3_restore';
 const IMAGE='supabase/postgres@sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00';
 const env={...process.env,LIMA_HOME:'/Volumes/g090p3/lima',LIMA_SHELLENV_BLOCK:'*'};
 const sha=value=>crypto.createHash('sha256').update(value).digest('hex');
+const receipts=restoreReceiptNames();
 export function ident(name){if(!/^[a-z_][a-z_0-9]*$/.test(name))throw Error('Identifier scope refused');return '"'+name+'"';}
 function privateRead(name,dir=DIR){
   const file=path.join(dir,name),stat=fs.lstatSync(file);
@@ -25,8 +28,9 @@ function privateRead(name,dir=DIR){
 }
 function command(args,input){
   if(freeKiB()<LIVE_STOP_KIB)throw Error('Private restore live floor refused');
+  if(runtimeOwner)measureRuntime(runtimeOwner);
   const result=spawnSync(LIMA,['shell',VM,'sudo','docker',...args],{env,input,encoding:'utf8',timeout:120000,maxBuffer:16*1024*1024});
-  if(result.status!==0){fs.writeFileSync(path.join(DIR,'restore-failure.log'),(result.stderr||'')+(result.stdout||''),{flag:'wx',mode:0o600});throw Error('Private offline command failed');}
+  if(result.status!==0){fs.writeFileSync(path.join(DIR,receipts.failure),(result.stderr||'')+(result.stdout||''),{flag:'wx',mode:0o600});throw Error('Private offline command failed');}
   return result.stdout.trim();
 }
 function sql(text,database=DB){return command(['exec','-i','-e','PGPASSWORD=090-synthetic-local-only',CONTAINER,'psql','-X','-Atq','-w','-v','ON_ERROR_STOP=1','-U','supabase_admin','-d',database],text);}
@@ -39,7 +43,7 @@ export function normalize(value){
 function main(){
   const sourceOnly=process.argv[2]==='--verify-source-only';
   if(!/^\/Users\/alidiyarduran\/Documents\/Codex\/2026-10-07\/genova-090-p3-[A-Za-z0-9]+$/.test(DIR))throw Error('Approved private parent refused');
-  if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv.length!==3||(!sourceOnly&&process.argv[2]!=='--restore-approved')||(!sourceOnly&&(fs.existsSync(path.join(DIR,'restore-summary.json'))||fs.existsSync(path.join(DIR,'restore-failure.log')))))throw Error('Root/action/overwrite refused');
+  if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv.length!==3||(!sourceOnly&&process.argv[2]!=='--restore-approved')||(!sourceOnly&&(fs.existsSync(path.join(DIR,receipts.summary))||fs.existsSync(path.join(DIR,receipts.failure)))))throw Error('Root/action/overwrite refused');
   if(fs.lstatSync(DIR).isSymbolicLink()||(fs.statSync(DIR).mode&511)!==448)throw Error('Private directory refused');
   stage='source-metadata';
   const summary=JSON.parse(privateRead('summary.json'));
@@ -59,6 +63,7 @@ function main(){
   stage='runtime-scope';
   const owner=JSON.parse(privateRead('runtime-ownership.json',RUNTIME_DIR));
   if(owner.attempt!==ATTEMPT||owner.limaHome!==env.LIMA_HOME||owner.owner!=='090-P3-only'||freeKiB()<LIVE_STOP_KIB)throw Error('Runtime ownership/floor refused');
+  runtimeOwner=owner;measureRuntime(owner);
   const target=JSON.parse(command(['inspect',CONTAINER]))[0];
   if(target.Config.Image!==IMAGE||target.HostConfig.NetworkMode!=='none'||target.Mounts.length||Object.keys(target.HostConfig.PortBindings||{}).length)throw Error('Private isolation refused');
   if(sql(`select exists(select 1 from pg_database where datname='${DB}');`,'postgres')!=='f')throw Error('Existing database refused');
@@ -121,12 +126,12 @@ create extension supabase_vault with schema vault version '0.3.1';
   }
   const data=json(dataDigestQuery);
   if(JSON.stringify(normalize(data))!==JSON.stringify(normalize(source.data)))differences.data={sourceTables:source.data.length,restoredTables:data.length};
-  const result={recordedAt:new Date().toISOString(),project:summary.project,backupSha256:summary.plaintextSha256,
+  const result={recordedAt:new Date().toISOString(),attempt:ATTEMPT,project:summary.project,backupSha256:summary.plaintextSha256,
     database:DB,network:'none',mounts:0,publishedPorts:0,catalogCounts:counts,dataTables:data.length,
     restoredRows:data.reduce((n,t)=>n+t.rows,0),supportedSeed:seedCounts,aclSupplement:aclPlan.totals,
     originalBackupUnmodified:true,exactComparatorUnchanged:true,differences,status:Object.keys(differences).length?'FIDELITY_FAIL_NOT_ACCEPTED':'CURRENT_STATE_SELECTED_FIDELITY_PASS',
     limits:'Actual isolated logical restore and selected same-snapshot catalog/data equality only. Sequence/non-MVCC/provider/Storage/Vault/config and full Next/Auth/RLS/client/review gates remain separate; no hosted mutation or source fix.'};
-  fs.writeFileSync(path.join(DIR,'restore-summary.json'),JSON.stringify(result,null,2)+'\n',{flag:'wx',mode:0o600});
+  fs.writeFileSync(path.join(DIR,receipts.summary),JSON.stringify(result,null,2)+'\n',{flag:'wx',mode:0o600});
   // Detailed comparisons/digests remain protected; stdout only counts/category names.
   console.log(JSON.stringify({...result,differences:Object.keys(differences)}));
   if(Object.keys(differences).length)process.exitCode=1;

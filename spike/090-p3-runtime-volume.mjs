@@ -8,7 +8,7 @@ const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m'
 const IMAGE=path.join(DIR,'runtime-'+ATTEMPT+'.sparsebundle');
 const MOUNT='/Volumes/g090p3';
 if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv.length!==3||process.argv[2]!=='--create-approved-below-10g')throw Error('Explicit root/action refused');
-if(fs.existsSync(IMAGE)||fs.existsSync(MOUNT)||fs.lstatSync(DIR).isSymbolicLink()||(fs.statSync(DIR).mode&511)!==448)throw Error('Existing/symlink/private target refused');
+if(fs.existsSync(IMAGE)||fs.existsSync(MOUNT)||fs.existsSync(path.join(DIR,'runtime-ownership.json'))||fs.lstatSync(DIR).isSymbolicLink()||(fs.statSync(DIR).mode&511)!==448)throw Error('Existing/symlink/private target refused');
 if(JSON.parse(fs.readFileSync(path.join(DIR,'summary.json'))).project!=='hievmwwctjjlhmssoxsu')throw Error('Backup identity refused');
 const preflight=spawnSync(process.execPath,['spike/090-p3-offline-restore.mjs','--verify-source-only'],{env:{...process.env,GENOVA_RECOVERY_BACKUP_DIR:DIR},encoding:'utf8',timeout:20000,maxBuffer:4096});
 if(preflight.status!==0||JSON.parse(preflight.stdout).status!=='SOURCE_METADATA_COMPLETE_ONLY_RUNTIME_NOT_RUN')throw Error('Complete supported-source preflight refused before allocation');
