@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Readable, Writable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
-import { allowedSchema, verifySnapshot, dumpArgs, ByteGuard, encryptBuffer, decryptBuffer, completedSnapshotLine } from './090-p3-consistent-backup.mjs';
+import { allowedSchema, verifySnapshot, dumpArgs, ByteGuard, encryptBuffer, decryptBuffer, completedSnapshotLine,DUMP_TIMEOUT_MS,SNAPSHOT_READY_MS,SNAPSHOT_IDLE_MS } from './090-p3-consistent-backup.mjs';
 import { snapshotQuery, catalogQueries, dataDigestQuery } from './090-p3-recovery-queries.mjs';
 const valid={database:'postgres',user:'postgres',readOnly:'on',recovery:false,version:'17.6',snapshot:'00000001-00000002-1',
   schemas:['auth','public','realtime','supabase_migrations','genova_005'],data:[{rows:0,sha256:'0'.repeat(64)}],
@@ -28,6 +28,10 @@ test('streaming limit refuses bytes before output, not merely post-export',async
   let received=0;const sink=new Writable({write(chunk,_encoding,done){received+=chunk.length;done();}});
   await assert.rejects(pipeline(Readable.from([Buffer.alloc(2),Buffer.alloc(3)]),new ByteGuard(4),sink),/streaming cap/);
   assert(received<=2);
+});
+test('one measured three-minute dump deadline stays within held snapshot lifetime',()=>{
+  assert.equal(DUMP_TIMEOUT_MS,180000);assert.equal(SNAPSHOT_IDLE_MS,300000);
+  assert(SNAPSHOT_READY_MS+DUMP_TIMEOUT_MS+30000<=SNAPSHOT_IDLE_MS);
 });
 test('authenticated encryption roundtrip rejects corruption and wrong key',()=>{
   const key=Buffer.alloc(32,7),plain=Buffer.from('synthetic private rows'),encrypted=encryptBuffer(plain,key);

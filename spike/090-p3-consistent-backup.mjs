@@ -17,6 +17,11 @@ const PARENT='/Users/alidiyarduran/Documents/Codex/2026-10-07';
 const URL=`postgresql://postgres.${REF}@aws-1-ap-northeast-1.pooler.supabase.com:5432/postgres`;
 const PG='/opt/homebrew/opt/postgresql@17/bin/';
 export const MAX_BYTES=128*1024*1024;
+// Actual9Oct authenticated stream reached1,245,204B before our120s deadline
+// terminated pg_dump. Keep one bounded180s attempt below the300s held idle limit.
+export const DUMP_TIMEOUT_MS=180000;
+export const SNAPSHOT_READY_MS=90000;
+export const SNAPSHOT_IDLE_MS=300000;
 const MAGIC=Buffer.from('G090GCM1');
 export function allowedSchema(name){return ['auth','public','realtime','supabase_migrations','extensions','vault'].includes(name)||/^genova_[0-9]{3}$/.test(name);}
 export function verifySnapshot(value){
@@ -76,16 +81,16 @@ async function main(){
   const password=require('dotenv').parse(fs.readFileSync('.env.local')).SUPABASE_DB_PASSWORD;
   if(!password)throw Error('Existing exact credential missing');
   const env={PATH:process.env.PATH,PGPASSWORD:password,
-    PGOPTIONS:'-c default_transaction_read_only=on -c statement_timeout=60000 -c lock_timeout=5000 -c idle_in_transaction_session_timeout=300000'};
+    PGOPTIONS:`-c default_transaction_read_only=on -c statement_timeout=60000 -c lock_timeout=5000 -c idle_in_transaction_session_timeout=${SNAPSHOT_IDLE_MS}`};
   safeAncestors(PARENT);fs.mkdirSync(PARENT,{recursive:true,mode:0o700});safeAncestors(PARENT);
   const dir=fs.mkdtempSync(path.join(PARENT,'genova-090-p3-'));fs.chmodSync(dir,0o700);
   const key=crypto.randomBytes(32);privateWrite(path.join(dir,'artifact-key.bin'),key);
   const log=fs.openSync(path.join(dir,'export-errors.log'),'wx',0o600);
   const holder=spawn(PG+'psql',['-X','-Atq','-w','-v','ON_ERROR_STOP=1',URL+'?sslmode=require&connect_timeout=10'],{env,stdio:['pipe','pipe',log]});
-  let dump,timer,deadline,monitor,stage='snapshot-read';
+  let dump,timer,deadline,monitor,completion,dumpStopReason,dumpStartedAt,guard,stage='snapshot-read';
   try{
     const ready=new Promise((resolve,reject)=>{
-      let text='';timer=setTimeout(()=>reject(Error('Snapshot deadline')),90000);
+      let text='';timer=setTimeout(()=>reject(Error('Snapshot deadline')),SNAPSHOT_READY_MS);
       holder.on('error',()=>reject(Error('Snapshot spawn refused')));
       holder.on('exit',()=>reject(Error('Snapshot holder ended')));
       holder.stdout.on('data',chunk=>{
@@ -100,13 +105,16 @@ async function main(){
     privateWrite(path.join(dir,'snapshot.json.gcm'),encryptBuffer(Buffer.from(JSON.stringify(snapshot)),key));
     const file=path.join(dir,'database.sql.gcm'),nonce=crypto.randomBytes(12);
     privateWrite(file,Buffer.concat([MAGIC,nonce]));
-    const guard=new ByteGuard(),cipher=crypto.createCipheriv('aes-256-gcm',key,nonce);
-    stage='dump-stream';dump=spawn(PG+'pg_dump',dumpArgs(snapshot),{env,stdio:['ignore','pipe',log]});
-    const exited=new Promise((resolve,reject)=>{dump.on('error',()=>reject(Error('Dump spawn refused')));dump.on('exit',resolve);});
-    deadline=setTimeout(()=>dump.kill('SIGTERM'),120000);
-    monitor=setInterval(()=>{if(freeKiB()<diskFloor||holder.exitCode!==null)dump.kill('SIGTERM');},1000);
+    guard=new ByteGuard();const cipher=crypto.createCipheriv('aes-256-gcm',key,nonce);
+    stage='dump-stream';dumpStartedAt=Date.now();dump=spawn(PG+'pg_dump',dumpArgs(snapshot),{env,stdio:['ignore','pipe',log]});
+    const exited=new Promise((resolve,reject)=>{dump.on('error',()=>reject(Error('Dump spawn refused')));dump.on('exit',(code,signal)=>resolve({code,signal}));});
+    deadline=setTimeout(()=>{dumpStopReason||='DUMP_DEADLINE';dump.kill('SIGTERM');},DUMP_TIMEOUT_MS);
+    monitor=setInterval(()=>{
+      if(freeKiB()<diskFloor){dumpStopReason||='DISK_FLOOR';dump.kill('SIGTERM');}
+      else if(holder.exitCode!==null){dumpStopReason||='SNAPSHOT_HOLDER_ENDED';dump.kill('SIGTERM');}
+    },1000);
     await pipeline(dump.stdout,guard,cipher,fs.createWriteStream(file,{flags:'a',mode:0o600}));
-    const code=await exited;if(code!==0||holder.exitCode!==null||guard.bytes<1000||!guard.tail.includes(Buffer.from('PostgreSQL database dump complete')))throw Error('Dump/held snapshot completion refused');
+    completion=await exited;if(completion.code!==0||holder.exitCode!==null||guard.bytes<1000||!guard.tail.includes(Buffer.from('PostgreSQL database dump complete')))throw Error('Dump/held snapshot completion refused');
     fs.appendFileSync(file,cipher.getAuthTag());
     stage='encryption-verify';const body=fs.readFileSync(file),decoded=decryptBuffer(body,key);
     const plaintextSha256=guard.hash.digest('hex');
@@ -115,6 +123,7 @@ async function main(){
     const summary={recordedAt:new Date().toISOString(),project:REF,cutoff:snapshot.cutoff,
       status:'CONSISTENT_PROTECTED_BACKUP_ONLY_RESTORE_NOT_RUN',directory:dir,
       plaintextBytes:guard.bytes,encryptedBytes:body.length,plaintextSha256,encryptedSha256:crypto.createHash('sha256').update(body).digest('hex'),
+      execution:{dumpElapsedMs:Date.now()-dumpStartedAt,dumpLimitMs:DUMP_TIMEOUT_MS,snapshotIdleLimitMs:SNAPSHOT_IDLE_MS,exitCode:completion.code,signal:completion.signal,stopReason:dumpStopReason||null},
       schemas:snapshot.schemas.length,dataTables:snapshot.data.length,roles:snapshot.catalog.roles.length,memberships:snapshot.catalog.memberships.length,
       encryption:'AES-256-GCM with separately permission-restricted task key in same private directory; not off-site or independent key custody',
       coverage:'Auth/public/genova/migration data; Realtime/Vault/extension definitions; catalog/roles/memberships and per-table canonical JSONB SHA256 under same held snapshot',
@@ -125,7 +134,10 @@ async function main(){
     console.log(JSON.stringify(summary));
   }catch{
     // Stage names only. Raw exceptions/SQL/row details must not become stdout.
-    privateWrite(path.join(dir,'failure.json'),Buffer.from(JSON.stringify({stage,recordedAt:new Date().toISOString(),status:'FAILED_NOT_ACCEPTED'})+'\n'));
+    privateWrite(path.join(dir,'failure.json'),Buffer.from(JSON.stringify({stage,recordedAt:new Date().toISOString(),status:'FAILED_NOT_ACCEPTED',
+      dumpElapsedMs:dumpStartedAt?Date.now()-dumpStartedAt:null,dumpLimitMs:DUMP_TIMEOUT_MS,
+      snapshotIdleLimitMs:SNAPSHOT_IDLE_MS,dumpBytes:guard?.bytes||0,exitCode:completion?.code??null,
+      signal:completion?.signal||null,stopReason:dumpStopReason||null})+'\n'));
     throw Error('Protected export stage failed');
   }finally{
     clearTimeout(timer);clearTimeout(deadline);clearInterval(monitor);
