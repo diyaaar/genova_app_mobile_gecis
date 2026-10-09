@@ -1,10 +1,23 @@
 # Delivery checkpoint — single current execution pointer
 
-Updated 9 October 2026 (Europe/Istanbul). Current product `main/bbc301c`; immutable
+Updated 10 October 2026 (Europe/Istanbul). Current product remains `bbc301c`; helpers `main/d8a313c`; immutable
 P1 entry remains3fb3a2c. This is the moving execution index, not acceptance evidence.
 Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
+
+- **10Oct recovered-state SQL checkpoint PASS / wholeP3OPEN:**
+  [Record](../reports/2026-10-10-p3-recovered-sql-compatibility.md)/
+  [machine receipt](../reports/090/2026-10-10-p3-recovered-sql-compatibility.json).
+  Actualfull17cataloggroups/all101fullrowfingerprints/2880rows BEFORE11exactdeltas;
+  all10SQL suites/realroles/fivefamilies/legacy/dataunchanged PASS. Exacttemplate
+  peer/uncommitted-versusCOMMIT/longtxnexpiry PASS (repertoire-only concurrency).
+  OwnedVM/image/newISOremoved,4.71GiBobserved<6.5GiBscope; protectedsource/private
+  smallerrors kept. Codehelpersd8a313c+pairedrecords/614productpins unchanged.
+  Earlierblocked/pendingcards below nowhistorical for this goal. Full090/P3NO-GO:
+  NEXT managedAuth/REST/current-old browser/mixedcache, measuredagentAndroid+iOS,
+  independentreview. SQLscope notfuturebuild/release authority/default10GiB resumes.
+  No ownerQA/hostedwrite/push/deploy/provideractivation/newJevspend.
 
 - **9Oct goal BLOCKED / INCOMPLETE after three-turn resource audit:** explicit new
   6.5GiBclone resource approval stillabsent. Independent source/packet/046preparation

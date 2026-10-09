@@ -15,6 +15,55 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 9 October owner-approved compatibility clone — resumed full checkpoint
+
+Owner explicitly answers "onaylıyorum zaten sorun yok" to the pending6.5GiB
+temporary disk/new image scoped exception. Original blocked condition removed;
+fresh blocked audit on any new impediment. Entrymain/be21fd2, primary solewriter,
+only CLI marker unrelated/preserved. Existing full goal intact, not new smaller
+source-only completion. Read current handoff/active/cards/controls and actual full
+restore/runtime/resource helpers, exact11packet, completeTypeSafe/Supabase/Postgres
+skills/currentdocs; relevant guide/decisions/MIGRATION from preceding context.
+
+One outcome: same retained9Octheldsource strict selected full catalog+101full-row
+fidelity in exclusive20261009-compatibility full pinned c54image/none0mount0port,
+then only11exactSQL and actual role/tenant/expiry/fivefamily/legacycaller tests.
+At most3actions:1exclusiveattempt receipts/resourcepreflight+strictrestore;
+2exactdelta/test/peer controls without broadgrants/source mutation;3evidence,
+cleanup/acceptanceaudit/separate scopedcommits. Keep original614/P1/P2/published
+SQL/backup/privatehistoricalreceipts unchanged. Add allowlisted attempt selector
+and unique restore receipt names to existing smallhelpers; measured total task
+allocation (VMimage/newISO/receipts) <=6.5GiB with64MiBheadroom and640MiBfree stop.
+Freshfree10,452,908KiB, reserve7,630,848KiB/projected2,822,060KiB; capnot guarantee.
+OneCPU512MiBRAM/oneheavyprocess; no root/native builds or managedAuthsetup in this
+SQL-only scope, no wholepublicreplay/hostedwrite/deploy/push/provider/website/
+realuser/privateAIexport/ownerQA. Existingprivate0700custody unchanged, raw SQL/
+rows/key stayprivate. Existing076objects/otherusercache/AVD/simulatorfiles kept.
+
+| Criterion | Required? | Status | Boundary |
+|---|---|---|---|
+| Exact source/attempt/resource preflight, original receipts protected | yes | PASS |Exclusivecompatibility receipts/policy3tests/pins; original source/history retained |
+| Actual full faithful recovered-state baseline | yes | PASS |Actual17groups/101full fingerprints/2880rows BEFORE11deltas |
+| Exact11SQL and actual tenant/role/expiry/fivefamily/legacy/peer controls | yes | PASS |11applications/10suites/rollbackdata; repertoire-only peer+longtxn, no grant/RLS shortcut |
+| Evidence/cleanup/source and record commits | yes | PASS |d8a313c+pairedrecords; actualVM/image/newISOremoved; self-review only |
+| Full managedAuth/REST/current-old browser/mixedcache/platforms/review | later fullP3 | NOT RUN |Never inferred from SQL-only proof |
+
+Completed continuously after midnight10October: [actual compatibility checkpoint](../reports/2026-10-10-p3-recovered-sql-compatibility.md)
+/[machine proof](../reports/090/2026-10-10-p3-recovered-sql-compatibility.json).
+Source goal fulfilled, not narrower acceptance; full090/P3OPEN/NO-GO.17cataloggroups/
+all101full-row fingerprints matchheld9Octsource,11exactpaths applied,10actualsuites
+pass/aspostgresfixture withrealservice/anon/auth calls; everyrollbackdigestunchanged.
+Peer template allmetadata/data matchbeforetests; committedrevocations/statement-time
+expiry pass (repertoire-only peer), main dataunchanged/peerDBremoved. Firstsocketrace
+provenready+DBabsent/noreset; firstlegacyfixtureadminidentityupdate refused by059,
+correctedexecutor/nottrigger/rolegrants, all10re-run. Privatefailuresretained.
+Observedallocation4,941,344KiB<6.5GiB/640MiBstop; ownVM/image/newISO removed10Oct
+00:11:58Turkey/actualLima0/mountabsent, sourceencryptedbytesunchanged/0700custodykept.
+Aftercleanupfree~9.35GiB/default10GiBfloorresumes; no othercleanup/livewrite/ownerQA/
+Jevcalls($0new). Earlier BLOCKED/PENDING/NOT RUN cards below are dated history,
+superseded for this scoped goal only. NEXT managedAuth/browser/mixedcache/platform/
+review gates remain required and NOT RUN; no release/hosted authority inferred.
+
 ### 9 October compatibility continuation — legacy source and exact recovered-state SQL
 
 Entry main/2b21c36, primary sole writer; CLI marker unrelated/preserved. Read current
