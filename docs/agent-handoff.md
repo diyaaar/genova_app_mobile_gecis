@@ -8,23 +8,27 @@ MIGRATION. English records/Turkish copy; sole writer, verify HEAD/ownership/reso
 
 ## Current outcome — managed current read checkpoint PASS; full P3 OPEN
 
-New continuation BLOCKED/INCOMPLETE afterthirdresourceaudit: [five-family preflight](reports/2026-10-10-p3-managed-five-family-preflight.md)
+New continuation INCOMPLETE / capacity-blocked: [latest five-family report](reports/2026-10-10-p3-managed-five-family-preflight.md)
 and [current090card](briefs/090-private-file-ticket-revocation-contract.md#10-october-continuation--managed-five-family-matrix-resource-approval-pending).
-Entry47917de/onlyCLI marker unrelated. Source-derived effective-grant and HTTP/COMMIT
-matrix prepared; no new runtime. Free7,660,312KiB<10GiB, new6GiB/640MiBstop scoped
-exception asked/PENDING; previous waiver not reused. No web/native build/ownerQA/
-hosted/privateAI export. NEXT owner resource answer→fresh allocation/source guard→
-actual managed all-five matrix. Prior checkpoint remains accepted below, not this goal.
-Lightchecks614/11packet/priorreceipt/200links/diffPASS; freshfree7,600,700KiB,
-full6GiBreserve FAIL; assess narrower5.75GiBguard/fit after approval, neverallocate
-from initial arithmetic. No owned new runtime to clean.
-Light source prepfa32858: unusedfive-route/195minimumrow/finalmatrixcleanup guards,
-8Node/ESLint/priorreceipt PASS,16KiBsource; notwired/notruntimeproof. Approvalstill
-pending/free7,599,184KiB; NEXT remains new authority→freshfit→actual managedmatrix.
-Latestfree7,593,320KiB<10GiB; mount/newattemptimage/files/defaultLima/listeners/
-weboutputsabsent/zero. No livewait/ownedlargecleanup. Same approval absent across
-threegoalturns; no further prep substituted for realAuth/HTTP/COMMIT acceptance.
-Resume only explicit resource answer or sufficient measured capacity→freshpreflight.
+Owner explicitly approved new6GiBmax scope. Entry0ff3d5c/onlyCLI marker unrelated;
+5888MiBcap/fresh7,509,680KiB allocation PASS. ActualVM/provision PASS but full
+pinned image pull resource-stopped at577,440KiBfree; no container/restore/API/matrix.
+Independently Stopped VM; exact failed-pre-restore cleanup12:04:26Turkey removed
+ownedimage/mount/newISO, archivedownership; defaultLima empty. Backup/key/errors
+retained/0700+0600verified. Afterfree6,697,740/later6,859,100KiB<7,368,704preflight.
+Host-pressure cause not baselined; do not call sampled allocation a full peak.
+Preparationcommitdc70ae9;18Node/ESLint/Deno/614/11packet/prior29committedpins/sourcecustody PASS; new
+bootstrap/fixture/transport/matrix unexecuted, review gaps named in report.
+Final backend cleanup wired to newmatrix/lateraudit; failed-download cleanup NOT
+acceptance. Old checkpoint receipts preserved, verify historical helper bytes at
+04b6a6c rather than regenerate from changed worktree. No product/SQL/native changes.
+NEXT measured headroom (recommend10GiBnormalfloor)+host baseline→finish harness
+review/fresh unique attempt→actualfullrestore/allfive/finalaudit/secretcleanup.
+Do not reuse failed20261010-managed-families identity or repeat same download;
+approval already obtained, not missing. No ownerQA/hosted/Jev/privateAI export.
+Capacity/destination question sent; no additional approval or owner mobile QA asked.
+Latestfree4,752,992KiB/~4.53GiB supersedes6.5GiB; hostswapcapacity grew7→9GiB
+with ownedruntime absent. Tenlisteners0. Need actualheadroom, never delete systemswap.
 
 [Accepted checkpoint](reports/2026-10-10-p3-managed-read-compatibility.md)/
 [machine proof](reports/090/2026-10-10-p3-managed-read-compatibility.json), helpers04b6a6c,

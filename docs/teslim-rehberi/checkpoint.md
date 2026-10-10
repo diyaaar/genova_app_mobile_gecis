@@ -6,21 +6,25 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
-- **10Oct next managed five-family goal BLOCKED/INCOMPLETE after third resource audit:**
+- **10Oct managed five-family goal INCOMPLETE / capacity-blocked after actual download stop:**
   [Exact matrix/resource preflight](../reports/2026-10-10-p3-managed-five-family-preflight.md)
   distinguishes real role loss from still-valid ownership/room grants and requires
-  actual all-family HTTP/COMMIT controls. New6GiB/640MiBstop approval PENDING;
-  free7,660,312KiB<default10GiB. No new runtime/download/web/native build/hosted/
-  Jevcall/ownerQA. NEXT answer→fresh preflight→one actual managed matrix.
-  Prior scoped PASS below remains valid; fullP3 and this new goal stay incomplete.
-  Lightweight614/11packet/priorreceipt/200links/diffPASS; newer7,600,700KiB makes
-  full6GiBreserveFAIL. Assess lower5.75GiBfit/guards only after approval/recheck.
-  Sourceprepfa32858 adds unusedfive-route/195minimumrow/newcleanuporder guards;
-  8Node/ESLint/priorreceipt PASS/16KiBsource. Notwired/noruntimeacceptance; new
-  approvalstillpending/free7,599,184KiB. Do notclose goal from guard tests.
-  Latest7,593,320KiB<10GiB/mount/newimage/files/defaultLima/listeners/weboutputs
-  absent/zero. Same approval unanswered for threegoalturns; no livewait/largeowned
-  cleanup. NEXT explicit exception or adequate measured capacity→freshpreflight.
+  actual all-family HTTP/COMMIT controls. Owner6GiBmax approval received; narrower
+  5888MiB/fresh7,509,680KiBpreflight PASS. VM/provision passed, full pinned image
+  pull stopped at577,440KiBfree; no container/restore/API/fixture/matrix started.
+  Independently Stopped VM; failed-pre-restore cleanup12:04:26Turkey removed only
+  ownedimage/mount/newISO, defaultLima empty, protectedbackup/key/errors preserved.
+  Afterfree6,697,740/later6,859,100KiB<7,368,704minimumpreflight. Host-pressure cause
+  unproven; sampledallocation notfullpeak.18Node/ESLint/Deno/614/11packet/custody/
+  historical29committedhelperpins PASS; newharness is unexecuted preparation with
+  review gaps, not runtime acceptance. Historical checkpoint/P1/P2 unchanged.
+  NEXT measured headroom (recommend10GiBnormalfloor)+hostbaseline→harnessreview/
+  freshuniqueattempt→actualallfive/finalaudit/secretcleanup. No identical download
+  repeat, failedidentityreuse, ownerQA/hosted/native/Jev/privateexport. Approval no
+  longer missing; fullgoal/P3 remain incomplete. Failure cleanup is not acceptance.
+  Preparationdc70ae9; capacity/destination question sent, not owner test assignment.
+  Latestfree4,752,992KiB/~4.53GiB supersedes6.5GiB; hostswapcapacity7→9GiB with
+  taskruntime absent/tenlisteners0. No systemswap deletion; obtain actualheadroom.
 
 - **10Oct supported-current managed read checkpoint PASS / fullP3OPEN:**
   [Record](../reports/2026-10-10-p3-managed-read-compatibility.md)/

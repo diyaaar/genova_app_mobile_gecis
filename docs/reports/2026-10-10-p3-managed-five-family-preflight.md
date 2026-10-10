@@ -1,6 +1,82 @@
 # P3 managed five-family continuation — preflight, not runtime acceptance
 
-Latest10October: **BLOCKED / INCOMPLETE after third consecutive resource audit**.
+## Latest continuation — approval received; download aborted, owned cleanup verified
+
+Owner's direct **"onay veriyorum devam et"** accepted the pending maximum6GiB
+local-only scope. This is no longer an approval blocker. Entry `main/0ff3d5c`;
+only the unrelated CLI marker is excluded from our changes. The narrower5888MiB
+cap and fresh reserve passed before allocation: free7,509,680KiB, reserve6,844,416KiB,
+projected665,264KiB. No Next/native builds, hosted actions, real accounts or AI export.
+
+Actual attempt `20261010-managed-families`: VM start and Docker provision succeeded.
+The full pinned PostgreSQL image download was **aborted by the live disk guard**:
+receipt06:57:43UTC reports577,440KiB free, resourceStop=true, null child exit code.
+That is below640MiB stop and above512MiB emergency at that observation, NOT a
+continuous minimum guarantee. Last successful sampled task allocation4,576,220KiB
+is a lower bound, not a complete peak: later pre-cleanup image+newISO measured
+4,792,740KiB. Do not infer that the5.75GiB task cap was exceeded or that task bytes
+alone explain all filesystem pressure. Provision had already dropped free space
+by more than its sampled owned allocation; host/system/other-app consumption was
+not baselined. Post-stop free later rebounded, and macOS reported6,801.56MiB swap
+used; **swap causation is unproven without a pre-run baseline**.
+
+The VM was independently observed Stopped. A new failure-only cleanup gate requires
+the exact stopped/resource-aborted pre-restore attempt and rejects any container,
+restore or managed-service receipt. It removed only this image/mount/newISO,
+archived ownership and retained small private errors, encrypted backup and key.
+Cleanup09:04:26UTC /12:04:26Turkey; image/mount/newISO/liveowner absent, default
+Lima inventory empty, protected custody0700/key+ciphertext0600 verified afterward.
+Measured free6,697,740KiB afterward; a later observation6,859,100KiB remains below
+the7,368,704KiB minimum allocation preflight. No database container, restore, managed
+Auth/REST, fixture, matrix or final invariant audit was started in this attempt.
+
+**Goal INCOMPLETE; runtime continuation is capacity-blocked, not permission-blocked.**
+Do not repeat the failed download or reuse its identity. Before another environment:
+re-establish measured headroom (recommend restoring the normal10GiB available floor
+because the narrower estimate failed), account for host-side pressure, approve any
+different custody/destination, then introduce one fresh exact attempt throughout all
+guards/receipts. Existing maximum6GiB scope is retained, not enlarged automatically.
+
+Prepared new bootstrap/transport/nine-file fixture/195-row matrix are **unexecuted
+source preparation** (`dc70ae9`), not ready/accepted runtime proof. Its producer
+deliberately emits only `ACTUAL_FIVE_FAMILY_CORE_MATRIX_PASS_ACCEPTANCE_GAPS_OPEN`,
+which the full cleanup acceptance guard rejects; source preparation cannot quietly
+close the missing checks. Before the next actual run,
+finish review of retained-ticket lifetime across long phases, explicit repertoire
+audio and hidden own-review controls, honest in-flight stream boundary evidence,
+awaited transport child shutdown and five-family ephemeral-secret cleanup. The final
+backend cleanup now requires the fully written new matrix-v1 and later17-group audit;
+it cannot use the prior browser receipt. These preparation gaps are not product bugs
+or excuses to waive any required criterion. No synthetic accounts/TLS/config for this
+attempt exist to clean, because the download failed first.
+
+Focused verification:18Node tests (9matrix/cleanup guards,6resource/identity guards,
+3immutable-packet checks), scoped ESLint(no-ignore), cached Deno bootstrap typecheck,
+immutable614-source and exact11-SQL packet verification PASS. The previous checkpoint's
+29helper pins match their exact committed `04b6a6c` bytes; the historical JSON was
+not regenerated from the now-changed helpers. Source-only backup validation PASS,
+not recovery proof. Product/SQL/native/P1/P2 are unchanged. Final document links,
+secret-shaped-content scan and diff checks accompany the checkpoint commits.
+New Jev calls0 / cost$0; no private export. Supabase/TypeSafe skills retain deterministic
+authority/runtime boundaries; current Auth session documentation reviewed, no dependency
+upgrade or schema/grant change. [Machine resource record](090/2026-10-10-p3-managed-five-family-resource-stop.json).
+Owner asked for the missing capacity/destination choice (approximately10GiB local
+available space or an explicitly named alternate location), NOT another approval
+for the already-approved scope and NOT manual mobile QA. No new destination used.
+Final346local links across6records/diff and24owned-artifact secret-shape scan PASS.
+**Latest post-cleanup observation supersedes the6.5GiB estimate:** free4,752,992KiB
+(~4.53GiB), even though all owned runtime/listeners are absent. Between post-cleanup
+checks macOS swap capacity grew from7168MiB/used6801.56MiB to9216MiB/used8392.88MiB;
+the shared APFS VM volume reported9,442,660KiB used. This is concrete host-side
+pressure outside the deleted task image; it does not retrospectively prove the
+cause of the earlier pull stop. Do not delete system swap or close unrelated apps
+without scope. Approximately5.5GiB additional available space would restore the
+normal10GiB floor at this latest observation; the resource question still asks for
+actual capacity/location, not more permission. Ten scoped listeners verified absent.
+
+## Historical pre-approval third resource audit — superseded only for current blocker
+
+Earlier10October: **BLOCKED / INCOMPLETE after third consecutive resource audit**.
 Pending new resource exception is still unanswered; automatic goal continuation
 is not permission. Initial plan/verification and next-turn source/tests were actual
 progress, not full acceptance. This third turn only revalidates the same blocker.
@@ -106,10 +182,11 @@ honestly; do not claim offline revocation or retroactive stream cancellation.
 | Criterion | Required | Status | Evidence / limitation |
 |---|---|---|---|
 | Prior checkpoint and source/ownership verification | yes | PASS | Existing manifest/packet/evidence verification; no new runtime claim |
-| New scoped disk exception and fresh allocation preflight | yes | NOT RUN | Explicit question pending; no runtime/download/build started |
+| New scoped disk exception and fresh allocation preflight | yes | PASS | Owner approved;5888MiB/fresh measured reserve passed before this attempt |
+| Full pinned runtime preparation within live resource guard | yes | FAIL | Download resource-stop; owned failed environment cleaned, no restore |
 | Actual five-family managed allow/deny + independent grants | yes | NOT RUN | Source-derived matrix only |
 | Actual all-family HTTP/COMMIT and session lifetime controls | yes | NOT RUN | Previous one-family/SQL proofs do not satisfy this row |
-| Final audit after matrix, bounded cleanup and evidence | yes | NOT RUN | No new generated environment exists |
+| Final audit after matrix, bounded cleanup and evidence | yes | NOT RUN | Failure cleanup PASS is not a post-matrix final audit/acceptance |
 | Current native platforms / independent review / hosted release | later full P3 | NOT RUN | No promotion from this preparation |
 
 Current lightweight checks: immutable614source, exact11packet and previous managed

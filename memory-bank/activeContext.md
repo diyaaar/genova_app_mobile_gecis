@@ -7,22 +7,25 @@ English records/Turkish updates, sole writer; check ownership/permissions/resour
 
 ## Current measurable outcome
 
-New five-family continuation BLOCKED/INCOMPLETE afterthirdresourceaudit: [preflight/matrix](../docs/reports/2026-10-10-p3-managed-five-family-preflight.md)
+New five-family continuation INCOMPLETE / capacity-blocked: [latest report](../docs/reports/2026-10-10-p3-managed-five-family-preflight.md)
 and [090card](../docs/briefs/090-private-file-ticket-revocation-contract.md#10-october-continuation--managed-five-family-matrix-resource-approval-pending).
-Actual effective-grant/role/member/session/HTTP-COMMIT required; no new runtime proof.
-Entry47917de/CLI marker unrelated. Free7,660,312KiB<10GiB; new6GiB/640MiBstop
-resource exception asked/PENDING. No environment/download/build/ownerQA/Jevcall/
-hosted/export started. NEXT resource answer→fresh preflight→actual allfive matrix.
-Previous scoped managed checkpoint remains complete below, not this new goal/P3.
-Lightchecks614/11packet/priorreceipt/200links/diffPASS; remeasured7,600,700KiB,
-full6GiBreserveFAIL. Lower5.75GiBestimate notruntimeproof; guard+freshfit after
-approval required. No new runtime or large outputs to remove.
-Sourceprepfa32858 unusedfive-route/195minimumdecisionrows/newcleanuporder guards:
-8Node/ESLint/priorreceiptverify PASS/16KiBsource. Notwired/nomatrixruntimeproof;
-approvalstillabsent/free7,599,184KiB. Full goal remainsACTIVE/INCOMPLETE.
-Latestthirdgoalturn sameapprovalabsent/free7,593,320KiB<10GiB; ownmount/newimage/
-newfiles/defaultLima/listeners/weboutputsabsent/zero. No verifiedlivewait/safeowned
-largecleanup; actualmatrixNOTRUN. GoalBLOCKED, previousACTIVEtexthistorical.
+Ownernew6GiBmax approval received; entry0ff3d5c/CLI marker unrelated. Narrow5888MiB
+cap/fresh7,509,680KiBpreflight PASS; actualVM/provision PASS, fullimage download
+resource-stopped at577,440KiBfree. No container/restore/AuthREST/fixture/matrix.
+Stopped VM independently observed; owned failed-pre-restore cleanup12:04:26Turkey
+removed image/mount/newISO/liveowner, defaultLima empty, backup/key/errors retained
+and permissionsverified. Afterfree6,697,740/later6,859,100KiB below7,368,704preflight.
+Host-side pressure unattributed; sampled allocation notfullpeak.18Node/ESLint/Deno/
+614/11packet/sourcecustody/historical29committedhelperpins PASS, notnewruntimeproof.
+Unexecuted newharness/reviewgaps explicitly recorded; cleanup guards reject old
+receipts and failed identity reuse. Historical checkpoint04b6a6c unchanged.
+NEXT measured capacity (recommend10GiBnormalfloor)+hostbaseline→harnessreview/
+freshuniqueattempt→actualallfive/finalaudit/secretcleanup. Do not repeat failed
+download, ask for already-granted approval, waive checks or substitute sourceprep.
+No product/SQL/native/hosted/ownerQA/Jev/privateexport. Fullgoal/P3 OPEN.
+Preparationdc70ae9; capacity/destination choice asked, not renewed scope permission.
+Latestfree4,752,992KiB/~4.53GiB/tenlisteners0; macOSswapcapacity7→9GiB while task
+runtime absent. This supersedes6.5GiB estimate; no systemswap/globalcleanup authority.
 
 [Managed current-read checkpoint](../docs/reports/2026-10-10-p3-managed-read-compatibility.md)
 PASS/[proof](../docs/reports/090/2026-10-10-p3-managed-read-compatibility.json),

@@ -1,5 +1,14 @@
 # İlerleme indeksi
 
+10 October — [090 five-family resource-stop checkpoint](../docs/reports/2026-10-10-p3-managed-five-family-preflight.md).
+Owner6GiBmax approval received;5888MiB/freshreserve passed, actualVM/provision succeeded,
+full image pull hit disk guard before restore/API. Exact failed-runtime cleanup verified;
+backup/key/privateerrors retained, free~6.4GiB then~6.5GiB below fresh allocation gate.
+18focusedNode/ESLint/Deno/614/11packet/prior29committedpins/custody PASS, no new
+matrix/runtime acceptance. Source harness provisional/reviewgaps retained; goal/P3 OPEN.
+NEXT measured headroom/hostbaseline→freshuniqueattempt and harnessreview→actualmatrix.
+No product/hosted/native/ownerQA/Jevcall/privateexport. Historical checkpoints unchanged.
+
 2 October — [090 approved local legacy implementation](../docs/reports/2026-10-02-legacy-reader-local-implementation.md),
 sourcefe8cd19: renewed owner scope supersedes the old missing-approval blocker. Service-only
 current actor/session/choir/resource/alias SQL, sixth legacy Edge reader, fixed-origin Next adapters,

@@ -17,6 +17,33 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ### 10 October continuation — managed five-family matrix, resource approval pending
 
+LATEST12:04Turkey: owner approval received; the heading and earlier pending/audit
+paragraphs below are historical. New5888MiB attempt passed fresh allocation but
+the full pinned image download hit640MiB live stop (577,440KiB observed, no restore).
+VM independently Stopped; exact failed-pre-restore cleanup removed owned image/
+mount/newISO at09:04:26UTC, protected backup/key and private errors retained.
+Aftercleanup6,697,740KiB/later6,859,100KiB below7,368,704KiB minimum preflight.
+Fullgoal INCOMPLETE, current blocker capacity NOT missing approval.18focusedNode/
+ESLint/Deno/614/11packet/historical29committedpins/sourcecustody PASS, NOT runtime.
+New transport/fixtures/matrix are unexecuted preparation with named remaining
+review items in [latest report](../reports/2026-10-10-p3-managed-five-family-preflight.md).
+NEXT recover measured headroom/host-pressure baseline→fresh unique exactattempt
+and finish harness review→actual restored five-family matrix/finalaudit/cleanup.
+Do not repeat identical failed download, reuse receipts, assign owner QA or waive
+required checks. No hosted/native/Jev/private export; unrelated CLI marker preserved.
+Latestpostcleanupfree4,752,992KiB/~4.53GiB supersedes earlier6.5GiB; hostswap
+capacity grew7→9GiB while ownedruntime/listeners absent. See latestreport; no system
+swap/globalcache deletion. Existing approval retained, actualcapacity choice pending.
+
+OWNER RESUME10Oct: direct "onay veriyorum devam et" accepts pending new6GiBmax
+local-only resource scope/640MiBstop/cleanup, not hosted/native/privateAI authority.
+Original full goal resumes; blocked audit below historical. Freshfree7,523,264KiB;
+use stricter5.75GiBcap (5888MiB), reserve6,844,416KiB/projected678,848KiB>512MiB.
+Exact20261010-managed-families receipts/noNext/nativebuild. Guard tested before
+allocation; continue exactfullrestore→11deltas→realAuthREST/allfiveHTTP/COMMIT→
+final17audit completelyfinished→cleanup. Preserve prior helper receipts as dated
+committed evidence; new helper revision does not overwrite them. One heavy process.
+
 THIRD RESOURCE AUDIT EXIT: goal BLOCKED/INCOMPLETE, not accepted. The same new
 resource exception remains unanswered across the initial continuation and two
 automatic goal continuations. Previous turn made actual source/guard-test progress;

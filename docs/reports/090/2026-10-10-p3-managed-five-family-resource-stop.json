@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-10",
+  "attempt": "20261010-managed-families",
+  "status": "INCOMPLETE_RESOURCE_STOP_BEFORE_RESTORE",
+  "preparationHelperCommit": "dc70ae9",
+  "ownerScope": {
+    "approved": true,
+    "maximumMiB": 6144,
+    "selectedCapMiB": 5888,
+    "localOnly": true,
+    "liveStopKiB": 655360,
+    "emergencyFloorKiB": 524288
+  },
+  "allocation": {
+    "status": "PASS",
+    "sourceFreeKiB": 7509680,
+    "reserveKiB": 6844416,
+    "projectedFreeKiB": 665264,
+    "minimumPreflightFreeKiB": 7368704
+  },
+  "pull": {
+    "recordedAt": "2026-10-10T06:57:43.692Z",
+    "action": "pull-classic",
+    "resourceStop": true,
+    "exitCode": null,
+    "freeKiB": 577440,
+    "lastSuccessfulSampleAllocatedKiB": 4576220,
+    "fullPeakEstablished": false,
+    "preCleanupImageAndNewIsoAllocatedKiB": 4792740,
+    "causeBoundary": "Filesystem free-space threshold crossed. Unattributed host/system pressure was not baselined; swap causation is not established."
+  },
+  "cleanup": {
+    "recordedAt": "2026-10-10T09:04:26.232Z",
+    "status": "OWNED_FAILED_PRE_RESTORE_RUNTIME_REMOVED",
+    "stoppedVmIndependentlyObserved": true,
+    "imageMountNewIsoAndLiveOwnerAbsent": true,
+    "defaultLimaInventoryEmpty": true,
+    "protectedBackupKeyAndPrivateErrorsRetained": true,
+    "custodyPermissionsVerified": true,
+    "freeAfterCleanupKiB": 6697740,
+    "laterFreeKiB": 6859100,
+    "latestFreeKiB": 4752992,
+    "ownedScopedListeners": 0,
+    "hostSwap": {"earlierCapacityMiB": 7168, "earlierUsedMiB": 6801.56, "laterCapacityMiB": 9216, "laterUsedMiB": 8392.88, "earlierPullCausationEstablished": false},
+    "postMatrixAcceptanceClaimed": false,
+    "globalCachesOrUserDataDeleted": false
+  },
+  "checks": {
+    "focusedNodeTests": 18,
+    "focusedNodeStatus": "PASS",
+    "scopedEslint": "PASS",
+    "cachedDenoBootstrapTypecheck": "PASS",
+    "immutableSourcePins": 614,
+    "exactSqlPacketSteps": 11,
+    "historicalHelperCommit": "04b6a6c49bd15ccf0b5d1883917253e7fa2d8731",
+    "historicalCommittedHelperPinsVerified": 29,
+    "sourceOnlyBackupValidation": "PASS_NOT_RECOVERY_PROOF"
+  },
+  "requiredRuntime": {
+    "restore": "NOT RUN",
+    "managedAuthRest": "NOT RUN",
+    "fiveFamilyMatrix": "NOT RUN",
+    "minimumDecisionRowsRequired": 195,
+    "minimumDecisionRowsExecuted": 0,
+    "postMatrixFinalInvariantAudit": "NOT RUN"
+  },
+  "next": "Restore measured capacity and host-pressure headroom; finish unexecuted harness review and use a fresh unique exact attempt. Do not retry the failed identity or substitute source-only checks for runtime acceptance.",
+  "jev": {"newCalls": 0, "newCostUsd": 0, "privateExport": false},
+  "boundary": "No product source, hosted DB, provider, accounts, native builds, distribution or owner manual QA changed. Full goal and P3 remain incomplete."
+}
