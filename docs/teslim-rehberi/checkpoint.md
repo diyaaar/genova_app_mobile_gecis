@@ -1,10 +1,43 @@
 # Delivery checkpoint — single current execution pointer
 
-Updated 10 October 2026 (Europe/Istanbul). Current product remains `bbc301c`; helpers `main/d8a313c`; immutable
+Updated 10 October 2026 (Europe/Istanbul). Current product remains `bbc301c`; helpers `main/04b6a6c`; immutable
 P1 entry remains3fb3a2c. This is the moving execution index, not acceptance evidence.
 Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
+
+- **10Oct supported-current managed read checkpoint PASS / fullP3OPEN:**
+  [Record](../reports/2026-10-10-p3-managed-read-compatibility.md)/
+  [machine proof](../reports/090/2026-10-10-p3-managed-read-compatibility.json).
+  Freshfull17catalog/all101full-row fingerprints/2880before11exactSQL PASS;
+  actualGoTrue2.196/PostgREST14.13/currentDenoEdge/Next/genuinebrowser12PASS,
+  B/GETHEAD403/provider0/logout/independentB/authorizedoffline/401renewal.
+  Final17catalog/source audit AFTER browser PASS, gatedcleanup09:15:34Turkey,
+  observed5.67GiB<6cap; VM/images/newISO/weboutputs/10ephemeralsecrets removed.
+  Oldsource signed v8 security9PASS separately retained; owner#36 says oldappweb
+  unused, so featurebackcompat work retired (not measuredtraffic, FAILnotPASS).
+  Initial prematurecleanup/audit failure privatelyretained, fixedonlybyfreshfull
+  recheck + chronological guard.12guards/ESLint/Deno/614/11packet/diff PASS;
+  product/SQL/native/P1P2 unchanged, no ownerQA/hosted/push/Jevspend/privateexport.
+  NEXT ONE: actual managed allfivefamily role/member/session/concurrency matrix,
+  then currentAndroid+iOS/independent review/current-client-first authorizedrollout.
+  Default resources outside this completed rehearsal resume; dated ACTIVE/progress
+  bullets below are superseded for this scoped goal, not for fullP3.
+
+- **10Oct real managed read goal ACTIVE (newly approved scope):**
+  [Current090card](../briefs/090-private-file-ticket-revocation-contract.md#10-october-real-authrest-and-old-current-browser--approved-first-read-flow).
+  New20261010-managed-web full restore17groups/101fullrowdigests/2880rows PASS
+  BEFORE exact11SQL; realGoTrue2.196/PostgREST14.13 startup/data/schema unchanged,
+  actualpassword/choirRPC/catalogueRLS/logout PASS. Exact614source/old394/current459
+  sourcecopy + all855old dependency pins match; both actual Next production builds
+  PASS. Real current browser login/PDF/audio/range/authorizedoffline PASS; renewal
+  observation being corrected to issuance POST metric, not legitimate HEAD/GET.
+  Current/old choir-change/retainedURL/logout/cache acceptance still in progress.
+  Owner6.5GiB total/640MiBstop explicitly includes realAPI+twowebbuilds; no hosted/
+  realaccounts/nativebuild/ownerQA/privateAI export. OwnliveVM+API/TLS/Edge under
+  bounded monitor; cleanup after final dependent read. TLSCA-as-leaf rejected by
+  actual Deno; separate trustedCA/nonCAleaf fixes transport, no TLS bypass.
+  Historical prior SQLgoal COMPLETE below does not close this new goal or P3.
 
 - **10Oct recovered-state SQL checkpoint PASS / wholeP3OPEN:**
   [Record](../reports/2026-10-10-p3-recovered-sql-compatibility.md)/

@@ -7,6 +7,35 @@ English records/Turkish updates, sole writer; check ownership/permissions/resour
 
 ## Current measurable outcome
 
+[Managed current-read checkpoint](../docs/reports/2026-10-10-p3-managed-read-compatibility.md)
+PASS/[proof](../docs/reports/090/2026-10-10-p3-managed-read-compatibility.json),
+helpers04b6a6c/productbbc301c/614/P1/P2 unchanged. Fresh6GiBattempt full17+101/2880
+before11SQL + actualGoTrue/PostgREST/currentDeno/Next/browser12PASS. Current
+offline/401renewal/B URLGETHEAD403/provider0/logout/independentB PASS. Final17
+catalog/source audit FULLYFINISHED after browser, then gatedcleanup09:15:34Turkey;
+VM/images/newISO/weboutputs/10ephemeralsecrets gone, observed5.67GiB<6cap/Lima0.
+Backup/key/privateerrors kept/rootdeps/CLI marker/globalcaches/userdata preserved.
+Original prematurecleanup/audit FAIL retained; fresh complete recheck resolves
+it, no waiver/selfscore. Old signedv8 URLsecurity9PASS separately retained;
+owner36 reportsunusedoldappweb—feature support retired, R2-only/offline FAIL
+notrelabeledPASS/not measuredtraffic.12guards/ESLint/Deno/614/11packet/diffPASS.
+Scopedgoal closes after records; fullP3OPEN. No ownerQA/hosted/push/Jevcall/export.
+
+### Earlier in-turn progress — superseded above
+
+New real managed protected-read goal ACTIVE, not prior SQLgoal COMPLETE. Owner
+explicit new6.5GiBtotal scope includes realGoTrue/PostgREST + old/currentwebbuilds,
+640MiBstop/cleanup/no hosted/realaccount/nativebuild. 20261010-managed-web owned
+VM/API/TLS/actualEdge currently live under monitor. Strictfull17+101/2880rows
+BEFORE11SQL PASS; realAPI startup schema/data unchanged, genuinepassword/
+choirRPC/catalogueRLS/logout PASS. Exact614/old394/current459/all855old dependency
+pins match; both production builds PASS. Current browser actuallogin/PDF/WAV/
+range/offline PASS; issuance renewal/old-current cache/switch/URL/logout still
+being accepted. DenoTLS requires separateCA/nonCAleaf; fixed without TLS bypass.
+Cleanup follows last dependent check; current090card controls, no owner manualQA.
+
+### Previous recovered SQL goal — complete, retained history
+
 [Recovered-state SQL checkpoint](../docs/reports/2026-10-10-p3-recovered-sql-compatibility.md)
 PASS/helpersd8a313c+[machine proof](../docs/reports/090/2026-10-10-p3-recovered-sql-compatibility.json).
 Owner6.5GiBapproval removed oldblock; original full scopedgoal fulfilled, not
@@ -23,9 +52,10 @@ No managedAuth/REST/HTTP/browserbuild/mixedcache/platform/release proof inferred
 
 ## Next single action
 
-Measured compatible current-old browser/managedAuth/REST protected-read/cache/
-mixed-client acceptance on exactsources, then agent-owned currentAndroid+iOS and
-independentreview. SQL-onlyscope notfuturelargebuild/liveauthority. No ownerQA/
+Actual managed allfivefamily read/revocation/role/member/session/concurrency
+acceptance on exactsources, then agent-owned currentAndroid+iOS and independent
+review/current-client-first authorizedrollout. Owner36 retires oldapp webfeature
+compatibility, not security. Completed scope notfuturelargebuild/liveauthority. No ownerQA/
 hostedwrite/Edge/web/push/provider/distribution. No unchangedrestore/re-export or
 another source-only acceptance. [Checkpoint](../docs/teslim-rehberi/checkpoint.md).
 

@@ -30,6 +30,12 @@ this is a scoped execution exception, not fresh restore proof or global cleanup 
 |---|---|---|---|
 | 35 | **Use a protected fresh current-state snapshot and isolated restore rather than unavailable historical applied SQL text equality** | Owner explicitly accepts the current-backup method and asks to resume. The15NULLhistorical statements stay UNAVAILABLE; never manufacture them or edit the ledger. Replacement evidence remains required: snapshot provenance/consistent cutoff, actual isolated restore schema/owner/grant/RLS/role/trigger/publication and data equality, and exact future-delta source/application records. Approval of method is not proof of execution or live restore/migration/deploy/distribution authority. Security negatives and independent review remain mandatory. [7October record](docs/reports/2026-10-07-p3-current-state-evidence-method.md). | 7 Oct 2026 |
 
+## Legacy application web support — 10 October 2026
+
+| # | Decision | Rationale / boundary | Date |
+|---|---|---|---|
+| 36 | **Do not extend the unused legacy application web client to support new private-storage feature flows** | Owner reports that the old application web version is not currently used. This is owner product direction, not measured traffic/session proof. Preserve reproduced old R2-only catalogue/offline failures as historical unsupported-client results, not PASS. Keep current-client tests and actual issued-URL replay/tenant/sign-out security; activate the supported current client before private-storage rollout. This does not authorize a hosted deployment, provider activation, deletion or changes to the detached sibling website. | 10 Oct 2026 |
+
 ## Private-file online revocation — 30 September 2026
 
 | # | Decision | Rationale / boundary | Date |

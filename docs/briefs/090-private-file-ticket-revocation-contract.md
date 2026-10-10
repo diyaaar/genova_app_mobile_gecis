@@ -15,6 +15,121 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 10 October real Auth/REST and old-current browser — approved first read flow
+
+FINAL EXIT: [actual managed checkpoint](../reports/2026-10-10-p3-managed-read-compatibility.md)
+and [machine proof](../reports/090/2026-10-10-p3-managed-read-compatibility.json),
+helpers04b6a6c. Fresh20261010-managed-final full17+101/2880before11SQL, actual
+GoTrue/PostgREST startup unchanged, genuine current production browser all12
+positive/security observations PASS, final17catalog/source audit FINISHED after
+browser, gatedcleanup PASS. Observed5,948,276KiB<6GiBcap; VM/images/newISO/weboutputs/
+10ephemeral artifacts removed. Existing old signed v8 security9PASS retained;
+old R2-only/offline feature FAIL unsupported by owner#36, never relabeled PASS.
+Initial teardown/audit race retained as FAILED, superseded only by fresh completed
+acceptance—not by old-policy retirement.12guards/ESLint/Deno/614/11packet/diff PASS.
+Scoped goal closes after paired record commit; full090/P3/storage/beta/stores OPEN.
+No hostedwrite/push/realaccounts/ownerQA/Jevcall/privateAI export. NEXT allfivefamily
+managed role/member/session/concurrency proof, then matched currentAndroid+iOS/
+independentreview/authorized current-client-first rollout. Following progress text
+is chronological and does not override this final exit.
+
+Owner clarification10Oct: old application web is currently unused (direct reply,
+not verified traffic telemetry). Retire old-web FEATURE compatibility work; keep
+the actual failed R2-only visibility/offline transition records, not PASS labels.
+Old issued-URL/tenant/sign-out security remains required and actually passed in
+signed-provider v8; siblingwebsite scope remains separate/nochanges. Current
+client must be activated before private-storage rollout. No hosted permission.
+
+Current browser v9 actualfull Auth→A→PDF/WAV/range/offline→expiredHMAC401 bounded
+issuance→B/GETHEAD403/provider0→logout/403 and independentB denial passed. However,
+the agent started teardown while finalcatalogv2 was still running. That audit
+failed after backend shutdown; preserve error, do NOT call goal complete. Earlier
+post-test17catalog/source pass is before final signed v8/v9, not their final audit.
+Both source builds, VM/images/newISO and13ephemeralsecrets removed; backup/history
+kept. Initial6.5GiBcountedpeak6,496,908KiB; finalacceptedprofiles counted explicitly.
+
+Next bounded remedy stays inside owner6.5GiBmaximum: exact newattempt
+20261010-managed-final, stricter6.0GiBtotal cap/640MiBstop, full SAME c54PG restore
+and exact11SQL/realAuthREST/currentEdge/currentNext/browser, then final17catalog
+comparison FULLY FINISHES before cleanup. Old394source/dependency identity checked
+but no oldbuild repeated; its unchanged v8 security proof kept separately. This
+reduces resource usage, not restore/authority/current-browser acceptance. Observed
+previous currentbuild~5.75GiB + accountedChrome~64MiB supports estimate only.
+Fresh6.0GiBpreflightfree7,808,888KiB, reserve7,106,560/projected702,328KiB PASS.
+Actual fit still monitored; no automatic cap raise/global cleanup. New cleanup
+requires final audit timestamp AFTER completed browser receipt mtimes;4negative/
+positive cleanup-order +4network-isolation +3resource tests PASS. No final goal/
+P3 completion from original cleanup race or retired-old-client policy alone.
+
+Entrymain/671dbdb, solewriter, CLI marker unrelated/preserved. Owner explicitly
+approves new6.5GiBscope for real local session/API plus old/currentwebbuilds and
+temporary10GiBfloor waiver/640MiBstop/cleanup. SQL-onlyscope alreadycompleted,
+not retroactively broadened. Read handoff/active/currentcards/controls and relevant
+transitionguide/workcycle/decisions/MIGRATION, completeTypeSafe/Supabase/Postgres
+skills/currentdocs. Existing real-browser090harness mocksAuth/REST/authority; old
+086/090runners strip schema/ACL or add grants. Do not reuse those as managed proof.
+
+One measurable goal: genuine synthetic-account localAuth→choirA→catalogue→PDF/WAV
+→choirB→retainedURLGET/HEADdenial/provider0→logout, current and served-old browser
+source, boundedrenewal/cache transition. Record old-open downloaded/buffered-byte
+limitation; no silent acceptance of existingclient FAIL. No browserAuth/REST/RPC
+fulfill/mock or synthetic userJWT; genuineGoTrue sessions and realPostgREST/RLS.
+Only object bytes are synthetic signedloopback transport; local trusted ingress
+is transport only, not productionEdgegateway/native proof. Preserve full614/P1/P2/
+SQL and retained source; fullfivefamilyexpansion/platforms/independentreviewlater.
+
+At most3actions:1exactsource/version/resource/strictfullrestore+11deltas and local
+Auth/RESThealth with original-schema/data drift detection;2current/oldweb flow
+and negative auth/cache/URLcontrols;3exactevidence/cleanup/scopedcommits/handoff.
+Allowed spike090scopedruntime/auth/webfixtures/source-preflight helpers plus this
+card/currentpointers/report. Any productfix must first reproduce, be narrow, retain
+fresh pnpmcheck/affectedserver/browser gates and separate source/docscommits.
+No provideractivation/hostedDB/Edge/web/push/realaccount/email/website/ownerQA/
+privateAIexport. No new hostSDK/dependencies/nativebuild; only pinned local images.
+
+Resource estimate: observed previousfullVM4.71GiB + existing sourcecopy<8MiB /
+twoweboutput allowances + Auth/REST compressedmetadata~172MiB (NOT physicalsize).
+Total6.5GiBhard task cap includes VM/newISO/source/weboutputs/receipts; phase
+estimates and guard before each allocation, stop if expanded images/build cannot
+fit, no assumption or automatic cap increase. Freshfree9,190,844KiB, reserve
+7,630,848/projected1,559,996KiB; oneCPU/1GiBRAM/oneheavyprocess. Newattempt
+20261010-managed-web, sameprivate0700custody, exclusive receipts/nooverwrite.
+No runtime started before fresh ownership/source guards; only read-only registry
+ARM64metadata fetched. CurrentCLI2.107 embedsGoTrue2.190 but cachedprojectmetadata
+2.196; pin2.196candidate and inspect actual schema version drift, no blindCLIstart.
+PostgREST14.13pinned; installedDeno2.9.6 cached-only actualfunction entrypoints.
+Avoid extraEdge/Kong image copies; disclose transport-fixture/platform boundary.
+ServerlegacyadapterrequiresHTTPS; use scopedlocalTLS, do not weaken production
+origin checks or disable globalTLS verification. Genuine locally generated secrets
+private/server-only, never copied production env. Egress/email/hook transportblocked.
+
+| Criterion | Required first-flow goal? | Status | Evidence boundary |
+|---|---|---|---|
+| Exact source/service/dependency/resource identity | yes | PASS |All855old transitive packages + actual pinned services/builds; final6GiBcap |
+| Faithful full selected recovered baseline and exact11SQL | yes | PASS |Newattempt17groups/101fullrowdigests/2880rows;11exactSQL on copy |
+| Real GoTrue sessions/PostgREST/RLS/current Edge+Next read | yes | PASS |ActualAuth/REST startup17+101unchanged; real Edge/Next/current browser fullflow |
+| Supported current + retained old security flow | yes | PASS |Current12PASS; old signed v8 security9PASS; old features retired36/FAIL retained |
+| Final audit/build/check/cleanup/evidence | yes | PASS |Final17audit after complete browser;6GiBboundedcleanup; paired records |
+| Fullfivefamilies/platforms/independentrelease/hosted rollout | laterfullP3 | NOT RUN |Not waived/inferred |
+
+10Oct runtime reassessment: the image's temporary bootstrap socket caused one
+pre-restore failure; database absence proven, original private error archived,
+final listen-address SQL readiness corrected, strict full restore then passed.
+Docker forbids bridging an attached none endpoint: verified unchanged17+101,
+disconnected none then attached ONLY internal bridge. Published-loopback probe
+refused under internal isolation; actual internal IP health passed with no DDL/
+row/ACL/RLS/role/trigger drift. Real local password/choirRPC/catalogueRLS/logout
+passed. Fixture collision guard initially counted its newly created Auth actors;
+validated exact new accounts and guarded all new application IDs before SQL,
+no source/data reset. Old394/current459 source files and all855old transitive
+package pins match installed closure; both actual production builds passed,
+observed6,425,708KiB below6.5GiBcap. No current browser/read acceptance yet.
+Deno permission denied shared source lib/server/drive-file-content.ts; minimal
+source-read permission added, not auth answer mocking. Shared SSH controlmaster
+kept only the two owned forwards after first transport close; those exact forwards
+cancelled, next bounded step uses dedicated nonmultiplexed SSH and fresh logs.
+No blind rebuild, no extra images/grants/global cache removal or hosted operation.
+
 ### 9 October owner-approved compatibility clone — resumed full checkpoint
 
 Owner explicitly answers "onaylıyorum zaten sorun yok" to the pending6.5GiB

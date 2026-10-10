@@ -6,7 +6,43 @@ Updated10October2026. [AGENTS](../AGENTS.md) → [active](../memory-bank/activeC
 Read [guide](gecis-rehberi.md)/[work cycle](ai-calisma-duzeni.md); relevant decisions/
 MIGRATION. English records/Turkish copy; sole writer, verify HEAD/ownership/resources.
 
-## Current outcome — recovered-SQL checkpoint PASS; full P3 OPEN
+## Current outcome — managed current read checkpoint PASS; full P3 OPEN
+
+[Accepted checkpoint](reports/2026-10-10-p3-managed-read-compatibility.md)/
+[machine proof](reports/090/2026-10-10-p3-managed-read-compatibility.json), helpers04b6a6c,
+productbbc301c/614unchanged. Fresh20261010-managed-final full17+101/2880fidelity
+before11SQL, realAuth/REST startup unchanged, actualcurrentEdge/Next/genuinebrowser
+12PASS (A/PDF/audio/range/offline/real401boundedrenewal/B403/provider0/logout/
+independentB). Final17metadata/source audit AFTER browser PASS, chronological
+cleanup guard exercised, ownedVM/images/newISO/weboutputs/10ephemeral artifacts
+removed09:15:34Turkey/defaultLima0/observed5.67GiB<6cap. Protectedsource/key/private
+smallerrors preserved; rootdeps/CLI marker/globalcaches/userdata untouched.
+Initial prematurecleanup interrupted finalaudit: failedhistory retained, NOT
+waived; freshfull recheck fixed acceptance. Old signed v8 security9PASS separately
+retained; owner#36 reports unusedoldappweb, nofeaturebackcompat work. Old R2-only/
+offline FAIL remains historical unsupported, notPASS/trafficproof. Websiteunchanged.
+No hostedwrites/push/provider/nativebuild/ownerQA/Jevcall/privateexport. Scopedgoal
+closes after pairedrecords; fullP3/storage/beta/platform/independentreviewOPEN.
+NEXT ONE: managed allfivefamily read/revocation/role/member/session/concurrency;
+then matchedAndroid+iOS and independent package review/current-client-firstrollout.
+This rehearsal's resourceexception is not new scope/deploymentauthority.
+
+### Earlier in-turn progress — superseded by accepted checkpoint above
+
+Owner explicitly approved new6.5GiBscope for real localAuth/REST + old/current
+webbuilds/640MiBstop/cleanup/no hosted/native/realaccount work. Newattempt
+20261010-managed-web sameprivatecustody, live ownedVM/API/TLS/Edge monitored.
+Strict17groups/101fullrowdigests/2880rows before11SQL PASS again; actual GoTrue
+2.196/PostgREST14.13 startup catalog/data unchanged, realpassword/choirRPC/
+catalogueRLS/logout PASS. Old394/current459sources/all855old dependency pins
+match installed closure; both actual production builds PASS. Real current browser
+login/PDF/audio/range/offline PASS; renewal metric corrected to ticket POSTs,
+not fresh HEAD/GET. Current/old cache/switch/retainedURL/logout still in progress.
+First TLS root-as-leaf failed actual Deno rustls; separate trustedCA/nonCAleaf now
+passes real Deno SDK/Edge200. No global trust/TLS bypass. [Current090card](briefs/090-private-file-ticket-revocation-contract.md).
+Cleanup before closure; errors/history retained. No old mock harness promotion.
+
+### Previous scoped recovered SQL checkpoint (complete, not current goal)
 
 [Actual checkpoint](reports/2026-10-10-p3-recovered-sql-compatibility.md) /
 [machine proof](reports/090/2026-10-10-p3-recovered-sql-compatibility.json), helpersd8a313c.
@@ -24,10 +60,12 @@ No ownedliveprocess. Full090/R1/P3NO-GO, NOT managedAuth/browser/platform/releas
 
 ## Next single outcome
 
-Prepare measured compatible managedAuth/REST/current-old browser read/cache/mixed
-client runtime acceptance on exact sources, then agent-owned currentAndroid+iOS/
-independentreview. SQL-only resource approval does not authorize future large
-builds/deployments. No owner manual QA/liveSQL/push/Edge/web/provider/distribution.
+Extend real managed Auth/REST/RLS reads/revocations to all five families with
+membership/role/session expiry/concurrency controls on exact sources; then
+agent-owned currentAndroid+iOS/independentreview. Owner36 retires unusedold web
+feature support, not retainedURLsecurity/current-client-first activation. Completed
+rehearsal scope does not authorize future large builds/deployments. No owner
+manual QA/liveSQL/push/Edge/web/provider/distribution.
 Do not rebuild unchanged recovery or substitute another source-only/synthetic PASS.
 [Checkpoint](teslim-rehberi/checkpoint.md)/[P3](teslim-rehberi/03-release-package.md).
 

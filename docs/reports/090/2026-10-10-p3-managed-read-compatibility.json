@@ -1,0 +1,496 @@
+{
+  "date": "2026-10-10",
+  "status": "MANAGED_CURRENT_READ_CHECKPOINT_PASS_NOT_FULL_P3_OR_RELEASE",
+  "helperCommit": "04b6a6c49bd15ccf0b5d1883917253e7fa2d8731",
+  "productSource": "bbc301c62ffb58a533b19d7cf904518be274aae7",
+  "immutable614": {
+    "path": "docs/reports/090/2026-10-09-p3-server-convergence-source.json",
+    "sha256": "d27dd1ea337ec093a6f8b779d9107115879b0fdcbcf9e2fd5f4570f9a518665e",
+    "pins": 614
+  },
+  "packet": {
+    "path": "docs/reports/090/2026-10-09-p3-compatibility-packet.json",
+    "sha256": "fd8656f80c78889ab307ddaac9894545cd301d2949bd49c0f3185932e68d718c",
+    "applied": 11
+  },
+  "recovery": {
+    "attempt": "20261010-managed-final",
+    "retainedCutoff": "2026-10-09T00:11:01.300196+00:00",
+    "plaintextSha256": "422ccf87eb8977c4cff1529c57878bee779c955f10a438f3543361b80a7c58d6",
+    "ciphertextSha256": "c9ed4dfc9da9bf7e4317bb751f98e87b71bd4e06ef93daba9f0f1a5ccfb4dd2e",
+    "beforeDeltas": {
+      "catalogGroups": 17,
+      "catalogCounts": {
+        "functions": {
+          "source": 165,
+          "restored": 165
+        },
+        "schemas": {
+          "source": 24,
+          "restored": 24
+        },
+        "relations": {
+          "source": 117,
+          "restored": 117
+        },
+        "policies": {
+          "source": 225,
+          "restored": 225
+        },
+        "constraints": {
+          "source": 508,
+          "restored": 508
+        },
+        "columns": {
+          "source": 1122,
+          "restored": 1122
+        },
+        "indexes": {
+          "source": 327,
+          "restored": 327
+        },
+        "triggers": {
+          "source": 62,
+          "restored": 62
+        },
+        "defaultAcls": {
+          "source": 15,
+          "restored": 15
+        },
+        "roles": {
+          "source": 17,
+          "restored": 17
+        },
+        "memberships": {
+          "source": 22,
+          "restored": 22
+        },
+        "extensions": {
+          "source": 6,
+          "restored": 6
+        },
+        "publications": {
+          "source": 2,
+          "restored": 2
+        },
+        "publicationTables": {
+          "source": 14,
+          "restored": 14
+        },
+        "publicationRelations": {
+          "source": 9,
+          "restored": 9
+        },
+        "publicationSchemas": {
+          "source": 0,
+          "restored": 0
+        },
+        "droppedColumns": {
+          "source": 8,
+          "restored": 8
+        }
+      },
+      "dataTables": 101,
+      "rows": 2880,
+      "actualFullPinnedImage": "supabase/postgres@sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00",
+      "networkNone": true,
+      "mounts": 0,
+      "ports": 0
+    },
+    "comparatorUnchanged": true,
+    "afterManagedStartup": {
+      "groups": 17,
+      "tables": 101,
+      "changes": 0
+    },
+    "afterFinalBrowser": {
+      "recordedAt": "2026-10-10T06:14:43.127Z",
+      "catalogGroups": 17,
+      "metadataChanges": 0,
+      "dataBoundary": "Runtime includes newly generated Auth sessions/users/audit and synthetic choir/file fixtures; final whole-table row equality is NOT claimed. Whole selected 101-table equality was established before deltas and before managed startup."
+    }
+  },
+  "services": {
+    "auth": {
+      "version": "2.196.0",
+      "image": "supabase/gotrue@sha256:93bfec0a41cfe3ed81d03c9c1c8807fd230b8ecea260cf999b8a7204ccc7d5cf"
+    },
+    "rest": {
+      "version": "14.13",
+      "image": "postgrest/postgrest@sha256:77c56c839e49d5a037e93fd49de7822a65bcdeafc4b9e37338ead504e36ba307"
+    },
+    "deno": "2.9.6",
+    "supabaseSdk": "2.112.4",
+    "aws4fetch": "1.0.20",
+    "next": "15.5.25",
+    "authRestMocked": false,
+    "genuinePasswordSessions": true,
+    "imageStartupDDL": 0,
+    "network": "Internal Docker bridge; direct dedicated SSH loopback forwards; scoped HTTPS ingress fixture, not hosted Kong/Envoy/Edge runtime",
+    "tls": "Separate local root CA/non-CA server leaf; Node/Deno trust this CA, browser SPKI limited to the leaf; global trust unchanged",
+    "provider": "Synthetic PDF/WAV only. All final provider hops verified using actual AWS4-HMAC signatures; no real Drive/R2/Storage bytes"
+  },
+  "source": {
+    "currentFiles": 459,
+    "oldFiles": 394,
+    "oldSource": "a13f696da8c731e9af2a2bce473d4f4ae4a81587",
+    "oldTransitivePackages": 855,
+    "oldTransitiveSnapshots": 855,
+    "oldLockSha256": "683415a73e96e0fce0bcac3dabd84c8d77df89b22067414e8fed79b484d41e94",
+    "installedLockSha256": "8c2bc9d3188f730848b5efc5434385f0b6fa270e8ccfa37dcac93dfc8209b38e",
+    "oldClosureInstalled": true,
+    "builds": {
+      "currentFinal": {
+        "status": "PASS",
+        "attempt": "20261010-managed-final",
+        "source": "bbc301c62ffb58a533b19d7cf904518be274aae7"
+      },
+      "oldPrior": {
+        "status": "PASS",
+        "attempt": "20261010-managed-web",
+        "source": "a13f696da8c731e9af2a2bce473d4f4ae4a81587"
+      }
+    },
+    "productionEnvCopied": false
+  },
+  "browser": {
+    "current": {
+      "attempt": "20261010-managed-final",
+      "startedAt": "2026-10-10T06:14:23.521Z",
+      "completedAt": "2026-10-10T06:14:41.641Z",
+      "scenarios": [
+        {
+          "name": "current-genuine-browser-login-choir-catalogue",
+          "status": "PASS"
+        },
+        {
+          "name": "current-actual-PDF-audio-play-seek-range",
+          "status": "PASS",
+          "ink": {
+            "width": 1200,
+            "height": 700,
+            "ink": 55809
+          },
+          "actualRange": true
+        },
+        {
+          "name": "current-actual-authorized-offline-audio",
+          "status": "PASS"
+        },
+        {
+          "name": "current-real-expired-HMAC-401-bounded-renewal",
+          "status": "PASS",
+          "newPosts": 1,
+          "expiredTicketTransportInjection": true,
+          "authorityResponseMocked": false
+        },
+        {
+          "name": "current-retained-URL-choir-B-denied",
+          "status": "PASS",
+          "statuses": [
+            403,
+            403
+          ],
+          "providerDelta": 0
+        },
+        {
+          "name": "current-retained-URL-choir-B-denied",
+          "status": "PASS",
+          "statuses": [
+            403,
+            403
+          ],
+          "providerDelta": 0
+        },
+        {
+          "name": "current-actual-choir-B-catalogue-isolation",
+          "status": "PASS"
+        },
+        {
+          "name": "current-no-online-cross-choir-cached-PDF",
+          "status": "PASS"
+        },
+        {
+          "name": "current-retained-URL-sign-out-denied",
+          "status": "PASS",
+          "statuses": [
+            403,
+            403
+          ],
+          "providerDelta": 0
+        },
+        {
+          "name": "current-retained-URL-sign-out-denied",
+          "status": "PASS",
+          "statuses": [
+            403,
+            403
+          ],
+          "providerDelta": 0
+        },
+        {
+          "name": "current-actual-browser-sign-out",
+          "status": "PASS"
+        },
+        {
+          "name": "current-already-downloaded-bytes-boundary",
+          "status": "LIMITATION_NOT_RELEASE_WAIVER",
+          "note": "Previously downloaded/buffered bytes cannot be recalled. This fresh run establishes new GET/HEAD refusal, not old-open server-cutover cache remediation. Historical old-open client FAIL remains open."
+        },
+        {
+          "name": "independent-B-user-cannot-issue-A-file-provider-zero",
+          "status": "PASS"
+        }
+      ],
+      "errors": [],
+      "outside": []
+    },
+    "legacySecurity": {
+      "attempt": "20261010-managed-web",
+      "pinnedHistoricalSameSource": true,
+      "freshlyRerun": false,
+      "scenarios": [
+        {
+          "name": "old-genuine-browser-login-choir-catalogue",
+          "status": "PASS"
+        },
+        {
+          "name": "old-actual-PDF-audio-play-seek-range",
+          "status": "PASS",
+          "ink": {
+            "width": 1200,
+            "height": 700,
+            "ink": 55809
+          },
+          "actualRange": true
+        },
+        {
+          "name": "old-retained-URL-choir-B-denied",
+          "status": "PASS",
+          "statuses": [
+            403,
+            403
+          ],
+          "providerDelta": 0
+        },
+        {
+          "name": "old-retained-URL-choir-B-denied",
+          "status": "PASS",
+          "statuses": [
+            403,
+            403
+          ],
+          "providerDelta": 0
+        },
+        {
+          "name": "old-actual-choir-B-catalogue-isolation",
+          "status": "PASS"
+        },
+        {
+          "name": "old-retained-URL-sign-out-denied",
+          "status": "PASS",
+          "statuses": [
+            403,
+            403
+          ],
+          "providerDelta": 0
+        },
+        {
+          "name": "old-retained-URL-sign-out-denied",
+          "status": "PASS",
+          "statuses": [
+            403,
+            403
+          ],
+          "providerDelta": 0
+        },
+        {
+          "name": "old-actual-browser-sign-out",
+          "status": "PASS"
+        },
+        {
+          "name": "independent-B-user-cannot-issue-A-file-provider-zero",
+          "status": "PASS"
+        }
+      ]
+    },
+    "legacyUnsupported": {
+      "r2OnlyCatalogue": "FAIL_REPRODUCED_NOT_WAIVED",
+      "offlineTransition": "FAIL_REPRODUCED_NOT_WAIVED",
+      "oldOpenBuffer": "Historical FAIL/previously downloaded-byte limitation retained"
+    },
+    "ownerPolicy": {
+      "decision": 36,
+      "quote": "şuan eski web sürümü uygulama kullanılmıyor o yüzden çok dert etmeye gerek yok doğru anladıysam.",
+      "basis": "Direct 10 October owner reply, not measured usage telemetry",
+      "interpretation": "Do not extend retired legacy web feature compatibility; supported current client must precede private-storage activation; preserve replay-denial controls",
+      "hostedDeploymentAuthorized": false,
+      "siblingWebsiteChanged": false
+    }
+  },
+  "resources": {
+    "finalCapMiB": 6144,
+    "ownerMaximumMiB": 6656,
+    "liveStopKiB": 655360,
+    "preflightFreeKiB": 7808716,
+    "reserveKiB": 7106560,
+    "observedFinalPeakKiB": 5948276,
+    "freeAfterCleanupKiB": 7794048,
+    "backendRemoved": true,
+    "webBuildsRemoved": true,
+    "ephemeralArtifactsRemoved": 10,
+    "nodeModulesKept": true,
+    "protectedBackupKeyKept": true,
+    "noGlobalCacheDeletion": true,
+    "firstRejectedBrowserProfiles": "Initial rejected v1 used ambient Playwright temp location; accepted v8/v9 and final v9 explicitly counted all browser temp outputs. Do not claim initial transient profile peak was measured."
+  },
+  "originalFailure": {
+    "attempt": "20261010-managed-web",
+    "afterMostTestsCataloguePassAt": "2026-10-10T05:57:20.349Z",
+    "finalAudit": "FAILED_INTERRUPTED_BY_PREMATURE_CLEANUP",
+    "earlierPassNotPromotedToLastAudit": true,
+    "errorPrivateAndPreserved": true,
+    "remedy": "Fresh faithful restore/eleven SQL/real services/current build/current complete browser under lower six-GiB cap, final catalogue fully awaited, cleanup prerequisite rejects missing or older audit"
+  },
+  "focusedChecks": {
+    "unitTests": 12,
+    "eslint": "PASS all scoped mjs with no-ignore",
+    "denoCheck": "PASS both typed bootstrap/smoke files cached-only",
+    "immutableServer614": "PASS",
+    "immutableElevenPacket": "PASS",
+    "diffCheck": "PASS",
+    "pnpmCheck": "NOT RUN: no product/shared dependency/build config changed; actual current production build passed",
+    "mobile": "NOT RUN in this scope",
+    "independentReview": "NOT RUN, self-review not equivalent"
+  },
+  "jev": {
+    "paidCalls": 0,
+    "newCostUsd": 0,
+    "privateExport": false
+  },
+  "remaining": [
+    "Actual managed Auth/RLS read and revocation matrix for all five families",
+    "Current matched Android+iOS acceptance",
+    "Independent release-package review and fresh separately authorized hosted reconciliation/rollout",
+    "Current-client-first activation/storage/provider/beta/store gates"
+  ],
+  "helperPins": [
+    {
+      "path": "spike/090-compatibility-retry-startup.mjs",
+      "sha256": "692deb4991d553b1107b637f84bb545e932fecda3cf635cf52622a42573d54c0"
+    },
+    {
+      "path": "spike/090-compatibility-sql-rehearsal.mjs",
+      "sha256": "54b5ba0262be0f619a444857aad3f8da2ecff8c44e4b7721b346da005c0233f6"
+    },
+    {
+      "path": "spike/090-managed-api-setup.mjs",
+      "sha256": "9ea5927e47ed7e0ea245be49d358c1d42411913d8f3aba365eaaca7745ac53a9"
+    },
+    {
+      "path": "spike/090-managed-browser.mjs",
+      "sha256": "dadff5bf35c67ea3eb22adc47b99f620253696b6bc3c9c0f944650f0792f638c"
+    },
+    {
+      "path": "spike/090-managed-cleanup-order.mjs",
+      "sha256": "9ab31f20cdb06d479ccbf95a3d8b00df331ce7280036244725e5cd347018ccb8"
+    },
+    {
+      "path": "spike/090-managed-cleanup-order.test.mjs",
+      "sha256": "f8e67cdd82c756f2b0a424d3ed8bfdc943d652786a2969ac49702e8baa1d799b"
+    },
+    {
+      "path": "spike/090-managed-cleanup.mjs",
+      "sha256": "aa8597bca20bb8db501aa05d49c674a0953e2bfbc5eaee875d79512bb4ebd5f6"
+    },
+    {
+      "path": "spike/090-managed-deno-smoke.ts",
+      "sha256": "3669c28e98fbf3b660ed1d014de73719c8e569b41be1f14f18ec2c50072f4e60"
+    },
+    {
+      "path": "spike/090-managed-edge-bootstrap.ts",
+      "sha256": "5e82a41b79480b55ae1abae6019786af25f80e72baa866a1e7bdd6e2c4e778d0"
+    },
+    {
+      "path": "spike/090-managed-evidence.mjs",
+      "sha256": "b7489717b74f2bd77f9d37f883de6fc057567398cceefc55981403bd7288b90f"
+    },
+    {
+      "path": "spike/090-managed-final-invariants.mjs",
+      "sha256": "dfcd6f17c947c16aa504e03745bfc55c4b58cbc2326b2f319ba282726d5e0cc3"
+    },
+    {
+      "path": "spike/090-managed-fixture.mjs",
+      "sha256": "cce02047376fadeed463276476d92b66a9726a597cd4a3057c7a84288cd97828"
+    },
+    {
+      "path": "spike/090-managed-isolation.mjs",
+      "sha256": "555d238ca7b3bdc936c7391075648dbfd3062b8543ad1f87585c10d7ee8e8253"
+    },
+    {
+      "path": "spike/090-managed-isolation.test.mjs",
+      "sha256": "5fbe2c2897ff6d644d8ebc7a1675e3af1dd9b9984c5b819c641395f9935b8c8a"
+    },
+    {
+      "path": "spike/090-managed-legacy-case.mjs",
+      "sha256": "4e20082b0dcb1f07cd19144c92ec2fa5dccb825acb516fb94485048754a3b243"
+    },
+    {
+      "path": "spike/090-managed-media.mjs",
+      "sha256": "2c6838432c83de2f3bb971804507d3661b7528831bdc902ef4889aeffd942cdb"
+    },
+    {
+      "path": "spike/090-managed-next-fetch.mjs",
+      "sha256": "b112e181e734962689ec5c3fa501925c871b72e885af47a774826fb9254919f8"
+    },
+    {
+      "path": "spike/090-managed-services.mjs",
+      "sha256": "31a8c86c673cf96a02b9cf625fa5710273ac76a9a63fd7d8e4fbbe093486c9d6"
+    },
+    {
+      "path": "spike/090-managed-tls.mjs",
+      "sha256": "d3bfbb4af1746ffcb93e263bcd4385cbb6c3b55b1d7200a5cedc86621da395d5"
+    },
+    {
+      "path": "spike/090-managed-web-source.mjs",
+      "sha256": "ea6045eeac9abdef0dfa083bee1406b0e43ff9705f2b264bd1cc5e67fa1ea86e"
+    },
+    {
+      "path": "spike/090-managed-web-transport.mjs",
+      "sha256": "44667f25d4329495e5a0bb9c7e2af6c317eb5e8d870087503e38758217fe6ae4"
+    },
+    {
+      "path": "spike/090-p3-managed-web-lima.yaml",
+      "sha256": "a5e8feef474249ead05c7080ce4204397e0d150e7194db133421a6e7d2e8985c"
+    },
+    {
+      "path": "spike/090-p3-offline-restore.mjs",
+      "sha256": "3829eab17a3a71d9e141e5dde91a75db2eae848fdb7b031e54ba4149b472f2c5"
+    },
+    {
+      "path": "spike/090-p3-resource-policy.mjs",
+      "sha256": "851e24be6255776c5847579ba9cd48f46da3dff36d9749b43782b5daaed67329"
+    },
+    {
+      "path": "spike/090-p3-resource-policy.test.mjs",
+      "sha256": "7ff22f8f7e863558af7f4d6d6453564e7a92b6bd7ef57e7253d6db5a564fb122"
+    },
+    {
+      "path": "spike/090-p3-runtime-cleanup.mjs",
+      "sha256": "d193b279b2af3b979723108f45ebab6ca6ce508a2accf7084b2594471ea77263"
+    },
+    {
+      "path": "spike/090-p3-runtime-command.mjs",
+      "sha256": "8e4661debf5792a7b1bc4e10ff0abd9a22878fa6dfd3074b2df6dad84040168b"
+    },
+    {
+      "path": "spike/090-p3-runtime-resources.mjs",
+      "sha256": "2298de849e4acda2c6822153e1670d6d8a71f14b4f5c7e926026015a2ea5496c"
+    },
+    {
+      "path": "spike/090-p3-runtime-volume.mjs",
+      "sha256": "67306582ccfb0601668e771923e238c2822f57d268883c6b18e95eb68fd8e3ed"
+    }
+  ],
+  "boundary": "Current genuine managed read checkpoint only. Retained 9 October source is not a fresh 10 October hosted backup. No hosted writes/push/deploy/provider activation/native builds/real accounts/messages/owner QA/private AI export; no full P3 or production readiness."
+}
