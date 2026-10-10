@@ -6,6 +6,16 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
+- **10Oct next managed five-family goal ACTIVE/INCOMPLETE:**
+  [Exact matrix/resource preflight](../reports/2026-10-10-p3-managed-five-family-preflight.md)
+  distinguishes real role loss from still-valid ownership/room grants and requires
+  actual all-family HTTP/COMMIT controls. New6GiB/640MiBstop approval PENDING;
+  free7,660,312KiB<default10GiB. No new runtime/download/web/native build/hosted/
+  Jevcall/ownerQA. NEXT answer→fresh preflight→one actual managed matrix.
+  Prior scoped PASS below remains valid; fullP3 and this new goal stay incomplete.
+  Lightweight614/11packet/priorreceipt/200links/diffPASS; newer7,600,700KiB makes
+  full6GiBreserveFAIL. Assess lower5.75GiBfit/guards only after approval/recheck.
+
 - **10Oct supported-current managed read checkpoint PASS / fullP3OPEN:**
   [Record](../reports/2026-10-10-p3-managed-read-compatibility.md)/
   [machine proof](../reports/090/2026-10-10-p3-managed-read-compatibility.json).

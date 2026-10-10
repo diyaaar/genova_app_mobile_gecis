@@ -15,6 +15,42 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ## Work card / transition start check
 
+### 10 October continuation — managed five-family matrix, resource approval pending
+
+One measurable outcome: real managed Auth/REST/RLS/current Edge permitted reads
+and retained GET/HEAD revocation across all five families, including effective
+role/member/session authority and actual HTTP/COMMIT ordering. Full goal ACTIVE,
+not complete. [Source-derived matrix/resource preflight](../reports/2026-10-10-p3-managed-five-family-preflight.md)
+owns fixtures, independent-grant positives, required NOT RUN rows and exclusions.
+Previous managed current-read goal is accepted below; not all-five acceptance.
+
+Entry `main/47917de`; unrelated CLI marker preserved/sole writer. Read supplied
+AGENTS, handoff/active, current090card/template, transition guide/work cycle,
+delivery resource controls/P3, relevant KARARLAR/MIGRATION, complete TypeSafe skill
+and live docs index. Actual 090/expiry and 057–060 reader/role/room sources checked.
+Preserve immutable614/11packet/P1/P2, RN/Expo/annotation/WebView ownership and
+all retained rows/notes. No source/product/SQL changes or hosted permission inferred.
+
+At most three actions: (1) pending new scoped disk approval → fresh preflight and
+exact helper guard extension; (2) one actual full-copy five-family managed matrix;
+(3) fully finished final invariant audit → gated cleanup/evidence/paired commits.
+Allowed only scoped spike090 helpers and this card/report/current pointers.
+No native/web builds, actual accounts, hosted changes, provider activation, owner
+manual QA/private AI export. Source-only preparation does not close the runtime goal.
+
+Initial free7,660,312KiB below default10GiB; proposal6GiBtotal/640MiBstop/noNext
+builds, preliminary~5.2GiBfrom accepted measurements. Existing exception ended
+with prior cleanup; explicit new question sent, answer PENDING. No new download,
+VM/runtime/build started and old receipt/attempt allow-lists unchanged. After
+approval remeasure; any failed reserve/cap prevents allocation. Role loss is not
+universal denial: own submissions and valid room/visibility grants need positives.
+Next progress check after owner reply/new preflight; missing approval is not PASS
+or a three-turn blocked state. Goal remains incomplete, P3 stays OPEN.
+Low-allocation checks614/11packet/previousmanagedreceipt/200links/secret-shape/diff
+PASS. Freshfree7,600,700KiB means proposedfull6GiBreserve FAIL (494,140KiB<512MiB);
+no allocation. Lower5.75GiBcandidate arithmetic leaves756,284KiB, not measured fit
+or enforcedcap proof. After approval implement/test narrower guard and remeasure.
+
 ### 10 October real Auth/REST and old-current browser — approved first read flow
 
 FINAL EXIT: [actual managed checkpoint](../reports/2026-10-10-p3-managed-read-compatibility.md)

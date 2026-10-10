@@ -7,6 +7,17 @@ English records/Turkish updates, sole writer; check ownership/permissions/resour
 
 ## Current measurable outcome
 
+New five-family continuation ACTIVE/INCOMPLETE: [preflight/matrix](../docs/reports/2026-10-10-p3-managed-five-family-preflight.md)
+and [090card](../docs/briefs/090-private-file-ticket-revocation-contract.md#10-october-continuation--managed-five-family-matrix-resource-approval-pending).
+Actual effective-grant/role/member/session/HTTP-COMMIT required; no new runtime proof.
+Entry47917de/CLI marker unrelated. Free7,660,312KiB<10GiB; new6GiB/640MiBstop
+resource exception asked/PENDING. No environment/download/build/ownerQA/Jevcall/
+hosted/export started. NEXT resource answer→fresh preflight→actual allfive matrix.
+Previous scoped managed checkpoint remains complete below, not this new goal/P3.
+Lightchecks614/11packet/priorreceipt/200links/diffPASS; remeasured7,600,700KiB,
+full6GiBreserveFAIL. Lower5.75GiBestimate notruntimeproof; guard+freshfit after
+approval required. No new runtime or large outputs to remove.
+
 [Managed current-read checkpoint](../docs/reports/2026-10-10-p3-managed-read-compatibility.md)
 PASS/[proof](../docs/reports/090/2026-10-10-p3-managed-read-compatibility.json),
 helpers04b6a6c/productbbc301c/614/P1/P2 unchanged. Fresh6GiBattempt full17+101/2880

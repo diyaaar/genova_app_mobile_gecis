@@ -8,6 +8,17 @@ MIGRATION. English records/Turkish copy; sole writer, verify HEAD/ownership/reso
 
 ## Current outcome — managed current read checkpoint PASS; full P3 OPEN
 
+New continuation ACTIVE/INCOMPLETE: [five-family preflight](reports/2026-10-10-p3-managed-five-family-preflight.md)
+and [current090card](briefs/090-private-file-ticket-revocation-contract.md#10-october-continuation--managed-five-family-matrix-resource-approval-pending).
+Entry47917de/onlyCLI marker unrelated. Source-derived effective-grant and HTTP/COMMIT
+matrix prepared; no new runtime. Free7,660,312KiB<10GiB, new6GiB/640MiBstop scoped
+exception asked/PENDING; previous waiver not reused. No web/native build/ownerQA/
+hosted/privateAI export. NEXT owner resource answer→fresh allocation/source guard→
+actual managed all-five matrix. Prior checkpoint remains accepted below, not this goal.
+Lightchecks614/11packet/priorreceipt/200links/diffPASS; freshfree7,600,700KiB,
+full6GiBreserve FAIL; assess narrower5.75GiBguard/fit after approval, neverallocate
+from initial arithmetic. No owned new runtime to clean.
+
 [Accepted checkpoint](reports/2026-10-10-p3-managed-read-compatibility.md)/
 [machine proof](reports/090/2026-10-10-p3-managed-read-compatibility.json), helpers04b6a6c,
 productbbc301c/614unchanged. Fresh20261010-managed-final full17+101/2880fidelity
