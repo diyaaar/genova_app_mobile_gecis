@@ -15,6 +15,9 @@ Historical records keep their original date/revision. [Guide](README.md).
   Prior scoped PASS below remains valid; fullP3 and this new goal stay incomplete.
   Lightweight614/11packet/priorreceipt/200links/diffPASS; newer7,600,700KiB makes
   full6GiBreserveFAIL. Assess lower5.75GiBfit/guards only after approval/recheck.
+  Sourceprepfa32858 adds unusedfive-route/195minimumrow/newcleanuporder guards;
+  8Node/ESLint/priorreceipt PASS/16KiBsource. Notwired/noruntimeacceptance; new
+  approvalstillpending/free7,599,184KiB. Do notclose goal from guard tests.
 
 - **10Oct supported-current managed read checkpoint PASS / fullP3OPEN:**
   [Record](../reports/2026-10-10-p3-managed-read-compatibility.md)/

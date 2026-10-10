@@ -18,6 +18,9 @@ actual managed all-five matrix. Prior checkpoint remains accepted below, not thi
 Lightchecks614/11packet/priorreceipt/200links/diffPASS; freshfree7,600,700KiB,
 full6GiBreserve FAIL; assess narrower5.75GiBguard/fit after approval, neverallocate
 from initial arithmetic. No owned new runtime to clean.
+Light source prepfa32858: unusedfive-route/195minimumrow/finalmatrixcleanup guards,
+8Node/ESLint/priorreceipt PASS,16KiBsource; notwired/notruntimeproof. Approvalstill
+pending/free7,599,184KiB; NEXT remains new authority→freshfit→actual managedmatrix.
 
 [Accepted checkpoint](reports/2026-10-10-p3-managed-read-compatibility.md)/
 [machine proof](reports/090/2026-10-10-p3-managed-read-compatibility.json), helpers04b6a6c,

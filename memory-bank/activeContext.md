@@ -17,6 +17,9 @@ Previous scoped managed checkpoint remains complete below, not this new goal/P3.
 Lightchecks614/11packet/priorreceipt/200links/diffPASS; remeasured7,600,700KiB,
 full6GiBreserveFAIL. Lower5.75GiBestimate notruntimeproof; guard+freshfit after
 approval required. No new runtime or large outputs to remove.
+Sourceprepfa32858 unusedfive-route/195minimumdecisionrows/newcleanuporder guards:
+8Node/ESLint/priorreceiptverify PASS/16KiBsource. Notwired/nomatrixruntimeproof;
+approvalstillabsent/free7,599,184KiB. Full goal remainsACTIVE/INCOMPLETE.
 
 [Managed current-read checkpoint](../docs/reports/2026-10-10-p3-managed-read-compatibility.md)
 PASS/[proof](../docs/reports/090/2026-10-10-p3-managed-read-compatibility.json),

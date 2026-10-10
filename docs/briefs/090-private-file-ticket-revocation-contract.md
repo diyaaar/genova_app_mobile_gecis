@@ -50,6 +50,12 @@ Low-allocation checks614/11packet/previousmanagedreceipt/200links/secret-shape/d
 PASS. Freshfree7,600,700KiB means proposedfull6GiBreserve FAIL (494,140KiB<512MiB);
 no allocation. Lower5.75GiBcandidate arithmetic leaves756,284KiB, not measured fit
 or enforcedcap proof. After approval implement/test narrower guard and remeasure.
+Pending approval, low-allocation source preparation only: `fa32858` adds unused
+fixedfiveentrypoint descriptors/195minimum decision-row guard/new finalaudit-after-
+matrix guard.8actual Node guard tests/ESLintnoignore/diff/priorreceiptverify PASS;
+16KiBsource/freshfree7,599,184KiB. No runtime/helperattempt admission/cleanup wiring.
+Artificial rows are test inputs, NOT managed proof; media/provenance/COMMIT ordering
+still require actual execution. Source preparation advances, does not close, goal.
 
 ### 10 October real Auth/REST and old-current browser — approved first read flow
 

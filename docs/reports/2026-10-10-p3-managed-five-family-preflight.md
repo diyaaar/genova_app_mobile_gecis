@@ -105,6 +105,40 @@ receipt regeneration all PASS;200local links across five changed records and
 secret-shaped-content scan PASS; `git diff --check` PASS. Product gates/native/runtime
 not rerun for document-only work. No newly generated large output to clean.
 
+## Low-allocation source preparation while resource approval is pending
+
+Helpers [contract](../../spike/090-five-family-contract.mjs) /
+[tests](../../spike/090-five-family-contract.test.mjs), source commit `fa32858`.
+The unused fixed registry maps all five exact TLS ingress paths to existing
+production entrypoints and distinct listener ports; rejects hosted/non-canonical
+URLs, arbitrary imports, wrong ports and the previous legacy endpoint. Does not
+start listeners or admit the new attempt into existing runtime helpers.
+
+The matrix guard requires195minimum decision observations (39perfamily), including
+GET AND HEAD, independent-grant positives, correct non-revoking chat Chef loss and
+uncommitted/committed/held-before-authority controls for three authority changes.
+Denials must record providerDelta0; permitted body reads must be nonempty and
+reach the signed provider; HEAD bodies must be empty. Actual MIME/checksum/media
+variants, real service provenance and synchronization remain separate runtime
+requirements: a supplied observation array cannot establish their truth.
+
+The separate new cleanup guard refuses prior-goal receipts, incomplete matrices,
+metadata drift and an audit timestamp preceding the complete matrix file write.
+It is **not yet wired into runtime cleanup**; existing accepted29helperpins/receipt
+remain unchanged. This is targeted preparation, not an independent acceptance layer.
+
+| 10Oct command / check | Actual result | Boundary |
+|---|---|---|
+| `node --test spike/090-five-family-contract.test.mjs` | PASS8tests | Artificial in-memory observations test rejection logic only; no Auth/HTTP/SQL proof |
+| Focused ESLint with `--no-ignore` on both helpers | PASS | No product/shared/config changes; full `pnpm check` not required/run |
+| Existing managed evidence `--verify` | PASS | Historical accepted checkpoint still exact; no new managed matrix |
+| `git diff --check` / allocated helper source size | PASS /16KiBtotal | No build/cache/runtime output retained |
+
+Freshfree7,599,184KiB after checks remains below10GiB. Resource approval is still
+absent, full6GiBreserve would fail; no new environment/process/secret was created.
+Once approved, verify lower-cap fit and extend/connect the fixed guards before
+actual execution. The original full goal and all runtime NOT RUN rows stay intact.
+
 TypeSafe skill and live documentation index read. Deterministic authority/identity
 checks do not need AI interpretation; new Jev calls **0**, new Jev cost **$0**.
 Self-review only; not independent review. Resource approval is the next prerequisite,
