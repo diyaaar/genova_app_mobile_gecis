@@ -8,7 +8,7 @@ import {measureRuntime} from './090-p3-runtime-resources.mjs';
 import {DIR,LIMA,runtimeEnv,verifyClone} from './090-compatibility-sql-rehearsal.mjs';
 export const AUTH='supabase/gotrue@sha256:93bfec0a41cfe3ed81d03c9c1c8807fd230b8ecea260cf999b8a7204ccc7d5cf';
 export const REST='postgrest/postgrest@sha256:77c56c839e49d5a037e93fd49de7822a65bcdeafc4b9e37338ead504e36ba307';
-assert(['20261010-managed-web','20261010-managed-final'].includes(ATTEMPT));
+assert(['20261010-managed-web','20261010-managed-final','20261010-managed-families'].includes(ATTEMPT));
 assert.equal(process.cwd(),'/Users/alidiyarduran/Antigravity/genovakorist');
 assert.equal(process.argv.length,3);
 const action=process.argv[2];

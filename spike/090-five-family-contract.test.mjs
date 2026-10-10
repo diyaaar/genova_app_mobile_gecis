@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {READERS, readerAt, requiredCases, requireCompleteMatrix, requireFamilyCleanupOrder} from './090-five-family-contract.mjs';
+import {READERS, readerAt, requiredCases, requireCompleteMatrix, requireFamilyCleanupOrder, requireFailedFamilyCleanup} from './090-five-family-contract.mjs';
 
 // Artificial rows exercise rejection logic only; never exported as runtime evidence.
 const rows = () => READERS.flatMap(requiredCases).map(row => ({...row,
@@ -79,10 +79,24 @@ test('old receipts, mismatched attempt, unfinished audit, incomplete matrix refu
   for (const mutate of [
     state => {state.matrix.attempt = '20261010-managed-final';},
     state => {state.matrix.status = 'CURRENT_REAL_READ_FLOW_PASS_LEGACY_SUPPORT_OWNER_RETIRED';},
+    state => {state.matrix.status = 'ACTUAL_FIVE_FAMILY_CORE_MATRIX_PASS_ACCEPTANCE_GAPS_OPEN';},
     state => {state.invariants.attempt = '20261010-managed-final';},
     state => {state.invariants.recordedAt = '2026-10-10T09:00:00Z';},
     state => {state.matrixMtime = NaN;},
     state => {state.invariants.catalogGroups = 16;},
     state => {state.matrix.observations.pop();},
   ]) {const state = cleanup(); mutate(state); assert.throws(() => requireFamilyCleanupOrder(state));}
+});
+
+test('failed pre-restore cleanup admits only the stopped resource-aborted new download', () => {
+  const state=()=>({attempt:'20261010-managed-families',
+    pull:{attempt:'20261010-managed-families',action:'pull-classic',resourceStop:true,exitCode:null},
+    names:['runtime-20261010-managed-families-pull-classic-result.json'],vmStatus:'Stopped'});
+  requireFailedFamilyCleanup(state());
+  for(const mutate of [s=>{s.attempt='20261010-managed-final';},s=>{s.pull.resourceStop=false;},
+    s=>{s.pull.exitCode=0;},s=>{s.vmStatus='Running';},s=>{s.pull.action='create-container';},
+    s=>{s.names.push('restore-summary-20261010-managed-families.json');},
+    s=>{s.names.push('managed-20261010-managed-families-config.json');}]){
+    const s=state();mutate(s);assert.throws(()=>requireFailedFamilyCleanup(s));
+  }
 });

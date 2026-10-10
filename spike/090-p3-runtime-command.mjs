@@ -13,7 +13,7 @@ if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv
 const owner=JSON.parse(fs.readFileSync(path.join(DIR,'runtime-ownership.json')));
 if(owner.attempt!==ATTEMPT||owner.mount!=='/Volumes/g090p3'||owner.limaHome!=='/Volumes/g090p3/lima'||owner.owner!=='090-P3-only'||!fs.existsSync(owner.limaHome))throw Error('Runtime ownership refused');
 const env={...process.env,LIMA_HOME:owner.limaHome,LIMA_SHELLENV_BLOCK:'*'};
-const vmConfig=['20261010-managed-web','20261010-managed-final'].includes(ATTEMPT)?'spike/090-p3-managed-web-lima.yaml':'spike/090-p3-offline-lima.yaml';
+const vmConfig=['20261010-managed-web','20261010-managed-final','20261010-managed-families'].includes(ATTEMPT)?'spike/090-p3-managed-web-lima.yaml':'spike/090-p3-offline-lima.yaml';
 const commands={start:['--tty=false','start','--name='+VM,vmConfig,'--timeout=4m'],
   'start-classic':['--tty=false','start','--name='+VM,vmConfig,'--timeout=4m'],
   'provision-repair':['shell',VM,'sudo','sh','-s'],

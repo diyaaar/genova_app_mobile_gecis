@@ -91,3 +91,17 @@ export function requireFamilyCleanupOrder({matrix, invariants, matrixMtime}) {
   assert(Number.isFinite(audited) && Number.isFinite(finished) && Number.isFinite(matrixMtime));
   assert(audited >= Math.max(finished, matrixMtime), 'Final audit preceded completely written matrix');
 }
+
+/** A resource-aborted download is disposable, never a successful matrix teardown. */
+export function requireFailedFamilyCleanup({attempt,pull,names,vmStatus}) {
+  assert.equal(attempt,'20261010-managed-families');
+  assert.equal(pull.attempt,attempt);
+  assert.equal(pull.action,'pull-classic');
+  assert.equal(pull.resourceStop,true);
+  assert.notEqual(pull.exitCode,0);
+  assert.equal(vmStatus,'Stopped','Failed download VM must already be stopped');
+  assert(Array.isArray(names));
+  assert(!names.some(name=>name.includes('create-container')||name.startsWith('restore-')||
+    name.startsWith('compatibility-')||name.startsWith('managed-')),
+  'Post-restore/API attempts require a separate failure-custody procedure');
+}

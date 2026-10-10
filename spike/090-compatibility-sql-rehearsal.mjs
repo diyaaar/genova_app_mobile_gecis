@@ -23,7 +23,7 @@ export function readPrivate(name){const file=path.join(DIR,name),s=fs.lstatSync(
   assert(s.isFile()&&!s.isSymbolicLink()&&(s.mode&511)===384,'Private artifact scope');return fs.readFileSync(file);}
 function writePrivate(name,body){fs.writeFileSync(path.join(DIR,name),body,{flag:'wx',mode:0o600});}
 export function runtimeGuard(){
-  assert(['20261009-compatibility','20261010-managed-web','20261010-managed-final'].includes(ATTEMPT),'Approved compatibility attempt only');assert.equal(process.cwd(),'/Users/alidiyarduran/Antigravity/genovakorist');
+  assert(['20261009-compatibility','20261010-managed-web','20261010-managed-final','20261010-managed-families'].includes(ATTEMPT),'Approved compatibility attempt only');assert.equal(process.cwd(),'/Users/alidiyarduran/Antigravity/genovakorist');
   owner=JSON.parse(readPrivate('runtime-ownership.json'));assert.equal(owner.attempt,ATTEMPT);assert.equal(owner.limaHome,runtimeEnv.LIMA_HOME);
   peak=Math.max(peak,measureRuntime(owner).allocatedKiB);
 }

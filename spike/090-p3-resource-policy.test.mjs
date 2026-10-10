@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
-import {selectAttempt,restoreReceiptNames,checkAllocation,checkLiveBudget,capacityMiB,CAPACITY_MIB,MIN_FREE_KIB,LIVE_STOP_KIB,RESERVE_KIB} from './090-p3-resource-policy.mjs';
+import {selectAttempt,restoreReceiptNames,checkAllocation,checkLiveBudget,capacityMiB,CAPACITY_MIB,MIN_FREE_KIB,LIVE_STOP_KIB,RESERVE_KIB,requireUnusedAttempt} from './090-p3-resource-policy.mjs';
 test('owner-scoped lower floor retains fixed full runtime and zero-disk refusal',()=>{
   assert.equal(CAPACITY_MIB,6656);assert.equal(RESERVE_KIB,7630848);
   assert.equal(checkAllocation(8416988),786140);
@@ -30,4 +30,20 @@ test('current-only final attempt really enforces the lower six-GiB live cap',()=
     "import assert from 'node:assert/strict';import {CAPACITY_MIB,RESERVE_KIB,LIVE_STOP_KIB,checkLiveBudget,checkAllocation} from './spike/090-p3-resource-policy.mjs';assert.equal(CAPACITY_MIB,6144);assert.equal(RESERVE_KIB,7106560);checkAllocation(7630848);assert.throws(()=>checkAllocation(7630847));checkLiveBudget(LIVE_STOP_KIB,(6144-64)*1024);assert.throws(()=>checkLiveBudget(LIVE_STOP_KIB,6144*1024));"],
     {env:{...process.env,GENOVA_090_ATTEMPT:'20261010-managed-final'},encoding:'utf8'});
   assert.equal(result.status,0,result.stderr);
+});
+test('new owner-approved families attempt enforces stricter 5.75GiB cap and unique receipts',()=>{
+  assert.equal(capacityMiB('20261010-managed-families'),5888);
+  assert.equal(restoreReceiptNames('20261010-managed-families').summary,'restore-summary-20261010-managed-families.json');
+  const result=spawnSync(process.execPath,['--input-type=module','-e',
+    "import assert from 'node:assert/strict';import {CAPACITY_MIB,RESERVE_KIB,LIVE_STOP_KIB,checkLiveBudget,checkAllocation} from './spike/090-p3-resource-policy.mjs';assert.equal(CAPACITY_MIB,5888);assert.equal(RESERVE_KIB,6844416);assert.equal(checkAllocation(7523264),678848);assert.throws(()=>checkAllocation(7368703));checkLiveBudget(LIVE_STOP_KIB,(5888-64)*1024);assert.throws(()=>checkLiveBudget(LIVE_STOP_KIB,5888*1024));"],
+    {env:{...process.env,GENOVA_090_ATTEMPT:'20261010-managed-families'},encoding:'utf8'});
+  assert.equal(result.status,0,result.stderr);
+});
+test('archived failure or any prior receipt refuses attempt reuse before allocation',()=>{
+  const attempt='20261010-managed-families';
+  requireUnusedAttempt(attempt,['summary.json','artifact-key.bin']);
+  for(const name of [`runtime-ownership-${attempt}.json`,`runtime-${attempt}-pull-classic-result.json`,
+    `restore-summary-${attempt}.json`,`managed-${attempt}-matrix-v1.json`])
+    assert.throws(()=>requireUnusedAttempt(attempt,[name]));
+  assert.throws(()=>requireUnusedAttempt(attempt,[null]));
 });
