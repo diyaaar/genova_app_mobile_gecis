@@ -10,6 +10,7 @@ import {ATTEMPT,restoreReceiptNames} from './090-p3-resource-policy.mjs';
 import {measureRuntime} from './090-p3-runtime-resources.mjs';
 import {dataDigestQuery,canonicalSettings,dataPredicate} from './090-p3-recovery-queries.mjs';
 import {buildRealtimeCloneTest,captureBefore046Sql} from './090-realtime-clone-test.mjs';
+import {requireNetworkNone} from './090-managed-isolation.mjs';
 export const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m';
 export const DB='genova_090_p3_restore',CONTAINER='genova090p3-db',LIMA='/opt/homebrew/bin/limactl';
 export const IMAGE='supabase/postgres@sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00';
@@ -22,7 +23,7 @@ export function readPrivate(name){const file=path.join(DIR,name),s=fs.lstatSync(
   assert(s.isFile()&&!s.isSymbolicLink()&&(s.mode&511)===384,'Private artifact scope');return fs.readFileSync(file);}
 function writePrivate(name,body){fs.writeFileSync(path.join(DIR,name),body,{flag:'wx',mode:0o600});}
 export function runtimeGuard(){
-  assert.equal(ATTEMPT,'20261009-compatibility');assert.equal(process.cwd(),'/Users/alidiyarduran/Antigravity/genovakorist');
+  assert(['20261009-compatibility','20261010-managed-web','20261010-managed-final'].includes(ATTEMPT),'Approved compatibility attempt only');assert.equal(process.cwd(),'/Users/alidiyarduran/Antigravity/genovakorist');
   owner=JSON.parse(readPrivate('runtime-ownership.json'));assert.equal(owner.attempt,ATTEMPT);assert.equal(owner.limaHome,runtimeEnv.LIMA_HOME);
   peak=Math.max(peak,measureRuntime(owner).allocatedKiB);
 }
@@ -38,8 +39,7 @@ export function sql(text,database=DB){assert([DB,'postgres','genova_090_p3_peer'
 export function query(text){return JSON.parse(sql('begin read only;'+canonicalSettings+
   `select coalesce(jsonb_agg(q),'[]'::jsonb) from (${text}) q;rollback;`));}
 export function verifyClone(){runtimeGuard();
-  const target=JSON.parse(command(['inspect',CONTAINER]))[0];assert.equal(target.Config.Image,IMAGE);
-  assert.equal(target.HostConfig.NetworkMode,'none');assert.equal(target.Mounts.length,0);assert.equal(Object.keys(target.HostConfig.PortBindings||{}).length,0);
+  const target=JSON.parse(command(['inspect',CONTAINER]))[0];requireNetworkNone(target,IMAGE);
   const proof=JSON.parse(readPrivate(restoreReceiptNames().summary));
   assert.equal(proof.attempt,ATTEMPT);assert.equal(proof.status,'CURRENT_STATE_SELECTED_FIDELITY_PASS');
   assert.equal(proof.project,'hievmwwctjjlhmssoxsu');assert.equal(proof.database,DB);

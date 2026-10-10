@@ -11,6 +11,7 @@ import { ATTEMPT, LIVE_STOP_KIB, restoreReceiptNames } from './090-p3-resource-p
 import {restoreDroppedSlots,restoreBetweenForm,publicationSeed} from './090-p3-recovery-seed.mjs';
 import {planAclAdditions} from './090-p3-parity-analysis.mjs';
 import {measureRuntime} from './090-p3-runtime-resources.mjs';
+import {requireNetworkNone} from './090-managed-isolation.mjs';
 const RUNTIME_DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m';
 const DIR=process.env.GENOVA_RECOVERY_BACKUP_DIR||RUNTIME_DIR;
 let stage='scope';
@@ -65,7 +66,7 @@ function main(){
   if(owner.attempt!==ATTEMPT||owner.limaHome!==env.LIMA_HOME||owner.owner!=='090-P3-only'||freeKiB()<LIVE_STOP_KIB)throw Error('Runtime ownership/floor refused');
   runtimeOwner=owner;measureRuntime(owner);
   const target=JSON.parse(command(['inspect',CONTAINER]))[0];
-  if(target.Config.Image!==IMAGE||target.HostConfig.NetworkMode!=='none'||target.Mounts.length||Object.keys(target.HostConfig.PortBindings||{}).length)throw Error('Private isolation refused');
+  requireNetworkNone(target,IMAGE);
   if(sql(`select exists(select 1 from pg_database where datname='${DB}');`,'postgres')!=='f')throw Error('Existing database refused');
   // This installer setting is SIGHUP, not session-settable. Only the owned offline
   // backend is changed; fresh connections verify reload before canonical owners.

@@ -10,6 +10,10 @@ function allocated(file){return Number(execFileSync('/usr/bin/du',['-sk',file],{
 export function measureRuntime(owner){
   if(owner.attempt!==ATTEMPT||owner.image!==path.join(DIR,'runtime-'+ATTEMPT+'.sparsebundle')||owner.owner!=='090-P3-only'||fs.lstatSync(owner.image).isSymbolicLink())throw Error('Resource ownership refused');
   let used=allocated(owner.image);
+  for(const file of owner.webPaths||[]){
+    if(!['20261010-managed-web','20261010-managed-final'].includes(ATTEMPT)||file!=='/Users/alidiyarduran/Antigravity/genovakorist/spike/090-runtime/managed-web')throw Error('Web resource ownership refused');
+    if(fs.existsSync(file)){if(fs.lstatSync(file).isSymbolicLink())throw Error('Web resource symlink refused');used+=allocated(file);}
+  }
   if(owner.isoCacheWasAbsent&&fs.existsSync(iso))used+=allocated(iso);
   for(const name of fs.readdirSync(DIR))if(name.includes(ATTEMPT)&&!name.endsWith('.sparsebundle')){
     const stat=fs.lstatSync(path.join(DIR,name));if(!stat.isFile()||stat.isSymbolicLink())throw Error('Attempt resource shape refused');

@@ -13,8 +13,9 @@ if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv
 const owner=JSON.parse(fs.readFileSync(path.join(DIR,'runtime-ownership.json')));
 if(owner.attempt!==ATTEMPT||owner.mount!=='/Volumes/g090p3'||owner.limaHome!=='/Volumes/g090p3/lima'||owner.owner!=='090-P3-only'||!fs.existsSync(owner.limaHome))throw Error('Runtime ownership refused');
 const env={...process.env,LIMA_HOME:owner.limaHome,LIMA_SHELLENV_BLOCK:'*'};
-const commands={start:['--tty=false','start','--name='+VM,'spike/090-p3-offline-lima.yaml','--timeout=4m'],
-  'start-classic':['--tty=false','start','--name='+VM,'spike/090-p3-offline-lima.yaml','--timeout=4m'],
+const vmConfig=['20261010-managed-web','20261010-managed-final'].includes(ATTEMPT)?'spike/090-p3-managed-web-lima.yaml':'spike/090-p3-offline-lima.yaml';
+const commands={start:['--tty=false','start','--name='+VM,vmConfig,'--timeout=4m'],
+  'start-classic':['--tty=false','start','--name='+VM,vmConfig,'--timeout=4m'],
   'provision-repair':['shell',VM,'sudo','sh','-s'],
   'provision-resume':['shell',VM,'sudo','sh','-s'],
   'provision-clean':['shell',VM,'sudo','sh','-s'],
@@ -41,7 +42,12 @@ child.on('exit',async code=>{
     let ready=false;
     for(let i=0;i<60&&!ready;i++){
       try{peak=Math.max(peak,measureRuntime(owner).allocatedKiB);
-        execFileSync(LIMA,['shell',VM,'sudo','docker','exec','genova090p3-db','pg_isready','-U','supabase_admin','-d','postgres'],{env,stdio:'pipe',timeout:3000});ready=true;
+        // Image bootstrap briefly runs a socket-only temporary server. pg_isready
+        // alone can succeed just before that server is shut down. Require the
+        // final listener configuration through a real SQL connection instead.
+        const finalServer=execFileSync(LIMA,['shell',VM,'sudo','docker','exec','-e','PGPASSWORD=090-synthetic-local-only','genova090p3-db',
+          'psql','-X','-Atq','-w','-U','supabase_admin','-d','postgres','-c',"select current_setting('listen_addresses') <> '';"],{env,encoding:'utf8',stdio:'pipe',timeout:3000});
+        ready=finalServer.trim()==='t';
       }catch{await new Promise(resolve=>setTimeout(resolve,500));}
     }
     if(!ready)stopped=true;

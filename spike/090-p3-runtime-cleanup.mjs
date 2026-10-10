@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { ATTEMPT } from './090-p3-resource-policy.mjs';
+import {requireManagedCleanupOrder} from './090-managed-cleanup-order.mjs';
 const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m';
 const owner=JSON.parse(fs.readFileSync(path.join(DIR,'runtime-ownership.json')));
 const final=process.argv[2]==='--cleanup-approved-current';
@@ -15,6 +16,17 @@ if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv
   owner.limaHome!=='/Volumes/g090p3/lima'||fs.lstatSync(owner.image).isSymbolicLink()||fs.existsSync(archive))throw Error('Exact cleanup ownership refused');
 if(owner.isoCacheWasAbsent&&fs.existsSync(isoCache)&&(fs.lstatSync(isoCache).isSymbolicLink()||fs.readFileSync(path.join(isoCache,'url'),'utf8').trim()!==isoUrl))throw Error('Exact newly created ISO cache refused');
 const env={...process.env,LIMA_HOME:owner.limaHome,LIMA_SHELLENV_BLOCK:'*'};
+if(['20261010-managed-web','20261010-managed-final'].includes(ATTEMPT)){
+  const artifact=name=>{const file=path.join(DIR,'managed-'+ATTEMPT+'-'+name+'.json'),s=fs.lstatSync(file);
+    if(!s.isFile()||s.isSymbolicLink()||(s.mode&511)!==384)throw Error('Private cleanup prerequisite refused');return {body:JSON.parse(fs.readFileSync(file)),mtime:s.mtimeMs};};
+  const current=artifact('browser-v9'),invariants=artifact('final-invariants-v2');
+  let legacy;
+  if(ATTEMPT==='20261010-managed-final'){
+    const file=path.join(DIR,'managed-20261010-managed-web-browser-v8.json'),s=fs.lstatSync(file);
+    if(!s.isFile()||s.isSymbolicLink()||(s.mode&511)!==384)throw Error('Historical legacy proof custody refused');legacy={body:JSON.parse(fs.readFileSync(file)),mtime:s.mtimeMs};
+  }else legacy=artifact('browser-v8');
+  requireManagedCleanupOrder({current:current.body,legacy:legacy.body,invariants:invariants.body,currentMtime:current.mtime,legacyMtime:legacy.mtime});
+}
 execFileSync('/opt/homebrew/bin/limactl',['stop','--force','g090p3'],{env,stdio:'pipe',timeout:30000});
 execFileSync('/opt/homebrew/bin/limactl',['delete','--force','g090p3'],{env,stdio:'pipe',timeout:30000});
 execFileSync('/usr/bin/hdiutil',['detach',owner.mount],{stdio:'pipe',timeout:30000});
