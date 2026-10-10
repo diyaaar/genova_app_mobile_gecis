@@ -6,7 +6,7 @@ Historical records keep their original date/revision. [Guide](README.md).
 
 ## Current position
 
-- **10Oct next managed five-family goal ACTIVE/INCOMPLETE:**
+- **10Oct next managed five-family goal BLOCKED/INCOMPLETE after third resource audit:**
   [Exact matrix/resource preflight](../reports/2026-10-10-p3-managed-five-family-preflight.md)
   distinguishes real role loss from still-valid ownership/room grants and requires
   actual all-family HTTP/COMMIT controls. New6GiB/640MiBstop approval PENDING;
@@ -18,6 +18,9 @@ Historical records keep their original date/revision. [Guide](README.md).
   Sourceprepfa32858 adds unusedfive-route/195minimumrow/newcleanuporder guards;
   8Node/ESLint/priorreceipt PASS/16KiBsource. Notwired/noruntimeacceptance; new
   approvalstillpending/free7,599,184KiB. Do notclose goal from guard tests.
+  Latest7,593,320KiB<10GiB/mount/newimage/files/defaultLima/listeners/weboutputs
+  absent/zero. Same approval unanswered for threegoalturns; no livewait/largeowned
+  cleanup. NEXT explicit exception or adequate measured capacity→freshpreflight.
 
 - **10Oct supported-current managed read checkpoint PASS / fullP3OPEN:**
   [Record](../reports/2026-10-10-p3-managed-read-compatibility.md)/

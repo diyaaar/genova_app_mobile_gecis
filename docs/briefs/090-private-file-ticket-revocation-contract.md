@@ -17,6 +17,19 @@ families before `mixed`/`r2-required` cutover. This brief does not authorize liv
 
 ### 10 October continuation — managed five-family matrix, resource approval pending
 
+THIRD RESOURCE AUDIT EXIT: goal BLOCKED/INCOMPLETE, not accepted. The same new
+resource exception remains unanswered across the initial continuation and two
+automatic goal continuations. Previous turn made actual source/guard-test progress;
+this turn is a blocker revalidation, not a verified wait/live test. Freshfree
+7,593,320KiB<10GiB; ownedmount/newattemptimage/newattemptfiles/defaultLima/scoped
+listeners/weboutputs allabsent/zero. No safe owned generated cleanup can restore
+capacity; do not delete global caches/user data or invent a different acceptance.
+Low-allocation preparation is complete; actual managed matrix/COMMIT/finalaudit
+NOT RUN. NEXT explicit new resource approval or sufficient measured capacity→
+fresh exact preflight/guard integration→actual full goal. No repeated question,
+environment rebuild, ownerQA, hosted change or AI export. The earlier ACTIVE text
+below is chronological and superseded only for status, not the original scope.
+
 One measurable outcome: real managed Auth/REST/RLS/current Edge permitted reads
 and retained GET/HEAD revocation across all five families, including effective
 role/member/session authority and actual HTTP/COMMIT ordering. Full goal ACTIVE,

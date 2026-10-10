@@ -7,7 +7,7 @@ English records/Turkish updates, sole writer; check ownership/permissions/resour
 
 ## Current measurable outcome
 
-New five-family continuation ACTIVE/INCOMPLETE: [preflight/matrix](../docs/reports/2026-10-10-p3-managed-five-family-preflight.md)
+New five-family continuation BLOCKED/INCOMPLETE afterthirdresourceaudit: [preflight/matrix](../docs/reports/2026-10-10-p3-managed-five-family-preflight.md)
 and [090card](../docs/briefs/090-private-file-ticket-revocation-contract.md#10-october-continuation--managed-five-family-matrix-resource-approval-pending).
 Actual effective-grant/role/member/session/HTTP-COMMIT required; no new runtime proof.
 Entry47917de/CLI marker unrelated. Free7,660,312KiB<10GiB; new6GiB/640MiBstop
@@ -20,6 +20,9 @@ approval required. No new runtime or large outputs to remove.
 Sourceprepfa32858 unusedfive-route/195minimumdecisionrows/newcleanuporder guards:
 8Node/ESLint/priorreceiptverify PASS/16KiBsource. Notwired/nomatrixruntimeproof;
 approvalstillabsent/free7,599,184KiB. Full goal remainsACTIVE/INCOMPLETE.
+Latestthirdgoalturn sameapprovalabsent/free7,593,320KiB<10GiB; ownmount/newimage/
+newfiles/defaultLima/listeners/weboutputsabsent/zero. No verifiedlivewait/safeowned
+largecleanup; actualmatrixNOTRUN. GoalBLOCKED, previousACTIVEtexthistorical.
 
 [Managed current-read checkpoint](../docs/reports/2026-10-10-p3-managed-read-compatibility.md)
 PASS/[proof](../docs/reports/090/2026-10-10-p3-managed-read-compatibility.json),
