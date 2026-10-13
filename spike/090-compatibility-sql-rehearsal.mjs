@@ -9,7 +9,7 @@ import {fileURLToPath} from 'node:url';
 import {ATTEMPT,restoreReceiptNames} from './090-p3-resource-policy.mjs';
 import {measureRuntime} from './090-p3-runtime-resources.mjs';
 import {dataDigestQuery,canonicalSettings,dataPredicate} from './090-p3-recovery-queries.mjs';
-import {buildRealtimeCloneTest,captureBefore046Sql} from './090-realtime-clone-test.mjs';
+import {buildRealtimeCloneTest,captureBefore046Sql,bindRealtimeFixtureDate} from './090-realtime-clone-test.mjs';
 import {requireNetworkNone} from './090-managed-isolation.mjs';
 export const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m';
 export const DB='genova_090_p3_restore',CONTAINER='genova090p3-db',LIMA='/opt/homebrew/bin/limactl';
@@ -23,7 +23,7 @@ export function readPrivate(name){const file=path.join(DIR,name),s=fs.lstatSync(
   assert(s.isFile()&&!s.isSymbolicLink()&&(s.mode&511)===384,'Private artifact scope');return fs.readFileSync(file);}
 function writePrivate(name,body){fs.writeFileSync(path.join(DIR,name),body,{flag:'wx',mode:0o600});}
 export function runtimeGuard(){
-  assert(['20261009-compatibility','20261010-managed-web','20261010-managed-final','20261010-managed-families'].includes(ATTEMPT),'Approved compatibility attempt only');assert.equal(process.cwd(),'/Users/alidiyarduran/Antigravity/genovakorist');
+  assert(['20261009-compatibility','20261010-managed-web','20261010-managed-final','20261010-managed-families','20261013-managed-families'].includes(ATTEMPT),'Approved compatibility attempt only');assert.equal(process.cwd(),'/Users/alidiyarduran/Antigravity/genovakorist');
   owner=JSON.parse(readPrivate('runtime-ownership.json'));assert.equal(owner.attempt,ATTEMPT);assert.equal(owner.limaHome,runtimeEnv.LIMA_HOME);
   peak=Math.max(peak,measureRuntime(owner).allocatedKiB);
 }
@@ -79,12 +79,18 @@ function main(){
     assert.equal(applied.observations.length,11);assert.equal(applied.status,'ACTUAL_ELEVEN_CLONE_DELTAS_PASS');
     const before=JSON.parse(readPrivate('compatibility-'+ATTEMPT+'-post-delta-digests.json'));
     for(const [index,pin] of packet.sqlTests.entries()){
-      stage='v2-test-'+index;let source=checkedSource(pin),fixture='';
+      stage='partition-date-test-'+index;let source=checkedSource(pin),fixture='';
       if(index===5)fixture=checkedSource(packet.fixtures[0]);
       if(index===6||index===7)fixture=checkedSource(packet.fixtures[1]);
       if(index===7)fixture+='\n'+checkedSource(packet.fixtures[2]);
       refuseFixtureCollisions(fixture+'\n'+source);
-      if(index===1)source=buildRealtimeCloneTest(JSON.parse(readPrivate('compatibility-'+ATTEMPT+'-before046.json')),source).sql;
+      if(index===1){
+        source=buildRealtimeCloneTest(JSON.parse(readPrivate('compatibility-'+ATTEMPT+'-before046.json')),source).sql;
+        const bounds=query("select pg_get_expr(c.relpartbound,c.oid) as bound from pg_class c join pg_inherits i on i.inhrelid=c.oid where i.inhparent='realtime.messages'::regclass order by c.relname");
+        const dates=bounds.map(row=>row.bound.match(/^FOR VALUES FROM \('(\d{4}-\d{2}-\d{2}) 00:00:00'\) TO/)).filter(Boolean).map(match=>match[1]);
+        assert(dates.length>0,'Captured daily realtime partition required');
+        source=bindRealtimeFixtureDate(source,dates.at(-1));
+      }
       if(fixture){assert.equal(source.split('begin;').length,2);source=source.replace('begin;','begin;\n'+fixture);}
       const executed="set role postgres;set lock_timeout='2s';set statement_timeout='30s';"+source;
       sql(executed);

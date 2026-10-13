@@ -1,0 +1,710 @@
+{
+  "observedAt": "2026-10-13T16:36:34.172Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "identity": [
+    {
+      "database": "postgres",
+      "role": "supabase_read_only_user",
+      "transaction_read_only": "on",
+      "server_version": "17.6"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "assignment_review_audio_upload_058",
+      "callers": [
+        {
+          "path": "supabase/functions/assignment-review-upload/index.ts",
+          "line": 18,
+          "sourceSha256": "c938605d1f4947298eebf85f1acd784ce1c6c74448b4ee5fd863cc0a58019e65"
+        }
+      ],
+      "deployedSignatures": [
+        "assignment_review_audio_upload_058(text,uuid,uuid,uuid,uuid,jsonb,text,uuid,text)"
+      ]
+    },
+    {
+      "name": "assignment_submission_upload_057",
+      "callers": [
+        {
+          "path": "supabase/functions/assignment-upload/index.ts",
+          "line": 22,
+          "sourceSha256": "b64c761c767d30b8de35d0d70535be14b77b73a5bd49076748d372e775cc05c7"
+        }
+      ],
+      "deployedSignatures": [
+        "assignment_submission_upload_057(text,uuid,uuid,uuid,uuid,jsonb,text,uuid,text)"
+      ]
+    },
+    {
+      "name": "chat_media_abort_060",
+      "callers": [
+        {
+          "path": "supabase/functions/chat-media-lifecycle/index.ts",
+          "line": 10,
+          "sourceSha256": "60a2bf990093963b00846e238ca6bfa33f0fa54026bc8083bb4d9ae5c0a6460b"
+        }
+      ],
+      "deployedSignatures": [
+        "chat_media_abort_060(text,uuid,uuid,uuid,uuid,uuid,uuid)"
+      ]
+    },
+    {
+      "name": "chat_media_message_delete_060",
+      "callers": [
+        {
+          "path": "supabase/functions/chat-media-lifecycle/index.ts",
+          "line": 11,
+          "sourceSha256": "60a2bf990093963b00846e238ca6bfa33f0fa54026bc8083bb4d9ae5c0a6460b"
+        }
+      ],
+      "deployedSignatures": [
+        "chat_media_message_delete_060(text,uuid,uuid,uuid,uuid,uuid,uuid)"
+      ]
+    },
+    {
+      "name": "chat_media_upload_060",
+      "callers": [
+        {
+          "path": "supabase/functions/chat-media-upload/index.ts",
+          "line": 11,
+          "sourceSha256": "9929132305390ffea7afe964378709896099a4899f9528b0291b06a211bbdaa5"
+        }
+      ],
+      "deployedSignatures": [
+        "chat_media_upload_060(text,uuid,uuid,uuid,uuid,jsonb,text,uuid,text)"
+      ]
+    },
+    {
+      "name": "check_slug_available",
+      "callers": [
+        {
+          "path": "lib/chat.ts",
+          "line": 263,
+          "sourceSha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+        }
+      ],
+      "deployedSignatures": [
+        "check_slug_available(text,uuid)"
+      ]
+    },
+    {
+      "name": "choir_invitation_command",
+      "callers": [
+        {
+          "path": "supabase/functions/choir-invitations/handler.ts",
+          "line": 77,
+          "sourceSha256": "58d81b30fd210937cd31848ce239bf5386f62349e4e203bc107f7d959146b3a5"
+        }
+      ],
+      "deployedSignatures": [
+        "choir_invitation_command(text,jsonb)"
+      ]
+    },
+    {
+      "name": "claim_assignment_notification_057",
+      "callers": [
+        {
+          "path": "app/api/assignment-submissions/upload/route.ts",
+          "line": 195,
+          "sourceSha256": "0fe76490048dd9a586bfc44d6d1182e86f51d35e44dbda6bac57f1fff2cebd99"
+        }
+      ],
+      "deployedSignatures": [
+        "claim_assignment_notification_057(uuid,uuid,uuid,uuid)"
+      ]
+    },
+    {
+      "name": "claim_assignment_review_notification_058",
+      "callers": [
+        {
+          "path": "app/api/assignment-submissions/review/route.ts",
+          "line": 217,
+          "sourceSha256": "250ebdce681924d27466a79534bd2306bdfc91a5fa61ed4bd8c92cb1ca60e77f"
+        }
+      ],
+      "deployedSignatures": [
+        "claim_assignment_review_notification_058(uuid,uuid,uuid,uuid)"
+      ]
+    },
+    {
+      "name": "create_operator_choir",
+      "callers": [
+        {
+          "path": "supabase/functions/create-choir/index.ts",
+          "line": 52,
+          "sourceSha256": "f85e42acbcbcc9eaa63e5daeaf8dae38d01d7bb3453ac8b768fd16faf050d7e5"
+        }
+      ],
+      "deployedSignatures": [
+        "create_operator_choir(text,text,uuid,text,text)"
+      ]
+    },
+    {
+      "name": "create_repertoire_text_comment_059",
+      "callers": [
+        {
+          "path": "supabase/functions/repertoire-comment-lifecycle/index.ts",
+          "line": 11,
+          "sourceSha256": "44b8bfe6a19342dc3f533ff5983e47fcca6193694aa170fd5dc2a6f34f27ee19"
+        }
+      ],
+      "deployedSignatures": [
+        "create_repertoire_text_comment_059(uuid,uuid,uuid,uuid,uuid,text,text)"
+      ]
+    },
+    {
+      "name": "current_choir_id",
+      "callers": [
+        {
+          "path": "lib/assignments/review-upload.ts",
+          "line": 18,
+          "sourceSha256": "4ff7a7f451bc2eb5a42d92dd679a01cfdba2ad799b1509b219c8740c7369baee"
+        },
+        {
+          "path": "lib/assignments/review-upload.ts",
+          "line": 24,
+          "sourceSha256": "4ff7a7f451bc2eb5a42d92dd679a01cfdba2ad799b1509b219c8740c7369baee"
+        },
+        {
+          "path": "lib/assignments/upload.ts",
+          "line": 30,
+          "sourceSha256": "a1c3979a8963ce2358008bbc78def8a2f15ef62da8beb3c579482db8ed4124f1"
+        },
+        {
+          "path": "lib/assignments/upload.ts",
+          "line": 43,
+          "sourceSha256": "a1c3979a8963ce2358008bbc78def8a2f15ef62da8beb3c579482db8ed4124f1"
+        },
+        {
+          "path": "lib/repertuvar/comment-audio.ts",
+          "line": 9,
+          "sourceSha256": "beed91a3d8270a4c50667375adb106b6e019ab98ff59f05c424b25b8bd5f8442"
+        },
+        {
+          "path": "lib/repertuvar/comment-audio.ts",
+          "line": 10,
+          "sourceSha256": "beed91a3d8270a4c50667375adb106b6e019ab98ff59f05c424b25b8bd5f8442"
+        },
+        {
+          "path": "lib/repertuvar/create-song.ts",
+          "line": 27,
+          "sourceSha256": "0db2ed184306d9709cc07a6e192edd92783c09bc17f7e56b7f4525edc9f8ee2e"
+        },
+        {
+          "path": "lib/repertuvar/upload.ts",
+          "line": 34,
+          "sourceSha256": "bd4d6764e8746047a9559bad7f9bb9c6d91e7e6f98c9f65b1ce3635c9b2b55bb"
+        },
+        {
+          "path": "lib/repertuvar/upload.ts",
+          "line": 45,
+          "sourceSha256": "bd4d6764e8746047a9559bad7f9bb9c6d91e7e6f98c9f65b1ce3635c9b2b55bb"
+        },
+        {
+          "path": "lib/server/tenant-client.ts",
+          "line": 23,
+          "sourceSha256": "f76f300a348087d03d3da9921f4b2854bd89b30af5bf42cd293398994508fc66"
+        },
+        {
+          "path": "supabase/functions/assignment-file/index.ts",
+          "line": 59,
+          "sourceSha256": "dfe67a9a3dd941c4a4d08ca8ea42300577c794907e890479680ce08e42a281ad"
+        },
+        {
+          "path": "supabase/functions/assignment-review-file/index.ts",
+          "line": 17,
+          "sourceSha256": "4e11956ed83aee5275e5bc7c9ab2b478dd09f0fedf7ccd40ee0ba5a26aacbb70"
+        },
+        {
+          "path": "supabase/functions/assignment-upload/auth.ts",
+          "line": 26,
+          "sourceSha256": "3a1fc5a89ef405fea234166bf8dfe294f6c0a650ebbef8efd2184a5e8810cfbe"
+        },
+        {
+          "path": "supabase/functions/chat-media-file/index.ts",
+          "line": 16,
+          "sourceSha256": "c43605526cd7e27af3ce20c4570b2e7123ea452eca792bb67e4e8d132fe92c02"
+        },
+        {
+          "path": "supabase/functions/drive-manager-v2/index.ts",
+          "line": 458,
+          "sourceSha256": "d5a93f9f2f0668ac6b53c39b73889778b28c07ebd17c2e9f4db1166122e96e7d"
+        },
+        {
+          "path": "supabase/functions/legacy-file/index.ts",
+          "line": 28,
+          "sourceSha256": "4dec990dc2667f1772972a9e86f06a3fb2e5a28cba07b27be15de39c806b4347"
+        },
+        {
+          "path": "supabase/functions/link-preview/authorization.ts",
+          "line": 17,
+          "sourceSha256": "77aa1412068c34d4611c38a57668c7d4b5d44fcd9cbf5ad6d177aa43ac6690b7"
+        },
+        {
+          "path": "supabase/functions/repertoire-comment-file/index.ts",
+          "line": 13,
+          "sourceSha256": "c0d42f786eef1b5a43463e43aca4255ecbc1ae8cb4b28a46f1e18e1197fa1753"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/index.ts",
+          "line": 60,
+          "sourceSha256": "e445074facb9031c2f92451813b2442ccfccf638cf60632aa25ead7b23c1711e"
+        },
+        {
+          "path": "supabase/functions/repertoire-upload/auth.ts",
+          "line": 22,
+          "sourceSha256": "b58c5a22235db46a5dbbebe06f7dec7e10bc45f1662e32420dc0af6ea744715f"
+        },
+        {
+          "path": "supabase/functions/link-preview/index.ts",
+          "line": 17,
+          "sourceSha256": "9845fd5eb015f306c160785855fb74f27a2057b68c6e56379e2b274af4f1ab5c",
+          "expression": "name",
+          "reviewedTargets": [
+            "current_choir_id",
+            "current_choir_member_id"
+          ]
+        }
+      ],
+      "deployedSignatures": [
+        "current_choir_id()"
+      ]
+    },
+    {
+      "name": "current_choir_member_id",
+      "callers": [
+        {
+          "path": "supabase/functions/link-preview/authorization.ts",
+          "line": 18,
+          "sourceSha256": "77aa1412068c34d4611c38a57668c7d4b5d44fcd9cbf5ad6d177aa43ac6690b7"
+        },
+        {
+          "path": "supabase/functions/link-preview/index.ts",
+          "line": 17,
+          "sourceSha256": "9845fd5eb015f306c160785855fb74f27a2057b68c6e56379e2b274af4f1ab5c",
+          "expression": "name",
+          "reviewedTargets": [
+            "current_choir_id",
+            "current_choir_member_id"
+          ]
+        }
+      ],
+      "deployedSignatures": [
+        "current_choir_member_id()"
+      ]
+    },
+    {
+      "name": "delete_chat_message_for_everyone",
+      "callers": [
+        {
+          "path": "lib/chat.ts",
+          "line": 1270,
+          "sourceSha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+        },
+        {
+          "path": "apps/mobile/src/chat/supabase-chat-message-action-transport.ts",
+          "line": 13,
+          "sourceSha256": "6232344965aa7f00fc53688bd061f4cbe65c0ccd95682aab111d892a329a73b9",
+          "expression": "name",
+          "reviewedTargets": [
+            "edit_chat_message",
+            "delete_chat_message_for_everyone",
+            "hide_chat_message_for_self"
+          ]
+        }
+      ],
+      "deployedSignatures": [
+        "delete_chat_message_for_everyone(uuid)"
+      ]
+    },
+    {
+      "name": "delete_my_push_subscription",
+      "callers": [
+        {
+          "path": "app/api/push/unsubscribe/route.ts",
+          "line": 23,
+          "sourceSha256": "2d3a3b1127692d97047e741ccf685c546422048bc64caec5a158ce832e2891ea"
+        }
+      ],
+      "deployedSignatures": [
+        "delete_my_push_subscription(text)"
+      ]
+    },
+    {
+      "name": "edit_chat_message",
+      "callers": [
+        {
+          "path": "lib/chat.ts",
+          "line": 1252,
+          "sourceSha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+        },
+        {
+          "path": "apps/mobile/src/chat/supabase-chat-message-action-transport.ts",
+          "line": 13,
+          "sourceSha256": "6232344965aa7f00fc53688bd061f4cbe65c0ccd95682aab111d892a329a73b9",
+          "expression": "name",
+          "reviewedTargets": [
+            "edit_chat_message",
+            "delete_chat_message_for_everyone",
+            "hide_chat_message_for_self"
+          ]
+        }
+      ],
+      "deployedSignatures": [
+        "edit_chat_message(uuid,text)"
+      ]
+    },
+    {
+      "name": "get_chat_rooms_for_member",
+      "callers": [
+        {
+          "path": "apps/mobile/src/chat/supabase-chat-read-transport.ts",
+          "line": 50,
+          "sourceSha256": "75f3bdcd54880fcb20ff09facda800d586369264993f3d984c5b7a485d573041"
+        },
+        {
+          "path": "lib/chat.ts",
+          "line": 681,
+          "sourceSha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+        }
+      ],
+      "deployedSignatures": [
+        "get_chat_rooms_for_member(uuid)"
+      ]
+    },
+    {
+      "name": "get_member_continuity_info",
+      "callers": [
+        {
+          "path": "app/(main)/devamsizlik/page.tsx",
+          "line": 260,
+          "sourceSha256": "3640a3402c7b8296dc643c14b55758fe78ea2f12c7828c46951d059f8ba9ecfd"
+        },
+        {
+          "path": "app/(main)/page.tsx",
+          "line": 140,
+          "sourceSha256": "a192e0e55e9321ee5e8cde95cd3efe629d57232379f514be112a20a063c161b4"
+        }
+      ],
+      "deployedSignatures": [
+        "get_member_continuity_info(uuid)"
+      ]
+    },
+    {
+      "name": "get_pending_approvals",
+      "callers": [
+        {
+          "path": "app/(main)/devamsizlik/page.tsx",
+          "line": 176,
+          "sourceSha256": "3640a3402c7b8296dc643c14b55758fe78ea2f12c7828c46951d059f8ba9ecfd"
+        }
+      ],
+      "deployedSignatures": [
+        "get_pending_approvals()"
+      ]
+    },
+    {
+      "name": "hide_chat_message_for_self",
+      "callers": [
+        {
+          "path": "lib/chat.ts",
+          "line": 1279,
+          "sourceSha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+        },
+        {
+          "path": "apps/mobile/src/chat/supabase-chat-message-action-transport.ts",
+          "line": 13,
+          "sourceSha256": "6232344965aa7f00fc53688bd061f4cbe65c0ccd95682aab111d892a329a73b9",
+          "expression": "name",
+          "reviewedTargets": [
+            "edit_chat_message",
+            "delete_chat_message_for_everyone",
+            "hide_chat_message_for_self"
+          ]
+        }
+      ],
+      "deployedSignatures": [
+        "hide_chat_message_for_self(uuid)"
+      ]
+    },
+    {
+      "name": "list_my_choirs",
+      "callers": [
+        {
+          "path": "lib/choir-context-core.ts",
+          "line": 75,
+          "sourceSha256": "38fef60354ddb5ff18e3352ba46e3c1545eddd99dae79f10f24fe9e0c25188ff"
+        }
+      ],
+      "deployedSignatures": [
+        "list_my_choirs()"
+      ]
+    },
+    {
+      "name": "mark_chat_message_status",
+      "callers": [
+        {
+          "path": "lib/chat.ts",
+          "line": 1225,
+          "sourceSha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+        }
+      ],
+      "deployedSignatures": [
+        "mark_chat_message_status(uuid,text)"
+      ]
+    },
+    {
+      "name": "mark_chat_room_read",
+      "callers": [
+        {
+          "path": "apps/mobile/src/chat/supabase-chat-read-transport.ts",
+          "line": 75,
+          "sourceSha256": "75f3bdcd54880fcb20ff09facda800d586369264993f3d984c5b7a485d573041"
+        }
+      ],
+      "deployedSignatures": []
+    },
+    {
+      "name": "private_file_ticket_authorized_090",
+      "callers": [
+        {
+          "path": "supabase/functions/_shared/private-file-authority.ts",
+          "line": 8,
+          "sourceSha256": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a"
+        }
+      ],
+      "deployedSignatures": []
+    },
+    {
+      "name": "repertoire_comment_delete_059",
+      "callers": [
+        {
+          "path": "supabase/functions/repertoire-comment-lifecycle/index.ts",
+          "line": 12,
+          "sourceSha256": "44b8bfe6a19342dc3f533ff5983e47fcca6193694aa170fd5dc2a6f34f27ee19"
+        }
+      ],
+      "deployedSignatures": [
+        "repertoire_comment_delete_059(text,uuid,uuid,uuid,uuid,uuid)"
+      ]
+    },
+    {
+      "name": "repertoire_comment_upload_059",
+      "callers": [
+        {
+          "path": "supabase/functions/repertoire-comment-upload/index.ts",
+          "line": 12,
+          "sourceSha256": "e767d8e17645851df8b8dda505d6057bff1eefe29df135e604524c84fcc1c677"
+        }
+      ],
+      "deployedSignatures": [
+        "repertoire_comment_upload_059(text,uuid,uuid,uuid,uuid,jsonb,text,uuid,text)"
+      ]
+    },
+    {
+      "name": "repertoire_cover_upload_056",
+      "callers": [
+        {
+          "path": "supabase/functions/repertoire-upload/index.ts",
+          "line": 21,
+          "sourceSha256": "0ccf64d36fc0ab220655cb6d0f67eebdf982d66df196d718b1f44e4a7863978f",
+          "expression": "rpc",
+          "reviewedTargets": [
+            "repertoire_cover_upload_056",
+            "repertoire_upload_054"
+          ]
+        }
+      ],
+      "deployedSignatures": [
+        "repertoire_cover_upload_056(text,uuid,uuid,uuid,uuid,jsonb,text,uuid,text)"
+      ]
+    },
+    {
+      "name": "repertoire_lifecycle_055",
+      "callers": [
+        {
+          "path": "supabase/functions/repertoire-file-lifecycle/index.ts",
+          "line": 20,
+          "sourceSha256": "43f77eaf0af5d9475a3aa62448434c23e019dbc4b402ac5e052f398cf08e0c83"
+        }
+      ],
+      "deployedSignatures": [
+        "repertoire_lifecycle_055(text,uuid,uuid,uuid,uuid,text,uuid,text)"
+      ]
+    },
+    {
+      "name": "repertoire_upload_054",
+      "callers": [
+        {
+          "path": "supabase/functions/repertoire-upload/index.ts",
+          "line": 21,
+          "sourceSha256": "0ccf64d36fc0ab220655cb6d0f67eebdf982d66df196d718b1f44e4a7863978f",
+          "expression": "rpc",
+          "reviewedTargets": [
+            "repertoire_cover_upload_056",
+            "repertoire_upload_054"
+          ]
+        }
+      ],
+      "deployedSignatures": [
+        "repertoire_upload_054(text,uuid,uuid,uuid,uuid,jsonb,text,uuid,text)"
+      ]
+    },
+    {
+      "name": "replace_repertoire_assignments",
+      "callers": [
+        {
+          "path": "app/api/repertoire/assignments/update/route.ts",
+          "line": 46,
+          "sourceSha256": "6207fd7145294d45295d93c36b16c36b6081ae8d5a5ff0fe42a9d2bef463cdf3"
+        }
+      ],
+      "deployedSignatures": []
+    },
+    {
+      "name": "resolve_legacy_file_090",
+      "callers": [
+        {
+          "path": "supabase/functions/legacy-file/index.ts",
+          "line": 34,
+          "sourceSha256": "4dec990dc2667f1772972a9e86f06a3fb2e5a28cba07b27be15de39c806b4347"
+        }
+      ],
+      "deployedSignatures": []
+    },
+    {
+      "name": "review_profile_change_request",
+      "callers": [
+        {
+          "path": "app/api/profile-change-requests/review/route.ts",
+          "line": 26,
+          "sourceSha256": "2cf823e26369608a38b1eabeffccb6a8db7b265ae112478ebab0189423e18c54"
+        }
+      ],
+      "deployedSignatures": []
+    },
+    {
+      "name": "save_repertoire_pdf_annotation_snapshot",
+      "callers": [
+        {
+          "path": "lib/repertuvar/annotations.ts",
+          "line": 251,
+          "sourceSha256": "5ff803beaa4134dea817d6ab74a61a1249dcab009828342c67e6481a7e977393"
+        }
+      ],
+      "deployedSignatures": []
+    },
+    {
+      "name": "send_chat_text_message",
+      "callers": [
+        {
+          "path": "apps/mobile/src/chat/supabase-chat-send-transport.ts",
+          "line": 18,
+          "sourceSha256": "2ca36b780847add437702fa0571d94be237034d637c0d7bf545ef411cfd0b439"
+        },
+        {
+          "path": "lib/chat.ts",
+          "line": 933,
+          "sourceSha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+        }
+      ],
+      "deployedSignatures": [
+        "send_chat_text_message(uuid,uuid,text,uuid,jsonb)"
+      ]
+    },
+    {
+      "name": "set_active_choir",
+      "callers": [
+        {
+          "path": "lib/choir-context-core.ts",
+          "line": 92,
+          "sourceSha256": "38fef60354ddb5ff18e3352ba46e3c1545eddd99dae79f10f24fe9e0c25188ff"
+        }
+      ],
+      "deployedSignatures": [
+        "set_active_choir(uuid)"
+      ]
+    },
+    {
+      "name": "set_assignment_review_visibility_058",
+      "callers": [
+        {
+          "path": "app/api/assignment-submissions/hide-review/route.ts",
+          "line": 106,
+          "sourceSha256": "855a1a4784eaf0dbdc5bc9f1dc82486ac3a5b5c44444f0cbfc3bcd1bb4b4d2e5"
+        }
+      ],
+      "deployedSignatures": [
+        "set_assignment_review_visibility_058(uuid,uuid,uuid,boolean)"
+      ]
+    },
+    {
+      "name": "submit_profile_change_request",
+      "callers": [
+        {
+          "path": "app/api/profile-change-requests/submit/route.ts",
+          "line": 26,
+          "sourceSha256": "0a40e6d68ca2af2aadf62f40e088c68eb72d3ebcb48cf6c312cfb4bb7bbd74b2"
+        }
+      ],
+      "deployedSignatures": []
+    },
+    {
+      "name": "upsert_my_active_push_subscription",
+      "callers": [
+        {
+          "path": "app/api/push/subscribe/route.ts",
+          "line": 30,
+          "sourceSha256": "6b8b49abd148c43d37a50499157f1e5ed691a56db345e76c2ddb8134c9c341d3"
+        }
+      ],
+      "deployedSignatures": [
+        "upsert_my_active_push_subscription(text,text,text,text)"
+      ]
+    }
+  ],
+  "dynamic": [
+    {
+      "path": "apps/mobile/src/chat/supabase-chat-message-action-transport.ts",
+      "line": 13,
+      "sourceSha256": "6232344965aa7f00fc53688bd061f4cbe65c0ccd95682aab111d892a329a73b9",
+      "expression": "name",
+      "reviewedTargets": [
+        "edit_chat_message",
+        "delete_chat_message_for_everyone",
+        "hide_chat_message_for_self"
+      ]
+    },
+    {
+      "path": "supabase/functions/link-preview/index.ts",
+      "line": 17,
+      "sourceSha256": "9845fd5eb015f306c160785855fb74f27a2057b68c6e56379e2b274af4f1ab5c",
+      "expression": "name",
+      "reviewedTargets": [
+        "current_choir_id",
+        "current_choir_member_id"
+      ]
+    },
+    {
+      "path": "supabase/functions/repertoire-upload/index.ts",
+      "line": 21,
+      "sourceSha256": "0ccf64d36fc0ab220655cb6d0f67eebdf982d66df196d718b1f44e4a7863978f",
+      "expression": "rpc",
+      "reviewedTargets": [
+        "repertoire_cover_upload_056",
+        "repertoire_upload_054"
+      ]
+    }
+  ],
+  "missing": [
+    "mark_chat_room_read",
+    "private_file_ticket_authorized_090",
+    "replace_repertoire_assignments",
+    "resolve_legacy_file_090",
+    "review_profile_change_request",
+    "save_repertoire_pdf_annotation_snapshot",
+    "submit_profile_change_request"
+  ],
+  "boundary": "RPC name/signature presence and source caller mapping only. Does not prove compatible arguments, ACL/RLS/runtime behavior, deployed Edge body equality or release readiness."
+}

@@ -7,6 +7,7 @@ Use the [production roadmap](../docs/production-roadmap.md),
 [current checkpoint](../docs/teslim-rehberi/checkpoint.md) and
 [latest evidence](../docs/reports/2026-10-13-production-baseline.md).
 Fresh baseline and repertoire/legacy-file recovery fixes are implemented locally.
-Next implementation addresses compatible service release and remaining actual
-five-family runtime acceptance. Hosted prerequisites and full product remain open;
+Five-family managed runtime now passes 219 real local HTTP observations; owned runtime
+and secrets are cleaned. Next implementation follows the concrete compatible-service
+release package and fresh target/recovery comparison. Hosted prerequisites and full product remain open;
 old stage/resource restrictions do not reapply. No new roadmap or chat-history scan needed.

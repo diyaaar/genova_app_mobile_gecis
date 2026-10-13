@@ -7,12 +7,12 @@ import {spawnSync} from 'node:child_process';
 import {DIR,readPrivate} from './090-compatibility-sql-rehearsal.mjs';
 import {ATTEMPT} from './090-p3-resource-policy.mjs';
 import {measureRuntime} from './090-p3-runtime-resources.mjs';
-assert(['20261010-managed-web','20261010-managed-final','20261010-managed-families'].includes(ATTEMPT));assert.equal(process.argv.length,3);assert(['--prepare-approved','--prepare-ca-leaf','--prepare-initial-ca-leaf'].includes(process.argv[2]));
+assert(['20261010-managed-web','20261010-managed-final','20261010-managed-families','20261013-managed-families'].includes(ATTEMPT));assert.equal(process.argv.length,3);assert(['--prepare-approved','--prepare-ca-leaf','--prepare-initial-ca-leaf'].includes(process.argv[2]));
 const owner=JSON.parse(readPrivate('runtime-ownership.json'));measureRuntime(owner);
 if(process.argv[2]!=='--prepare-approved'){
   const p=path.join(DIR,`managed-${ATTEMPT}-tls`);
   if(process.argv[2]==='--prepare-ca-leaf')assert(fs.existsSync(p+'.json'));
-  else assert(['20261010-managed-final','20261010-managed-families'].includes(ATTEMPT));
+  else assert(['20261010-managed-final','20261010-managed-families','20261013-managed-families'].includes(ATTEMPT));
   for(const suffix of ['-ca.key','-ca.crt','-leaf.key','-leaf.csr','-leaf.crt','-leaf.ext','-v2.json'])assert(!fs.existsSync(p+suffix),'No TLS retry artifact overwrite');
   process.umask(0o077);
   const run=args=>assert.equal(spawnSync('/opt/homebrew/bin/openssl',args,{encoding:'utf8',timeout:10000}).status,0,'CA/leaf generation failed');

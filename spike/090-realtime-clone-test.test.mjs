@@ -44,3 +44,13 @@ test('deterministic source pins survive captured metadata ordering and do not cl
   assert.deepEqual(buildRealtimeCloneTest(before),buildRealtimeCloneTest([...before].reverse()));
   assert(buildRealtimeCloneTest(before).boundary.includes('NOT RUN'));
 });
+
+test('dated restore uses existing partition date only in fixture inserts', async () => {
+  const {bindRealtimeFixtureDate}=await import('./090-realtime-clone-test.mjs');
+  const source=fs.readFileSync(baselinePath,'utf8');
+  const output=bindRealtimeFixtureDate(source,'2026-10-09');
+  assert.equal(output.split("timestamp '2026-10-09 12:00:00'").length-1,7);
+  assert.equal(output.replaceAll(',inserted_at)',')').replaceAll(",timestamp '2026-10-09 12:00:00'",''),source);
+  assert.throws(()=>bindRealtimeFixtureDate(source,"2026-10-09';drop table x;--"));
+  assert.throws(()=>bindRealtimeFixtureDate(source.replace("('fixture','presence')",'missing'),'2026-10-09'));
+});

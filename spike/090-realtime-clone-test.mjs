@@ -66,3 +66,18 @@ export function buildRealtimeCloneTest(before,source=fs.readFileSync(baselinePat
   return {sql,sha256:hash(sql),sourceSha256:baselineSha256,before:canonicalPublicationRows(before),expected,
     boundary:'Generated source only. Actual faithfully restored SQL, provenance, RLS/managed Auth/provider verification NOT RUN.'};
 }
+
+/** Place synthetic rows in an existing captured partition, without adding partitions
+ * or changing defaults/policies. Only the fixture insert column/value lists change. */
+export function bindRealtimeFixtureDate(source, date) {
+  assert(/^\d{4}-\d{2}-\d{2}$/u.test(date), 'Captured partition date required');
+  const column='realtime.messages(topic,extension)';
+  assert.equal(source.split(column).length-1,4,'Unexpected fixture insert shape');
+  let result=source.replaceAll(column,'realtime.messages(topic,extension,inserted_at)');
+  let changed=0;
+  result=result.replace(/\('fixture','(broadcast|presence|postgres_changes)'\)/gu,(_,extension)=>{
+    changed++;return `('fixture','${extension}',timestamp '${date} 12:00:00')`;
+  });
+  assert.equal(changed,7,'Unexpected fixture value shape');
+  return result;
+}

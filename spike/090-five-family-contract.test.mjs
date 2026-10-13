@@ -6,13 +6,15 @@ import {READERS, readerAt, requiredCases, requireCompleteMatrix, requireFamilyCl
 // Artificial rows exercise rejection logic only; never exported as runtime evidence.
 const rows = () => READERS.flatMap(requiredCases).map(row => ({...row,
   providerDelta: row.status < 300 && row.method !== 'POST' ? 1 : 0,
+  ticketRemainingMs: 10000,
   bodyBytes: row.status < 300 && row.method === 'GET' ? 12 : 0,
 }));
 const cleanup = () => ({
   matrix: {attempt: '20261010-managed-families', status: 'ACTUAL_FIVE_FAMILY_MANAGED_HTTP_MATRIX_PASS',
-    recordedAt: '2026-10-10T09:00:00Z', observations: rows()},
+    acceptanceComplete: true, recordedAt: '2026-10-10T09:00:00Z', observations: rows()},
   invariants: {attempt: '20261010-managed-families', status: 'POST_TEST_17_CATALOG_GROUPS_AND_PROTECTED_SOURCE_UNCHANGED',
     catalogGroups: 17, noGrantRoleRlsTriggerSchemaRelaxation: true, recordedAt: '2026-10-10T09:00:02Z'},
+  transport: {attempt: '20261010-managed-families', closed: true, childrenExited: true, metrics: {outside: 0}},
   matrixMtime: Date.parse('2026-10-10T09:00:01Z'),
 });
 
@@ -47,7 +49,7 @@ test('Chef loss is denied in four primary fixtures but retained room membership 
 });
 test('complete observations accepted; missing family/method or duplicate rejected', () => {
   const full = rows();
-  assert.equal(requireCompleteMatrix(full), 39 * 5);
+  assert.equal(requireCompleteMatrix(full), 219);
   assert.throws(() => requireCompleteMatrix(full.filter(r => r.family !== 'chat-media-file')));
   assert.throws(() => requireCompleteMatrix(full.slice(1)));
   const duplicate = rows(); duplicate[1] = {...duplicate[0]};
@@ -55,6 +57,7 @@ test('complete observations accepted; missing family/method or duplicate rejecte
 });
 test('provider contact on denial, empty allow, HEAD body and wrong decisions rejected', () => {
   for (const mutate of [
+    list => {list.find(r => r.method === 'GET').ticketRemainingMs = 0;},
     list => {list.find(r => r.status === 403).providerDelta = 1;},
     list => {list.find(r => r.method === 'GET' && r.status === 200).providerDelta = 0;},
     list => {list.find(r => r.method === 'GET' && r.status === 200).bodyBytes = 0;},
@@ -85,6 +88,8 @@ test('old receipts, mismatched attempt, unfinished audit, incomplete matrix refu
     state => {state.matrixMtime = NaN;},
     state => {state.invariants.catalogGroups = 16;},
     state => {state.matrix.observations.pop();},
+    state => {state.transport.childrenExited = false;},
+    state => {state.matrix.acceptanceComplete = false;},
   ]) {const state = cleanup(); mutate(state); assert.throws(() => requireFamilyCleanupOrder(state));}
 });
 

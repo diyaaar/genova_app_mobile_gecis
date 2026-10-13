@@ -10,7 +10,7 @@ import {ATTEMPT} from './090-p3-resource-policy.mjs';
 import {measureRuntime} from './090-p3-runtime-resources.mjs';
 import {READERS, requireCompleteMatrix} from './090-five-family-contract.mjs';
 import {bytesFor} from './090-five-family-media.mjs';
-assert.equal(ATTEMPT,'20261010-managed-families');
+assert.equal(ATTEMPT,'20261013-managed-families');
 assert.equal(process.argv[2],'--run-approved');assert.equal(process.argv.length,3);
 const prefix=`managed-${ATTEMPT}`,resultFile=path.join(DIR,prefix+'-matrix-v1.json');assert(!fs.existsSync(resultFile));
 const config=JSON.parse(readPrivate(prefix+'-config.json')),fixture=JSON.parse(readPrivate(prefix+'-fixture.json'));
@@ -32,11 +32,21 @@ async function login(index){const sdk=client(),u=fixture.users[index];const resu
   const user=await sdk.auth.getUser(token);ok(user.error,'getUser');assert.equal(user.data.user.id,u.id);
   return {sdk,token,session:c.session_id};}
 async function choose(account,choir){ok((await account.sdk.rpc('set_active_choir',{p_choir_id:choir})).error,'server choir selection');}
+function ticketEvidence(url) {
+  const raw=new URL(url).searchParams.get('ticket'); assert(raw);
+  const payload=JSON.parse(Buffer.from(raw.split('.')[0],'base64url'));
+  assert.equal(payload.version,2);
+  const remaining=payload.expiresAt-Date.now();
+  assert(remaining>=1000,'Retained ticket expired during scenario; authority result is inconclusive');
+  return {ticketRemainingMs:remaining,ticketSha256:createHash('sha256').update(raw).digest('hex')};
+}
 async function observe(reader,scenario,method,url,expected,init={}){
+  if(method!=='POST')ticketEvidence(url);
   peak=Math.max(peak,measureRuntime(owner).allocatedKiB);const before=(await metrics()).provider;
   const response=await actualFetch(url,{...init,method}),body=Buffer.from(await response.arrayBuffer()),after=(await metrics()).provider;
   assert.equal(response.status,expected,reader.family+'/'+scenario+'/'+method);
-  const row={family:reader.family,scenario,method,status:response.status,providerDelta:after-before,bodyBytes:body.length};
+  const row={family:reader.family,scenario,method,status:response.status,providerDelta:after-before,bodyBytes:body.length,
+    ...(method==='POST'?{}:ticketEvidence(url))};
   if(expected===403)assert.equal(row.providerDelta,0,'Denial reached provider');if(method==='HEAD')assert.equal(body.length,0);
   observations.push(row);return {response,body};
 }
@@ -44,7 +54,7 @@ async function issue(reader,account,fileId,scenario=null){const before=(await me
   const r=await actualFetch(reader.endpoint,{method:'POST',headers:{authorization:'Bearer '+account.token,apikey:config.anon,'content-type':'application/json'},body:JSON.stringify({fileId})});
   const text=await r.text();assert.equal(r.status,200,'Actual ticket issuance '+reader.family);assert.equal((await metrics()).provider,before);
   if(scenario)observations.push({family:reader.family,scenario,method:'POST',status:r.status,providerDelta:0,bodyBytes:Buffer.byteLength(text)});
-  const url=new URL(JSON.parse(text).url,reader.endpoint);assert.equal(url.origin,config.api);assert.equal(url.pathname,new URL(reader.endpoint).pathname);return url.href;
+  const result=JSON.parse(text),url=new URL(result.url,reader.endpoint);ticketEvidence(url.href);assert.equal(url.origin,config.api);assert.equal(url.pathname,new URL(reader.endpoint).pathname);return url.href;
 }
 const pair=async(r,s,url,status)=>{await observe(r,s,'GET',url,status);await observe(r,s,'HEAD',url,status);};
 async function deniedPost(reader,account,fileId,scenario){await observe(reader,scenario,'POST',reader.endpoint,403,{headers:{authorization:'Bearer '+account.token,apikey:config.anon,'content-type':'application/json'},body:JSON.stringify({fileId})});}
@@ -61,7 +71,8 @@ try{
   for(const reader of READERS){
     const account=await login(0);await choose(account,ids.choirA);roleRestore();roomRestore();
     const primary={ 'repertoire-file':ids.score,'assignment-file':ids.assignmentFile,'assignment-review-file':ids.reviewFile,'repertoire-comment-file':ids.commentFile,'chat-media-file':ids.chatFile }[reader.family];
-    const url=await issue(reader,account,primary,'issuance'),file=fixture.files.find(f=>f.id===primary),bytes=bytesFor(file.mime);
+    let url=await issue(reader,account,primary,'issuance');
+    const file=fixture.files.find(f=>f.id===primary),bytes=bytesFor(file.mime);
     const full=await observe(reader,'full','GET',url,200);assert.equal(full.response.headers.get('content-type'),file.mime);
     assert.equal(full.body.length,bytes.length);assert.equal(createHash('sha256').update(full.body).digest('hex'),file.sha256);
     const head=await observe(reader,'full','HEAD',url,200);assert.equal(Number(head.response.headers.get('content-length')),bytes.length);
@@ -70,21 +81,48 @@ try{
     media.push({family:reader.family,mime:file.mime,checksumMatch:true,fullBytes:bytes.length,rangeBytes:13,headRangeBytes:4});
     await deniedPost(reader,outsider,primary,'outsider-b');
     await choose(account,ids.choirB);await deniedPost(reader,account,primary,'selected-b');await pair(reader,'selected-b',url,403);await choose(account,ids.choirA);
+    url=await issue(reader,account,primary);
     mutate(`update public.choir_members set is_active=false where id='${ids.memberA}'`);await pair(reader,'inactive-member',url,403);
     mutate(`update public.choir_members set is_active=true where id='${ids.memberA}'`);await choose(account,ids.choirA);
+    url=await issue(reader,account,primary);
     mutate(`update auth.sessions set not_after=statement_timestamp()-interval '1 minute' where id='${account.session}'`);await pair(reader,'session-expiry',url,403);
     mutate(`update auth.sessions set not_after=null where id='${account.session}'`);
+    url=await issue(reader,account,primary);
     mutate(roleDelete);await pair(reader,'chef-loss',url,reader.chefLossStatus);
     let independent=primary;
     if(reader.family==='repertoire-file')mutate(`insert into public.song_assignments(choir_id,song_id,member_id) values('${ids.choirA}','${ids.songA}','${ids.memberA}')`);
     else if(reader.family==='assignment-file')independent=ids.ownFile;
     else if(reader.family==='assignment-review-file')independent=ids.ownReview;
     else if(reader.family==='repertoire-comment-file')independent=ids.openCommentFile;
-    await pair(reader,'independent-grant',await issue(reader,account,independent),200);
+    const independentUrl=await issue(reader,account,independent);
+    await pair(reader,'independent-grant',independentUrl,200);
+    if(reader.family==='assignment-review-file') {
+      mutate(`update public.assignment_submissions set is_reviewer_note_hidden=true where id='${ids.ownSubmission}'`);
+      await deniedPost(reader,account,independent,'hidden-own-review');
+      await pair(reader,'hidden-own-review',independentUrl,403);
+      mutate(`update public.assignment_submissions set is_reviewer_note_hidden=false where id='${ids.ownSubmission}'`);
+    }
     if(reader.family==='repertoire-file')mutate(`delete from public.song_assignments where song_id='${ids.songA}' and member_id='${ids.memberA}'`);
     if(reader.family==='chat-media-file')mutate(roomDelete);
     await pair(reader,'effective-family-authority-loss',url,403);roleRestore();roomRestore();
+    if(reader.family==='repertoire-file') {
+      const audioUrl=await issue(reader,account,ids.audio),audioFile=fixture.files.find(f=>f.id===ids.audio),audioBytes=bytesFor(audioFile.mime);
+      const fullAudio=await observe(reader,'audio:full','GET',audioUrl,200);
+      assert.equal(fullAudio.response.headers.get('content-type'),audioFile.mime);
+      assert.deepEqual(fullAudio.body,audioBytes);
+      const audioHead=await observe(reader,'audio:full','HEAD',audioUrl,200);
+      assert.equal(Number(audioHead.response.headers.get('content-length')),audioBytes.length);
+      const rangeAudio=await observe(reader,'audio:range','GET',audioUrl,206,{headers:{range:'bytes=5-17'}});
+      assert.deepEqual(rangeAudio.body,audioBytes.subarray(5,18));
+      const rangeHeadAudio=await observe(reader,'audio:range','HEAD',audioUrl,206,{headers:{range:'bytes=1-4'}});
+      assert.equal(rangeHeadAudio.response.headers.get('content-length'),'4');
+      mutate(`update public.choir_members set is_active=false where id='${ids.memberA}'`);
+      await pair(reader,'audio:revoked',audioUrl,403);
+      mutate(`update public.choir_members set is_active=true where id='${ids.memberA}'`);await choose(account,ids.choirA);
+      media.push({family:reader.family,mime:audioFile.mime,checksumMatch:true,fullBytes:audioBytes.length,rangeBytes:13,headRangeBytes:4});
+    }
     for(const change of ['selection','membership','effective-family-authority']){
+      url=await issue(reader,account,primary);
       const statement=change==='selection'?`update genova_005.active_choir_sessions set choir_id='${ids.choirB}' where session_id='${account.session}'`:
         change==='membership'?`update public.choir_members set is_active=false where id='${ids.memberA}'`:reader.family==='chat-media-file'?roomDelete:roleDelete;
       const w=writer();await w.send("begin;set local lock_timeout='2s';set local statement_timeout='8s';set local role postgres;"+statement,'090_WRITER_READY');
@@ -97,16 +135,33 @@ try{
       await barrier('release',reader.family);await pending;await pair(reader,change+':committed',url,403);await w.close();
       mutate(`update public.choir_members set is_active=true where id='${ids.memberA}'`);roleRestore();roomRestore();await choose(account,ids.choirA);
     }
+    // A response already authorized and partially consumed may finish after revocation.
+    // Pause only synthetic provider bytes, never an Auth/RLS decision.
+    url=await issue(reader,account,primary);
+    const streamControl=async action=>{const r=await actualFetch(config.api+'/_test/stream',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action,key:file.key})});assert.equal(r.status,200);};
+    await streamControl('arm');
+    const beforeStream=(await metrics()).provider;
+    const streaming=await actualFetch(url);assert.equal(streaming.status,200);
+    const bodyReader=streaming.body.getReader(),first=await bodyReader.read();assert(!first.done&&first.value.length>0&&first.value.length<bytes.length);
+    const streamState=await actualFetch(config.api+'/_test/stream');assert.equal((await streamState.json()).waiting,true);
+    events.push({family:reader.family,phase:'authorized-stream-partial-body-consumed',at:new Date().toISOString()});
+    mutate(`update public.choir_members set is_active=false where id='${ids.memberA}'`);
+    events.push({family:reader.family,phase:'stream-revocation-committed',at:new Date().toISOString()});
+    await streamControl('release');
+    const chunks=[Buffer.from(first.value)];for(;;){const part=await bodyReader.read();if(part.done)break;chunks.push(Buffer.from(part.value));}
+    const complete=Buffer.concat(chunks);assert.deepEqual(complete,bytes);
+    observations.push({family:reader.family,scenario:'stream:authorized-before-revocation',method:'GET',status:200,
+      providerDelta:(await metrics()).provider-beforeStream,bodyBytes:complete.length,...ticketEvidence(url)});
+    await pair(reader,'stream:subsequent-revoked',url,403);
+    mutate(`update public.choir_members set is_active=true where id='${ids.memberA}'`);await choose(account,ids.choirA);
+    url=await issue(reader,account,primary);
     ok((await account.sdk.auth.signOut()).error,'real sign-out');await pair(reader,'sign-out',url,403);
     console.log('PASS '+reader.family+' genuine managed reads, grants, revocations and actual HTTP/COMMIT barriers.');
   }
   ok((await outsider.sdk.auth.signOut()).error,'outsider sign-out');
   const count=requireCompleteMatrix(observations),transport=await metrics();assert.equal(transport.outside,0);
-  // This staged producer cannot close acceptance until the separately named
-  // media/lifetime/stream/shutdown/secret-custody controls are implemented and run.
-  const result={attempt:ATTEMPT,recordedAt:new Date().toISOString(),status:'ACTUAL_FIVE_FAMILY_CORE_MATRIX_PASS_ACCEPTANCE_GAPS_OPEN',acceptanceComplete:false,observations,media,events,
-    remaining:['Retained-ticket lifetime controls','Explicit repertoire audio','Hidden own-review denial',
-      'In-flight stream boundary','Awaited child shutdown','Five-family ephemeral-secret cleanup'],
+  const result={attempt:ATTEMPT,recordedAt:new Date().toISOString(),status:'ACTUAL_FIVE_FAMILY_MANAGED_HTTP_MATRIX_PASS',acceptanceComplete:true,observations,media,events,
+    retainedTicketLifetimeChecked:true,streamBoundary:'Authorized partial response completed after revocation; subsequent GET/HEAD refused.',
     peakAllocatedKiB:peak,genuinePasswordSessions:true,authRestAuthorityMocked:false,onlyProviderBytesSynthetic:true,
     boundary:'Real local Auth/REST/RLS/current Edge HTTP; synthetic signed provider bytes/loopback ingress only. Not hosted/native/fullP3/release proof.'};
   fs.writeFileSync(resultFile,JSON.stringify(result,null,2)+'\n',{flag:'wx',mode:0o600});console.log(JSON.stringify({status:result.status,observations:count,families:5,peakAllocatedKiB:peak}));

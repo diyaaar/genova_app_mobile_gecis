@@ -20,7 +20,7 @@ contract. No new provider or architecture migration is necessary for this roadma
 | Checkpoint | Observable completion | Current position |
 |---|---|---|
 | A. Reproducible baseline | Current source builds; web/mobile tests and browser journeys run; Git, deployed backend prerequisites and product gaps are recorded | Local checks and read-only metadata refreshed in the [13 October report](reports/2026-10-13-production-baseline.md); not deployed acceptance |
-| B. Compatible, recoverable service | Exact DB → Edge → web/mobile release rehearsed against restored state; five private-file families and legacy transition reject revoked access; restore and rollback/forward-repair verified | Active release bottleneck. Hosted snapshot still lacks seven required public RPCs; full five-family managed runtime is open |
+| B. Compatible, recoverable service | Exact DB → Edge → web/mobile release rehearsed against restored state; five private-file families and legacy transition reject revoked access; restore and rollback/forward-repair verified | Active release bottleneck. Hosted snapshot still lacks seven required public RPCs; 219-case five-family managed runtime now passes locally; fresh target recovery and live release remain open |
 | C. A choir completes its daily work | Operator-assisted second-choir onboarding, catalogs, invitation/recovery, role/profile changes, repertoire/PDF/audio/chat, homework/review and rehearsal/attendance complete without hidden operator SQL fixes | Several local flows exist. Finish remaining real service/browser journeys and recovery defects, including historical uncertain song drafts |
 | D. Complete mobile experience | Native annotation editing, conflict/restart/offline recovery, remaining chat, homework/home and chosen push delivery work with web; Android and iOS automated runtime evidence | Retain existing source and dated tests; missing native features and provider/device acceptance remain open |
 | E. Sell and operate | Enforced seat/plan rules, manual invoice workflow, ownership/deletion/retention, monitoring/support/recovery and repeatable release; scale checks and store/distribution requirements completed | Commercial choices below and operational implementation remain open |
@@ -31,17 +31,15 @@ Do not equate passing unit tests or a generated APK with a usable production ser
 
 ## Next implementation direction
 
-Finish B's remaining managed five-family acceptance using existing restoration and
-matrix work, first reviewing its recorded unexecuted harness gaps. Measure current
-capacity; the 10 October disk failure is historical, not a permanent blocker or a new
-approval requirement. Keep the retained protected backup and unrelated environments.
-The [managed read report](reports/2026-10-10-p3-managed-read-compatibility.md) and
-[five-family report](reports/2026-10-10-p3-managed-five-family-preflight.md) identify the
-exact implemented versus unexecuted boundaries. Updated source requires a new candidate
-manifest; do not rewrite dated immutable evidence or assume its hashes still match.
+B's [five-family managed acceptance](reports/2026-10-13-five-family-managed-acceptance.md)
+is complete locally. The new [release package](production-release-package.md) and exact
+source manifest supersede the old unexecuted harness/capacity checkpoint. Preserve the
+protected backup and dated evidence. The next work is fresh target/recovery comparison
+and current package integration, followed by applicable exact live-operation authority.
 
-Then prepare the smallest coherent release package: exact revisions and SQL/Edge/client
-contents, fresh target comparison, tested recovery, rollout order and verification.
+The release package now records exact revisions and SQL/Edge/client contents, fresh
+metadata/source comparison, rollout order and verification. Fresh recovery and current
+client integration still need completion before publishing.
 Current remote main remains `a13f696da8c731e9af2a2bce473d4f4ae4a81587`; do not publish the
 407-commit entry divergence as an unexplained bulk update. Live mutations and publishing
 need the applicable concrete authorization when the package is ready. Continue local

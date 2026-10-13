@@ -1,0 +1,320 @@
+{
+  "observedAt": "2026-10-13T16:40:05.408Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "observations": [
+    {
+      "slug": "repertoire-file",
+      "status": "ACTIVE",
+      "version": 1,
+      "verifyJwt": false,
+      "candidateVerifyJwt": false,
+      "importMap": false,
+      "bundleSha256": "b54cc7c698ce9263c11256314c048b8822cf2c6d8f8f5d6e4e916880a9d71d93",
+      "comparison": "SOURCE_DIFFERENT",
+      "pairs": [
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "candidate": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c",
+          "hosted": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-authority.ts",
+          "candidate": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a",
+          "hosted": null
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+          "candidate": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2",
+          "hosted": null
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "candidate": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d",
+          "hosted": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/handler.ts",
+          "candidate": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7",
+          "hosted": "12c60437d5389f32c4e2c6b1c6ae6c56f92b3a520e8c818e02374e7d207a9e38"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/index.ts",
+          "candidate": "e445074facb9031c2f92451813b2442ccfccf638cf60632aa25ead7b23c1711e",
+          "hosted": "dc825ec7fa183f0ab5061f54d8f0949847f374c25c1a0dc9777d51713f1ad5ca"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "candidate": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4",
+          "hosted": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/storage.ts",
+          "candidate": "3dbffa6503c9c009d5112ed2eb6d25f1f5b0b206544f82c09224dc989633eae8",
+          "hosted": "3dbffa6503c9c009d5112ed2eb6d25f1f5b0b206544f82c09224dc989633eae8"
+        }
+      ],
+      "unexpected": [
+        {
+          "path": "supabase/functions/repertoire-file/ticket.ts",
+          "bytes": 3307,
+          "sha256": "bd21319a1f027cf338f83d2832d7ecc1d2553667ee2bfb8b1a56ed8bdbe180bd"
+        }
+      ]
+    },
+    {
+      "slug": "assignment-file",
+      "status": "ACTIVE",
+      "version": 1,
+      "verifyJwt": false,
+      "candidateVerifyJwt": false,
+      "importMap": false,
+      "bundleSha256": "9f725c61d6c5c8125719a20ae10e1eaa018a79cb7e6902aeb08ab0dcc512b476",
+      "comparison": "SOURCE_DIFFERENT",
+      "pairs": [
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "candidate": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c",
+          "hosted": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-authority.ts",
+          "candidate": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a",
+          "hosted": null
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+          "candidate": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2",
+          "hosted": null
+        },
+        {
+          "path": "supabase/functions/assignment-file/index.ts",
+          "candidate": "dfe67a9a3dd941c4a4d08ca8ea42300577c794907e890479680ce08e42a281ad",
+          "hosted": "34895ac152de6e954353108a8f8b452b3039bbcf98e8e3cd24a219f527e38b39"
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "candidate": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d",
+          "hosted": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/handler.ts",
+          "candidate": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7",
+          "hosted": "12c60437d5389f32c4e2c6b1c6ae6c56f92b3a520e8c818e02374e7d207a9e38"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "candidate": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4",
+          "hosted": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        }
+      ],
+      "unexpected": [
+        {
+          "path": "supabase/functions/assignment-file/ticket.ts",
+          "bytes": 2549,
+          "sha256": "36d02c5d5dba69fb07bb01ecdb81bc444f09f4b3c8c96a6ade21e7cb6f158c29"
+        }
+      ]
+    },
+    {
+      "slug": "assignment-review-file",
+      "status": "ACTIVE",
+      "version": 1,
+      "verifyJwt": false,
+      "candidateVerifyJwt": false,
+      "importMap": false,
+      "bundleSha256": "e83d19c088a1f1c34fc3507e3235c890d39c9fcf7497e90f1efe7450518ba70d",
+      "comparison": "SOURCE_DIFFERENT",
+      "pairs": [
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "candidate": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c",
+          "hosted": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-authority.ts",
+          "candidate": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a",
+          "hosted": null
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+          "candidate": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2",
+          "hosted": null
+        },
+        {
+          "path": "supabase/functions/assignment-review-file/index.ts",
+          "candidate": "4e11956ed83aee5275e5bc7c9ab2b478dd09f0fedf7ccd40ee0ba5a26aacbb70",
+          "hosted": "bfda57838e386d66a6a65593323bbad21a7472ff994f242ad33fc78fc244a676"
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "candidate": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d",
+          "hosted": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/handler.ts",
+          "candidate": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7",
+          "hosted": "12c60437d5389f32c4e2c6b1c6ae6c56f92b3a520e8c818e02374e7d207a9e38"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "candidate": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4",
+          "hosted": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        }
+      ],
+      "unexpected": [
+        {
+          "path": "supabase/functions/assignment-review-file/ticket.ts",
+          "bytes": 2423,
+          "sha256": "70b25bd66463f0f6e29cc5379dcd11a511721e2ad16acc63be527c75bf347ea1"
+        }
+      ]
+    },
+    {
+      "slug": "repertoire-comment-file",
+      "status": "ACTIVE",
+      "version": 1,
+      "verifyJwt": false,
+      "candidateVerifyJwt": false,
+      "importMap": false,
+      "bundleSha256": "bbff71b4a805c4a4f88226bdf385c3c93ab5f72cd29199e4d1610abec5a7cbf9",
+      "comparison": "SOURCE_DIFFERENT",
+      "pairs": [
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "candidate": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c",
+          "hosted": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-authority.ts",
+          "candidate": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a",
+          "hosted": null
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+          "candidate": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2",
+          "hosted": null
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "candidate": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d",
+          "hosted": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "supabase/functions/repertoire-comment-file/index.ts",
+          "candidate": "c0d42f786eef1b5a43463e43aca4255ecbc1ae8cb4b28a46f1e18e1197fa1753",
+          "hosted": "fbaebe7b8b406e8c20ae892c96e8eff56b1df1fd8b45424f5b59f2eee89a4ee3"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/handler.ts",
+          "candidate": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7",
+          "hosted": "12c60437d5389f32c4e2c6b1c6ae6c56f92b3a520e8c818e02374e7d207a9e38"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "candidate": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4",
+          "hosted": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        }
+      ],
+      "unexpected": [
+        {
+          "path": "supabase/functions/repertoire-comment-file/ticket.ts",
+          "bytes": 2319,
+          "sha256": "07cc99722327241727e626510798aa462338bea727bdb728acd04c040eda32f4"
+        }
+      ]
+    },
+    {
+      "slug": "chat-media-file",
+      "status": "ACTIVE",
+      "version": 1,
+      "verifyJwt": false,
+      "candidateVerifyJwt": false,
+      "importMap": false,
+      "bundleSha256": "45a3449a40e15ba523707fe1eed1e01bbaeb69263c60f6a53c52cb0c8ac029d9",
+      "comparison": "SOURCE_DIFFERENT",
+      "pairs": [
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "candidate": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c",
+          "hosted": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-authority.ts",
+          "candidate": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a",
+          "hosted": null
+        },
+        {
+          "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+          "candidate": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2",
+          "hosted": null
+        },
+        {
+          "path": "supabase/functions/chat-media-file/index.ts",
+          "candidate": "c43605526cd7e27af3ce20c4570b2e7123ea452eca792bb67e4e8d132fe92c02",
+          "hosted": "d3f23128cb01d1dda9d6bbcb23ed0140d79c753f47096fe571b4179aa9ab3835"
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "candidate": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d",
+          "hosted": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/handler.ts",
+          "candidate": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7",
+          "hosted": "12c60437d5389f32c4e2c6b1c6ae6c56f92b3a520e8c818e02374e7d207a9e38"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "candidate": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4",
+          "hosted": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        }
+      ],
+      "unexpected": [
+        {
+          "path": "supabase/functions/chat-media-file/ticket.ts",
+          "bytes": 2440,
+          "sha256": "c58afb57bd699f4375a6e1a486324b46c8f152cc1732d19b6f1f2c4fe0c5ab49"
+        }
+      ]
+    },
+    {
+      "slug": "legacy-file",
+      "status": "MISSING",
+      "candidateVerifyJwt": false
+    },
+    {
+      "slug": "drive-manager-v2",
+      "status": "ACTIVE",
+      "version": 22,
+      "verifyJwt": true,
+      "candidateVerifyJwt": null,
+      "importMap": false,
+      "bundleSha256": "d362b9ea0634e1a6363b0847e9c5e6075d439c123d69df300b54e55654eafef1",
+      "comparison": "SOURCE_DIFFERENT",
+      "pairs": [
+        {
+          "path": "supabase/functions/_shared/tenant-fetch.ts",
+          "candidate": "3b2fe56693ae8d9c25fcfa6dba5028f5cf2d1ef2c5734378d5b16d8bedc02bb5",
+          "hosted": "3b2fe56693ae8d9c25fcfa6dba5028f5cf2d1ef2c5734378d5b16d8bedc02bb5"
+        },
+        {
+          "path": "supabase/functions/drive-manager-v2/index.ts",
+          "candidate": "d5a93f9f2f0668ac6b53c39b73889778b28c07ebd17c2e9f4db1166122e96e7d",
+          "hosted": "b09cbd68dd17823546b7031818d932f1216544e98c8cfb5e8258cfb73ffba4b2"
+        }
+      ],
+      "unexpected": []
+    },
+    {
+      "slug": "link-preview",
+      "status": "MISSING",
+      "candidateVerifyJwt": null
+    },
+    {
+      "slug": "account-recovery-006",
+      "status": "MISSING",
+      "candidateVerifyJwt": false
+    }
+  ],
+  "boundary": "Current version/config/source digests only. No hosted invocation, user rows, raw bodies or secrets retained; no deployment or mutation."
+}

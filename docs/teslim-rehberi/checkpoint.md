@@ -19,12 +19,28 @@ Correct-project read-only metadata: 68 migrations, 21 active Edge functions, sev
 required public RPCs still missing. Remote main verified at `a13f696`; local entry was
 407 commits ahead. Prepare a coherent DB/Edge/client release, not an unexplained bulk push.
 
-Next implementation: review the unexecuted harness gaps in the
-[five-family report](../reports/2026-10-10-p3-managed-five-family-preflight.md), measure
-current local capacity, then finish actual five-family authority/revocation and
-transaction-overlap acceptance using the existing restored-state work. Refresh candidate
-source pins for changed files while preserving dated evidence. Rehearsal precedes
-concrete production-write approval; authorized local work needs no repeated confirmation.
+## New acceptance: five-family managed runtime
+
+[13 October result](../reports/2026-10-13-five-family-managed-acceptance.md): 219 actual
+local HTTP observations across all five families PASS. Full restored 17-group / 101-table /
+2,880-row baseline, exact eleven deltas and ten SQL controls PASS. Real Auth/REST/RLS,
+all three transaction-overlap dimensions, explicit audio/hidden review and in-flight
+stream boundary accepted. Final audit completed before cleanup; VM and ten ephemeral
+secret files removed, protected source retained. Thirty-one focused helper tests PASS.
+The old download-capacity blocker and unexecuted harness gaps are closed for this attempt.
+
+## Next release boundary
+
+[Concrete package](../production-release-package.md) pins product `9d1f1a7`, 363 product
+files, eleven SQL deltas and nine Edge closures. Fresh source-based RPC inventory covers
+38 required names; seven absent. Fresh nine-Edge inventory finds six real source
+changes and three absent functions. Preserve explicit gateway settings and the default
+true for drive-manager-v2/link-preview; no blind no-verify-JWT flag.
+
+Next: fresh protected target cutoff/recovery comparison, complete package integration/
+review, then the exact authorized DB → Edge → current web transition. No bulk migration
+push, source-history rewrite, repeated old runtime attempt or another roadmap. Hosted
+writes/publishing retain applicable authorization; local implementation remains authorized.
 
 ## Still open
 

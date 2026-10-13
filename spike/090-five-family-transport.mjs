@@ -12,10 +12,10 @@ import {ATTEMPT} from './090-p3-resource-policy.mjs';
 import {measureRuntime} from './090-p3-runtime-resources.mjs';
 import {READERS} from './090-five-family-contract.mjs';
 import {bytesFor} from './090-five-family-media.mjs';
-assert.equal(ATTEMPT,'20261010-managed-families');assert.equal(process.argv.length,3);assert.equal(process.argv[2],'--run-approved');
+assert.equal(ATTEMPT,'20261013-managed-families');assert.equal(process.argv.length,3);assert.equal(process.argv[2],'--run-approved');
 const ROOT='/Users/alidiyarduran/Antigravity/genovakorist',prefix=`managed-${ATTEMPT}`,suffix='-matrix',leaf=true;
 assert.equal(JSON.parse(readPrivate(prefix+'-tls-v2.json')).serverLeafCA,false);
-let barrier=null;
+let barrier=null,stream=null;
 async function body(req){const chunks=[];let size=0;for await(const chunk of req){size+=chunk.length;assert(size<=65536,'Oversized local request');chunks.push(chunk);}return Buffer.concat(chunks);}
 const owner=JSON.parse(readPrivate('runtime-ownership.json')),config=JSON.parse(readPrivate(prefix+'-config.json'));
 const startup=JSON.parse(readPrivate(prefix+'-startup-pass.json'));assert.equal(startup.status,'REAL_AUTH_REST_HEALTH_STARTUP_INVARIANTS_PASS');
@@ -37,10 +37,18 @@ function fork(program,args,env,name){const fd=fs.openSync(path.join(DIR,prefix+'
 async function listen(server,port){servers.push(server);await new Promise((resolve,reject)=>server.once('error',reject).listen(port,'127.0.0.1',resolve));}
 async function close(){if(finished)return;finished=true;clearInterval(monitor);clearTimeout(deadline);
   for(const server of servers){server.closeAllConnections();await new Promise(r=>server.close(r));}
-  for(const child of processes)if(child.exitCode===null)child.kill('SIGTERM');
+  if (barrier) { for (const release of barrier.releases) release(); barrier=null; }
+  if (stream?.release) stream.release();
+  await Promise.all(processes.map(child => new Promise((resolve,reject) => {
+    if (child.exitCode!==null || child.signalCode!==null) return resolve();
+    const timeout=setTimeout(()=>{child.kill('SIGKILL');},5000);
+    const deadline=setTimeout(()=>reject(Error('Child did not exit')),10000);
+    child.once('exit',()=>{clearTimeout(timeout);clearTimeout(deadline);resolve();});
+    child.kill('SIGTERM');
+  })));
   for(const fd of logs)fs.closeSync(fd);
   fs.writeFileSync(path.join(DIR,prefix+'-transport-result'+suffix+'.json'),JSON.stringify({recordedAt:new Date().toISOString(),attempt:ATTEMPT,metrics,peakAllocatedKiB:peak,
-    onlyProviderBytesSynthetic:true,authRestAuthorityMocked:false,globalTrustChanged:false,closed:true},null,2)+'\n',{flag:'wx',mode:0o600});
+    onlyProviderBytesSynthetic:true,authRestAuthorityMocked:false,globalTrustChanged:false,closed:true,childrenExited:true},null,2)+'\n',{flag:'wx',mode:0o600});
   console.log('LOCAL_TRANSPORT_CLOSED');process.exitCode=0;
 }
 const monitor=setInterval(()=>{try{peak=Math.max(peak,measureRuntime(owner).allocatedKiB);}catch{void close();}},2000);
@@ -63,11 +71,26 @@ try{
     const start=m?Number(m[1]):0,end=m?(m[2]?Math.min(Number(m[2]),body.length-1):body.length-1):body.length-1;
     if(start>end||start>=body.length){res.writeHead(416,{'Content-Range':'bytes */'+body.length});res.end();return;}
     const bytes=body.subarray(start,end+1);res.writeHead(m?206:200,{'Content-Type':mime,'Content-Length':String(bytes.length),'Accept-Ranges':'bytes',
-      ...(m?{'Content-Range':`bytes ${start}-${end}/${body.length}`}:{})});res.end(req.method==='HEAD'?undefined:bytes);
+      ...(m?{'Content-Range':`bytes ${start}-${end}/${body.length}`}:{})});
+    if (stream && stream.key===item.key && req.method==='GET') {
+      assert(!stream.waiting);stream.waiting=true;
+      const split=Math.max(1,Math.floor(bytes.length/2));
+      res.write(bytes.subarray(0,split));
+      stream.release=()=>res.end(bytes.subarray(split));
+    } else res.end(req.method==='HEAD'?undefined:bytes);
   }catch{res.writeHead(500);res.end('Synthetic provider refused');}});await listen(provider,18092);
   const ingress=httpsServer({key:readPrivate(prefix+(leaf?'-tls-leaf.key':'-tls.key')),
     cert:leaf?Buffer.concat([readPrivate(prefix+'-tls-leaf.crt'),readPrivate(prefix+'-tls-ca.crt')]):readPrivate(prefix+'-tls.crt')},async(req,res)=>{try{
     const url=new URL(req.url,config.api);if(url.pathname==='/_test/metrics'){res.writeHead(200,{'Content-Type':'application/json'});res.end(JSON.stringify(metrics));return;}
+    if(url.pathname==='/_test/stream') {
+      if(req.method==='POST') {
+        const command=JSON.parse((await body(req)).toString());
+        if(command.action==='arm') { assert(!stream); assert(typeof command.key==='string'); stream={key:command.key,waiting:false,release:null}; }
+        else if(command.action==='release') { assert(stream?.waiting&&stream.release); stream.release();stream=null; }
+        else throw Error('Unknown stream action');
+      } else assert.equal(req.method,'GET');
+      res.writeHead(200,{'Content-Type':'application/json'});res.end(JSON.stringify({waiting:!!stream?.waiting}));return;
+    }
     if(url.pathname==='/_test/barrier'){
       if(req.method==='POST'){const command=JSON.parse((await body(req)).toString());
         if(command.action==='arm'){assert(!barrier);assert(READERS.some(r=>r.family===command.family));barrier={family:command.family,waiting:0,releases:[]};}

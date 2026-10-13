@@ -1,0 +1,315 @@
+{
+  "attempt": "20261013-managed-families",
+  "sourceBase": "9d1f1a72d2024734a9d8fac6cc540960ce9b1534",
+  "pins": [
+    {
+      "path": "lib/server/drive-file-content.ts",
+      "bytes": 1565,
+      "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+    },
+    {
+      "path": "package.json",
+      "bytes": 3067,
+      "sha256": "eb6bf9bc2cb22c3b5f785cac11e9e7e03f58d7a90eba4b394577a308eb9c10b4"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 273712,
+      "sha256": "8c2bc9d3188f730848b5efc5434385f0b6fa270e8ccfa37dcac93dfc8209b38e"
+    },
+    {
+      "path": "spike/090-compatibility-sql-rehearsal.mjs",
+      "bytes": 9140,
+      "sha256": "d0f96ce5ce27ecabf2b41401520a6939602d01140ab51bb62eeacc4881fdb571"
+    },
+    {
+      "path": "spike/090-five-family-cleanup.mjs",
+      "bytes": 2154,
+      "sha256": "948feaf2d6b4a480409d1952467457720855a7ffb8272f5a1eb442bb1f717044"
+    },
+    {
+      "path": "spike/090-five-family-contract.mjs",
+      "bytes": 6021,
+      "sha256": "f132c7df3f29ff911f3fc110185dd5d5e78651ea7133e1e66e2b2daeab6b0047"
+    },
+    {
+      "path": "spike/090-five-family-edge.ts",
+      "bytes": 1754,
+      "sha256": "71a8f61b5f7493c621213542ba2fea4a0103e11f3f8ac958b30a45b1d182d2e7"
+    },
+    {
+      "path": "spike/090-five-family-fixture.mjs",
+      "bytes": 8904,
+      "sha256": "5f563563facdee25e44d07ee637d5ff1bf7835e3f3e4cf898138d841b2c2df1f"
+    },
+    {
+      "path": "spike/090-five-family-matrix.mjs",
+      "bytes": 17388,
+      "sha256": "4859d7d887759bb97d8533a768b57bc0857231c3248143c134380ff570b5f5a6"
+    },
+    {
+      "path": "spike/090-five-family-media.mjs",
+      "bytes": 415,
+      "sha256": "2390e50ea7b9572705ab381b416e8d2f38cf996331eb90af44b271c2fcbd6833"
+    },
+    {
+      "path": "spike/090-five-family-source.mjs",
+      "bytes": 2507,
+      "sha256": "216cda52ca4642ba4fc002a5b29bf9f3326d5a7ddc1d7e3191021847490acc34"
+    },
+    {
+      "path": "spike/090-five-family-transport.mjs",
+      "bytes": 12487,
+      "sha256": "73fff2208eb2679eb0ef2609e5e53a2771ac63935859c2066a14a6b4d8b52c5b"
+    },
+    {
+      "path": "spike/090-managed-api-setup.mjs",
+      "bytes": 10765,
+      "sha256": "3e7c4367f9ffc23bd7f2790d019abc31f283f106612acac910598802acba9519"
+    },
+    {
+      "path": "spike/090-managed-cleanup-order.mjs",
+      "bytes": 913,
+      "sha256": "9ab31f20cdb06d479ccbf95a3d8b00df331ce7280036244725e5cd347018ccb8"
+    },
+    {
+      "path": "spike/090-managed-final-invariants.mjs",
+      "bytes": 1872,
+      "sha256": "3788ce8d4f45f247700074554b32270423c2be7d76e4020f07139b46ed2203f7"
+    },
+    {
+      "path": "spike/090-managed-isolation.mjs",
+      "bytes": 493,
+      "sha256": "555d238ca7b3bdc936c7391075648dbfd3062b8543ad1f87585c10d7ee8e8253"
+    },
+    {
+      "path": "spike/090-managed-media.mjs",
+      "bytes": 1618,
+      "sha256": "2c6838432c83de2f3bb971804507d3661b7528831bdc902ef4889aeffd942cdb"
+    },
+    {
+      "path": "spike/090-managed-services.mjs",
+      "bytes": 2552,
+      "sha256": "647dc96bd11c41d8863cce1fa7fa798922ef00719ef4f98d207be3301063a09a"
+    },
+    {
+      "path": "spike/090-managed-tls.mjs",
+      "bytes": 4109,
+      "sha256": "78532960654646b4430df6f9f87210e090875d3b70575a6a6baa44d1935dac72"
+    },
+    {
+      "path": "spike/090-p3-consistent-backup.mjs",
+      "bytes": 11833,
+      "sha256": "4ac9e3b2a774f7af602847a316940b9f630414bf28f078fba50a31e51ca646f9"
+    },
+    {
+      "path": "spike/090-p3-docker-classic.json",
+      "bytes": 87,
+      "sha256": "7a7a70dbe2f5e2a127af50504e196f544d005586f2d8b0f05178c9227cbdab15"
+    },
+    {
+      "path": "spike/090-p3-guest-provision.sh",
+      "bytes": 1219,
+      "sha256": "eb57e0a297368e8fb497ccde4cf36df58b29220f6a91989ddca8dd8eeef8ff07"
+    },
+    {
+      "path": "spike/090-p3-hosted-inventory.mjs",
+      "bytes": 28412,
+      "sha256": "415855ada5a6e1cb6ca44ffca6b8f8111b2025b468312c5651440e81c42dde0f"
+    },
+    {
+      "path": "spike/090-p3-managed-web-lima.yaml",
+      "bytes": 527,
+      "sha256": "a5e8feef474249ead05c7080ce4204397e0d150e7194db133421a6e7d2e8985c"
+    },
+    {
+      "path": "spike/090-p3-offline-restore.mjs",
+      "bytes": 11057,
+      "sha256": "3829eab17a3a71d9e141e5dde91a75db2eae848fdb7b031e54ba4149b472f2c5"
+    },
+    {
+      "path": "spike/090-p3-parity-analysis.mjs",
+      "bytes": 7818,
+      "sha256": "64fc5254f9a7af5ca97ef2b5588866e93adc1fca7a891b7a2070b350bfd447dd"
+    },
+    {
+      "path": "spike/090-p3-recovery-queries.mjs",
+      "bytes": 7819,
+      "sha256": "0d8a0f13e84052e1c084b92fa6a9d1b52b025f0e310091356601ceb8bdec2475"
+    },
+    {
+      "path": "spike/090-p3-recovery-seed.mjs",
+      "bytes": 8416,
+      "sha256": "131d6b0bbee0175b0aa85258c06b2be9ad26b1ea437ad7be52f2e510dbb7e5b7"
+    },
+    {
+      "path": "spike/090-p3-resource-policy.mjs",
+      "bytes": 1782,
+      "sha256": "99c9431bfccc5f326af92a4765c9f92b59023154ffbfffd8822958d6aa9bf1eb"
+    },
+    {
+      "path": "spike/090-p3-runtime-cleanup.mjs",
+      "bytes": 5206,
+      "sha256": "48eeeeddeb3b3e8595381795c31614742aa64e303fd6f96d18e8241a4defe5f1"
+    },
+    {
+      "path": "spike/090-p3-runtime-command.mjs",
+      "bytes": 4604,
+      "sha256": "33d454a3d835c557ee137d3899366086017f939322f8535a84ea2797d48ba74f"
+    },
+    {
+      "path": "spike/090-p3-runtime-resources.mjs",
+      "bytes": 1785,
+      "sha256": "2298de849e4acda2c6822153e1670d6d8a71f14b4f5c7e926026015a2ea5496c"
+    },
+    {
+      "path": "spike/090-p3-runtime-volume.mjs",
+      "bytes": 2929,
+      "sha256": "32b5b78aaeb486bf38590ac5ff08752969e012883ebb86bb4e4f0e4c04669935"
+    },
+    {
+      "path": "spike/090-realtime-clone-test.mjs",
+      "bytes": 5448,
+      "sha256": "99ae513235b24b63283d4fc5389ca2e045424e15dd0da1d6add90725b115d9c0"
+    },
+    {
+      "path": "supabase/functions/_shared/private-file-authority.ts",
+      "bytes": 704,
+      "sha256": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a"
+    },
+    {
+      "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+      "bytes": 4239,
+      "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+    },
+    {
+      "path": "supabase/functions/assignment-file/index.ts",
+      "bytes": 5984,
+      "sha256": "dfe67a9a3dd941c4a4d08ca8ea42300577c794907e890479680ce08e42a281ad"
+    },
+    {
+      "path": "supabase/functions/assignment-review-file/index.ts",
+      "bytes": 5112,
+      "sha256": "4e11956ed83aee5275e5bc7c9ab2b478dd09f0fedf7ccd40ee0ba5a26aacbb70"
+    },
+    {
+      "path": "supabase/functions/chat-media-file/index.ts",
+      "bytes": 5103,
+      "sha256": "c43605526cd7e27af3ce20c4570b2e7123ea452eca792bb67e4e8d132fe92c02"
+    },
+    {
+      "path": "supabase/functions/create-choir/create-choir-core.ts",
+      "bytes": 3964,
+      "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+    },
+    {
+      "path": "supabase/functions/repertoire-comment-file/index.ts",
+      "bytes": 5067,
+      "sha256": "c0d42f786eef1b5a43463e43aca4255ecbc1ae8cb4b28a46f1e18e1197fa1753"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/handler.ts",
+      "bytes": 15810,
+      "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/index.ts",
+      "bytes": 6105,
+      "sha256": "e445074facb9031c2f92451813b2442ccfccf638cf60632aa25ead7b23c1711e"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/r2.ts",
+      "bytes": 2603,
+      "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/storage.ts",
+      "bytes": 2951,
+      "sha256": "3dbffa6503c9c009d5112ed2eb6d25f1f5b0b206544f82c09224dc989633eae8"
+    },
+    {
+      "path": "supabase/migrations/20260909232000_repertoire_pdf_annotation_safe_save_024.sql",
+      "sha256": "b0cf68b02b0e32132df9e569f84ebc9300b57b25375a573315d8adbee0b47573",
+      "bytes": 11940
+    },
+    {
+      "path": "supabase/migrations/20260919221500_private_chat_realtime_046.sql",
+      "sha256": "7e2528b5f1bbb1df5094bb65bfa9ff3dab51baa25419456e8bb5489569c52ea3",
+      "bytes": 4421
+    },
+    {
+      "path": "supabase/migrations/20260920090000_chat_read_order_048.sql",
+      "sha256": "dfec253c0838bebb7f6759b1da2333e8a1cc38d9936e5d4addab0277a5062c74",
+      "bytes": 2093
+    },
+    {
+      "path": "supabase/migrations/20260928140000_active_membership_revocation_078.sql",
+      "sha256": "3637722b0aa4822c6c4ac96789554d2eedce52410c552cc94f4471948cc705bb",
+      "bytes": 4327
+    },
+    {
+      "path": "supabase/migrations/20260928150000_message_status_rpc_privileges_079.sql",
+      "sha256": "278947640ea19a3a312ae1872d68ca213e86aab26412f5f7c35b2d6605804e5f",
+      "bytes": 1718
+    },
+    {
+      "path": "supabase/migrations/20260928175950_atomic_repertoire_assignments_082.sql",
+      "sha256": "29143efcd85582f35e972b2cf8e422423f183b655f5b1ddab2d4a446b2e9ef02",
+      "bytes": 5250
+    },
+    {
+      "path": "supabase/migrations/20260929010000_atomic_profile_submit_087.sql",
+      "sha256": "25c3dac2a5a8df94f9c7b371d53549cffa245d933ecef1fc0dd2988f87876985",
+      "bytes": 7681
+    },
+    {
+      "path": "supabase/migrations/20260929020000_atomic_profile_review_088.sql",
+      "sha256": "68753d37988d7131966bf240517185ee55e2b4101d656180b9d4b0d01116f472",
+      "bytes": 9100
+    },
+    {
+      "path": "supabase/migrations/20260930080046_private_file_ticket_authority_090.sql",
+      "sha256": "4f345d968fa6945aa746b4d00b7852c293047a984beabd79c4b7a64629c0ad86",
+      "bytes": 6365
+    },
+    {
+      "path": "supabase/migrations/20261002154343_legacy_file_authority_090.sql",
+      "sha256": "e121f9f8eada0dd4d7b9ddee8bea19c9baf146bfee28377d11669331a5f973c3",
+      "bytes": 6962
+    },
+    {
+      "path": "supabase/migrations/20261009190611_private_file_session_expiry_090.sql",
+      "sha256": "c191738462dc500e0be524155fb6e5ca3002e7445ba6a70d77f451d7a52bc36c",
+      "bytes": 6882
+    },
+    {
+      "path": "supabase/test-support/090_candidate_source.mjs",
+      "bytes": 19852,
+      "sha256": "6e2a94cc929c50aa8c4433f7cfd9f118bb82ec4c963406d07e622e15bfd2d0c9"
+    }
+  ],
+  "productExternal": [
+    "npm:@supabase/supabase-js@2.112.4",
+    "npm:aws4fetch@1.0.20"
+  ],
+  "helperExternal": [
+    "@supabase/supabase-js",
+    "dotenv",
+    "node:assert/strict",
+    "node:child_process",
+    "node:crypto",
+    "node:fs",
+    "node:http",
+    "node:https",
+    "node:module",
+    "node:path",
+    "node:readline",
+    "node:stream",
+    "node:stream/promises",
+    "node:url",
+    "npm:@supabase/supabase-js@2.112.4",
+    "npm:aws4fetch@1.0.20",
+    "typescript"
+  ],
+  "boundary": "Current five-family backend closure and local helpers; not web/mobile/legacy runtime or deployment proof. Exact prior eleven SQL deltas retained."
+}

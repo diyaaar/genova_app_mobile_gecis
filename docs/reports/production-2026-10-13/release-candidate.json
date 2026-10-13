@@ -1,0 +1,2734 @@
+{
+  "productCommit": "9d1f1a72d2024734a9d8fac6cc540960ce9b1534",
+  "remoteBaseline": "a13f696da8c731e9af2a2bce473d4f4ae4a81587",
+  "pins": [
+    {
+      "path": "app/(main)/announcements/[id]/page.tsx",
+      "bytes": 12361,
+      "sha256": "528ec423db64b01b501168fc0196f482a57155b8fbf875cbb3828403471a2027"
+    },
+    {
+      "path": "app/(main)/announcements/page.tsx",
+      "bytes": 8166,
+      "sha256": "8b9dabe2f9798bd2aaf0d42af17a5b5bde58790a5efcb48693d26d3621234112"
+    },
+    {
+      "path": "app/(main)/chat/[slug]/page.tsx",
+      "bytes": 373,
+      "sha256": "991c9f784050a6c0e40748347926545e7c51f00a082b5b434ed4e90386c84f2b"
+    },
+    {
+      "path": "app/(main)/chat/page.tsx",
+      "bytes": 2298,
+      "sha256": "439c8a2fee05b29c0728c5bb8d5635cfff100409933e1f05fbb3c1bf461f0548"
+    },
+    {
+      "path": "app/(main)/devamsizlik/page.tsx",
+      "bytes": 42453,
+      "sha256": "3640a3402c7b8296dc643c14b55758fe78ea2f12c7828c46951d059f8ba9ecfd"
+    },
+    {
+      "path": "app/(main)/koristler/[id]/page.tsx",
+      "bytes": 40422,
+      "sha256": "ae2f41afaae70af193e346f0e7370e99fc61c235e05c9a800dfae34570c0f13b"
+    },
+    {
+      "path": "app/(main)/koristler/davetler/page.tsx",
+      "bytes": 296,
+      "sha256": "55685b3b9991993aef9b6214a44b8d9e9904c48be2c13a3918b3e960439006a0"
+    },
+    {
+      "path": "app/(main)/koristler/page.tsx",
+      "bytes": 19297,
+      "sha256": "57d3511955d487cd155a65ef36ab7315074f03feae79fc46680206652ca299aa"
+    },
+    {
+      "path": "app/(main)/layout.tsx",
+      "bytes": 7264,
+      "sha256": "e477003a88ed6456c496f85ed04293d6b461334e1fe6a2b3ecd3353df84fd247"
+    },
+    {
+      "path": "app/(main)/odevler/[id]/page.tsx",
+      "bytes": 114056,
+      "sha256": "91b6e0c9ceeb81ca9c4d738b3130427efc1cebcfe249159c102b493d74450225"
+    },
+    {
+      "path": "app/(main)/odevler/page.tsx",
+      "bytes": 61625,
+      "sha256": "643bdd006eac0c9b47471e4a9cbc1b76c47eb93473aa918d1a9fa6e91fb810f4"
+    },
+    {
+      "path": "app/(main)/page.tsx",
+      "bytes": 31520,
+      "sha256": "a192e0e55e9321ee5e8cde95cd3efe629d57232379f514be112a20a063c161b4"
+    },
+    {
+      "path": "app/(main)/profil/degisiklikler/page.tsx",
+      "bytes": 36832,
+      "sha256": "e696bbc1f59918a65324d4977e77d595ce72bf769dbb5254e7e3486d5e016814"
+    },
+    {
+      "path": "app/(main)/profil/duzenle/page.tsx",
+      "bytes": 25742,
+      "sha256": "061a0155bb48bc519b3e64134edc63344994c11b17cce7b6043a5aa04c3fdf8d"
+    },
+    {
+      "path": "app/(main)/profil/page.tsx",
+      "bytes": 14926,
+      "sha256": "47067f4e2537be9076bb76dba3321a462e80c763333da6b58ca8226f4167bcdd"
+    },
+    {
+      "path": "app/(main)/repertuvar/[id]/page.tsx",
+      "bytes": 8506,
+      "sha256": "8b97763ee68722e065c0dd0e24ec68d0488169647e9a4f3c1425d5e4969834f9"
+    },
+    {
+      "path": "app/(main)/repertuvar/page.tsx",
+      "bytes": 30279,
+      "sha256": "d8875c490a1efb9bfc816ba4630c0dd7818d7c72afc2cd51352c013027aef697"
+    },
+    {
+      "path": "app/api/announcements/delete/route.ts",
+      "bytes": 2459,
+      "sha256": "b98972d5db2367807d0c08e14ca09dae5db7a7b1bf7a53f33dc976de60c8f8e2"
+    },
+    {
+      "path": "app/api/announcements/publish/route.ts",
+      "bytes": 7364,
+      "sha256": "f7c09ac41a67a3ce66561493fee1e43b0d8451ac873dddf42f37e90dffda86a2"
+    },
+    {
+      "path": "app/api/announcements/update/route.ts",
+      "bytes": 9597,
+      "sha256": "3b5a529265bf315c35faceb0173bfbf8ae28ee71f2a728a9914357efaffb664e"
+    },
+    {
+      "path": "app/api/assignment-submissions/delete/route.ts",
+      "bytes": 4883,
+      "sha256": "9b390f3eb04dcc21903e95486321f6533a1d3f195eb0c08f27d81ca210b58dec"
+    },
+    {
+      "path": "app/api/assignment-submissions/hide-review/route.ts",
+      "bytes": 9858,
+      "sha256": "855a1a4784eaf0dbdc5bc9f1dc82486ac3a5b5c44444f0cbfc3bcd1bb4b4d2e5"
+    },
+    {
+      "path": "app/api/assignment-submissions/migrate-storage/route.ts",
+      "bytes": 5689,
+      "sha256": "affee4b88d5220f3cff32a42367f5930cdf8c966572e59ca09ccbb5872be9a5d"
+    },
+    {
+      "path": "app/api/assignment-submissions/review/route.ts",
+      "bytes": 20324,
+      "sha256": "250ebdce681924d27466a79534bd2306bdfc91a5fa61ed4bd8c92cb1ca60e77f"
+    },
+    {
+      "path": "app/api/assignment-submissions/update-note/route.ts",
+      "bytes": 10954,
+      "sha256": "659d73ba67e0c17dcbb2f960ead944a2e3d5533cfa30b76fdf6f4a24d26114aa"
+    },
+    {
+      "path": "app/api/assignment-submissions/upload/route.ts",
+      "bytes": 22745,
+      "sha256": "0fe76490048dd9a586bfc44d6d1182e86f51d35e44dbda6bac57f1fff2cebd99"
+    },
+    {
+      "path": "app/api/assignment-submissions/withdraw/route.ts",
+      "bytes": 644,
+      "sha256": "bf70feb86daca92463456276e226b0195527345c9ca221ade1e883328561f9e2"
+    },
+    {
+      "path": "app/api/assignments/create/route.ts",
+      "bytes": 8800,
+      "sha256": "6a3cf98bd50d83fc070e599cf615e3c6c83c4dbaa8ba9b1a3a009225c9b4fcf7"
+    },
+    {
+      "path": "app/api/assignments/delete/route.ts",
+      "bytes": 3925,
+      "sha256": "6d3b3969cc9f6f4e0e9d4b36fe122f11a2d6e1bbb666bbd647be50c985c213d3"
+    },
+    {
+      "path": "app/api/assignments/lock/route.ts",
+      "bytes": 8830,
+      "sha256": "bb569faf7bce4ce96f4d12261c8a11588a1d450239d5d79703ad4b6e2c701fc0"
+    },
+    {
+      "path": "app/api/assignments/update/route.ts",
+      "bytes": 9701,
+      "sha256": "8a0a3b3594962e49f325e280ce0bd250cea325fe786b69d85da327f0b706f579"
+    },
+    {
+      "path": "app/api/drive-file-token/route.ts",
+      "bytes": 145,
+      "sha256": "94538409ec739bca5cc438a6f8d4c5ae29cab6c9558742640da0f5842aafaa43"
+    },
+    {
+      "path": "app/api/drive-file/[id]/route.ts",
+      "bytes": 423,
+      "sha256": "ed26aaebc3659d9fc64296c6a0983ba291a890a86ac64f586f6bcbf8e506ffa2"
+    },
+    {
+      "path": "app/api/profile-change-requests/review/route.ts",
+      "bytes": 4081,
+      "sha256": "2cf823e26369608a38b1eabeffccb6a8db7b265ae112478ebab0189423e18c54"
+    },
+    {
+      "path": "app/api/profile-change-requests/submit/route.ts",
+      "bytes": 3128,
+      "sha256": "0a40e6d68ca2af2aadf62f40e088c68eb72d3ebcb48cf6c312cfb4bb7bbd74b2"
+    },
+    {
+      "path": "app/api/profile-photo/route.ts",
+      "bytes": 5326,
+      "sha256": "9d6f8daef6d05d62bc1b53c6b316ed85f779039e6d56f59a77d70c92dd1b6945"
+    },
+    {
+      "path": "app/api/push/subscribe/route.ts",
+      "bytes": 1445,
+      "sha256": "6b8b49abd148c43d37a50499157f1e5ed691a56db345e76c2ddb8134c9c341d3"
+    },
+    {
+      "path": "app/api/push/unsubscribe/route.ts",
+      "bytes": 1138,
+      "sha256": "2d3a3b1127692d97047e741ccf685c546422048bc64caec5a158ce832e2891ea"
+    },
+    {
+      "path": "app/api/rehearsals/attendance/finalize-past/route.ts",
+      "bytes": 5360,
+      "sha256": "7900cc375230d9aad11f72752821947e32f8be2a98ecabab9277c380396fabee"
+    },
+    {
+      "path": "app/api/rehearsals/attendance/update/route.ts",
+      "bytes": 6097,
+      "sha256": "15541e6e2aefe9a18255db17a7d77a36f718db8e0ff2223466266c6fbf8185fe"
+    },
+    {
+      "path": "app/api/rehearsals/create/route.ts",
+      "bytes": 8991,
+      "sha256": "f988c7d02be2a74afd503cf88b51e6ee5431fc1d9256035c2d418da720a8eb1d"
+    },
+    {
+      "path": "app/api/rehearsals/delete/route.ts",
+      "bytes": 4488,
+      "sha256": "afcdd43d0074b681a677bec33d43232a348e55cbb2dc1690d0abc73db01fdf8d"
+    },
+    {
+      "path": "app/api/rehearsals/update/route.ts",
+      "bytes": 10274,
+      "sha256": "a8877d6d21e7fc44b73801f8bb4fa5749bda4cbda98a3e0d5a5697cca5c55c0d"
+    },
+    {
+      "path": "app/api/repertoire/assignments/update/route.ts",
+      "bytes": 3786,
+      "sha256": "6207fd7145294d45295d93c36b16c36b6081ae8d5a5ff0fe42a9d2bef463cdf3"
+    },
+    {
+      "path": "app/auth/recovery/page.tsx",
+      "bytes": 10779,
+      "sha256": "09c2ecb9518fe65fa3b7cb5824d7b9fef1b27ab58df051885d926a14ded467f1"
+    },
+    {
+      "path": "app/globals.css",
+      "bytes": 13845,
+      "sha256": "b916ed3fb5324ebb080abb657915e1d3f0e6a16ddf3cb02a3d482f1280c3eb1f"
+    },
+    {
+      "path": "app/invite/page.tsx",
+      "bytes": 5254,
+      "sha256": "78d0946cc88cda406db75ff8b618cd830bdc3d7bf49a619cb692caeeaa4716ec"
+    },
+    {
+      "path": "app/layout.tsx",
+      "bytes": 2041,
+      "sha256": "d715a1c8002b932a6608708a68f3f9358f6b278d64832e077aff3fc4eacb9df7"
+    },
+    {
+      "path": "app/login/page.tsx",
+      "bytes": 5943,
+      "sha256": "ab22f3d2a6118aeebbe20a24c39c389c63d3e5979a9200547e438ea7a56eb6e6"
+    },
+    {
+      "path": "apps/mobile/.env.example",
+      "bytes": 194,
+      "sha256": "efc9a48c671ae59d3c3b08aba3d4e3d7ec55e6d8b182b63c0724baeab5c25d7b"
+    },
+    {
+      "path": "apps/mobile/.gitignore",
+      "bytes": 72,
+      "sha256": "92e11ae5ba4ec08b067d1e28e585db5c2589bc4c285ab0cc7f0682d06a58b839"
+    },
+    {
+      "path": "apps/mobile/App.tsx",
+      "bytes": 402,
+      "sha256": "d286a291a2d4c5b03312ca1a8d823cae6844f6ce2fa103502bb74c0b2274c8d1"
+    },
+    {
+      "path": "apps/mobile/app.json",
+      "bytes": 1469,
+      "sha256": "b0b21484f326a07d0750ed8bcc0d55eaed06a3cdde77cdae0440f68eb3703450"
+    },
+    {
+      "path": "apps/mobile/babel.config.js",
+      "bytes": 219,
+      "sha256": "4b648d6c5174ff58abdbf9a45218b5d8bbc776a62c5530cd3946f2dbc5b80bb6"
+    },
+    {
+      "path": "apps/mobile/index.ts",
+      "bytes": 866,
+      "sha256": "35b519e6a69f935dff521c59bb20a73749f5a1f9d37777444d895035d400746c"
+    },
+    {
+      "path": "apps/mobile/metro.config.js",
+      "bytes": 1108,
+      "sha256": "5c6b993e969e86fd0bdf433d35c2d109b5c6b88783b06a6410a72584012c6384"
+    },
+    {
+      "path": "apps/mobile/package-lock.json",
+      "bytes": 410631,
+      "sha256": "504a371695807755e8a6d045855e2a983c93d15120e54e0f28bf1adc3bbde72b"
+    },
+    {
+      "path": "apps/mobile/package.json",
+      "bytes": 1815,
+      "sha256": "bcc26d15edffc81301d9034dc846b639e7800b35a7acc27caf37f640f3beb694"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_audio-config.ts",
+      "bytes": 528,
+      "sha256": "3ec76d913e9ac026ab8603e32446a89acdd81de4699d19420e9573cf58c76502"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_audio-runtime.tsx",
+      "bytes": 5585,
+      "sha256": "da6f344bc2d8bb62fb02d1a1299d322aa0debb5ee986f6906aad67632cdad128"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_connected-audio-config.ts",
+      "bytes": 3322,
+      "sha256": "b1032e576de6bee3970f620609e532bf5ae008787c7e7cae8aca587ce030fcc2"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_connected-audio-runtime.tsx",
+      "bytes": 9410,
+      "sha256": "10b0b53be474db337550414ae4c1208aa9f330345c16604402faf49992b59a73"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_native-pdf-config.ts",
+      "bytes": 2615,
+      "sha256": "11d33d44ea578676a8dcfab55b92c5a167590f05e121655eb0c1d46501114768"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_native-pdf-runtime.tsx",
+      "bytes": 7412,
+      "sha256": "f761b8ed2fed8a70fbe891ba51637906c3a5a5e9ccb2c89caba684e866e49b26"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_webview-config.ts",
+      "bytes": 3519,
+      "sha256": "09889e0ddaf83ecaf70cd68f0ffe1595ffd3613748b9f6cec420b7cc33f3da62"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/090_webview-runtime.tsx",
+      "bytes": 14651,
+      "sha256": "0de143d55c80a7f3cb44025bc0598cddded1b89b7e90b0754a59e70488dcb44a"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/093_android-private-r2-config.ts",
+      "bytes": 1262,
+      "sha256": "8090ccdbc5a3b6b353245e7968e0c7930d39232b13075b01481bded2cb1148f8"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/093_android-private-r2.tsx",
+      "bytes": 5863,
+      "sha256": "70a86246fb89716cfb47ca3688d51715f58b44de0a43f1aa8247da09b5301e5d"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/audio-runtime-config.ts",
+      "bytes": 848,
+      "sha256": "fb67374f537de4f22d473ae6b4b99e1db35ce3043341e315e85249f37a0d4c32"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/audio-runtime.tsx",
+      "bytes": 7191,
+      "sha256": "da7d5db6cdda5707042f7a100f584041788f3e08b0c11eef3a36e5e505d8881a"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/audio-server.mjs",
+      "bytes": 4420,
+      "sha256": "7333282d5cd10e34785c8c8820ca1dcc5fcae12e6928bfb08cc49b3fe6401e14"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/composed-webview-credential.ts",
+      "bytes": 3603,
+      "sha256": "07554ad26f26d69eeb7a8cbb3a47b27cfa80a080f0ea7679dd88b02eed8541d9"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/composed-webview-runtime-config.ts",
+      "bytes": 4537,
+      "sha256": "4eba7e0ac74373101ae1b3a6785ed17397ec156c48f4fd85175f0d54f73f388a"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/composed-webview-runtime.tsx",
+      "bytes": 12854,
+      "sha256": "4398ec29ca75bc68980e462895eff791ee64a1bdb05d4209648a84e74e367e5e"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/native-pdf.tsx",
+      "bytes": 11924,
+      "sha256": "becb5680417ff4d61d1f7be5906401634795447506191921ba5ea10a8e2e9450"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/platform-capability-runtime-config.ts",
+      "bytes": 933,
+      "sha256": "bcfb565dcec19718b86418d79a5d8ad720920e175dfff0ba6eea5b23d10e07f6"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/platform-capability-runtime.tsx",
+      "bytes": 10824,
+      "sha256": "d3b10b6aea850db69503cbd80e53049b567dc957a7f190cc1ea1b0ff2ff0fd32"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/platform-capability-server.mjs",
+      "bytes": 9828,
+      "sha256": "a9ddd92270a4cf1558b29923ff7a32cb3f64c2a890bd43698386a179ae6c3a0a"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/runtime-lifecycle-config.ts",
+      "bytes": 1926,
+      "sha256": "f6f25766809bc843bceb999672c2ab32c6308718fb4cfa8665a4801c8153d9ea"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/runtime-lifecycle.tsx",
+      "bytes": 8156,
+      "sha256": "c074ad0d57c5712cc0eee670f119fd980568ee8313a9b6664e2dc7cfab974bad"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/with-composed-webview-loopback.js",
+      "bytes": 2899,
+      "sha256": "11f121912f2b0962e22dc74369c08070f1f3966369c353ce18e78ac323f108f8"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/with-local-loopback-network.js",
+      "bytes": 5924,
+      "sha256": "f7ca97c9865dfe6921b7b903d9b1683f18b4536ceb36f63d5a41cb8ee02582ff"
+    },
+    {
+      "path": "apps/mobile/src/acceptance/with-platform-capability-loopback.js",
+      "bytes": 2580,
+      "sha256": "3db4065919551fe713a7c05a79e3efdf78553589727e20fd6ba9df5dc2f616dd"
+    },
+    {
+      "path": "apps/mobile/src/auth/AuthProvider.tsx",
+      "bytes": 4067,
+      "sha256": "89abfb971f41379e16f90d9513675528f7ede8282e0d6cdcc1df6433933ff24c"
+    },
+    {
+      "path": "apps/mobile/src/auth/auth-store.ts",
+      "bytes": 15034,
+      "sha256": "531b17ed36b634cd7e97e7bd04ea4a9d31326039fa13b09d4e69c95929b0df0c"
+    },
+    {
+      "path": "apps/mobile/src/auth/choir-preference.ts",
+      "bytes": 1461,
+      "sha256": "43235f22564bcfcc6170cb2e967d283230c1a03d7c3ff77bd82d2278e7315e16"
+    },
+    {
+      "path": "apps/mobile/src/auth/secure-storage.ts",
+      "bytes": 2927,
+      "sha256": "53e1e68b468948a2902b4103723ed1019f8107b6823f062fcdde78bbcccba3b6"
+    },
+    {
+      "path": "apps/mobile/src/auth/supabase-client.ts",
+      "bytes": 2517,
+      "sha256": "4213224f0141004b2e37c06eb6398016a5748291e41b513a735003b6cbcada66"
+    },
+    {
+      "path": "apps/mobile/src/auth/tenant-cache.ts",
+      "bytes": 1239,
+      "sha256": "b98ed067400f64b189b6ec0ee2272630b843fc9c390f5e246111eae28e19caa5"
+    },
+    {
+      "path": "apps/mobile/src/auth/types.ts",
+      "bytes": 2650,
+      "sha256": "047818bf7cdc7244d852a89dafdb159efe82e51e553cdb45edeb102e329c86e7"
+    },
+    {
+      "path": "apps/mobile/src/chat/ChatMessageActionPanel.tsx",
+      "bytes": 5440,
+      "sha256": "ab39047267f976e5c1a5ae507f7c34cd35ecd0f653c3dabe80e8cde73d5cceea"
+    },
+    {
+      "path": "apps/mobile/src/chat/ChatScreen.tsx",
+      "bytes": 38664,
+      "sha256": "ca080effefe29a12507e25b8bc19867cd3af68d0e188e625dbf516bbfcee6ff1"
+    },
+    {
+      "path": "apps/mobile/src/chat/ChatStarredMessagesPanel.tsx",
+      "bytes": 5344,
+      "sha256": "4108f62bb1786b1f8fc5b81a893da513f7c31e6914c2093717c917269089c263"
+    },
+    {
+      "path": "apps/mobile/src/chat/chat-message-action-gateway.ts",
+      "bytes": 6362,
+      "sha256": "ddc7011bd5c594ab7d8562779cf70b22949f2e9528d96d06b6e56ca65f6ebbe5"
+    },
+    {
+      "path": "apps/mobile/src/chat/chat-read-gateway.ts",
+      "bytes": 9089,
+      "sha256": "f3295006888f487794271c8c5f657b2c14c9ac469935b29e60cad5c30601b2d7"
+    },
+    {
+      "path": "apps/mobile/src/chat/chat-send-gateway.ts",
+      "bytes": 8269,
+      "sha256": "bd74caefc035728cff1b1591332d4a3983a90e47207465b8bb171003984972d1"
+    },
+    {
+      "path": "apps/mobile/src/chat/chat-star-gateway.ts",
+      "bytes": 12484,
+      "sha256": "bd665cc33222777f9990219b2333942fc5ae90ebb06d7872f83118474bdf5dde"
+    },
+    {
+      "path": "apps/mobile/src/chat/native-chat-send-queue.ts",
+      "bytes": 13022,
+      "sha256": "98023b0309c1ae7ec0381058b40b549a2293c13b974d8c0581e7648efd8509cf"
+    },
+    {
+      "path": "apps/mobile/src/chat/supabase-chat-message-action-transport.ts",
+      "bytes": 1529,
+      "sha256": "6232344965aa7f00fc53688bd061f4cbe65c0ccd95682aab111d892a329a73b9"
+    },
+    {
+      "path": "apps/mobile/src/chat/supabase-chat-read-transport.ts",
+      "bytes": 4236,
+      "sha256": "75f3bdcd54880fcb20ff09facda800d586369264993f3d984c5b7a485d573041"
+    },
+    {
+      "path": "apps/mobile/src/chat/supabase-chat-send-transport.ts",
+      "bytes": 1675,
+      "sha256": "2ca36b780847add437702fa0571d94be237034d637c0d7bf545ef411cfd0b439"
+    },
+    {
+      "path": "apps/mobile/src/chat/supabase-chat-star-transport.ts",
+      "bytes": 3285,
+      "sha256": "51d29d38550067d626cc851f7af9d938d82acede653e97cd9c865b9c3ca08148"
+    },
+    {
+      "path": "apps/mobile/src/chat/use-native-chat-stars.ts",
+      "bytes": 7939,
+      "sha256": "f452cd3ab292ae726eb11241e5eb0717759a3645dac6d330b4ca8f81e2850980"
+    },
+    {
+      "path": "apps/mobile/src/notifications/notification-gateway.ts",
+      "bytes": 3278,
+      "sha256": "dc6ed104466b278572fa7c215c40525741414e1e70ca7b7cfae0d42fdfacbe0d"
+    },
+    {
+      "path": "apps/mobile/src/notifications/notification-runtime-core.ts",
+      "bytes": 1070,
+      "sha256": "8956c146e7c97485fed9e5ae7966aca22851c2197322890937c93be8a8ff7f4e"
+    },
+    {
+      "path": "apps/mobile/src/notifications/use-notification-runtime.ts",
+      "bytes": 3185,
+      "sha256": "0fa92d4153480319f496c7a60e897267b38465e9b2dc0e42668b1ab279173e6c"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/AnnotationOverlay.tsx",
+      "bytes": 6378,
+      "sha256": "97219be5299f32d9cc93bd70fe752a759608f7fc1e96c47acd7acffee4914a19"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/AudioPlaybackProvider.tsx",
+      "bytes": 13479,
+      "sha256": "0a7c88a843a5350508b3a8a44442b0411a01af25d20478a6bd434953ede626e9"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/AudioPlayerScreen.tsx",
+      "bytes": 10812,
+      "sha256": "0bcd6fbd46cb4f050f053c8f247eec3ed3ee35d872ed73651f67abbca3895a88"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/MiniAudioPlayer.tsx",
+      "bytes": 3717,
+      "sha256": "a7d9752fd0fd1212eef13f12b183a3816033f7c5c7d0b771b703349bffe3da1d"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/RepertoireScreen.tsx",
+      "bytes": 13656,
+      "sha256": "e1497644e75be7db4f07eabb8dd63e904e6cf0ecdb090c24e86bcb140a3f6d15"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/ScoreReaderScreen.tsx",
+      "bytes": 10051,
+      "sha256": "355e0cb87602d7abcc94bdca7a4998b3a75250b586edbefd993e5b32b5b2ce88"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__fixtures__/annotations.sample.json",
+      "bytes": 3144,
+      "sha256": "329fb458f559ba7ea61db378ba4acdada3feb4b2756bef31833fc344044fea35"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/__fixtures__/score_40p.pdf",
+      "bytes": 65905,
+      "sha256": "39fcafaec0263d8c2429a66d4ea941180692a99749be398a1d48c8fd5397d6a3"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/annotation-source.ts",
+      "bytes": 2497,
+      "sha256": "d82666dce7f6ae2c3e4fa125de31592dd8fc0ef6b8e972e6ed42813db3582536"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/audio-contract.ts",
+      "bytes": 1896,
+      "sha256": "eeb24068ea623b8ca29424857ff6f6dae37c2e8ecb9670e5e384de1b3562b5f5"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/audio-source-gateway.ts",
+      "bytes": 1704,
+      "sha256": "df6d68111b6389e4912cb28814493eb52198f54f555cd540ed40162aa5454381"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/cache-registration.ts",
+      "bytes": 343,
+      "sha256": "a7e80b7a25db05004bc95eabf5e2e1880ae3e877961f8ebf5a9cfe66790d09b5"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/catalog-gateway.ts",
+      "bytes": 3143,
+      "sha256": "66462d0e3cc818d9af609d7ad6c9453556f11f02a34a718093290ac346e18118"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/default-audio-source-gateway.ts",
+      "bytes": 827,
+      "sha256": "66d8873fad994d1ecc4391a9a083610dd41cf0cb7944e8fa3388917213de9a93"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/default-gateway.ts",
+      "bytes": 881,
+      "sha256": "65136bad13cbd92f4b398287b8171d7818e6d4a50683aace19dc1a495be391b1"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/default-reader-gateway.ts",
+      "bytes": 1302,
+      "sha256": "b3fd6cf63c59784d85ee5d65bd3509d654c2cc03d48e0c8dd663499af7c30378"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/expo-private-file-store.ts",
+      "bytes": 2310,
+      "sha256": "143818301ff99bd1b2fcbf1cc3efd2dd8afe598ec73e9772759fe2ce6f405e07"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/pdf-renderer.ts",
+      "bytes": 622,
+      "sha256": "eaa4a303437c4a5cda952594c30778fd6bc43d009eb094a4cd130b7c31b81b33"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/private-file-store.ts",
+      "bytes": 414,
+      "sha256": "e6b8e1185a010393a1efe13bb2ce3fdb5d8ec5a6005f1700ebaa0fc40efb3eb9"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/reader-contract.ts",
+      "bytes": 3061,
+      "sha256": "712374b0c374ef0c7d41dcf45caeb9c99b4f97f9558b963dabe971e70ed441e6"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/reader-gateway.ts",
+      "bytes": 6035,
+      "sha256": "d5cfab3af97add98d13d346133e91705ea68b55ffbb5571221b469fbee72142a"
+    },
+    {
+      "path": "apps/mobile/src/repertoire/supabase-source.ts",
+      "bytes": 2672,
+      "sha256": "8c9ed23067f438ba8244ee93a87b32d1b11528752831464b86a1e6d2c4872f25"
+    },
+    {
+      "path": "apps/mobile/src/test/doubles.ts",
+      "bytes": 5903,
+      "sha256": "274c1540f6d32cc1b2263b8338a21b6a5df0ba5899716a0bf147b9e0f9751d69"
+    },
+    {
+      "path": "apps/mobile/src/test/setup.ts",
+      "bytes": 3196,
+      "sha256": "8bbddc6f17ee166a8a9efb12561e4e738b9cfd18c05652a5785216628e54b9ed"
+    },
+    {
+      "path": "apps/mobile/src/ui/AppRoot.tsx",
+      "bytes": 12052,
+      "sha256": "f3f852693300a343acfabfe2abf6e339155c6415eddb25e480722585cdef0107"
+    },
+    {
+      "path": "apps/mobile/src/ui/ChoirSelectScreen.tsx",
+      "bytes": 2737,
+      "sha256": "fbe58647e0cd0f8937b8eb325dd8f57d25d25a36df96cbfaaf0b2bf406a5e535"
+    },
+    {
+      "path": "apps/mobile/src/ui/ShellScreen.tsx",
+      "bytes": 6793,
+      "sha256": "e5e0a135011b79402fd6a3c95f39af8a512533e4260a01db302edb88dd0bc100"
+    },
+    {
+      "path": "apps/mobile/src/ui/SignInScreen.tsx",
+      "bytes": 3655,
+      "sha256": "047681349e2a3a793187bde9136e5e9c25110e3a1b2b9337d269720fd9232392"
+    },
+    {
+      "path": "apps/mobile/src/ui/StatusScreen.tsx",
+      "bytes": 1788,
+      "sha256": "8693cc2ef957f57e55b4ba6329cbff707c2fd04347eb10fb89bfae21b7039252"
+    },
+    {
+      "path": "apps/mobile/src/ui/theme.ts",
+      "bytes": 470,
+      "sha256": "41a5bf7cf3be864a4483b60e3306eb32f9a1286db9c17102bb8c4d2dc793ea51"
+    },
+    {
+      "path": "apps/mobile/src/webview/NativeWebViewScreen.tsx",
+      "bytes": 34388,
+      "sha256": "43d9e0d222edf672dbffcf0c1dc337239276dc98af65b5847fb63dbbe90a7d11"
+    },
+    {
+      "path": "apps/mobile/src/webview/ProtectedPdfPreview.tsx",
+      "bytes": 7479,
+      "sha256": "cdfc5ac6837eb7db4e01d8bafd95b331f33fcdf99e539f900398694dd2c9c517"
+    },
+    {
+      "path": "apps/mobile/src/webview/local-pdf-preview.ts",
+      "bytes": 2377,
+      "sha256": "8d4761dcf42713611e73e6ea015a07cb44dfa4a21697dba1c558b51ffbc4bb56"
+    },
+    {
+      "path": "apps/mobile/src/webview/native-bridge-controller.ts",
+      "bytes": 17294,
+      "sha256": "79b9635b6571b8171a6fc7b117eff8998a79b12d5a31833b4ccd759dc15951fa"
+    },
+    {
+      "path": "apps/mobile/src/webview/platform-capabilities.ts",
+      "bytes": 15635,
+      "sha256": "d00ff9c0b944b74efca08090bb31f2fe56d5375a9c7f651bd0c7f5c90f4c781b"
+    },
+    {
+      "path": "apps/mobile/src/webview/private-file-ticket-recovery.ts",
+      "bytes": 5804,
+      "sha256": "d2feda531fafedf43854d0e2ef2d2af72d2c77bf7932d1696bc6b86c04c90145"
+    },
+    {
+      "path": "apps/mobile/src/webview/random.ts",
+      "bytes": 1125,
+      "sha256": "d82883dfd3a0821cc47b451f06fa681f460594e333273c91c39f297d0501304d"
+    },
+    {
+      "path": "apps/mobile/src/webview/runtime-config.ts",
+      "bytes": 2947,
+      "sha256": "f1c6f1860f341054c81f5f11b210e464d65eaa70a1022c5bb23fcf38b296c8fb"
+    },
+    {
+      "path": "apps/mobile/src/webview/theme-preference.ts",
+      "bytes": 1440,
+      "sha256": "382253917dbd8f1b0513147a4abe642718fb56668e321ce5c7abfdfadf6ee17c"
+    },
+    {
+      "path": "apps/mobile/tsconfig.json",
+      "bytes": 333,
+      "sha256": "987a8839d0a99b11a07186d0026614ea8ecb3b5f83d0efe401de85eaed45e3c0"
+    },
+    {
+      "path": "components/AddSongModal.tsx",
+      "bytes": 11289,
+      "sha256": "a33770869362bf2d34e55480052e9a2935ef924f64c880c9adfd8645df40b259"
+    },
+    {
+      "path": "components/AppProviders.tsx",
+      "bytes": 1850,
+      "sha256": "cd0df9c2524bdd1baabafa74277df2fe7143fe4a787a0eaf5e930c9036c00461"
+    },
+    {
+      "path": "components/AuthProvider.tsx",
+      "bytes": 18265,
+      "sha256": "0a3b8d2107010c5d776726fedbe9ddab7c360ec788bf48c4bd23868aef096946"
+    },
+    {
+      "path": "components/BottomNav.tsx",
+      "bytes": 3166,
+      "sha256": "8ae9dc7670203d3716de4e1b990e8166c3af9a4bfb50f21358073306ff6e06c0"
+    },
+    {
+      "path": "components/ChoirSelectionGate.tsx",
+      "bytes": 3148,
+      "sha256": "3e5ebf7ccebe9c564e5b5e8b6cf780fe14941ff35808cd7067ef0fb85cdbb325"
+    },
+    {
+      "path": "components/ChoirSwitcher.tsx",
+      "bytes": 1304,
+      "sha256": "ddb6eed128da806b9ccf5fd32758cdfd8851a10e1f7f7bbc5bf60c8aa41c8e6f"
+    },
+    {
+      "path": "components/ConfirmDialog.tsx",
+      "bytes": 4677,
+      "sha256": "f04ffd720a65605c9f0ca5ac20b1e50035c30550c2d2756cf30e0a59010845a0"
+    },
+    {
+      "path": "components/CreateAnnouncementModal.tsx",
+      "bytes": 18540,
+      "sha256": "3b2890212574e9b4c3a96d130c316757e81e255d85c5f4fc58d7c70295505627"
+    },
+    {
+      "path": "components/CreateAssignmentModal.tsx",
+      "bytes": 21071,
+      "sha256": "2efc3290a730d893e4fda8159815779b5b714cf51362d8bc94ba3eec3e4d012e"
+    },
+    {
+      "path": "components/EmbeddedWebBridgeProvider.tsx",
+      "bytes": 30759,
+      "sha256": "9cd3a384f21a7face8a9d4b661c5f23993cd2c0499abca9b238e2255a17a6ffc"
+    },
+    {
+      "path": "components/EventFormModal.tsx",
+      "bytes": 21372,
+      "sha256": "a37077a0017045f7b7666da1d01505bdc8ee2d9efe3c7b432af29e7560328977"
+    },
+    {
+      "path": "components/FileUploadModal.tsx",
+      "bytes": 14953,
+      "sha256": "c3d798391892726979b35820a444ac07c0780838b00ce569e0341122401af2e0"
+    },
+    {
+      "path": "components/FloatingMiniPlayer.tsx",
+      "bytes": 27805,
+      "sha256": "9a347a93c5129862d8fff3a55d92c54a353faa87e8eb247b0bceac9fd6d50ad6"
+    },
+    {
+      "path": "components/KoristPerformanceSection.tsx",
+      "bytes": 9725,
+      "sha256": "12cc76e434fd9cf0caf4c5461962d6f6e4d7b87949a3d95f8fd5966648648969"
+    },
+    {
+      "path": "components/LottieIcon.tsx",
+      "bytes": 2979,
+      "sha256": "d4e7092998893f26f5609df050a140682520278fd3f6121696b7e78ef9ab257b"
+    },
+    {
+      "path": "components/MainNotificationsBell.tsx",
+      "bytes": 28747,
+      "sha256": "ed67fb2ad38e46e8933b22fe225cdce0a99b43056e2867d198f5eee401fb4db1"
+    },
+    {
+      "path": "components/NotificationPrompt.tsx",
+      "bytes": 6068,
+      "sha256": "402317189e56204e64d38ef5e6b20c2d2f64bed4965a12eb88849ab6234dc3a0"
+    },
+    {
+      "path": "components/PageTransition.tsx",
+      "bytes": 2312,
+      "sha256": "e958361a4c4f37598c036bf72fdf9b5bfce19e4bf1d1748553c3096222fec61f"
+    },
+    {
+      "path": "components/ProfileChangeRequestNotifier.tsx",
+      "bytes": 3411,
+      "sha256": "eb310c1c4a046cbfca98905b2034d9b970ed93db00ddbb2982211f45e4a6d234"
+    },
+    {
+      "path": "components/ProtectedDriveImage.tsx",
+      "bytes": 940,
+      "sha256": "1728476a32a8d5f389b0a644e3912e0bf0375fde780a80944b96572858a15456"
+    },
+    {
+      "path": "components/ReviewNoteDialog.tsx",
+      "bytes": 19056,
+      "sha256": "7de7f5c68041d39749750c16d9af9695aad925fd9d49af3105c1762aac5c7e1d"
+    },
+    {
+      "path": "components/RichTextEditor.tsx",
+      "bytes": 37409,
+      "sha256": "0d88a19194d91f479c705f47ec3d4299d2ba2b8f38be3f9bc5e6aae21023f155"
+    },
+    {
+      "path": "components/SongAssignmentModal.tsx",
+      "bytes": 14736,
+      "sha256": "6119084514d4135fbfecb13f8ebc27be004330431f085dc7dcf38bc94c39d29f"
+    },
+    {
+      "path": "components/SongEditModal.tsx",
+      "bytes": 69461,
+      "sha256": "cc6a676c9817b819ef575516db5b632ffdeb6cdb0e0ec352f6b97ec26d4dd05a"
+    },
+    {
+      "path": "components/SwipeBack.tsx",
+      "bytes": 6699,
+      "sha256": "c1b86bfaceeb14a0d585af77b854e6a6cba9d2788f3373778962019e5ef950ff"
+    },
+    {
+      "path": "components/ThemeToggle.tsx",
+      "bytes": 2755,
+      "sha256": "14b63a6ba6a2f4f2b85ba9912b87b84aaa9fde2702f86ad945923ec6fff0c883"
+    },
+    {
+      "path": "components/ToastProvider.tsx",
+      "bytes": 4457,
+      "sha256": "4685c8e7f80fa50e6f3dcbeadc0730febcc9b8a9b7dfb91f5abb80cbd1962e87"
+    },
+    {
+      "path": "components/TopBar.tsx",
+      "bytes": 5091,
+      "sha256": "2f17c96731ccb38f72fe4e350f6d8cea72fb574b14ec621ada02e8eff9eb0eb4"
+    },
+    {
+      "path": "components/assignments/SubmissionFileLink.tsx",
+      "bytes": 3257,
+      "sha256": "8d795611a74b4d33b5121567f5fcf2956fb972b98ea0b1b0453c833a0b9ed58d"
+    },
+    {
+      "path": "components/chat/AddMemberModal.tsx",
+      "bytes": 11143,
+      "sha256": "81f8147e66c80ca9d96eab01942e9210c808f431829e5402af70672ab09ede9b"
+    },
+    {
+      "path": "components/chat/ChatOverlayPortal.tsx",
+      "bytes": 557,
+      "sha256": "b1540011cdbe25799dc8cf2a49e995e50b38bcdef3ef3da098e17204b5e1b142"
+    },
+    {
+      "path": "components/chat/ChatRoom.tsx",
+      "bytes": 41230,
+      "sha256": "0e2528f4e6cd85fcef3144d07939845f1be80f147f776c01120079bef02e882e"
+    },
+    {
+      "path": "components/chat/ChatRoomList.tsx",
+      "bytes": 19432,
+      "sha256": "d85a9757dc68697d037012b730c3f4142e14e1c758b2135886ab9d3279e6a539"
+    },
+    {
+      "path": "components/chat/CreatePollModal.tsx",
+      "bytes": 7835,
+      "sha256": "d638e1e9b8cf1aea34acc450d40c4c6cac538d440fa5465e488adb722b4c4fb8"
+    },
+    {
+      "path": "components/chat/CreateRoomModal.tsx",
+      "bytes": 9664,
+      "sha256": "2dc711575e9ca4e789d9e9135c5a55544a251837d78fad01aadd6ec3fd00b944"
+    },
+    {
+      "path": "components/chat/FilesPanel.tsx",
+      "bytes": 3666,
+      "sha256": "6e00f2e2e3a148d801f7cf35f08493385ce50f5bbbb21a64918293dc9d8beb9a"
+    },
+    {
+      "path": "components/chat/ImageGalleryViewer.tsx",
+      "bytes": 7624,
+      "sha256": "1699fd5f4587c27a9f62315b43173131610317f314f98bf7123daf499375813f"
+    },
+    {
+      "path": "components/chat/LinkPreviewCard.tsx",
+      "bytes": 4354,
+      "sha256": "bf6ab331a2f6c5434f9cecd7fbfca4f95af532782f7465299e38e153c62c9f49"
+    },
+    {
+      "path": "components/chat/LinksPanel.tsx",
+      "bytes": 3260,
+      "sha256": "c50ccb2cc280837cd6a52aafb43f4d2c91d8b9bd20968af50907d6e0951252ea"
+    },
+    {
+      "path": "components/chat/MediaGalleryGrid.tsx",
+      "bytes": 3820,
+      "sha256": "f950f6510d4dce95447ef7d13db90a88e68458c7db90b4f64bc785f987beaca3"
+    },
+    {
+      "path": "components/chat/MemberActionSheet.tsx",
+      "bytes": 3735,
+      "sha256": "86adab6428ea2c11031793f19f0fe47fd8cf65061db45800684fa74bdace9189"
+    },
+    {
+      "path": "components/chat/MessageBubble.tsx",
+      "bytes": 18556,
+      "sha256": "c2c3e335f2ac78cab15852d0c68c89fccd2dcaeacd980df633ac6850ef0e8c57"
+    },
+    {
+      "path": "components/chat/MessageContextMenu.tsx",
+      "bytes": 7838,
+      "sha256": "2049b8b4e496d7e7fb2bbc6015e4be760e156615afdc1fcf804fbce9dcec4096"
+    },
+    {
+      "path": "components/chat/MessageInfoModal.tsx",
+      "bytes": 7557,
+      "sha256": "7f0fa9ce8d191a5864e2ae00e8c7ef5ed0b9453b026789a78b4fd49b01a8e9a0"
+    },
+    {
+      "path": "components/chat/MessageInput.tsx",
+      "bytes": 15901,
+      "sha256": "1713646cf304ea71dddfce8e24d2c97f296540b88f7d9d7998132f423b744f7f"
+    },
+    {
+      "path": "components/chat/PollCard.tsx",
+      "bytes": 16371,
+      "sha256": "a5cb0faf5de2ab5a228ae717df9fae9777e168001ff2c2e7a6e8d6837df5b74b"
+    },
+    {
+      "path": "components/chat/ProtectedChatMediaImage.tsx",
+      "bytes": 348,
+      "sha256": "bd1b5fdc1bc1fee1f8ba14185f9c41f98d4f1e9944dbfcc27d3a456b25eb7d98"
+    },
+    {
+      "path": "components/chat/ReactionBar.tsx",
+      "bytes": 7376,
+      "sha256": "ccb72e9e86405311818c6ab92bc91722891f8ca0c12b264bc59823db95fc6624"
+    },
+    {
+      "path": "components/chat/RoomInfoDrawer.tsx",
+      "bytes": 25792,
+      "sha256": "41424c58c22b3496ef959ca5995ca2dfe84c939745d5dec3eadebaf75decb23a"
+    },
+    {
+      "path": "components/chat/RoomListContextMenu.tsx",
+      "bytes": 5952,
+      "sha256": "1ace0978c77acfdb40cc2ae8bee9d08301edb3b8d29d618f16e5bcd63cb4d318"
+    },
+    {
+      "path": "components/chat/StarredMessagesPanel.tsx",
+      "bytes": 4042,
+      "sha256": "3527008caca89dccea1b6a62cee3000c63ed2f1de232a9a6fde5456d488bd26a"
+    },
+    {
+      "path": "components/chat/StickerPicker.tsx",
+      "bytes": 5566,
+      "sha256": "a262848fefb4a54a214564dbbccd8c4a8485d4362f67b3f5e76c5715528d380c"
+    },
+    {
+      "path": "components/invitations/InvitationManager.tsx",
+      "bytes": 4980,
+      "sha256": "6a1744b1a668406e85cdd1a1b66d4b1a942a3ed0cfdc1133f51fd5c10850c659"
+    },
+    {
+      "path": "components/repertuvar/AnnotationStage.tsx",
+      "bytes": 24038,
+      "sha256": "94d484d890a5302d7ee341b7e1cfe08a779f36a019f4acf6ed4a875149086251"
+    },
+    {
+      "path": "components/repertuvar/ChefCommentSection.tsx",
+      "bytes": 36824,
+      "sha256": "3b618b6985749c946b660fd5b2367befe3399d11a4f1d7f6c6684bd255678872"
+    },
+    {
+      "path": "components/repertuvar/RepertoireWorkspace.tsx",
+      "bytes": 116995,
+      "sha256": "dd7108a4e4fc76c26c3d2c8f07e4c61edb0478873050576d8ef6057d6e6f3d1f"
+    },
+    {
+      "path": "components/useFormOriginChoir.ts",
+      "bytes": 834,
+      "sha256": "701cd2b9547d5f37b8c16bbb7eab4dcf42567980745976bcba7eb85b0f019dde"
+    },
+    {
+      "path": "hooks/use-mobile.ts",
+      "bytes": 565,
+      "sha256": "ad0936f84f1df79d3697bfbff9c18f8ad58431c1cbaf2359c6a853b0fcc9f28b"
+    },
+    {
+      "path": "hooks/useBackOrHome.ts",
+      "bytes": 2263,
+      "sha256": "83769bbf3a6d290eb52ac0b949a8d2c53ad71c88339d1dce211ecb828cabbb73"
+    },
+    {
+      "path": "hooks/useChatRealtime.ts",
+      "bytes": 17301,
+      "sha256": "ee6f4f256843d26dd90b1d51daa960ea82facc5394c6c954f183fa6a8582f66f"
+    },
+    {
+      "path": "hooks/useDurableChatStatus.ts",
+      "bytes": 2376,
+      "sha256": "e28d5079fa80a8826dddded981fe37b9a3529b4e8c7ebcc8e0cb91abbda872ee"
+    },
+    {
+      "path": "hooks/useProtectedChatMediaUrl.ts",
+      "bytes": 1411,
+      "sha256": "7f9cd3c5b03c8c6fd5b96ee69e59a18324c18f8241ef79d79054d172b7289868"
+    },
+    {
+      "path": "hooks/useProtectedDriveFileUrl.ts",
+      "bytes": 9147,
+      "sha256": "9e6e0b6c116f3fe7094cdaaa5d9e450b4aa44379cba251cfca2e4168d8ca50e6"
+    },
+    {
+      "path": "hooks/useTabSwipe.ts",
+      "bytes": 6957,
+      "sha256": "205ef27f98f8ac84b30da059c3a62c7e480a51d49a83aec0602ab65589febeba"
+    },
+    {
+      "path": "lib/assignment-cache.ts",
+      "bytes": 1497,
+      "sha256": "fff0ffb886fb214a00fc4eb5c5c556fbc1c854deaddbc3672c8412fdc834a691"
+    },
+    {
+      "path": "lib/assignment-scope.ts",
+      "bytes": 1819,
+      "sha256": "798c507d01d350d0e3001cae8a014036d3b0b2ee03dbf71a95b432e1cb17d8b4"
+    },
+    {
+      "path": "lib/assignments/review-upload.ts",
+      "bytes": 4235,
+      "sha256": "4ff7a7f451bc2eb5a42d92dd679a01cfdba2ad799b1509b219c8740c7369baee"
+    },
+    {
+      "path": "lib/assignments/upload.ts",
+      "bytes": 4121,
+      "sha256": "a1c3979a8963ce2358008bbc78def8a2f15ef62da8beb3c579482db8ed4124f1"
+    },
+    {
+      "path": "lib/auth-recovery.ts",
+      "bytes": 2288,
+      "sha256": "abb54f07f44a0390fc27a803846b5a378bd150f9429ea86d4c5761f5281e4482"
+    },
+    {
+      "path": "lib/chat-cache.ts",
+      "bytes": 13007,
+      "sha256": "a72e04624f0a18803c4682dde869509ddc508234ccbdae3b6a80fbb14129865d"
+    },
+    {
+      "path": "lib/chat-media.ts",
+      "bytes": 6898,
+      "sha256": "01fa00696f273b92c90aa59127600b0dbed0c02116a742a22aa23c7b5e125ae5"
+    },
+    {
+      "path": "lib/chat-read-contract.ts",
+      "bytes": 23049,
+      "sha256": "d48d35e725b7228bff9acbcb5d13a55957b243503b1b126d2e3ce79c07b97114"
+    },
+    {
+      "path": "lib/chat-status-runtime.ts",
+      "bytes": 3340,
+      "sha256": "c3e9834a9108cc498ea4c65478cbc1ffcedf26e07b9db05b74da7c29f0f5eae9"
+    },
+    {
+      "path": "lib/chat.ts",
+      "bytes": 50495,
+      "sha256": "13ae81f6513ca0f91d9d20180ab972ca847da5bef74a289dbcc264ea2588eebf"
+    },
+    {
+      "path": "lib/choir-context-core.ts",
+      "bytes": 4259,
+      "sha256": "38fef60354ddb5ff18e3352ba46e3c1545eddd99dae79f10f24fe9e0c25188ff"
+    },
+    {
+      "path": "lib/choir-context.ts",
+      "bytes": 1432,
+      "sha256": "9e7c82274b92cc46411c6f3f48bdcac1231fbee93799f56b1a40bce1b835c574"
+    },
+    {
+      "path": "lib/choir-invitations.ts",
+      "bytes": 1540,
+      "sha256": "f9a43b120f371642600f03d4a5c4123bf4cd20c0137ae5f16340907ccb826fcc"
+    },
+    {
+      "path": "lib/drive-file-url.ts",
+      "bytes": 10681,
+      "sha256": "417f98f07a38e3b09fcbda73ff1ce19be858af0bd4943f1fe2ad823684424609"
+    },
+    {
+      "path": "lib/drive.ts",
+      "bytes": 13465,
+      "sha256": "f9806253caaf7447430dacf613991af8500e4617a1d82635daf873d21e955998"
+    },
+    {
+      "path": "lib/embedded-web-runtime.ts",
+      "bytes": 10364,
+      "sha256": "a8f547da5d68d1edf25d831642b27171fd84837bf43705ca2f8e4b64cc28a82e"
+    },
+    {
+      "path": "lib/formatText.tsx",
+      "bytes": 3781,
+      "sha256": "457cdd0a8e46364cca6bb418736094c0f5445b2ca5d5e518a613bd30a883340c"
+    },
+    {
+      "path": "lib/internalPageLinks.ts",
+      "bytes": 3972,
+      "sha256": "54cf36244297a7b463b0719bef0e17785a8b48da506acb803190fc5dffef5f6d"
+    },
+    {
+      "path": "lib/invite-token-store.ts",
+      "bytes": 3875,
+      "sha256": "10118a2ab4e4df1612fdbfb17d3c12a84300a7c38db4cc242a8c90372eb67db8"
+    },
+    {
+      "path": "lib/korist-performance.ts",
+      "bytes": 32107,
+      "sha256": "db59a3b1a3ed16be40cea0cd65cb6b2e2dadd5bfea51c47aa56d88abe4710b26"
+    },
+    {
+      "path": "lib/mobile-webview-bridge.ts",
+      "bytes": 29896,
+      "sha256": "c56bca92ea6c3789c11ad95b4d938596e7a5656eac2af398cc69c72b37d3bde2"
+    },
+    {
+      "path": "lib/native-push-registration.ts",
+      "bytes": 11622,
+      "sha256": "1d2c5725a3413970817a6cf6be10cca48f697fc2c051690c23d04e6602bb419d"
+    },
+    {
+      "path": "lib/notification-cache.ts",
+      "bytes": 812,
+      "sha256": "b07ba75c37652be955dcc98e453ccd7992576fe05cba4549e566134b2826dabf"
+    },
+    {
+      "path": "lib/notification-deep-link.ts",
+      "bytes": 8352,
+      "sha256": "ef931affa63523e13f2571604060dc49973314d1d6cdbb8e952a0d6bded57529"
+    },
+    {
+      "path": "lib/profile-change-requests.ts",
+      "bytes": 3112,
+      "sha256": "7f90b4c7a8fd5b81837bb1f7da5c517043bdeb964652b40bac577dfcb7c40dcf"
+    },
+    {
+      "path": "lib/realtime.ts",
+      "bytes": 1110,
+      "sha256": "896a244f515295f2de6bce3fb54a76eccd3054085b7936ba191de76590ce0359"
+    },
+    {
+      "path": "lib/repertuvar/annotation-save-queue.ts",
+      "bytes": 11408,
+      "sha256": "3db4f273a6b90cb23cee8fb5581f10aeed3e582c56b6c0c1233b08cfd8717406"
+    },
+    {
+      "path": "lib/repertuvar/annotation-save-runtime.ts",
+      "bytes": 321,
+      "sha256": "ced3bf0625b50666727a20cbe1689ed88850c8c631718fdf4683c0db0ac8b018"
+    },
+    {
+      "path": "lib/repertuvar/annotation-tenant-transition.ts",
+      "bytes": 773,
+      "sha256": "4ff3dec86825c08060e0042620f86ecaa2987fd9ad5fb4ea44de0548d457ff8c"
+    },
+    {
+      "path": "lib/repertuvar/annotation-types.ts",
+      "bytes": 12253,
+      "sha256": "56092bd56e87e41b1f61a9be4bf5d5649b18345529cbf94e75cf3beb73848872"
+    },
+    {
+      "path": "lib/repertuvar/annotation-workspace-lifecycle.ts",
+      "bytes": 1739,
+      "sha256": "729b7f3b9472b1abd403b69f75fb15931118002b788eed8345356b07c88c43a9"
+    },
+    {
+      "path": "lib/repertuvar/annotations.ts",
+      "bytes": 11512,
+      "sha256": "5ff803beaa4134dea817d6ab74a61a1249dcab009828342c67e6481a7e977393"
+    },
+    {
+      "path": "lib/repertuvar/cache.ts",
+      "bytes": 3373,
+      "sha256": "bbf841265637a282e3d666a5a4b49a1fbd07682291d7f865473e4a3f64d19b79"
+    },
+    {
+      "path": "lib/repertuvar/catalog-core.ts",
+      "bytes": 4803,
+      "sha256": "dc50a587a5ebbf0331de6fa922c6abb08ecdc442ba3ba93713c4325e07ba92e3"
+    },
+    {
+      "path": "lib/repertuvar/comment-audio.ts",
+      "bytes": 5283,
+      "sha256": "beed91a3d8270a4c50667375adb106b6e019ab98ff59f05c424b25b8bd5f8442"
+    },
+    {
+      "path": "lib/repertuvar/create-song.ts",
+      "bytes": 6525,
+      "sha256": "0db2ed184306d9709cc07a6e192edd92783c09bc17f7e56b7f4525edc9f8ee2e"
+    },
+    {
+      "path": "lib/repertuvar/lifecycle.ts",
+      "bytes": 3671,
+      "sha256": "5f1ecb3b7c7704164aa6730a2d59df56ef1ff55a97798727766e82a940ac956e"
+    },
+    {
+      "path": "lib/repertuvar/offline.ts",
+      "bytes": 8800,
+      "sha256": "f2c5a841c565d22386c566d54889dcdfc49b3d9d75ed32cf0cb0132612c3e0fe"
+    },
+    {
+      "path": "lib/repertuvar/pdf-worker.ts",
+      "bytes": 795,
+      "sha256": "94fc9b4e717022cf819664329e805697203d1346af5e56f78bdd4a83c699bd05"
+    },
+    {
+      "path": "lib/repertuvar/protected-file-client.ts",
+      "bytes": 2466,
+      "sha256": "43aea8d1bbd510f0cee95fa8d9eaea99a482e95a9f35b67cc0e1a4e29410a4c1"
+    },
+    {
+      "path": "lib/repertuvar/queries.ts",
+      "bytes": 4559,
+      "sha256": "658bc633a40d307228156d993201916fa1e2165537ede394c15e6b302f7e32ed"
+    },
+    {
+      "path": "lib/repertuvar/upload.ts",
+      "bytes": 3958,
+      "sha256": "bd4d6764e8746047a9559bad7f9bb9c6d91e7e6f98c9f65b1ce3635c9b2b55bb"
+    },
+    {
+      "path": "lib/richText.ts",
+      "bytes": 2861,
+      "sha256": "41acbdce1ac03875968355ac826e94c383cad980596af2f61b570e9e27456a04"
+    },
+    {
+      "path": "lib/role-labels.ts",
+      "bytes": 391,
+      "sha256": "f70ff7508e3b20eeafb51ba33007aded9dad210a0479b94af16fbcd9fe48c4f4"
+    },
+    {
+      "path": "lib/server/assignment-audit.ts",
+      "bytes": 867,
+      "sha256": "607971030c35243747989e40a540b477204c16bf3c827e2e16735a7877fd2e71"
+    },
+    {
+      "path": "lib/server/drive-file-access.ts",
+      "bytes": 9707,
+      "sha256": "ad34a7361fa161db9913e91b986ef6ab8016e2ed592aa620d94a1cae94567cc0"
+    },
+    {
+      "path": "lib/server/drive-file-content.ts",
+      "bytes": 1565,
+      "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+    },
+    {
+      "path": "lib/server/drive-file-token.ts",
+      "bytes": 1773,
+      "sha256": "3e672993a2e709fec27d285d9372ffe391b66ffc9d08f170fa9cb55adc20fd5b"
+    },
+    {
+      "path": "lib/server/legacy-file-adapter.ts",
+      "bytes": 4129,
+      "sha256": "7a50162d58cb4d25126a0ca470c6dece8ad555df2b5352a52718fbd904155083"
+    },
+    {
+      "path": "lib/server/push-notifications.ts",
+      "bytes": 10609,
+      "sha256": "e7adb5225ba283f9aa37bb09b751e79aa1c7935dc0acfeed890332d1dc35e0c4"
+    },
+    {
+      "path": "lib/server/reviewer-auth.ts",
+      "bytes": 2037,
+      "sha256": "52f5653d58b05f9a84d77b7ea2b4e3d6dc7610cf98aab9d1fce10b6d6d3b5e36"
+    },
+    {
+      "path": "lib/server/supabase-auth.ts",
+      "bytes": 1905,
+      "sha256": "85b49c76f6a7ba9f8962ba335bc5c3a82babb3b4aa0c7ae487bf88e3aa96fe24"
+    },
+    {
+      "path": "lib/server/tenant-client.ts",
+      "bytes": 1992,
+      "sha256": "f76f300a348087d03d3da9921f4b2854bd89b30af5bf42cd293398994508fc66"
+    },
+    {
+      "path": "lib/shared-audio.ts",
+      "bytes": 496,
+      "sha256": "f29fd98c696688904c4dbce761d47e381d7f88928e4c58c790d9362c08446fbb"
+    },
+    {
+      "path": "lib/supabase.ts",
+      "bytes": 13587,
+      "sha256": "4b0fd6e1a49163aeb7d4765f14a050a81925fbb19f753de1185f5e6012a08ab6"
+    },
+    {
+      "path": "lib/utils.ts",
+      "bytes": 166,
+      "sha256": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d"
+    },
+    {
+      "path": "lib/web-auth-capability.ts",
+      "bytes": 2054,
+      "sha256": "a06f6b1135ef312c28d64d7f9ce760d5793cf5316b2704127727be73bddabec2"
+    },
+    {
+      "path": "next.config.ts",
+      "bytes": 1245,
+      "sha256": "0cc4b6ca0c8d53facdf00b75490860c78fb5048752ec2f1d16948d20b517326d"
+    },
+    {
+      "path": "package.json",
+      "bytes": 3067,
+      "sha256": "eb6bf9bc2cb22c3b5f785cac11e9e7e03f58d7a90eba4b394577a308eb9c10b4"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 273712,
+      "sha256": "8c2bc9d3188f730848b5efc5434385f0b6fa270e8ccfa37dcac93dfc8209b38e"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "bytes": 168,
+      "sha256": "37036f1d557b163b84bcd0d8af54069578cd97f9dd8686a1da79e78537267129"
+    },
+    {
+      "path": "public/apple-touch-icon.png",
+      "bytes": 30778,
+      "sha256": "ce1636f88d832fc0efbb60c1ff2e13c6974bef01d6d4734a393dcd5805851bc1"
+    },
+    {
+      "path": "public/favicon.ico",
+      "bytes": 2686,
+      "sha256": "f8eff434a5257a346810a392747d86dad694b5ee91e7c059dbe829ff7713eca6"
+    },
+    {
+      "path": "public/icon-192.png",
+      "bytes": 28764,
+      "sha256": "115bef308dc98f4a705550f5b262cd1e1fad67fa351aa5240e1ff17e2a0cf404"
+    },
+    {
+      "path": "public/icon-512.png",
+      "bytes": 131305,
+      "sha256": "7f9a0c58a80132ff5d8e0ff0665e02f5effccfaaeaa3599f9ec5f693f7182c2b"
+    },
+    {
+      "path": "public/icon-maskable-512.png",
+      "bytes": 131305,
+      "sha256": "7f9a0c58a80132ff5d8e0ff0665e02f5effccfaaeaa3599f9ec5f693f7182c2b"
+    },
+    {
+      "path": "public/icon.png",
+      "bytes": 28764,
+      "sha256": "115bef308dc98f4a705550f5b262cd1e1fad67fa351aa5240e1ff17e2a0cf404"
+    },
+    {
+      "path": "public/icons/dosya.png",
+      "bytes": 2220,
+      "sha256": "c743744fa513508438329848ab611c7b57a007346f011e36cefe73f640d899bf"
+    },
+    {
+      "path": "public/login.png",
+      "bytes": 45617,
+      "sha256": "c557a93b5eebfed9cb1cb2f042f9e101558428471f843d3db10bd8d59ad9a064"
+    },
+    {
+      "path": "public/lottie/Chat dark.json",
+      "bytes": 18191,
+      "sha256": "c5b15e4c44d9ba5f9b088df060c42f1dc78146d4391793a056591c29a4ca8598"
+    },
+    {
+      "path": "public/lottie/Chat light.json",
+      "bytes": 18191,
+      "sha256": "4f8f0c32a3a9e23e9e3ce364ce59ab477a5784ea3e18b70435eec7d6f53867c1"
+    },
+    {
+      "path": "public/lottie/Delete icon animation.json",
+      "bytes": 12416,
+      "sha256": "36d1a687ac50188e06a62f33adfcd1c415d0be79deeb3463ca199f519f065a54"
+    },
+    {
+      "path": "public/lottie/Home Icon light.json",
+      "bytes": 7069,
+      "sha256": "ba52b6e2c4ef83bcc7b8d1afeed1a66791be4894497255ad75fbd47544b2ec9e"
+    },
+    {
+      "path": "public/lottie/Home Icon.json",
+      "bytes": 8456,
+      "sha256": "510b525b33cf19fd565fd0118ac5699aaa9a700a37597114f16752c077fe98bd"
+    },
+    {
+      "path": "public/lottie/Insider-loading.json",
+      "bytes": 3109,
+      "sha256": "8bfc1f8f7dade469ac1c0e52dbac7fa7d31498048bcd7a6a92bd3ce9ae754ffe"
+    },
+    {
+      "path": "public/lottie/Loading 40 _ Paperplane.json",
+      "bytes": 3065,
+      "sha256": "7c5a014daad3a4bd6f19224c05d4da2b5808527126b6a08ebac8e047f56cfc11"
+    },
+    {
+      "path": "public/lottie/Play pause button.json",
+      "bytes": 9570,
+      "sha256": "1499233ef21be2ca2f40c65fca60e589aa43fec23d83ea4874ee0905fcc8e716"
+    },
+    {
+      "path": "public/lottie/Profile Icon light.json",
+      "bytes": 5198,
+      "sha256": "9b30a1c81cc39134f00c181427196fdf3efea4836625f0ff35f5259c25f4433f"
+    },
+    {
+      "path": "public/lottie/Profile Icon.json",
+      "bytes": 5198,
+      "sha256": "ff05b6c7e6b1d6b7e5ebb47e2c0439dbfc37593e40300cbf6a778df36105bf6f"
+    },
+    {
+      "path": "public/lottie/Success.json",
+      "bytes": 7336,
+      "sha256": "c5332d0d125e1c4291b1cccdc8b0bb2698807b3a705d1b1af474de480bd5d60e"
+    },
+    {
+      "path": "public/lottie/Tasks light.json",
+      "bytes": 21037,
+      "sha256": "639d1af985b5f736abf618a96e11bc26c91a10cdd77f7d983250a2a8a2c91a96"
+    },
+    {
+      "path": "public/lottie/Tasks.json",
+      "bytes": 21037,
+      "sha256": "b262b0cab4a1e84d21c5be810e2b0f10169c8a5502edf705df67382e1e8280a4"
+    },
+    {
+      "path": "public/lottie/celebration.json",
+      "bytes": 81564,
+      "sha256": "89d55bea0ff4edc0d3347833aaebac9d485c0840890be2f91d5c2a0fba791335"
+    },
+    {
+      "path": "public/lottie/light-dark-switch.json",
+      "bytes": 104103,
+      "sha256": "3656eff5c153a346bffbfbe85f3296a92d4652cf592cb54ab67b98f74f99764e"
+    },
+    {
+      "path": "public/lottie/paperplane-dark.json",
+      "bytes": 8202,
+      "sha256": "87c71abf284c00fd59faab668659b2e91e9f6fda559eeaf7041f1c84e1ef99da"
+    },
+    {
+      "path": "public/lottie/paperplane-light.json",
+      "bytes": 8197,
+      "sha256": "af5ad127c4fc339dd7442347b700aa19dee9221042316ca96ca9c146d90e396e"
+    },
+    {
+      "path": "public/lottie/player music dark.json",
+      "bytes": 9783,
+      "sha256": "cdf571b98ef50a9a47f4fc0c5e8280dea8b9a0702283a7c965dbc367f369fa6d"
+    },
+    {
+      "path": "public/lottie/player music.json",
+      "bytes": 11553,
+      "sha256": "6c8d4043a381426534adc576a9d0e1245611f0e7ebf2c6e575d6083245954fd1"
+    },
+    {
+      "path": "public/manifest.json",
+      "bytes": 595,
+      "sha256": "71c146199273f641fc434b6acfaeceda05d78db7c51f8c3770ea8c4352411360"
+    },
+    {
+      "path": "public/sw.js",
+      "bytes": 17325,
+      "sha256": "a9fd093994eaca7ba2c640fafac9486d49cc09d2e326ad62dc5e54c08b5c113a"
+    },
+    {
+      "path": "store/useChatStore.ts",
+      "bytes": 7952,
+      "sha256": "9a7b1c7467dd95e885b2601086e3680dece9c156100dfd734803540f4967a222"
+    },
+    {
+      "path": "store/useMiniAudioPlayerStore.ts",
+      "bytes": 2635,
+      "sha256": "a290ad3f1d90a951a2c66ec15c235322147b7d5fa8ce6321dd4e9e31dc605c43"
+    },
+    {
+      "path": "store/useNavigationStore.ts",
+      "bytes": 526,
+      "sha256": "af5b2d741cfb8666537806c278718e59f96905349d43d024826e81ae20a313bc"
+    },
+    {
+      "path": "store/useRepertoireWorkspaceStore.ts",
+      "bytes": 9329,
+      "sha256": "fab23da7a81f95cd5f74e11d624e866726d5c5ce5859546471ecc7a8f587ce42"
+    },
+    {
+      "path": "supabase/config.toml",
+      "bytes": 2842,
+      "sha256": "b3749ffce391afc42274ecec4fecfaa53662f9df84b6e70d3484a1012fb48a4e"
+    },
+    {
+      "path": "supabase/functions/_shared/private-file-authority.ts",
+      "bytes": 704,
+      "sha256": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a"
+    },
+    {
+      "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+      "bytes": 4239,
+      "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+    },
+    {
+      "path": "supabase/functions/_shared/tenant-fetch.ts",
+      "bytes": 3581,
+      "sha256": "3b2fe56693ae8d9c25fcfa6dba5028f5cf2d1ef2c5734378d5b16d8bedc02bb5"
+    },
+    {
+      "path": "supabase/functions/account-recovery-006/index.ts",
+      "bytes": 5689,
+      "sha256": "bc6a8bb5f5cea309bb360769ddbcdee2e6082140295d1b58a1878dffdb72f180"
+    },
+    {
+      "path": "supabase/functions/account-recovery-006/recovery-core.ts",
+      "bytes": 6412,
+      "sha256": "8dd6713b5dacc9e2056279ce95eb6cad9d684ddfe1e38f4d1ec89b1c7bf6b4ad"
+    },
+    {
+      "path": "supabase/functions/assignment-file/index.ts",
+      "bytes": 5984,
+      "sha256": "dfe67a9a3dd941c4a4d08ca8ea42300577c794907e890479680ce08e42a281ad"
+    },
+    {
+      "path": "supabase/functions/assignment-file/ticket.ts",
+      "bytes": 2549,
+      "sha256": "36d02c5d5dba69fb07bb01ecdb81bc444f09f4b3c8c96a6ade21e7cb6f158c29"
+    },
+    {
+      "path": "supabase/functions/assignment-review-file/index.ts",
+      "bytes": 5112,
+      "sha256": "4e11956ed83aee5275e5bc7c9ab2b478dd09f0fedf7ccd40ee0ba5a26aacbb70"
+    },
+    {
+      "path": "supabase/functions/assignment-review-file/ticket.ts",
+      "bytes": 2423,
+      "sha256": "70b25bd66463f0f6e29cc5379dcd11a511721e2ad16acc63be527c75bf347ea1"
+    },
+    {
+      "path": "supabase/functions/assignment-review-upload/handler.ts",
+      "bytes": 8061,
+      "sha256": "0f34df21687d10bcc678a780f9d3cbda7334396924e63f45a58ba04e2d682031"
+    },
+    {
+      "path": "supabase/functions/assignment-review-upload/index.ts",
+      "bytes": 2780,
+      "sha256": "c938605d1f4947298eebf85f1acd784ce1c6c74448b4ee5fd863cc0a58019e65"
+    },
+    {
+      "path": "supabase/functions/assignment-upload/auth.ts",
+      "bytes": 1729,
+      "sha256": "3a1fc5a89ef405fea234166bf8dfe294f6c0a650ebbef8efd2184a5e8810cfbe"
+    },
+    {
+      "path": "supabase/functions/assignment-upload/handler.ts",
+      "bytes": 8916,
+      "sha256": "025047010cbf9dc37fe5ffc1747222c1c28bb0e7d407054b166757d824116d8a"
+    },
+    {
+      "path": "supabase/functions/assignment-upload/index.ts",
+      "bytes": 3015,
+      "sha256": "b64c761c767d30b8de35d0d70535be14b77b73a5bd49076748d372e775cc05c7"
+    },
+    {
+      "path": "supabase/functions/chat-media-file/index.ts",
+      "bytes": 5103,
+      "sha256": "c43605526cd7e27af3ce20c4570b2e7123ea452eca792bb67e4e8d132fe92c02"
+    },
+    {
+      "path": "supabase/functions/chat-media-file/ticket.ts",
+      "bytes": 2440,
+      "sha256": "c58afb57bd699f4375a6e1a486324b46c8f152cc1732d19b6f1f2c4fe0c5ab49"
+    },
+    {
+      "path": "supabase/functions/chat-media-lifecycle/handler.ts",
+      "bytes": 4436,
+      "sha256": "6904c9d8c67c40aa777440ef5d3a1f86fe7cd68f66e9e85f306141da94f807e0"
+    },
+    {
+      "path": "supabase/functions/chat-media-lifecycle/index.ts",
+      "bytes": 2494,
+      "sha256": "60a2bf990093963b00846e238ca6bfa33f0fa54026bc8083bb4d9ae5c0a6460b"
+    },
+    {
+      "path": "supabase/functions/chat-media-upload/handler.ts",
+      "bytes": 9079,
+      "sha256": "f1a60c64509c31353ebfc85dfb55d0b6a3c14338d990cb5c624ca566a6b112aa"
+    },
+    {
+      "path": "supabase/functions/chat-media-upload/index.ts",
+      "bytes": 2601,
+      "sha256": "9929132305390ffea7afe964378709896099a4899f9528b0291b06a211bbdaa5"
+    },
+    {
+      "path": "supabase/functions/choir-invitations/handler.ts",
+      "bytes": 5071,
+      "sha256": "58d81b30fd210937cd31848ce239bf5386f62349e4e203bc107f7d959146b3a5"
+    },
+    {
+      "path": "supabase/functions/choir-invitations/index.ts",
+      "bytes": 744,
+      "sha256": "614cea388e0192828d2a45573217cf92d7074b686385f9aef126fb61d6681ea1"
+    },
+    {
+      "path": "supabase/functions/create-choir/create-choir-core.ts",
+      "bytes": 3964,
+      "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+    },
+    {
+      "path": "supabase/functions/create-choir/index.ts",
+      "bytes": 2656,
+      "sha256": "f85e42acbcbcc9eaa63e5daeaf8dae38d01d7bb3453ac8b768fd16faf050d7e5"
+    },
+    {
+      "path": "supabase/functions/drive-manager-v2/index.ts",
+      "bytes": 43268,
+      "sha256": "d5a93f9f2f0668ac6b53c39b73889778b28c07ebd17c2e9f4db1166122e96e7d"
+    },
+    {
+      "path": "supabase/functions/legacy-file/handler.ts",
+      "bytes": 6912,
+      "sha256": "4dc491511dc475fd727ca0fb1f499605b2588a07f3cd188cd795773cf4a01194"
+    },
+    {
+      "path": "supabase/functions/legacy-file/index.ts",
+      "bytes": 2781,
+      "sha256": "4dec990dc2667f1772972a9e86f06a3fb2e5a28cba07b27be15de39c806b4347"
+    },
+    {
+      "path": "supabase/functions/legacy-file/ticket.ts",
+      "bytes": 3353,
+      "sha256": "f830697d04f8e452454171343a4f8710efcc3c1e609c59610f806125ddf1a0d7"
+    },
+    {
+      "path": "supabase/functions/link-preview/authorization.ts",
+      "bytes": 1436,
+      "sha256": "77aa1412068c34d4611c38a57668c7d4b5d44fcd9cbf5ad6d177aa43ac6690b7"
+    },
+    {
+      "path": "supabase/functions/link-preview/handler.ts",
+      "bytes": 6098,
+      "sha256": "c7e5d3d44933214d56ee5c960f7c59181f3a9bf9a0b424143a1b00b492bb72ea"
+    },
+    {
+      "path": "supabase/functions/link-preview/index.ts",
+      "bytes": 1460,
+      "sha256": "9845fd5eb015f306c160785855fb74f27a2057b68c6e56379e2b274af4f1ab5c"
+    },
+    {
+      "path": "supabase/functions/link-preview/policy.ts",
+      "bytes": 4073,
+      "sha256": "e402d4d7b44c99ef411ae865bc7dffcb1519c6bb36b49ce5d5a420a36fc43fbd"
+    },
+    {
+      "path": "supabase/functions/link-preview/preview.ts",
+      "bytes": 6235,
+      "sha256": "4a3cb9292b1c4e87a74e03b37e5e0aa9c659a54a043f82ccd975cc449a59834c"
+    },
+    {
+      "path": "supabase/functions/link-preview/runtime-acceptance.ts",
+      "bytes": 8750,
+      "sha256": "de9916e84753a43c3cbb28103f32e0a243cf2b7cad427bd64ef88b982dd2790b"
+    },
+    {
+      "path": "supabase/functions/link-preview/transport.ts",
+      "bytes": 2725,
+      "sha256": "d7e9baa16b64551504bea946faedca353f51955847fdf7b782466e141fb284a8"
+    },
+    {
+      "path": "supabase/functions/repertoire-comment-file/index.ts",
+      "bytes": 5067,
+      "sha256": "c0d42f786eef1b5a43463e43aca4255ecbc1ae8cb4b28a46f1e18e1197fa1753"
+    },
+    {
+      "path": "supabase/functions/repertoire-comment-file/ticket.ts",
+      "bytes": 2319,
+      "sha256": "07cc99722327241727e626510798aa462338bea727bdb728acd04c040eda32f4"
+    },
+    {
+      "path": "supabase/functions/repertoire-comment-lifecycle/handler.ts",
+      "bytes": 4903,
+      "sha256": "fb8f2e228a3aa3104deac8ec9935a721b8515d61ed511d1738f79ee1977778b9"
+    },
+    {
+      "path": "supabase/functions/repertoire-comment-lifecycle/index.ts",
+      "bytes": 2925,
+      "sha256": "44b8bfe6a19342dc3f533ff5983e47fcca6193694aa170fd5dc2a6f34f27ee19"
+    },
+    {
+      "path": "supabase/functions/repertoire-comment-upload/handler.ts",
+      "bytes": 7617,
+      "sha256": "8a4e4e535dc6cc38b1f7a96c0d07e4660d806d2cc902e6000281483a56bdf0ca"
+    },
+    {
+      "path": "supabase/functions/repertoire-comment-upload/index.ts",
+      "bytes": 2618,
+      "sha256": "e767d8e17645851df8b8dda505d6057bff1eefe29df135e604524c84fcc1c677"
+    },
+    {
+      "path": "supabase/functions/repertoire-file-lifecycle/handler.ts",
+      "bytes": 5622,
+      "sha256": "dff8266f4fc99e9e9ca07a543947ebbcce9f0fd2a8b7b430d996a926fcefc5ea"
+    },
+    {
+      "path": "supabase/functions/repertoire-file-lifecycle/index.ts",
+      "bytes": 2869,
+      "sha256": "43f77eaf0af5d9475a3aa62448434c23e019dbc4b402ac5e052f398cf08e0c83"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/handler.ts",
+      "bytes": 15810,
+      "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/index.ts",
+      "bytes": 6105,
+      "sha256": "e445074facb9031c2f92451813b2442ccfccf638cf60632aa25ead7b23c1711e"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/r2.ts",
+      "bytes": 2603,
+      "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/storage.ts",
+      "bytes": 2951,
+      "sha256": "3dbffa6503c9c009d5112ed2eb6d25f1f5b0b206544f82c09224dc989633eae8"
+    },
+    {
+      "path": "supabase/functions/repertoire-file/ticket.ts",
+      "bytes": 3307,
+      "sha256": "bd21319a1f027cf338f83d2832d7ecc1d2553667ee2bfb8b1a56ed8bdbe180bd"
+    },
+    {
+      "path": "supabase/functions/repertoire-upload/auth.ts",
+      "bytes": 1581,
+      "sha256": "b58c5a22235db46a5dbbebe06f7dec7e10bc45f1662e32420dc0af6ea744715f"
+    },
+    {
+      "path": "supabase/functions/repertoire-upload/handler.ts",
+      "bytes": 8996,
+      "sha256": "237cb15bde01256bf3c33e7a28a55f86ef6c079f1416ece8d15f781a2e6720d7"
+    },
+    {
+      "path": "supabase/functions/repertoire-upload/index.ts",
+      "bytes": 3136,
+      "sha256": "0ccf64d36fc0ab220655cb6d0f67eebdf982d66df196d718b1f44e4a7863978f"
+    },
+    {
+      "path": "supabase/functions/repertoire-upload/stream.ts",
+      "bytes": 3574,
+      "sha256": "1118c3d88b25b7d46fdcc0433dda071d247a41ee3270c47187363af3e6586147"
+    },
+    {
+      "path": "supabase/functions/repertoire-upload/transport.ts",
+      "bytes": 2072,
+      "sha256": "527736f48d20c2330d3ab0a0c8a53d71b924b70dbb9afe80a007b0afadbdd05c"
+    },
+    {
+      "path": "supabase/functions/resend-inbound/handler.ts",
+      "bytes": 2161,
+      "sha256": "7a413b98d70469223c7ca2cf8f5bdf220f9d1db9a151df528bc813548d7a039e"
+    },
+    {
+      "path": "supabase/functions/resend-inbound/index.ts",
+      "bytes": 249,
+      "sha256": "0c11c99bdecc86dd004f85ed1c5122add8c2b276f029e3f48d79c761c3a32996"
+    },
+    {
+      "path": "supabase/functions/resend-inbound/provider.ts",
+      "bytes": 5124,
+      "sha256": "8016299504e3708101bca51bdfb94e42b9adb78518776e722adb25674c351505"
+    },
+    {
+      "path": "supabase/functions/resend-inbound/security.ts",
+      "bytes": 2639,
+      "sha256": "2e1820716cbf76724e8211b7913fc0af84613b663726bfa7b1ca876536c2b556"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 696,
+      "sha256": "1b5b84da6085762c6c47314a36c352e5a98ff3f21b42c3bdc5960b631779f267"
+    }
+  ],
+  "database": [
+    {
+      "ordinal": 1,
+      "pin": {
+        "path": "supabase/migrations/20260909232000_repertoire_pdf_annotation_safe_save_024.sql",
+        "sha256": "b0cf68b02b0e32132df9e569f84ebc9300b57b25375a573315d8adbee0b47573",
+        "bytes": 11940
+      },
+      "after": []
+    },
+    {
+      "ordinal": 2,
+      "pin": {
+        "path": "supabase/migrations/20260919221500_private_chat_realtime_046.sql",
+        "sha256": "7e2528b5f1bbb1df5094bb65bfa9ff3dab51baa25419456e8bb5489569c52ea3",
+        "bytes": 4421
+      },
+      "after": []
+    },
+    {
+      "ordinal": 3,
+      "pin": {
+        "path": "supabase/migrations/20260920090000_chat_read_order_048.sql",
+        "sha256": "dfec253c0838bebb7f6759b1da2333e8a1cc38d9936e5d4addab0277a5062c74",
+        "bytes": 2093
+      },
+      "after": [
+        "supabase/migrations/20260919221500_private_chat_realtime_046.sql"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "pin": {
+        "path": "supabase/migrations/20260928140000_active_membership_revocation_078.sql",
+        "sha256": "3637722b0aa4822c6c4ac96789554d2eedce52410c552cc94f4471948cc705bb",
+        "bytes": 4327
+      },
+      "after": []
+    },
+    {
+      "ordinal": 5,
+      "pin": {
+        "path": "supabase/migrations/20260928150000_message_status_rpc_privileges_079.sql",
+        "sha256": "278947640ea19a3a312ae1872d68ca213e86aab26412f5f7c35b2d6605804e5f",
+        "bytes": 1718
+      },
+      "after": []
+    },
+    {
+      "ordinal": 6,
+      "pin": {
+        "path": "supabase/migrations/20260928175950_atomic_repertoire_assignments_082.sql",
+        "sha256": "29143efcd85582f35e972b2cf8e422423f183b655f5b1ddab2d4a446b2e9ef02",
+        "bytes": 5250
+      },
+      "after": [
+        "supabase/migrations/20260928140000_active_membership_revocation_078.sql"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "pin": {
+        "path": "supabase/migrations/20260929010000_atomic_profile_submit_087.sql",
+        "sha256": "25c3dac2a5a8df94f9c7b371d53549cffa245d933ecef1fc0dd2988f87876985",
+        "bytes": 7681
+      },
+      "after": [
+        "supabase/migrations/20260928140000_active_membership_revocation_078.sql"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "pin": {
+        "path": "supabase/migrations/20260929020000_atomic_profile_review_088.sql",
+        "sha256": "68753d37988d7131966bf240517185ee55e2b4101d656180b9d4b0d01116f472",
+        "bytes": 9100
+      },
+      "after": [
+        "supabase/migrations/20260928140000_active_membership_revocation_078.sql",
+        "supabase/migrations/20260929010000_atomic_profile_submit_087.sql"
+      ]
+    },
+    {
+      "ordinal": 9,
+      "pin": {
+        "path": "supabase/migrations/20260930080046_private_file_ticket_authority_090.sql",
+        "sha256": "4f345d968fa6945aa746b4d00b7852c293047a984beabd79c4b7a64629c0ad86",
+        "bytes": 6365
+      },
+      "after": [
+        "supabase/migrations/20260928140000_active_membership_revocation_078.sql"
+      ]
+    },
+    {
+      "ordinal": 10,
+      "pin": {
+        "path": "supabase/migrations/20261002154343_legacy_file_authority_090.sql",
+        "sha256": "e121f9f8eada0dd4d7b9ddee8bea19c9baf146bfee28377d11669331a5f973c3",
+        "bytes": 6962
+      },
+      "after": [
+        "supabase/migrations/20260930080046_private_file_ticket_authority_090.sql"
+      ]
+    },
+    {
+      "ordinal": 11,
+      "pin": {
+        "path": "supabase/migrations/20261009190611_private_file_session_expiry_090.sql",
+        "sha256": "c191738462dc500e0be524155fb6e5ca3002e7445ba6a70d77f451d7a52bc36c",
+        "bytes": 6882
+      },
+      "after": [
+        "supabase/migrations/20260930080046_private_file_ticket_authority_090.sql",
+        "supabase/migrations/20261002154343_legacy_file_authority_090.sql"
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "slug": "repertoire-file",
+      "verifyJwt": false,
+      "effectiveVerifyJwt": false,
+      "gatewayConfiguration": "EXPLICIT_LOCAL_CONFIG",
+      "closure": {
+        "files": [
+          {
+            "path": "lib/server/drive-file-content.ts",
+            "bytes": 1565,
+            "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+          },
+          {
+            "path": "supabase/functions/_shared/private-file-authority.ts",
+            "bytes": 704,
+            "sha256": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a"
+          },
+          {
+            "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "bytes": 4239,
+            "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+          },
+          {
+            "path": "supabase/functions/create-choir/create-choir-core.ts",
+            "bytes": 3964,
+            "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/handler.ts",
+            "bytes": 15810,
+            "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/index.ts",
+            "bytes": 6105,
+            "sha256": "e445074facb9031c2f92451813b2442ccfccf638cf60632aa25ead7b23c1711e"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/r2.ts",
+            "bytes": 2603,
+            "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/storage.ts",
+            "bytes": 2951,
+            "sha256": "3dbffa6503c9c009d5112ed2eb6d25f1f5b0b206544f82c09224dc989633eae8"
+          }
+        ],
+        "imports": [
+          {
+            "from": "supabase/functions/repertoire-file/index.ts",
+            "to": "supabase/functions/create-choir/create-choir-core.ts",
+            "specifier": "../create-choir/create-choir-core.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/index.ts",
+            "to": "supabase/functions/repertoire-file/handler.ts",
+            "specifier": "./handler.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "lib/server/drive-file-content.ts",
+            "specifier": "../../../lib/server/drive-file-content.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/index.ts",
+            "to": "supabase/functions/repertoire-file/r2.ts",
+            "specifier": "./r2.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/index.ts",
+            "to": "supabase/functions/repertoire-file/storage.ts",
+            "specifier": "./storage.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/storage.ts",
+            "to": "lib/server/drive-file-content.ts",
+            "specifier": "../../../lib/server/drive-file-content.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/index.ts",
+            "to": "supabase/functions/_shared/private-file-authority.ts",
+            "specifier": "../_shared/private-file-authority.ts"
+          },
+          {
+            "from": "supabase/functions/_shared/private-file-authority.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "./private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/index.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          }
+        ],
+        "external": [
+          "npm:@supabase/supabase-js@2.112.4",
+          "npm:aws4fetch@1.0.20"
+        ]
+      }
+    },
+    {
+      "slug": "assignment-file",
+      "verifyJwt": false,
+      "effectiveVerifyJwt": false,
+      "gatewayConfiguration": "EXPLICIT_LOCAL_CONFIG",
+      "closure": {
+        "files": [
+          {
+            "path": "lib/server/drive-file-content.ts",
+            "bytes": 1565,
+            "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+          },
+          {
+            "path": "supabase/functions/_shared/private-file-authority.ts",
+            "bytes": 704,
+            "sha256": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a"
+          },
+          {
+            "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "bytes": 4239,
+            "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+          },
+          {
+            "path": "supabase/functions/assignment-file/index.ts",
+            "bytes": 5984,
+            "sha256": "dfe67a9a3dd941c4a4d08ca8ea42300577c794907e890479680ce08e42a281ad"
+          },
+          {
+            "path": "supabase/functions/create-choir/create-choir-core.ts",
+            "bytes": 3964,
+            "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/handler.ts",
+            "bytes": 15810,
+            "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/r2.ts",
+            "bytes": 2603,
+            "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+          }
+        ],
+        "imports": [
+          {
+            "from": "supabase/functions/assignment-file/index.ts",
+            "to": "supabase/functions/create-choir/create-choir-core.ts",
+            "specifier": "../create-choir/create-choir-core.ts"
+          },
+          {
+            "from": "supabase/functions/assignment-file/index.ts",
+            "to": "supabase/functions/repertoire-file/handler.ts",
+            "specifier": "../repertoire-file/handler.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "lib/server/drive-file-content.ts",
+            "specifier": "../../../lib/server/drive-file-content.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/assignment-file/index.ts",
+            "to": "supabase/functions/repertoire-file/r2.ts",
+            "specifier": "../repertoire-file/r2.ts"
+          },
+          {
+            "from": "supabase/functions/assignment-file/index.ts",
+            "to": "supabase/functions/_shared/private-file-authority.ts",
+            "specifier": "../_shared/private-file-authority.ts"
+          },
+          {
+            "from": "supabase/functions/_shared/private-file-authority.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "./private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/assignment-file/index.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          }
+        ],
+        "external": [
+          "npm:@supabase/supabase-js@2.112.4",
+          "npm:aws4fetch@1.0.20"
+        ]
+      }
+    },
+    {
+      "slug": "assignment-review-file",
+      "verifyJwt": false,
+      "effectiveVerifyJwt": false,
+      "gatewayConfiguration": "EXPLICIT_LOCAL_CONFIG",
+      "closure": {
+        "files": [
+          {
+            "path": "lib/server/drive-file-content.ts",
+            "bytes": 1565,
+            "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+          },
+          {
+            "path": "supabase/functions/_shared/private-file-authority.ts",
+            "bytes": 704,
+            "sha256": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a"
+          },
+          {
+            "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "bytes": 4239,
+            "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+          },
+          {
+            "path": "supabase/functions/assignment-review-file/index.ts",
+            "bytes": 5112,
+            "sha256": "4e11956ed83aee5275e5bc7c9ab2b478dd09f0fedf7ccd40ee0ba5a26aacbb70"
+          },
+          {
+            "path": "supabase/functions/create-choir/create-choir-core.ts",
+            "bytes": 3964,
+            "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/handler.ts",
+            "bytes": 15810,
+            "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/r2.ts",
+            "bytes": 2603,
+            "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+          }
+        ],
+        "imports": [
+          {
+            "from": "supabase/functions/assignment-review-file/index.ts",
+            "to": "supabase/functions/create-choir/create-choir-core.ts",
+            "specifier": "../create-choir/create-choir-core.ts"
+          },
+          {
+            "from": "supabase/functions/assignment-review-file/index.ts",
+            "to": "supabase/functions/repertoire-file/handler.ts",
+            "specifier": "../repertoire-file/handler.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "lib/server/drive-file-content.ts",
+            "specifier": "../../../lib/server/drive-file-content.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/assignment-review-file/index.ts",
+            "to": "supabase/functions/repertoire-file/r2.ts",
+            "specifier": "../repertoire-file/r2.ts"
+          },
+          {
+            "from": "supabase/functions/assignment-review-file/index.ts",
+            "to": "supabase/functions/_shared/private-file-authority.ts",
+            "specifier": "../_shared/private-file-authority.ts"
+          },
+          {
+            "from": "supabase/functions/_shared/private-file-authority.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "./private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/assignment-review-file/index.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          }
+        ],
+        "external": [
+          "npm:@supabase/supabase-js@2.112.4",
+          "npm:aws4fetch@1.0.20"
+        ]
+      }
+    },
+    {
+      "slug": "repertoire-comment-file",
+      "verifyJwt": false,
+      "effectiveVerifyJwt": false,
+      "gatewayConfiguration": "EXPLICIT_LOCAL_CONFIG",
+      "closure": {
+        "files": [
+          {
+            "path": "lib/server/drive-file-content.ts",
+            "bytes": 1565,
+            "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+          },
+          {
+            "path": "supabase/functions/_shared/private-file-authority.ts",
+            "bytes": 704,
+            "sha256": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a"
+          },
+          {
+            "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "bytes": 4239,
+            "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+          },
+          {
+            "path": "supabase/functions/create-choir/create-choir-core.ts",
+            "bytes": 3964,
+            "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+          },
+          {
+            "path": "supabase/functions/repertoire-comment-file/index.ts",
+            "bytes": 5067,
+            "sha256": "c0d42f786eef1b5a43463e43aca4255ecbc1ae8cb4b28a46f1e18e1197fa1753"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/handler.ts",
+            "bytes": 15810,
+            "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/r2.ts",
+            "bytes": 2603,
+            "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+          }
+        ],
+        "imports": [
+          {
+            "from": "supabase/functions/repertoire-comment-file/index.ts",
+            "to": "supabase/functions/create-choir/create-choir-core.ts",
+            "specifier": "../create-choir/create-choir-core.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-comment-file/index.ts",
+            "to": "supabase/functions/repertoire-file/handler.ts",
+            "specifier": "../repertoire-file/handler.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "lib/server/drive-file-content.ts",
+            "specifier": "../../../lib/server/drive-file-content.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-comment-file/index.ts",
+            "to": "supabase/functions/repertoire-file/r2.ts",
+            "specifier": "../repertoire-file/r2.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-comment-file/index.ts",
+            "to": "supabase/functions/_shared/private-file-authority.ts",
+            "specifier": "../_shared/private-file-authority.ts"
+          },
+          {
+            "from": "supabase/functions/_shared/private-file-authority.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "./private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-comment-file/index.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          }
+        ],
+        "external": [
+          "npm:@supabase/supabase-js@2.112.4",
+          "npm:aws4fetch@1.0.20"
+        ]
+      }
+    },
+    {
+      "slug": "chat-media-file",
+      "verifyJwt": false,
+      "effectiveVerifyJwt": false,
+      "gatewayConfiguration": "EXPLICIT_LOCAL_CONFIG",
+      "closure": {
+        "files": [
+          {
+            "path": "lib/server/drive-file-content.ts",
+            "bytes": 1565,
+            "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+          },
+          {
+            "path": "supabase/functions/_shared/private-file-authority.ts",
+            "bytes": 704,
+            "sha256": "890c526684d19884b9ea313ed59dd2baac5a7206b3cf2145afd7d99cbc7b3a3a"
+          },
+          {
+            "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "bytes": 4239,
+            "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+          },
+          {
+            "path": "supabase/functions/chat-media-file/index.ts",
+            "bytes": 5103,
+            "sha256": "c43605526cd7e27af3ce20c4570b2e7123ea452eca792bb67e4e8d132fe92c02"
+          },
+          {
+            "path": "supabase/functions/create-choir/create-choir-core.ts",
+            "bytes": 3964,
+            "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/handler.ts",
+            "bytes": 15810,
+            "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/r2.ts",
+            "bytes": 2603,
+            "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+          }
+        ],
+        "imports": [
+          {
+            "from": "supabase/functions/chat-media-file/index.ts",
+            "to": "supabase/functions/create-choir/create-choir-core.ts",
+            "specifier": "../create-choir/create-choir-core.ts"
+          },
+          {
+            "from": "supabase/functions/chat-media-file/index.ts",
+            "to": "supabase/functions/repertoire-file/handler.ts",
+            "specifier": "../repertoire-file/handler.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "lib/server/drive-file-content.ts",
+            "specifier": "../../../lib/server/drive-file-content.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/chat-media-file/index.ts",
+            "to": "supabase/functions/repertoire-file/r2.ts",
+            "specifier": "../repertoire-file/r2.ts"
+          },
+          {
+            "from": "supabase/functions/chat-media-file/index.ts",
+            "to": "supabase/functions/_shared/private-file-authority.ts",
+            "specifier": "../_shared/private-file-authority.ts"
+          },
+          {
+            "from": "supabase/functions/_shared/private-file-authority.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "./private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/chat-media-file/index.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          }
+        ],
+        "external": [
+          "npm:@supabase/supabase-js@2.112.4",
+          "npm:aws4fetch@1.0.20"
+        ]
+      }
+    },
+    {
+      "slug": "legacy-file",
+      "verifyJwt": false,
+      "effectiveVerifyJwt": false,
+      "gatewayConfiguration": "EXPLICIT_LOCAL_CONFIG",
+      "closure": {
+        "files": [
+          {
+            "path": "lib/server/drive-file-content.ts",
+            "bytes": 1565,
+            "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+          },
+          {
+            "path": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "bytes": 4239,
+            "sha256": "34f13c52f8d0e4fc84313216c22eab61b2a9364a9d224e4c758d0790cc437fc2"
+          },
+          {
+            "path": "supabase/functions/create-choir/create-choir-core.ts",
+            "bytes": 3964,
+            "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+          },
+          {
+            "path": "supabase/functions/legacy-file/handler.ts",
+            "bytes": 6912,
+            "sha256": "4dc491511dc475fd727ca0fb1f499605b2588a07f3cd188cd795773cf4a01194"
+          },
+          {
+            "path": "supabase/functions/legacy-file/index.ts",
+            "bytes": 2781,
+            "sha256": "4dec990dc2667f1772972a9e86f06a3fb2e5a28cba07b27be15de39c806b4347"
+          },
+          {
+            "path": "supabase/functions/legacy-file/ticket.ts",
+            "bytes": 3353,
+            "sha256": "f830697d04f8e452454171343a4f8710efcc3c1e609c59610f806125ddf1a0d7"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/handler.ts",
+            "bytes": 15810,
+            "sha256": "5e680ff0c11d96537233cb5a6164cd3c311dbb5f580ff0915799c85431288aa7"
+          },
+          {
+            "path": "supabase/functions/repertoire-file/storage.ts",
+            "bytes": 2951,
+            "sha256": "3dbffa6503c9c009d5112ed2eb6d25f1f5b0b206544f82c09224dc989633eae8"
+          }
+        ],
+        "imports": [
+          {
+            "from": "supabase/functions/legacy-file/index.ts",
+            "to": "supabase/functions/create-choir/create-choir-core.ts",
+            "specifier": "../create-choir/create-choir-core.ts"
+          },
+          {
+            "from": "supabase/functions/legacy-file/index.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/legacy-file/index.ts",
+            "to": "supabase/functions/repertoire-file/storage.ts",
+            "specifier": "../repertoire-file/storage.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/storage.ts",
+            "to": "lib/server/drive-file-content.ts",
+            "specifier": "../../../lib/server/drive-file-content.ts"
+          },
+          {
+            "from": "supabase/functions/legacy-file/index.ts",
+            "to": "supabase/functions/legacy-file/handler.ts",
+            "specifier": "./handler.ts"
+          },
+          {
+            "from": "supabase/functions/legacy-file/handler.ts",
+            "to": "lib/server/drive-file-content.ts",
+            "specifier": "../../../lib/server/drive-file-content.ts"
+          },
+          {
+            "from": "supabase/functions/legacy-file/handler.ts",
+            "to": "supabase/functions/repertoire-file/handler.ts",
+            "specifier": "../repertoire-file/handler.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "lib/server/drive-file-content.ts",
+            "specifier": "../../../lib/server/drive-file-content.ts"
+          },
+          {
+            "from": "supabase/functions/repertoire-file/handler.ts",
+            "to": "supabase/functions/_shared/private-file-ticket-v2.ts",
+            "specifier": "../_shared/private-file-ticket-v2.ts"
+          },
+          {
+            "from": "supabase/functions/legacy-file/handler.ts",
+            "to": "supabase/functions/legacy-file/ticket.ts",
+            "specifier": "./ticket.ts"
+          },
+          {
+            "from": "supabase/functions/legacy-file/ticket.ts",
+            "to": "supabase/functions/legacy-file/handler.ts",
+            "specifier": "./handler.ts"
+          },
+          {
+            "from": "supabase/functions/legacy-file/index.ts",
+            "to": "supabase/functions/legacy-file/ticket.ts",
+            "specifier": "./ticket.ts"
+          }
+        ],
+        "external": [
+          "npm:@supabase/supabase-js@2.112.4"
+        ]
+      }
+    },
+    {
+      "slug": "drive-manager-v2",
+      "verifyJwt": null,
+      "effectiveVerifyJwt": true,
+      "gatewayConfiguration": "DOCUMENTED_DEFAULT_TRUE; drive-manager-v2 hosted true retained; link-preview new deployment uses default",
+      "closure": {
+        "files": [
+          {
+            "path": "supabase/functions/_shared/tenant-fetch.ts",
+            "bytes": 3581,
+            "sha256": "3b2fe56693ae8d9c25fcfa6dba5028f5cf2d1ef2c5734378d5b16d8bedc02bb5"
+          },
+          {
+            "path": "supabase/functions/drive-manager-v2/index.ts",
+            "bytes": 43268,
+            "sha256": "d5a93f9f2f0668ac6b53c39b73889778b28c07ebd17c2e9f4db1166122e96e7d"
+          }
+        ],
+        "imports": [
+          {
+            "from": "supabase/functions/drive-manager-v2/index.ts",
+            "to": "supabase/functions/_shared/tenant-fetch.ts",
+            "specifier": "../_shared/tenant-fetch.ts"
+          }
+        ],
+        "external": [
+          "https://esm.sh/@supabase/supabase-js@2"
+        ]
+      }
+    },
+    {
+      "slug": "link-preview",
+      "verifyJwt": null,
+      "effectiveVerifyJwt": true,
+      "gatewayConfiguration": "DOCUMENTED_DEFAULT_TRUE; drive-manager-v2 hosted true retained; link-preview new deployment uses default",
+      "closure": {
+        "files": [
+          {
+            "path": "supabase/functions/create-choir/create-choir-core.ts",
+            "bytes": 3964,
+            "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+          },
+          {
+            "path": "supabase/functions/link-preview/authorization.ts",
+            "bytes": 1436,
+            "sha256": "77aa1412068c34d4611c38a57668c7d4b5d44fcd9cbf5ad6d177aa43ac6690b7"
+          },
+          {
+            "path": "supabase/functions/link-preview/handler.ts",
+            "bytes": 6098,
+            "sha256": "c7e5d3d44933214d56ee5c960f7c59181f3a9bf9a0b424143a1b00b492bb72ea"
+          },
+          {
+            "path": "supabase/functions/link-preview/index.ts",
+            "bytes": 1460,
+            "sha256": "9845fd5eb015f306c160785855fb74f27a2057b68c6e56379e2b274af4f1ab5c"
+          },
+          {
+            "path": "supabase/functions/link-preview/policy.ts",
+            "bytes": 4073,
+            "sha256": "e402d4d7b44c99ef411ae865bc7dffcb1519c6bb36b49ce5d5a420a36fc43fbd"
+          },
+          {
+            "path": "supabase/functions/link-preview/preview.ts",
+            "bytes": 6235,
+            "sha256": "4a3cb9292b1c4e87a74e03b37e5e0aa9c659a54a043f82ccd975cc449a59834c"
+          },
+          {
+            "path": "supabase/functions/link-preview/transport.ts",
+            "bytes": 2725,
+            "sha256": "d7e9baa16b64551504bea946faedca353f51955847fdf7b782466e141fb284a8"
+          }
+        ],
+        "imports": [
+          {
+            "from": "supabase/functions/link-preview/index.ts",
+            "to": "supabase/functions/create-choir/create-choir-core.ts",
+            "specifier": "../create-choir/create-choir-core.ts"
+          },
+          {
+            "from": "supabase/functions/link-preview/index.ts",
+            "to": "supabase/functions/link-preview/handler.ts",
+            "specifier": "./handler.ts"
+          },
+          {
+            "from": "supabase/functions/link-preview/handler.ts",
+            "to": "supabase/functions/link-preview/policy.ts",
+            "specifier": "./policy.ts"
+          },
+          {
+            "from": "supabase/functions/link-preview/handler.ts",
+            "to": "supabase/functions/link-preview/preview.ts",
+            "specifier": "./preview.ts"
+          },
+          {
+            "from": "supabase/functions/link-preview/preview.ts",
+            "to": "supabase/functions/link-preview/policy.ts",
+            "specifier": "./policy.ts"
+          },
+          {
+            "from": "supabase/functions/link-preview/handler.ts",
+            "to": "supabase/functions/link-preview/policy.ts",
+            "specifier": "./policy.ts"
+          },
+          {
+            "from": "supabase/functions/link-preview/index.ts",
+            "to": "supabase/functions/link-preview/authorization.ts",
+            "specifier": "./authorization.ts"
+          },
+          {
+            "from": "supabase/functions/link-preview/authorization.ts",
+            "to": "supabase/functions/link-preview/policy.ts",
+            "specifier": "./policy.ts"
+          },
+          {
+            "from": "supabase/functions/link-preview/authorization.ts",
+            "to": "supabase/functions/link-preview/handler.ts",
+            "specifier": "./handler.ts"
+          },
+          {
+            "from": "supabase/functions/link-preview/index.ts",
+            "to": "supabase/functions/link-preview/preview.ts",
+            "specifier": "./preview.ts"
+          },
+          {
+            "from": "supabase/functions/link-preview/index.ts",
+            "to": "supabase/functions/link-preview/transport.ts",
+            "specifier": "./transport.ts"
+          },
+          {
+            "from": "supabase/functions/link-preview/transport.ts",
+            "to": "supabase/functions/link-preview/policy.ts",
+            "specifier": "./policy.ts"
+          }
+        ],
+        "external": [
+          "node:dns/promises",
+          "node:http",
+          "node:https",
+          "node:net",
+          "node:stream",
+          "node:tls",
+          "npm:@supabase/supabase-js@2.112.4",
+          "npm:sanitize-html@2.17.7"
+        ]
+      }
+    },
+    {
+      "slug": "account-recovery-006",
+      "verifyJwt": false,
+      "effectiveVerifyJwt": false,
+      "gatewayConfiguration": "EXPLICIT_LOCAL_CONFIG",
+      "closure": {
+        "files": [
+          {
+            "path": "supabase/functions/account-recovery-006/index.ts",
+            "bytes": 5689,
+            "sha256": "bc6a8bb5f5cea309bb360769ddbcdee2e6082140295d1b58a1878dffdb72f180"
+          },
+          {
+            "path": "supabase/functions/account-recovery-006/recovery-core.ts",
+            "bytes": 6412,
+            "sha256": "8dd6713b5dacc9e2056279ce95eb6cad9d684ddfe1e38f4d1ec89b1c7bf6b4ad"
+          }
+        ],
+        "imports": [
+          {
+            "from": "supabase/functions/account-recovery-006/index.ts",
+            "to": "supabase/functions/account-recovery-006/recovery-core.ts",
+            "specifier": "./recovery-core.ts"
+          }
+        ],
+        "external": [
+          "npm:@supabase/supabase-js@2.112.4",
+          "npm:nodemailer@7.0.13"
+        ]
+      }
+    }
+  ],
+  "supportingEvidence": [
+    {
+      "path": "docs/reports/production-2026-10-13/rpc-inventory.json",
+      "bytes": 22178,
+      "sha256": "98bef956301df0fd4efeadc8a012c6a583f242deec3aa37d79b07986b5605156"
+    },
+    {
+      "path": "docs/reports/production-2026-10-13/five-family-evidence.json",
+      "bytes": 95808,
+      "sha256": "a113c268b7234debfc11ab4f5016647ef72cfe13f7b16ff989afaddfa33f3b1c"
+    },
+    {
+      "path": "docs/reports/2026-10-13-production-baseline.md",
+      "bytes": 5591,
+      "sha256": "59b762471be755cfe8352d1dca16393433c33f21f60f0e5aeecfcdd3585316bc"
+    },
+    {
+      "path": "docs/reports/production-2026-10-13/edge-inventory.json",
+      "bytes": 13280,
+      "sha256": "5c571349578ff231bf730f5b800a050b1a42d7b6e53045209c85a059f4a097a2"
+    }
+  ],
+  "status": "LOCAL_CANDIDATE_IDENTIFIED_NOT_APPROVED_FOR_DEPLOYMENT",
+  "remaining": [
+    "Fresh protected hosted cutoff/recovery comparison",
+    "Nine-Edge source reconciliation complete; verify target has not changed immediately before release",
+    "Release review; current review is self-review, not independent",
+    "Full current web/native/provider integration acceptance",
+    "Concrete deployment authority and rollout/recovery execution"
+  ],
+  "boundary": "The eleven SQL paths and nine Edge slugs are the proposed service convergence scope, not a bulk migration/Edge deployment command. All other migration/functions remain unchanged. Product pins include current web/mobile scope; they do not declare missing native features finished. No secrets/provider settings included."
+}

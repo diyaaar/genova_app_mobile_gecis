@@ -1,5 +1,11 @@
 # İlerleme indeksi
 
+13 October — [Five-family managed acceptance](../docs/reports/2026-10-13-five-family-managed-acceptance.md).
+219 real HTTP observations, faithful 101-table restore, eleven exact deltas, ten SQL
+controls and post-matrix 17-group audit PASS. Runtime/ten ephemeral secrets cleaned;
+protected source preserved. Current 38-RPC and nine-Edge inventories plus
+[release package](../docs/production-release-package.md) prepared; live writes NOT RUN.
+
 13 October — [Production baseline and recovery fixes](../docs/reports/2026-10-13-production-baseline.md).
 Fresh local web/mobile/browser checks and read-only correct-project metadata;
 definite private-song rejection recovery, uncertainty/concurrency protection and

@@ -25,12 +25,12 @@ if(failed){
   const vms=execFileSync('/opt/homebrew/bin/limactl',['list','--json'],{env,encoding:'utf8',stdio:'pipe',timeout:10000}).trim().split('\n').filter(Boolean).map(line=>JSON.parse(line));
   requireFailedFamilyCleanup({attempt:ATTEMPT,pull:JSON.parse(fs.readFileSync(file)),names,vmStatus:vms.find(vm=>vm.name==='g090p3')?.status});
 }
-if(final&&ATTEMPT==='20261010-managed-families'){
+if(final&&['20261010-managed-families','20261013-managed-families'].includes(ATTEMPT)){
   const artifact=name=>{const file=path.join(DIR,`managed-${ATTEMPT}-${name}.json`),stat=fs.lstatSync(file);
     if(!stat.isFile()||stat.isSymbolicLink()||(stat.mode&511)!==384)throw Error('Private family cleanup prerequisite refused');
     return {body:JSON.parse(fs.readFileSync(file)),mtime:stat.mtimeMs};};
-  const matrix=artifact('matrix-v1'),invariants=artifact('final-invariants-v2');
-  requireFamilyCleanupOrder({matrix:matrix.body,invariants:invariants.body,matrixMtime:matrix.mtime});
+  const matrix=artifact('matrix-v1'),invariants=artifact('final-invariants-v2'),transport=artifact('transport-result-matrix');
+  requireFamilyCleanupOrder({matrix:matrix.body,invariants:invariants.body,matrixMtime:matrix.mtime,transport:transport.body});
 }
 if(['20261010-managed-web','20261010-managed-final'].includes(ATTEMPT)){
   const artifact=name=>{const file=path.join(DIR,'managed-'+ATTEMPT+'-'+name+'.json'),s=fs.lstatSync(file);

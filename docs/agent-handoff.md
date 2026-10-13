@@ -11,12 +11,15 @@ production release. [AGENTS](../AGENTS.md) owns agent workflow.
 read-only hosted metadata and two implemented recovery/input-validation fixes.
 The instruction cleanup is complete: [WF-018](briefs/WF-018-agent-instruction-reset.md).
 
-Next: compatible service release preparation, beginning with the remaining managed
-five-family private-file runtime acceptance. Existing
-[managed read evidence](reports/2026-10-10-p3-managed-read-compatibility.md) and
-[five-family preparation gaps](reports/2026-10-10-p3-managed-five-family-preflight.md)
-remain relevant. Measure current capacity rather than inheriting old disk caps.
-Do not reread all historical chats or design another roadmap before implementing.
+The remaining [five-family managed checkpoint](reports/2026-10-13-five-family-managed-acceptance.md)
+now passes 219 actual HTTP observations with real Auth/REST/RLS. Restore, eleven deltas,
+ten SQL suites and final audit passed; owned runtime/secrets were cleaned. Do not rerun
+the old capacity-blocked attempt or call its harness gaps still unimplemented.
+
+Next: [concrete compatible-service release](production-release-package.md), product
+`9d1f1a7`, 363 product pins, eleven SQL and nine Edge functions. Fresh RPC/Edge source
+inventories are included. Refresh recovery cutoff/target drift and package integration
+before applicable live-operation approval. Current review is self-review.
 
 ## Verified boundary
 

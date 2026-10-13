@@ -48,6 +48,14 @@ export function requiredCases(reader) {
     pair(`${change}:committed`, 403);
     pair(`${change}:held-before-authority-after-commit`, 403);
   }
+  add('stream:authorized-before-revocation', 'GET', 200);
+  pair('stream:subsequent-revoked', 403);
+  if (reader.family === 'repertoire-file') {
+    pair('audio:full', 200); pair('audio:range', 206); pair('audio:revoked', 403);
+  }
+  if (reader.family === 'assignment-review-file') {
+    add('hidden-own-review', 'POST', 403); pair('hidden-own-review', 403);
+  }
   return Object.freeze(rows);
 }
 
@@ -71,6 +79,7 @@ export function requireCompleteMatrix(observations) {
     assert(Number.isSafeInteger(row.bodyBytes) && row.bodyBytes >= 0);
     if (row.status === 403 || row.method === 'POST') assert.equal(row.providerDelta, 0);
     else assert(row.providerDelta > 0, 'Allowed read did not reach signed provider');
+    if (row.method !== 'POST') assert(row.ticketRemainingMs >= 1000, 'Expired ticket cannot prove authority denial');
     if (row.method === 'HEAD') assert.equal(row.bodyBytes, 0, 'HEAD returned body');
     if (row.method === 'GET' && row.status < 300) assert(row.bodyBytes > 0, 'Empty permitted read');
   }
@@ -78,14 +87,19 @@ export function requireCompleteMatrix(observations) {
 }
 
 /** Never destroy the new backend using the previous goal's browser/SQL receipt. */
-export function requireFamilyCleanupOrder({matrix, invariants, matrixMtime}) {
-  assert.equal(matrix.attempt, '20261010-managed-families');
+export function requireFamilyCleanupOrder({matrix, invariants, matrixMtime, transport}) {
+  assert(['20261010-managed-families','20261013-managed-families'].includes(matrix.attempt));
   assert.equal(matrix.status, 'ACTUAL_FIVE_FAMILY_MANAGED_HTTP_MATRIX_PASS');
   assert.equal(invariants.attempt, matrix.attempt);
   assert.equal(invariants.status, 'POST_TEST_17_CATALOG_GROUPS_AND_PROTECTED_SOURCE_UNCHANGED');
   assert.equal(invariants.catalogGroups, 17);
   assert.equal(invariants.noGrantRoleRlsTriggerSchemaRelaxation, true);
   requireCompleteMatrix(matrix.observations);
+  assert.equal(matrix.acceptanceComplete, true);
+  assert.equal(transport.attempt, matrix.attempt);
+  assert.equal(transport.closed, true);
+  assert.equal(transport.childrenExited, true);
+  assert.equal(transport.metrics.outside, 0);
   const audited = Date.parse(invariants.recordedAt);
   const finished = Date.parse(matrix.recordedAt);
   assert(Number.isFinite(audited) && Number.isFinite(finished) && Number.isFinite(matrixMtime));
@@ -94,7 +108,7 @@ export function requireFamilyCleanupOrder({matrix, invariants, matrixMtime}) {
 
 /** A resource-aborted download is disposable, never a successful matrix teardown. */
 export function requireFailedFamilyCleanup({attempt,pull,names,vmStatus}) {
-  assert.equal(attempt,'20261010-managed-families');
+  assert(['20261010-managed-families','20261013-managed-families'].includes(attempt));
   assert.equal(pull.attempt,attempt);
   assert.equal(pull.action,'pull-classic');
   assert.equal(pull.resourceStop,true);

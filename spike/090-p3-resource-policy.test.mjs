@@ -31,12 +31,12 @@ test('current-only final attempt really enforces the lower six-GiB live cap',()=
     {env:{...process.env,GENOVA_090_ATTEMPT:'20261010-managed-final'},encoding:'utf8'});
   assert.equal(result.status,0,result.stderr);
 });
-test('new owner-approved families attempt enforces stricter 5.75GiB cap and unique receipts',()=>{
-  assert.equal(capacityMiB('20261010-managed-families'),5888);
-  assert.equal(restoreReceiptNames('20261010-managed-families').summary,'restore-summary-20261010-managed-families.json');
+for(const attempt of ['20261010-managed-families','20261013-managed-families']) test(attempt+' enforces runtime cap and unique receipts',()=>{
+  assert.equal(capacityMiB(attempt),5888);
+  assert.equal(restoreReceiptNames(attempt).summary,`restore-summary-${attempt}.json`);
   const result=spawnSync(process.execPath,['--input-type=module','-e',
     "import assert from 'node:assert/strict';import {CAPACITY_MIB,RESERVE_KIB,LIVE_STOP_KIB,checkLiveBudget,checkAllocation} from './spike/090-p3-resource-policy.mjs';assert.equal(CAPACITY_MIB,5888);assert.equal(RESERVE_KIB,6844416);assert.equal(checkAllocation(7523264),678848);assert.throws(()=>checkAllocation(7368703));checkLiveBudget(LIVE_STOP_KIB,(5888-64)*1024);assert.throws(()=>checkLiveBudget(LIVE_STOP_KIB,5888*1024));"],
-    {env:{...process.env,GENOVA_090_ATTEMPT:'20261010-managed-families'},encoding:'utf8'});
+    {env:{...process.env,GENOVA_090_ATTEMPT:attempt},encoding:'utf8'});
   assert.equal(result.status,0,result.stderr);
 });
 test('archived failure or any prior receipt refuses attempt reuse before allocation',()=>{

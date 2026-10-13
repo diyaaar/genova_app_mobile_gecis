@@ -7,7 +7,7 @@ import {createClient} from '@supabase/supabase-js';
 import {DIR, readPrivate, sql, refuseFixtureCollisions} from './090-compatibility-sql-rehearsal.mjs';
 import {ATTEMPT} from './090-p3-resource-policy.mjs';
 import {bytesFor} from './090-five-family-media.mjs';
-assert.equal(ATTEMPT, '20261010-managed-families');
+assert.equal(ATTEMPT, '20261013-managed-families');
 assert.equal(process.argv[2], '--prepare-approved'); assert.equal(process.argv.length, 3);
 const prefix = `managed-${ATTEMPT}`, file = path.join(DIR, prefix + '-fixture.json');
 assert(!fs.existsSync(file));
