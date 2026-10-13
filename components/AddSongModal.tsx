@@ -7,7 +7,7 @@ import { useMiniAudioPlayerStore } from '@/store/useMiniAudioPlayerStore';
 import { supabase } from '@/lib/supabase';
 import { initSongFolder } from '@/lib/drive';
 import { isPrivateRepertoireUploadEnabled } from '@/lib/repertuvar/upload';
-import { createLegacyRepertoireSong, createPrivateRepertoireSong, loadPendingRepertoireSong } from '@/lib/repertuvar/create-song';
+import { createLegacyRepertoireSong, createPrivateRepertoireSong, loadPendingRepertoireSong, PrivateSongCreationError } from '@/lib/repertuvar/create-song';
 import { LottieIcon } from './LottieIcon';
 import { useFormOriginChoir } from './useFormOriginChoir';
 
@@ -91,6 +91,11 @@ export function AddSongModal({ isOpen, onClose, onSuccess }: AddSongModalProps) 
       setSuccess(true);
       setTimeout(() => { onSuccess(); handleClose(); }, 1200);
     } catch (err) {
+      if (privateUpload && err instanceof PrivateSongCreationError) {
+        const draft = err.pendingDraft;
+        setPendingFileName(draft?.fileName ?? null);
+        if (draft) { setTitle(draft.title); setComposer(draft.composer); }
+      }
       if (createdSongId) {
         const { error: rollbackErr } = await supabase.from('repertoire').delete().eq('id', createdSongId);
         if (rollbackErr) {

@@ -47,4 +47,15 @@ describe('legacy GET/HEAD Edge adapter', () => {
     expect((await GET(request(), { params: Promise.resolve({ id: '../../path' }) })).status).toBe(401);
     expect(fetcher).not.toHaveBeenCalled();
   });
+  it.each(['not-a-token', 'body.signature.extra', '.signature', 'body.', 'body.%', 'a'.repeat(2049) + '.b'])(
+    'rejects malformed ticket %s for GET and HEAD without contacting Edge', async token => {
+      for (const read of [GET, HEAD]) {
+        const response = await read(new Request(`https://web.test/api/drive-file/file_1?token=${encodeURIComponent(token)}`), context);
+        expect(response.status).toBe(401);
+        expect(response.headers.get('cache-control')).toBe('private, no-store');
+        if (read === HEAD) expect(await response.text()).toBe('');
+      }
+      expect(fetcher).not.toHaveBeenCalled();
+    },
+  );
 });

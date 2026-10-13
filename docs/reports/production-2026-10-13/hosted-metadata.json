@@ -1,0 +1,486 @@
+{
+  "observedAt": "2026-10-13T16:15:30.932Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "identity": [
+    {
+      "database": "postgres",
+      "role": "supabase_read_only_user",
+      "transaction_read_only": "on",
+      "server_version": "17.6"
+    }
+  ],
+  "migrations": [
+    {
+      "version": "20260324130119",
+      "name": "create_choir_tables"
+    },
+    {
+      "version": "20260324130210",
+      "name": "add_school_department_to_choir_members"
+    },
+    {
+      "version": "20260324130240",
+      "name": "create_schools_departments_tables"
+    },
+    {
+      "version": "20260324132103",
+      "name": "add_social_media_to_choir_members"
+    },
+    {
+      "version": "20260329162504",
+      "name": "add_sef_role"
+    },
+    {
+      "version": "20260329164251",
+      "name": "make_voice_group_nullable"
+    },
+    {
+      "version": "20260416103636",
+      "name": "add_auth_email_phone_roles"
+    },
+    {
+      "version": "20260416103651",
+      "name": "create_announcements_table"
+    },
+    {
+      "version": "20260416103718",
+      "name": "create_rehearsals_and_attendance"
+    },
+    {
+      "version": "20260416103729",
+      "name": "enable_realtime_publications"
+    },
+    {
+      "version": "20260416105432",
+      "name": "fix_choir_members_rls_self_read"
+    },
+    {
+      "version": "20260416112752",
+      "name": "add_birth_date_and_fix_member_data"
+    },
+    {
+      "version": "20260416115719",
+      "name": "public_choir_members_view"
+    },
+    {
+      "version": "20260416120738",
+      "name": "create_get_pending_approvals_rpc"
+    },
+    {
+      "version": "20260416131045",
+      "name": "add_announcements_delete_and_auto_approve"
+    },
+    {
+      "version": "20260416135611",
+      "name": "storage_announcements_images_policy"
+    },
+    {
+      "version": "20260416155403",
+      "name": "add_drive_repertoire_system"
+    },
+    {
+      "version": "20260416155441",
+      "name": "rls_drive_tables"
+    },
+    {
+      "version": "20260417112427",
+      "name": "create_assignment_targets"
+    },
+    {
+      "version": "20260417163241",
+      "name": "20260417_repertoire_generic_visibility"
+    },
+    {
+      "version": "20260418113456",
+      "name": "add_homework_approval_fields"
+    },
+    {
+      "version": "20260418113515",
+      "name": "create_continuity_calculation_function"
+    },
+    {
+      "version": "20260418140231",
+      "name": "create_assignment_submissions_bucket"
+    },
+    {
+      "version": "20260419171448",
+      "name": "restrict_assignment_updates"
+    },
+    {
+      "version": "20260419173750",
+      "name": "20260419_rehearsals_section_leader_management"
+    },
+    {
+      "version": "20260419183924",
+      "name": "add_is_revision_to_submissions"
+    },
+    {
+      "version": "20260420200123",
+      "name": "add_update_policy_to_repertoire_tags"
+    },
+    {
+      "version": "20260421003851",
+      "name": "announcements_targeting"
+    },
+    {
+      "version": "20260421004648",
+      "name": "strict_announcement_targeting"
+    },
+    {
+      "version": "20260421004923",
+      "name": "remove_loose_announcement_policy"
+    },
+    {
+      "version": "20260421005329",
+      "name": "robust_announcement_targeting_rls"
+    },
+    {
+      "version": "20260421005442",
+      "name": "supersafe_announcement_rls"
+    },
+    {
+      "version": "20260421005530",
+      "name": "add_member_lookup_functions_for_rls"
+    },
+    {
+      "version": "20260504134341",
+      "name": "create_chat_schema"
+    },
+    {
+      "version": "20260504134415",
+      "name": "chat_rls_policies"
+    },
+    {
+      "version": "20260504140805",
+      "name": "fix_chat_rls_infinite_recursion"
+    },
+    {
+      "version": "20260504170217",
+      "name": "add_chat_starred_messages"
+    },
+    {
+      "version": "20260504171639",
+      "name": "fix_chat_rooms_insert_policy"
+    },
+    {
+      "version": "20260504202010",
+      "name": "add_check_slug_available_rpc"
+    },
+    {
+      "version": "20260504204454",
+      "name": "fix_chat_rooms_select_policy_for_creator"
+    },
+    {
+      "version": "20260504205002",
+      "name": "fix_infinite_recursion_chat_room_members"
+    },
+    {
+      "version": "20260504205307",
+      "name": "fix_chat_room_members_recursion_policies"
+    },
+    {
+      "version": "20260512172559",
+      "name": "song_comments_is_hidden"
+    },
+    {
+      "version": "20260512174312",
+      "name": "song_comments_chef_hide_policy"
+    },
+    {
+      "version": "20260512214945",
+      "name": "add_about_text_to_choir_members"
+    },
+    {
+      "version": "20260512215239",
+      "name": "fix_member_continuity_for_section_leaders"
+    },
+    {
+      "version": "20260903214901",
+      "name": "tenant_schema_003"
+    },
+    {
+      "version": "20260905003154",
+      "name": "multi_membership_active_choir_005"
+    },
+    {
+      "version": "20260905102806",
+      "name": "membership_admin_lockdown_006"
+    },
+    {
+      "version": "20260905160539",
+      "name": "operator_controlled_choir_creation_007"
+    },
+    {
+      "version": "20260905210953",
+      "name": "choir_invitations_008"
+    },
+    {
+      "version": "20260907210932",
+      "name": "list_my_choirs_is_current_not_null_012"
+    },
+    {
+      "version": "20260919183000",
+      "name": "assignment_review_audio_069_prerequisite"
+    },
+    {
+      "version": "20260919190000",
+      "name": "chat_room_membership_authority_041"
+    },
+    {
+      "version": "20260919193000",
+      "name": "chat_social_membership_authority_042"
+    },
+    {
+      "version": "20260919194500",
+      "name": "chat_message_status_authority_043"
+    },
+    {
+      "version": "20260919201500",
+      "name": "chat_core_message_authority_044"
+    },
+    {
+      "version": "20260919213000",
+      "name": "chat_text_send_idempotency_045"
+    },
+    {
+      "version": "20260920205054",
+      "name": "private_r2_repertoire_read_053"
+    },
+    {
+      "version": "20260921185113",
+      "name": "private_r2_repertoire_upload_054"
+    },
+    {
+      "version": "20260922071942",
+      "name": "private_r2_repertoire_lifecycle_055"
+    },
+    {
+      "version": "20260922171847",
+      "name": "private_r2_repertoire_cover_056"
+    },
+    {
+      "version": "20260922221500",
+      "name": "private_r2_assignment_versions_057"
+    },
+    {
+      "version": "20260923103000",
+      "name": "private_r2_assignment_review_audio_058"
+    },
+    {
+      "version": "20260923170000",
+      "name": "private_r2_repertoire_comment_audio_059"
+    },
+    {
+      "version": "20260923193000",
+      "name": "private_r2_chat_media_060"
+    },
+    {
+      "version": "20260923194500",
+      "name": "private_r2_copy_inventory_063"
+    },
+    {
+      "version": "20260925083611",
+      "name": "private_r2_activation_065"
+    }
+  ],
+  "edge": [
+    {
+      "slug": "send-email",
+      "version": 40,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "send-push-notification",
+      "version": 15,
+      "status": "ACTIVE",
+      "verifyJwt": true
+    },
+    {
+      "slug": "drive-manager",
+      "version": 15,
+      "status": "ACTIVE",
+      "verifyJwt": true
+    },
+    {
+      "slug": "drive-manager-test",
+      "version": 12,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "drive-manager-v2",
+      "version": 22,
+      "status": "ACTIVE",
+      "verifyJwt": true
+    },
+    {
+      "slug": "create-choir",
+      "version": 5,
+      "status": "ACTIVE",
+      "verifyJwt": true
+    },
+    {
+      "slug": "resend-inbound",
+      "version": 6,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "choir-invitations",
+      "version": 3,
+      "status": "ACTIVE",
+      "verifyJwt": true
+    },
+    {
+      "slug": "repertoire-file",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "repertoire-upload",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "repertoire-file-lifecycle",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "assignment-file",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "assignment-upload",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "assignment-review-file",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "assignment-review-upload",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "repertoire-comment-file",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "repertoire-comment-upload",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "repertoire-comment-lifecycle",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "chat-media-file",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "chat-media-upload",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    },
+    {
+      "slug": "chat-media-lifecycle",
+      "version": 1,
+      "status": "ACTIVE",
+      "verifyJwt": false
+    }
+  ],
+  "procedures": [
+    {
+      "name": "genova_005.current_session_id()",
+      "exists": true
+    },
+    {
+      "name": "genova_087.normalize_changes(jsonb)",
+      "exists": false
+    },
+    {
+      "name": "public.can_read_chat_media_060(uuid,uuid,uuid)",
+      "exists": true
+    },
+    {
+      "name": "public.current_chat_member_id()",
+      "exists": true
+    },
+    {
+      "name": "public.current_choir_id()",
+      "exists": true
+    },
+    {
+      "name": "public.current_choir_member_id()",
+      "exists": true
+    },
+    {
+      "name": "public.current_member_has_role(text)",
+      "exists": true
+    },
+    {
+      "name": "public.mark_chat_message_status(uuid,text)",
+      "exists": true
+    },
+    {
+      "name": "public.mark_chat_room_read(uuid)",
+      "exists": false
+    },
+    {
+      "name": "public.private_file_ticket_authorized_090(uuid,uuid,uuid,text,uuid)",
+      "exists": false
+    },
+    {
+      "name": "public.replace_repertoire_assignments(uuid,text,uuid[],uuid[])",
+      "exists": false
+    },
+    {
+      "name": "public.resolve_legacy_file_090(uuid,uuid,uuid,text,text,uuid)",
+      "exists": false
+    },
+    {
+      "name": "public.review_profile_change_request(uuid,text,text)",
+      "exists": false
+    },
+    {
+      "name": "public.save_repertoire_pdf_annotation_snapshot(uuid,integer,text,text,integer,jsonb,bigint)",
+      "exists": false
+    },
+    {
+      "name": "public.set_active_choir(uuid)",
+      "exists": true
+    },
+    {
+      "name": "public.submit_profile_change_request(uuid,jsonb,text)",
+      "exists": false
+    },
+    {
+      "name": "realtime.topic()",
+      "exists": true
+    }
+  ],
+  "annotationRevision": null,
+  "boundary": "Read-only metadata; no private rows, source bodies, secret values or runtime acceptance."
+}

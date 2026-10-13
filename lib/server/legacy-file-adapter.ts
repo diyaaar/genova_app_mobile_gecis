@@ -1,5 +1,6 @@
 /** Fixed-origin adapter only. Auth, tenant policy and provider reads belong to Edge. */
 const ALIAS = /^[A-Za-z0-9_-]{1,256}$/u;
+const TICKET = /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/u;
 const RESPONSE_HEADERS = ['content-type', 'content-length', 'content-range', 'content-disposition', 'accept-ranges'];
 function baseHeaders() {
   return new Headers({ 'Cache-Control': 'private, no-store', 'X-Content-Type-Options': 'nosniff',
@@ -47,7 +48,7 @@ export async function issueLegacyFileUrl(request: Request): Promise<Response> {
     const ticket = ticketUrl.searchParams.get('ticket') ?? '';
     if (ticketUrl.origin !== url.origin || ticketUrl.pathname !== url.pathname
       || ticketUrl.username || ticketUrl.password || !ALIAS.test(alias)
-      || !ticket || ticket.length > 2048 || !/^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/u.test(ticket)) return error(502);
+      || !ticket || ticket.length > 2048 || !TICKET.test(ticket)) return error(502);
     return Response.json({ url: `/api/drive-file/${alias}?token=${encodeURIComponent(ticket)}`,
       expiresAt: result.expiresAt }, { headers: baseHeaders() });
   } catch { return error(503); }
@@ -55,7 +56,8 @@ export async function issueLegacyFileUrl(request: Request): Promise<Response> {
 export async function readLegacyFile(request: Request, alias: string, method: 'GET' | 'HEAD'): Promise<Response> {
   const head = method === 'HEAD';
   const token = new URL(request.url).searchParams.get('token') ?? '';
-  if (!ALIAS.test(alias) || !token || token.length > 2048) return error(401, head);
+  // Reject malformed input locally; Edge still verifies signatures and current authority.
+  if (!ALIAS.test(alias) || !token || token.length > 2048 || !TICKET.test(token)) return error(401, head);
   try {
     const url = endpoint();
     url.searchParams.set('alias', alias);

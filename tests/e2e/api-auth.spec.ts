@@ -39,12 +39,16 @@ test('every mutation endpoint rejects an anonymous request before changing state
   }
 });
 
-test('the signed Drive proxy never serves a file without a valid token', async ({ request }) => {
-  const missingToken = await request.get('/api/drive-file/file_123');
-  const malformedId = await request.get('/api/drive-file/file%3Cbad%3E');
-  const invalidToken = await request.get('/api/drive-file/file_123?token=not-a-token');
-
-  expect(missingToken.status()).toBe(401);
-  expect(malformedId.status()).toBe(400);
-  expect(invalidToken.status()).toBe(401);
+test('the signed Drive adapter refuses missing or malformed credentials for GET and HEAD', async ({ request }) => {
+  for (const url of ['/api/drive-file/file_123', '/api/drive-file/file%3Cbad%3E?token=body.signature',
+    '/api/drive-file/file_123?token=not-a-token']) {
+    for (const method of ['GET', 'HEAD']) {
+      const response = await request.fetch(url, { method });
+      // The current Edge adapter intentionally uses the same refusal for invalid aliases and tokens.
+      expect(response.status()).toBe(401);
+      expect(response.headers()['cache-control']).toBe('private, no-store');
+      expect(response.headers()['x-content-type-options']).toBe('nosniff');
+      expect(await response.text()).toBe(method === 'HEAD' ? '' : 'Dosya erişimi kullanılamıyor.');
+    }
+  }
 });

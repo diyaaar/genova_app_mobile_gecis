@@ -1,14 +1,12 @@
 # Active context
 
-Updated 13 October 2026. The owner requested removal of restrictive repository agent
-instructions before a new production roadmap and checkpoints are designed.
+Updated 13 October 2026. The owner asked to proceed toward commercial production.
+The instruction reset is complete. [AGENTS](../AGENTS.md) is workflow authority.
 
-Current workflow: [AGENTS](../AGENTS.md). Cleanup record:
-[WF-018](../docs/briefs/WF-018-agent-instruction-reset.md).
-Current state and retained evidence: [handoff](../docs/agent-handoff.md).
-Next phase: source-based production assessment and roadmap design with the owner;
-that phase has not been carried out by this instruction cleanup.
-
-The old P1–P7 order is historical context, not an automatic resume command.
-The 10 October five-family runtime acceptance is still incomplete; its failures
-were not waived. No new product, hosted, mobile runtime or release acceptance is claimed.
+Use the [production roadmap](../docs/production-roadmap.md),
+[current checkpoint](../docs/teslim-rehberi/checkpoint.md) and
+[latest evidence](../docs/reports/2026-10-13-production-baseline.md).
+Fresh baseline and repertoire/legacy-file recovery fixes are implemented locally.
+Next implementation addresses compatible service release and remaining actual
+five-family runtime acceptance. Hosted prerequisites and full product remain open;
+old stage/resource restrictions do not reapply. No new roadmap or chat-history scan needed.

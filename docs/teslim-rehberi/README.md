@@ -3,7 +3,8 @@
 13 October 2026: the owner requested a new production roadmap after the instruction
 cleanup. The P1–P7 documents below are previous planning references, not the current
 execution order or a source of agent restrictions. Their feature inventories and
-acceptance gaps remain useful inputs for the next planning phase.
+acceptance gaps remain useful inputs for implementation. The current
+[production roadmap](../production-roadmap.md) defines the outcome checkpoints.
 
 Current entry points: [AGENTS](../../AGENTS.md), [handoff](../agent-handoff.md),
 [checkpoint](checkpoint.md), [WF-018](../briefs/WF-018-agent-instruction-reset.md).

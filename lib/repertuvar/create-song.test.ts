@@ -24,6 +24,36 @@ beforeEach(() => {
   mock.upload.mockResolvedValue({ id: 'file-a' });
 });
 describe('new song with first private file', () => {
+  it.each(['23505', '23502', '23503', '23514', '42501'])('allows correction after a fresh insert is rejected with %s', async code => {
+    mock.insert.mockResolvedValueOnce({ error: { code, message: 'Rejected' } });
+    await expect(createPrivateRepertoireSong('Rejected song', '', file(), choirA)).rejects.toThrow();
+    expect(await loadPendingRepertoireSong()).toBeNull();
+    expect(mock.upload).not.toHaveBeenCalled();
+    await createPrivateRepertoireSong('Corrected song', '', file(), choirA);
+    expect(savedRow?.title).toBe('Corrected song');
+  });
+  it('preserves an older uncertain draft even if a later insert is definitively rejected', async () => {
+    mock.insert.mockResolvedValueOnce({ error: { message: 'Response lost' } });
+    await expect(createPrivateRepertoireSong('Uncertain', '', file(), choirA)).rejects.toThrow();
+    const draft = await loadPendingRepertoireSong();
+    mock.insert.mockResolvedValueOnce({ error: { code: '42501', message: 'Denied' } });
+    await expect(createPrivateRepertoireSong('Uncertain', '', file(), choirA)).rejects.toThrow();
+    expect(await loadPendingRepertoireSong()).toEqual(draft);
+  });
+  it('rejects concurrent submission before a second insert and releases the guard after failure', async () => {
+    let rejectUpload!: (reason: Error) => void;
+    mock.upload.mockImplementationOnce(() => new Promise((_, reject) => { rejectUpload = reject; }));
+    const first = createPrivateRepertoireSong('New song', '', file(), choirA);
+    const firstRejected = expect(first).rejects.toThrow('Response lost');
+    await vi.waitFor(() => expect(mock.upload).toHaveBeenCalledOnce());
+    await expect(createPrivateRepertoireSong('New song', '', file(), choirA)).rejects.toThrow('devam ediyor');
+    expect(mock.upload).toHaveBeenCalledOnce();
+    rejectUpload(new Error('Response lost'));
+    await firstRejected;
+    await createPrivateRepertoireSong('New song', '', file(), choirA);
+    expect(mock.insert).toHaveBeenCalledOnce();
+    expect(await loadPendingRepertoireSong()).toBeNull();
+  });
   it('creates a provider-neutral song and clears its draft only after file acceptance', async () => {
     await createPrivateRepertoireSong(' New song ', ' Composer ', file(), choirA);
     expect(mock.insert).toHaveBeenCalledWith(expect.objectContaining({ title: 'New song', composer: 'Composer', choir_id: choirA }));
