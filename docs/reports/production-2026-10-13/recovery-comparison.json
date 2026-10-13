@@ -1,0 +1,1430 @@
+{
+  "recordedAt": "2026-10-13T16:49:26.725Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "previousCutoff": "2026-10-09T00:11:01.300196+00:00",
+  "currentCutoff": "2026-10-13T16:47:03.056579+00:00",
+  "backup": {
+    "plaintextBytes": 1705207,
+    "encryptedBytes": 1705243,
+    "plaintextSha256": "26c88943ab6693374ea3ad46926b5cacca0a35274965b8d2e86f59212bf2bc8d",
+    "encryptedSha256": "cef68228c198acaaf47579bbc44f64804cb6261df13bf53230c80ead7e449cbf",
+    "encryptedRoundtrip": true,
+    "privateModesVerified": true,
+    "originalBackupPreserved": true
+  },
+  "groups": [
+    {
+      "name": "roles",
+      "unchanged": true,
+      "before": 17,
+      "after": 17,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    },
+    {
+      "name": "columns",
+      "unchanged": false,
+      "before": 1122,
+      "after": 1132,
+      "removedOrChanged": [
+        {
+          "table_name": "messages_2026_10_05",
+          "column_name": "topic",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_05",
+          "column_name": "extension",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_05",
+          "column_name": "payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_05",
+          "column_name": "event",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_05",
+          "column_name": "private",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_05",
+          "column_name": "updated_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_05",
+          "column_name": "inserted_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_05",
+          "column_name": "id",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_05",
+          "column_name": "binary_payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_05",
+          "column_name": "skip_broadcast",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_07",
+          "column_name": "topic",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_07",
+          "column_name": "extension",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_07",
+          "column_name": "payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_07",
+          "column_name": "event",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_07",
+          "column_name": "private",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_07",
+          "column_name": "updated_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_07",
+          "column_name": "inserted_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_07",
+          "column_name": "id",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_07",
+          "column_name": "binary_payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_07",
+          "column_name": "skip_broadcast",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_08",
+          "column_name": "topic",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_08",
+          "column_name": "extension",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_08",
+          "column_name": "payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_08",
+          "column_name": "event",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_08",
+          "column_name": "private",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_08",
+          "column_name": "updated_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_08",
+          "column_name": "inserted_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_08",
+          "column_name": "id",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_08",
+          "column_name": "binary_payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_08",
+          "column_name": "skip_broadcast",
+          "table_schema": "realtime"
+        }
+      ],
+      "addedOrChanged": [
+        {
+          "table_name": "messages_2026_10_12",
+          "column_name": "topic",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_12",
+          "column_name": "extension",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_12",
+          "column_name": "payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_12",
+          "column_name": "event",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_12",
+          "column_name": "private",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_12",
+          "column_name": "updated_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_12",
+          "column_name": "inserted_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_12",
+          "column_name": "id",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_12",
+          "column_name": "binary_payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_12",
+          "column_name": "skip_broadcast",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_13",
+          "column_name": "topic",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_13",
+          "column_name": "extension",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_13",
+          "column_name": "payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_13",
+          "column_name": "event",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_13",
+          "column_name": "private",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_13",
+          "column_name": "updated_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_13",
+          "column_name": "inserted_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_13",
+          "column_name": "id",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_13",
+          "column_name": "binary_payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_13",
+          "column_name": "skip_broadcast",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_14",
+          "column_name": "topic",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_14",
+          "column_name": "extension",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_14",
+          "column_name": "payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_14",
+          "column_name": "event",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_14",
+          "column_name": "private",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_14",
+          "column_name": "updated_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_14",
+          "column_name": "inserted_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_14",
+          "column_name": "id",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_14",
+          "column_name": "binary_payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_14",
+          "column_name": "skip_broadcast",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_15",
+          "column_name": "topic",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_15",
+          "column_name": "extension",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_15",
+          "column_name": "payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_15",
+          "column_name": "event",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_15",
+          "column_name": "private",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_15",
+          "column_name": "updated_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_15",
+          "column_name": "inserted_at",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_15",
+          "column_name": "id",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_15",
+          "column_name": "binary_payload",
+          "table_schema": "realtime"
+        },
+        {
+          "table_name": "messages_2026_10_15",
+          "column_name": "skip_broadcast",
+          "table_schema": "realtime"
+        }
+      ]
+    },
+    {
+      "name": "indexes",
+      "unchanged": false,
+      "before": 327,
+      "after": 329,
+      "removedOrChanged": [
+        {
+          "indexname": "messages_2026_10_05_inserted_at_topic_idx",
+          "tablename": "messages_2026_10_05",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_05_pkey",
+          "tablename": "messages_2026_10_05",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_07_inserted_at_topic_idx",
+          "tablename": "messages_2026_10_07",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_07_pkey",
+          "tablename": "messages_2026_10_07",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_08_inserted_at_topic_idx",
+          "tablename": "messages_2026_10_08",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_08_pkey",
+          "tablename": "messages_2026_10_08",
+          "schemaname": "realtime"
+        }
+      ],
+      "addedOrChanged": [
+        {
+          "indexname": "messages_2026_10_12_inserted_at_topic_idx",
+          "tablename": "messages_2026_10_12",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_12_pkey",
+          "tablename": "messages_2026_10_12",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_13_inserted_at_topic_idx",
+          "tablename": "messages_2026_10_13",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_13_pkey",
+          "tablename": "messages_2026_10_13",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_14_inserted_at_topic_idx",
+          "tablename": "messages_2026_10_14",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_14_pkey",
+          "tablename": "messages_2026_10_14",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_15_inserted_at_topic_idx",
+          "tablename": "messages_2026_10_15",
+          "schemaname": "realtime"
+        },
+        {
+          "indexname": "messages_2026_10_15_pkey",
+          "tablename": "messages_2026_10_15",
+          "schemaname": "realtime"
+        }
+      ]
+    },
+    {
+      "name": "schemas",
+      "unchanged": true,
+      "before": 24,
+      "after": 24,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    },
+    {
+      "name": "policies",
+      "unchanged": true,
+      "before": 225,
+      "after": 225,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    },
+    {
+      "name": "triggers",
+      "unchanged": true,
+      "before": 62,
+      "after": 62,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    },
+    {
+      "name": "functions",
+      "unchanged": true,
+      "before": 165,
+      "after": 165,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    },
+    {
+      "name": "relations",
+      "unchanged": false,
+      "before": 117,
+      "after": 118,
+      "removedOrChanged": [
+        {
+          "name": "messages_2026_10_05",
+          "schema": "realtime"
+        },
+        {
+          "name": "messages_2026_10_07",
+          "schema": "realtime"
+        },
+        {
+          "name": "messages_2026_10_08",
+          "schema": "realtime"
+        }
+      ],
+      "addedOrChanged": [
+        {
+          "name": "messages_2026_10_12",
+          "schema": "realtime"
+        },
+        {
+          "name": "messages_2026_10_13",
+          "schema": "realtime"
+        },
+        {
+          "name": "messages_2026_10_14",
+          "schema": "realtime"
+        },
+        {
+          "name": "messages_2026_10_15",
+          "schema": "realtime"
+        }
+      ]
+    },
+    {
+      "name": "extensions",
+      "unchanged": true,
+      "before": 6,
+      "after": 6,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    },
+    {
+      "name": "constraints",
+      "unchanged": false,
+      "before": 508,
+      "after": 510,
+      "removedOrChanged": [
+        {
+          "name": "messages_2026_10_05_pkey",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_05"
+        },
+        {
+          "name": "messages_payload_exclusive",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_05"
+        },
+        {
+          "name": "messages_2026_10_07_pkey",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_07"
+        },
+        {
+          "name": "messages_payload_exclusive",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_07"
+        },
+        {
+          "name": "messages_2026_10_08_pkey",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_08"
+        },
+        {
+          "name": "messages_payload_exclusive",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_08"
+        }
+      ],
+      "addedOrChanged": [
+        {
+          "name": "messages_2026_10_12_pkey",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_12"
+        },
+        {
+          "name": "messages_payload_exclusive",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_12"
+        },
+        {
+          "name": "messages_2026_10_13_pkey",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_13"
+        },
+        {
+          "name": "messages_payload_exclusive",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_13"
+        },
+        {
+          "name": "messages_2026_10_14_pkey",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_14"
+        },
+        {
+          "name": "messages_payload_exclusive",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_14"
+        },
+        {
+          "name": "messages_2026_10_15_pkey",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_15"
+        },
+        {
+          "name": "messages_payload_exclusive",
+          "schema": "realtime",
+          "table_name": "messages_2026_10_15"
+        }
+      ]
+    },
+    {
+      "name": "defaultAcls",
+      "unchanged": true,
+      "before": 15,
+      "after": 15,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    },
+    {
+      "name": "memberships",
+      "unchanged": true,
+      "before": 22,
+      "after": 22,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    },
+    {
+      "name": "publications",
+      "unchanged": true,
+      "before": 2,
+      "after": 2,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    },
+    {
+      "name": "droppedColumns",
+      "unchanged": true,
+      "before": 8,
+      "after": 8,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    },
+    {
+      "name": "publicationTables",
+      "unchanged": false,
+      "before": 14,
+      "after": 15,
+      "removedOrChanged": [
+        {
+          "pubname": "supabase_realtime_messages_publication",
+          "tablename": "messages_2026_10_05",
+          "schemaname": "realtime"
+        },
+        {
+          "pubname": "supabase_realtime_messages_publication",
+          "tablename": "messages_2026_10_07",
+          "schemaname": "realtime"
+        },
+        {
+          "pubname": "supabase_realtime_messages_publication",
+          "tablename": "messages_2026_10_08",
+          "schemaname": "realtime"
+        }
+      ],
+      "addedOrChanged": [
+        {
+          "pubname": "supabase_realtime_messages_publication",
+          "tablename": "messages_2026_10_12",
+          "schemaname": "realtime"
+        },
+        {
+          "pubname": "supabase_realtime_messages_publication",
+          "tablename": "messages_2026_10_13",
+          "schemaname": "realtime"
+        },
+        {
+          "pubname": "supabase_realtime_messages_publication",
+          "tablename": "messages_2026_10_14",
+          "schemaname": "realtime"
+        },
+        {
+          "pubname": "supabase_realtime_messages_publication",
+          "tablename": "messages_2026_10_15",
+          "schemaname": "realtime"
+        }
+      ]
+    },
+    {
+      "name": "publicationSchemas",
+      "unchanged": true,
+      "before": 0,
+      "after": 0,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    },
+    {
+      "name": "publicationRelations",
+      "unchanged": true,
+      "before": 9,
+      "after": 9,
+      "removedOrChanged": [],
+      "addedOrChanged": []
+    }
+  ],
+  "data": [
+    {
+      "schema": "auth",
+      "table": "audit_log_entries",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "custom_oauth_providers",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "flow_state",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "identities",
+      "beforeRows": 28,
+      "afterRows": 28,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "instances",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "mfa_amr_claims",
+      "beforeRows": 91,
+      "afterRows": 91,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "mfa_challenges",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "mfa_factors",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "mfa_recovery_code_sets",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "mfa_recovery_codes",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "oauth_authorizations",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "oauth_client_states",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "oauth_clients",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "oauth_consents",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "one_time_tokens",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "refresh_tokens",
+      "beforeRows": 536,
+      "afterRows": 539,
+      "unchanged": false
+    },
+    {
+      "schema": "auth",
+      "table": "saml_providers",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "saml_relay_states",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "schema_migrations",
+      "beforeRows": 82,
+      "afterRows": 82,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "scim_tokens",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "scim_users",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "sessions",
+      "beforeRows": 91,
+      "afterRows": 91,
+      "unchanged": false
+    },
+    {
+      "schema": "auth",
+      "table": "sso_domains",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "sso_providers",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "users",
+      "beforeRows": 28,
+      "afterRows": 28,
+      "unchanged": false
+    },
+    {
+      "schema": "auth",
+      "table": "webauthn_challenges",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "auth",
+      "table": "webauthn_credentials",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_003",
+      "table": "original_functions",
+      "beforeRows": 8,
+      "afterRows": 8,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_003",
+      "table": "original_policies",
+      "beforeRows": 168,
+      "afterRows": 168,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_003",
+      "table": "original_triggers",
+      "beforeRows": 11,
+      "afterRows": 11,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_005",
+      "table": "active_choir_sessions",
+      "beforeRows": 3,
+      "afterRows": 3,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_005",
+      "table": "function_backups",
+      "beforeRows": 13,
+      "afterRows": 13,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_007",
+      "table": "choir_creation_audit",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_007",
+      "table": "platform_operators",
+      "beforeRows": 1,
+      "afterRows": 1,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_008",
+      "table": "invitations",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_041",
+      "table": "prior_chat_room_member_policies",
+      "beforeRows": 2,
+      "afterRows": 2,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_042",
+      "table": "prior_social_policies",
+      "beforeRows": 15,
+      "afterRows": 15,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_043",
+      "table": "prior_message_status_policies",
+      "beforeRows": 3,
+      "afterRows": 3,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_044",
+      "table": "prior_message_policies",
+      "beforeRows": 3,
+      "afterRows": 3,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_054",
+      "table": "uploads",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_055",
+      "table": "deletion_jobs",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_055",
+      "table": "deletion_objects",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_057",
+      "table": "notification_claims",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_057",
+      "table": "uploads",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_058",
+      "table": "notification_claims",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_058",
+      "table": "uploads",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_059",
+      "table": "deletes",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_059",
+      "table": "uploads",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_060",
+      "table": "batches",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_060",
+      "table": "message_deletes",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_060",
+      "table": "parts",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_060",
+      "table": "prior_delete_function",
+      "beforeRows": 1,
+      "afterRows": 1,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_065",
+      "table": "activation_items",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "genova_065",
+      "table": "activation_runs",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "announcements",
+      "beforeRows": 4,
+      "afterRows": 4,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "assignment_review_audio_versions",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "assignment_submission_audit_logs",
+      "beforeRows": 14,
+      "afterRows": 14,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "assignment_submission_file_versions",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "assignment_submission_history",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "assignment_submission_private_history",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "assignment_submission_private_notes",
+      "beforeRows": 10,
+      "afterRows": 10,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "assignment_submissions",
+      "beforeRows": 10,
+      "afterRows": 10,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "assignment_targets",
+      "beforeRows": 11,
+      "afterRows": 11,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "assignments",
+      "beforeRows": 2,
+      "afterRows": 2,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "attendance",
+      "beforeRows": 536,
+      "afterRows": 536,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "chat_media_versions",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "chat_message_hidden_members",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "chat_message_send_keys",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "chat_message_status",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "chat_messages",
+      "beforeRows": 27,
+      "afterRows": 28,
+      "unchanged": false
+    },
+    {
+      "schema": "public",
+      "table": "chat_notification_preferences",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "chat_poll_votes",
+      "beforeRows": 2,
+      "afterRows": 2,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "chat_polls",
+      "beforeRows": 1,
+      "afterRows": 1,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "chat_reactions",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "chat_room_members",
+      "beforeRows": 43,
+      "afterRows": 43,
+      "unchanged": false
+    },
+    {
+      "schema": "public",
+      "table": "chat_rooms",
+      "beforeRows": 11,
+      "afterRows": 11,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "chat_starred_messages",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "choir_member_roles",
+      "beforeRows": 28,
+      "afterRows": 28,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "choir_members",
+      "beforeRows": 29,
+      "afterRows": 29,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "choirs",
+      "beforeRows": 1,
+      "afterRows": 1,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "collab_inquiries",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "contact_messages",
+      "beforeRows": 1,
+      "afterRows": 1,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "departments",
+      "beforeRows": 15,
+      "afterRows": 15,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "profile_change_requests",
+      "beforeRows": 9,
+      "afterRows": 9,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "push_subscriptions",
+      "beforeRows": 62,
+      "afterRows": 62,
+      "unchanged": false
+    },
+    {
+      "schema": "public",
+      "table": "rehearsal_invitees",
+      "beforeRows": 536,
+      "afterRows": 536,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "rehearsals",
+      "beforeRows": 21,
+      "afterRows": 21,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "repertoire",
+      "beforeRows": 9,
+      "afterRows": 9,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "repertoire_cache_versions",
+      "beforeRows": 1,
+      "afterRows": 1,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "repertoire_comment_audio_versions",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "repertoire_file_storage_locations",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "repertoire_files",
+      "beforeRows": 79,
+      "afterRows": 79,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "repertoire_pdf_annotations",
+      "beforeRows": 41,
+      "afterRows": 41,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "repertoire_song_comments",
+      "beforeRows": 2,
+      "afterRows": 2,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "repertoire_song_tags",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "repertoire_tags",
+      "beforeRows": 0,
+      "afterRows": 0,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "roles",
+      "beforeRows": 3,
+      "afterRows": 3,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "schools",
+      "beforeRows": 4,
+      "afterRows": 4,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "song_assignments",
+      "beforeRows": 213,
+      "afterRows": 213,
+      "unchanged": true
+    },
+    {
+      "schema": "public",
+      "table": "subscribers",
+      "beforeRows": 3,
+      "afterRows": 3,
+      "unchanged": true
+    },
+    {
+      "schema": "supabase_migrations",
+      "table": "schema_migrations",
+      "beforeRows": 68,
+      "afterRows": 68,
+      "unchanged": true
+    }
+  ],
+  "removedTables": [],
+  "catalogUnchanged": false,
+  "dataUnchanged": false,
+  "status": "FRESH_PROTECTED_SNAPSHOT_COMPARED_RESTORE_NOT_RUN",
+  "boundary": "Read-only held snapshot. No row bodies, per-table hashes, credentials or SQL definitions retained here. Comparison is not a restore or current runtime acceptance. Object bytes, Storage metadata, provider configuration/secrets and offsite custody remain outside this logical backup."
+}
