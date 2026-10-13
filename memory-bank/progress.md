@@ -1,5 +1,11 @@
 # İlerleme indeksi
 
+13 October — [WF-018 instruction reset](../docs/briefs/WF-018-agent-instruction-reset.md).
+Restrictive agent procedures removed; current entry points reconciled. Product and
+runtime acceptance unchanged. New production roadmap is the next phase, not yet done.
+Dated entries below retain historical results; their NEXT/method/permission wording
+does not replace the current request or [AGENTS](../AGENTS.md).
+
 10 October — [090 five-family resource-stop checkpoint](../docs/reports/2026-10-10-p3-managed-five-family-preflight.md).
 Owner6GiBmax approval received;5888MiB/freshreserve passed, actualVM/provision succeeded,
 full image pull hit disk guard before restore/API. Exact failed-runtime cleanup verified;

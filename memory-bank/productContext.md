@@ -1,5 +1,9 @@
 # Ürün bağlamı
 
+> 13 October 2026: dated product/technical context. Old task-order and agent-method
+> wording does not override [AGENTS](../AGENTS.md) or the current user request.
+> Use [active context](activeContext.md) for current direction; verify old observations.
+
 Kaynak: 4 Eylül 2026 tarihli yerel [geçiş kaydı](../MIGRATION.md) ve
 [kararlar](../KARARLAR.md). Aşağıdakiler ürün amaçlarıdır, performans garantisi değildir.
 

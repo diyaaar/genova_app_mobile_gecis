@@ -1,5 +1,10 @@
 # P1 — One reviewable release candidate
 
+> Historical plan as of 13 October 2026. [AGENTS](../../AGENTS.md) supersedes
+> procedural restrictions here; the old stage order is not a current assignment.
+> Product requirements, dependencies and recorded acceptance gaps are retained for
+> the new roadmap. See [checkpoint](checkpoint.md).
+
 [Guide](README.md) · [State](checkpoint.md) · Next: [P2](02-ios.md)
 
 ## Contract

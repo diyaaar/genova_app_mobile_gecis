@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-13T15:50:24.449132+00:00",
+  "http_status": 200,
+  "model": "jev-1.13.0",
+  "request_sha256": "518f89bd1b77fcfe0b1e17e0933f30d66ea399995bbca60dfb8f1fcaaddcd752",
+  "elapsed_ms": 405,
+  "answers": {
+    "workflow": {
+      "type": "choice",
+      "choice": "aligned",
+      "probabilities": {
+        "aligned": 0.98,
+        "conflict": 0.02,
+        "unclear": 0.0
+      },
+      "confidence": 0.97
+    },
+    "evidence": {
+      "type": "choice",
+      "choice": "aligned",
+      "probabilities": {
+        "aligned": 1.0,
+        "conflict": 0.0,
+        "unclear": 0.0
+      },
+      "confidence": 1.0
+    },
+    "credential": {
+      "type": "choice",
+      "choice": "aligned",
+      "probabilities": {
+        "aligned": 0.84,
+        "conflict": 0.15,
+        "unclear": 0.01
+      },
+      "confidence": 0.76
+    }
+  },
+  "usage": {
+    "input_tokens": 1297,
+    "output_tokens": 116
+  },
+  "scope": "Advisory text/design review, not independent engineering or runtime acceptance",
+  "credential": "User-authorized recovery from prior user message; saved privately, key omitted"
+}

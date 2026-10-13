@@ -1,5 +1,11 @@
 # 090 — private-file ticket revocation contract before Android beta
 
+> 13 October 2026: retained contract and chronological execution evidence.
+> Prior work cards, retry/disk/model limits and “no Jev” statements describe their
+> dated attempts; they do not govern new work after [WF-018](WF-018-agent-instruction-reset.md).
+> [AGENTS](../../AGENTS.md) owns current workflow. The five-family/runtime/release
+> gaps remain unresolved; no test result below has been changed.
+
 Status: IN PROGRESS / local v2 implementation and synthetic acceptance PASS on
 30 September 2026; Android synthetic audio and connected stale-v1 PDF recovery PASS on 1 October.
 Five-family local HTTP overlap, connected native Android audio and current assignment-version

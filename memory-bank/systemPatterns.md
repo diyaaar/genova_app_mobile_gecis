@@ -1,5 +1,9 @@
 # Sistem desenleri ve sınırlar
 
+> 13 October 2026: dated product/technical context. Old task-order and agent-method
+> wording does not override [AGENTS](../AGENTS.md) or the current user request.
+> Use [active context](activeContext.md) for current direction; verify old observations.
+
 Son karşılaştırma: 12 Eylül 2026. Mimari hedef ile uygulanmış kodu ayır.
 
 - Web: Next.js istemci/sunucu; mevcut API'ler ekran göçüne kadar korunur.
@@ -10,7 +14,8 @@ Son karşılaştırma: 12 Eylül 2026. Mimari hedef ile uygulanmış kodu ayır.
   türleri sözleşme değişikliğinde ayrıca test edilir. 016 ile web ve native okumalar aynı
   savunmacı parser'ı kullanır; bilinmeyen/bozuk/gelecek şema öğeleri yazılabilir veriye
   dönüştürülmeden atlanır ve kullanıcıya uyarı olarak gösterilir.
-- Auth/Realtime/DB Supabase'de; public web sitesiyle aynı proje kullanılır.
+- Auth/Realtime/DB Supabase'de. 2 October owner correction: the sibling public
+  website no longer uses this DB; earlier shared-site references are historical.
   İstemcinin gönderdiği koro/rol tek başına yetki değildir. Service-role kullanımı
   uygulamadaki yetki ve kiracı kontrollerini gereksiz kılmaz.
 - `003` canlı tenant sınırıdır. `005` ile aktif koro yalnız doğrulanmış `auth.uid()`

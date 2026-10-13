@@ -1,5 +1,8 @@
 # AI çalışma yöntemi — kaynak repo ve alt ajan yaklaşımı
 
+> 13 October 2026: historical source analysis, not current agent instructions.
+> The owner's workflow reset is implemented in [AGENTS](../AGENTS.md).
+
 4 Eylül 2026. İlk inceleme ve öneriler aşağıda tarihsel olarak korunur.
 Sonraki adımda ekran görüntüleriyle tamamlanan yerel uyarlama
 [WF-001](briefs/WF-001-ai-calisma-duzeni.md) kapsamında kuruldu ve doğrulandı.

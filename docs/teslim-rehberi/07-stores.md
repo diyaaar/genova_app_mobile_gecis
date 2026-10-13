@@ -1,5 +1,10 @@
 # P7 — Both-store release and operational handoff
 
+> Historical plan as of 13 October 2026. [AGENTS](../../AGENTS.md) supersedes
+> procedural restrictions here; the old stage order is not a current assignment.
+> Product requirements, dependencies and recorded acceptance gaps are retained for
+> the new roadmap. See [checkpoint](checkpoint.md).
+
 [Previous P6](06-full-product.md) · [State](checkpoint.md) · [Guide](README.md)
 
 ## Contract

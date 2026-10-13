@@ -1,5 +1,9 @@
 # Proje özeti — Genova
 
+> 13 October 2026: dated product/technical context. Old task-order and agent-method
+> wording does not override [AGENTS](../AGENTS.md) or the current user request.
+> Use [active context](activeContext.md) for current direction; verify old observations.
+
 Son karşılaştırma: 6 Eylül 2026, kullanıcı yönü ve yerel karar/durum belgeleri.
 
 Genova, şef ve koristlerin repertuvar, PDF/anotasyon, ses, sohbet, ödev ve koro

@@ -1,5 +1,8 @@
 # AI çalışma yöntemi — iki video metninin analizi
 
+> 13 October 2026: historical source analysis, not current agent instructions.
+> The owner's workflow reset is implemented in [AGENTS](../AGENTS.md).
+
 Tarih: 4 Eylül 2026.
 Durum: video metinleri tamamen okundu; yöntem çıkarıldı. Sonraki GitHub incelemesi
 tamamlandı: [depo analizi ve alt ajan önerisi](ai-calisma-yontemi-repo-incelemesi.md).

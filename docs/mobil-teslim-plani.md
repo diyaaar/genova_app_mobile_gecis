@@ -1,12 +1,11 @@
-# Genova — long-term mobile delivery plan and execution directive
+# Genova — previous mobile delivery plan
 
-3 October execution guide: [linked P1–P7 playbook](teslim-rehberi/README.md) and
-[single current checkpoint](teslim-rehberi/checkpoint.md), recorded in
-[WF-017](briefs/WF-017-linked-delivery-playbook.md). This decomposes the queue below;
-it does not replace decisions, module inventories or acceptance evidence. Current
-entry: freeze the exact candidate manifest → latest iOS → compatible recovery/release
-→ active private storage → installed Android beta → full product → both stores.
-Owner#34 selects a small existing-choir beta group, then a second independent choir.
+> Status updated 13 October 2026: historical planning reference pending the new
+> production roadmap requested by the owner. The dated queues and imperative wording
+> below no longer prescribe agent workflow or current task order. [AGENTS](../AGENTS.md)
+> supersedes procedural restrictions. Product decisions, feature scope and actual
+> test results remain evidence; unresolved acceptance is not waived.
+> Current direction: [checkpoint](teslim-rehberi/checkpoint.md).
 
 ## Current delivery priority — 23 September 2026
 
@@ -98,8 +97,8 @@ DB/Edge → exact `main`/Vercel order rather than a direct bulk push.
 | 7. Finish full product | Complete B's native annotation write/recoverable sync/offline; C2 push, C3 remaining social/media/administration and C4–C5 assignments/home; D2–D3 plan limits, five-free-member enforcement, account/data lifecycle; D6 security, accessibility and recovery. Preserve existing web features and native/WebView ownership. | Use the A–E tables and feature inventories below as acceptance scope. Ask price/counting, retention and other owner choices just before their dependent work. |
 | 8. Two-store candidate and operations | Reconcile every preserved feature; refresh current Apple/Google rules, legal/deletion/payment disclosures and account requirements; prove Android and iOS signed device builds, closed-test/review access, rollback, actual publication and first backup/incident/budget exercise. | Store accounts, tester communications, uploads/publication and recurring monitoring retain their respective authority. M4 and M5 close only on external evidence. |
 
-Use the [existing provider runbook](private-r2-release-runbook.md) for the exact migration,
-secret, function and copy order. Keep one active bounded work card. If the external R2 decision
+The [existing provider runbook](private-r2-release-runbook.md) records technical migration,
+secret, function and copy dependencies for evaluation against current state. If the external R2 decision
 waits, gate 2 remains a legitimate local critical-path task; the whole product is not finished or
 technically immobile. Record one daily checkpoint with the next user-visible outcome, tested layer,
 remaining blocker and whether the few-day beta target still has evidence.
@@ -147,7 +146,7 @@ sender edit/global delete and per-member hide through 044's authority. Native st
 was subsequently accepted locally in [051](briefs/051-native-chat-starred-messages.md).
 Originally prepared under
 [WF-006](briefs/WF-006-long-term-execution-plan.md).
-This is the canonical delivery sequence, extending the earlier 5–8 September plan. It is a
+This was the delivery sequence extending the earlier 5–8 September plan; it is now historical. It is a
 plan, not implementation evidence or an authorization grant. Agent instructions are English;
 user updates and product copy remain Turkish. [Decisions](../KARARLAR.md) remain authoritative.
 
@@ -273,22 +272,10 @@ briefs, not in a second copy here.
 
 ## Work selection and authority
 
-The owner's 9 September continuing request authorizes the local execution loop one bounded brief
-at a time: select, implement, test, evaluate, record and move to the next ready local package.
-Verify standing authority and the brief before each package. This does not authorize a different
-account or any external, real-data, release, spending or hardware action.
-
-| Class | Work that may be prepared or performed within existing scope | Boundary |
-|---|---|---|
-| Local | Source review, isolated synthetic tests, local code and required local commits | One scoped brief; preserve unrelated work; isolated restored copies retain their data restrictions |
-| External read | Only the exact account/data and read-only scope previously authorized | Access availability is not real-account/real-data permission; otherwise ask |
-| External write | Concrete release/migration/fixture/email/distribution plan may be prepared | Push, remote CI dispatch, deploy, live migration/data changes, real accounts/data, email, credentials and spending need explicit applicable approval |
-| Hardware | Prepare test matrix and identify prerequisites | Postponed tests stay NOT RUN until the owner explicitly resumes them |
-
-Before an external action present its exact revision, target account/project, resources, data
-scope, steps, expected effects (including automatic hosting), cost if any, rollback and checks.
-Approval must identify the operation; silence, elapsed time, a plan or an open browser is not
-approval. Preserve any previously granted narrow authorization without asking twice for it.
+Current work selection follows the user's request and [AGENTS](../AGENTS.md).
+The dated queue in this document is input to the upcoming roadmap revision, not
+an obligation to resume a particular brief. Existing authorization remains valid;
+ask only for genuinely missing authority for the proposed operation.
 
 ## Ordered work packages
 
@@ -378,8 +365,7 @@ historical research in its original source. Do not restart vendor comparison for
 
 ## Evidence gates and release discipline
 
-Every brief fills mandatory rows before implementation, with failures and unrun required tests
-retained. A local package can finish only when its defined local result is proved; the associated
+Record verification in a useful form, retaining failures and unrun required tests. A local package can finish only when its defined local result is proved; the associated
 provider/device/release milestone stays open. Never exclude a necessary runtime check solely
 because a tool is absent. Do not reopen accepted unit evidence merely because time passed;
 rerun when code, dependencies, environment or the asserted integration boundary changed.
@@ -390,7 +376,7 @@ rerun when code, dependencies, environment or the asserted integration boundary 
 | Web/shared code/dependencies/build | Root `pnpm check`; changed UI flows additionally use local browser/E2E and relevant accessibility checks |
 | RN product | In `apps/mobile`: `npx tsc --noEmit && npm test`; bundle/build for changed platforms. The current `bundle:check` exports iOS only, not Android proof |
 | Edge | Actual runtime/entrypoint/import configuration plus HTTP/auth/error tests, isolated permission matrix; injected handler tests alone do not verify deployment |
-| DB | Dedicated isolated target, fixed/down/restored acceptance, denied roles and unchanged fixture checks; before live schema changes fresh backup + actual restore, role attributes, both projects and rollback |
+| DB | Dedicated isolated target, fixed/down/restored acceptance, denied roles and unchanged fixture checks; before live schema changes fresh backup + actual restore, role attributes, actual Genova consumers and rollback |
 | PDF/audio | Actual bytes and native output; MIME/size/checksum, range/seek, expiry, interruption, private storage and tenant cleanup; measure resource behavior before performance claims |
 | Release/device | Exact revision, build/platform, role/scenario, expected/actual result and limits; hardware, provider, live UI, CI and store results each have their own rows |
 
@@ -408,142 +394,35 @@ compatibility until an explicit supported-version policy permits retirement.
 
 ## Revised goal text
 
-Deliver the complete Genova mobile product and all outcomes in docs/mobil-teslim-plani.md,
-using its 20 September Android-first sequence. Aim for a usable Android beta within a few days,
-then complete the preserved feature scope, both-platform store readiness, authorized release and
-operational handoff; the beta is an intermediate milestone, not final success or a throwaway demo.
-Resume verified current work from locally accepted 065 at its release-candidate/provider/hosted
-inventory/copy/activation gates without replaying accepted implementation or local rehearsal work.
-Retain Supabase DB/Auth/Realtime/Edge; remove production Drive dependency via private R2 storage
-with verified authorization, migration and rollback. Do not migrate hosting/database to Railway
-without a new measured reason and owner decision. Prefer total recurring infrastructure <=$5/month;
-any increase, provider activation or paid action needs explicit authority. The first commercial
-release offers five free choir members and charges only additional members; preserve manual/web
-billing and defer individual sales. Do not invent prices or optional paid features. Web onboarding
-does not waive mobile privacy, deletion, disclosures or payment-policy assessment.
-Follow select -> implement -> focused test -> review -> required integration/release gates ->
-record -> cleanup -> continue. Use Android for ordinary runtime development; group iOS acceptance
-at integration/candidate milestones and test earlier when an iOS-specific change demands it.
-Current090 integration: [native iOS PDF](reports/2026-10-01-connected-ios-private-pdf-acceptance.md),
-audio/recovery/seek/B teardown and both current-assignment/legacy permanent WebViews now have
-local acceptance through2October. [Hosted approval preparation](reports/2026-10-02-hosted-revocation-approval-packet.md)
-owns the next concrete boundary; hosted/provider/phone/beta/release gates remain open.
-Run full gates after code review and targeted repairs stabilize, not after every diagnostic edit;
-never call earlier evidence current after a relevant change. Keep one active outcome, one heavy
-process, >=10 GiB free, bounded artifacts and causal reassessment after two failed approaches.
-Preserve 004's deferred device tests, 010's open refusals, all original feature and evidence
-requirements, live web compatibility and approval boundaries. Prepare concrete decisions and
-release packages before asking for only the remaining authority. Report daily movement toward
-usable delivery and actual blockers; never equate test counts, planning acceptance or beta
-availability with completion of the entire product goal.
-
-This is the canonical revised objective. Repository edits do not themselves edit the Codex
-goal card. WF-008 records the replacement goal result; never complete the
-unfinished product goal merely to replace its wording.
+The previous Android-first goal text is retired as an agent execution directive.
+On 13 October the owner requested instruction cleanup first, then a new production
+roadmap and checkpoints. This document still preserves the earlier product scope
+and evidence; changing workflow does not complete any product or release goal.
+See [current checkpoint](teslim-rehberi/checkpoint.md).
 
 ## Bounded execution and resource controls
 
-These controls apply to the continuing goal, including work with GPT-5.6 Sol. They are
-project workflow rules, not model-capacity claims or permission to change the selected model.
+Updated 13 October 2026. The old fixed free-space floor, per-attempt allocation
+limits, retry count, work-card format, model-specific wording, single heavy-process
+rule and mandatory cleanup-on-handoff workflow are retired as general instructions.
+Choose resource allocation, concurrency, environment reuse and retry strategy using
+actual capacity, new evidence and the needs of the authorized work.
 
-- **Android-first verification:** ordinary feature development uses focused checks and Android
-  runtime. Run mobile typecheck/full tests at the coherent flow's final gate; run `pnpm check`
-  when web/shared/dependency/build code or the brief requires it. Review security, lifecycle and
-  races before expensive final checks. Group iOS exports/native/runtime acceptance at integrated
-  milestones and the release candidate. Run an earlier iOS check for changed native dependencies,
-  entitlements, permissions, signing, SecureStore, PDF/audio or other platform-sensitive behavior.
-  Do not repeatedly switch simulators for shared UI changes. Both release platforms still need
-  current acceptance. Existing required brief checks remain required unless transparently
-  rescheduled with a named later gate; failed criteria are never deleted to improve status.
+Preserve unrelated files, backups and user data. Clean owned disposable output as
+appropriate. Existing runtime guards and historical attempt receipts are unchanged;
+evaluate a guard in its technical context before changing it. Resource flexibility
+is not a claim that the previously failed runtime now works.
 
-- **Work card:** in the current brief, name one observable user benefit or reproduced blocker,
-  the exact paths, at most three next actions, required checks and the exit condition. Add a
-  short checkpoint to a large existing brief; do not create a new brief for each diagnostic.
-  New integration work proves one real client/server flow early, then expands the preserved
-  feature matrix. Existing required acceptance rows remain intact.
-- **Repetition:** record failure -> cause/evidence -> changed approach. After two unsuccessful
-  approaches to the same criterion, stop repeating it and reassess. A further attempt needs
-  new causal evidence and a bounded check; otherwise record the blocker and choose a genuinely
-  independent ready task. Every 60 minutes of active work, state the new user outcome or
-  evidence and what changes next. No new evidence means change method/scope within authority
-  or checkpoint; it does not justify another identical build or environment rebuild.
-- **Disk floor:** the owner requested roughly 10 GB free. Use a conservative **10 GiB available**
-  filesystem floor (10,485,760 KiB reported by `df -k`), not advertised/purgeable capacity.
-  **9 October scoped exception:** owner explicitly waived this floor for the current
-  P3 isolated recovery continuation.090's20261009work card owns its bounded allocation,
-  512MiBemergencyfloor/640MiBstop, monitoring and exact cleanup. All other data,
-  privacy/hosted-operation/ownership rules remain; default10GiB resumes outside
-  this operation. This is not authority for global cache/user-data deletion.
-  Before downloads, installs, exports, builds or runtime setup, record current free space,
-  existing owned usage, estimated additional peak allocation and cleanup targets. Proceed only
-  if projected free space remains above the floor. If peak is unknown, first obtain a size
-  estimate without downloading; unknown does not pass. Below the floor, do only owned cleanup
-  and low-allocation inspection/source/document work; no large download/build/runtime start.
-  Recheck free space during heavy work and after each phase. If actual growth threatens the
-  floor, stop further allocation at the next safe boundary and clean owned output. This is an
-  agent operating rule, not an OS-enforced quota; other applications can also consume disk.
-- **Peak usage:** count task VM data disks, simulator/AVD storage, native build directories,
-  temporary SDK/JDKs, database copies and caches outside the repo as well as inside it.
-  Measure allocated bytes, not a VM's configured maximum. Use one owned runtime and one heavy
-  build/platform at a time; reuse a valid installed toolchain. Record a reason before another
-  export/rebuild; successful unchanged checks are historical evidence, not a reason to rerun.
-- **Artifact lifetime:** keep one brief-local inventory: exact owned path/profile/device,
-  measured size, purpose, last dependent check and removal point. Preserve source, lockfiles,
-  existing working dependencies and essential redacted evidence. Remove large derived output
-  after its last check; reuse within a planned check batch to avoid delete/recreate loops.
-  On pause/handoff, stop owned services/devices and remove large disposable outputs unless a
-  concrete same-task reuse step, short expiry and sufficient disk headroom are recorded.
-  A user cleanup request or disk-floor breach overrides retention. Inspect residual VM disks,
-  contexts and ports after cleanup; never purge global caches, other projects or unknown data.
-- **Evidence and context:** keep dated results/hashes in the brief; keep only current status,
-  dirty ownership, one next action and links in handoff/activeContext (aim <=80 lines each).
-  Read relevant/changed sources rather than the whole archive. Redact secrets before tool
-  output; scan actual artifacts using boolean matches/counts, never printing secret values.
-  Do not store passwords in EXPO_PUBLIC_* or other public build variables. Document-only
-  changes use link/consistency/diff checks, not product builds. Required product gates remain.
-- **Delivery focus:** when a decision or external action blocks progress, prepare the concrete
-  alternatives or release/rollback package and ask only for the missing choice/authority.
-  Preserve previously granted approval. No new capability framework, general-purpose test
-  runner, dependency upgrade, parallel agent/worktree or expanded matrix merely to keep busy.
-  If no authorized outcome is ready, record the exact blocker and stop dependent execution.
+Verification guidance is in [AGENTS](../AGENTS.md); choose affected platforms and
+checks based on risk. Old Android/iOS scheduling rules do not restrict investigation.
+Keep necessary acceptance results honest and distinguish each tested environment.
 
 ## Agent execution loop
 
-Use the existing [work cycle](ai-calisma-duzeni.md); this section defines Genova's task selection
-and evidence transitions, not a second agent framework or scheduler.
-
-1. **Orient:** read AGENTS → short handoff/activeContext → current brief and these controls;
-   read guide/work cycle once and other memory, decisions and code only as relevant/changed.
-   Verify branch, HEAD, dirty ownership, disk/tool availability and current permission.
-   Old environment observations are not universal commands.
-2. **Select:** take the earliest ready bounded outcome above. State its user benefit and concrete
-   blocker. Check dependencies and evidence; prefer closing a known integration gap to adding
-   an unrelated feature. If another agent has moved HEAD or owns changes, reconcile before writing.
-3. **Contract:** create/update one brief with paths, preserved features, exclusions, acceptance
-   matrix, actual environments and rollback. Do not start the whole roadmap as one task.
-4. **Execute:** make the smallest authorized change. Unit-test a reproduced defect; then run its
-   layer and integration gates. Keep real provider/device/user activity behind applicable approval.
-5. **Evaluate:** required PASS for every row permits that brief's acceptance. FAIL means reproduce,
-   diagnose and repair within scope. NOT RUN keeps the item open. After two unsuccessful approaches
-   reassess cause/environment rather than repeat indefinitely; never weaken the test to advance.
-6. **Review:** compare final diff to contract and feature inventory; check tenant/role, compatibility,
-   lifecycle, native/WebView and publication effects. Repair contradictions and rerun affected checks.
-7. **Record/commit:** evidence in the brief, screen state in MIGRATION, decision changes only in
-   KARARLAR when actually accepted; concise active/progress indexes and handoff links. Separate code
-   and documentation commits, both containing the brief identifier. Stage only owned paths.
-   Finish owned cleanup and record actual free space before starting another heavy task.
-8. **Choose the next iteration:** continue only within active user authorization and a ready brief.
-   A blocked task stays visible. Select an independent allowed package only if its dependency is
-   genuinely absent; do not bypass A1–A3 by calling a dependent feature independent.
-9. **Checkpoint:** before context/agent handoff, commit coherent owned work, record unfinished
-   ownership, exact next action, tests/limits and pending approvals. The receiving agent re-verifies.
-   Include the short work card, failed approaches and artifact inventory; apply retention limits.
-   If no authorized task is ready, provide the concrete blocker/approval request and stop; never
-   busy-wait, repeatedly ask about postponed hardware or create an unrequested scheduled job.
-
-User status updates should be short Turkish: the verified outcome, remaining uncertainty and next
-bounded action. A status question steers the active work; a planning request does not execute the
-plan. No subagent is required; any permitted delegation follows AGENTS' one-writer contract.
+Use [AGENTS](../AGENTS.md) and the optional [working approach](ai-calisma-duzeni.md).
+Choose an effective path from the requested outcome through implementation and
+verification. No mandatory brief-per-step, maximum number of actions, split commits,
+fixed retry budget or inherited agent hierarchy applies.
 
 ## Progress, prioritization and planning review
 

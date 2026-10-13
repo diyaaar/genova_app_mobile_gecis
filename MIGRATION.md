@@ -1,5 +1,10 @@
 # Mobil Geçiş — Durum Defteri
 
+> 13 October 2026: screen/product inventory retained. Historical “next task” and
+> agent-method instructions below are superseded by the current user request and
+> [AGENTS](AGENTS.md). A new production roadmap will follow instruction cleanup;
+> this does not change screen ownership or mark unfinished acceptance complete.
+
 > Bu dosya ekran geçişinin tek doğru kaynağıdır. Oturum girişi AGENTS.md ve kısa handoff'tadır.
 > Durum değişikliği, koddan ayrı ama birlikte devredilen belge commit'ine işlenir.
 > Güncel teslim sırası: [mobil teslim planı](docs/mobil-teslim-plani.md), karar #21.

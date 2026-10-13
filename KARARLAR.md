@@ -4,6 +4,16 @@ Verilmiş kararlar ve gerekçeleri. Kanıtsız tekrar tartışma; yeni kullanıc
 somut çelişkide etkiyi değerlendir. Değişen kararın önceki hâlini tarihsel tut,
 yeni karara açıkça bağla. Eski tahminler güncel doğrulama değildir.
 
+## Agent autonomy reset — 13 October 2026
+
+| # | Decision | Rationale / boundary | Date |
+|---|---|---|---|
+| 37 | **Remove restrictive agent workflows; plan production work afterward** | Owner requests an end-to-end instruction audit and removal of model-limiting procedures before a new roadmap/checkpoints. Supersedes the procedural parts of #12, #15, #27 and older plans/briefs: mandatory briefs/read order, model-tier/depth limits, single-writer/serial-heavy-work rules, fixed retries/disk quotas, split commits and automatic old-task selection. Agents choose effective methods within the user request; coordinate changes and preserve data. Jev use is authorized as needed without a project call/cost cap; the follow-up explicitly authorizes recovery of the prior key and private project-wide persistence. Product/security contracts, truthful evidence and applicable external-operation authorization remain. Detailed implementation: [WF-018](docs/briefs/WF-018-agent-instruction-reset.md). | 13 Oct 2026 |
+
+The dated records below remain history. Their task-specific execution recipes,
+including P3 attempt budgets, are not general agent restrictions. This reset does
+not accept unfinished tests, change product requirements or perform a release.
+
 ## Android-first delivery and commercial scope — 20 September 2026
 
 | # | Decision | Rationale / boundary | Date |

@@ -1,13 +1,14 @@
 # Teknik bağlam
 
+> 13 October 2026: dated product/technical context. Old task-order and agent-method
+> wording does not override [AGENTS](../AGENTS.md) or the current user request.
+> Use [active context](activeContext.md) for current direction; verify old observations.
+
 4 Eylül 2026 yerel dosya kontrolü. Kesin bağımlılık çözümü lockfile'dadır;
 bu özet otomatik sürüm yükseltme talimatı değildir.
 
-15 September 2026 override: historical 033 gate/cleanup statements below are dated snapshots.
-Current credential/typecheck failure and renewed cleanup are recorded in the
-[033 checkpoint](../docs/briefs/033-composed-permanent-webview-runtime.md#current-checkpoint--15-september-2026).
-No runtime is retained. Before any large allocation apply the delivery plan's
-[disk controls](../docs/mobil-teslim-plani.md#bounded-execution-and-resource-controls).
+Historical environment observations below describe their dated runs, not the current
+host or required setup. Resource strategy follows [AGENTS](../AGENTS.md).
 
 - Web: Next.js 15, React 19, TypeScript, Tailwind 4, Capacitor 8.
 - Mobil hedef: React Native + Expo, ortak TS/Supabase istemcisi, Skia.
