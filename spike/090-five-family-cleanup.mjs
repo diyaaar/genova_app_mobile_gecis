@@ -6,16 +6,18 @@ import {execFileSync} from 'node:child_process';
 import {ATTEMPT} from './090-p3-resource-policy.mjs';
 import {DIR,readPrivate} from './090-compatibility-sql-rehearsal.mjs';
 import {READERS} from './090-five-family-contract.mjs';
-assert.equal(ATTEMPT,'20261013-managed-families');
+assert(['20261013-managed-families','20261014-fresh-recovery'].includes(ATTEMPT));
 assert.equal(process.argv.length,3);assert.equal(process.argv[2],'--cleanup-approved');
 const prefix=`managed-${ATTEMPT}`;
 const owner=JSON.parse(readPrivate(`runtime-ownership-${ATTEMPT}.json`));
-assert.equal(owner.attempt,ATTEMPT);assert.deepEqual(owner.webPaths,[]);
+assert.equal(owner.attempt,ATTEMPT);
+const web=process.cwd()+'/spike/090-runtime/20261014-web';
+assert.deepEqual(owner.webPaths,ATTEMPT==='20261014-fresh-recovery'?[web]:[]);
 assert.equal(JSON.parse(readPrivate(`runtime-cleanup-${ATTEMPT}.json`)).status,'OWNED_FINAL_RUNTIME_REMOVED');
 assert(!fs.existsSync(owner.image)&&!fs.existsSync(owner.mount));
 const transport=JSON.parse(readPrivate(prefix+'-transport-result-matrix.json'));
 assert(transport.closed&&transport.childrenExited);
-for(const port of [18443,18092,19999,19300,...READERS.map(r=>r.port)]) {
+for(const port of [18443,18092,19999,19300,18197,18199,...READERS.map(r=>r.port)]) {
   let active='';try{active=execFileSync('/usr/sbin/lsof',['-nP',`-iTCP:${port}`,'-sTCP:LISTEN'],{encoding:'utf8'});}catch{}
   assert.equal(active,'','Local listener still active');
 }
@@ -23,6 +25,12 @@ const names=['config.json','auth.env','rest.env','fixture.json',
   'tls-ca.key','tls-ca.crt','tls-leaf.key','tls-leaf.csr','tls-leaf.crt','tls-leaf.ext'];
 // Validate all files before deleting any; keep encrypted source, evidence and errors.
 for(const name of names)readPrivate(prefix+'-'+name);
+if(ATTEMPT==='20261014-fresh-recovery'){
+  const browser=JSON.parse(readPrivate(prefix+'-browser-current.json'));
+  assert(browser.childrenExited&&browser.status==='CURRENT_CANDIDATE_REAL_BROWSER_PASS');
+  assert(fs.lstatSync(web).isDirectory()&&!fs.lstatSync(web).isSymbolicLink()&&fs.realpathSync(web)===web);
+  fs.rmSync(web,{recursive:true});
+}
 for(const name of names)fs.unlinkSync(path.join(DIR,prefix+'-'+name));
 for(const name of ['database.sql.gcm','snapshot.json.gcm','artifact-key.bin'])readPrivate(name);
 const result={recordedAt:new Date().toISOString(),attempt:ATTEMPT,

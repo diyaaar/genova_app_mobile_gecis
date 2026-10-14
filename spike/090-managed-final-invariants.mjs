@@ -7,12 +7,12 @@ import {DIR,readPrivate,query} from './090-compatibility-sql-rehearsal.mjs';
 import {catalogQueries} from './090-p3-recovery-queries.mjs';
 import {normalize} from './090-p3-offline-restore.mjs';
 import {ATTEMPT} from './090-p3-resource-policy.mjs';
-assert(['20261010-managed-web','20261010-managed-final','20261010-managed-families','20261013-managed-families'].includes(ATTEMPT));assert.equal(process.argv.length,3);assert(['--verify-approved','--verify-final-approved'].includes(process.argv[2]));
+assert(['20261010-managed-web','20261010-managed-final','20261010-managed-families','20261013-managed-families','20261014-fresh-recovery'].includes(ATTEMPT));assert.equal(process.argv.length,3);assert(['--verify-approved','--verify-final-approved'].includes(process.argv[2]));
 const prefix=`managed-${ATTEMPT}`,before=JSON.parse(readPrivate(prefix+'-before-startup.json'));
 const catalogue=Object.fromEntries(Object.entries(catalogQueries).map(([name,text])=>[name,normalize(query(text))]));
 assert.deepEqual(catalogue,before.catalog,'Post-test metadata drift');
 const sha=createHash('sha256').update(readPrivate('database.sql.gcm')).digest('hex');
-assert.equal(sha,'c9ed4dfc9da9bf7e4317bb751f98e87b71bd4e06ef93daba9f0f1a5ccfb4dd2e');
+assert.equal(sha,ATTEMPT==='20261014-fresh-recovery'?'cef68228c198acaaf47579bbc44f64804cb6261df13bf53230c80ead7e449cbf':'c9ed4dfc9da9bf7e4317bb751f98e87b71bd4e06ef93daba9f0f1a5ccfb4dd2e');
 const result={recordedAt:new Date().toISOString(),attempt:ATTEMPT,status:'POST_TEST_17_CATALOG_GROUPS_AND_PROTECTED_SOURCE_UNCHANGED',
   catalogGroups:17,sourceCiphertextSha256:sha,noGrantRoleRlsTriggerSchemaRelaxation:true,
   dataBoundary:'Runtime includes newly generated Auth sessions/users/audit and synthetic choir/file fixtures; final whole-table row equality is NOT claimed. Whole selected 101-table equality was established before deltas and before managed startup.'};

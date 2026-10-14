@@ -10,7 +10,7 @@ import {ATTEMPT} from './090-p3-resource-policy.mjs';
 import {measureRuntime} from './090-p3-runtime-resources.mjs';
 import {READERS, requireCompleteMatrix} from './090-five-family-contract.mjs';
 import {bytesFor} from './090-five-family-media.mjs';
-assert.equal(ATTEMPT,'20261013-managed-families');
+assert(['20261013-managed-families','20261014-fresh-recovery'].includes(ATTEMPT));
 assert.equal(process.argv[2],'--run-approved');assert.equal(process.argv.length,3);
 const prefix=`managed-${ATTEMPT}`,resultFile=path.join(DIR,prefix+'-matrix-v1.json');assert(!fs.existsSync(resultFile));
 const config=JSON.parse(readPrivate(prefix+'-config.json')),fixture=JSON.parse(readPrivate(prefix+'-fixture.json'));

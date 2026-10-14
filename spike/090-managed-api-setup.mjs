@@ -13,7 +13,7 @@ import {normalize} from './090-p3-offline-restore.mjs';
 const AUTH='supabase/gotrue@sha256:93bfec0a41cfe3ed81d03c9c1c8807fd230b8ecea260cf999b8a7204ccc7d5cf';
 const REST='postgrest/postgrest@sha256:77c56c839e49d5a037e93fd49de7822a65bcdeafc4b9e37338ead504e36ba307';
 const prefix=`managed-${ATTEMPT}`,network='g090p3-internal';
-assert(['20261010-managed-web','20261010-managed-final','20261010-managed-families','20261013-managed-families'].includes(ATTEMPT));assert.equal(process.argv.length,3);
+assert(['20261010-managed-web','20261010-managed-final','20261010-managed-families','20261013-managed-families','20261014-fresh-recovery'].includes(ATTEMPT));assert.equal(process.argv.length,3);
 const action=process.argv[2];assert(['--prepare-approved','--resume-network-approved','--verify-startup','--verify-startup-internal','--verify-initial-internal'].includes(action));
 const owner=JSON.parse(readPrivate('runtime-ownership.json'));let peak=0;
 const write=(name,value)=>fs.writeFileSync(path.join(DIR,prefix+'-'+name),typeof value==='string'?value:JSON.stringify(value,null,2)+'\n',{flag:'wx',mode:0o600});

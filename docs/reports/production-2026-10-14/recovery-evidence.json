@@ -1,0 +1,2959 @@
+{
+  "recordedAt": "2026-10-13T21:58:44.674Z",
+  "attempt": "20261014-fresh-recovery",
+  "sourceManifestSha256": "e08e427a46c360baf10582f8acf3d71bf929b980a4d6a777728e373ca43ade88",
+  "restore": {
+    "recordedAt": "2026-10-13T21:52:29.849Z",
+    "attempt": "20261014-fresh-recovery",
+    "project": "hievmwwctjjlhmssoxsu",
+    "backupSha256": "26c88943ab6693374ea3ad46926b5cacca0a35274965b8d2e86f59212bf2bc8d",
+    "database": "genova_090_p3_restore",
+    "network": "none",
+    "mounts": 0,
+    "publishedPorts": 0,
+    "catalogCounts": {
+      "functions": {
+        "source": 165,
+        "restored": 165
+      },
+      "schemas": {
+        "source": 24,
+        "restored": 24
+      },
+      "relations": {
+        "source": 118,
+        "restored": 118
+      },
+      "policies": {
+        "source": 225,
+        "restored": 225
+      },
+      "constraints": {
+        "source": 510,
+        "restored": 510
+      },
+      "columns": {
+        "source": 1132,
+        "restored": 1132
+      },
+      "indexes": {
+        "source": 329,
+        "restored": 329
+      },
+      "triggers": {
+        "source": 62,
+        "restored": 62
+      },
+      "defaultAcls": {
+        "source": 15,
+        "restored": 15
+      },
+      "roles": {
+        "source": 17,
+        "restored": 17
+      },
+      "memberships": {
+        "source": 22,
+        "restored": 22
+      },
+      "extensions": {
+        "source": 6,
+        "restored": 6
+      },
+      "publications": {
+        "source": 2,
+        "restored": 2
+      },
+      "publicationTables": {
+        "source": 15,
+        "restored": 15
+      },
+      "publicationRelations": {
+        "source": 9,
+        "restored": 9
+      },
+      "publicationSchemas": {
+        "source": 0,
+        "restored": 0
+      },
+      "droppedColumns": {
+        "source": 8,
+        "restored": 8
+      }
+    },
+    "dataTables": 101,
+    "restoredRows": 2884,
+    "supportedSeed": {
+      "slotTables": 5,
+      "droppedSlots": 8,
+      "betweenForms": 6,
+      "publications": 2,
+      "directRoots": 9
+    },
+    "aclSupplement": {
+      "changedObjects": 98,
+      "defaultRepresentationOnly": 46,
+      "permissionDifferences": 52,
+      "grantStatements": 177
+    },
+    "originalBackupUnmodified": true,
+    "exactComparatorUnchanged": true,
+    "differences": {},
+    "status": "CURRENT_STATE_SELECTED_FIDELITY_PASS",
+    "limits": "Actual isolated logical restore and selected same-snapshot catalog/data equality only. Sequence/non-MVCC/provider/Storage/Vault/config and full Next/Auth/RLS/client/review gates remain separate; no hosted mutation or source fix."
+  },
+  "deltas": {
+    "recordedAt": "2026-10-13T21:53:01.655Z",
+    "attempt": "20261014-fresh-recovery",
+    "baselineRestoreCompletedAt": "2026-10-13T21:52:29.849Z",
+    "packetSha256": "fd8656f80c78889ab307ddaac9894545cd301d2949bd49c0f3185932e68d718c",
+    "observations": [
+      {
+        "ordinal": 1,
+        "path": "supabase/migrations/20260909232000_repertoire_pdf_annotation_safe_save_024.sql",
+        "sha256": "b0cf68b02b0e32132df9e569f84ebc9300b57b25375a573315d8adbee0b47573",
+        "status": "ACTUALLY_APPLIED_ON_COPY"
+      },
+      {
+        "ordinal": 2,
+        "path": "supabase/migrations/20260919221500_private_chat_realtime_046.sql",
+        "sha256": "7e2528b5f1bbb1df5094bb65bfa9ff3dab51baa25419456e8bb5489569c52ea3",
+        "status": "ACTUALLY_APPLIED_ON_COPY"
+      },
+      {
+        "ordinal": 3,
+        "path": "supabase/migrations/20260920090000_chat_read_order_048.sql",
+        "sha256": "dfec253c0838bebb7f6759b1da2333e8a1cc38d9936e5d4addab0277a5062c74",
+        "status": "ACTUALLY_APPLIED_ON_COPY"
+      },
+      {
+        "ordinal": 4,
+        "path": "supabase/migrations/20260928140000_active_membership_revocation_078.sql",
+        "sha256": "3637722b0aa4822c6c4ac96789554d2eedce52410c552cc94f4471948cc705bb",
+        "status": "ACTUALLY_APPLIED_ON_COPY"
+      },
+      {
+        "ordinal": 5,
+        "path": "supabase/migrations/20260928150000_message_status_rpc_privileges_079.sql",
+        "sha256": "278947640ea19a3a312ae1872d68ca213e86aab26412f5f7c35b2d6605804e5f",
+        "status": "ACTUALLY_APPLIED_ON_COPY"
+      },
+      {
+        "ordinal": 6,
+        "path": "supabase/migrations/20260928175950_atomic_repertoire_assignments_082.sql",
+        "sha256": "29143efcd85582f35e972b2cf8e422423f183b655f5b1ddab2d4a446b2e9ef02",
+        "status": "ACTUALLY_APPLIED_ON_COPY"
+      },
+      {
+        "ordinal": 7,
+        "path": "supabase/migrations/20260929010000_atomic_profile_submit_087.sql",
+        "sha256": "25c3dac2a5a8df94f9c7b371d53549cffa245d933ecef1fc0dd2988f87876985",
+        "status": "ACTUALLY_APPLIED_ON_COPY"
+      },
+      {
+        "ordinal": 8,
+        "path": "supabase/migrations/20260929020000_atomic_profile_review_088.sql",
+        "sha256": "68753d37988d7131966bf240517185ee55e2b4101d656180b9d4b0d01116f472",
+        "status": "ACTUALLY_APPLIED_ON_COPY"
+      },
+      {
+        "ordinal": 9,
+        "path": "supabase/migrations/20260930080046_private_file_ticket_authority_090.sql",
+        "sha256": "4f345d968fa6945aa746b4d00b7852c293047a984beabd79c4b7a64629c0ad86",
+        "status": "ACTUALLY_APPLIED_ON_COPY"
+      },
+      {
+        "ordinal": 10,
+        "path": "supabase/migrations/20261002154343_legacy_file_authority_090.sql",
+        "sha256": "e121f9f8eada0dd4d7b9ddee8bea19c9baf146bfee28377d11669331a5f973c3",
+        "status": "ACTUALLY_APPLIED_ON_COPY"
+      },
+      {
+        "ordinal": 11,
+        "path": "supabase/migrations/20261009190611_private_file_session_expiry_090.sql",
+        "sha256": "c191738462dc500e0be524155fb6e5ca3002e7445ba6a70d77f451d7a52bc36c",
+        "status": "ACTUALLY_APPLIED_ON_COPY"
+      }
+    ],
+    "peakAllocatedKiB": 4914560,
+    "status": "ACTUAL_ELEVEN_CLONE_DELTAS_PASS",
+    "boundary": "Actual faithful clone and exact SQL/RPC/role/RLS controls only; managed Auth/REST/HTTP/browser/platform/release NOT RUN. No hosted writes, broad grants or source mutation."
+  },
+  "tests": {
+    "recordedAt": "2026-10-13T21:53:05.174Z",
+    "attempt": "20261014-fresh-recovery",
+    "baselineRestoreCompletedAt": "2026-10-13T21:52:29.849Z",
+    "packetSha256": "fd8656f80c78889ab307ddaac9894545cd301d2949bd49c0f3185932e68d718c",
+    "observations": [
+      {
+        "path": "supabase/tests/024_repertoire_pdf_annotation_safe_save.sql",
+        "originalSha256": "9bb0454d65d312e5a086c2981b59436c405110e569aef3ac22247c40a82e2544",
+        "executedSha256": "7021bfc7cc3a7a4c7fe1c142f89584a3f7d5ab4ff5275662fd57352c5b6510f0",
+        "fixtureExecutor": "postgres",
+        "fixtureInsideRollback": false,
+        "originalDataUnchanged": true,
+        "status": "ACTUAL_SQL_PASS_NOT_MANAGED_AUTH"
+      },
+      {
+        "path": "supabase/tests/046_private_chat_realtime.sql",
+        "originalSha256": "d5e893eb6db9033b047a3e5247b7d02f622b634a623e77872c1699bb1844bd3e",
+        "executedSha256": "6e58498a9aa25750eeb7185b558628e0c9d84459b21499029b3337667f7b9b2b",
+        "fixtureExecutor": "postgres",
+        "fixtureInsideRollback": false,
+        "originalDataUnchanged": true,
+        "status": "ACTUAL_SQL_PASS_NOT_MANAGED_AUTH"
+      },
+      {
+        "path": "supabase/tests/048_chat_read_order.sql",
+        "originalSha256": "8149fe6abf4f6848e0dfe3d39170555b6e855c3a61a746dd8c00eb3f5e868a6b",
+        "executedSha256": "5930a08c5477f06dbd7ae686c5c6e33f6b7345728fe0adca75fe8de4fbb2c4d5",
+        "fixtureExecutor": "postgres",
+        "fixtureInsideRollback": false,
+        "originalDataUnchanged": true,
+        "status": "ACTUAL_SQL_PASS_NOT_MANAGED_AUTH"
+      },
+      {
+        "path": "supabase/tests/078_active_membership_revocation.sql",
+        "originalSha256": "a0605ba929d4396fd246cee6772a8201e8f6dc6fa797b8f8e6ef53744a34aabe",
+        "executedSha256": "9061da3fbd41bcdf3589adf716d23469dca98093459f0ab27fe922e1e037b731",
+        "fixtureExecutor": "postgres",
+        "fixtureInsideRollback": false,
+        "originalDataUnchanged": true,
+        "status": "ACTUAL_SQL_PASS_NOT_MANAGED_AUTH"
+      },
+      {
+        "path": "supabase/tests/079_message_status_rpc_privileges.sql",
+        "originalSha256": "359ceefbc1fe39d8dcba4084fec83a991b8348edbf1052a6ea4adc9ea59f3966",
+        "executedSha256": "7ccac918e670381410b1b08898a29afbf8061d4ff40449e9b4cef1d100c6f06a",
+        "fixtureExecutor": "postgres",
+        "fixtureInsideRollback": false,
+        "originalDataUnchanged": true,
+        "status": "ACTUAL_SQL_PASS_NOT_MANAGED_AUTH"
+      },
+      {
+        "path": "supabase/tests/082_atomic_repertoire_assignments.sql",
+        "originalSha256": "39edd3b3952adc4f5129791deb83d0879d949090c140159d07f9468b8aaece36",
+        "executedSha256": "1ec72a99fa85789096ac84ffb03e0f5e6941f4343913938b0d44e0cbbbeb3cae",
+        "fixtureExecutor": "postgres",
+        "fixtureInsideRollback": true,
+        "originalDataUnchanged": true,
+        "status": "ACTUAL_SQL_PASS_NOT_MANAGED_AUTH"
+      },
+      {
+        "path": "supabase/tests/087_atomic_profile_submit.sql",
+        "originalSha256": "871be267e65ef4abb2d49e1b8397b4f3307c6184663d0789ffe3a0f447050add",
+        "executedSha256": "b3f6dc6293a0907551e24fceb9e16df0095781eedb9ae72136737dd5d022d363",
+        "fixtureExecutor": "postgres",
+        "fixtureInsideRollback": true,
+        "originalDataUnchanged": true,
+        "status": "ACTUAL_SQL_PASS_NOT_MANAGED_AUTH"
+      },
+      {
+        "path": "supabase/tests/088_atomic_profile_review.sql",
+        "originalSha256": "bd711c7cd4081360be9e08b82b46f731ae50defb74a1f158f40fea0078d63bb9",
+        "executedSha256": "b90025990b5c66236a57225dca92ebb98480f00075e4ba57676b586111f3ec88",
+        "fixtureExecutor": "postgres",
+        "fixtureInsideRollback": true,
+        "originalDataUnchanged": true,
+        "status": "ACTUAL_SQL_PASS_NOT_MANAGED_AUTH"
+      },
+      {
+        "path": "supabase/tests/090_private_file_ticket_authority.sql",
+        "originalSha256": "fa2cc4d044416f1811dbd4d1d8b90938d93f3cf5a08afe0cb51d187e41123789",
+        "executedSha256": "b5956271c14533a52b20909dcffd9f6542264559e290b2439bb5607b4d7f9dd0",
+        "fixtureExecutor": "postgres",
+        "fixtureInsideRollback": false,
+        "originalDataUnchanged": true,
+        "status": "ACTUAL_SQL_PASS_NOT_MANAGED_AUTH"
+      },
+      {
+        "path": "supabase/tests/090_legacy_file_authority.sql",
+        "originalSha256": "0920d95fea1875103c157e9c24fc68330ec5cc7dc2012d753bbdbaf993bd7c0b",
+        "executedSha256": "517a2e023f1805d3f1f10bd7b72ea4fff89d5d078f88e375fcfb9a21d05634ec",
+        "fixtureExecutor": "postgres",
+        "fixtureInsideRollback": false,
+        "originalDataUnchanged": true,
+        "status": "ACTUAL_SQL_PASS_NOT_MANAGED_AUTH"
+      }
+    ],
+    "peakAllocatedKiB": 4914656,
+    "status": "ACTUAL_TEN_SQL_CONTROLS_PASS_CONCURRENCY_OPEN",
+    "boundary": "Actual faithful clone and exact SQL/RPC/role/RLS controls only; managed Auth/REST/HTTP/browser/platform/release NOT RUN. No hosted writes, broad grants or source mutation."
+  },
+  "matrix": {
+    "status": "ACTUAL_FIVE_FAMILY_MANAGED_HTTP_MATRIX_PASS",
+    "observations": [
+      {
+        "family": "repertoire-file",
+        "scenario": "issuance",
+        "method": "POST",
+        "status": 200,
+        "providerDelta": 0,
+        "bodyBytes": 483
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "full",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 871,
+        "ticketRemainingMs": 3599974,
+        "ticketSha256": "65677814aec7e2b1a04d9565fdecee407892d6f0539db101fac2922f132aae0a"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "full",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599960,
+        "ticketSha256": "65677814aec7e2b1a04d9565fdecee407892d6f0539db101fac2922f132aae0a"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "range",
+        "method": "GET",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 13,
+        "ticketRemainingMs": 3599944,
+        "ticketSha256": "65677814aec7e2b1a04d9565fdecee407892d6f0539db101fac2922f132aae0a"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "range",
+        "method": "HEAD",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599931,
+        "ticketSha256": "65677814aec7e2b1a04d9565fdecee407892d6f0539db101fac2922f132aae0a"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "outsider-b",
+        "method": "POST",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 32
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "selected-b",
+        "method": "POST",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 32
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "selected-b",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599846,
+        "ticketSha256": "65677814aec7e2b1a04d9565fdecee407892d6f0539db101fac2922f132aae0a"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "selected-b",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599838,
+        "ticketSha256": "65677814aec7e2b1a04d9565fdecee407892d6f0539db101fac2922f132aae0a"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "inactive-member",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599932,
+        "ticketSha256": "87f2bd6c8950b3a5f368b812d5e45bf297740dfdc917ef63692a149469e46363"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "inactive-member",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599923,
+        "ticketSha256": "87f2bd6c8950b3a5f368b812d5e45bf297740dfdc917ef63692a149469e46363"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "session-expiry",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599915,
+        "ticketSha256": "33fccf597bca84161f356eadacd782152aaa73a865f47a2bdfc84476d850caef"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "session-expiry",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599906,
+        "ticketSha256": "33fccf597bca84161f356eadacd782152aaa73a865f47a2bdfc84476d850caef"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "chef-loss",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599927,
+        "ticketSha256": "0c37a433f80e5bae2385575ae536379338c8d6b9114224fd60650c1c2db8f282"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "chef-loss",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599918,
+        "ticketSha256": "0c37a433f80e5bae2385575ae536379338c8d6b9114224fd60650c1c2db8f282"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "independent-grant",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 871,
+        "ticketRemainingMs": 3599985,
+        "ticketSha256": "941250adf1629f9a344d6c1a907f43903688ec8a2104c6cba8afc2d81984cb85"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "independent-grant",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599972,
+        "ticketSha256": "941250adf1629f9a344d6c1a907f43903688ec8a2104c6cba8afc2d81984cb85"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "effective-family-authority-loss",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599722,
+        "ticketSha256": "0c37a433f80e5bae2385575ae536379338c8d6b9114224fd60650c1c2db8f282"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "effective-family-authority-loss",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599713,
+        "ticketSha256": "0c37a433f80e5bae2385575ae536379338c8d6b9114224fd60650c1c2db8f282"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "audio:full",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599981,
+        "ticketSha256": "7273af0690a4d569dc46a8154a520d85621446bec61314466e820910028a2eb2"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "audio:full",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599968,
+        "ticketSha256": "7273af0690a4d569dc46a8154a520d85621446bec61314466e820910028a2eb2"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "audio:range",
+        "method": "GET",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 13,
+        "ticketRemainingMs": 3599954,
+        "ticketSha256": "7273af0690a4d569dc46a8154a520d85621446bec61314466e820910028a2eb2"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "audio:range",
+        "method": "HEAD",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599941,
+        "ticketSha256": "7273af0690a4d569dc46a8154a520d85621446bec61314466e820910028a2eb2"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "audio:revoked",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599863,
+        "ticketSha256": "7273af0690a4d569dc46a8154a520d85621446bec61314466e820910028a2eb2"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "audio:revoked",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599852,
+        "ticketSha256": "7273af0690a4d569dc46a8154a520d85621446bec61314466e820910028a2eb2"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "selection:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 871,
+        "ticketRemainingMs": 3599923,
+        "ticketSha256": "932c10f0f297ebabaa758c3456ea841114fe05bebd976d469df6bc1caf1d7b1f"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "selection:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599908,
+        "ticketSha256": "932c10f0f297ebabaa758c3456ea841114fe05bebd976d469df6bc1caf1d7b1f"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "selection:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599853,
+        "ticketSha256": "932c10f0f297ebabaa758c3456ea841114fe05bebd976d469df6bc1caf1d7b1f"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "selection:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599847,
+        "ticketSha256": "932c10f0f297ebabaa758c3456ea841114fe05bebd976d469df6bc1caf1d7b1f"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "selection:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599835,
+        "ticketSha256": "932c10f0f297ebabaa758c3456ea841114fe05bebd976d469df6bc1caf1d7b1f"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "selection:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599825,
+        "ticketSha256": "932c10f0f297ebabaa758c3456ea841114fe05bebd976d469df6bc1caf1d7b1f"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "membership:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 871,
+        "ticketRemainingMs": 3599915,
+        "ticketSha256": "4ec126e04edc04dc71ac59fdda7ecd158b8bc639d7dd7d365889a208ea582f14"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "membership:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599897,
+        "ticketSha256": "4ec126e04edc04dc71ac59fdda7ecd158b8bc639d7dd7d365889a208ea582f14"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "membership:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599838,
+        "ticketSha256": "4ec126e04edc04dc71ac59fdda7ecd158b8bc639d7dd7d365889a208ea582f14"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "membership:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599837,
+        "ticketSha256": "4ec126e04edc04dc71ac59fdda7ecd158b8bc639d7dd7d365889a208ea582f14"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "membership:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599822,
+        "ticketSha256": "4ec126e04edc04dc71ac59fdda7ecd158b8bc639d7dd7d365889a208ea582f14"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "membership:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599811,
+        "ticketSha256": "4ec126e04edc04dc71ac59fdda7ecd158b8bc639d7dd7d365889a208ea582f14"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "effective-family-authority:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 871,
+        "ticketRemainingMs": 3599908,
+        "ticketSha256": "63f9c44974fd4ca7134c6518c8ff2529078e0640a489700445f054cae8cd8a70"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "effective-family-authority:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599892,
+        "ticketSha256": "63f9c44974fd4ca7134c6518c8ff2529078e0640a489700445f054cae8cd8a70"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "effective-family-authority:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599840,
+        "ticketSha256": "63f9c44974fd4ca7134c6518c8ff2529078e0640a489700445f054cae8cd8a70"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "effective-family-authority:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599840,
+        "ticketSha256": "63f9c44974fd4ca7134c6518c8ff2529078e0640a489700445f054cae8cd8a70"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "effective-family-authority:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599826,
+        "ticketSha256": "63f9c44974fd4ca7134c6518c8ff2529078e0640a489700445f054cae8cd8a70"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "effective-family-authority:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599814,
+        "ticketSha256": "63f9c44974fd4ca7134c6518c8ff2529078e0640a489700445f054cae8cd8a70"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "stream:authorized-before-revocation",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 871,
+        "ticketRemainingMs": 3599896,
+        "ticketSha256": "0575ec2faf6b722036f01e31c5b450835408b9f239f1d2347019bdc44ebc76de"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "stream:subsequent-revoked",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599882,
+        "ticketSha256": "0575ec2faf6b722036f01e31c5b450835408b9f239f1d2347019bdc44ebc76de"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "stream:subsequent-revoked",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599869,
+        "ticketSha256": "0575ec2faf6b722036f01e31c5b450835408b9f239f1d2347019bdc44ebc76de"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "sign-out",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599953,
+        "ticketSha256": "2bbf8f3803a9eeaa6ad1f067bd59f43e2ba446997b67db1172dca7f932f0e627"
+      },
+      {
+        "family": "repertoire-file",
+        "scenario": "sign-out",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599940,
+        "ticketSha256": "2bbf8f3803a9eeaa6ad1f067bd59f43e2ba446997b67db1172dca7f932f0e627"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "issuance",
+        "method": "POST",
+        "status": 200,
+        "providerDelta": 0,
+        "bodyBytes": 483
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "full",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599967,
+        "ticketSha256": "00a47764b98ab45f5921c4e20d86cf2addda249618166653a88863dc7e606c6b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "full",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599943,
+        "ticketSha256": "00a47764b98ab45f5921c4e20d86cf2addda249618166653a88863dc7e606c6b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "range",
+        "method": "GET",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 13,
+        "ticketRemainingMs": 3599922,
+        "ticketSha256": "00a47764b98ab45f5921c4e20d86cf2addda249618166653a88863dc7e606c6b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "range",
+        "method": "HEAD",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599904,
+        "ticketSha256": "00a47764b98ab45f5921c4e20d86cf2addda249618166653a88863dc7e606c6b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "outsider-b",
+        "method": "POST",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 32
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "selected-b",
+        "method": "POST",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 32
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "selected-b",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599826,
+        "ticketSha256": "00a47764b98ab45f5921c4e20d86cf2addda249618166653a88863dc7e606c6b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "selected-b",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599816,
+        "ticketSha256": "00a47764b98ab45f5921c4e20d86cf2addda249618166653a88863dc7e606c6b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "inactive-member",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599920,
+        "ticketSha256": "aab30966a3446d3469258f16e2ea4c5c548500fb3007a9c42d07a6683ed20496"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "inactive-member",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599910,
+        "ticketSha256": "aab30966a3446d3469258f16e2ea4c5c548500fb3007a9c42d07a6683ed20496"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "session-expiry",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599927,
+        "ticketSha256": "72b771545ac483a1d1e60885597cadf2ffc51d856d5b233d829926c982bbc5f7"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "session-expiry",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599917,
+        "ticketSha256": "72b771545ac483a1d1e60885597cadf2ffc51d856d5b233d829926c982bbc5f7"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "chef-loss",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599918,
+        "ticketSha256": "227a4c9e9393c97b046e1e7fc95d8fbca8bcb3d607dbdccb54e5180a51374035"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "chef-loss",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599908,
+        "ticketSha256": "227a4c9e9393c97b046e1e7fc95d8fbca8bcb3d607dbdccb54e5180a51374035"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "independent-grant",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599982,
+        "ticketSha256": "f017a0b4471fb75cc1bb3b39bef437f925e4a5cf9b21d63128fbab535aa4fada"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "independent-grant",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599964,
+        "ticketSha256": "f017a0b4471fb75cc1bb3b39bef437f925e4a5cf9b21d63128fbab535aa4fada"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "effective-family-authority-loss",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599834,
+        "ticketSha256": "227a4c9e9393c97b046e1e7fc95d8fbca8bcb3d607dbdccb54e5180a51374035"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "effective-family-authority-loss",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599824,
+        "ticketSha256": "227a4c9e9393c97b046e1e7fc95d8fbca8bcb3d607dbdccb54e5180a51374035"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "selection:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599927,
+        "ticketSha256": "7c798e0a1b9fcf2866d469de6ff45b5a89a46c52436ea7180b039060ab4e42c7"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "selection:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599910,
+        "ticketSha256": "7c798e0a1b9fcf2866d469de6ff45b5a89a46c52436ea7180b039060ab4e42c7"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "selection:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599860,
+        "ticketSha256": "7c798e0a1b9fcf2866d469de6ff45b5a89a46c52436ea7180b039060ab4e42c7"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "selection:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599858,
+        "ticketSha256": "7c798e0a1b9fcf2866d469de6ff45b5a89a46c52436ea7180b039060ab4e42c7"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "selection:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599845,
+        "ticketSha256": "7c798e0a1b9fcf2866d469de6ff45b5a89a46c52436ea7180b039060ab4e42c7"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "selection:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599835,
+        "ticketSha256": "7c798e0a1b9fcf2866d469de6ff45b5a89a46c52436ea7180b039060ab4e42c7"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "membership:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599924,
+        "ticketSha256": "7a507311a55fb44cdda787ba980cd88b8e4a14ba99f6ceab6965141ca242556b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "membership:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599910,
+        "ticketSha256": "7a507311a55fb44cdda787ba980cd88b8e4a14ba99f6ceab6965141ca242556b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "membership:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599858,
+        "ticketSha256": "7a507311a55fb44cdda787ba980cd88b8e4a14ba99f6ceab6965141ca242556b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "membership:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599857,
+        "ticketSha256": "7a507311a55fb44cdda787ba980cd88b8e4a14ba99f6ceab6965141ca242556b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "membership:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599839,
+        "ticketSha256": "7a507311a55fb44cdda787ba980cd88b8e4a14ba99f6ceab6965141ca242556b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "membership:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599823,
+        "ticketSha256": "7a507311a55fb44cdda787ba980cd88b8e4a14ba99f6ceab6965141ca242556b"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "effective-family-authority:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599927,
+        "ticketSha256": "ab7002c105c323b3c34772ddd9f07c7c08318c1e689b2ea6b2e8a9a17091c0e9"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "effective-family-authority:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599910,
+        "ticketSha256": "ab7002c105c323b3c34772ddd9f07c7c08318c1e689b2ea6b2e8a9a17091c0e9"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "effective-family-authority:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599860,
+        "ticketSha256": "ab7002c105c323b3c34772ddd9f07c7c08318c1e689b2ea6b2e8a9a17091c0e9"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "effective-family-authority:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599859,
+        "ticketSha256": "ab7002c105c323b3c34772ddd9f07c7c08318c1e689b2ea6b2e8a9a17091c0e9"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "effective-family-authority:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599849,
+        "ticketSha256": "ab7002c105c323b3c34772ddd9f07c7c08318c1e689b2ea6b2e8a9a17091c0e9"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "effective-family-authority:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599839,
+        "ticketSha256": "ab7002c105c323b3c34772ddd9f07c7c08318c1e689b2ea6b2e8a9a17091c0e9"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "stream:authorized-before-revocation",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599924,
+        "ticketSha256": "1f21afec3c5f5b80596a367af05a36d74396310149bcc8103e802b7251c82f63"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "stream:subsequent-revoked",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599912,
+        "ticketSha256": "1f21afec3c5f5b80596a367af05a36d74396310149bcc8103e802b7251c82f63"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "stream:subsequent-revoked",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599902,
+        "ticketSha256": "1f21afec3c5f5b80596a367af05a36d74396310149bcc8103e802b7251c82f63"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "sign-out",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599933,
+        "ticketSha256": "9d615f75faefbaeedb82997fdcb84a3b6c3ced943ad22dd85fd7572e4baea861"
+      },
+      {
+        "family": "assignment-file",
+        "scenario": "sign-out",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599920,
+        "ticketSha256": "9d615f75faefbaeedb82997fdcb84a3b6c3ced943ad22dd85fd7572e4baea861"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "issuance",
+        "method": "POST",
+        "status": 200,
+        "providerDelta": 0,
+        "bodyBytes": 492
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "full",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599979,
+        "ticketSha256": "7edff5aff7f6d4638f526f77050a8c29d45accdee39062e05135b7e1d3b1c4f2"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "full",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599964,
+        "ticketSha256": "7edff5aff7f6d4638f526f77050a8c29d45accdee39062e05135b7e1d3b1c4f2"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "range",
+        "method": "GET",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 13,
+        "ticketRemainingMs": 3599949,
+        "ticketSha256": "7edff5aff7f6d4638f526f77050a8c29d45accdee39062e05135b7e1d3b1c4f2"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "range",
+        "method": "HEAD",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599936,
+        "ticketSha256": "7edff5aff7f6d4638f526f77050a8c29d45accdee39062e05135b7e1d3b1c4f2"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "outsider-b",
+        "method": "POST",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 32
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "selected-b",
+        "method": "POST",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 32
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "selected-b",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599863,
+        "ticketSha256": "7edff5aff7f6d4638f526f77050a8c29d45accdee39062e05135b7e1d3b1c4f2"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "selected-b",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599854,
+        "ticketSha256": "7edff5aff7f6d4638f526f77050a8c29d45accdee39062e05135b7e1d3b1c4f2"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "inactive-member",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599931,
+        "ticketSha256": "fea2de4cd847a3d5b1e8aa7dddace56fe275890e5c8cb716b1a68b5588a83ff8"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "inactive-member",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599923,
+        "ticketSha256": "fea2de4cd847a3d5b1e8aa7dddace56fe275890e5c8cb716b1a68b5588a83ff8"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "session-expiry",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599931,
+        "ticketSha256": "cdd5460825471776d0a1fe1afada677a00771b9f713680fc98aeef2595bf39a8"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "session-expiry",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599923,
+        "ticketSha256": "cdd5460825471776d0a1fe1afada677a00771b9f713680fc98aeef2595bf39a8"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "chef-loss",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599935,
+        "ticketSha256": "63c51082120be8cf5588e827a8460249af6bd6d8cc7f39283f2b648a6684681c"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "chef-loss",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599926,
+        "ticketSha256": "63c51082120be8cf5588e827a8460249af6bd6d8cc7f39283f2b648a6684681c"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "independent-grant",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599986,
+        "ticketSha256": "5364b07e2b7a7f6d464526ef4e8c774eaa2596e07c93c4a820b43e42796053aa"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "independent-grant",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599973,
+        "ticketSha256": "5364b07e2b7a7f6d464526ef4e8c774eaa2596e07c93c4a820b43e42796053aa"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "hidden-own-review",
+        "method": "POST",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 32
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "hidden-own-review",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599869,
+        "ticketSha256": "5364b07e2b7a7f6d464526ef4e8c774eaa2596e07c93c4a820b43e42796053aa"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "hidden-own-review",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599861,
+        "ticketSha256": "5364b07e2b7a7f6d464526ef4e8c774eaa2596e07c93c4a820b43e42796053aa"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "effective-family-authority-loss",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599688,
+        "ticketSha256": "63c51082120be8cf5588e827a8460249af6bd6d8cc7f39283f2b648a6684681c"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "effective-family-authority-loss",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599679,
+        "ticketSha256": "63c51082120be8cf5588e827a8460249af6bd6d8cc7f39283f2b648a6684681c"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "selection:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599938,
+        "ticketSha256": "bf0af8919eb6f9caa17bb84bcacf18c32dd0ff0ecd47b89ea1ae38d97723ffb7"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "selection:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599925,
+        "ticketSha256": "bf0af8919eb6f9caa17bb84bcacf18c32dd0ff0ecd47b89ea1ae38d97723ffb7"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "selection:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599877,
+        "ticketSha256": "bf0af8919eb6f9caa17bb84bcacf18c32dd0ff0ecd47b89ea1ae38d97723ffb7"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "selection:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599876,
+        "ticketSha256": "bf0af8919eb6f9caa17bb84bcacf18c32dd0ff0ecd47b89ea1ae38d97723ffb7"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "selection:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599867,
+        "ticketSha256": "bf0af8919eb6f9caa17bb84bcacf18c32dd0ff0ecd47b89ea1ae38d97723ffb7"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "selection:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599858,
+        "ticketSha256": "bf0af8919eb6f9caa17bb84bcacf18c32dd0ff0ecd47b89ea1ae38d97723ffb7"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "membership:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599937,
+        "ticketSha256": "50828c664747fff8f3266579d7e874bc67380ffb69101d9f85847e29cfed36f6"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "membership:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599923,
+        "ticketSha256": "50828c664747fff8f3266579d7e874bc67380ffb69101d9f85847e29cfed36f6"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "membership:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599875,
+        "ticketSha256": "50828c664747fff8f3266579d7e874bc67380ffb69101d9f85847e29cfed36f6"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "membership:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599874,
+        "ticketSha256": "50828c664747fff8f3266579d7e874bc67380ffb69101d9f85847e29cfed36f6"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "membership:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599865,
+        "ticketSha256": "50828c664747fff8f3266579d7e874bc67380ffb69101d9f85847e29cfed36f6"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "membership:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599856,
+        "ticketSha256": "50828c664747fff8f3266579d7e874bc67380ffb69101d9f85847e29cfed36f6"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "effective-family-authority:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599938,
+        "ticketSha256": "48c9a2d6d46cf9f095cc6a1ff1d57a49d8acc354447a8023dfcb5f4ee092592c"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "effective-family-authority:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599924,
+        "ticketSha256": "48c9a2d6d46cf9f095cc6a1ff1d57a49d8acc354447a8023dfcb5f4ee092592c"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "effective-family-authority:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599878,
+        "ticketSha256": "48c9a2d6d46cf9f095cc6a1ff1d57a49d8acc354447a8023dfcb5f4ee092592c"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "effective-family-authority:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599877,
+        "ticketSha256": "48c9a2d6d46cf9f095cc6a1ff1d57a49d8acc354447a8023dfcb5f4ee092592c"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "effective-family-authority:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599868,
+        "ticketSha256": "48c9a2d6d46cf9f095cc6a1ff1d57a49d8acc354447a8023dfcb5f4ee092592c"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "effective-family-authority:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599860,
+        "ticketSha256": "48c9a2d6d46cf9f095cc6a1ff1d57a49d8acc354447a8023dfcb5f4ee092592c"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "stream:authorized-before-revocation",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599930,
+        "ticketSha256": "6fa1372cfc052887123c7153d624bf6bc1ed94335aaacf0cb9217121f41134dd"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "stream:subsequent-revoked",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599921,
+        "ticketSha256": "6fa1372cfc052887123c7153d624bf6bc1ed94335aaacf0cb9217121f41134dd"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "stream:subsequent-revoked",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599914,
+        "ticketSha256": "6fa1372cfc052887123c7153d624bf6bc1ed94335aaacf0cb9217121f41134dd"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "sign-out",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599970,
+        "ticketSha256": "9aac626ffa6061e374b3374c07912abfe919fffe28ccd2ea37f7b78b6bd1b605"
+      },
+      {
+        "family": "assignment-review-file",
+        "scenario": "sign-out",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599963,
+        "ticketSha256": "9aac626ffa6061e374b3374c07912abfe919fffe28ccd2ea37f7b78b6bd1b605"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "issuance",
+        "method": "POST",
+        "status": 200,
+        "providerDelta": 0,
+        "bodyBytes": 494
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "full",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599980,
+        "ticketSha256": "94cf991f230ae1814feeff5e1ef3f95a81022be437603705f581a8329db3b55a"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "full",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599966,
+        "ticketSha256": "94cf991f230ae1814feeff5e1ef3f95a81022be437603705f581a8329db3b55a"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "range",
+        "method": "GET",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 13,
+        "ticketRemainingMs": 3599951,
+        "ticketSha256": "94cf991f230ae1814feeff5e1ef3f95a81022be437603705f581a8329db3b55a"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "range",
+        "method": "HEAD",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599937,
+        "ticketSha256": "94cf991f230ae1814feeff5e1ef3f95a81022be437603705f581a8329db3b55a"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "outsider-b",
+        "method": "POST",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 32
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "selected-b",
+        "method": "POST",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 32
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "selected-b",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599858,
+        "ticketSha256": "94cf991f230ae1814feeff5e1ef3f95a81022be437603705f581a8329db3b55a"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "selected-b",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599850,
+        "ticketSha256": "94cf991f230ae1814feeff5e1ef3f95a81022be437603705f581a8329db3b55a"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "inactive-member",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599934,
+        "ticketSha256": "0f803a9f48d26b84f731971b0fffabb662a9b3b79ae5ca0bebeaac3a1732b1f9"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "inactive-member",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599925,
+        "ticketSha256": "0f803a9f48d26b84f731971b0fffabb662a9b3b79ae5ca0bebeaac3a1732b1f9"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "session-expiry",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599934,
+        "ticketSha256": "3fd31f6767cc640587d3e431d9ccaec299e02296ce420129468994f6020706fb"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "session-expiry",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599926,
+        "ticketSha256": "3fd31f6767cc640587d3e431d9ccaec299e02296ce420129468994f6020706fb"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "chef-loss",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599935,
+        "ticketSha256": "9adf8ee9faa3124360652f59f2ffe286dfbcd97cd137605c499deb6a8370f81a"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "chef-loss",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599927,
+        "ticketSha256": "9adf8ee9faa3124360652f59f2ffe286dfbcd97cd137605c499deb6a8370f81a"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "independent-grant",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599985,
+        "ticketSha256": "b894e8d5e8e9a37d7d72d65a9e6168f5b10034d0d2929b144d237bfca1b9bf6e"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "independent-grant",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599973,
+        "ticketSha256": "b894e8d5e8e9a37d7d72d65a9e6168f5b10034d0d2929b144d237bfca1b9bf6e"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "effective-family-authority-loss",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599856,
+        "ticketSha256": "9adf8ee9faa3124360652f59f2ffe286dfbcd97cd137605c499deb6a8370f81a"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "effective-family-authority-loss",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599848,
+        "ticketSha256": "9adf8ee9faa3124360652f59f2ffe286dfbcd97cd137605c499deb6a8370f81a"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "selection:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599937,
+        "ticketSha256": "5904e3a3f0ad5438ec1f1beedb9d8219eb2be09e0adb0f29a33fc7f235c31c5c"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "selection:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599924,
+        "ticketSha256": "5904e3a3f0ad5438ec1f1beedb9d8219eb2be09e0adb0f29a33fc7f235c31c5c"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "selection:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599876,
+        "ticketSha256": "5904e3a3f0ad5438ec1f1beedb9d8219eb2be09e0adb0f29a33fc7f235c31c5c"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "selection:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599875,
+        "ticketSha256": "5904e3a3f0ad5438ec1f1beedb9d8219eb2be09e0adb0f29a33fc7f235c31c5c"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "selection:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599866,
+        "ticketSha256": "5904e3a3f0ad5438ec1f1beedb9d8219eb2be09e0adb0f29a33fc7f235c31c5c"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "selection:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599859,
+        "ticketSha256": "5904e3a3f0ad5438ec1f1beedb9d8219eb2be09e0adb0f29a33fc7f235c31c5c"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "membership:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599937,
+        "ticketSha256": "50afa464e740373080d117e9b012739b9a194f84ae9eb00aca5ee2fea05ddbb2"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "membership:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599925,
+        "ticketSha256": "50afa464e740373080d117e9b012739b9a194f84ae9eb00aca5ee2fea05ddbb2"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "membership:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599878,
+        "ticketSha256": "50afa464e740373080d117e9b012739b9a194f84ae9eb00aca5ee2fea05ddbb2"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "membership:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599876,
+        "ticketSha256": "50afa464e740373080d117e9b012739b9a194f84ae9eb00aca5ee2fea05ddbb2"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "membership:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599867,
+        "ticketSha256": "50afa464e740373080d117e9b012739b9a194f84ae9eb00aca5ee2fea05ddbb2"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "membership:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599860,
+        "ticketSha256": "50afa464e740373080d117e9b012739b9a194f84ae9eb00aca5ee2fea05ddbb2"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "effective-family-authority:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599935,
+        "ticketSha256": "cbaaf74325d394d7e369a902937f1a085d8c1d9d7c807002e8efa2cccccc84e3"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "effective-family-authority:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599922,
+        "ticketSha256": "cbaaf74325d394d7e369a902937f1a085d8c1d9d7c807002e8efa2cccccc84e3"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "effective-family-authority:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599875,
+        "ticketSha256": "cbaaf74325d394d7e369a902937f1a085d8c1d9d7c807002e8efa2cccccc84e3"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "effective-family-authority:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599875,
+        "ticketSha256": "cbaaf74325d394d7e369a902937f1a085d8c1d9d7c807002e8efa2cccccc84e3"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "effective-family-authority:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599865,
+        "ticketSha256": "cbaaf74325d394d7e369a902937f1a085d8c1d9d7c807002e8efa2cccccc84e3"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "effective-family-authority:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599857,
+        "ticketSha256": "cbaaf74325d394d7e369a902937f1a085d8c1d9d7c807002e8efa2cccccc84e3"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "stream:authorized-before-revocation",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 128044,
+        "ticketRemainingMs": 3599923,
+        "ticketSha256": "013725459e2ead1ee1a12a69e128ebdd3d396865fed8f08d60afb9aa09e471dc"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "stream:subsequent-revoked",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599915,
+        "ticketSha256": "013725459e2ead1ee1a12a69e128ebdd3d396865fed8f08d60afb9aa09e471dc"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "stream:subsequent-revoked",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599906,
+        "ticketSha256": "013725459e2ead1ee1a12a69e128ebdd3d396865fed8f08d60afb9aa09e471dc"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "sign-out",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 3599969,
+        "ticketSha256": "97a2fc8ddeeaa79618fa7edcc7c3f2c03e1b7856a5b7d560c7b6a7843c8cf8e6"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "scenario": "sign-out",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 3599961,
+        "ticketSha256": "97a2fc8ddeeaa79618fa7edcc7c3f2c03e1b7856a5b7d560c7b6a7843c8cf8e6"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "issuance",
+        "method": "POST",
+        "status": 200,
+        "providerDelta": 0,
+        "bodyBytes": 483
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "full",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 70,
+        "ticketRemainingMs": 59980,
+        "ticketSha256": "098dd0503ebb24a94bf193ce9225fb868cc0239325c11bdb965d9ef9cc9c0943"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "full",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59967,
+        "ticketSha256": "098dd0503ebb24a94bf193ce9225fb868cc0239325c11bdb965d9ef9cc9c0943"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "range",
+        "method": "GET",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 13,
+        "ticketRemainingMs": 59952,
+        "ticketSha256": "098dd0503ebb24a94bf193ce9225fb868cc0239325c11bdb965d9ef9cc9c0943"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "range",
+        "method": "HEAD",
+        "status": 206,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59939,
+        "ticketSha256": "098dd0503ebb24a94bf193ce9225fb868cc0239325c11bdb965d9ef9cc9c0943"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "outsider-b",
+        "method": "POST",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 32
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "selected-b",
+        "method": "POST",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 32
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "selected-b",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59870,
+        "ticketSha256": "098dd0503ebb24a94bf193ce9225fb868cc0239325c11bdb965d9ef9cc9c0943"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "selected-b",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59862,
+        "ticketSha256": "098dd0503ebb24a94bf193ce9225fb868cc0239325c11bdb965d9ef9cc9c0943"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "inactive-member",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59934,
+        "ticketSha256": "3ea055a07cbaac8a7b78d6bf75217cd1b08bd34b5da336e7460d2918dbcd69ed"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "inactive-member",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59925,
+        "ticketSha256": "3ea055a07cbaac8a7b78d6bf75217cd1b08bd34b5da336e7460d2918dbcd69ed"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "session-expiry",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59931,
+        "ticketSha256": "cc5f6bae3740c5f1a8b20b00121251e2d1bfc53789ded821d0e0a8936a73122a"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "session-expiry",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59923,
+        "ticketSha256": "cc5f6bae3740c5f1a8b20b00121251e2d1bfc53789ded821d0e0a8936a73122a"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "chef-loss",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 70,
+        "ticketRemainingMs": 59930,
+        "ticketSha256": "b3d402e4aed64ced5395a7e76981e7a642fba06a0f37e0a91eea81f97d94b5bc"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "chef-loss",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59916,
+        "ticketSha256": "b3d402e4aed64ced5395a7e76981e7a642fba06a0f37e0a91eea81f97d94b5bc"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "independent-grant",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 70,
+        "ticketRemainingMs": 59986,
+        "ticketSha256": "d5a76b771b39a35ab31ff2ce18d8ef285346f0783546fbf06b10a295c91ce4d3"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "independent-grant",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59973,
+        "ticketSha256": "d5a76b771b39a35ab31ff2ce18d8ef285346f0783546fbf06b10a295c91ce4d3"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "effective-family-authority-loss",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59797,
+        "ticketSha256": "b3d402e4aed64ced5395a7e76981e7a642fba06a0f37e0a91eea81f97d94b5bc"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "effective-family-authority-loss",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59788,
+        "ticketSha256": "b3d402e4aed64ced5395a7e76981e7a642fba06a0f37e0a91eea81f97d94b5bc"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "selection:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 70,
+        "ticketRemainingMs": 59937,
+        "ticketSha256": "a1d68add260c14bc22ebbc6e20281c144d0a0eb8cfcb13e36dd9c6544dcaa7d0"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "selection:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59924,
+        "ticketSha256": "a1d68add260c14bc22ebbc6e20281c144d0a0eb8cfcb13e36dd9c6544dcaa7d0"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "selection:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59878,
+        "ticketSha256": "a1d68add260c14bc22ebbc6e20281c144d0a0eb8cfcb13e36dd9c6544dcaa7d0"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "selection:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59877,
+        "ticketSha256": "a1d68add260c14bc22ebbc6e20281c144d0a0eb8cfcb13e36dd9c6544dcaa7d0"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "selection:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59867,
+        "ticketSha256": "a1d68add260c14bc22ebbc6e20281c144d0a0eb8cfcb13e36dd9c6544dcaa7d0"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "selection:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59859,
+        "ticketSha256": "a1d68add260c14bc22ebbc6e20281c144d0a0eb8cfcb13e36dd9c6544dcaa7d0"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "membership:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 70,
+        "ticketRemainingMs": 59937,
+        "ticketSha256": "5b6837a554440c61bcdc315cd10b4dc7e77cc444d965bcf721da2289bfef8382"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "membership:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59924,
+        "ticketSha256": "5b6837a554440c61bcdc315cd10b4dc7e77cc444d965bcf721da2289bfef8382"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "membership:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59873,
+        "ticketSha256": "5b6837a554440c61bcdc315cd10b4dc7e77cc444d965bcf721da2289bfef8382"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "membership:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59872,
+        "ticketSha256": "5b6837a554440c61bcdc315cd10b4dc7e77cc444d965bcf721da2289bfef8382"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "membership:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59862,
+        "ticketSha256": "5b6837a554440c61bcdc315cd10b4dc7e77cc444d965bcf721da2289bfef8382"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "membership:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59853,
+        "ticketSha256": "5b6837a554440c61bcdc315cd10b4dc7e77cc444d965bcf721da2289bfef8382"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "effective-family-authority:uncommitted",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 70,
+        "ticketRemainingMs": 59933,
+        "ticketSha256": "45596a83e8969ff72a53aa45c911caa3dd1c6e9cec50a7483110013fe51b5741"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "effective-family-authority:uncommitted",
+        "method": "HEAD",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59920,
+        "ticketSha256": "45596a83e8969ff72a53aa45c911caa3dd1c6e9cec50a7483110013fe51b5741"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "effective-family-authority:held-before-authority-after-commit",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59873,
+        "ticketSha256": "45596a83e8969ff72a53aa45c911caa3dd1c6e9cec50a7483110013fe51b5741"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "effective-family-authority:held-before-authority-after-commit",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59871,
+        "ticketSha256": "45596a83e8969ff72a53aa45c911caa3dd1c6e9cec50a7483110013fe51b5741"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "effective-family-authority:committed",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59862,
+        "ticketSha256": "45596a83e8969ff72a53aa45c911caa3dd1c6e9cec50a7483110013fe51b5741"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "effective-family-authority:committed",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59854,
+        "ticketSha256": "45596a83e8969ff72a53aa45c911caa3dd1c6e9cec50a7483110013fe51b5741"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "stream:authorized-before-revocation",
+        "method": "GET",
+        "status": 200,
+        "providerDelta": 1,
+        "bodyBytes": 70,
+        "ticketRemainingMs": 59930,
+        "ticketSha256": "fb62985407c278028026059d8073e7612f1936958fb803f0a151b945c3a31c90"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "stream:subsequent-revoked",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59921,
+        "ticketSha256": "fb62985407c278028026059d8073e7612f1936958fb803f0a151b945c3a31c90"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "stream:subsequent-revoked",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59912,
+        "ticketSha256": "fb62985407c278028026059d8073e7612f1936958fb803f0a151b945c3a31c90"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "sign-out",
+        "method": "GET",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 25,
+        "ticketRemainingMs": 59970,
+        "ticketSha256": "0ec15e7db35b1a46236ba6adcd8d5b54837ba75528d378b698416a27f32d07be"
+      },
+      {
+        "family": "chat-media-file",
+        "scenario": "sign-out",
+        "method": "HEAD",
+        "status": 403,
+        "providerDelta": 0,
+        "bodyBytes": 0,
+        "ticketRemainingMs": 59961,
+        "ticketSha256": "0ec15e7db35b1a46236ba6adcd8d5b54837ba75528d378b698416a27f32d07be"
+      }
+    ],
+    "media": [
+      {
+        "family": "repertoire-file",
+        "mime": "application/pdf",
+        "checksumMatch": true,
+        "fullBytes": 871,
+        "rangeBytes": 13,
+        "headRangeBytes": 4
+      },
+      {
+        "family": "repertoire-file",
+        "mime": "audio/wav",
+        "checksumMatch": true,
+        "fullBytes": 128044,
+        "rangeBytes": 13,
+        "headRangeBytes": 4
+      },
+      {
+        "family": "assignment-file",
+        "mime": "audio/wav",
+        "checksumMatch": true,
+        "fullBytes": 128044,
+        "rangeBytes": 13,
+        "headRangeBytes": 4
+      },
+      {
+        "family": "assignment-review-file",
+        "mime": "audio/wav",
+        "checksumMatch": true,
+        "fullBytes": 128044,
+        "rangeBytes": 13,
+        "headRangeBytes": 4
+      },
+      {
+        "family": "repertoire-comment-file",
+        "mime": "audio/wav",
+        "checksumMatch": true,
+        "fullBytes": 128044,
+        "rangeBytes": 13,
+        "headRangeBytes": 4
+      },
+      {
+        "family": "chat-media-file",
+        "mime": "image/png",
+        "checksumMatch": true,
+        "fullBytes": 70,
+        "rangeBytes": 13,
+        "headRangeBytes": 4
+      }
+    ],
+    "events": [
+      {
+        "family": "repertoire-file",
+        "change": "selection",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:01.373Z"
+      },
+      {
+        "family": "repertoire-file",
+        "change": "selection",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:01.453Z"
+      },
+      {
+        "family": "repertoire-file",
+        "change": "selection",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:01.454Z"
+      },
+      {
+        "family": "repertoire-file",
+        "change": "membership",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:01.810Z"
+      },
+      {
+        "family": "repertoire-file",
+        "change": "membership",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:01.897Z"
+      },
+      {
+        "family": "repertoire-file",
+        "change": "membership",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:01.899Z"
+      },
+      {
+        "family": "repertoire-file",
+        "change": "effective-family-authority",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:02.319Z"
+      },
+      {
+        "family": "repertoire-file",
+        "change": "effective-family-authority",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:02.395Z"
+      },
+      {
+        "family": "repertoire-file",
+        "change": "effective-family-authority",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:02.396Z"
+      },
+      {
+        "family": "repertoire-file",
+        "phase": "authorized-stream-partial-body-consumed",
+        "at": "2026-10-13T21:54:02.711Z"
+      },
+      {
+        "family": "repertoire-file",
+        "phase": "stream-revocation-committed",
+        "at": "2026-10-13T21:54:02.800Z"
+      },
+      {
+        "family": "assignment-file",
+        "change": "selection",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:04.327Z"
+      },
+      {
+        "family": "assignment-file",
+        "change": "selection",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:04.407Z"
+      },
+      {
+        "family": "assignment-file",
+        "change": "selection",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:04.408Z"
+      },
+      {
+        "family": "assignment-file",
+        "change": "membership",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:04.760Z"
+      },
+      {
+        "family": "assignment-file",
+        "change": "membership",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:04.834Z"
+      },
+      {
+        "family": "assignment-file",
+        "change": "membership",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:04.836Z"
+      },
+      {
+        "family": "assignment-file",
+        "change": "effective-family-authority",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:05.200Z"
+      },
+      {
+        "family": "assignment-file",
+        "change": "effective-family-authority",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:05.277Z"
+      },
+      {
+        "family": "assignment-file",
+        "change": "effective-family-authority",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:05.278Z"
+      },
+      {
+        "family": "assignment-file",
+        "phase": "authorized-stream-partial-body-consumed",
+        "at": "2026-10-13T21:54:05.551Z"
+      },
+      {
+        "family": "assignment-file",
+        "phase": "stream-revocation-committed",
+        "at": "2026-10-13T21:54:05.615Z"
+      },
+      {
+        "family": "assignment-review-file",
+        "change": "selection",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:07.206Z"
+      },
+      {
+        "family": "assignment-review-file",
+        "change": "selection",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:07.275Z"
+      },
+      {
+        "family": "assignment-review-file",
+        "change": "selection",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:07.276Z"
+      },
+      {
+        "family": "assignment-review-file",
+        "change": "membership",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:07.557Z"
+      },
+      {
+        "family": "assignment-review-file",
+        "change": "membership",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:07.628Z"
+      },
+      {
+        "family": "assignment-review-file",
+        "change": "membership",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:07.629Z"
+      },
+      {
+        "family": "assignment-review-file",
+        "change": "effective-family-authority",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:07.910Z"
+      },
+      {
+        "family": "assignment-review-file",
+        "change": "effective-family-authority",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:07.978Z"
+      },
+      {
+        "family": "assignment-review-file",
+        "change": "effective-family-authority",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:07.979Z"
+      },
+      {
+        "family": "assignment-review-file",
+        "phase": "authorized-stream-partial-body-consumed",
+        "at": "2026-10-13T21:54:08.218Z"
+      },
+      {
+        "family": "assignment-review-file",
+        "phase": "stream-revocation-committed",
+        "at": "2026-10-13T21:54:08.277Z"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "change": "selection",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:09.564Z"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "change": "selection",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:09.634Z"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "change": "selection",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:09.635Z"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "change": "membership",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:09.917Z"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "change": "membership",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:09.987Z"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "change": "membership",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:09.988Z"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "change": "effective-family-authority",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:10.268Z"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "change": "effective-family-authority",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:10.338Z"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "change": "effective-family-authority",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:10.339Z"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "phase": "authorized-stream-partial-body-consumed",
+        "at": "2026-10-13T21:54:10.584Z"
+      },
+      {
+        "family": "repertoire-comment-file",
+        "phase": "stream-revocation-committed",
+        "at": "2026-10-13T21:54:10.647Z"
+      },
+      {
+        "family": "chat-media-file",
+        "change": "selection",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:11.935Z"
+      },
+      {
+        "family": "chat-media-file",
+        "change": "selection",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:12.004Z"
+      },
+      {
+        "family": "chat-media-file",
+        "change": "selection",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:12.005Z"
+      },
+      {
+        "family": "chat-media-file",
+        "change": "membership",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:12.276Z"
+      },
+      {
+        "family": "chat-media-file",
+        "change": "membership",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:12.347Z"
+      },
+      {
+        "family": "chat-media-file",
+        "change": "membership",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:12.348Z"
+      },
+      {
+        "family": "chat-media-file",
+        "change": "effective-family-authority",
+        "phase": "writer-uncommitted-ready",
+        "at": "2026-10-13T21:54:12.649Z"
+      },
+      {
+        "family": "chat-media-file",
+        "change": "effective-family-authority",
+        "phase": "both-http-held-before-real-rpc",
+        "at": "2026-10-13T21:54:12.718Z"
+      },
+      {
+        "family": "chat-media-file",
+        "change": "effective-family-authority",
+        "phase": "writer-commit-ack",
+        "at": "2026-10-13T21:54:12.719Z"
+      },
+      {
+        "family": "chat-media-file",
+        "phase": "authorized-stream-partial-body-consumed",
+        "at": "2026-10-13T21:54:12.959Z"
+      },
+      {
+        "family": "chat-media-file",
+        "phase": "stream-revocation-committed",
+        "at": "2026-10-13T21:54:13.017Z"
+      }
+    ],
+    "retainedTicketLifetimeChecked": true,
+    "streamBoundary": "Authorized partial response completed after revocation; subsequent GET/HEAD refused."
+  },
+  "browser": {
+    "status": "CURRENT_CANDIDATE_REAL_BROWSER_PASS",
+    "productCommit": "9d1f1a72d2024734a9d8fac6cc540960ce9b1534",
+    "scenarios": [
+      {
+        "name": "current-genuine-browser-login-choir-catalogue",
+        "status": "PASS"
+      },
+      {
+        "name": "current-actual-PDF-audio-play-seek-range",
+        "status": "PASS",
+        "ink": {
+          "width": 1200,
+          "height": 700,
+          "ink": 55809
+        },
+        "actualRange": true
+      },
+      {
+        "name": "current-actual-authorized-offline-audio",
+        "status": "PASS"
+      },
+      {
+        "name": "current-real-expired-HMAC-401-bounded-renewal",
+        "status": "PASS",
+        "newPosts": 1,
+        "expiredTicketTransportInjection": true,
+        "authorityResponseMocked": false
+      },
+      {
+        "name": "current-retained-URL-choir-B-denied",
+        "status": "PASS",
+        "statuses": [
+          403,
+          403
+        ],
+        "providerDelta": 0
+      },
+      {
+        "name": "current-retained-URL-choir-B-denied",
+        "status": "PASS",
+        "statuses": [
+          403,
+          403
+        ],
+        "providerDelta": 0
+      },
+      {
+        "name": "current-actual-choir-B-catalogue-isolation",
+        "status": "PASS"
+      },
+      {
+        "name": "current-no-online-cross-choir-cached-PDF",
+        "status": "PASS"
+      },
+      {
+        "name": "current-retained-URL-sign-out-denied",
+        "status": "PASS",
+        "statuses": [
+          403,
+          403
+        ],
+        "providerDelta": 0
+      },
+      {
+        "name": "current-retained-URL-sign-out-denied",
+        "status": "PASS",
+        "statuses": [
+          403,
+          403
+        ],
+        "providerDelta": 0
+      },
+      {
+        "name": "current-actual-browser-sign-out",
+        "status": "PASS"
+      },
+      {
+        "name": "current-already-downloaded-bytes-boundary",
+        "status": "LIMITATION_NOT_RELEASE_WAIVER",
+        "note": "Previously downloaded/buffered bytes cannot be recalled. This fresh run establishes new GET/HEAD refusal, not old-open server-cutover cache remediation. Historical old-open client FAIL remains open."
+      },
+      {
+        "name": "independent-B-user-cannot-issue-A-file-provider-zero",
+        "status": "PASS"
+      }
+    ],
+    "errors": [],
+    "outside": [],
+    "completedAt": "2026-10-13T21:55:50.977Z",
+    "childrenExited": true
+  },
+  "transport": {
+    "auth": 92,
+    "rest": 749,
+    "provider": 101,
+    "outside": 0,
+    "closed": true,
+    "childrenExited": true
+  },
+  "build": {
+    "attempt": "20261014-fresh-recovery",
+    "productCommit": "9d1f1a72d2024734a9d8fac6cc540960ce9b1534",
+    "recordedAt": "2026-10-13T21:55:17.335Z",
+    "exitCode": 0,
+    "resourceStop": false,
+    "peakAllocatedKiB": 6137876
+  },
+  "finalInvariants": {
+    "recordedAt": "2026-10-13T21:56:28.329Z",
+    "attempt": "20261014-fresh-recovery",
+    "status": "POST_TEST_17_CATALOG_GROUPS_AND_PROTECTED_SOURCE_UNCHANGED",
+    "catalogGroups": 17,
+    "sourceCiphertextSha256": "cef68228c198acaaf47579bbc44f64804cb6261df13bf53230c80ead7e449cbf",
+    "noGrantRoleRlsTriggerSchemaRelaxation": true,
+    "dataBoundary": "Runtime includes newly generated Auth sessions/users/audit and synthetic choir/file fixtures; final whole-table row equality is NOT claimed. Whole selected 101-table equality was established before deltas and before managed startup."
+  },
+  "cleanup": {
+    "recordedAt": "2026-10-13T21:57:08.387Z",
+    "attempt": "20261014-fresh-recovery",
+    "status": "OWNED_FINAL_RUNTIME_REMOVED",
+    "encryptedBackupRetained": true,
+    "sourceLogsRetained": true,
+    "newTaskIsoCacheRetained": false,
+    "cleanupKind": "final-after-required-audit",
+    "removed": "/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-BJF2Dc/runtime-20261014-fresh-recovery.sparsebundle",
+    "noHostUserDataDeleted": true
+  },
+  "secrets": {
+    "recordedAt": "2026-10-13T21:57:09.088Z",
+    "attempt": "20261014-fresh-recovery",
+    "status": "FIVE_FAMILY_EPHEMERAL_SECRETS_REMOVED",
+    "removed": 10,
+    "listenersAbsent": true,
+    "encryptedBackupAndKeyRetained": true,
+    "privateEvidenceAndErrorsRetained": true
+  },
+  "status": "FRESH_RESTORE_SQL_FIVE_FAMILY_CURRENT_BROWSER_LOCAL_PASS",
+  "boundary": "Real local fresh logical recovery/Auth/PostgREST/RLS/current Edge/Next/browser. Signed provider bytes synthetic. Config/source archives are custody proof, not provider restore. No live mutation/push/deploy/native/store/commercial acceptance; self-review only."
+}

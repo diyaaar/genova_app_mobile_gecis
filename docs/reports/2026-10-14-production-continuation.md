@@ -71,3 +71,13 @@ Use saved ignored `.env.jev.local` (0600) if optional Jev is useful; no new key 
 Latest owner direction: finish remaining production work autonomously, now in a fresh
 chat. User updates/product copy Turkish; agent records English. Avoid repeating the
 completed baseline merely because a new chat starts.
+
+## Continuation result — 14 October
+
+Steps 1–2 completed in this new chat. See [fresh recovery/current web acceptance](2026-10-14-fresh-recovery-and-current-web.md).
+New attempt `20261014-fresh-recovery`: 17 groups/101 tables/2,884 rows match; 11 SQL,
+10 SQL controls, 219 HTTP and 12 current web browser checks pass. Runtime cleaned.
+21 Edge source/config archives and five configuration GET responses encrypted and
+roundtrip verified. Object bodies/provider secret values remain uncovered; project
+env files have no Drive/R2 credentials. Current implementation is moving to the
+remaining native/product scope. No publishing/live mutation occurred.

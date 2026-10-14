@@ -1,0 +1,702 @@
+{
+  "capturedAt": "2026-10-13T21:52:41.621Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "functions": [
+    {
+      "slug": "send-email",
+      "version": 40,
+      "verifyJwt": false,
+      "bundleSha256": "9608425b5dd88fb23d6403007dcfe6be343f9868af33d61551552db620c5529b",
+      "files": [
+        {
+          "path": "send-email/index.ts",
+          "bytes": 4742,
+          "sha256": "b521589c9743fd7f6fe754ff5327ac3fe90796c644b4a7cee988e31dd5b67799"
+        },
+        {
+          "path": "send-email/deno.json",
+          "bytes": 85,
+          "sha256": "776494746017e3d2b06d84933befb734499e53c2ef2e951566801b8cb65882ba"
+        }
+      ]
+    },
+    {
+      "slug": "send-push-notification",
+      "version": 15,
+      "verifyJwt": true,
+      "bundleSha256": "7266a8aa4a310e881caff403e305f36d33a306ee0c98e1c00756bcdf142df23a",
+      "files": [
+        {
+          "path": "index.ts",
+          "bytes": 5587,
+          "sha256": "1f8d3fe5bd16bf94eeb9299576e0b9e00aee3db3ba3b8fc67f076860381efba1"
+        },
+        {
+          "path": "deno.json",
+          "bytes": 85,
+          "sha256": "776494746017e3d2b06d84933befb734499e53c2ef2e951566801b8cb65882ba"
+        }
+      ]
+    },
+    {
+      "slug": "drive-manager",
+      "version": 15,
+      "verifyJwt": true,
+      "bundleSha256": "bb3ba997febd9995466cb093c0feba52ca3ffd5354042826746508a10ecc19ce",
+      "files": [
+        {
+          "path": "index.ts",
+          "bytes": 18851,
+          "sha256": "48fe82166cf5c41c29d98e286b3ed09ac2114d046ffae30fe9ab177f0486ce7f"
+        },
+        {
+          "path": "deno.json",
+          "bytes": 199,
+          "sha256": "c6e06cb208d70d04ce69c997180cca3a09c50ed6a3c2f041cdd33f2bf2e19ce3"
+        }
+      ]
+    },
+    {
+      "slug": "drive-manager-test",
+      "version": 12,
+      "verifyJwt": false,
+      "bundleSha256": "e8308138ef8177754cc490f3e5f501e3fba537b7f8575c7aad22c1946de8c67f",
+      "files": [
+        {
+          "path": "index.ts",
+          "bytes": 44,
+          "sha256": "2f3bf58122b6914a4fc5f529fe9a5f469b6b2f138f0df81ed3f348854a18792e"
+        }
+      ]
+    },
+    {
+      "slug": "drive-manager-v2",
+      "version": 22,
+      "verifyJwt": true,
+      "bundleSha256": "d362b9ea0634e1a6363b0847e9c5e6075d439c123d69df300b54e55654eafef1",
+      "files": [
+        {
+          "path": "functions/drive-manager-v2/index.ts",
+          "bytes": 43142,
+          "sha256": "b09cbd68dd17823546b7031818d932f1216544e98c8cfb5e8258cfb73ffba4b2"
+        },
+        {
+          "path": "functions/_shared/tenant-fetch.ts",
+          "bytes": 3581,
+          "sha256": "3b2fe56693ae8d9c25fcfa6dba5028f5cf2d1ef2c5734378d5b16d8bedc02bb5"
+        }
+      ]
+    },
+    {
+      "slug": "create-choir",
+      "version": 5,
+      "verifyJwt": true,
+      "bundleSha256": "2e05c26d52ba6d660e50d9aa3cdf91825a10241fab8f00352b152820ad8e3561",
+      "files": [
+        {
+          "path": "create-choir/index.ts",
+          "bytes": 2656,
+          "sha256": "f85e42acbcbcc9eaa63e5daeaf8dae38d01d7bb3453ac8b768fd16faf050d7e5"
+        },
+        {
+          "path": "create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        }
+      ]
+    },
+    {
+      "slug": "resend-inbound",
+      "version": 6,
+      "verifyJwt": false,
+      "bundleSha256": "92c46af2f23226d8e3212b1d8abb5d3e5e07f1881e20882b3fc467b6c79a69d9",
+      "files": [
+        {
+          "path": "resend-inbound/index.ts",
+          "bytes": 249,
+          "sha256": "0c11c99bdecc86dd004f85ed1c5122add8c2b276f029e3f48d79c761c3a32996"
+        },
+        {
+          "path": "resend-inbound/handler.ts",
+          "bytes": 2161,
+          "sha256": "7a413b98d70469223c7ca2cf8f5bdf220f9d1db9a151df528bc813548d7a039e"
+        },
+        {
+          "path": "resend-inbound/provider.ts",
+          "bytes": 5124,
+          "sha256": "8016299504e3708101bca51bdfb94e42b9adb78518776e722adb25674c351505"
+        },
+        {
+          "path": "resend-inbound/security.ts",
+          "bytes": 2639,
+          "sha256": "2e1820716cbf76724e8211b7913fc0af84613b663726bfa7b1ca876536c2b556"
+        }
+      ]
+    },
+    {
+      "slug": "choir-invitations",
+      "version": 3,
+      "verifyJwt": true,
+      "bundleSha256": "68bcd61eea4d87a82b77d5971a409769aff60779027d6e2aa8bedd0e6d1ae360",
+      "files": [
+        {
+          "path": "functions/choir-invitations/index.ts",
+          "bytes": 744,
+          "sha256": "614cea388e0192828d2a45573217cf92d7074b686385f9aef126fb61d6681ea1"
+        },
+        {
+          "path": "functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "functions/choir-invitations/handler.ts",
+          "bytes": 5071,
+          "sha256": "58d81b30fd210937cd31848ce239bf5386f62349e4e203bc107f7d959146b3a5"
+        }
+      ]
+    },
+    {
+      "slug": "repertoire-file",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "b54cc7c698ce9263c11256314c048b8822cf2c6d8f8f5d6e4e916880a9d71d93",
+      "files": [
+        {
+          "path": "supabase/functions/repertoire-file/index.ts",
+          "bytes": 5476,
+          "sha256": "dc825ec7fa183f0ab5061f54d8f0949847f374c25c1a0dc9777d51713f1ad5ca"
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/handler.ts",
+          "bytes": 15567,
+          "sha256": "12c60437d5389f32c4e2c6b1c6ae6c56f92b3a520e8c818e02374e7d207a9e38"
+        },
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "bytes": 1565,
+          "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/storage.ts",
+          "bytes": 2951,
+          "sha256": "3dbffa6503c9c009d5112ed2eb6d25f1f5b0b206544f82c09224dc989633eae8"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/ticket.ts",
+          "bytes": 3307,
+          "sha256": "bd21319a1f027cf338f83d2832d7ecc1d2553667ee2bfb8b1a56ed8bdbe180bd"
+        }
+      ]
+    },
+    {
+      "slug": "repertoire-upload",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "e2a68f9777fbe2afadc4e9e3e280495b9d757878681f06872fef1bd0215b9109",
+      "files": [
+        {
+          "path": "supabase/functions/repertoire-upload/index.ts",
+          "bytes": 3136,
+          "sha256": "0ccf64d36fc0ab220655cb6d0f67eebdf982d66df196d718b1f44e4a7863978f"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "supabase/functions/repertoire-upload/handler.ts",
+          "bytes": 8996,
+          "sha256": "237cb15bde01256bf3c33e7a28a55f86ef6c079f1416ece8d15f781a2e6720d7"
+        },
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "bytes": 1565,
+          "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        },
+        {
+          "path": "supabase/functions/repertoire-upload/stream.ts",
+          "bytes": 3574,
+          "sha256": "1118c3d88b25b7d46fdcc0433dda071d247a41ee3270c47187363af3e6586147"
+        },
+        {
+          "path": "supabase/functions/repertoire-upload/transport.ts",
+          "bytes": 2072,
+          "sha256": "527736f48d20c2330d3ab0a0c8a53d71b924b70dbb9afe80a007b0afadbdd05c"
+        },
+        {
+          "path": "supabase/functions/repertoire-upload/auth.ts",
+          "bytes": 1581,
+          "sha256": "b58c5a22235db46a5dbbebe06f7dec7e10bc45f1662e32420dc0af6ea744715f"
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        }
+      ]
+    },
+    {
+      "slug": "repertoire-file-lifecycle",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "63d200e43545fa06d0ba40e25145ffc6919a94ec7295e88fbdea0b719335a910",
+      "files": [
+        {
+          "path": "functions/repertoire-file-lifecycle/index.ts",
+          "bytes": 2869,
+          "sha256": "43f77eaf0af5d9475a3aa62448434c23e019dbc4b402ac5e052f398cf08e0c83"
+        },
+        {
+          "path": "functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "functions/repertoire-upload/auth.ts",
+          "bytes": 1581,
+          "sha256": "b58c5a22235db46a5dbbebe06f7dec7e10bc45f1662e32420dc0af6ea744715f"
+        },
+        {
+          "path": "functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "functions/repertoire-upload/stream.ts",
+          "bytes": 3574,
+          "sha256": "1118c3d88b25b7d46fdcc0433dda071d247a41ee3270c47187363af3e6586147"
+        },
+        {
+          "path": "functions/repertoire-file-lifecycle/handler.ts",
+          "bytes": 5622,
+          "sha256": "dff8266f4fc99e9e9ca07a543947ebbcce9f0fd2a8b7b430d996a926fcefc5ea"
+        }
+      ]
+    },
+    {
+      "slug": "assignment-file",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "9f725c61d6c5c8125719a20ae10e1eaa018a79cb7e6902aeb08ab0dcc512b476",
+      "files": [
+        {
+          "path": "supabase/functions/assignment-file/index.ts",
+          "bytes": 5590,
+          "sha256": "34895ac152de6e954353108a8f8b452b3039bbcf98e8e3cd24a219f527e38b39"
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/handler.ts",
+          "bytes": 15567,
+          "sha256": "12c60437d5389f32c4e2c6b1c6ae6c56f92b3a520e8c818e02374e7d207a9e38"
+        },
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "bytes": 1565,
+          "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "supabase/functions/assignment-file/ticket.ts",
+          "bytes": 2549,
+          "sha256": "36d02c5d5dba69fb07bb01ecdb81bc444f09f4b3c8c96a6ade21e7cb6f158c29"
+        }
+      ]
+    },
+    {
+      "slug": "assignment-upload",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "1778fce2806b27b00f251ab13f6db410f191866b1ceb71a03d6dcb59c8bf46c6",
+      "files": [
+        {
+          "path": "supabase/functions/assignment-upload/index.ts",
+          "bytes": 3015,
+          "sha256": "b64c761c767d30b8de35d0d70535be14b77b73a5bd49076748d372e775cc05c7"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "supabase/functions/repertoire-upload/stream.ts",
+          "bytes": 3574,
+          "sha256": "1118c3d88b25b7d46fdcc0433dda071d247a41ee3270c47187363af3e6586147"
+        },
+        {
+          "path": "supabase/functions/repertoire-upload/transport.ts",
+          "bytes": 2072,
+          "sha256": "527736f48d20c2330d3ab0a0c8a53d71b924b70dbb9afe80a007b0afadbdd05c"
+        },
+        {
+          "path": "supabase/functions/assignment-upload/auth.ts",
+          "bytes": 1729,
+          "sha256": "3a1fc5a89ef405fea234166bf8dfe294f6c0a650ebbef8efd2184a5e8810cfbe"
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "supabase/functions/assignment-upload/handler.ts",
+          "bytes": 8916,
+          "sha256": "025047010cbf9dc37fe5ffc1747222c1c28bb0e7d407054b166757d824116d8a"
+        },
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "bytes": 1565,
+          "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        }
+      ]
+    },
+    {
+      "slug": "assignment-review-file",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "e83d19c088a1f1c34fc3507e3235c890d39c9fcf7497e90f1efe7450518ba70d",
+      "files": [
+        {
+          "path": "supabase/functions/assignment-review-file/index.ts",
+          "bytes": 5365,
+          "sha256": "bfda57838e386d66a6a65593323bbad21a7472ff994f242ad33fc78fc244a676"
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/handler.ts",
+          "bytes": 15567,
+          "sha256": "12c60437d5389f32c4e2c6b1c6ae6c56f92b3a520e8c818e02374e7d207a9e38"
+        },
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "bytes": 1565,
+          "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "supabase/functions/assignment-review-file/ticket.ts",
+          "bytes": 2423,
+          "sha256": "70b25bd66463f0f6e29cc5379dcd11a511721e2ad16acc63be527c75bf347ea1"
+        }
+      ]
+    },
+    {
+      "slug": "assignment-review-upload",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "524515b9bde3ce9076e1e4ca6df421c081e3b3f9d9686ce0a36703df6306e67e",
+      "files": [
+        {
+          "path": "functions/assignment-review-upload/index.ts",
+          "bytes": 2780,
+          "sha256": "c938605d1f4947298eebf85f1acd784ce1c6c74448b4ee5fd863cc0a58019e65"
+        },
+        {
+          "path": "functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "functions/assignment-upload/auth.ts",
+          "bytes": 1729,
+          "sha256": "3a1fc5a89ef405fea234166bf8dfe294f6c0a650ebbef8efd2184a5e8810cfbe"
+        },
+        {
+          "path": "functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "functions/repertoire-upload/stream.ts",
+          "bytes": 3574,
+          "sha256": "1118c3d88b25b7d46fdcc0433dda071d247a41ee3270c47187363af3e6586147"
+        },
+        {
+          "path": "functions/repertoire-upload/transport.ts",
+          "bytes": 2072,
+          "sha256": "527736f48d20c2330d3ab0a0c8a53d71b924b70dbb9afe80a007b0afadbdd05c"
+        },
+        {
+          "path": "functions/assignment-review-upload/handler.ts",
+          "bytes": 8061,
+          "sha256": "0f34df21687d10bcc678a780f9d3cbda7334396924e63f45a58ba04e2d682031"
+        }
+      ]
+    },
+    {
+      "slug": "repertoire-comment-file",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "bbff71b4a805c4a4f88226bdf385c3c93ab5f72cd29199e4d1610abec5a7cbf9",
+      "files": [
+        {
+          "path": "supabase/functions/repertoire-comment-file/index.ts",
+          "bytes": 5265,
+          "sha256": "fbaebe7b8b406e8c20ae892c96e8eff56b1df1fd8b45424f5b59f2eee89a4ee3"
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/handler.ts",
+          "bytes": 15567,
+          "sha256": "12c60437d5389f32c4e2c6b1c6ae6c56f92b3a520e8c818e02374e7d207a9e38"
+        },
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "bytes": 1565,
+          "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "supabase/functions/repertoire-comment-file/ticket.ts",
+          "bytes": 2319,
+          "sha256": "07cc99722327241727e626510798aa462338bea727bdb728acd04c040eda32f4"
+        }
+      ]
+    },
+    {
+      "slug": "repertoire-comment-upload",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "af781af1ea303e2bfd3650cdb3c623e38434e250dbc478f3dfdd751f95e6e04f",
+      "files": [
+        {
+          "path": "functions/repertoire-comment-upload/index.ts",
+          "bytes": 2618,
+          "sha256": "e767d8e17645851df8b8dda505d6057bff1eefe29df135e604524c84fcc1c677"
+        },
+        {
+          "path": "functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "functions/assignment-upload/auth.ts",
+          "bytes": 1729,
+          "sha256": "3a1fc5a89ef405fea234166bf8dfe294f6c0a650ebbef8efd2184a5e8810cfbe"
+        },
+        {
+          "path": "functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "functions/repertoire-upload/stream.ts",
+          "bytes": 3574,
+          "sha256": "1118c3d88b25b7d46fdcc0433dda071d247a41ee3270c47187363af3e6586147"
+        },
+        {
+          "path": "functions/repertoire-upload/transport.ts",
+          "bytes": 2072,
+          "sha256": "527736f48d20c2330d3ab0a0c8a53d71b924b70dbb9afe80a007b0afadbdd05c"
+        },
+        {
+          "path": "functions/repertoire-comment-upload/handler.ts",
+          "bytes": 7617,
+          "sha256": "8a4e4e535dc6cc38b1f7a96c0d07e4660d806d2cc902e6000281483a56bdf0ca"
+        }
+      ]
+    },
+    {
+      "slug": "repertoire-comment-lifecycle",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "f7cf5637bfa0f22cd371e122e51cd04417b1b6b8e3b6d9446119e2dcd606c4b9",
+      "files": [
+        {
+          "path": "functions/repertoire-comment-lifecycle/index.ts",
+          "bytes": 2925,
+          "sha256": "44b8bfe6a19342dc3f533ff5983e47fcca6193694aa170fd5dc2a6f34f27ee19"
+        },
+        {
+          "path": "functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "functions/assignment-upload/auth.ts",
+          "bytes": 1729,
+          "sha256": "3a1fc5a89ef405fea234166bf8dfe294f6c0a650ebbef8efd2184a5e8810cfbe"
+        },
+        {
+          "path": "functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "functions/repertoire-upload/stream.ts",
+          "bytes": 3574,
+          "sha256": "1118c3d88b25b7d46fdcc0433dda071d247a41ee3270c47187363af3e6586147"
+        },
+        {
+          "path": "functions/repertoire-comment-lifecycle/handler.ts",
+          "bytes": 4903,
+          "sha256": "fb8f2e228a3aa3104deac8ec9935a721b8515d61ed511d1738f79ee1977778b9"
+        }
+      ]
+    },
+    {
+      "slug": "chat-media-file",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "45a3449a40e15ba523707fe1eed1e01bbaeb69263c60f6a53c52cb0c8ac029d9",
+      "files": [
+        {
+          "path": "supabase/functions/chat-media-file/index.ts",
+          "bytes": 5291,
+          "sha256": "d3f23128cb01d1dda9d6bbcb23ed0140d79c753f47096fe571b4179aa9ab3835"
+        },
+        {
+          "path": "supabase/functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/handler.ts",
+          "bytes": 15567,
+          "sha256": "12c60437d5389f32c4e2c6b1c6ae6c56f92b3a520e8c818e02374e7d207a9e38"
+        },
+        {
+          "path": "lib/server/drive-file-content.ts",
+          "bytes": 1565,
+          "sha256": "bb5d99e8243692fd730250d677564136cd6c8a38f8f13fde6cf073cc7ca52c1c"
+        },
+        {
+          "path": "supabase/functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "supabase/functions/chat-media-file/ticket.ts",
+          "bytes": 2440,
+          "sha256": "c58afb57bd699f4375a6e1a486324b46c8f152cc1732d19b6f1f2c4fe0c5ab49"
+        }
+      ]
+    },
+    {
+      "slug": "chat-media-upload",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "0f83b590a38fbb4a961beec7d36275b5fa15be36340cb33bd89dd5ed131ae13d",
+      "files": [
+        {
+          "path": "functions/chat-media-upload/index.ts",
+          "bytes": 2601,
+          "sha256": "9929132305390ffea7afe964378709896099a4899f9528b0291b06a211bbdaa5"
+        },
+        {
+          "path": "functions/assignment-upload/auth.ts",
+          "bytes": 1729,
+          "sha256": "3a1fc5a89ef405fea234166bf8dfe294f6c0a650ebbef8efd2184a5e8810cfbe"
+        },
+        {
+          "path": "functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "functions/repertoire-upload/stream.ts",
+          "bytes": 3574,
+          "sha256": "1118c3d88b25b7d46fdcc0433dda071d247a41ee3270c47187363af3e6586147"
+        },
+        {
+          "path": "functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "functions/repertoire-upload/transport.ts",
+          "bytes": 2072,
+          "sha256": "527736f48d20c2330d3ab0a0c8a53d71b924b70dbb9afe80a007b0afadbdd05c"
+        },
+        {
+          "path": "functions/chat-media-upload/handler.ts",
+          "bytes": 9079,
+          "sha256": "f1a60c64509c31353ebfc85dfb55d0b6a3c14338d990cb5c624ca566a6b112aa"
+        }
+      ]
+    },
+    {
+      "slug": "chat-media-lifecycle",
+      "version": 1,
+      "verifyJwt": false,
+      "bundleSha256": "d313e3dd74999c5ee6e230fce427c456a402661eb56fea49c2ef889a3ebe01ae",
+      "files": [
+        {
+          "path": "functions/chat-media-lifecycle/index.ts",
+          "bytes": 2494,
+          "sha256": "60a2bf990093963b00846e238ca6bfa33f0fa54026bc8083bb4d9ae5c0a6460b"
+        },
+        {
+          "path": "functions/assignment-upload/auth.ts",
+          "bytes": 1729,
+          "sha256": "3a1fc5a89ef405fea234166bf8dfe294f6c0a650ebbef8efd2184a5e8810cfbe"
+        },
+        {
+          "path": "functions/create-choir/create-choir-core.ts",
+          "bytes": 3964,
+          "sha256": "000f2fd0cd93a9ea98947e6c64ae0e7ffdcd12fba15101b5a9205e9ad388c69d"
+        },
+        {
+          "path": "functions/repertoire-upload/stream.ts",
+          "bytes": 3574,
+          "sha256": "1118c3d88b25b7d46fdcc0433dda071d247a41ee3270c47187363af3e6586147"
+        },
+        {
+          "path": "functions/repertoire-file/r2.ts",
+          "bytes": 2603,
+          "sha256": "85329f43a3bce0a9f95146a4a275c194c8535721f92d23a6a006743f77774fa4"
+        },
+        {
+          "path": "functions/chat-media-lifecycle/handler.ts",
+          "bytes": 4436,
+          "sha256": "6904c9d8c67c40aa777440ef5d3a1f86fe7cd68f66e9e85f306141da94f807e0"
+        }
+      ]
+    }
+  ],
+  "encryptedBytes": 490680,
+  "encryptedSha256": "a0acea44cdfba8cf235f3afc5cf4c87a0e82bd0f8d02fc9e515448d9f1dad5f1",
+  "roundtripVerified": true,
+  "allFileHashesVerified": true,
+  "stableAcrossCapture": true,
+  "privateMode": "0600",
+  "status": "DEPLOYED_EDGE_SOURCE_CONFIG_RECOVERY_ARCHIVED_NOT_REDEPLOYED",
+  "boundary": "Encrypted deployed source/config archive verified locally. No redeployment, provider secrets, Auth/mail settings, Storage/R2/Drive objects, hosting environment or offsite custody. Prior insecure readers are archival evidence, not an approved security rollback."
+}

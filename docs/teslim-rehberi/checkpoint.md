@@ -1,6 +1,6 @@
 # Current checkpoint
 
-Updated 13 October 2026. [Roadmap](../production-roadmap.md) ·
+Updated 14 October 2026. [Roadmap](../production-roadmap.md) ·
 [Evidence](../reports/2026-10-13-production-baseline.md) · [AGENTS](../../AGENTS.md).
 
 ## Completed locally
@@ -29,6 +29,16 @@ stream boundary accepted. Final audit completed before cleanup; VM and ten ephem
 secret files removed, protected source retained. Thirty-one focused helper tests PASS.
 The old download-capacity blocker and unexecuted harness gaps are closed for this attempt.
 
+## Fresh recovery and current candidate — 14 October
+
+[Result](../reports/2026-10-14-fresh-recovery-and-current-web.md): new 13 October cutoff
+actually restored, 17 catalogs / 101 tables / 2,884 rows identical. Eleven SQL deltas,
+ten rollback-preserving SQL controls, 219 HTTP observations, production web build and
+12 real current-browser checks PASS. Final audit and owned-runtime/ten-secret cleanup
+complete. 21 deployed Edge sources and five configuration responses archived encrypted
+and roundtrip verified. 35 focused helper tests PASS. Source and dated earlier receipts
+remain intact; all these are local/custody evidence, not hosted acceptance.
+
 ## Next release boundary
 
 [Concrete package](../production-release-package.md) pins product `9d1f1a7`, 363 product
@@ -37,8 +47,8 @@ files, eleven SQL deltas and nine Edge closures. Fresh source-based RPC inventor
 changes and three absent functions. Preserve explicit gateway settings and the default
 true for drive-manager-v2/link-preview; no blind no-verify-JWT flag.
 
-Next: fresh protected target cutoff/recovery comparison, complete package integration/
-review, then the exact authorized DB → Edge → current web transition. No bulk migration
+Next: actual object/provider-secret recovery and remaining native/product integration,
+release review, then the exact authorized DB → Edge → current web transition. No bulk migration
 push, source-history rewrite, repeated old runtime attempt or another roadmap. Hosted
 writes/publishing retain applicable authorization; local implementation remains authorized.
 

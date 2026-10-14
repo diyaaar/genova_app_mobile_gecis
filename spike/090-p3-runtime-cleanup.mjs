@@ -3,9 +3,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { ATTEMPT } from './090-p3-resource-policy.mjs';
+import {RUNTIME_DIR} from './090-p3-resource-policy.mjs';
 import {requireManagedCleanupOrder} from './090-managed-cleanup-order.mjs';
 import {requireFamilyCleanupOrder, requireFailedFamilyCleanup} from './090-five-family-contract.mjs';
-const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m';
+const DIR=RUNTIME_DIR;
 const owner=JSON.parse(fs.readFileSync(path.join(DIR,'runtime-ownership.json')));
 const final=process.argv[2]==='--cleanup-approved-current';
 const failed=process.argv[2]==='--cleanup-failed-before-restore';
@@ -25,12 +26,16 @@ if(failed){
   const vms=execFileSync('/opt/homebrew/bin/limactl',['list','--json'],{env,encoding:'utf8',stdio:'pipe',timeout:10000}).trim().split('\n').filter(Boolean).map(line=>JSON.parse(line));
   requireFailedFamilyCleanup({attempt:ATTEMPT,pull:JSON.parse(fs.readFileSync(file)),names,vmStatus:vms.find(vm=>vm.name==='g090p3')?.status});
 }
-if(final&&['20261010-managed-families','20261013-managed-families'].includes(ATTEMPT)){
+if(final&&['20261010-managed-families','20261013-managed-families','20261014-fresh-recovery'].includes(ATTEMPT)){
   const artifact=name=>{const file=path.join(DIR,`managed-${ATTEMPT}-${name}.json`),stat=fs.lstatSync(file);
     if(!stat.isFile()||stat.isSymbolicLink()||(stat.mode&511)!==384)throw Error('Private family cleanup prerequisite refused');
     return {body:JSON.parse(fs.readFileSync(file)),mtime:stat.mtimeMs};};
   const matrix=artifact('matrix-v1'),invariants=artifact('final-invariants-v2'),transport=artifact('transport-result-matrix');
   requireFamilyCleanupOrder({matrix:matrix.body,invariants:invariants.body,matrixMtime:matrix.mtime,transport:transport.body});
+  if(ATTEMPT==='20261014-fresh-recovery'){
+    const browser=artifact('browser-current');
+    if(browser.body.status!=='CURRENT_CANDIDATE_REAL_BROWSER_PASS'||browser.body.childrenExited!==true||Date.parse(invariants.body.recordedAt)<=browser.mtime)throw Error('Current browser/final audit required');
+  }
 }
 if(['20261010-managed-web','20261010-managed-final'].includes(ATTEMPT)){
   const artifact=name=>{const file=path.join(DIR,'managed-'+ATTEMPT+'-'+name+'.json'),s=fs.lstatSync(file);

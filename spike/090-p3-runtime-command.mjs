@@ -4,16 +4,17 @@ import path from 'node:path';
 import { spawn, execFileSync } from 'node:child_process';
 import { freeKiB } from './090-p3-consistent-backup.mjs';
 import { ATTEMPT, LIVE_STOP_KIB } from './090-p3-resource-policy.mjs';
+import {RUNTIME_DIR} from './090-p3-resource-policy.mjs';
 import {measureRuntime} from './090-p3-runtime-resources.mjs';
-const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m';
+const DIR=RUNTIME_DIR;
 const VM='g090p3',LIMA='/opt/homebrew/bin/limactl';
 const IMAGE='supabase/postgres@sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00';
 const action=process.argv[2];
-if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv.length!==3||!['start','start-classic','provision-repair','provision-resume','provision-clean','pull','pull-classic','create-container'].includes(action))throw Error('Bounded runtime action refused');
+if(process.cwd()!=='/Users/alidiyarduran/Antigravity/genovakorist'||process.argv.length!==3||!['start','start-classic','provision-repair','provision-resume','provision-clean','pull','pull-classic','create-container','create-after-pull'].includes(action))throw Error('Bounded runtime action refused');
 const owner=JSON.parse(fs.readFileSync(path.join(DIR,'runtime-ownership.json')));
 if(owner.attempt!==ATTEMPT||owner.mount!=='/Volumes/g090p3'||owner.limaHome!=='/Volumes/g090p3/lima'||owner.owner!=='090-P3-only'||!fs.existsSync(owner.limaHome))throw Error('Runtime ownership refused');
 const env={...process.env,LIMA_HOME:owner.limaHome,LIMA_SHELLENV_BLOCK:'*'};
-const vmConfig=['20261010-managed-web','20261010-managed-final','20261010-managed-families','20261013-managed-families'].includes(ATTEMPT)?'spike/090-p3-managed-web-lima.yaml':'spike/090-p3-offline-lima.yaml';
+const vmConfig=['20261010-managed-web','20261010-managed-final','20261010-managed-families','20261013-managed-families','20261014-fresh-recovery'].includes(ATTEMPT)?'spike/090-p3-managed-web-lima.yaml':'spike/090-p3-offline-lima.yaml';
 const commands={start:['--tty=false','start','--name='+VM,vmConfig,'--timeout=4m'],
   'start-classic':['--tty=false','start','--name='+VM,vmConfig,'--timeout=4m'],
   'provision-repair':['shell',VM,'sudo','sh','-s'],
@@ -23,6 +24,11 @@ const commands={start:['--tty=false','start','--name='+VM,vmConfig,'--timeout=4m
   'pull-classic':['shell',VM,'sudo','docker','pull',IMAGE],
   'create-container':['shell',VM,'sudo','docker','run','-d','--name','genova090p3-db','--network=none','--memory=384m','--memory-swap=384m',
     '--pids-limit=128','--shm-size=64m','-e','POSTGRES_USER=supabase_admin','-e','POSTGRES_PASSWORD=090-synthetic-local-only',IMAGE]};
+commands['create-after-pull']=commands['create-container'];
+if(action==='create-after-pull'){
+  const pull=JSON.parse(fs.readFileSync(path.join(DIR,'runtime-'+ATTEMPT+'-pull-classic-result.json')));
+  if(pull.exitCode!==0||pull.resourceStop)throw Error('Completed image pull required');
+}
 if(freeKiB()<LIVE_STOP_KIB)throw Error('Runtime live floor refused');
 let peak=measureRuntime(owner).allocatedKiB;
 const logPath=path.join(DIR,'runtime-'+ATTEMPT+'-'+action+'.log');
@@ -34,11 +40,11 @@ if(provisioning)child.stdin.end(fs.readFileSync('spike/090-p3-guest-provision.sh
 let stopped=false;
 function stop(){if(stopped)return;stopped=true;child.kill('SIGTERM');spawn(LIMA,['stop','--force',VM],{env,stdio:'ignore'});}
 const interval=setInterval(()=>{try{peak=Math.max(peak,measureRuntime(owner).allocatedKiB);}catch{stop();}},2000);
-const timer=setTimeout(stop,action==='create-container'?60000:300000);
+const timer=setTimeout(stop,action.startsWith('create-')?60000:300000);
 child.on('error',()=>{stop();});
 child.on('exit',async code=>{
   clearInterval(interval);clearTimeout(timer);fs.closeSync(log);
-  if(action==='create-container'&&code===0&&!stopped){
+  if(action.startsWith('create-')&&code===0&&!stopped){
     let ready=false;
     for(let i=0;i<60&&!ready;i++){
       try{peak=Math.max(peak,measureRuntime(owner).allocatedKiB);

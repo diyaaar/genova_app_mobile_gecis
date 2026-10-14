@@ -7,11 +7,12 @@ import crypto from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {ATTEMPT,restoreReceiptNames} from './090-p3-resource-policy.mjs';
+import {RUNTIME_DIR} from './090-p3-resource-policy.mjs';
 import {measureRuntime} from './090-p3-runtime-resources.mjs';
 import {dataDigestQuery,canonicalSettings,dataPredicate} from './090-p3-recovery-queries.mjs';
 import {buildRealtimeCloneTest,captureBefore046Sql,bindRealtimeFixtureDate} from './090-realtime-clone-test.mjs';
 import {requireNetworkNone} from './090-managed-isolation.mjs';
-export const DIR='/Users/alidiyarduran/Documents/Codex/2026-10-07/genova-090-p3-5OnU1m';
+export const DIR=RUNTIME_DIR;
 export const DB='genova_090_p3_restore',CONTAINER='genova090p3-db',LIMA='/opt/homebrew/bin/limactl';
 export const IMAGE='supabase/postgres@sha256:c54d587019323cb7a4264dca3148888fb8697c6b950d82638f64bb952fac8b00';
 const packetPath='docs/reports/090/2026-10-09-p3-compatibility-packet.json';
@@ -23,7 +24,7 @@ export function readPrivate(name){const file=path.join(DIR,name),s=fs.lstatSync(
   assert(s.isFile()&&!s.isSymbolicLink()&&(s.mode&511)===384,'Private artifact scope');return fs.readFileSync(file);}
 function writePrivate(name,body){fs.writeFileSync(path.join(DIR,name),body,{flag:'wx',mode:0o600});}
 export function runtimeGuard(){
-  assert(['20261009-compatibility','20261010-managed-web','20261010-managed-final','20261010-managed-families','20261013-managed-families'].includes(ATTEMPT),'Approved compatibility attempt only');assert.equal(process.cwd(),'/Users/alidiyarduran/Antigravity/genovakorist');
+  assert(['20261009-compatibility','20261010-managed-web','20261010-managed-final','20261010-managed-families','20261013-managed-families','20261014-fresh-recovery'].includes(ATTEMPT),'Approved compatibility attempt only');assert.equal(process.cwd(),'/Users/alidiyarduran/Antigravity/genovakorist');
   owner=JSON.parse(readPrivate('runtime-ownership.json'));assert.equal(owner.attempt,ATTEMPT);assert.equal(owner.limaHome,runtimeEnv.LIMA_HOME);
   peak=Math.max(peak,measureRuntime(owner).allocatedKiB);
 }
@@ -43,9 +44,10 @@ export function verifyClone(){runtimeGuard();
   const proof=JSON.parse(readPrivate(restoreReceiptNames().summary));
   assert.equal(proof.attempt,ATTEMPT);assert.equal(proof.status,'CURRENT_STATE_SELECTED_FIDELITY_PASS');
   assert.equal(proof.project,'hievmwwctjjlhmssoxsu');assert.equal(proof.database,DB);
-  assert.equal(proof.backupSha256,'422ccf87eb8977c4cff1529c57878bee779c955f10a438f3543361b80a7c58d6');
+  const fresh=ATTEMPT==='20261014-fresh-recovery'?JSON.parse(fs.readFileSync('docs/reports/production-2026-10-13/recovery-comparison.json')):null;
+  assert.equal(proof.backupSha256,fresh?fresh.backup.plaintextSha256:'422ccf87eb8977c4cff1529c57878bee779c955f10a438f3543361b80a7c58d6');
   assert.deepEqual(proof.differences,{});assert.equal(Object.keys(proof.catalogCounts).length,17);
-  assert(Object.values(proof.catalogCounts).every(g=>g.source===g.restored));assert.equal(proof.dataTables,101);assert.equal(proof.restoredRows,2880);
+  assert(Object.values(proof.catalogCounts).every(g=>g.source===g.restored));assert.equal(proof.dataTables,101);assert.equal(proof.restoredRows,fresh?fresh.data.reduce((n,t)=>n+t.afterRows,0):2880);
   assert(proof.originalBackupUnmodified&&proof.exactComparatorUnchanged);
   return proof;
 }

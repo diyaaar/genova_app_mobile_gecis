@@ -1,0 +1,84 @@
+{
+  "recordedAt": "2026-10-13T21:56:31.988Z",
+  "project": "hievmwwctjjlhmssoxsu",
+  "captures": [
+    {
+      "route": "config/auth",
+      "httpStatus": 200,
+      "status": "ENCRYPTED_CAPTURE_ROUNDTRIP_PASS",
+      "encryptedSha256": "d13f1277e539e3d7d09520aba6c312b20f376af72ad78b89932eb8d714ed7e90",
+      "encryptedBytes": 12783,
+      "fieldCount": 243
+    },
+    {
+      "route": "postgrest",
+      "httpStatus": 200,
+      "status": "ENCRYPTED_CAPTURE_ROUNDTRIP_PASS",
+      "encryptedSha256": "80458903959c29b992b60670c8f70b2538610d00b1a13f63864e81a897b952cd",
+      "encryptedBytes": 285,
+      "fieldCount": 6
+    },
+    {
+      "route": "config/realtime",
+      "httpStatus": 200,
+      "status": "ENCRYPTED_CAPTURE_ROUNDTRIP_PASS",
+      "encryptedSha256": "463c0a6335ff927fdfc6e9d8acbc3e64d5ca85fd3c4548b51aa6023b89559700",
+      "encryptedBytes": 383,
+      "fieldCount": 13
+    },
+    {
+      "route": "config/storage",
+      "httpStatus": 200,
+      "status": "ENCRYPTED_CAPTURE_ROUNDTRIP_PASS",
+      "encryptedSha256": "36195af7aec33d64c43dd475b62274e0df3f898cd5d4d0766195361c3e8db49e",
+      "encryptedBytes": 495,
+      "fieldCount": 5
+    },
+    {
+      "route": "secrets",
+      "httpStatus": 200,
+      "status": "ENCRYPTED_CAPTURE_ROUNDTRIP_PASS",
+      "encryptedSha256": "b1fe1e3449c100d28517eaa0b951a7998e65216dc2ac9d365da4cc100e8c7c8f",
+      "encryptedBytes": 4833,
+      "secretCount": 33,
+      "secretNames": [
+        "ASSIGNMENT_R2_UPLOAD_ENABLED",
+        "ASSIGNMENT_REVIEW_R2_ENABLED",
+        "ASSIGNMENT_STORAGE_MODE",
+        "CHAT_R2_MEDIA_ENABLED",
+        "CHAT_STORAGE_MODE",
+        "DRIVE_CLIENT_ID",
+        "DRIVE_CLIENT_SECRET",
+        "DRIVE_REFRESH_TOKEN",
+        "GENOVA_REPLY_FORWARD_TO",
+        "GENOVA_RESEND_INBOUND_KEY",
+        "GENOVA_RESEND_WEBHOOK_SECRET",
+        "GOOGLE_DRIVE_ROOT_FOLDER_ID",
+        "R2_ACCESS_KEY_ID",
+        "R2_ACCOUNT_ID",
+        "R2_BUCKET",
+        "R2_JURISDICTION",
+        "R2_SECRET_ACCESS_KEY",
+        "REPERTOIRE_COMMENT_R2_ENABLED",
+        "REPERTOIRE_R2_UPLOAD_ENABLED",
+        "REPERTOIRE_STORAGE_MODE",
+        "SMTP_FROM",
+        "SMTP_HOST",
+        "SMTP_PASS",
+        "SMTP_PORT",
+        "SMTP_TO",
+        "SMTP_USER",
+        "SUPABASE_ANON_KEY",
+        "SUPABASE_DB_URL",
+        "SUPABASE_JWKS",
+        "SUPABASE_PUBLISHABLE_KEYS",
+        "SUPABASE_SECRET_KEYS",
+        "SUPABASE_SERVICE_ROLE_KEY",
+        "SUPABASE_URL"
+      ],
+      "secretValuesRecoverable": false
+    }
+  ],
+  "status": "READ_ONLY_CONFIGURATION_ARCHIVES_VERIFIED",
+  "boundary": "Exact GET responses encrypted and roundtrip checked; not restored to a new project. Masked/absent fields and Edge secret hashes cannot reconstruct secret values. No settings/keys changed, no email sent. Provider file bodies, hosting settings and offsite custody remain separate."
+}

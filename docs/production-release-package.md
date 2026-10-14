@@ -18,6 +18,15 @@ mobile types/465 tests at the product revision. The restored-state
 [current web managed evidence](reports/2026-10-10-p3-managed-read-compatibility.md)
 remains dated source-specific evidence, not a new run of the entire candidate.
 
+## 14 October evidence update
+
+[Fresh source/current web result](reports/2026-10-14-fresh-recovery-and-current-web.md):
+13 October cutoff restored with 17 catalog groups / 101 tables / 2,884 rows identical;
+11 SQL deltas, 10 SQL controls, 219 HTTP observations and 12 current web browser checks
+passed. 21 deployed Edge closures and five configuration GET responses are encrypted
+and roundtrip verified. Original release manifest remains immutable and product pins
+unchanged. Actual object bodies/provider secrets and offsite recovery are still open.
+
 ## Exact proposed order
 
 1. Refresh protected recovery cutoff and compare target catalog/config to the rehearsed
@@ -56,7 +65,8 @@ Jev's separate permission.
 
 ## Open conditions before a live operation
 
-- Fresh protected cutoff/restore comparison and object/config recovery scope.
+- Fresh cutoff/restore comparison is complete at the dated cutoff; recheck drift before
+  execution. Object bytes/provider secret values and actual config restore remain open.
 - Immediately recheck the now-recorded exact hosted Edge versions/config before deployment.
 - Current complete web/native/provider integration and release review; this session's
   review is self-review. Do not represent it as independent review.

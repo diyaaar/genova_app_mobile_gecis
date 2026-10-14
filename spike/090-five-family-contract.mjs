@@ -88,7 +88,7 @@ export function requireCompleteMatrix(observations) {
 
 /** Never destroy the new backend using the previous goal's browser/SQL receipt. */
 export function requireFamilyCleanupOrder({matrix, invariants, matrixMtime, transport}) {
-  assert(['20261010-managed-families','20261013-managed-families'].includes(matrix.attempt));
+  assert(['20261010-managed-families','20261013-managed-families','20261014-fresh-recovery'].includes(matrix.attempt));
   assert.equal(matrix.status, 'ACTUAL_FIVE_FAMILY_MANAGED_HTTP_MATRIX_PASS');
   assert.equal(invariants.attempt, matrix.attempt);
   assert.equal(invariants.status, 'POST_TEST_17_CATALOG_GROUPS_AND_PROTECTED_SOURCE_UNCHANGED');
@@ -108,7 +108,7 @@ export function requireFamilyCleanupOrder({matrix, invariants, matrixMtime, tran
 
 /** A resource-aborted download is disposable, never a successful matrix teardown. */
 export function requireFailedFamilyCleanup({attempt,pull,names,vmStatus}) {
-  assert(['20261010-managed-families','20261013-managed-families'].includes(attempt));
+  assert(['20261010-managed-families','20261013-managed-families','20261014-fresh-recovery'].includes(attempt));
   assert.equal(pull.attempt,attempt);
   assert.equal(pull.action,'pull-classic');
   assert.equal(pull.resourceStop,true);

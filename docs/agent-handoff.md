@@ -1,6 +1,6 @@
 # Genova — agent handoff
 
-Updated 13 October 2026. Owner direction: implement toward a usable commercial
+Updated 14 October 2026. Owner direction: implement toward a usable commercial
 production release. [AGENTS](../AGENTS.md) owns agent workflow.
 
 ## Current work
@@ -11,15 +11,20 @@ production release. [AGENTS](../AGENTS.md) owns agent workflow.
 read-only hosted metadata and two implemented recovery/input-validation fixes.
 The instruction cleanup is complete: [WF-018](briefs/WF-018-agent-instruction-reset.md).
 
-The remaining [five-family managed checkpoint](reports/2026-10-13-five-family-managed-acceptance.md)
-now passes 219 actual HTTP observations with real Auth/REST/RLS. Restore, eleven deltas,
-ten SQL suites and final audit passed; owned runtime/secrets were cleaned. Do not rerun
-the old capacity-blocked attempt or call its harness gaps still unimplemented.
+[14 October acceptance](reports/2026-10-14-fresh-recovery-and-current-web.md) completed
+an actual restore of the fresh 13 October cutoff: 17 catalogs, 101 tables, 2,884 rows;
+11 SQL deltas, 10 SQL controls, 219 real local HTTP observations and 12 current web
+browser checks. Product `9d1f1a7` built against real local Auth/REST/Edge. Runtime and
+ten ephemeral secrets were cleaned; new/previous protected backups retained.
 
-Next: [concrete compatible-service release](production-release-package.md), product
-`9d1f1a7`, 363 product pins, eleven SQL and nine Edge functions. Fresh RPC/Edge source
-inventories are included. Refresh recovery cutoff/target drift and package integration
-before applicable live-operation approval. Current review is self-review.
+21 deployed Edge closures and five configuration responses are now encrypted and
+roundtrip verified. File bytes, provider secret values, independent/offsite custody
+and actual configuration redeployment remain uncovered. Drive/R2 credentials are not
+in project env files; secret-list API values are hashes. No new credentials created.
+The [release package](production-release-package.md) remains proposed, not live-approved.
+Next implementation: native annotation writing/sync and other roadmap product gaps,
+while object/provider recovery and exact live authority are resolved. Do not repeat
+these completed runtime checks merely because a new session starts.
 
 ## Verified boundary
 

@@ -12,7 +12,7 @@ import {ATTEMPT} from './090-p3-resource-policy.mjs';
 import {measureRuntime} from './090-p3-runtime-resources.mjs';
 import {READERS} from './090-five-family-contract.mjs';
 import {bytesFor} from './090-five-family-media.mjs';
-assert.equal(ATTEMPT,'20261013-managed-families');assert.equal(process.argv.length,3);assert.equal(process.argv[2],'--run-approved');
+assert(['20261013-managed-families','20261014-fresh-recovery'].includes(ATTEMPT));assert.equal(process.argv.length,3);assert.equal(process.argv[2],'--run-approved');
 const ROOT='/Users/alidiyarduran/Antigravity/genovakorist',prefix=`managed-${ATTEMPT}`,suffix='-matrix',leaf=true;
 assert.equal(JSON.parse(readPrivate(prefix+'-tls-v2.json')).serverLeafCA,false);
 let barrier=null,stream=null;

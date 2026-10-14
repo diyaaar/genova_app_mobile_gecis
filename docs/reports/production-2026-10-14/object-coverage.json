@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-13T21:57:06.032Z",
+  "sourceCutoff": "2026-10-13T16:47:03.056579+00:00",
+  "repertoire": {
+    "records": 79,
+    "missing_sizes": 0,
+    "declared_bytes": "239684531",
+    "distinct_aliases": 79
+  },
+  "other": {
+    "reviews": 0,
+    "submissions": 10
+  },
+  "comments": {
+    "audio_references": 0
+  },
+  "locations": [
+    {
+      "table": "repertoire_file_storage_locations",
+      "rows": 0
+    },
+    {
+      "table": "assignment_submission_file_versions",
+      "rows": 0
+    },
+    {
+      "table": "assignment_review_audio_versions",
+      "rows": 0
+    },
+    {
+      "table": "repertoire_comment_audio_versions",
+      "rows": 0
+    },
+    {
+      "table": "chat_media_versions",
+      "rows": 0
+    }
+  ],
+  "liveFileBytesRead": false,
+  "boundary": "Counts from fresh restored source excluding this attempts synthetic choirs. IDs/names/URLs/bytes are not exported. File references and declared sizes do not prove object existence, downloadability, version equality or independent recovery. Chat bodies/HTML/avatars/attachment references are not exhaustively enumerated by this aggregate."
+}

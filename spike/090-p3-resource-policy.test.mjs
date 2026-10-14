@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
-import {selectAttempt,restoreReceiptNames,checkAllocation,checkLiveBudget,capacityMiB,CAPACITY_MIB,MIN_FREE_KIB,LIVE_STOP_KIB,RESERVE_KIB,requireUnusedAttempt} from './090-p3-resource-policy.mjs';
+import {attemptDirectory,selectAttempt,restoreReceiptNames,checkAllocation,checkLiveBudget,capacityMiB,CAPACITY_MIB,MIN_FREE_KIB,LIVE_STOP_KIB,RESERVE_KIB,requireUnusedAttempt} from './090-p3-resource-policy.mjs';
 test('owner-scoped lower floor retains fixed full runtime and zero-disk refusal',()=>{
   assert.equal(CAPACITY_MIB,6656);assert.equal(RESERVE_KIB,7630848);
   assert.equal(checkAllocation(8416988),786140);
@@ -46,4 +46,12 @@ test('archived failure or any prior receipt refuses attempt reuse before allocat
     `restore-summary-${attempt}.json`,`managed-${attempt}-matrix-v1.json`])
     assert.throws(()=>requireUnusedAttempt(attempt,[name]));
   assert.throws(()=>requireUnusedAttempt(attempt,[null]));
+});
+
+test('fresh recovery cannot reuse the previous backup directory or receipts',()=>{
+  assert.equal(capacityMiB('20261014-fresh-recovery'),6656);
+  assert(attemptDirectory('20261014-fresh-recovery').endsWith('/genova-090-p3-BJF2Dc'));
+  assert(attemptDirectory('20261013-managed-families').endsWith('/genova-090-p3-5OnU1m'));
+  assert.notEqual(restoreReceiptNames('20261014-fresh-recovery').summary,restoreReceiptNames('20261013-managed-families').summary);
+  assert.throws(()=>attemptDirectory('../other'));
 });
