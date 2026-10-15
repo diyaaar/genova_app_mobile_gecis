@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import type { ChoirMembershipOption } from '@shared/choir-context-core';
 import { createChatReadScope } from '@shared/chat-read-contract';
 import { useAuth } from '../auth/AuthProvider';
+import { usePendingWriteNavigation } from '../auth/use-pending-write-navigation';
 import { ChatScreen } from '../chat/ChatScreen';
 import type { NativeChatReadGateway } from '../chat/chat-read-gateway';
 import type { NativeChatSendGateway } from '../chat/chat-send-gateway';
@@ -67,11 +68,12 @@ function ReadyShellRoutes({
   chatStarGateway,
 }: Omit<ReadyShellProps, 'audioGateway'>) {
   const playback = useAudioPlayback();
+  const navigateWithNotes = usePendingWriteNavigation();
   const [screen, setScreen] = useState<'home' | 'repertoire' | 'chat' | 'audio' | 'web'>('home');
   const [webPath, setWebPath] = useState('/announcements');
   const [repertoireSongId, setRepertoireSongId] = useState<string | null>(null);
 
-  const openNotification = (destination: AcceptedNotificationDeepLink) => {
+  const openNotification = (destination: AcceptedNotificationDeepLink) => navigateWithNotes(() => {
     if (destination.owner === 'web') {
       setWebPath(destination.canonicalPath);
       setScreen('web');
@@ -84,7 +86,7 @@ function ReadyShellRoutes({
       return;
     }
     setScreen('home');
-  };
+  });
   const notifications = useNotificationRuntime({ gateway: notificationGateway, onOpen: openNotification });
   const chatScope = useMemo(() => createChatReadScope({
     userId,
@@ -196,7 +198,7 @@ function ReadyShellRoutes({
   return (
     <View style={styles.readyShell} testID="ready-shell">
       {content}
-      {screen !== 'audio' ? <MiniAudioPlayer onOpen={() => setScreen('audio')} /> : null}
+      {screen !== 'audio' ? <MiniAudioPlayer onOpen={() => navigateWithNotes(() => setScreen('audio'))} /> : null}
     </View>
   );
 }
@@ -221,6 +223,7 @@ export function AppRoot({ repertoireGateway, readerGateway, audioGateway, notifi
 } = {}) {
   const auth = useAuth();
   const [switching, setSwitching] = useState(false);
+  const navigateWithNotes = usePendingWriteNavigation();
 
   useEffect(() => {
     // Injected gateways belong to the app-level caller. Keep their cleaners alive even while
@@ -312,6 +315,7 @@ export function AppRoot({ repertoireGateway, readerGateway, audioGateway, notifi
     return (
       <>
         <StatusBar style="light" />
+        {auth.errorMessage ? <Text accessibilityRole="alert" style={{ color: theme.colors.danger, padding: 12 }}>{auth.errorMessage}</Text> : null}
         <ReadyShell
           key={auth.activeChoir.choir_id}
           userId={auth.user.id}
@@ -320,7 +324,7 @@ export function AppRoot({ repertoireGateway, readerGateway, audioGateway, notifi
           repertoireGateway={repertoireGateway}
           readerGateway={readerGateway}
           audioGateway={audioGateway}
-          onSwitchChoir={() => setSwitching(true)}
+          onSwitchChoir={() => navigateWithNotes(() => setSwitching(true))}
           onSignOut={() => void auth.signOut()}
           getWebViewLease={auth.getWebViewLease}
           changePassword={auth.changePassword}

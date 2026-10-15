@@ -1,8 +1,8 @@
-import type { AnnotationItem, AnnotationLayerKey } from '@/lib/repertuvar/annotation-types';
+import type { AnnotationItem, AnnotationLayerKey } from './annotation-types';
 import type {
   AnnotationSaveResult,
   SafeSaveLayerSnapshotInput,
-} from '@/lib/repertuvar/annotations';
+} from './annotation-snapshot';
 
 export interface AnnotationSaveQueuePayload {
   ownerKey: string;

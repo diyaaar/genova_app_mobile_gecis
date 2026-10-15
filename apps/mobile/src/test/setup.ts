@@ -1,3 +1,4 @@
+import { resetTenantTransitionRegistry } from '../auth/tenant-transition';
 import { resetTenantCacheRegistry } from '../auth/tenant-cache';
 
 jest.mock('@dariyd/react-native-pdf-page-image', () => ({
@@ -111,4 +112,5 @@ jest.mock('expo-sharing', () => ({
 
 beforeEach(() => {
   resetTenantCacheRegistry();
+  resetTenantTransitionRegistry();
 });

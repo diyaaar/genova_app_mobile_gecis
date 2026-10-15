@@ -8,6 +8,7 @@ import {
   type ChoirMembershipOption,
 } from '@shared/choir-context-core';
 import { clearTenantCaches } from './tenant-cache';
+import { invalidateTenantWrites, prepareTenantTransition } from './tenant-transition';
 import type {
   AuthGateway,
   AuthState,
@@ -31,6 +32,7 @@ export interface AuthStoreDependencies {
   auth: AuthGateway;
   preferences: ChoirPreferenceStore;
   clearCaches?: () => Promise<void>;
+  prepareTransition?: typeof prepareTenantTransition;
 }
 
 const SIGNED_OUT_STATE: AuthState = {
@@ -76,6 +78,7 @@ export class AuthStore {
   }
 
   private clearCaches(): Promise<void> {
+    invalidateTenantWrites();
     return (this.deps.clearCaches ?? clearTenantCaches)();
   }
 
@@ -180,6 +183,7 @@ export class AuthStore {
     const nextUserId = session?.user?.id ?? null;
     const previousUserId = this.currentUserId;
     this.currentUserId = nextUserId;
+    if (!nextUserId || previousUserId !== nextUserId) invalidateTenantWrites();
 
     if (!nextUserId) {
       this.requestVersion += 1;
@@ -356,6 +360,22 @@ export class AuthStore {
     }
 
     this.switchInFlight = true;
+    let release: (() => void) | undefined;
+    const version = this.requestVersion;
+    try {
+      release = await (this.deps.prepareTransition ?? prepareTenantTransition)();
+    } catch (error) {
+      this.switchInFlight = false;
+      if (this.currentUserId === userId && this.requestVersion === version) {
+        this.setState({ errorMessage: error instanceof Error ? error.message : 'Bekleyen notlar kaydedilemedi.' });
+      }
+      return;
+    }
+    if (this.currentUserId !== userId || this.requestVersion !== version) {
+      release();
+      this.switchInFlight = false;
+      return;
+    }
     this.setState({ isSwitchingChoir: true, errorMessage: null, activeChoir: null, phase: 'loading' });
 
     try {
@@ -372,22 +392,43 @@ export class AuthStore {
         errorMessage: error instanceof Error ? error.message : 'Koro değiştirilemedi.',
       });
     } finally {
+      release();
       this.switchInFlight = false;
       this.setState({ isSwitchingChoir: false });
     }
   }
 
-  /** Local state is cleared even when the network sign-out call fails. */
+  /** Voluntary exit flushes drafts; external session loss still clears them immediately. */
   async signOut(): Promise<void> {
+    if (this.switchInFlight) return;
+    this.switchInFlight = true;
     const userId = this.currentUserId;
+    const version = this.requestVersion;
+    let release: (() => void) | undefined;
+    try {
+      release = await (this.deps.prepareTransition ?? prepareTenantTransition)();
+    } catch (error) {
+      this.switchInFlight = false;
+      if (this.currentUserId === userId && this.requestVersion === version) {
+        this.setState({ errorMessage: error instanceof Error ? error.message : 'Bekleyen notlar kaydedilemedi.' });
+      }
+      return;
+    }
+    if (this.currentUserId !== userId || this.requestVersion !== version) {
+      release();
+      this.switchInFlight = false;
+      return;
+    }
     this.startupVersion += 1;
     this.requestVersion += 1;
     this.currentUserId = null;
-    if (userId) await this.deps.preferences.clear(userId);
-    await this.clearCaches();
     try {
+      if (userId) await this.deps.preferences.clear(userId);
+      await this.clearCaches();
       await this.deps.auth.signOut();
     } finally {
+      release();
+      this.switchInFlight = false;
       this.setState({ ...SIGNED_OUT_STATE });
     }
   }

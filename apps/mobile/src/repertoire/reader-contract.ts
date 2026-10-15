@@ -7,11 +7,13 @@ export const MAX_SCORE_FILE_BYTES = 100 * 1024 * 1024;
 export interface NativeAnnotationLayer {
   layerKey: AnnotationLayerKey;
   items: AnnotationItem[];
+  writeMetadata?: { revision: number; writableWithoutLoss: boolean };
 }
 
 export interface NativeAnnotationReadResult {
   byPage: Record<number, NativeAnnotationLayer[]>;
   skippedCount: number;
+  writeContractAvailable?: boolean;
 }
 
 export interface NativePageImage {

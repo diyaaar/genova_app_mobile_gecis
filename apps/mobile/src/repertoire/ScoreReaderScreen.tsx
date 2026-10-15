@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
+  AppState,
+  BackHandler,
   Image,
   Pressable,
   ScrollView,
@@ -12,6 +14,10 @@ import {
 import type { RepertoireFile } from '@shared/repertuvar/catalog-core';
 import { theme } from '../ui/theme';
 import { AnnotationOverlay } from './AnnotationOverlay';
+import { AnnotationDrawingSurface, type DrawingTool } from './AnnotationDrawingSurface';
+import { AnnotationEditorControls } from './AnnotationEditorControls';
+import { getDefaultAnnotationEditor } from './default-annotation-editor';
+import type { PersonalAnnotationEditor } from './personal-annotation-editor';
 import { getDefaultScoreReaderGateway } from './default-reader-gateway';
 import type {
   NativeRenderedPageWindow,
@@ -23,13 +29,38 @@ const MIN_ZOOM = 1;
 const MAX_ZOOM = 2.5;
 const ZOOM_STEP = 0.25;
 
-export function ScoreReaderScreen({ choirId, file, gateway: suppliedGateway, onBack }: {
+export function ScoreReaderScreen({ choirId, memberId, file, gateway: suppliedGateway, annotationEditor: suppliedEditor, onBack }: {
   choirId: string;
+  memberId?: string;
+  annotationEditor?: PersonalAnnotationEditor;
   file: RepertoireFile;
   gateway?: NativeScoreReaderGateway;
   onBack: () => void;
 }) {
   const gateway = useMemo(() => suppliedGateway ?? getDefaultScoreReaderGateway(), [suppliedGateway]);
+  const editor = useMemo(() => suppliedEditor ?? (memberId && !suppliedGateway
+    ? getDefaultAnnotationEditor(choirId, memberId, file.id) : null), [suppliedEditor, memberId, suppliedGateway, choirId, file.id]);
+  const [, refreshEditor] = useState(0);
+  const [tool, setTool] = useState<DrawingTool | null>(null);
+  const [noteText, setNoteText] = useState('');
+  const [editError, setEditError] = useState<string | null>(null);
+  useEffect(() => editor?.queue.subscribe(() => refreshEditor((value) => value + 1)), [editor]);
+  useEffect(() => {
+    const subscription = AppState.addEventListener('change', (state) => {
+      if (state !== 'active') void editor?.flush().catch(() => {});
+    });
+    return () => subscription.remove();
+  }, [editor]);
+  const leave = useCallback(() => {
+    if (!editor || !editor.queue.hasUnresolved(editor.ownerKey)) { onBack(); return; }
+    if (editor.queue.isOwnerExiting(editor.ownerKey)) return;
+    void editor.prepareExit().then((release) => { onBack(); release(); })
+      .catch((error: unknown) => setEditError(error instanceof Error ? error.message : 'Notlar kaydedilemedi.'));
+  }, [editor, onBack]);
+  useEffect(() => {
+    const subscription = BackHandler.addEventListener('hardwareBackPress', () => { leave(); return true; });
+    return () => subscription.remove();
+  }, [leave]);
   const { width: viewportWidth, height: viewportHeight } = useWindowDimensions();
   const [document, setDocument] = useState<NativeScoreDocument | null>(null);
   const [window, setWindow] = useState<NativeRenderedPageWindow | null>(null);
@@ -51,12 +82,18 @@ export function ScoreReaderScreen({ choirId, file, gateway: suppliedGateway, onB
     setRenderError(null);
     setDocument(null);
     setWindow(null);
+    setTool(null);
+    setEditError(null);
     setPage(1);
     setZoom(MIN_ZOOM);
+    const readVersion = editor?.readVersion();
     gateway.open({ choirId, file })
       .then((next) => {
         openedUri = next.uri;
         if (cancelled || requestVersion.current !== version) return gateway.close(next.uri);
+        editor?.hydrate(next.annotations, next.pageCount, readVersion);
+        // Rendering starts from setDocument and advances requestVersion. Finish opening first.
+        setOpening(false);
         setDocument(next);
       })
       .catch((error: unknown) => {
@@ -72,7 +109,7 @@ export function ScoreReaderScreen({ choirId, file, gateway: suppliedGateway, onB
       requestVersion.current += 1;
       if (openedUri) void gateway.close(openedUri);
     };
-  }, [attempt, choirId, file, gateway]);
+  }, [attempt, choirId, editor, file, gateway]);
 
   const loadPage = useCallback(async () => {
     if (!document) return;
@@ -109,11 +146,15 @@ export function ScoreReaderScreen({ choirId, file, gateway: suppliedGateway, onB
   return (
     <View style={styles.container} testID="score-reader-screen">
       <View style={styles.header}>
-        <Pressable onPress={onBack} accessibilityRole="button" testID="score-reader-back">
+        <Pressable onPress={leave} accessibilityRole="button" testID="score-reader-back">
           <Text style={styles.action}>Repertuvara dön</Text>
         </Pressable>
         <Text numberOfLines={1} style={styles.title}>{file.file_name}</Text>
       </View>
+
+      {document && editor ? <AnnotationEditorControls editor={editor} page={page} tool={tool} setTool={setTool}
+        text={noteText} setText={setNoteText} error={editError} setError={setEditError}
+        onReload={() => setAttempt((value) => value + 1)} /> : null}
 
       {warning ? <Text style={styles.warning} testID="score-reader-warning">{warning}</Text> : null}
 
@@ -143,12 +184,14 @@ export function ScoreReaderScreen({ choirId, file, gateway: suppliedGateway, onB
         </View>
       ) : (
         <ScrollView
+          scrollEnabled={!tool}
           style={styles.viewport}
           contentContainerStyle={styles.verticalContent}
           testID="score-reader-vertical-scroll"
         >
           <ScrollView
             horizontal
+            scrollEnabled={!tool}
             contentContainerStyle={styles.horizontalContent}
             showsHorizontalScrollIndicator={zoom > MIN_ZOOM}
             testID="score-reader-horizontal-scroll"
@@ -159,9 +202,16 @@ export function ScoreReaderScreen({ choirId, file, gateway: suppliedGateway, onB
                 style={StyleSheet.absoluteFill}
                 resizeMode="stretch"
                 accessibilityLabel={`${page}. PDF sayfası`}
+                alt={`${page}. PDF sayfası`}
                 onError={() => setRenderError('PDF sayfa görüntüsü okunamadı.')}
               />
-              <AnnotationOverlay layers={document?.annotations.byPage[page] ?? []} width={pageWidth} height={pageHeight} />
+              <AnnotationOverlay layers={editor ? [
+                ...(document?.annotations.byPage[page] ?? []).filter((layer) => layer.layerKey !== 'personal'),
+                { layerKey: 'personal', items: editor.getItems(page) },
+              ] : document?.annotations.byPage[page] ?? []} width={pageWidth} height={pageHeight} />
+              {editor && tool && editor.canEdit(page) ? <AnnotationDrawingSurface key={`${page}:${tool}:${zoom}`}
+                tool={tool} width={pageWidth} height={pageHeight} text={noteText} onError={setEditError}
+                onCommit={(item) => { editor.append(page, item); setEditError(null); if (item.type === 'text') setNoteText(''); }} /> : null}
             </View>
           </ScrollView>
         </ScrollView>

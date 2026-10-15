@@ -1,13 +1,13 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { createSupabaseAnnotationSource } from '../annotation-source';
 
-function clientWith(data: unknown, error: { message: string } | null = null) {
+function clientWith(data: unknown, error: { message: string; code?: string } | null = null) {
   const finalOrder = jest.fn(() => Promise.resolve({ data, error }));
   const firstOrder = jest.fn(() => ({ order: finalOrder }));
   const eq = jest.fn(() => ({ order: firstOrder }));
   const select = jest.fn(() => ({ eq }));
   const from = jest.fn(() => ({ select }));
-  return { client: { from } as unknown as SupabaseClient, from, select, eq };
+  return { client: { from } as unknown as SupabaseClient, from, select, eq, finalOrder };
 }
 
 describe('read-only annotation source', () => {
@@ -58,4 +58,27 @@ describe('read-only annotation source', () => {
     await expect(source.load('bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb')).rejects.toThrow('RLS denied');
     expect(Object.keys(source)).toEqual(['load']);
   });
+});
+
+
+it('falls back to read-only on the old revision-less schema without enabling absent-page writes', async () => {
+  const { client, finalOrder, select } = clientWith([]);
+  finalOrder.mockResolvedValueOnce({ data: null, error: { code: '42703', message: 'column revision does not exist' } });
+  const result = await createSupabaseAnnotationSource(client).load('file');
+  expect(result.writeContractAvailable).toBe(false);
+  expect(select).toHaveBeenNthCalledWith(1, expect.stringContaining('revision'));
+  expect(select).toHaveBeenNthCalledWith(2, expect.not.stringContaining('revision'));
+});
+
+it('exposes exact write metadata and blocks future fields, bad revision and foreign-file rows', async () => {
+  const item = { id: 'one', type: 'text', color: 'red', position: { x: 0.1, y: 0.2 }, text: 'one', width: 0.3 };
+  const base = { repertoire_file_id: 'file', page_number: 1, layer_type: 'personal', target_voice_group: null, schema_version: 1, revision: 4, annotations_json: [item] };
+  const { client } = clientWith([base, { ...base, page_number: 2, revision: 0 },
+    { ...base, page_number: 3, annotations_json: [{ ...item, future: true }] },
+    { ...base, page_number: 4, repertoire_file_id: 'foreign' }]);
+  const result = await createSupabaseAnnotationSource(client).load('file');
+  expect(result.byPage[1]?.[0]?.writeMetadata).toEqual({ revision: 4, writableWithoutLoss: true });
+  expect(result.byPage[2]?.[0]?.writeMetadata?.writableWithoutLoss).toBe(false);
+  expect(result.byPage[3]?.[0]?.writeMetadata?.writableWithoutLoss).toBe(false);
+  expect(result.byPage[4]).toBeUndefined();
 });

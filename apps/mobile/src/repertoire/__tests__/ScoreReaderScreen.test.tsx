@@ -1,5 +1,6 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import type { RepertoireFile } from '@shared/repertuvar/catalog-core';
+import { PersonalAnnotationEditor } from '../personal-annotation-editor';
 import { ScoreReaderScreen } from '../ScoreReaderScreen';
 import type { NativeScoreDocument, NativeScoreReaderGateway } from '../reader-contract';
 
@@ -117,5 +118,66 @@ describe('ScoreReaderScreen', () => {
     await screen.findByTestId('score-reader-page-1');
     await fireEvent.press(screen.getByTestId('score-reader-back'));
     expect(onBack).toHaveBeenCalledTimes(1);
+  });
+});
+
+
+describe('native personal annotation UI', () => {
+  it('places text, retains a failed draft across pages, retries and waits before leaving', async () => {
+    const prepared = gateway();
+    const editableDocument = { ...document, annotations: { skippedCount: 0, byPage: {} } };
+    prepared.open.mockResolvedValue(editableDocument);
+    const save = jest.fn().mockRejectedValue(new Error('Bağlantı yok'));
+    const editor = new PersonalAnnotationEditor('choir/member', file.id, save, 60_000);
+    const onBack = jest.fn();
+    const view = await render(<ScoreReaderScreen choirId={document.choirId} file={file} gateway={prepared} annotationEditor={editor} onBack={onBack} />);
+    await screen.findByTestId('score-reader-page-1');
+    await fireEvent.press(screen.getByTestId('annotation-tool-text'));
+    await fireEvent.changeText(screen.getByTestId('annotation-text-input'), 'Pianissimo');
+    const surface = screen.getByTestId('annotation-drawing-surface');
+    await fireEvent(surface, 'responderGrant', { nativeEvent: { locationX: 30, locationY: 40, touches: [{}] } });
+    await fireEvent(surface, 'responderRelease', { nativeEvent: { locationX: 30, locationY: 40, touches: [] } });
+    expect(screen.getByText('Pianissimo')).toBeTruthy();
+    await fireEvent.press(screen.getByTestId('score-reader-back'));
+    await screen.findByText('Bağlantı yok');
+    expect(onBack).not.toHaveBeenCalled();
+    expect(save).toHaveBeenCalledWith(expect.objectContaining({ pageNumber: 1, layerKey: 'personal', expectedRevision: null }));
+    await fireEvent.press(screen.getByTestId('score-reader-next'));
+    await screen.findByTestId('score-reader-page-2');
+    expect(screen.queryByText('Pianissimo')).toBeNull();
+    await fireEvent.press(screen.getByTestId('score-reader-prev'));
+    await screen.findByTestId('score-reader-page-1');
+    expect(screen.getByText('Pianissimo')).toBeTruthy();
+    save.mockResolvedValue({ rowId: 'row', revision: 1, deleted: false, updatedAt: '2026-10-14' });
+    await fireEvent.press(screen.getByTestId('annotation-save-retry'));
+    await waitFor(() => expect(screen.getByText(/Kişisel notlar · Kaydedildi/)).toBeTruthy());
+    await fireEvent.press(screen.getByTestId('score-reader-back'));
+    expect(onBack).toHaveBeenCalledTimes(1);
+    await view.unmount(); editor.clear();
+  });
+
+  it('normalizes strokes at the rendered size and cancels interrupted gestures without saving', async () => {
+    const prepared = gateway();
+    prepared.open.mockResolvedValue({ ...document, annotations: { skippedCount: 0, byPage: {} } });
+    const save = jest.fn().mockResolvedValue({ rowId: 'row', revision: 1, deleted: false, updatedAt: '2026-10-14' });
+    const editor = new PersonalAnnotationEditor('choir/member', file.id, save, 60_000);
+    const view = await render(<ScoreReaderScreen choirId={document.choirId} file={file} gateway={prepared} annotationEditor={editor} onBack={() => {}} />);
+    await screen.findByTestId('score-reader-page-1');
+    await fireEvent.press(screen.getByTestId('annotation-tool-pen'));
+    const surface = screen.getByTestId('annotation-drawing-surface');
+    const event = (x: number, y: number) => ({ nativeEvent: { locationX: x, locationY: y, touches: [{}] } });
+    await fireEvent(surface, 'responderGrant', event(20, 30));
+    await fireEvent(surface, 'responderMove', event(40, 60));
+    await fireEvent(surface, 'responderTerminate');
+    expect(editor.getItems(1)).toEqual([]);
+    await fireEvent(surface, 'responderGrant', event(20, 30));
+    await fireEvent(surface, 'responderRelease', event(40, 60));
+    await act(() => editor.flush());
+    const item = save.mock.calls[0]?.[0].annotations[0];
+    expect(item.type).toBe('pen');
+    expect(item.points[0].x).toBeGreaterThan(0);
+    expect(item.points[1].x).toBeLessThanOrEqual(1);
+    expect(item.points[1].x).toBeCloseTo(item.points[0].x * 2);
+    await view.unmount(); editor.clear();
   });
 });

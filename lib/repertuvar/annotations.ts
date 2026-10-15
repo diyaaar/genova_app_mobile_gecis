@@ -1,3 +1,5 @@
+import { saveAnnotationSnapshot, type SafeSaveLayerSnapshotInput, type AnnotationSaveResult } from './annotation-snapshot';
+export type { SafeSaveLayerSnapshotInput, AnnotationSaveResult } from './annotation-snapshot';
 import { supabase, type RepertoirePdfAnnotationRow } from '@/lib/supabase';
 import {
   AnnotationItem,
@@ -10,15 +12,6 @@ import {
   parseAnnotationSchemaPayload,
   parseLayerKey,
 } from '@/lib/repertuvar/annotation-types';
-
-export interface SafeSaveLayerSnapshotInput {
-  repertoireFileId: string;
-  pageNumber: number;
-  layerKey: AnnotationLayerKey;
-  annotations: AnnotationItem[];
-  expectedRevision: number | null;
-  writableWithoutLoss: boolean;
-}
 
 interface LegacySaveLayerSnapshotInput {
   songId: string;
@@ -148,13 +141,6 @@ export interface AnnotationLayerWriteMetadata {
   writableWithoutLoss: boolean;
 }
 
-export interface AnnotationSaveResult {
-  rowId: string | null;
-  revision: number | null;
-  deleted: boolean;
-  updatedAt: string | null;
-}
-
 export async function loadAnnotationReadResultForFile(repertoireFileId: string): Promise<AnnotationReadResult> {
   if (annotationsTableMissing) {
     throw new Error(MISSING_ANNOTATIONS_TABLE_MESSAGE);
@@ -222,85 +208,9 @@ export async function loadAnnotationsForFile(repertoireFileId: string): Promise<
   return (await loadAnnotationReadResultForFile(repertoireFileId)).layers;
 }
 
-export async function saveLayerSnapshotSafely({
-  repertoireFileId,
-  pageNumber,
-  layerKey,
-  annotations,
-  expectedRevision,
-  writableWithoutLoss,
-}: SafeSaveLayerSnapshotInput): Promise<AnnotationSaveResult> {
-  if (annotationsTableMissing) {
-    throw new Error(MISSING_ANNOTATIONS_TABLE_MESSAGE);
-  }
-
-  if (!writableWithoutLoss) {
-    throw new Error('Bu not katmanı kayıpsız düzenlenemiyor. Sunucudaki içerik değiştirilmedi.');
-  }
-  if (!Number.isInteger(pageNumber) || pageNumber <= 0) {
-    throw new Error('PDF notu için geçerli bir sayfa numarası gerekli.');
-  }
-  if (expectedRevision !== null && (!Number.isSafeInteger(expectedRevision) || expectedRevision <= 0)) {
-    throw new Error('PDF notu revizyon bilgisi geçersiz. Katman değiştirilmeden bırakıldı.');
-  }
-  if (!isAnnotationPayloadLosslesslyWritable(annotations, 1)) {
-    throw new Error('PDF notu içeriği kayıpsız doğrulanamadı. Katman değiştirilmeden bırakıldı.');
-  }
-
-  const { layerType, targetVoiceGroup } = parseLayerKey(layerKey);
-  const { data, error } = await supabase.rpc('save_repertoire_pdf_annotation_snapshot', {
-    p_repertoire_file_id: repertoireFileId,
-    p_page_number: pageNumber,
-    p_layer_type: layerType,
-    p_target_voice_group: targetVoiceGroup,
-    p_schema_version: 1,
-    p_annotations_json: cloneAnnotationItems(annotations),
-    p_expected_revision: expectedRevision,
-  });
-
-  if (error) throw new Error(getAnnotationErrorMessage(error));
-  if (!Array.isArray(data) || data.length !== 1 || !data[0] || typeof data[0] !== 'object') {
-    throw new Error('Güvenli PDF notu kaydetme yanıtı doğrulanamadı.');
-  }
-
-  const row = data[0] as Record<string, unknown>;
-  if (typeof row.deleted !== 'boolean') {
-    throw new Error('Güvenli PDF notu kaydetme yanıtı doğrulanamadı.');
-  }
-
-  if (row.deleted) {
-    if (
-      row.next_revision !== null ||
-      row.updated_at !== null ||
-      (row.annotation_id !== null && typeof row.annotation_id !== 'string')
-    ) {
-      throw new Error('Güvenli PDF notu silme yanıtı doğrulanamadı.');
-    }
-    return {
-      rowId: row.annotation_id as string | null,
-      revision: null,
-      deleted: true,
-      updatedAt: null,
-    };
-  }
-
-  if (
-    typeof row.annotation_id !== 'string' ||
-    row.annotation_id.length === 0 ||
-    !Number.isSafeInteger(row.next_revision) ||
-    (row.next_revision as number) <= 0 ||
-    typeof row.updated_at !== 'string' ||
-    row.updated_at.length === 0
-  ) {
-    throw new Error('Güvenli PDF notu kaydetme yanıtı doğrulanamadı.');
-  }
-
-  return {
-    rowId: row.annotation_id,
-    revision: row.next_revision as number,
-    deleted: false,
-    updatedAt: row.updated_at,
-  };
+export async function saveLayerSnapshotSafely(input: SafeSaveLayerSnapshotInput): Promise<AnnotationSaveResult> {
+  if (annotationsTableMissing) throw new Error(MISSING_ANNOTATIONS_TABLE_MESSAGE);
+  return saveAnnotationSnapshot((name, args) => supabase.rpc(name, args), input, getAnnotationErrorMessage);
 }
 
 /**

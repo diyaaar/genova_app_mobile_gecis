@@ -124,6 +124,8 @@ export function RepertoireScreen({
   if (selectedFile) {
     return (
       <ScoreReaderScreen
+        key={`${choirId}:${memberId}:${selectedFile.id}`}
+        memberId={memberId}
         choirId={choirId}
         file={selectedFile}
         gateway={readerGateway}

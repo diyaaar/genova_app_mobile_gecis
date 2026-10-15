@@ -590,3 +590,59 @@ describe('sign-out', () => {
     expect(preferences.values[USER_ID]).toBeUndefined();
   });
 });
+
+describe('pending private note transition boundary', () => {
+  it.each(['switch', 'signOut'])('keeps the current tenant visible and intact if %s cannot save notes', async (action) => {
+    const { registerTenantTransition } = require('../tenant-transition');
+    const { store, clearCaches, clientDouble, gateway } = buildStore({
+      memberships: [membership(), membership({ choir_id: CHOIR_B })], activeChoirId: CHOIR_A,
+    });
+    await store.start();
+    clearCaches.mockClear(); clientDouble.rpc.mockClear();
+    const unregister = registerTenantTransition(async () => { throw new Error('Not çakışması'); });
+    await (action === 'switch' ? store.selectChoir(CHOIR_B) : store.signOut());
+    expect(store.getState()).toMatchObject({ phase: 'ready', activeChoir: { choir_id: CHOIR_A }, errorMessage: 'Not çakışması' });
+    expect(clearCaches).not.toHaveBeenCalled();
+    expect(clientDouble.rpc).not.toHaveBeenCalled();
+    unregister();
+    await store.signOut();
+    expect(store.getState().phase).toBe('signed-out');
+    expect(gateway.gateway.signOut).toBeDefined();
+  });
+
+  it('holds the tenant until all guards settle and does not switch after external session loss', async () => {
+    const { registerTenantTransition } = require('../tenant-transition');
+    const { store, gateway, clientDouble } = buildStore({
+      memberships: [membership(), membership({ choir_id: CHOIR_B })], activeChoirId: CHOIR_A,
+    });
+    await store.start(); clientDouble.rpc.mockClear();
+    let resolve!: (release: () => void) => void;
+    const release = jest.fn();
+    const unregister = registerTenantTransition(() => new Promise((done) => { resolve = done; }));
+    const changing = store.selectChoir(CHOIR_B);
+    expect(store.getState().phase).toBe('ready');
+    gateway.emit(null, 'SIGNED_OUT');
+    await new Promise((done) => setTimeout(done, 0));
+    resolve(release);
+    await changing;
+    expect(store.getState().phase).toBe('signed-out');
+    expect(clientDouble.rpc).not.toHaveBeenCalledWith('set_active_choir', expect.anything());
+    expect(release).toHaveBeenCalledTimes(1);
+    unregister();
+  });
+});
+
+it('invalidates queued writes synchronously on identity loss before slow cache/keychain work', async () => {
+  const { registerTenantTransition } = require('../tenant-transition');
+  const { store, gateway, preferences } = buildStore({ activeChoirId: CHOIR_A });
+  await store.start();
+  let resolve!: () => void;
+  jest.spyOn(preferences, 'clear').mockImplementationOnce(() => new Promise<void>((done) => { resolve = done; }));
+  const invalidate = jest.fn();
+  registerTenantTransition(async () => () => {}, invalidate);
+  gateway.emit(null, 'SIGNED_OUT');
+  expect(invalidate).toHaveBeenCalledTimes(1);
+  resolve();
+  await new Promise((done) => setTimeout(done, 0));
+  expect(store.getState().phase).toBe('signed-out');
+});
